@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<!--
+  CASO-CONTROLE NEGATIVO do conjunto de validação.
+
+  Esta página simula a tela de agendamento de consulta de um portal municipal
+  de saúde, construída em conformidade com WCAG 2.1 A/AA. Ela existe para medir
+  a ESPECIFICIDADE do motor: qualquer violação reportada aqui é falso positivo.
+
+  Conformidades deliberadas, por critério:
+    1.1.1  imagens informativas com alt descritivo; decorativas com alt=""
+    1.3.1  label/for, fieldset/legend, th/scope, listas reais
+    1.3.5  autocomplete nos campos de identificação
+    1.4.1  status nunca sinalizado apenas por cor (há rótulo textual)
+    1.4.3  contraste mínimo 4.5:1 em todo texto
+    1.4.4  meta viewport sem restrição de escala
+    1.4.10 layout em coluna única, sem transbordo em 320 px
+    1.4.11 bordas de campo com contraste ≥ 3:1
+    2.1.1  todos os controles são elementos nativos
+    2.4.1  link de salto + marcos ARIA
+    2.4.2  title único e descritivo
+    2.4.3  ordem de foco = ordem do DOM, sem tabindex positivo
+    2.4.4  textos de link descrevem o destino
+    2.4.6  cabeçalhos descritivos, hierarquia sem saltos
+    2.4.7  indicador de foco explícito e reforçado
+    3.1.1  lang="pt-BR"
+    3.3.1  erros identificados em texto e associados ao campo
+    3.3.2  todo campo tem rótulo programático
+    4.1.2  nenhum widget construído com div
+    4.1.3  mensagem de status em região aria-live
+-->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agendar consulta na Clínica da Família — Portal de Saúde Municipal</title>
+<style>
+  :root {
+    --tinta: #17202a;        /* 14.6:1 sobre branco */
+    --tinta-suave: #46505c;  /* 7.6:1  sobre branco */
+    --papel: #ffffff;
+    --papel-alt: #f2f4f7;
+    --borda: #6b7684;        /* 3.8:1 sobre branco — atende 1.4.11 */
+    --acento: #0a4f8f;       /* 8.1:1  sobre branco */
+    --erro: #a01220;         /* 7.2:1  sobre branco */
+    --ok: #14562f;           /* 7.4:1  sobre branco */
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--papel);
+    color: var(--tinta);
+    font: 1rem/1.6 system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  .container { max-width: 44rem; margin: 0 auto; padding: 1rem; }
+  a { color: var(--acento); }
+  /* 2.4.7 — indicador de foco explícito, com contraste próprio */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 3px solid var(--acento);
+    outline-offset: 2px;
+    background: #eaf2fb;
+  }
+  .pular {
+    position: absolute; left: -9999px; top: 0;
+    background: var(--acento); color: #fff; padding: .75rem 1rem; z-index: 5;
+  }
+  .pular:focus { left: 0; }
+  header, footer { background: var(--papel-alt); border-bottom: 1px solid var(--borda); }
+  footer { border-bottom: 0; border-top: 1px solid var(--borda); margin-top: 2rem; }
+  nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 1rem; padding: 0; margin: .5rem 0 0; }
+  h1 { font-size: 1.6rem; line-height: 1.25; }
+  h2 { font-size: 1.2rem; margin-top: 2rem; }
+  h3 { font-size: 1.05rem; }
+  fieldset { border: 1px solid var(--borda); border-radius: .35rem; padding: 1rem; margin: 0 0 1.25rem; }
+  legend { font-weight: 600; padding: 0 .35rem; }
+  .campo { margin-bottom: 1rem; }
+  label { display: block; font-weight: 600; margin-bottom: .25rem; }
+  .dica { display: block; font-weight: 400; color: var(--tinta-suave); font-size: .9rem; }
+  input, select, textarea {
+    width: 100%;
+    padding: .55rem .65rem;
+    border: 2px solid var(--borda);
+    border-radius: .25rem;
+    font: inherit;
+    color: var(--tinta);
+    background: var(--papel);
+  }
+  .erro-campo { color: var(--erro); font-weight: 600; margin-top: .25rem; }
+  input[aria-invalid="true"] { border-color: var(--erro); }
+  button {
+    font: inherit; font-weight: 600;
+    background: var(--acento); color: #fff;
+    border: 2px solid var(--acento); border-radius: .25rem;
+    padding: .65rem 1.25rem; cursor: pointer;
+  }
+  button.secundario { background: var(--papel); color: var(--acento); }
+  /* 1.4.10 — a tabela de dados não cabe em 320 px sem comprimir o conteúdo a
+     ponto de torná-lo ilegível. A técnica correta não é encolher a tabela, e
+     sim confinar a rolagem ao próprio bloco: o documento continua em coluna
+     única e apenas a tabela rola, com foco alcançável por teclado. */
+  .tabela-rolavel { overflow-x: auto; }
+  .tabela-rolavel:focus-visible { outline: 3px solid var(--acento); }
+  table { border-collapse: collapse; width: 100%; min-width: 30rem; }
+  caption { text-align: left; font-weight: 600; padding-bottom: .5rem; color: var(--tinta-suave); }
+  th, td { border: 1px solid var(--borda); padding: .5rem; text-align: left; }
+  th { background: var(--papel-alt); }
+  .estado { font-weight: 700; }
+  .estado-confirmada { color: var(--ok); }
+  .estado-cancelada { color: var(--erro); }
+  .aviso {
+    border-left: .35rem solid var(--ok); background: #eef7f1;
+    padding: .75rem 1rem; border-radius: .25rem;
+  }
+  img { max-width: 100%; height: auto; }
+</style>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo principal</a>
+
+<header>
+  <div class="container">
+    <p><strong>Portal de Saúde Municipal</strong> — exemplo de validação</p>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="#conteudo">Agendar consulta</a></li>
+        <li><a href="#minhas-consultas">Consultar meus agendamentos</a></li>
+        <li><a href="#unidades">Encontrar unidade de saúde</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo" class="container">
+  <h1>Agendar consulta na Clínica da Família</h1>
+
+  <p>
+    Preencha os dados abaixo para marcar uma consulta na atenção primária.
+    O atendimento é gratuito e não exige encaminhamento.
+  </p>
+
+  <div class="aviso" role="status" aria-live="polite" id="mensagem-status">
+    <p>Há 12 vagas disponíveis para esta semana.</p>
+  </div>
+
+  <h2>Dados do paciente</h2>
+  <form action="#" method="post" novalidate>
+    <fieldset>
+      <legend>Identificação</legend>
+
+      <div class="campo">
+        <label for="nome">
+          Nome completo
+          <span class="dica" id="dica-nome">Como consta no seu documento de identidade.</span>
+        </label>
+        <input type="text" id="nome" name="nome" autocomplete="name"
+               aria-describedby="dica-nome" required>
+      </div>
+
+      <div class="campo">
+        <label for="cns">
+          Número do Cartão Nacional de Saúde
+          <span class="dica" id="dica-cns">15 dígitos, sem espaços ou pontos.</span>
+        </label>
+        <input type="text" id="cns" name="cns" inputmode="numeric"
+               aria-describedby="dica-cns erro-cns" aria-invalid="true" required>
+        <p class="erro-campo" id="erro-cns">
+          Erro: o número informado tem 12 dígitos. O Cartão Nacional de Saúde
+          tem 15 dígitos. Confira o número no verso do seu cartão.
+        </p>
+      </div>
+
+      <div class="campo">
+        <label for="nascimento">Data de nascimento</label>
+        <input type="date" id="nascimento" name="nascimento" autocomplete="bday">
+      </div>
+
+      <div class="campo">
+        <label for="telefone">
+          Telefone de contato
+          <span class="dica" id="dica-telefone">Usaremos apenas para confirmar a consulta.</span>
+        </label>
+        <input type="tel" id="telefone" name="telefone" autocomplete="tel"
+               aria-describedby="dica-telefone">
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Preferência de atendimento</legend>
+
+      <div class="campo">
+        <label for="unidade">Unidade de saúde</label>
+        <select id="unidade" name="unidade">
+          <option value="">Selecione uma unidade</option>
+          <option value="cf-augusto">Clínica da Família Augusto Boal</option>
+          <option value="cf-rinaldo">Clínica da Família Rinaldo Delamare</option>
+          <option value="cms-manoel">Centro Municipal de Saúde Manoel José Ferreira</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="turno">Turno preferido</label>
+        <select id="turno" name="turno">
+          <option value="manha">Manhã, das 7h às 12h</option>
+          <option value="tarde">Tarde, das 13h às 17h</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="observacoes">
+          Observações
+          <span class="dica" id="dica-obs">Informe se precisa de intérprete de Libras ou de acompanhante.</span>
+        </label>
+        <textarea id="observacoes" name="observacoes" rows="3" aria-describedby="dica-obs"></textarea>
+      </div>
+    </fieldset>
+
+    <p>
+      <button type="submit">Confirmar agendamento</button>
+      <button type="button" class="secundario">Limpar formulário</button>
+    </p>
+  </form>
+
+  <h2 id="minhas-consultas">Meus agendamentos</h2>
+  <div class="tabela-rolavel" tabindex="0" role="region"
+       aria-label="Tabela de consultas marcadas, rolável horizontalmente">
+  <table>
+    <caption>Consultas marcadas em seu nome</caption>
+    <thead>
+      <tr>
+        <th scope="col">Data</th>
+        <th scope="col">Unidade</th>
+        <th scope="col">Especialidade</th>
+        <th scope="col">Situação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">12/09/2026, às 8h30</th>
+        <td>Clínica da Família Augusto Boal</td>
+        <td>Clínica geral</td>
+        <!-- 1.4.1: a situação não é transmitida apenas por cor -->
+        <td><span class="estado estado-confirmada">Confirmada</span></td>
+      </tr>
+      <tr>
+        <th scope="row">03/08/2026, às 14h00</th>
+        <td>Centro Municipal de Saúde Manoel José Ferreira</td>
+        <td>Oftalmologia</td>
+        <td><span class="estado estado-cancelada">Cancelada pela unidade</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2 id="unidades">Unidades próximas</h2>
+  <h3>Zona Norte</h3>
+  <ul>
+    <li>
+      <a href="https://example.org/unidades/augusto-boal">
+        Clínica da Família Augusto Boal — endereço e horário de funcionamento
+      </a>
+    </li>
+    <li>
+      <a href="https://example.org/unidades/rinaldo-delamare">
+        Clínica da Família Rinaldo Delamare — endereço e horário de funcionamento
+      </a>
+    </li>
+  </ul>
+
+  <h3>Centro</h3>
+  <ul>
+    <li>
+      <a href="https://example.org/unidades/manoel-jose-ferreira">
+        Centro Municipal de Saúde Manoel José Ferreira — endereço e horário
+      </a>
+    </li>
+  </ul>
+
+  <!-- 1.1.1: imagem informativa com alternativa textual descritiva -->
+  <p>
+    <img src="../assets/mapa-placeholder.svg" width="320" height="120"
+         alt="Mapa esquemático com três unidades de saúde: Augusto Boal ao norte,
+              Rinaldo Delamare a nordeste e Manoel José Ferreira no centro da cidade.">
+  </p>
+</main>
+
+<footer>
+  <div class="container">
+    <p>
+      Dúvidas? Ligue para o <a href="tel:136">Disque Saúde, telefone 136</a>,
+      de segunda a sexta, das 8h às 20h.
+    </p>
+    <p>Página de exemplo do conjunto de validação do AcessiSaúde-Audit.</p>
+  </div>
+</footer>
+</body>
+</html>

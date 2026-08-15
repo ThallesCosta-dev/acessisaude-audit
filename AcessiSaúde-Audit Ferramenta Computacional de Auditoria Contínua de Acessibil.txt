@@ -1,0 +1,7 @@
+Avaliador Automático de Acessibilidade e Direitos Digitais em Saúde
+
+Título do Projeto (MVP de Software):AcessiSaúde-Audit: Ferramenta Computacional de Auditoria Contínua de Acessibilidade Web (WCAG/LBI) para Plataformas Públicas de Saúde
+
+Título do Artigo Científico:Auditoria Algorítmica de Acessibilidade em Plataformas Digitais de Saúde no Rio de Janeiro: Uma Análise Interdisciplinar sob a Ótica da LBI e do Direito à Saúde
+
+Resumo da Solução e Desenvolvimento:O MVP consiste em uma aplicação/dashboard que realiza varreduras automáticas (web scraping e análise DOM) em portais e aplicativos de saúde pública (e-SUS, Conecte SUS, agendamentos municipais). A ferramenta avalia a conformidade com as diretrizes WCAG 2.1 (níveis A e AA) e com a Lei Brasileira de Inclusão (Lei nº 13.146/2015), gerando relatórios de atrito de navegação (ex.: falhas de contraste, falta de leitores de tela, consumo excessivo de dados móveis) e indicando os pontos jurídicos e técnicos de violação de direitos do usuário periférico.

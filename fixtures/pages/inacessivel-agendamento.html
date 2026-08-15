@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!--
+  CASO-CONTROLE POSITIVO do conjunto de validação.
+
+  Mesma tela funcional de fixtures/pages/acessivel-agendamento.html, construída
+  com as barreiras que efetivamente se encontram em portais públicos reais.
+  Serve para medir a SENSIBILIDADE do motor: cada violação abaixo está anotada
+  com o critério que deve ser detectado, e o teste de integração compara o
+  conjunto detectado com o conjunto esperado (fixtures/manifest.yaml).
+
+  ATENÇÃO: este arquivo é intencionalmente inacessível. Não use como exemplo.
+
+  Violações plantadas:
+    3.1.1  atributo lang ausente no elemento html
+    2.4.2  título genérico ("Documento1")
+    1.4.4  meta viewport com user-scalable=no e maximum-scale=1.0
+    2.4.1  sem <main>, sem marcos, sem link de salto
+    1.3.1  layout em tabela; formulário sem label; tabela de dados sem th
+    1.1.1  imagens sem alt
+    1.4.3  texto cinza-claro sobre branco (2.3:1) e branco sobre amarelo (1.7:1)
+    1.4.1  situação da consulta transmitida apenas por cor
+    2.1.1  "botões" construídos com <div onclick>
+    4.1.2  mesmos divs sem role nem nome acessível
+    2.4.7  outline: none em todos os focáveis
+    2.4.3  tabindex positivo fora de ordem
+    3.3.2  campos identificados apenas por placeholder
+    3.3.1  erro sinalizado apenas por borda vermelha
+    1.4.10 tabela de largura fixa 900px, transborda em 320px
+    2.2.1  meta refresh a cada 30 segundos
+    4.1.1  id duplicado
+    2.4.4  links "clique aqui"
+    1.2.2  vídeo sem faixa de legenda
+    1.4.2  áudio com autoplay audível
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<!-- 1.4.4 — bloqueio de ampliação -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!-- 2.2.1 — recarregamento automático -->
+<meta http-equiv="refresh" content="30">
+<!-- 2.4.2 — título genérico -->
+<title>Documento1</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 0; padding: 10px; background: #fff; }
+  /* 2.4.7 — supressão global do indicador de foco */
+  a, button, input, select, textarea, div[onclick] { outline: none; }
+  a:focus, button:focus, input:focus, div[onclick]:focus { outline: none; }
+
+  /* 1.4.3 — contraste insuficiente */
+  .texto-apagado { color: #a8a8a8; background: #ffffff; }   /* 2.32:1 */
+  .aviso-amarelo { color: #ffffff; background: #f2c200; }   /* 1.74:1 */
+  .rodape { color: #b5b5b5; background: #ffffff; font-size: 12px; }
+
+  /* 2.1.1 / 4.1.2 — "botão" que não é botão */
+  .botao-falso {
+    display: inline-block; background: #2266aa; color: #fff;
+    padding: 8px 16px; cursor: pointer; border-radius: 3px; font-weight: bold;
+  }
+
+  /* 1.4.10 — largura fixa que transborda em telas estreitas */
+  .grade-fixa { width: 900px; border-collapse: collapse; }
+  .grade-fixa td, .grade-fixa th { border: 1px solid #ddd; padding: 6px; }
+
+  /* 3.3.1 — erro sinalizado apenas visualmente, apenas por cor de borda */
+  .campo-erro { border: 2px solid #cc0000; }
+
+  input, select { padding: 6px; border: 1px solid #ddd; }
+
+  /* 1.4.1 — situação apenas por cor */
+  .cor-ok { color: #1a7f37; font-weight: bold; }
+  .cor-nao { color: #cc0000; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<!-- 2.4.1 — nenhum marco, nenhum link de salto; navegação repetida sem bypass -->
+<table role="presentation" width="100%">
+<tr>
+<td>
+  <!-- 1.1.1 — imagem sem alternativa textual -->
+  <img src="../assets/brasao-placeholder.svg" width="48" height="48">
+  <span style="font-size:20px;font-weight:bold">Portal de Saude</span>
+</td>
+<td align="right">
+  <!-- 2.4.4 — texto de link sem finalidade discernível -->
+  <a href="#a">clique aqui</a> |
+  <a href="#b">clique aqui</a> |
+  <a href="#c">saiba mais</a> |
+  <a href="#d">saiba mais</a>
+</td>
+</tr>
+</table>
+
+<!-- 1.3.1 — o que deveria ser cabeçalho é apenas texto grande em negrito -->
+<div style="font-size:26px;font-weight:bold;margin:16px 0 4px">Agendamento</div>
+<div class="texto-apagado">
+  Preencha os campos abaixo para solicitar atendimento na rede municipal.
+  O sistema podera solicitar informacoes complementares apos o envio.
+</div>
+
+<div class="aviso-amarelo" style="padding:8px;margin:12px 0">
+  Atencao: vagas limitadas para esta semana.
+</div>
+
+<form action="#" method="post">
+<!-- 1.3.1 — layout tabular; 3.3.2 — nenhum campo tem rótulo -->
+<table role="presentation">
+<tr>
+  <td>
+    <input type="text" placeholder="Nome completo" id="campo"
+           aria-describedby="ajuda" tabindex="3">
+    <!--
+      4.1.1 — id duplicado E referenciado.
+      Os dois campos apontam para aria-describedby="ajuda", mas existem dois
+      elementos com esse id. O navegador resolve para o primeiro, de modo que a
+      instrucao do segundo campo nunca chega a tecnologia assistiva. E o padrao
+      tipico de componente repetido em template de portal.
+    -->
+    <span id="ajuda" class="texto-apagado">Informe o nome sem abreviacoes.</span>
+  </td>
+</tr>
+<tr>
+  <td>
+    <input type="text" placeholder="Cartao SUS" id="campo" class="campo-erro"
+           aria-describedby="ajuda" tabindex="1">
+    <span id="ajuda" class="texto-apagado">Sao 15 digitos, no verso do cartao.</span>
+  </td>
+</tr>
+<tr>
+  <td><input type="text" placeholder="Data de nascimento" tabindex="2"></td>
+</tr>
+<tr>
+  <td>
+    <select>
+      <option>Selecione a unidade</option>
+      <option>Clinica da Familia Augusto Boal</option>
+      <option>Clinica da Familia Rinaldo Delamare</option>
+    </select>
+  </td>
+</tr>
+<tr>
+  <td>
+    <!-- 2.1.1 / 4.1.2 — controle inalcançável por teclado e não anunciado -->
+    <div class="botao-falso" onclick="alert('enviado')">Confirmar agendamento</div>
+    <div class="botao-falso" onclick="document.forms[0].reset()">Limpar</div>
+  </td>
+</tr>
+</table>
+</form>
+
+<div style="font-size:22px;font-weight:bold;margin:20px 0 4px">Meus agendamentos</div>
+
+<!-- 1.4.10 — largura fixa de 900px; 1.3.1 — tabela de dados sem <th> -->
+<table class="grade-fixa">
+<tr>
+  <td><b>Data</b></td>
+  <td><b>Unidade</b></td>
+  <td><b>Especialidade</b></td>
+  <td><b>Profissional responsavel pelo atendimento</b></td>
+  <td><b>Situacao</b></td>
+</tr>
+<tr>
+  <td>12/09/2026 08:30</td>
+  <td>Clinica da Familia Augusto Boal</td>
+  <td>Clinica geral</td>
+  <td>Equipe 42 - Estrategia Saude da Familia</td>
+  <!-- 1.4.1 — a informação está apenas na cor -->
+  <td class="cor-ok">&#9679;</td>
+</tr>
+<tr>
+  <td>03/08/2026 14:00</td>
+  <td>Centro Municipal de Saude Manoel Jose Ferreira</td>
+  <td>Oftalmologia</td>
+  <td>Equipe 17 - Ambulatorio de especialidades</td>
+  <td class="cor-nao">&#9679;</td>
+</tr>
+</table>
+
+<div style="font-size:22px;font-weight:bold;margin:20px 0 4px">Campanha de vacinacao</div>
+
+<!-- 1.2.2 — vídeo sem faixa de legenda -->
+<video width="320" height="180" controls>
+  <source src="../assets/campanha.mp4" type="video/mp4">
+</video>
+
+<!-- 1.4.2 — áudio com reprodução automática audível -->
+<audio autoplay loop>
+  <source src="../assets/jingle.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 1.1.1 — cartaz informativo publicado como imagem, sem alternativa -->
+<p><img src="../assets/cartaz-placeholder.svg" width="300" height="200"></p>
+
+<div class="rodape" style="margin-top:24px">
+  Duvidas? <a href="#e">clique aqui</a>. Pagina de exemplo do conjunto de validacao
+  do AcessiSaude-Audit. Este arquivo e intencionalmente inacessivel.
+</div>
+
+</body>
+</html>

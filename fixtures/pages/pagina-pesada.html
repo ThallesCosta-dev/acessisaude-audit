@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--
+  Fixture isolada: custo de acesso para o usuário periférico.
+
+  Esta página é conforme em todos os critérios WCAG verificáveis. A barreira que
+  ela contém não é de percepção nem de operação: é econômica. Ela existe para
+  validar a DataCostProbe, que mede algo que nenhuma ferramenta convencional de
+  acessibilidade avalia.
+
+  Composição do peso (gerada pelo servidor de fixtures, ver
+  scripts/servidor_fixtures.py):
+    - 3 imagens de 900 KB cada, servidas do mesmo host  → ~2,7 MB próprios
+    - 2 recursos de 400 KB servidos de "localhost"      → ~0,8 MB de terceiros
+
+  O servidor de fixtures escuta em 127.0.0.1; recursos pedidos a "localhost"
+  têm host distinto e são contabilizados como terceiros pelo motor. É a mesma
+  mecânica de um portal público que carrega analítica e fontes de um CDN
+  externo — só que reproduzível, sem depender de rede.
+
+  Esperado: peso total acima do limiar de 2 MB E fração de terceiros acima de
+  40%? Não: ~23%. O achado deve ser emitido pela primeira condição (peso), e o
+  teste verifica que a segunda NÃO é acionada — isto é, que o motor distingue
+  as duas causas em vez de somá-las indiscriminadamente.
+-->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calendário de vacinação 2026 — Secretaria Municipal de Saúde</title>
+<style>
+  body { font: 1rem/1.6 system-ui, Arial, sans-serif; margin: 0; background: #fff; color: #17202a; }
+  main { max-width: 42rem; margin: 0 auto; padding: 1rem; }
+  a { color: #0a4f8f; }
+  a:focus-visible { outline: 3px solid #0a4f8f; outline-offset: 2px; }
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.15rem; margin-top: 2rem; }
+  img { max-width: 100%; height: auto; border: 1px solid #6b7684; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { border: 1px solid #6b7684; padding: .5rem; text-align: left; }
+  th { background: #f2f4f7; }
+  caption { text-align: left; font-weight: 600; padding-bottom: .5rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Calendário de vacinação 2026</h1>
+
+  <p>
+    Confira as vacinas disponíveis gratuitamente nas unidades de saúde do
+    município e as idades recomendadas para cada dose.
+  </p>
+
+  <h2>Cartazes das campanhas</h2>
+
+  <p>
+    <img src="/assets/peso.png?bytes=920000&amp;n=1" width="600" height="400"
+         alt="Cartaz da campanha de vacinação contra a gripe, com as datas de
+              15 de abril a 31 de maio e a indicação de que idosos e gestantes
+              têm atendimento prioritário.">
+  </p>
+
+  <p>
+    <img src="/assets/peso.png?bytes=920000&amp;n=2" width="600" height="400"
+         alt="Cartaz da campanha de vacinação contra o sarampo, dirigido a
+              crianças de 6 meses a 5 anos, com a lista das doze unidades que
+              abrem aos sábados.">
+  </p>
+
+  <p>
+    <img src="/assets/peso.png?bytes=920000&amp;n=3" width="600" height="400"
+         alt="Cartaz da campanha de multivacinação para adolescentes, com o
+              calendário de setembro e a orientação de levar a caderneta.">
+  </p>
+
+  <h2>Doses por faixa etária</h2>
+  <table>
+    <caption>Vacinas oferecidas na rede municipal em 2026</caption>
+    <thead>
+      <tr>
+        <th scope="col">Vacina</th>
+        <th scope="col">Idade recomendada</th>
+        <th scope="col">Número de doses</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><th scope="row">BCG</th><td>Ao nascer</td><td>Dose única</td></tr>
+      <tr><th scope="row">Hepatite B</th><td>Ao nascer</td><td>Dose única</td></tr>
+      <tr><th scope="row">Pentavalente</th><td>2, 4 e 6 meses</td><td>Três doses</td></tr>
+      <tr><th scope="row">Tríplice viral</th><td>12 meses e 15 meses</td><td>Duas doses</td></tr>
+      <tr><th scope="row">HPV</th><td>9 a 14 anos</td><td>Dose única</td></tr>
+      <tr><th scope="row">Influenza</th><td>A partir de 6 meses</td><td>Anual</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Onde se vacinar</h2>
+  <ul>
+    <li><a href="https://example.org/unidades">Lista de unidades com sala de vacina</a></li>
+    <li><a href="https://example.org/caderneta">Como emitir a segunda via da caderneta</a></li>
+  </ul>
+</main>
+
+<!--
+  Recursos de "terceiros": mesmo servidor, host distinto (localhost ≠ 127.0.0.1).
+  Simulam analítica e fonte remota — bytes que o usuário paga sem receber
+  serviço em troca.
+-->
+<script src="http://localhost:8080/assets/peso.js?bytes=400000&amp;n=1" defer></script>
+<script src="http://localhost:8080/assets/peso.js?bytes=400000&amp;n=2" defer></script>
+</body>
+</html>

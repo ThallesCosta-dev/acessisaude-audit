@@ -1,0 +1,34 @@
+<!doctype html>
+<!--
+  lang="pt-BR" no elemento raiz (WCAG 3.1.1).
+
+  Uma ferramenta que audita acessibilidade e falha no primeiro critério que
+  verifica não teria autoridade alguma sobre o que reporta. O dashboard é
+  submetido às mesmas regras que aplica: a suíte `npm run test:a11y` roda o
+  axe-core contra ele próprio, e a construção falha se houver violação de
+  nível A ou AA.
+-->
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Sem user-scalable=no e sem maximum-scale: a ampliação é do usuário (1.4.4). -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="description"
+      content="Auditoria contínua de acessibilidade web (WCAG 2.1 / LBI) em plataformas públicas de saúde."
+    />
+    <title>AcessiSaúde-Audit</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p style="padding: 1rem; font-family: system-ui, sans-serif">
+        Este painel exige JavaScript. Os relatórios completos de cada varredura
+        estão disponíveis em HTML estático, sem JavaScript, no endereço
+        <code>/varreduras/{id}/relatorio</code> da API.
+      </p>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

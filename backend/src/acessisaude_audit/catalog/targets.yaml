@@ -1,0 +1,183 @@
+# =============================================================================
+# Catálogo de alvos — AcessiSaúde-Audit
+# =============================================================================
+# Este arquivo é o desenho amostral do estudo, não um arquivo de configuração.
+# Cada alvo precisa declarar POR QUE integra a amostra (`selection_rationale`),
+# sob pena de a seção de Métodos do artigo ficar sem justificativa.
+#
+# REGRA DE CONDUTA (ver docs/metodologia/etica-e-conduta-de-coleta.md):
+#   Todos os alvos de produção nascem com `enabled: false`. Habilitá-los é uma
+#   decisão consciente do pesquisador, que assume: (a) respeito ao robots.txt,
+#   (b) intervalo mínimo entre requisições, (c) identificação no User-Agent,
+#   (d) ausência de qualquer tentativa de autenticação ou submissão de dados.
+#
+#   A ferramenta NUNCA preenche formulários, NUNCA autentica e NUNCA envia
+#   dados. Ela lê o DOM renderizado de páginas públicas — nada além disso.
+#
+# VERIFICAÇÃO DE URL:
+#   As URLs abaixo devem ser conferidas manualmente antes de qualquer coleta.
+#   Endereços de portais públicos mudam com frequência; uma URL desatualizada
+#   produz erro de navegação, não um achado de acessibilidade.
+# =============================================================================
+
+version: "1"
+description: >-
+  Plataformas digitais de saúde pública com incidência no município e no estado
+  do Rio de Janeiro, estratificadas por esfera federativa e por natureza do
+  serviço prestado.
+collection_window: "a definir — preencher antes da coleta e citar no artigo"
+
+targets:
+
+  # ---------------------------------------------------------------------------
+  # 1. Conjunto de validação interna (sintético). Sempre habilitado.
+  # ---------------------------------------------------------------------------
+  - id: fixtures-local
+    name: "Conjunto de validação sintético (golden set)"
+    organization: "AcessiSaúde-Audit — páginas de teste do próprio projeto"
+    sphere: federal
+    categories: [informacional, agendamento]
+    base_url: "http://127.0.0.1:8080"
+    territory: "n/a — ambiente controlado"
+    enabled: true
+    selection_rationale: >-
+      Páginas construídas com violações WCAG conhecidas e documentadas, usadas
+      para aferir sensibilidade e especificidade do motor antes de qualquer
+      afirmação sobre portais reais. Sem esta etapa, não há como distinguir
+      "o portal está ruim" de "o detector está errado".
+    tags: [validacao, sintetico, ci]
+    seeds:
+      - url: "http://127.0.0.1:8080/pages/inacessivel-agendamento.html"
+        label: "Agendamento com barreiras severas (caso-controle positivo)"
+        critical: true
+      - url: "http://127.0.0.1:8080/pages/acessivel-agendamento.html"
+        label: "Agendamento conforme (caso-controle negativo)"
+        critical: true
+      - url: "http://127.0.0.1:8080/pages/contraste-e-cor.html"
+        label: "Falhas isoladas de contraste e uso de cor"
+      - url: "http://127.0.0.1:8080/pages/formulario-sem-rotulos.html"
+        label: "Formulário sem rótulos programáticos"
+        critical: true
+      - url: "http://127.0.0.1:8080/pages/pagina-pesada.html"
+        label: "Página onerosa em dados móveis"
+
+  # ---------------------------------------------------------------------------
+  # 2. Esfera federal
+  # ---------------------------------------------------------------------------
+  - id: conecte-sus-web
+    name: "Meu SUS Digital (Conecte SUS) — versão web"
+    organization: "Ministério da Saúde / DATASUS"
+    sphere: federal
+    categories: [prontuario, resultado_exame, cadastro]
+    base_url: "https://meususdigital.saude.gov.br"
+    territory: "Brasil (uso nacional)"
+    population_served: 203000000
+    enabled: false
+    selection_rationale: >-
+      Principal porta de entrada digital do cidadão ao SUS e repositório do
+      histórico clínico individual. É o caso em que a inacessibilidade produz o
+      dano mais direto ao direito à saúde, por envolver dado clínico próprio.
+    robots_note: "Conferir robots.txt antes de habilitar."
+    tags: [federal, datasus, prioritario]
+    seeds:
+      - url: "https://meususdigital.saude.gov.br/"
+        label: "Página inicial pública"
+        critical: true
+      - url: "https://meususdigital.saude.gov.br/login"
+        label: "Autenticação gov.br"
+        critical: true
+        requires_auth: true
+        notes: >-
+          Excluída da varredura. A área autenticada concentra as telas de maior
+          risco (resultado de exame, carteira de vacinação) e sua ausência é
+          uma limitação declarada do estudo — não uma omissão.
+
+  - id: gov-br-saude
+    name: "Portal gov.br — área de Saúde"
+    organization: "Ministério da Saúde"
+    sphere: federal
+    categories: [informacional, transparencia]
+    base_url: "https://www.gov.br/saude/pt-br"
+    territory: "Brasil"
+    enabled: false
+    selection_rationale: >-
+      Portal construído sobre o Padrão Digital de Governo, que já incorpora
+      requisitos de acessibilidade. Serve de referência superior: se o padrão
+      oficial falha, a falha nos portais locais deixa de ser exceção
+      administrativa e passa a ser problema sistêmico.
+    tags: [federal, padrao-digital-gov, referencia]
+    seeds:
+      - url: "https://www.gov.br/saude/pt-br"
+        label: "Página inicial"
+      - url: "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z"
+        label: "Índice temático de saúde"
+      - url: "https://www.gov.br/saude/pt-br/composicao/saes"
+        label: "Secretaria de Atenção Especializada à Saúde"
+
+  # ---------------------------------------------------------------------------
+  # 3. Esfera estadual — Rio de Janeiro
+  # ---------------------------------------------------------------------------
+  - id: ses-rj
+    name: "Secretaria de Estado de Saúde do Rio de Janeiro"
+    organization: "SES-RJ"
+    sphere: estadual
+    categories: [informacional, ouvidoria, transparencia]
+    base_url: "https://www.saude.rj.gov.br"
+    territory: "RJ/Estado"
+    population_served: 16000000
+    enabled: false
+    selection_rationale: >-
+      Nível estadual de gestão do SUS, responsável pela regulação de leitos e
+      pela ouvidoria estadual. Permite testar a hipótese de gradiente de
+      conformidade entre as três esferas federativas.
+    tags: [estadual, rj]
+    seeds:
+      - url: "https://www.saude.rj.gov.br/"
+        label: "Página inicial"
+      - url: "https://www.saude.rj.gov.br/ouvidoria"
+        label: "Ouvidoria"
+        critical: true
+
+  # ---------------------------------------------------------------------------
+  # 4. Esfera municipal — Rio de Janeiro
+  # ---------------------------------------------------------------------------
+  - id: sms-rio
+    name: "Secretaria Municipal de Saúde do Rio de Janeiro"
+    organization: "SMS Rio / Prefeitura da Cidade do Rio de Janeiro"
+    sphere: municipal
+    categories: [informacional, agendamento, ouvidoria]
+    base_url: "https://prefeitura.rio/saude"
+    territory: "RJ/Capital"
+    population_served: 6700000
+    enabled: false
+    selection_rationale: >-
+      Porta de entrada da atenção primária na capital, onde se concentra a
+      população periférica que constitui o objeto central do estudo. É também
+      o nível de gestão com menor capacidade técnica instalada, hipótese a ser
+      testada e não presumida.
+    tags: [municipal, rj, prioritario]
+    seeds:
+      - url: "https://prefeitura.rio/saude/"
+        label: "Página inicial da Saúde municipal"
+        critical: true
+      - url: "https://prefeitura.rio/saude/clinicas-da-familia/"
+        label: "Localização de Clínicas da Família"
+        critical: true
+
+  - id: subpav-rio
+    name: "Subsecretaria de Promoção, Atenção Primária e Vigilância em Saúde"
+    organization: "SUBPAV / SMS Rio"
+    sphere: municipal
+    categories: [informacional, agendamento]
+    base_url: "https://subpav.org"
+    territory: "RJ/Capital"
+    enabled: false
+    selection_rationale: >-
+      Canal operacional da atenção primária carioca, com conteúdo dirigido
+      diretamente ao usuário do serviço (horários, unidades, campanhas).
+    tags: [municipal, rj, atencao-primaria]
+    seeds:
+      - url: "https://subpav.org/"
+        label: "Página inicial"
+      - url: "https://subpav.org/SAP/"
+        label: "Superintendência de Atenção Primária"

@@ -1,0 +1,113 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "acessisaude-audit"
+version = "0.1.0"
+description = "Ferramenta computacional de auditoria contínua de acessibilidade web (WCAG 2.1 / LBI) para plataformas públicas de saúde"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "AGPL-3.0-or-later" }
+authors = [{ name = "Thalles Costa", email = "thalles.costa@ioc.fiocruz.br" }]
+keywords = ["acessibilidade", "wcag", "lbi", "saude-digital", "auditoria", "a11y"]
+
+dependencies = [
+    "playwright>=1.47",
+    "pydantic>=2.8",
+    "pydantic-settings>=2.4",
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "sqlalchemy>=2.0",
+    "alembic>=1.13",
+    "pyyaml>=6.0",
+    "typer>=0.12",
+    "rich>=13.7",
+    "httpx>=0.27",
+    "jinja2>=3.1",
+    "beautifulsoup4>=4.12",
+    "tenacity>=9.0",
+]
+
+[project.optional-dependencies]
+analysis = [
+    "pandas>=2.2",
+    "numpy>=1.26",
+    "scipy>=1.14",
+    "matplotlib>=3.9",
+    "statsmodels>=0.14",
+]
+dev = [
+    "pytest>=8.3",
+    "pytest-asyncio>=0.24",
+    "pytest-cov>=5.0",
+    "ruff>=0.6",
+    "mypy>=1.11",
+    "types-PyYAML",
+]
+
+[project.scripts]
+acessisaude = "acessisaude_audit.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/acessisaude_audit"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"vendor/axe.min.js" = "acessisaude_audit/vendor/axe.min.js"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "B", "A", "C4", "SIM", "RUF"]
+ignore = [
+    # Exceções do projeto não usam sufixo "Error": os nomes seguem o vocabulário
+    # do domínio (ex.: nenhum hoje, mas a convenção fica declarada).
+    "N818",
+    # ------------------------------------------------------------------------
+    # Caracteres Unicode "ambíguos" (RUF001/002/003).
+    #
+    # O projeto é integralmente documentado em português, com tipografia
+    # correta: § (parágrafo, essencial na citação de dispositivos legais),
+    # → e ↔ (diagramas de fluxo e da matriz WCAG↔LBI), × (dimensões de
+    # viewport e multiplicação), — (travessão), ⚠ (advertências operacionais),
+    # ≥ ≤ ⊆ ε δ κ φ (fórmulas dos índices).
+    #
+    # A regra existe para detectar homoglifos maliciosos em identificadores.
+    # Aplicada a prosa técnica em português, produz apenas ruído: substituir
+    # "art. 63, § 1º" por "art. 63, par. 1o" degradaria a citação jurídica.
+    # ------------------------------------------------------------------------
+    "RUF001",
+    "RUF002",
+    "RUF003",
+]
+
+[tool.ruff.lint.per-file-ignores]
+# B008: `Depends()` e `Query()` em argumento padrão são o idioma canônico do
+# FastAPI, não um defeito. A regra existe para chamadas com efeito colateral
+# avaliadas na definição da função; estas são declarações de injeção.
+"src/acessisaude_audit/api/**" = ["B008"]
+# Testes usam `assert` por definição.
+"tests/**" = ["S101"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_return_any = true
+disallow_untyped_defs = true
+plugins = ["pydantic.mypy"]
+
+[[tool.mypy.overrides]]
+module = ["playwright.*", "bs4.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+addopts = "-ra --strict-markers"
+markers = [
+    "integration: testes que sobem um navegador real (mais lentos)",
+    "network: testes que dependem de rede externa (desativados por padrão)",
+]

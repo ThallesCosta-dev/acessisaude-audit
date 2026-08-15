@@ -1,0 +1,28 @@
+# Normalização de fim de linha.
+#
+# O repositório guarda LF; o checkout usa a convenção do sistema. Sem isso, um
+# clone no Windows e outro no Linux produziriam diffs inteiros por diferença de
+# CRLF, o que inviabilizaria revisar mudanças de conteúdo.
+* text=auto eol=lf
+
+# As fixtures são o conjunto de validação: seu conteúdo precisa ser byte a byte
+# idêntico entre máquinas, sob pena de alterar contagens de caracteres medidas
+# pela sonda de legibilidade.
+fixtures/**/*.html text eol=lf
+fixtures/manifest.yaml text eol=lf
+
+# Dependência vendorizada: não deve ser tocada por normalização.
+backend/vendor/axe.min.js -text
+
+# Binários
+*.png binary
+*.jpg binary
+*.mp4 binary
+*.mp3 binary
+*.sqlite binary
+*.pdf binary
+
+# Artefatos gerados: excluídos da estatística de linguagem do repositório.
+docs/artigo/figuras/** linguist-generated=true
+frontend/package-lock.json linguist-generated=true
+backend/vendor/axe.min.js linguist-vendored=true

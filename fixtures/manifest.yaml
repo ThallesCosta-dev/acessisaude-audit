@@ -1,0 +1,171 @@
+# =============================================================================
+# Conjunto de validação (golden set) — verdade de referência
+# =============================================================================
+# Este arquivo declara, para cada fixture, quais critérios WCAG DEVEM ser
+# detectados e quais NÃO PODEM ser reportados. É a verdade de referência contra
+# a qual os testes de integração medem sensibilidade e especificidade do motor.
+#
+# Por que isso existe
+# -------------------
+# Sem um conjunto de validação, uma ferramenta de auditoria não consegue
+# distinguir "o portal está ruim" de "o detector está errado". Todo número
+# publicado no artigo depende dessa distinção, e ela precisa ser medida, não
+# presumida.
+#
+# Como os campos são usados (tests/integration/test_golden_set.py)
+# ---------------------------------------------------------------
+#   deve_detectar      → ausência é FALSO NEGATIVO. Falha o teste.
+#   nao_deve_detectar  → presença é FALSO POSITIVO. Falha o teste.
+#   pode_detectar      → tolerado em qualquer direção. Serve para critérios em
+#                        que o axe-core é legitimamente conservador ou em que a
+#                        detecção depende de heurística.
+#
+# Disciplina de manutenção
+# ------------------------
+# Ao atualizar o axe-core, rode a suíte ANTES de aceitar a nova versão. Se um
+# critério migrar de `deve_detectar` para `pode_detectar`, registre o motivo
+# aqui e em docs/adr/ — a mudança altera a cobertura reportada no artigo.
+# =============================================================================
+
+versao: "1"
+base_url: "http://127.0.0.1:8080"
+
+paginas:
+
+  # ---------------------------------------------------------------------------
+  - arquivo: pages/acessivel-agendamento.html
+    papel: caso-controle-negativo
+    descricao: >-
+      Tela de agendamento conforme WCAG 2.1 A/AA. Qualquer violação reportada
+      aqui é falso positivo e indica sobredetecção do motor.
+    deve_detectar: []
+    nao_deve_detectar:
+      - "1.1.1"
+      - "1.3.1"
+      - "1.4.1"
+      - "1.4.3"
+      - "1.4.4"
+      - "1.4.10"
+      - "2.1.1"
+      - "2.4.1"
+      - "2.4.2"
+      - "2.4.3"
+      - "2.4.4"
+      - "2.4.6"
+      - "2.4.7"
+      - "3.1.1"
+      - "3.3.2"
+      - "4.1.1"
+      - "4.1.2"
+    max_violacoes: 0
+    observacoes: >-
+      O campo do Cartão Nacional de Saúde exibe um erro deliberado, mas
+      corretamente identificado em texto e associado por aria-describedby.
+      Ele valida a conformidade de 3.3.1, não sua violação.
+
+  # ---------------------------------------------------------------------------
+  - arquivo: pages/inacessivel-agendamento.html
+    papel: caso-controle-positivo
+    descricao: >-
+      Mesma tela funcional, construída com as barreiras que ocorrem em portais
+      públicos reais. Cada critério abaixo tem sua causa plantada no HTML.
+    deve_detectar:
+      - "1.1.1"    # imagens sem alt
+      - "1.3.1"    # formulário e tabela de dados sem semântica
+      - "1.4.3"    # #a8a8a8 sobre branco; branco sobre #f2c200
+      - "1.4.4"    # user-scalable=no + maximum-scale=1.0
+      - "2.1.1"    # div[onclick] sem tabindex nem role
+      - "2.2.1"    # meta refresh a cada 30 s
+      - "2.4.3"    # tabindex positivo fora de ordem
+      - "2.4.7"    # outline: none global
+      - "3.1.1"    # atributo lang ausente
+      - "3.3.2"    # campos identificados apenas por placeholder
+      - "4.1.1"    # id duplicado
+      - "4.1.2"    # controles sem nome, função ou valor
+    pode_detectar:
+      - "1.2.2"    # vídeo sem <track>; o arquivo em si não existe na fixture
+      - "1.4.1"    # cor como único portador de sentido
+      - "1.4.2"    # navegadores bloqueiam autoplay audível por política própria
+      - "1.4.10"   # depende do viewport; só se avalia no perfil de 320 px
+      - "2.2.2"    # movimento automático
+      - "2.4.1"    # ausência de mecanismo de bypass
+      - "2.4.2"    # título genérico
+      - "2.4.4"    # texto de link não descritivo
+      - "2.4.6"    # cabeçalhos e rótulos não descritivos
+    min_violacoes: 8
+    barreira_absoluta_esperada: true
+    observacoes: >-
+      MEDIDA DE COBERTURA (execução de referência, axe-core 4.13.0 + 15 sondas):
+      das 20 barreiras plantadas, 18 critérios distintos são detectados com
+      veredito determinístico. Permanecem fora do alcance automático três, todos
+      dependentes de julgamento semântico que nenhum algoritmo substitui:
+
+        1.4.1  — exige decidir se a cor é o ÚNICO portador do sentido;
+        2.4.2  — "Documento1" é um título presente, porém não descritivo;
+        2.4.4  — "clique aqui" tem texto acessível, porém não informativo.
+
+      Esses três casos são a evidência empírica, produzida pelo próprio projeto,
+      de que auditoria automática estabelece um piso de não conformidade e nunca
+      um atestado de acessibilidade. O número é citado na seção de Métodos.
+
+  # ---------------------------------------------------------------------------
+  - arquivo: pages/contraste-e-cor.html
+    papel: isolamento-percepcao
+    descricao: >-
+      Falhas exclusivas de contraste e de uso de cor, sobre base íntegra nos
+      demais critérios. Verifica atribuição correta de critério.
+    deve_detectar:
+      - "1.4.3"
+    pode_detectar:
+      - "1.4.1"
+    nao_deve_detectar:
+      - "2.1.1"
+      - "3.1.1"
+      - "3.3.2"
+      - "4.1.2"
+    observacoes: >-
+      Contém um caso conforme deliberado (#595959 sobre branco, 7,00:1) para
+      verificar que o motor não reprova por margem.
+
+  # ---------------------------------------------------------------------------
+  - arquivo: pages/formulario-sem-rotulos.html
+    papel: isolamento-formularios
+    descricao: >-
+      Falhas exclusivas de rotulagem, identificação de erro e relações
+      programáticas.
+    deve_detectar:
+      - "3.3.2"
+    pode_detectar:
+      - "1.3.1"
+      - "3.3.1"
+      - "4.1.3"
+    nao_deve_detectar:
+      - "1.4.3"
+      - "2.4.7"
+      - "3.1.1"
+      - "1.4.10"
+    observacoes: >-
+      O contador "Restam 4 senhas" está fora de região aria-live, mas a
+      verificação automática não distingue conteúdo estático de conteúdo
+      atualizado por script — daí 4.1.3 figurar como tolerado.
+
+  # ---------------------------------------------------------------------------
+  - arquivo: pages/pagina-pesada.html
+    papel: isolamento-custo-de-acesso
+    descricao: >-
+      Página conforme em WCAG, com barreira exclusivamente econômica. Valida a
+      sonda de custo de dados, que não corresponde a critério WCAG algum.
+    deve_detectar: []
+    nao_deve_detectar:
+      - "1.1.1"
+      - "1.3.1"
+      - "1.4.3"
+      - "3.1.1"
+      - "3.3.2"
+    sondas_esperadas:
+      - "probe.data-cost"
+    peso_minimo_mb: 2.0
+    fracao_terceiros_maxima: 0.40
+    observacoes: >-
+      O achado deve decorrer do peso total, não da fração de terceiros (~23%).
+      Verifica que o motor distingue as duas causas em vez de somá-las.

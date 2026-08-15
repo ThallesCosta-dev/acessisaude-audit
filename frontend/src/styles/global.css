@@ -1,0 +1,530 @@
+/* =============================================================================
+   Estilos globais do painel.
+
+   Decisões de acessibilidade, todas deliberadas e verificadas pela suíte
+   `npm run test:a11y`, que roda o axe-core contra este próprio painel:
+
+   1.4.3  Todas as combinações de texto e fundo atingem ao menos 4,5:1. As
+          razões medidas estão anotadas ao lado de cada token de cor.
+   1.4.11 Bordas de campo e de componente atingem 3:1 sobre o fundo.
+   1.4.4  Nenhuma unidade absoluta em tipografia: `rem` em toda parte, de modo
+          que a ampliação do navegador funcione.
+   1.4.10 Layout em grade fluida; nada rola horizontalmente em 320 px.
+   1.4.12 Nenhuma altura fixa em bloco de texto — o usuário pode aumentar
+          entrelinhas sem perder conteúdo.
+   2.4.7  Indicador de foco reforçado, com contraste próprio, jamais removido.
+   2.3.1  Nenhuma animação piscante; toda transição respeita
+          `prefers-reduced-motion`.
+   ============================================================================= */
+
+:root {
+  /* Paleta clara. Razões de contraste medidas sobre --papel (#ffffff). */
+  --papel: #ffffff;
+  --papel-alt: #f2f5f8;
+  --papel-fundo: #e8edf2;
+  --tinta: #141a21; /* 15,8:1 */
+  --tinta-suave: #47525e; /* 7,4:1  */
+  --borda: #97a3b0; /* 2,6:1 — apenas separadores, nunca texto */
+  --borda-forte: #67737f; /* 4,6:1 */
+  --acento: #08497f; /* 8,9:1 */
+  --acento-claro: #e7f0f9;
+
+  /* Escala de risco. Cada cor tem rótulo textual correspondente em format.ts:
+     a cor é redundância visual, nunca a única portadora de sentido. */
+  --risco-critico: #8b111e; /* 8,3:1 */
+  --risco-alto: #8a4508; /* 6,4:1 */
+  --risco-moderado: #575000; /* 8,0:1 */
+  --risco-baixo: #29485c; /* 9,1:1 */
+  --sucesso: #10552e; /* 8,2:1 */
+
+  --raio: 0.4rem;
+  --sombra: 0 1px 2px rgba(20, 26, 33, 0.08), 0 2px 8px rgba(20, 26, 33, 0.06);
+  --largura-max: 76rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --papel: #131820;
+    --papel-alt: #1b222c;
+    --papel-fundo: #0d1116;
+    --tinta: #eef2f6; /* 14,9:1 sobre --papel */
+    --tinta-suave: #b3bec9; /* 8,4:1  */
+    --borda: #3c4653;
+    --borda-forte: #6b7784;
+    --acento: #8bc0f0; /* 8,6:1 */
+    --acento-claro: #1a2836;
+
+    --risco-critico: #f2a3ab; /* 8,9:1 */
+    --risco-alto: #f0bd85; /* 10,1:1 */
+    --risco-moderado: #ddd07a; /* 11,2:1 */
+    --risco-baixo: #a8c8dc; /* 9,7:1 */
+    --sucesso: #8ed8a8; /* 11,4:1 */
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* Sem `font-size` fixo: preserva a preferência tipográfica do usuário. */
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--papel-fundo);
+  color: var(--tinta);
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --------------------------------------------------------------- tipografia */
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.25;
+  margin: 0 0 0.5rem;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(1.4rem, 1.1rem + 1.2vw, 1.9rem);
+}
+h2 {
+  font-size: clamp(1.15rem, 1rem + 0.6vw, 1.35rem);
+  margin-top: 2rem;
+}
+h3 {
+  font-size: 1.05rem;
+  margin-top: 1.25rem;
+}
+
+p {
+  margin: 0 0 0.75rem;
+  max-width: 70ch; /* conforto de leitura; não é largura fixa */
+}
+
+a {
+  color: var(--acento);
+  text-underline-offset: 0.2em;
+}
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+code,
+pre {
+  font-family: ui-monospace, 'Cascadia Mono', 'SF Mono', Consolas, monospace;
+  font-size: 0.9em;
+}
+
+pre {
+  background: var(--papel-alt);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 0.75rem;
+  overflow-x: auto; /* rolagem confinada ao bloco: técnica C37 da WCAG */
+}
+
+/* ------------------------------------------------------------------- foco */
+
+/* 2.4.7 — o indicador nunca é removido; é reforçado.
+   Usa-se :focus-visible para não poluir o clique de mouse, e :focus como
+   retaguarda em navegadores sem suporte. */
+:focus {
+  outline: 3px solid var(--acento);
+  outline-offset: 2px;
+}
+:focus:not(:focus-visible) {
+  outline: none;
+}
+:focus-visible {
+  outline: 3px solid var(--acento);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* --------------------------------------------------------------- estrutura */
+
+.pular-para-conteudo {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--acento);
+  color: var(--papel);
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  border-radius: 0 0 var(--raio) 0;
+}
+.pular-para-conteudo:focus {
+  left: 0;
+}
+
+.envoltorio {
+  width: 100%;
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.cabecalho-app {
+  background: var(--papel);
+  border-bottom: 1px solid var(--borda);
+}
+
+.cabecalho-app__conteudo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1.5rem;
+  padding-block: 1rem;
+}
+
+.marca {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--tinta);
+  text-decoration: none;
+}
+.marca span {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--tinta-suave);
+}
+
+.navegacao-principal ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navegacao-principal a {
+  display: inline-block;
+  padding: 0.35rem 0.1rem;
+  color: var(--tinta-suave);
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+}
+.navegacao-principal a:hover {
+  color: var(--tinta);
+  text-decoration: underline;
+}
+/* A página corrente não é indicada só pela cor: leva aria-current="page",
+   que os leitores de tela anunciam. */
+.navegacao-principal a[aria-current='page'] {
+  color: var(--acento);
+  font-weight: 600;
+  border-bottom-color: var(--acento);
+}
+
+main {
+  padding-block: 1.5rem 4rem;
+}
+
+.rodape-app {
+  border-top: 1px solid var(--borda);
+  background: var(--papel);
+  color: var(--tinta-suave);
+  font-size: 0.9rem;
+  padding-block: 1.25rem;
+}
+
+/* ------------------------------------------------------------------ cartões */
+
+.cartao {
+  background: var(--papel);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 1rem 1.15rem;
+  box-shadow: var(--sombra);
+}
+
+.grade {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.indicador__valor {
+  display: block;
+  font-size: clamp(1.8rem, 1.4rem + 1.6vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.05;
+  font-variant-numeric: tabular-nums;
+}
+
+.indicador__rotulo {
+  display: block;
+  font-weight: 600;
+  margin-top: 0.35rem;
+}
+
+.indicador__nota {
+  display: block;
+  color: var(--tinta-suave);
+  font-size: 0.85rem;
+  margin-top: 0.35rem;
+}
+
+/* ------------------------------------------------------------------- selos */
+
+.selo {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border: 1px solid currentColor;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.selo--critico {
+  color: var(--risco-critico);
+}
+.selo--alto {
+  color: var(--risco-alto);
+}
+.selo--moderado {
+  color: var(--risco-moderado);
+}
+.selo--baixo {
+  color: var(--risco-baixo);
+}
+.selo--ok {
+  color: var(--sucesso);
+}
+.selo--neutro {
+  color: var(--tinta-suave);
+}
+
+/* ------------------------------------------------------------------ avisos */
+
+.aviso {
+  border: 2px solid var(--borda-forte);
+  border-left-width: 0.4rem;
+  border-radius: var(--raio);
+  padding: 0.85rem 1.15rem;
+  margin-block: 1rem;
+  background: var(--papel);
+}
+.aviso--erro {
+  border-color: var(--risco-critico);
+}
+.aviso--atencao {
+  border-color: var(--risco-alto);
+}
+.aviso--info {
+  border-color: var(--acento);
+  background: var(--acento-claro);
+}
+.aviso > :last-child {
+  margin-bottom: 0;
+}
+.aviso h2,
+.aviso h3 {
+  margin-top: 0;
+}
+
+/* ------------------------------------------------------------------ tabelas */
+
+.tabela-rolavel {
+  overflow-x: auto;
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  background: var(--papel);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 34rem;
+}
+
+caption {
+  text-align: left;
+  padding: 0.75rem 1rem 0.5rem;
+  color: var(--tinta-suave);
+  font-weight: 600;
+}
+
+th,
+td {
+  padding: 0.55rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--borda);
+}
+
+thead th {
+  background: var(--papel-alt);
+  border-bottom: 2px solid var(--borda-forte);
+  position: sticky;
+  top: 0;
+}
+
+tbody tr:last-child th,
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ----------------------------------------------------------------- botões */
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font: inherit;
+  font-weight: 600;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--raio);
+  border: 2px solid var(--acento);
+  background: var(--acento);
+  color: var(--papel);
+  cursor: pointer;
+  text-decoration: none;
+}
+.botao:hover:not(:disabled) {
+  filter: brightness(1.12);
+}
+.botao:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.botao--secundario {
+  background: var(--papel);
+  color: var(--acento);
+}
+
+/* --------------------------------------------------------------- detalhes */
+
+details.achado {
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  background: var(--papel);
+  margin-bottom: 0.75rem;
+}
+
+details.achado > summary {
+  cursor: pointer;
+  padding: 0.85rem 1rem;
+  font-weight: 600;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+details.achado > div {
+  padding: 0 1rem 1rem;
+  border-top: 1px solid var(--borda);
+}
+
+.tese {
+  border-left: 0.25rem solid var(--acento);
+  background: var(--acento-claro);
+  padding: 0.75rem 1rem;
+  border-radius: 0 var(--raio) var(--raio) 0;
+  margin-block: 0.85rem;
+}
+.tese > :last-child {
+  margin-bottom: 0;
+}
+
+dl.meta {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.3rem 1rem;
+  margin: 0 0 0.85rem;
+}
+dl.meta dt {
+  font-weight: 600;
+  color: var(--tinta-suave);
+}
+dl.meta dd {
+  margin: 0;
+}
+
+@media (max-width: 30rem) {
+  /* Em telas estreitas, a grade de duas colunas comprimiria os rótulos a ponto
+     de quebrar cada palavra em uma linha. Empilhar é a leitura correta. */
+  dl.meta {
+    grid-template-columns: 1fr;
+    gap: 0 0;
+  }
+  dl.meta dd {
+    margin-bottom: 0.6rem;
+  }
+}
+
+/* ------------------------------------------------------------------ utilitários */
+
+/* Conteúdo exclusivo para tecnologia assistiva. Nunca `display: none`, que o
+   removeria também da árvore de acessibilidade. */
+.apenas-leitor-de-tela {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.lista-limpa {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pilha > * + * {
+  margin-top: 1rem;
+}
+
+.texto-suave {
+  color: var(--tinta-suave);
+}
+
+.linha {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  align-items: center;
+}

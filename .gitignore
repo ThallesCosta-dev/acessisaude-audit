@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# Node
+node_modules/
+dist/
+.vite/
+*.tsbuildinfo
+
+# Playwright
+playwright-report/
+test-results/
+.ms-playwright/
+
+# Dados gerados pela ferramenta
+data/scans/*
+data/exports/*
+!data/scans/.gitkeep
+!data/exports/.gitkeep
+*.sqlite
+*.sqlite3
+*.db
+# Journal WAL do SQLite: arquivos voláteis do modo write-ahead logging,
+# criados ao lado do banco e sem valor de arquivamento.
+*.sqlite-shm
+*.sqlite-wal
+*.db-shm
+*.db-wal
+
+# Artefatos de análise
+docs/artigo/figuras/*.png
+docs/artigo/figuras/*.svg
+!docs/artigo/figuras/.gitkeep
+
+# Ambiente
+.env
+.env.local
+
+# Editores / SO
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini

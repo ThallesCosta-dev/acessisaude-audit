@@ -1,0 +1,393 @@
+{# ===========================================================================
+   Relatório de auditoria — AcessiSaúde-Audit
+
+   Este template é, ele próprio, um artefato submetido às regras que audita.
+   Decisões de acessibilidade tomadas aqui, deliberadamente:
+
+   - Um único H1, hierarquia de cabeçalhos sem saltos (WCAG 1.3.1, 2.4.6).
+   - lang="pt-BR" declarado (3.1.1).
+   - Link de salto para o conteúdo e marcos ARIA (2.4.1).
+   - Contraste mínimo 4.5:1 em todo texto; nenhuma informação transmitida
+     apenas por cor — todo indicador cromático tem rótulo textual (1.4.1, 1.4.3).
+   - Tabelas com <caption> e <th scope> (1.3.1).
+   - Indicador de foco explícito e reforçado (2.4.7).
+   - Layout em coluna única abaixo de 640px, sem rolagem horizontal (1.4.10).
+   - Sem JavaScript: o relatório funciona em qualquer leitor e pode ser
+     arquivado como evidência estável.
+   =========================================================================== #}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auditoria de acessibilidade — {{ scan.target_name or scan.target_id }}</title>
+<style>
+  :root {
+    --tinta: #14181d;
+    --tinta-suave: #40474f;
+    --papel: #ffffff;
+    --papel-alt: #f3f5f7;
+    --borda: #c3cad2;
+    --acento: #0b4f8a;
+    --critico: #8a1420;
+    --alto: #8a4a0b;
+    --moderado: #5a4b00;
+    --baixo: #2c4a5e;
+    --ok: #14562f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--papel);
+    color: var(--tinta);
+    font: 1rem/1.6 system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  .conteudo { max-width: 60rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+  a { color: var(--acento); }
+  a:focus-visible, summary:focus-visible {
+    outline: 3px solid var(--acento);
+    outline-offset: 2px;
+  }
+  .pular {
+    position: absolute; left: -9999px; top: 0;
+    background: var(--acento); color: #fff; padding: .75rem 1rem; z-index: 10;
+  }
+  .pular:focus { left: 0; }
+  h1 { font-size: 1.75rem; line-height: 1.25; margin: 0 0 .25rem; }
+  h2 { font-size: 1.3rem; margin: 2.5rem 0 .75rem; border-bottom: 2px solid var(--borda); padding-bottom: .35rem; }
+  h3 { font-size: 1.05rem; margin: 1.5rem 0 .5rem; }
+  .subtitulo { color: var(--tinta-suave); margin: 0 0 1.5rem; }
+  dl.meta { display: grid; grid-template-columns: max-content 1fr; gap: .35rem 1rem; margin: 0; }
+  dl.meta dt { font-weight: 600; color: var(--tinta-suave); }
+  dl.meta dd { margin: 0; }
+  .indicadores { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); margin: 1.5rem 0; padding: 0; list-style: none; }
+  .indicador { border: 1px solid var(--borda); border-radius: .5rem; padding: 1rem; background: var(--papel-alt); }
+  .indicador .valor { display: block; font-size: 2rem; font-weight: 700; line-height: 1.1; }
+  .indicador .rotulo { display: block; font-weight: 600; margin-top: .35rem; }
+  .indicador .nota { display: block; color: var(--tinta-suave); font-size: .85rem; margin-top: .35rem; }
+  .alerta {
+    border: 2px solid var(--critico); border-left-width: .5rem;
+    background: #fdf2f3; padding: 1rem 1.25rem; border-radius: .35rem; margin: 1.5rem 0;
+  }
+  .alerta h2 { margin-top: 0; border: 0; color: var(--critico); }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  caption { text-align: left; font-weight: 600; padding-bottom: .5rem; color: var(--tinta-suave); }
+  th, td { border: 1px solid var(--borda); padding: .5rem .65rem; text-align: left; vertical-align: top; }
+  th { background: var(--papel-alt); }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .tabela-rolavel { overflow-x: auto; }
+  .selo {
+    display: inline-block; padding: .1rem .5rem; border-radius: .25rem;
+    font-size: .8rem; font-weight: 700; border: 1px solid currentColor;
+  }
+  .selo-critico { color: var(--critico); }
+  .selo-alto { color: var(--alto); }
+  .selo-moderado { color: var(--moderado); }
+  .selo-baixo { color: var(--baixo); }
+  .selo-ok { color: var(--ok); }
+  details { border: 1px solid var(--borda); border-radius: .35rem; margin: .75rem 0; background: var(--papel-alt); }
+  summary { cursor: pointer; padding: .75rem 1rem; font-weight: 600; }
+  details > div { padding: 0 1rem 1rem; }
+  code, pre { font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: .85rem; }
+  pre { background: #eef1f4; padding: .75rem; border-radius: .35rem; overflow-x: auto; border: 1px solid var(--borda); }
+  .tese { border-left: .25rem solid var(--acento); padding: .5rem 0 .5rem 1rem; margin: .75rem 0; background: #f2f7fc; }
+  .tese p { margin: 0; }
+  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--borda); color: var(--tinta-suave); font-size: .9rem; }
+  @media print { .pular { display: none; } details { break-inside: avoid; } }
+</style>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo principal</a>
+
+<header class="conteudo">
+  <h1>Auditoria de acessibilidade digital</h1>
+  <p class="subtitulo">
+    {{ scan.target_name or scan.target_id }} —
+    varredura de {{ scan.started_at.strftime('%d/%m/%Y às %H:%M') }} UTC
+  </p>
+</header>
+
+<main id="conteudo" class="conteudo">
+
+  <h2 id="sumario">Sumário executivo</h2>
+
+  {% if score.absolute_barrier %}
+  <div class="alerta" role="alert">
+    <h2>Barreira absoluta identificada</h2>
+    <p>
+      Foram detectadas violações classificadas como de risco jurídico
+      <strong>crítico</strong>: barreiras que impedem completamente o uso do
+      serviço por um grupo identificável de pessoas, sem rota alternativa.
+      Nessa condição, os demais índices deste relatório descrevem o grau de
+      dificuldade de um serviço que, para essas pessoas, é simplesmente
+      indisponível.
+    </p>
+  </div>
+  {% endif %}
+
+  <ul class="indicadores">
+    <li class="indicador">
+      <span class="valor">{{ '%.1f'|format(score.conformance_index) }}</span>
+      <span class="rotulo">Índice de Conformidade (ICA)</span>
+      <span class="nota">0 a 100. Fração ponderada por risco jurídico dos critérios automatizáveis não violados.</span>
+    </li>
+    <li class="indicador">
+      <span class="valor">{{ '%.1f'|format(score.friction_index) }}</span>
+      <span class="rotulo">Índice de Atrito (IAN)</span>
+      <span class="nota">0 a 100. Quanto custa usar a plataforma apesar das barreiras. Menor é melhor.</span>
+    </li>
+    <li class="indicador">
+      <span class="valor">{{ '%.1f'|format(score.legal_exposure_index) }}</span>
+      <span class="rotulo">Exposição Jurídica (IEJ)</span>
+      <span class="nota">0 a 100. Concentra-se nas violações de risco moderado ou superior.</span>
+    </li>
+    <li class="indicador">
+      <span class="valor">{{ score.violations }}</span>
+      <span class="rotulo">Violações confirmadas</span>
+      <span class="nota">{{ score.occurrences }} ocorrências em elementos distintos; {{ score.incomplete }} achados requerem revisão humana.</span>
+    </li>
+    {% if score.data_cost %}
+    <li class="indicador">
+      <span class="valor">{{ '%.2f'|format(score.data_cost.total_mb) }} MB</span>
+      <span class="rotulo">Peso médio por página</span>
+      <span class="nota">R$ {{ '%.2f'|format(score.data_cost.cost_brl) }} por acesso ({{ '%.2f'|format(score.data_cost.franchise_share_pct) }}% da franquia mensal de referência).</span>
+    </li>
+    {% endif %}
+  </ul>
+
+  <h3>Alcance e limites desta auditoria</h3>
+  <p>
+    A verificação automática cobre <strong>{{ score.criteria_evaluated }} dos 50
+    critérios de sucesso</strong> WCAG 2.1 de níveis A e AA
+    ({{ '%.0f'|format(score.coverage * 100) }}% do total). Os demais dependem de
+    julgamento humano — por exemplo, se uma alternativa textual realmente
+    <em>descreve</em> a imagem, e não apenas se ela existe. <strong>Ausência de
+    achado não equivale a conformidade.</strong> Este relatório estabelece um
+    piso de não conformidade, nunca um atestado de acessibilidade.
+  </p>
+
+  <h2 id="paginas">Páginas auditadas</h2>
+  <div class="tabela-rolavel">
+    <table>
+      <caption>Resultado por página e perfil de dispositivo</caption>
+      <thead>
+        <tr>
+          <th scope="col">Página</th>
+          <th scope="col">Perfil</th>
+          <th scope="col">Situação</th>
+          <th scope="col" class="num">Violações</th>
+          <th scope="col" class="num">Peso (MB)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for page in scan.pages %}
+        <tr>
+          <th scope="row">
+            <a href="{{ page.url }}">{{ page.title or page.url }}</a>
+            {% if page.is_critical_path %}
+            <br><span class="selo selo-critico">fluxo essencial</span>
+            {% endif %}
+          </th>
+          <td>{{ page.viewport.name }}</td>
+          <td>
+            {% if page.status.value == 'ok' %}
+              <span class="selo selo-ok">auditada</span>
+            {% else %}
+              <span class="selo selo-alto">{{ page.status.value }}</span>
+              {% if page.error %}<br>{{ page.error[:160] }}{% endif %}
+            {% endif %}
+          </td>
+          <td class="num">{{ page.violations|length }}</td>
+          <td class="num">{{ '%.2f'|format(page.network.total_mb) }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="quem">Quem é excluído</h2>
+  <p>
+    A tabela abaixo converte a contagem de defeitos em população impactada. É a
+    leitura que importa para a decisão de gestão: não "quantas falhas existem",
+    mas "quem deixa de ser atendido por causa delas".
+  </p>
+  <div class="tabela-rolavel">
+    <table>
+      <caption>Ocorrências de barreira por grupo afetado</caption>
+      <thead>
+        <tr>
+          <th scope="col">Grupo</th>
+          <th scope="col" class="num">Ocorrências</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for grupo, total in grupos %}
+        <tr>
+          <th scope="row">{{ rotulo_grupo(grupo) }}</th>
+          <td class="num">{{ total }}</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="2">Nenhuma barreira atribuída a grupo específico.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="achados">Achados, por gravidade jurídica</h2>
+  {% if not achados %}
+  <p>Nenhuma violação confirmada pelas verificações automáticas executadas.</p>
+  {% endif %}
+
+  {% for risco, itens in achados %}
+  <h3 id="risco-{{ risco }}">
+    Risco {{ risco }}
+    <span class="selo selo-{{ risco }}">{{ itens|length }} achado(s)</span>
+  </h3>
+
+  {% for f in itens %}
+  <details>
+    <summary>
+      {{ f.summary }}
+      <span class="selo selo-{{ risco }}">{{ f.occurrences }} ocorrência(s)</span>
+    </summary>
+    <div>
+      <dl class="meta">
+        <dt>Regra</dt><dd><code>{{ f.rule_id }}</code> ({{ f.source.value }})</dd>
+        <dt>Critérios WCAG</dt>
+        <dd>
+          {% if f.criteria %}
+            {% for c in f.criteria %}{{ c }} — {{ titulo_criterio(c) }}{% if not loop.last %}; {% endif %}{% endfor %}
+          {% else %}
+            Não corresponde a critério WCAG — barreira de direitos digitais.
+          {% endif %}
+        </dd>
+        <dt>Gravidade técnica</dt><dd>{{ f.impact.value if f.impact else 'não classificada' }}</dd>
+        <dt>Página</dt><dd><a href="{{ f.page_url }}">{{ f.page_url }}</a> ({{ f.viewport }})</dd>
+      </dl>
+
+      {% if f.description %}<p>{{ f.description }}</p>{% endif %}
+
+      {% if f.legal_thesis %}
+      <div class="tese">
+        <p><strong>Fundamentação jurídica.</strong> {{ f.legal_thesis }}</p>
+      </div>
+      {% endif %}
+
+      {% if f.legal_provisions %}
+      <p><strong>Dispositivos invocáveis:</strong>
+        {% for chave in f.legal_provisions %}{{ rotulo_dispositivo(chave) }}{% if not loop.last %}; {% endif %}{% endfor %}.
+      </p>
+      {% endif %}
+
+      {% if f.remediation %}
+      <p><strong>Conduta corretiva esperada.</strong> {{ f.remediation }}</p>
+      {% endif %}
+
+      {% if f.nodes %}
+      <h4>Evidência</h4>
+      {% for n in f.nodes[:5] %}
+      <p><code>{{ n.selector }}</code></p>
+      {% if n.failure_summary %}<p>{{ n.failure_summary }}</p>{% endif %}
+      {% if n.html %}<pre><code>{{ n.html }}</code></pre>{% endif %}
+      {% if n.measured %}
+      <p>Medições: {% for k, v in n.measured.items() %}<code>{{ k }}={{ v }}</code>{% if not loop.last %}, {% endif %}{% endfor %}</p>
+      {% endif %}
+      {% endfor %}
+      {% if f.nodes|length > 5 %}
+      <p>… e mais {{ f.nodes|length - 5 }} ocorrência(s). Lista completa no JSON da varredura.</p>
+      {% endif %}
+      {% endif %}
+
+      {% if f.help_url %}
+      <p><a href="{{ f.help_url }}">Documentação técnica do critério</a></p>
+      {% endif %}
+    </div>
+  </details>
+  {% endfor %}
+  {% endfor %}
+
+  <h2 id="revisao">Achados que exigem revisão humana</h2>
+  <p>
+    Os itens abaixo <strong>não</strong> são violações declaradas. São situações
+    em que a verificação automática identificou indício, mas o veredito depende
+    de julgamento que nenhum algoritmo pode substituir.
+  </p>
+  <div class="tabela-rolavel">
+    <table>
+      <caption>Achados com veredito indeterminado</caption>
+      <thead>
+        <tr>
+          <th scope="col">Situação</th>
+          <th scope="col">Regra</th>
+          <th scope="col" class="num">Ocorrências</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for f in incompletos %}
+        <tr>
+          <th scope="row">{{ f.summary }}</th>
+          <td><code>{{ f.rule_id }}</code></td>
+          <td class="num">{{ f.occurrences }}</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="3">Nenhum item pendente de revisão.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="procedencia">Procedência do dado</h2>
+  <dl class="meta">
+    <dt>Identificador da varredura</dt><dd><code>{{ scan.id }}</code></dd>
+    <dt>Versão do esquema de dados</dt><dd>{{ scan.schema_version }}</dd>
+    <dt>Versão da ferramenta</dt><dd>{{ scan.engine_version }}</dd>
+    <dt>Motor de regras</dt><dd>axe-core {{ scan.axe_version or 'não registrado' }}</dd>
+    <dt>Navegador</dt><dd>{{ scan.browser }}</dd>
+    <dt>Situação da varredura</dt><dd>{{ scan.status.value }}</dd>
+    <dt>Taxa de perda de páginas</dt><dd>{{ '%.1f'|format(scan.loss_rate * 100) }}%</dd>
+    <dt>Sondas executadas</dt><dd>{{ scan.config_snapshot.get('probes', [])|join(', ') }}</dd>
+  </dl>
+
+  {% set lacunas = scan.config_snapshot.get('plan', {}).get('declared_gaps', []) %}
+  {% if lacunas %}
+  <h3>Lacunas declaradas da amostra</h3>
+  <p>
+    As páginas a seguir integram o serviço mas <strong>não foram auditadas</strong>,
+    por exigirem autenticação. Auditar área autenticada de sistema público sem
+    autorização formal seria conduta inadmissível. Como essas telas concentram
+    parte relevante do fluxo assistencial, os índices deste relatório podem
+    estar otimistas.
+  </p>
+  <ul>
+    {% for g in lacunas %}
+    <li><code>{{ g.url }}</code> — {{ g.label }} ({{ g.motivo }})</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if scan.errors %}
+  <h3>Erros durante a coleta</h3>
+  <ul>
+    {% for e in scan.errors %}<li><code>{{ e }}</code></li>{% endfor %}
+  </ul>
+  {% endif %}
+
+</main>
+
+<footer class="conteudo">
+  <p>
+    Gerado por <strong>AcessiSaúde-Audit {{ scan.engine_version }}</strong> em
+    {{ gerado_em.strftime('%d/%m/%Y às %H:%M') }} UTC.
+  </p>
+  <p>
+    Este relatório é instrumento de auditoria técnica e de pesquisa acadêmica.
+    Não constitui parecer jurídico nem prova pericial. As proposições jurídicas
+    apresentadas indicam fundamentos normativos aplicáveis segundo a matriz
+    documentada do projeto, e sua adequação ao caso concreto depende de análise
+    profissional.
+  </p>
+</footer>
+
+</body>
+</html>
