@@ -35,6 +35,24 @@ PROJECT_ROOT = Path(__file__).resolve().parents[3]
 #: - ``desktop-1366`` é a resolução de desktop mais comum no Brasil e o
 #:   ambiente em que os portais costumam ser homologados — o contraste entre os
 #:   dois perfis é, por si só, um achado do estudo.
+#:
+#: **Ambos declaram User-Agent explícito.** O perfil desktop originalmente não
+#: declarava, e herdava o padrão do Playwright — que anuncia
+#: ``HeadlessChrome/<versão>``. Isso produzia dois problemas:
+#:
+#: 1. **Violação da própria conduta do projeto.** A regra declarada em
+#:    ``docs/metodologia/etica-e-conduta-de-coleta.md`` exige identificação da
+#:    pesquisa no User-Agent. O cabeçalho ``X-Audit-Agent`` usado como
+#:    substituto é ignorado pela maior parte dos registros de servidor.
+#: 2. **Confusão metodológica.** ``HeadlessChrome`` é bloqueado por muitos
+#:    firewalls de aplicação. Um perfil identificável como automação e outro não
+#:    tornariam a comparação entre perfis (hipótese H3) confundida com
+#:    diferença de bloqueio.
+#:
+#: O defeito foi detectado na segunda medição de campo, ao investigar por que o
+#: perfil desktop falhava sistematicamente em um host onde o móvel funcionava.
+#: Teste direto mostrou que o User-Agent **não** era a causa daquelas falhas
+#: específicas — mas o defeito de conduta existia de todo modo.
 DEFAULT_VIEWPORTS: tuple[Viewport, ...] = (
     Viewport(
         name="mobile-320",
@@ -47,7 +65,16 @@ DEFAULT_VIEWPORTS: tuple[Viewport, ...] = (
             "(KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
         ),
     ),
-    Viewport(name="desktop-1366", width=1366, height=768, device_scale_factor=1.0),
+    Viewport(
+        name="desktop-1366",
+        width=1366,
+        height=768,
+        device_scale_factor=1.0,
+        user_agent=(
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+            "(KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+        ),
+    ),
 )
 
 

@@ -16,6 +16,7 @@ Formato: contexto → decisão → consequências → alternativas descartadas.
 | [0005](0005-indices-ponderados-por-risco-juridico.md) | Ponderar os índices por risco jurídico, não por gravidade técnica | Aceita |
 | [0006](0006-custo-de-dados-como-barreira.md) | Tratar o custo de acesso como barreira auditável | Aceita |
 | [0007](0007-calibracao-empirica-de-kappa.md) | Recalibrar κ empiricamente (40 → 150) | Aceita |
+| [0008](0008-user-agent-em-todos-os-perfis.md) | User-Agent explícito em todos os perfis | Aceita |
 
 ## Quando escrever uma nova ADR
 

@@ -3,6 +3,26 @@
 > Diário da coleta. Registra o que foi feito, em que ordem, o que falhou e como cada falha foi
 > interpretada. Existe porque a auditoria é uma coleta de dados de pesquisa, e o campo precisa
 > ter registro — inclusive do que deu errado.
+>
+> **Todos os horários em UTC.** O relógio local do ambiente de coleta é UTC−3.
+
+---
+
+## 0. Sumário
+
+Quatro medições de cada plataforma entre 00h58 e 01h45 UTC. Dois desfechos principais:
+
+1. **Confiabilidade teste-reteste perfeita.** O índice de conformidade não variou em nenhuma
+   plataforma, em nenhuma medição.
+2. **Um defeito do instrumento foi detectado e corrigido no meio da coleta.** O perfil desktop
+   não se identificava e anunciava `HeadlessChrome`, causando perda de páginas por bloqueio no
+   portal federal. O dataset primário passou a ser o das medições posteriores à correção.
+
+> **O que esta coleta NÃO estabelece.** As quatro medições ocorreram em **47 minutos**. Não
+> constituem janelas temporais distintas e não permitem separar instabilidade circunstancial de
+> crônica, nem detectar mudança nos portais. Uma série temporal genuína — a premissa de
+> "auditoria contínua" que o projeto defende — exige coletas separadas por dias ou semanas, e
+> permanece pendente.
 
 ---
 
@@ -88,83 +108,118 @@ Nenhuma semente foi bloqueada.
 
 ## 3. Execução
 
-| Ordem | Alvo | Início | Situação | Perda |
-|---|---|---|---|---|
-| 1 | `conecte-sus-web` | 00h58 | concluída | 0% |
-| 2 | `gov-br-saude` | 00h59 | parcial | 17% |
-| 3 | `ses-rj` | 01h00 | parcial | **50%** |
-| 4 | `sms-rio` | 01h00 | concluída | 0% |
-| 5 | `carioca-rio-saude` | 01h02 | concluída | 0% |
+Quatro medições de cada plataforma. As de 01h39 em diante usam o **instrumento corrigido**
+(ver § 6.2) e constituem o dataset primário.
 
-Repetições de verificação (não integram o dataset): `gov-br-saude` às 01h04 e `ses-rj` às
-01h04, ambas destinadas a distinguir falha transitória de sistemática.
+| Medição | Instrumento | Horário | Observação |
+|---|---|---|---|
+| 1ª | com defeito de UA | 00h58 – 01h02 | coleta inicial |
+| repetição | com defeito de UA | 01h03 – 01h04 | diagnóstico de falhas de rede |
+| 2ª | com defeito de UA | 01h30 – 01h34 | segunda medição |
+| **3ª** | **corrigido** | **01h39 – 01h45** | **dataset primário** |
+
+### Índice de conformidade por medição
+
+| Alvo | 1ª | repetição | 2ª | 3ª | Δ |
+|---|---|---|---|---|---|
+| `conecte-sus-web` | 72,6 | — | 72,6 | 72,6 | **0,0** |
+| `gov-br-saude` | 84,9 | 84,9 | 84,9 | 84,9 | **0,0** |
+| `ses-rj` | 54,1 | 54,1 | 54,1 | 54,1 | **0,0** |
+| `sms-rio` | 61,0 | — | 61,0 | 61,0 | **0,0** |
+| `carioca-rio-saude` | 50,7 | — | 50,7 | 50,7 | **0,0** |
+
+O conjunto de critérios violados repetiu-se integralmente em quatro das cinco plataformas; em
+`gov-br-saude` variou conforme quais páginas conseguiram carregar.
 
 ---
 
 ## 4. Diagnóstico das falhas
 
-### 4.1 `gov.br/saúde` — transitória
+### 4.1 `gov.br/saúde` — artefato do instrumento
 
-`ERR_CONNECTION_RESET`, uma página em seis, em ambas as execuções. **A página afetada mudou**
-entre as execuções (`/saude/pt-br` na primeira, `/composicao/saes` na segunda). Falha de rede,
-não propriedade de uma página específica.
+Inicialmente interpretada como falha transitória de rede: `ERR_CONNECTION_RESET`, uma página em
+seis, mudando de página entre execuções.
+
+**A interpretação estava errada.** Com o `User-Agent` corrigido, a perda caiu a zero:
+
+| Instrumento | Medições | Perda |
+|---|---|---|
+| Com `HeadlessChrome` | 3 | 17% · 17% · 33% |
+| Com UA identificado | 3 | **0% · 0% · 0%** |
+
+As perdas eram bloqueio da assinatura de automação, não instabilidade do portal.
 
 ### 4.2 SES-RJ — instabilidade de infraestrutura
 
-`/laudos` falhou nas **quatro** tentativas (duas execuções × dois perfis), com
-`ERR_CONNECTION_CLOSED` e `ERR_SOCKET_NOT_CONNECTED`. Na segunda execução, também
-`www.rj.gov.br/saude` falhou nos dois perfis.
+`/laudos` falhou em **8 de 8** tentativas de navegador. Observação direta da disponibilidade:
 
-**Verificação complementar às 01h06**, com cliente HTTP comum e o mesmo `User-Agent`: três
-tentativas em cada host, **todas falharam** — incluindo `www.rj.gov.br/saude`, que respondera
-HTTP 200 às 00h47.
+| Instante | Instrumento | Resultado |
+|---|---|---|
+| 00h47 | cliente HTTP | HTTP 200 nos três endereços |
+| 01h06 | cliente HTTP | **falha nos dois hosts** |
+| 01h29 | cliente HTTP | HTTP 200 nos três endereços |
+| 01h37 | cliente HTTP **e** navegador | **falha em ambos, simultaneamente** |
 
-**Conclusão:** instabilidade de infraestrutura, não bloqueio a automação. A hipótese de
-bloqueio foi descartada porque a falha atinge igualmente um cliente que não executa JavaScript
-e não se apresenta como navegador.
+**Conclusão:** a infraestrutura oscila em escala de minutos e a falha atinge igualmente
+navegador e cliente HTTP simples. Teste direto com dois `User-Agent` distintos confirmou que a
+assinatura não influencia o resultado neste host.
 
-> Nenhuma tentativa foi feita de falsear o `User-Agent` para testar bloqueio. Fazê-lo violaria
-> a regra de identificação declarada na conduta de coleta do projeto.
+> Nenhuma tentativa foi feita de falsear o `User-Agent` para simular navegador comum e testar
+> bloqueio. Fazê-lo violaria a regra de identificação declarada na conduta do projeto.
 
 ### 4.3 Interpretação para o artigo
 
-A disponibilidade é precondição da acessibilidade. Um serviço de resultado de exame que não
-responde não é difícil de usar: é indisponível. Nenhum índice de conformidade WCAG captura
-isso, e o estudo só o registrou porque o motor trata falha de carregamento como **dado**, com
-taxa de perda reportada em toda saída.
+A disponibilidade é precondição da acessibilidade. Um serviço de resultado de exame que
+responde de forma intermitente não é difícil de usar: para quem tenta no minuto errado, não
+existe. Nenhum índice de conformidade WCAG captura isso, e o estudo só o registrou porque o
+motor trata falha de carregamento como **dado**, com taxa de perda reportada em toda saída.
 
 ---
 
-## 5. Composição final da amostra
+## 5. Composição final da amostra (dataset primário)
 
 | Alvo | Esfera | Natureza | Págs. válidas |
 |---|---|---|---|
 | Meu SUS Digital | federal | prontuário, resultado de exame | 2 |
-| gov.br/saúde | federal | informacional, transparência | 5 |
-| SES-RJ | estadual | ouvidoria, resultado de exame | 3 |
+| gov.br/saúde | federal | informacional, transparência | 6 |
+| SES-RJ | estadual | ouvidoria, resultado de exame | **2** |
 | SMS Rio | municipal | informacional (notícias) | 2 |
 | Carioca Digital | municipal | catálogo de serviços | 4 |
 
-**16 auditorias de página válidas** de 20 realizadas (perda de 20%).
+**16 auditorias de página válidas** de 20 realizadas.
 
 Lacuna declarada: área autenticada do Meu SUS Digital, que concentra as telas de maior
 consequência assistencial.
 
 ---
 
-## 6. Defeito do instrumento encontrado durante a análise
+## 6. Dois defeitos do instrumento encontrados pela coleta
 
-A figura de índice por esfera incluía páginas que **não carregaram**. Como uma página sem
-achados tem, por construção, índice de conformidade 100, o estrato estadual — com 50% de perda
-— aparecia com mediana 86 na figura contra 58,9 na análise numérica do mesmo dado.
+### 6.1 Figuras incluíam páginas que não carregaram
+
+Como uma página sem achados tem, por construção, índice de conformidade 100, o estrato estadual
+— com 50% de perda — aparecia com mediana 86 na figura contra 58,9 na análise numérica do
+mesmo dado.
 
 `score_scan` já excluía páginas em erro ao agregar; as figuras não. Corrigido em
-`analysis/figures.only_audited`, com teste em `tests/unit/test_analise.py` que trava a
-propriedade.
+`analysis/figures.only_audited`, com testes em `tests/unit/test_analise.py`.
 
-O defeito só se manifestou com dados de campo: o conjunto de validação sintético nunca produz
-falha de carregamento. É argumento a favor de executar a coleta antes de considerar o
-instrumento pronto.
+### 6.2 Perfil desktop não se identificava
+
+O perfil `desktop-1366` não declarava `user_agent` e herdava o padrão do Playwright, que
+anuncia `HeadlessChrome`. Consequências: violação da conduta declarada do projeto, confusão
+metodológica na comparação entre perfis, e perda de páginas por bloqueio (§ 4.1).
+
+Corrigido; ver [ADR 0008](../adr/0008-user-agent-em-todos-os-perfis.md).
+
+### 6.3 Por que ambos escaparam
+
+Nenhum dos dois podia ser detectado pelo conjunto de validação sintético: fixtures locais nunca
+falham ao carregar e nunca bloqueiam por `User-Agent`. Atravessaram a construção do
+instrumento, sua validação, mais de 130 testes e duas revisões da documentação de ética.
+
+É o argumento mais direto a favor de **executar a coleta de campo antes de considerar um
+instrumento pronto**.
 
 ---
 

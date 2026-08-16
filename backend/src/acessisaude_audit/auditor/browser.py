@@ -293,6 +293,18 @@ class BrowserPool:
         base_ua = viewport.user_agent
         user_agent = f"{base_ua} {s.user_agent_suffix}" if base_ua else None
 
+        if user_agent is None:
+            # Sem User-Agent explícito, o Playwright anuncia "HeadlessChrome" e a
+            # coleta deixa de se identificar — violando a conduta declarada do
+            # projeto. Os perfis padrão sempre declaram; um perfil personalizado
+            # que não declare precisa ser corrigido, e o aviso é alto de
+            # propósito para que o defeito não passe despercebido no registro.
+            logger.warning(
+                "perfil de dispositivo sem User-Agent explícito: a coleta não se "
+                "identificará e o navegador anunciará HeadlessChrome",
+                extra={"viewport": viewport.name},
+            )
+
         context = await self._browser.new_context(
             viewport={"width": viewport.width, "height": viewport.height},
             device_scale_factor=viewport.device_scale_factor,

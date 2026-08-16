@@ -257,3 +257,61 @@ class TestLegibilidade:
 
 def test_registro_padrao_contem_todas_as_sondas() -> None:
     assert len(default_probes()) == len(ALL_PROBES)
+
+
+class TestCondutaDosPerfisDeDispositivo:
+    """A conduta de coleta precisa valer para **todos** os perfis.
+
+    A regra declarada em ``docs/metodologia/etica-e-conduta-de-coleta.md`` é que
+    a ferramenta se identifique no User-Agent. O perfil desktop originalmente não
+    declarava User-Agent e herdava o padrão do Playwright, que anuncia
+    ``HeadlessChrome`` e nada diz sobre a pesquisa.
+
+    O defeito só apareceu na segunda medição de campo, ao investigar falhas
+    assimétricas entre perfis. Estes testes o impedem de voltar — e impedem que
+    um perfil novo seja acrescentado sem identificação.
+    """
+
+    def test_todo_perfil_padrao_declara_user_agent(self) -> None:
+        from acessisaude_audit.config import DEFAULT_VIEWPORTS
+
+        sem_ua = [v.name for v in DEFAULT_VIEWPORTS if not v.user_agent]
+        assert not sem_ua, (
+            f"Perfis sem User-Agent explícito: {sem_ua}. Sem ele, o navegador "
+            "anuncia HeadlessChrome e a coleta não se identifica."
+        )
+
+    def test_nenhum_perfil_anuncia_automacao(self) -> None:
+        """Anunciar automação não é problema ético — é problema metodológico.
+
+        Um perfil detectável como robô e outro não tornariam a comparação entre
+        perfis confundida com diferença de bloqueio por firewall de aplicação.
+        A identificação da pesquisa vai no sufixo, que é acrescentado a todos.
+        """
+        from acessisaude_audit.config import DEFAULT_VIEWPORTS
+
+        suspeitos = [
+            v.name for v in DEFAULT_VIEWPORTS if v.user_agent and "headless" in v.user_agent.lower()
+        ]
+        assert not suspeitos, f"Perfis que anunciam automação: {suspeitos}"
+
+    def test_o_sufixo_de_identificacao_traz_contato(self) -> None:
+        """Identificar-se sem contato não permite que o administrador reaja."""
+        from acessisaude_audit.config import Settings
+
+        sufixo = Settings().user_agent_suffix
+        assert "AcessiSaude" in sufixo
+        assert "@" in sufixo, "O User-Agent precisa trazer um contato."
+
+    def test_perfis_diferem_apenas_no_que_deve_diferir(self) -> None:
+        """Isola a variável do experimento de comparação entre perfis (H3).
+
+        Se os perfis divergirem em algo além de dimensões, densidade e natureza
+        móvel, a diferença observada deixa de ser atribuível ao dispositivo.
+        """
+        from acessisaude_audit.config import DEFAULT_VIEWPORTS
+
+        assert len({v.name for v in DEFAULT_VIEWPORTS}) == len(DEFAULT_VIEWPORTS)
+        # Ambos identificam a pesquisa pelo mesmo mecanismo: o sufixo é anexado
+        # ao User-Agent do perfil, e não substituído por um cabeçalho próprio.
+        assert all(v.user_agent for v in DEFAULT_VIEWPORTS)
