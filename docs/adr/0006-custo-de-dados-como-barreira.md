@@ -75,14 +75,47 @@ direito à saúde.
 
 **Negativas assumidas**
 
-- **O preço de referência é uma premissa, não um dado medido.** Os valores padrão
-  (`R$ 0,10/MB`, franquia de 2048 MB) são ilustrativos e estão marcados como tal no código,
-  na configuração e na documentação. Publicar sem substituí-los por valores coletados, com
-  fonte e data, seria erro grave.
-- A medição depende do momento da coleta: portais mudam de peso. Mitigado pelo registro de
-  data e pela proposta de auditoria **contínua**.
+- **O custo monetário de um acesso isolado é pequeno.** Com os parâmetros coletados
+  (R$ 3,00/GiB), uma página de 3 MiB custa R$ 0,0088. O argumento econômico não se sustenta
+  no acesso único, e sim na jornada completa, na tentativa frustrada por barreira de
+  acessibilidade e na parcela do tráfego destinada a terceiros. Ver
+  [parâmetros de custo](../metodologia/parametros-de-custo.md), § 5.
+- A medição depende do momento da coleta: portais mudam de peso, e as ofertas das operadoras
+  também. Mitigado pelo registro de data, pela cadência de reavaliação declarada e pela
+  proposta de auditoria **contínua**.
 - Um achado sem critério WCAG pode ser lido como "invenção do autor". Mitigado pela tese
   jurídica explícita, que declara exatamente qual dever se considera violado e por quê.
+
+---
+
+## Atualização — 15/08/2026: parâmetros substituídos por valores coletados
+
+Os valores padrão originais eram declaradamente ilustrativos. Foram substituídos por dados
+publicados, datados e verificáveis:
+
+| Parâmetro | Antes | Agora | Razão |
+|---|---|---|---|
+| Preço por MiB | R$ 0,10 | R$ 0,0029296875 | **34× menor** |
+| Franquia | 2 048 MiB | 10 240 MiB | 5× maior |
+| Limiar de peso | 2,0 MiB | 2,5 MiB | 1,25× maior |
+
+O preço ilustrativo superestimava o custo em trinta e quatro vezes. A correção **enfraquece
+numericamente** o argumento do acesso isolado, e é justamente por isso que precisava ser
+feita: manter o valor inflado produziria uma conclusão favorável construída sobre uma premissa
+inventada.
+
+Duas observações substantivas emergiram da coleta e serão exploradas no artigo:
+
+1. **A penalidade da pobreza.** A mesma operadora cobra 50% a mais por gigabyte de quem
+   fraciona a recarga (R$ 3,00/GB contra R$ 2,00/GB) — e fracionar não é escolha, é restrição
+   de fluxo de caixa.
+2. **A assimetria do zero-rating.** O aplicativo de mensagens privado não consome franquia; o
+   portal público de saúde consome. Para o usuário de menor renda, o Estado é o único serviço
+   que cobra pelo acesso. Isso sugere via de correção regulatória, e não apenas técnica.
+
+Consequência operacional: a apresentação foi ajustada (valores abaixo de R$ 0,01 exibidos em
+centavos; persistência com seis casas decimais) para que a grandeza real não colapse em
+"R$ 0,00".
 
 ---
 

@@ -258,6 +258,63 @@ class TestCalibracaoDoAtrito:
         assert critico - serio > 40, "sério e crítico devem ficar claramente distintos"
 
 
+class TestParametrosDeCustoColetados:
+    """Trava os valores coletados de preço, franquia e limiar de peso.
+
+    Os três deixaram de ser ilustrativos e passaram a ser dados publicados,
+    datados e citados no artigo (ver ``docs/metodologia/parametros-de-custo.md``).
+    Alterá-los muda todo número monetário publicado, e por isso precisa exigir a
+    alteração deste teste — e portanto a assunção consciente da mudança.
+    """
+
+    def test_preco_e_o_do_plano_pre_pago_de_entrada(self) -> None:
+        """R$ 3,00 por GiB — Claro Prezão R$ 15,00 / 5 GB / 15 dias."""
+        params = ScoringParameters()
+        assert params.price_per_mb_brl * 1024 == pytest.approx(3.00)
+
+    def test_preco_e_exatamente_representavel(self) -> None:
+        """3/1024 é fração diádica: sem erro de arredondamento na agregação.
+
+        Somar milhares de páginas com um preço não representável acumularia
+        deriva numérica em um valor que vai para o artigo.
+        """
+        params = ScoringParameters()
+        assert params.price_per_mb_brl == 3.0 / 1024
+        assert params.price_per_mb_brl * 1024 * 1024 == 3.0 * 1024
+
+    def test_franquia_corresponde_a_duas_recargas(self) -> None:
+        """10 GiB/mês = 2 × 5 GiB do ciclo de 15 dias."""
+        assert ScoringParameters().franchise_mb == 2 * 5 * 1024
+
+    def test_limiar_de_peso_e_a_mediana_movel_publicada(self) -> None:
+        """2,5 MiB — HTTP Archive Web Almanac 2025, coleta de julho de 2025."""
+        assert ScoringParameters().heavy_page_mb == pytest.approx(2.5, abs=0.05)
+
+    def test_parametros_sao_conservadores_frente_a_anatel(self) -> None:
+        """O preço adotado fica abaixo do preço efetivo oficial.
+
+        A Anatel reporta R$ 5,46/GB no 1T2026 (receita ÷ dado consumido). Adotar
+        a taxa marginal anunciada, menor, faz a estimativa de custo errar para
+        menos — direção segura para uma afirmação publicável.
+        """
+        preco_anatel_por_gib = 5.46
+        preco_adotado_por_gib = ScoringParameters().price_per_mb_brl * 1024
+        assert preco_adotado_por_gib < preco_anatel_por_gib
+
+    def test_custo_de_pagina_tipica_permanece_legivel(self) -> None:
+        """O custo precisa sobreviver ao arredondamento da persistência.
+
+        Com o preço real, uma página mediana custa milésimos de real. Se o
+        arredondamento colapsasse o valor em zero, o indicador se tornaria
+        inútil — foi o motivo de elevar a precisão de 4 para 6 casas.
+        """
+        pagina = page_with(network=NetworkMetrics(total_bytes=int(2.5 * 1024 * 1024)))
+        cost = score_page(pagina).data_cost
+        assert cost is not None
+        assert cost.cost_brl > 0
+        assert cost.cost_brl == pytest.approx(0.007324, abs=1e-6)
+
+
 class TestParametrosSaoExplicitos:
     def test_parametros_sao_serializaveis_para_o_snapshot(self) -> None:
         """Nenhum número publicável pode depender de constante não declarada."""

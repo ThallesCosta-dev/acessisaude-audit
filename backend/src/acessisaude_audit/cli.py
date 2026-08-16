@@ -46,7 +46,7 @@ from acessisaude_audit.persistence.database import (
 )
 from acessisaude_audit.persistence.repositories import JsonScanStore, ScanRepository
 from acessisaude_audit.reporting.exports import export_findings_csv, export_pages_csv
-from acessisaude_audit.reporting.html import write_report
+from acessisaude_audit.reporting.html import formatar_reais, write_report
 
 app = typer.Typer(
     name="acessisaude",
@@ -334,12 +334,27 @@ def _print_summary(scan: ScanResult) -> None:
     table.add_row("Cobertura", f"{score.coverage:.0%}", f"{score.criteria_evaluated}/50 critérios")
     table.add_row("Perda de páginas", f"{scan.loss_rate:.1%}", "erros de navegação")
     if score.data_cost:
+        custo = score.data_cost
         table.add_row(
             "Peso médio",
-            f"{score.data_cost.total_mb:.2f} MB",
-            f"R$ {score.data_cost.cost_brl:.2f} por acesso "
-            f"({score.data_cost.franchise_share_pct:.2f}% da franquia)",
+            f"{custo.total_mb:.2f} MB",
+            f"{formatar_reais(custo.cost_brl)} por acesso, "
+            f"{custo.franchise_share_pct:.3f}% da franquia mensal",
         )
+        # Quatro acessos mensais: acompanhar um agendamento ou um resultado de
+        # exame não é ato único, e é na repetição que o custo deixa de ser
+        # desprezível. Sem esta linha, o custo real pareceria irrelevante.
+        table.add_row(
+            "Custo da jornada",
+            formatar_reais(custo.monthly_cost_brl_at_4_visits),
+            f"4 acessos/mês · {custo.franchise_share_pct * 4:.2f}% da franquia",
+        )
+        if custo.third_party_share_pct > 0:
+            table.add_row(
+                "Tráfego de terceiros",
+                f"{custo.third_party_share_pct:.0f}%",
+                "custo transferido ao usuário sem contrapartida no serviço",
+            )
     console.print(table)
 
     grupos = summarize_by_group(score)

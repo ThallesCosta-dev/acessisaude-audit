@@ -221,14 +221,45 @@ Comparação pareada, mesma URL nos dois perfis. Espera-se que o critério 1.4.1
 exclusivamente no perfil de 320 px — o que já ocorre no conjunto de validação e é verificado
 em teste.
 
-### 3.7 Custo de acesso ⬜ (H4)
+### 3.7 Custo de acesso ⬜ (H4) — parâmetros ✅
 
-- Peso mediano por página, custo em reais, fração da franquia.
+Parâmetros já coletados e documentados em
+[parâmetros de custo](../metodologia/parametros-de-custo.md):
+
+| Parâmetro | Valor | Fonte |
+|---|---|---|
+| Preço do dado | R$ 3,00/GiB | Claro Prezão R$ 15,00 / 5 GB / 15 dias, 10/08/2026 |
+| Franquia | 10 GiB/mês | Duas recargas do mesmo plano |
+| Limiar de peso | 2,5 MiB | Mediana móvel, HTTP Archive Web Almanac 2025 |
+
+Corroboração oficial (ANATEL, *Panorama Econômico-Financeiro*, 1T2026): preço médio efetivo
+R$ 5,46/GB; consumo médio 6,51 GB/mês; ARPU pré-pago R$ 12,12/mês. Os parâmetros adotados são
+conservadores frente a esses números.
+
+A relatar:
+
+- Peso mediano por página, custo por acesso e por jornada, fração da franquia.
 - Fração destinada a terceiros — a métrica juridicamente mais relevante.
 - **Figura 4:** distribuição de peso em escala logarítmica.
 
-⚠️ **Substituir o preço de referência pelo valor coletado, com fonte e data, antes de
-publicar.** O valor padrão do código é ilustrativo.
+**Redação obrigatória.** O custo de um acesso isolado é pequeno (R$ 0,0088 para 3 MiB), e o
+texto precisa afirmá-lo. A força do argumento está na jornada completa, na tentativa
+frustrada por barreira de acessibilidade — as duas dimensões se agravam mutuamente — e no
+tráfego de terceiros.
+
+### 3.7.1 Dois achados a desenvolver ✅
+
+**A penalidade da pobreza no dado móvel.** A mesma operadora cobra R$ 3,00/GB de quem recarrega
+R$ 15,00 a cada 15 dias e R$ 2,00/GB de quem recarrega R$ 30,00 por 30 dias — 50% a mais para
+quem não consegue comprometer o valor cheio. Fracionar não é conveniência, é restrição de
+fluxo de caixa. É o mecanismo de Caplovitz (*The Poor Pay More*, 1963) reproduzido na
+infraestrutura de acesso ao serviço público digital.
+
+**A assimetria do zero-rating.** A oferta de entrada consultada isenta explicitamente o
+WhatsApp do consumo de franquia; o portal público de saúde não é isento. Para o usuário de
+menor renda, o Estado é o único serviço que cobra pelo acesso. Sugere via de correção
+**regulatória** — inclusão de serviços públicos essenciais no tráfego não tarifado —, e não
+apenas técnica.
 
 ### 3.8 Perfil de exclusão ⬜
 
@@ -274,7 +305,8 @@ tráfego destinada a terceiros, que não presta serviço público algum.
 2. Áreas autenticadas não auditadas — índices possivelmente otimistas.
 3. Amostragem intencional — sem inferência para o universo nacional.
 4. Pseudorreplicação.
-5. Preço do MB como premissa declarada, não medida.
+5. Preço do dado como parâmetro externo: coletado e datado, mas é uma oferta comercial que
+   muda, e o valor de uma operadora não representa todo o mercado.
 6. Corte temporal.
 7. Critérios da WCAG 2.2 fora do escopo, notadamente 2.5.8 (alvo de toque).
 8. Viés conhecido e medido na sonda de legibilidade (subcontagem de hiatos).
@@ -317,7 +349,11 @@ tráfego destinada a terceiros, que não presta serviço público algum.
 
 ## Checklist antes da submissão
 
-- [ ] Preço do MB e franquia substituídos por valores coletados, com fonte e data
+- [x] Preço do dado, franquia e limiar de peso coletados, com fonte e data
+      (ver `docs/metodologia/parametros-de-custo.md`)
+- [ ] Parâmetros de custo **reconferidos** na data da coleta de campo, com captura de tela
+      arquivada como evidência
+- [ ] Citação da Anatel substituída pelo relatório primário, não pelo veículo especializado
 - [ ] Janela de coleta declarada em `collection_window`
 - [ ] URLs do catálogo conferidas na data da coleta
 - [ ] Lacunas declaradas listadas na seção de Métodos

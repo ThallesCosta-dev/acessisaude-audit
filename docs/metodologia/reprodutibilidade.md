@@ -46,9 +46,9 @@ Toda varredura carrega os parâmetros que a produziram:
   "scoring": {
     "friction_kappa": 150.0,
     "critical_path_multiplier": 1.5,
-    "price_per_mb_brl": 0.10,
-    "franchise_mb": 2048.0,
-    "heavy_page_mb": 2.0
+    "price_per_mb_brl": 0.0029296875,
+    "franchise_mb": 10240.0,
+    "heavy_page_mb": 2.5
   },
   "random_seed": 42,
   "probes": ["probe.page-language", "probe.landmarks", ...],

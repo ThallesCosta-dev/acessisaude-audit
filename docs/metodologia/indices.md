@@ -203,18 +203,42 @@ comprimido + cabeçalhos), em contexto de navegação novo — o cenário do pri
 também o de quem limpa dados do aparelho por falta de espaço.
 
 ```
-custo_BRL          = peso_MB × preço_por_MB
-fração_da_franquia = peso_MB / franquia_mensal_MB
+custo_BRL          = peso_MiB × preço_por_MiB
+fração_da_franquia = peso_MiB / franquia_mensal_MiB
 ```
 
-⚠️ **Os valores padrão (`R$ 0,10/MB`, franquia de 2048 MB) são ilustrativos.** Antes de
-publicar, substituir pelo preço coletado, com fonte e data, e declarar na seção de Métodos.
-Um número monetário sem procedência é pior que nenhum número.
+### Parâmetros coletados
 
-A fração destinada a **terceiros** é reportada separadamente, e é a mais relevante
-juridicamente: ali há transferência de custo ao cidadão sem contrapartida no serviço público
-prestado. O motor distingue as duas causas — peso próprio e tráfego de terceiros — em vez de
-somá-las, porque têm correções e fundamentos distintos.
+| Parâmetro | Valor | Fonte |
+|---|---|---|
+| Preço do MiB | R$ 0,0029296875 (**R$ 3,00/GiB**) | Claro Prezão R$ 15,00 / 5 GB / 15 dias, consulta em 10/08/2026 |
+| Franquia mensal | 10 240 MiB (10 GiB) | Duas recargas do mesmo plano |
+| Limiar de página onerosa | 2,5 MiB | Peso mediano móvel, HTTP Archive Web Almanac 2025 |
+
+Procedência completa, valores corroborantes da Anatel e critérios de reavaliação em
+[parâmetros de custo](parametros-de-custo.md).
+
+Os três são **conservadores por construção**: a Anatel reporta preço efetivo de R$ 5,46/GB
+(82% acima do adotado) e ARPU pré-pago de R$ 12,12/mês (franquia real menor que a de
+referência). A estimativa erra para menos, nunca para mais.
+
+### O custo de um acesso isolado é pequeno — e o artigo precisa dizer isso
+
+Com os valores reais, uma página de 3 MiB custa R$ 0,0088 por acesso. O parâmetro anterior,
+ilustrativo, superestimava o custo em **34 vezes**. Inflá-lo seria fabricar evidência.
+
+A força do argumento econômico está em três lugares, todos mensurados:
+
+1. **A jornada completa** — acompanhar um agendamento não é ato único; a sonda reporta o
+   consumo em quatro acessos mensais.
+2. **A tentativa frustrada** — cada barreira de acessibilidade que obriga a repetir o fluxo
+   soma-se à conta. As duas dimensões auditadas **agravam-se mutuamente**, e essa interação é
+   a contribuição original da medida.
+3. **O tráfego de terceiros** — a parcela que não presta serviço algum ao usuário. É a métrica
+   com fundamento jurídico mais direto, porque ali há transferência de custo sem contrapartida.
+
+O motor distingue peso próprio de tráfego de terceiros em vez de somá-los, porque têm
+correções e fundamentos distintos, e o conjunto de validação verifica essa distinção.
 
 ---
 
@@ -239,9 +263,9 @@ tela de detalhe do painel e no relatório HTML.
 "scoring": {
   "friction_kappa": 150.0,
   "critical_path_multiplier": 1.5,
-  "price_per_mb_brl": 0.10,
-  "franchise_mb": 2048.0,
-  "heavy_page_mb": 2.0
+  "price_per_mb_brl": 0.0029296875,
+  "franchise_mb": 10240.0,
+  "heavy_page_mb": 2.5
 }
 ```
 

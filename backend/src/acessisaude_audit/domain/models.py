@@ -342,14 +342,23 @@ class NetworkMetrics(BaseModel):
         """Custo estimado, em reais, para carregar a página uma vez.
 
         Args:
-            price_per_mb_brl: Preço do megabyte no plano de referência. O valor
+            price_per_mb_brl: Preço do mebibyte no plano de referência. O valor
                 usado no estudo e sua fonte estão em ``config.py`` e são
                 declarados na seção de Métodos do artigo — nunca embutidos aqui.
 
         Returns:
-            Custo em BRL, arredondado a 4 casas decimais.
+            Custo em BRL, com **seis** casas decimais.
+
+        Nota sobre a precisão. Com o preço de referência coletado
+        (R$ 3,00/GiB), o custo de um único acesso é da ordem de milésimos de
+        real: uma página de 2,5 MiB custa R$ 0,007. Arredondar a duas casas
+        colapsaria quase toda a faixa útil em "R$ 0,00" e tornaria o indicador
+        inútil — foi o que ocorreu enquanto o preço padrão era ilustrativo e
+        trinta vezes maior. Seis casas preservam a informação para a agregação
+        (jornada completa, tentativas repetidas, série entre portais), que é
+        onde o custo se torna materialmente relevante.
         """
-        return round(self.total_mb * price_per_mb_brl, 4)
+        return round(self.total_mb * price_per_mb_brl, 6)
 
     def franchise_share(self, franchise_mb: float) -> float:
         """Fração da franquia mensal de dados consumida em um único acesso."""

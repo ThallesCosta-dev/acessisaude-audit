@@ -33,8 +33,31 @@ export const indice = (valor: number): string => DEC1.format(valor);
 /** Megabytes com duas casas. */
 export const megabytes = (valor: number): string => `${DEC2.format(valor)} MB`;
 
-/** Valor monetário em reais. */
-export const reais = (valor: number): string => BRL.format(valor);
+/**
+ * Valor monetário com precisão adaptativa.
+ *
+ * Duas casas decimais são a convenção para preços e são inadequadas aqui: com o
+ * preço de referência coletado (R$ 3,00 por GiB), o custo de um único acesso
+ * fica na casa dos milésimos, e a formatação monetária usual exibiria
+ * "R$ 0,00" para praticamente toda página — apagando justamente o indicador que
+ * se quer comunicar.
+ *
+ * Abaixo de R$ 0,01, o valor é expresso em **centavos**, que é a unidade em que
+ * a grandeza é inteligível ("0,7 centavo por acesso").
+ */
+export const reais = (valor: number): string => {
+  if (valor > 0 && valor < 0.01) {
+    const centavos = valor * 100;
+    const texto = new Intl.NumberFormat('pt-BR', {
+      minimumFractionDigits: 1,
+      maximumFractionDigits: 1,
+    }).format(centavos);
+    // Em português a flexão acompanha a grandeza, não a parte inteira: abaixo
+    // de dois, singular ("0,7 centavo"); de dois em diante, plural.
+    return `${texto} centavo${centavos >= 2 ? 's' : ''}`;
+  }
+  return BRL.format(valor);
+};
 
 /** Fração em [0,1] formatada como percentual. */
 export const percentual = (fracao: number, casas = 1): string =>

@@ -87,6 +87,22 @@ class DataCostProbe(Probe):
         cost = metrics.data_cost_brl(params.price_per_mb_brl)
         share = metrics.franchise_share(params.franchise_mb) * 100
 
+        # Jornada assistencial de referência: consultar o andamento de um
+        # agendamento ou o resultado de um exame não é ato único. Quatro acessos
+        # por mês é a frequência mínima plausível, e a repetição é onde o custo
+        # deixa de ser desprezível — motivo pelo qual o resumo reporta as duas
+        # grandezas, e não apenas o custo de um acesso isolado.
+        cost_journey = round(cost * 4, 6)
+        share_journey = share * 4
+
+        # Centavos, e não reais: com o preço de referência coletado
+        # (R$ 3,00/GiB), o custo de um acesso fica na casa dos milésimos de
+        # real, e "R$ 0,01" comunicaria menos do que "1,0 centavo". A conversão
+        # é feita aqui, e não pelo formatador de `reporting`, porque a camada de
+        # coleta não depende da camada de publicação.
+        cents = cost * 100
+        cents_journey = cost_journey * 100
+
         reasons: list[str] = []
         if heavy:
             reasons.append(
@@ -107,17 +123,22 @@ class DataCostProbe(Probe):
                 impact=Impact.MODERATE if not third_party_heavy else Impact.SERIOUS,
                 criteria=[],
                 summary=(
-                    f"Um único acesso a esta página consome {metrics.total_mb:.2f} MB "
-                    f"(R$ {cost:.2f}; {share:.2f}% da franquia mensal de referência)."
+                    f"Um único acesso a esta página consome {metrics.total_mb:.2f} MB, "
+                    f"ou {share:.3f}% da franquia mensal do plano de referência "
+                    f"({cents:.1f} centavo{'s' if cents >= 2 else ''})."
                 ),
                 description=(
-                    "A página impõe custo relevante ao usuário com plano de dados "
-                    "limitado: " + "; ".join(reasons) + ". O peso foi medido em bytes "
-                    "efetivamente transferidos, em contexto sem cache — o cenário do "
-                    "primeiro acesso e daquele que limpa dados do aparelho por falta de "
-                    "armazenamento. Para quem precisa consultar repetidamente o "
-                    "andamento de um agendamento ou o resultado de um exame, o custo se "
-                    "multiplica a cada tentativa."
+                    "A página impõe custo de dados ao usuário com plano limitado: "
+                    + "; ".join(reasons)
+                    + ". O peso foi medido em bytes efetivamente transferidos, em "
+                    "contexto sem cache — o cenário do primeiro acesso e daquele que "
+                    "limpa dados do aparelho por falta de armazenamento. "
+                    f"Consultada quatro vezes ao mês, frequência mínima plausível para "
+                    f"acompanhar um agendamento ou um resultado de exame, esta página "
+                    f"consome {share_journey:.2f}% da franquia "
+                    f"({cents_journey:.1f} centavo{'s' if cents_journey >= 2 else ''}) — "
+                    "e cada tentativa frustrada por barreira de acessibilidade soma-se "
+                    "a essa conta, de modo que as duas dimensões se agravam mutuamente."
                 ),
                 remediation=(
                     "Reduzir o peso da página: comprimir e redimensionar imagens, servir "

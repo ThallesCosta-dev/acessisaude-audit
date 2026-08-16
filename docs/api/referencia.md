@@ -138,7 +138,13 @@ Lista paginada de resumos; documento completo da varredura (o artefato primário
 {
   "indices": { "conformance_index": 30.82, "friction_index": 96.64, "...": "..." },
   "grupos_excluidos": [ { "grupo": "cognitiva_neurodivergencia", "ocorrencias": 107 } ],
-  "parametros": { "friction_kappa": 150.0, "price_per_mb_brl": 0.1, "...": "..." },
+  "parametros": {
+    "friction_kappa": 150.0,
+    "price_per_mb_brl": 0.0029296875,
+    "franchise_mb": 10240.0,
+    "heavy_page_mb": 2.5,
+    "critical_path_multiplier": 1.5
+  },
   "taxa_de_perda": 0.0,
   "lacunas_declaradas": []
 }

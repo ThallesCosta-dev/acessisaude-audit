@@ -133,11 +133,13 @@ Variáveis de ambiente com prefixo `ACESSISAUDE_`, ou arquivo `.env` na raiz.
 |---|---|---|
 | `FRICTION_KAPPA` | `150.0` | Calibrado empiricamente; alterar exige recalibração documentada |
 | `CRITICAL_PATH_MULTIPLIER` | `1.5` | |
-| `PRICE_PER_MB_BRL` | `0.10` | ⚠️ **Ilustrativo.** Substituir pelo valor coletado antes de publicar |
-| `FRANCHISE_MB` | `2048.0` | ⚠️ Idem |
-| `HEAVY_PAGE_MB` | `2.0` | Limiar de página onerosa |
+| `PRICE_PER_MB_BRL` | `0.0029296875` | R$ 3,00/GiB — Claro Prezão R$ 15,00/5 GB/15 dias, 10/08/2026 |
+| `FRANCHISE_MB` | `10240.0` | 10 GiB/mês — duas recargas do plano de referência |
+| `HEAVY_PAGE_MB` | `2.5` | Peso mediano móvel, HTTP Archive Web Almanac 2025 |
 
-Todos viajam no `config_snapshot` de cada varredura.
+Todos viajam no `config_snapshot` de cada varredura. Procedência dos três últimos em
+[parâmetros de custo](../metodologia/parametros-de-custo.md); reavaliá-los é decisão
+metodológica, com registro em ADR.
 
 ---
 
@@ -146,7 +148,10 @@ Todos viajam no `config_snapshot` de cada varredura.
 1. **Conferir a URL** no catálogo — endereços de portais públicos mudam.
 2. **Ler o `robots.txt`** do host.
 3. **Preencher `collection_window`** no catálogo.
-4. **Substituir o preço do MB** pelo valor real, com fonte e data.
+4. **Reconferir os parâmetros de custo** na data da coleta: preço e franquia da oferta
+   pré-paga de entrada mudam com frequência. Ver
+   [parâmetros de custo](../metodologia/parametros-de-custo.md) para o procedimento e a
+   cadência de reavaliação.
 5. **Habilitar o alvo** (`enabled: true` em `targets.yaml`) — decisão consciente, registrada
    em commit.
 6. **Executar fora do horário de pico** do serviço.

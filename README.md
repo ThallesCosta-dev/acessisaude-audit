@@ -29,9 +29,13 @@ porém, responde às três perguntas que interessam a quem discute política pú
    o da pessoa excluída, não o do elemento HTML malformado.
 
 3. **Quanto custa chegar até aqui?**
-   Para o usuário periférico — plano pré-pago, aparelho de entrada, rede instável —, uma tela
-   de agendamento de 6 MB é uma barreira tão efetiva quanto a ausência de um `alt`. A WCAG
-   não a enxerga porque pressupõe um usuário que já chegou à página.
+   Para o usuário periférico — plano pré-pago, aparelho de entrada, rede instável —, o peso da
+   página é uma barreira que a WCAG não enxerga, porque ela pressupõe um usuário que já chegou.
+   O projeto mede esse custo com parâmetros coletados e datados
+   ([procedência](docs/metodologia/parametros-de-custo.md)), e reporta honestamente que o
+   custo de um acesso isolado é pequeno: a força do argumento está na jornada completa, na
+   tentativa frustrada por barreira de acessibilidade — as duas dimensões se agravam
+   mutuamente — e no tráfego de terceiros, que o cidadão custeia sem receber serviço em troca.
 
 ---
 
@@ -148,6 +152,7 @@ renderizado de páginas públicas — nada além disso.
 ### Para avaliar o método
 - [Protocolo metodológico](docs/metodologia/protocolo.md)
 - [Índices: construção e calibração](docs/metodologia/indices.md)
+- [Parâmetros de custo: valores, fontes e datas](docs/metodologia/parametros-de-custo.md)
 - [Desenho amostral](docs/metodologia/amostragem.md)
 - [Limites conhecidos do axe-core](docs/metodologia/limites-do-axe-core.md)
 - [Ética e conduta de coleta](docs/metodologia/etica-e-conduta-de-coleta.md)

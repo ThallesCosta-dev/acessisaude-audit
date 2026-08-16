@@ -192,7 +192,10 @@ renderizado de páginas públicas: não preenche formulário, não autentica, n�
 3. **Amostragem intencional.** Não permite inferência para o universo de portais públicos
    brasileiros.
 4. **Pseudorreplicação.** Páginas do mesmo portal não são independentes.
-5. **Preço do MB como premissa.** Valor de referência declarado, não medido pelo estudo.
+5. **Preço do dado como parâmetro externo.** Coletado e datado
+   ([parâmetros de custo](parametros-de-custo.md)), mas é uma oferta comercial que muda, e o
+   valor de uma operadora não representa todo o mercado. Os parâmetros adotados são
+   conservadores frente aos dados da Anatel: a estimativa de custo erra para menos.
 6. **Corte temporal.** Portais mudam; a janela de coleta precisa ser declarada e o desenho é
    de auditoria contínua, não de fotografia única.
 7. **Critérios da WCAG 2.2 fora do escopo.** Notadamente 2.5.8 (tamanho do alvo de toque),

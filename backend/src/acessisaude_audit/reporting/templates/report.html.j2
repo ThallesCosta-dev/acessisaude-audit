@@ -151,7 +151,15 @@
     <li class="indicador">
       <span class="valor">{{ '%.2f'|format(score.data_cost.total_mb) }} MB</span>
       <span class="rotulo">Peso médio por página</span>
-      <span class="nota">R$ {{ '%.2f'|format(score.data_cost.cost_brl) }} por acesso ({{ '%.2f'|format(score.data_cost.franchise_share_pct) }}% da franquia mensal de referência).</span>
+      <span class="nota">
+        {{ moeda(score.data_cost.cost_brl) }} por acesso, ou
+        {{ '%.3f'|format(score.data_cost.franchise_share_pct) }}% da franquia mensal
+        do plano pré-pago de referência.
+        {% if score.data_cost.third_party_share_pct > 0 %}
+        {{ '%.0f'|format(score.data_cost.third_party_share_pct) }}% do tráfego vai
+        a domínios de terceiros.
+        {% endif %}
+      </span>
     </li>
     {% endif %}
   </ul>

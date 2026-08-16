@@ -185,16 +185,34 @@ class Settings(BaseSettings):
     )
     critical_path_multiplier: float = 1.5
     price_per_mb_brl: float = Field(
-        default=0.10,
+        default=0.0029296875,
         gt=0,
         description=(
-            "Preço de referência do MB em plano pré-pago brasileiro. Valor "
-            "padrão é ilustrativo: substituir pelo preço coletado e citar a "
-            "fonte na seção de Métodos antes de publicar."
+            "Preço do MiB de dados móveis, em reais. Coletado: Claro Prezão "
+            "R$ 15,00 / 5 GB / 15 dias (pacote pré-pago de entrada mais barato "
+            "do mercado, consulta em 10/08/2026), equivalente a R$ 3,00 por GiB. "
+            "Ver docs/metodologia/parametros-de-custo.md."
         ),
     )
-    franchise_mb: float = Field(default=2048.0, gt=0)
-    heavy_page_mb: float = Field(default=2.0, gt=0)
+    franchise_mb: float = Field(
+        default=10240.0,
+        gt=0,
+        description=(
+            "Franquia mensal do plano de referência, em MiB (10 GiB = duas "
+            "recargas de R$ 15,00). A Anatel reporta receita média de R$ 12,12 "
+            "por usuário pré-pago no 1T2026, o que indica franquia real menor — "
+            "a medida é, portanto, conservadora."
+        ),
+    )
+    heavy_page_mb: float = Field(
+        default=2.5,
+        gt=0,
+        description=(
+            "Limiar de página onerosa, em MiB. Coletado: peso mediano de página "
+            "inicial móvel segundo o Web Almanac 2025 do HTTP Archive "
+            "(2 559 KiB, coleta de julho de 2025)."
+        ),
+    )
 
     # ---------------------------------------------------------------------- API
     api_host: str = "127.0.0.1"

@@ -218,7 +218,7 @@ def figure_index_by_sphere(pages: pd.DataFrame, *, index: str = "ica") -> Figure
     return fig
 
 
-def figure_data_cost(pages: pd.DataFrame, *, franchise_mb: float = 2048.0) -> Figure:
+def figure_data_cost(pages: pd.DataFrame, *, franchise_mb: float = 10240.0) -> Figure:
     """Custo de acesso por página, em fração da franquia mensal de dados.
 
     Eixo em escala logarítmica: os pesos variam por ordens de grandeza entre
@@ -247,7 +247,10 @@ def figure_data_cost(pages: pd.DataFrame, *, franchise_mb: float = 2048.0) -> Fi
     ax.text(
         mediana,
         ax.get_ylim()[1] * 0.92,
-        f"  mediana {mediana:.2f} MB\n  ({mediana / franchise_mb * 100:.2f}% da franquia)",
+        # Três casas na fração: com a franquia de referência (10 GiB), páginas
+        # de peso comum ficam abaixo de 0,1%, e duas casas colapsariam a
+        # anotação em "0,00%".
+        f"  mediana {mediana:.2f} MB\n  ({mediana / franchise_mb * 100:.3f}% da franquia)",
         fontsize=8,
         va="top",
     )
@@ -259,7 +262,7 @@ def save_all(
     pages: pd.DataFrame,
     directory: Path,
     *,
-    franchise_mb: float = 2048.0,
+    franchise_mb: float = 10240.0,
 ) -> list[Path]:
     """Gera e grava todas as figuras do artigo.
 

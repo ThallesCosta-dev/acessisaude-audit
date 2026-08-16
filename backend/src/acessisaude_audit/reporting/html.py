@@ -21,6 +21,7 @@ from __future__ import annotations
 
 from datetime import UTC, datetime
 from pathlib import Path
+from typing import Any
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
@@ -36,7 +37,7 @@ from acessisaude_audit.domain.scoring import (
 from acessisaude_audit.domain.wcag import DeficiencyGroup, criterion
 from acessisaude_audit.logging_setup import get_logger
 
-__all__ = ["render_report", "write_report"]
+__all__ = ["formatar_reais", "render_report", "write_report"]
 
 logger = get_logger(__name__)
 
@@ -78,12 +79,39 @@ def _environment() -> Environment:
         trim_blocks=True,
         lstrip_blocks=True,
     )
-    env.globals.update(
-        rotulo_grupo=_group_label,
-        titulo_criterio=_criterion_title,
-        rotulo_dispositivo=_provision_label,
-    )
+    # Dicionário posicional em vez de argumentos nomeados: a assinatura de
+    # `Environment.globals.update` é inferida de forma estreita pelos stubs do
+    # Jinja e rejeitaria funções passadas por palavra-chave.
+    helpers: dict[str, Any] = {
+        "rotulo_grupo": _group_label,
+        "titulo_criterio": _criterion_title,
+        "rotulo_dispositivo": _provision_label,
+        "moeda": formatar_reais,
+    }
+    env.globals.update(helpers)
     return env
+
+
+def formatar_reais(valor: float) -> str:
+    """Formata um valor em reais com precisão adaptativa.
+
+    Duas casas decimais são a convenção para preços, e são inadequadas aqui: com
+    o preço de referência coletado (R$ 3,00/GiB), o custo de um único acesso fica
+    na casa dos milésimos, e ``%.2f`` exibiria "R$ 0,00" para praticamente toda
+    página — apagando justamente o indicador que se quer comunicar.
+
+    A regra: abaixo de R$ 0,01, exibe-se em **centavos com uma casa**, que é a
+    unidade em que a grandeza é inteligível ("0,7 centavo por acesso"). A partir
+    de R$ 0,01, volta-se à convenção monetária usual.
+    """
+    if valor < 0.01:
+        centavos = valor * 100
+        # Em português, a flexão acompanha a grandeza, não a parte inteira:
+        # abaixo de dois, singular ("0,7 centavo", "1,5 centavo"); de dois em
+        # diante, plural.
+        plural = "s" if centavos >= 2 else ""
+        return f"{centavos:.1f} centavo{plural}".replace(".", ",")
+    return f"R$ {valor:.2f}".replace(".", ",")
 
 
 def _group_label(group: DeficiencyGroup | str) -> str:

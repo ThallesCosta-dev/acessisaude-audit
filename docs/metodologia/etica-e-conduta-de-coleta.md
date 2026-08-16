@@ -180,7 +180,8 @@ Lista de verificação:
 - [ ] URLs do catálogo conferidas manualmente (endereços de portais públicos mudam).
 - [ ] `robots.txt` de cada host lido.
 - [ ] Janela de coleta declarada em `collection_window` no catálogo.
-- [ ] Preço do MB e franquia de referência substituídos pelos valores reais, com fonte e data.
+- [ ] Parâmetros de custo reconferidos na data da coleta — ofertas de operadora mudam
+      ([procedimento](parametros-de-custo.md#6-quando-reavaliar)).
 - [ ] Coleta agendada fora do horário de pico do serviço.
 - [ ] Comitê de ética consultado, se o desenho do estudo o exigir na instituição.
 - [ ] Justificativa de seleção preenchida para cada alvo (`selection_rationale`).

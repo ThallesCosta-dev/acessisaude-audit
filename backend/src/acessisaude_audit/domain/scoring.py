@@ -89,18 +89,50 @@ class ScoringParameters:
             pertencentes a fluxo essencial declarado no catálogo. Justificativa
             jurídica: a mesma barreira tem consequência distinta na página
             institucional e na tela de confirmação de consulta.
-        price_per_mb_brl: Preço de referência do megabyte em plano pré-pago.
-            **Deve ser declarado no artigo com a fonte e a data de coleta.**
-        franchise_mb: Franquia mensal de dados do plano de referência, em MB.
-        heavy_page_mb: Limiar acima do qual a página é classificada como onerosa
-            para o usuário periférico.
+        price_per_mb_brl: Preço de referência do mebibyte de dados móveis, em
+            reais.
+
+            **Valor coletado, não estimado.** Plano de referência: *Claro Prezão
+            R$ 15,00 / 5 GB / 15 dias*, o pacote pré-pago de entrada mais barato
+            do mercado brasileiro na data de consulta (10/08/2026). Equivalente
+            mensal: R$ 30,00 por 10 GiB, isto é **R$ 3,00 por GiB** ou
+            R$ 0,0029296875 por MiB — valor exatamente representável em ponto
+            flutuante (3/1024), o que evita erro de arredondamento acumulado.
+
+            Fontes e valores corroborantes em
+            ``docs/metodologia/parametros-de-custo.md``. Em síntese: a Anatel
+            reporta preço médio efetivo de R$ 5,46/GB no 1T2026, superior ao
+            valor aqui adotado, de modo que a estimativa de custo do projeto é
+            **conservadora** — erra para menos, nunca para mais.
+
+        franchise_mb: Franquia mensal do plano de referência, em MiB.
+            10 GiB = 10 240 MiB, correspondente a duas recargas de R$ 15,00 no
+            ciclo de 15 dias.
+
+            A Anatel reporta receita média mensal de **R$ 12,12** por usuário
+            pré-pago (1T2026) — menos da metade dos R$ 30,00 pressupostos aqui.
+            O usuário pré-pago médio dispõe, portanto, de franquia **menor** que
+            a de referência, o que reforça o caráter conservador da medida.
+
+        heavy_page_mb: Limiar acima do qual a página é classificada como onerosa.
+
+            **Valor coletado:** 2,5 MiB, o peso mediano de uma página inicial em
+            dispositivo móvel segundo o *Web Almanac 2025* do HTTP Archive
+            (coleta de julho de 2025: mediana de 2 559 KiB; percentil 90 de
+            8 337 KiB).
+
+            A escolha é deliberadamente descritiva, e não normativa: o limiar não
+            é um ideal de engenharia, é a mediana da web comercial — notoriamente
+            inchada. Uma página de serviço público de saúde acima dela é pesada
+            mesmo para o padrão do que se critica.
     """
 
     friction_kappa: float = 150.0
     critical_path_multiplier: float = 1.5
-    price_per_mb_brl: float = 0.10
-    franchise_mb: float = 2048.0
-    heavy_page_mb: float = 2.0
+    #: R$ 3,00 por GiB — ver docstring. 3/1024 é exato em ponto flutuante.
+    price_per_mb_brl: float = 0.0029296875
+    franchise_mb: float = 10240.0
+    heavy_page_mb: float = 2.5
 
     def as_dict(self) -> dict[str, float]:
         """Serialização para o ``config_snapshot`` da varredura."""
