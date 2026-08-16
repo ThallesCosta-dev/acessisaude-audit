@@ -25,8 +25,10 @@ Fluxo de uma varredura::
 from __future__ import annotations
 
 import asyncio
+import hashlib
 from collections.abc import Callable, Sequence
 from dataclasses import dataclass
+from urllib.parse import urlparse
 
 from acessisaude_audit import __version__
 from acessisaude_audit.auditor.axe_runner import AxeRunner
@@ -439,11 +441,21 @@ class AuditEngine:
 
         A captura serve ao relatório entregue ao gestor: um achado de contraste
         acompanhado da imagem é imediatamente verificável por quem não lê CSS.
+
+        Nome do arquivo: host abreviado + resumo criptográfico curto da URL. A
+        primeira versão derivava o nome da URL inteira, o que produziu caminhos
+        que excedem o limite do Windows em portais com rota longa — o arquivo
+        era gravado, mas ficava inutilizável para qualquer ferramenta que o
+        percorresse. O resumo mantém o nome curto e estável entre execuções, e o
+        host preserva a legibilidade; a URL completa continua no JSON.
         """
         if not self._settings.capture_screenshots:
             return None
-        safe = normalize_url(task.url).replace("://", "_").replace("/", "_")[:120]
-        path = self._settings.screenshots_dir / f"{safe}__{task.viewport.name}.png"
+
+        normalizada = normalize_url(task.url)
+        host = urlparse(normalizada).netloc.replace(":", "-")[:40] or "sem-host"
+        resumo = hashlib.sha1(normalizada.encode("utf-8")).hexdigest()[:10]
+        path = self._settings.screenshots_dir / f"{host}__{resumo}__{task.viewport.name}.png"
         try:
             await loaded.page.screenshot(path=str(path), full_page=False)
         except Exception as exc:

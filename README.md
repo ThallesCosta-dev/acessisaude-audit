@@ -153,6 +153,7 @@ renderizado de páginas públicas — nada além disso.
 - [Protocolo metodológico](docs/metodologia/protocolo.md)
 - [Índices: construção e calibração](docs/metodologia/indices.md)
 - [Parâmetros de custo: valores, fontes e datas](docs/metodologia/parametros-de-custo.md)
+- [Registro da coleta de campo](docs/metodologia/registro-de-coleta.md)
 - [Desenho amostral](docs/metodologia/amostragem.md)
 - [Limites conhecidos do axe-core](docs/metodologia/limites-do-axe-core.md)
 - [Ética e conduta de coleta](docs/metodologia/etica-e-conduta-de-coleta.md)

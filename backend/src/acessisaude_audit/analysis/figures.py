@@ -40,6 +40,7 @@ __all__ = [
     "figure_data_cost",
     "figure_exclusion_profile",
     "figure_index_by_sphere",
+    "only_audited",
     "save_all",
 ]
 
@@ -173,15 +174,36 @@ def figure_exclusion_profile(profile: pd.DataFrame) -> Figure:
     return fig
 
 
+def only_audited(pages: pd.DataFrame) -> pd.DataFrame:
+    """Restringe às páginas efetivamente auditadas.
+
+    **Filtro obrigatório antes de qualquer figura de índice.** Uma página que não
+    carregou tem zero achados e, por construção, índice de conformidade 100 —
+    incluí-la faz um portal instável parecer conforme. É a mesma exclusão que
+    :func:`~acessisaude_audit.domain.scoring.score_scan` aplica ao agregar, e sua
+    ausência aqui produzia figuras que contradiziam a análise numérica.
+
+    A magnitude do erro foi medida na coleta de campo: o estrato estadual, com
+    50% de perda de páginas, aparecia com mediana de ICA 86 na figura contra
+    58,9 na análise.
+    """
+    if "auditada" not in pages:
+        return pages
+    return pages[pages["auditada"]]
+
+
 def figure_index_by_sphere(pages: pd.DataFrame, *, index: str = "ica") -> Figure:
     """Distribuição de um índice por esfera federativa.
 
     Diagrama de caixa com os pontos sobrepostos. Exibir os pontos não é
     ornamento: com poucos portais por estrato, a caixa sozinha sugere uma
     densidade de dados que não existe.
+
+    Considera apenas páginas auditadas — ver :func:`only_audited`.
     """
     plt = _plt()
     apply_style()
+    pages = only_audited(pages)
 
     titulos = {
         "ica": "Índice de Conformidade (ICA)",
@@ -193,7 +215,13 @@ def figure_index_by_sphere(pages: pd.DataFrame, *, index: str = "ica") -> Figure
     esferas = [e for e in ("federal", "estadual", "municipal") if e in set(pages["esfera"])]
     dados = [pages.loc[pages["esfera"] == e, index].dropna().tolist() for e in esferas]
 
-    bp = ax.boxplot(dados, labels=esferas, patch_artist=True, widths=0.55, showfliers=False)
+    # Os rótulos são aplicados por `set_xticklabels`, e não pelo parâmetro do
+    # boxplot: `labels` foi renomeado para `tick_labels` no matplotlib 3.9 e
+    # removido em seguida. Definir os ticks explicitamente funciona em qualquer
+    # versão e não amarra o projeto a uma faixa estreita da biblioteca.
+    bp = ax.boxplot(dados, patch_artist=True, widths=0.55, showfliers=False)
+    ax.set_xticks(range(1, len(esferas) + 1))
+    ax.set_xticklabels(esferas)
     for patch, hatch in zip(bp["boxes"], _HATCHES, strict=False):
         patch.set_facecolor(_GRAYS[3])
         patch.set_edgecolor("black")
@@ -224,11 +252,15 @@ def figure_data_cost(pages: pd.DataFrame, *, franchise_mb: float = 10240.0) -> F
     Eixo em escala logarítmica: os pesos variam por ordens de grandeza entre
     páginas institucionais leves e telas de sistema carregadas de scripts, e a
     escala linear achataria toda a faixa baixa em uma única coluna.
+
+    Considera apenas páginas auditadas — ver :func:`only_audited`. Páginas que
+    não carregaram têm peso próximo de zero e deslocariam a distribuição para
+    baixo, subestimando justamente o custo que se quer medir.
     """
     plt = _plt()
     apply_style()
 
-    data = pages.dropna(subset=["peso_mb"])
+    data = only_audited(pages).dropna(subset=["peso_mb"])
     data = data[data["peso_mb"] > 0]
     fig, ax = plt.subplots(figsize=(6.5, 4.0))
 

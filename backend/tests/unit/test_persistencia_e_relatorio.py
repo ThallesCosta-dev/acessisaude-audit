@@ -229,12 +229,35 @@ class TestCatalogo:
         assert catalogo.targets
         assert any(t.id == "fixtures-local" for t in catalogo.targets)
 
-    def test_alvos_de_producao_nascem_desabilitados(self) -> None:
-        """Conduta de coleta: habilitar é decisão consciente do pesquisador."""
+    def test_habilitar_alvo_exige_verificacao_documentada(self) -> None:
+        """Conduta de coleta: habilitar é ato consciente e registrado.
+
+        A invariante original era "alvos de produção nascem desabilitados", o
+        que valia enquanto nenhuma coleta de campo havia ocorrido. Depois da
+        coleta, essa formulação passaria a exigir desabilitar o que se acabou de
+        auditar — protegendo a letra e perdendo o propósito.
+
+        O que precisa continuar valendo é a substância: nenhum alvo é varrido
+        sem que sua URL e seu ``robots.txt`` tenham sido conferidos, e o
+        registro dessa conferência é o campo ``robots_note``.
+        """
         catalogo = load_catalog(Settings().catalog_path)
         producao = [t for t in catalogo.targets if t.id != "fixtures-local"]
         assert producao, "O catálogo precisa conter alvos reais documentados."
-        assert all(not t.enabled for t in producao)
+
+        sem_verificacao = [t.id for t in producao if t.enabled and len(t.robots_note.strip()) < 40]
+        assert not sem_verificacao, (
+            f"Alvos habilitados sem registro de verificação de robots.txt: {sem_verificacao}"
+        )
+
+    def test_janela_de_coleta_esta_declarada(self) -> None:
+        """Portais mudam; sem a janela, o dado não é interpretável."""
+        catalogo = load_catalog(Settings().catalog_path)
+        janela = catalogo.collection_window.strip()
+        assert janela, "collection_window vazio."
+        assert "a definir" not in janela.lower(), (
+            "collection_window ainda contém o texto de espaço reservado."
+        )
 
     def test_todo_alvo_justifica_sua_inclusao_na_amostra(self) -> None:
         """Sem justificativa, a seção de Métodos fica sem desenho amostral."""

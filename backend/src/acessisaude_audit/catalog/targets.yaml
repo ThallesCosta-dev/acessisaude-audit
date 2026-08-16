@@ -20,12 +20,47 @@
 #   produz erro de navegação, não um achado de acessibilidade.
 # =============================================================================
 
-version: "1"
+version: "2"
 description: >-
   Plataformas digitais de saúde pública com incidência no município e no estado
   do Rio de Janeiro, estratificadas por esfera federativa e por natureza do
   serviço prestado.
-collection_window: "a definir — preencher antes da coleta e citar no artigo"
+collection_window: "2026-08-16 (janela única; verificação de URLs em 2026-08-16)"
+
+# =============================================================================
+# REGISTRO DE VERIFICAÇÃO — 16/08/2026
+# =============================================================================
+# Todas as URLs foram conferidas manualmente antes da habilitação. A verificação
+# produziu quatro correções e um achado metodológico, todos registrados aqui
+# porque afetam a interpretação da amostra:
+#
+# 1. saude.rj.gov.br era um STUB. A raiz servia 935 bytes de HTML com
+#    `window.location.replace` para www.rj.gov.br/saude — e, ironicamente, com
+#    `<html lang="en">`. O portal institucional da SES-RJ foi reapontado; os
+#    serviços ao cidadão permanecem no subdomínio antigo, de modo que o alvo
+#    legitimamente abrange dois hosts do mesmo órgão.
+#
+# 2. prefeitura.rio/saude/ NÃO é um portal de serviços. Seu título é "Arquivos
+#    Saúde": é a seção de notícias da SMS. Os serviços transacionais municipais
+#    ficam em carioca.rio. Mantido como alvo informacional, com a natureza
+#    corrigida, e acrescentado carioca.rio como alvo transacional municipal.
+#
+# 3. prefeitura.rio/saude/clinicas-da-familia/ estava morta: redirecionava para
+#    uma matéria jornalística de 2024. Removida.
+#
+# 4. subpav.org mudou de função. Ambas as sementes redirecionavam para
+#    subpav.org/aps/, hoje descrito como "repositório de conteúdo técnico" —
+#    dirigido a profissionais, não ao cidadão. DESABILITADO e mantido no
+#    catálogo com a justificativa, por ser informação relevante sobre o
+#    ecossistema: um canal antes voltado ao usuário deixou de sê-lo.
+#
+# 5. meususdigital.saude.gov.br serve a mesma casca de 1418 bytes em toda rota,
+#    inclusive em /robots.txt. É uma aplicação de página única em Angular: o
+#    conteúdo só existe após execução de JavaScript. Consequências: (a) não há
+#    robots.txt efetivo, e a política do projeto trata ausência como permissão;
+#    (b) a auditoria depende inteiramente da renderização, o que valida a opção
+#    por navegador real em vez de análise de HTML servido.
+# =============================================================================
 
 targets:
 
@@ -72,17 +107,23 @@ targets:
     base_url: "https://meususdigital.saude.gov.br"
     territory: "Brasil (uso nacional)"
     population_served: 203000000
-    enabled: false
+    enabled: true
     selection_rationale: >-
       Principal porta de entrada digital do cidadão ao SUS e repositório do
       histórico clínico individual. É o caso em que a inacessibilidade produz o
       dano mais direto ao direito à saúde, por envolver dado clínico próprio.
-    robots_note: "Conferir robots.txt antes de habilitar."
-    tags: [federal, datasus, prioritario]
+    robots_note: >-
+      Verificado em 16/08/2026: /robots.txt devolve a casca da aplicação (HTML,
+      1418 bytes), não um arquivo de exclusão. Não há diretiva efetiva; a
+      política do projeto trata ausência de robots.txt como permissão.
+    tags: [federal, datasus, prioritario, spa]
     seeds:
       - url: "https://meususdigital.saude.gov.br/"
         label: "Página inicial pública"
         critical: true
+        notes: >-
+          Aplicação de página única em Angular: o conteúdo só existe após
+          execução de JavaScript. O HTML servido é uma casca de 1418 bytes.
       - url: "https://meususdigital.saude.gov.br/login"
         label: "Autenticação gov.br"
         critical: true
@@ -99,12 +140,15 @@ targets:
     categories: [informacional, transparencia]
     base_url: "https://www.gov.br/saude/pt-br"
     territory: "Brasil"
-    enabled: false
+    enabled: true
     selection_rationale: >-
       Portal construído sobre o Padrão Digital de Governo, que já incorpora
       requisitos de acessibilidade. Serve de referência superior: se o padrão
       oficial falha, a falha nos portais locais deixa de ser exceção
       administrativa e passa a ser problema sistêmico.
+    robots_note: >-
+      Verificado em 16/08/2026: robots.txt válido, 14 diretivas, permite a
+      coleta das sementes declaradas.
     tags: [federal, padrao-digital-gov, referencia]
     seeds:
       - url: "https://www.gov.br/saude/pt-br"
@@ -121,63 +165,117 @@ targets:
     name: "Secretaria de Estado de Saúde do Rio de Janeiro"
     organization: "SES-RJ"
     sphere: estadual
-    categories: [informacional, ouvidoria, transparencia]
-    base_url: "https://www.saude.rj.gov.br"
+    categories: [informacional, ouvidoria, resultado_exame, transparencia]
+    base_url: "https://www.rj.gov.br/saude"
     territory: "RJ/Estado"
     population_served: 16000000
-    enabled: false
+    enabled: true
     selection_rationale: >-
       Nível estadual de gestão do SUS, responsável pela regulação de leitos e
       pela ouvidoria estadual. Permite testar a hipótese de gradiente de
       conformidade entre as três esferas federativas.
-    tags: [estadual, rj]
+    robots_note: >-
+      Verificado em 16/08/2026 na origem de cada host. www.rj.gov.br: robots.txt
+      válido, "User-agent: * / Disallow:" — permissão irrestrita.
+      saude.rj.gov.br: HTTP 404, ausente. Política do projeto: ausência não
+      expressa proibição, e tratá-la como tal impediria auditar justamente os
+      portais mais precários.
+    tags: [estadual, rj, dois-hosts]
     seeds:
-      - url: "https://www.saude.rj.gov.br/"
-        label: "Página inicial"
-      - url: "https://www.saude.rj.gov.br/ouvidoria"
-        label: "Ouvidoria"
+      # O alvo abrange dois hosts do mesmo órgão: o portal institucional migrou
+      # para www.rj.gov.br/saude, mas os serviços ao cidadão permaneceram no
+      # subdomínio saude.rj.gov.br. Sementes explícitas tornam a mistura
+      # deliberada e auditável, em vez de acidental.
+      - url: "https://www.rj.gov.br/saude/"
+        label: "Página inicial institucional"
+      - url: "https://www.saude.rj.gov.br/ouvidoria/participe"
+        label: "Ouvidoria — canal de manifestação do cidadão"
         critical: true
+      - url: "https://www.saude.rj.gov.br/laudos"
+        label: "Resultado de exame"
+        critical: true
+        notes: >-
+          Serviço transacional de maior sensibilidade no estrato estadual:
+          entrega resultado laboratorial ao cidadão.
 
   # ---------------------------------------------------------------------------
   # 4. Esfera municipal — Rio de Janeiro
   # ---------------------------------------------------------------------------
   - id: sms-rio
-    name: "Secretaria Municipal de Saúde do Rio de Janeiro"
+    name: "Secretaria Municipal de Saúde do Rio de Janeiro — seção informativa"
     organization: "SMS Rio / Prefeitura da Cidade do Rio de Janeiro"
     sphere: municipal
-    categories: [informacional, agendamento, ouvidoria]
+    categories: [informacional]
     base_url: "https://prefeitura.rio/saude"
     territory: "RJ/Capital"
     population_served: 6700000
-    enabled: false
+    enabled: true
     selection_rationale: >-
-      Porta de entrada da atenção primária na capital, onde se concentra a
-      população periférica que constitui o objeto central do estudo. É também
-      o nível de gestão com menor capacidade técnica instalada, hipótese a ser
-      testada e não presumida.
-    tags: [municipal, rj, prioritario]
+      Seção de saúde do portal da capital, onde se concentra a população
+      periférica que constitui o objeto central do estudo. A verificação de
+      16/08/2026 revelou que a seção é um arquivo de notícias ("Arquivos
+      Saúde"), e não um portal de serviços: a categoria foi corrigida de
+      transacional para informacional. O achado é relevante em si — o cidadão
+      que procura "saúde" no portal do município encontra jornalismo
+      institucional, não serviço.
+    robots_note: >-
+      Verificado em 16/08/2026 na origem: robots.txt válido, bloqueia apenas
+      /wp-admin/. As sementes declaradas são permitidas.
+    tags: [municipal, rj, prioritario, noticias]
     seeds:
       - url: "https://prefeitura.rio/saude/"
-        label: "Página inicial da Saúde municipal"
+        label: "Seção de saúde do portal municipal"
         critical: true
-      - url: "https://prefeitura.rio/saude/clinicas-da-familia/"
-        label: "Localização de Clínicas da Família"
+
+  - id: carioca-rio-saude
+    name: "Carioca Digital — catálogo de serviços de saúde"
+    organization: "Prefeitura da Cidade do Rio de Janeiro / SMS Rio"
+    sphere: municipal
+    categories: [informacional, agendamento, cadastro]
+    base_url: "https://carioca.rio"
+    territory: "RJ/Capital"
+    population_served: 6700000
+    enabled: true
+    selection_rationale: >-
+      Plataforma onde efetivamente residem os serviços municipais de saúde ao
+      cidadão, identificada na verificação de 16/08/2026 como destino real dos
+      fluxos transacionais que a seção de saúde do portal municipal não oferece.
+      Sem ela, o estrato municipal ficaria representado apenas por conteúdo
+      informativo, e a comparação entre esferas mediria coisas diferentes.
+    robots_note: >-
+      Verificado em 16/08/2026 na origem: robots.txt presente e vazio
+      (0 bytes) — sem qualquer restrição.
+    tags: [municipal, rj, transacional, servicos]
+    seeds:
+      - url: "https://carioca.rio/tema/saude/"
+        label: "Catálogo de serviços de saúde"
+        critical: true
+      - url: "https://carioca.rio/servicos/atendimento-em-unidades-de-pronto-atendimento-upa-24-horas/"
+        label: "Atendimento em UPA 24 horas — ficha de serviço"
         critical: true
 
   - id: subpav-rio
     name: "Subsecretaria de Promoção, Atenção Primária e Vigilância em Saúde"
     organization: "SUBPAV / SMS Rio"
     sphere: municipal
-    categories: [informacional, agendamento]
+    categories: [informacional]
     base_url: "https://subpav.org"
     territory: "RJ/Capital"
     enabled: false
     selection_rationale: >-
-      Canal operacional da atenção primária carioca, com conteúdo dirigido
-      diretamente ao usuário do serviço (horários, unidades, campanhas).
-    tags: [municipal, rj, atencao-primaria]
+      Integrava a amostra como canal operacional da atenção primária carioca,
+      com conteúdo dirigido ao usuário. DESABILITADO em 16/08/2026: a
+      verificação constatou que ambas as sementes redirecionam para
+      subpav.org/aps/, hoje descrito como "repositório de conteúdo técnico" —
+      dirigido a profissionais de saúde, não ao cidadão. Auditá-lo mediria a
+      acessibilidade de um canal que deixou de ser de atendimento ao público, o
+      que distorceria a comparação entre esferas. Mantido no catálogo porque a
+      mudança de função é, ela própria, informação sobre o ecossistema: um canal
+      antes voltado ao usuário deixou de sê-lo, sem substituto anunciado.
+    robots_note: >-
+      Verificado em 16/08/2026: robots.txt ausente (HTTP 404); ambas as sementes
+      redirecionam para /aps/.
+    tags: [municipal, rj, atencao-primaria, desabilitado-mudanca-de-funcao]
     seeds:
-      - url: "https://subpav.org/"
-        label: "Página inicial"
-      - url: "https://subpav.org/SAP/"
-        label: "Superintendência de Atenção Primária"
+      - url: "https://subpav.org/aps/"
+        label: "Repositório de conteúdo técnico (antigo portal da APS)"

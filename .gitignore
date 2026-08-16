@@ -27,6 +27,12 @@ data/scans/*
 data/exports/*
 !data/scans/.gitkeep
 !data/exports/.gitkeep
+
+# Capturas de tela de evidência. Não versionadas por três razões: são
+# regeneráveis a partir do JSON da varredura, crescem rápido (uma por página ×
+# perfil) e podem conter dado de exemplo exibido pelo portal auditado, o que
+# exige revisão antes de qualquer publicação.
+data/screenshots/
 *.sqlite
 *.sqlite3
 *.db
