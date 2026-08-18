@@ -1,5 +1,10 @@
 # Esqueleto do artigo (IMRaD)
 
+> **Manuscrito redigido:** [`manuscrito-reciis.md`](manuscrito-reciis.md), formatado para a
+> Reciis (seção Artigos originais). Apoio à submissão, com folha de rosto, checklist de normas
+> e pendências: [`submissao-reciis.md`](submissao-reciis.md). Este esqueleto permanece como
+> registro do planejamento e da procedência dos números.
+
 **Título:** Auditoria Algorítmica de Acessibilidade em Plataformas Digitais de Saúde no Rio
 de Janeiro: Uma Análise Interdisciplinar sob a Ótica da LBI e do Direito à Saúde
 
@@ -27,7 +32,7 @@ Legenda: ✅ dado medido · ✍️ redação a fazer · ⬜ pendente
 > instrumento validado contra conjunto de referência (nenhum falso positivo; 18 de 20
 > critérios plantados detectados) e submetido a quatro medições repetidas. Coleta em
 > 16/08/2026. **Resultados.** Foram realizadas 20 auditorias de página, 16 bem-sucedidas, com
-> 125 violações confirmadas. Mediana do índice de conformidade: **69,2** (IC 95%: 61,0–86,0),
+> 125 violações confirmadas. Mediana do índice de conformidade: **69,2** (IC 95%: 61,0–84,9),
 > com **estabilidade perfeita entre medições repetidas** (Δ = 0,0 nas cinco plataformas).
 > **Todas as 16 páginas auditadas apresentaram barreira absoluta** — violação de risco
 > jurídico crítico, sem rota alternativa. O critério 4.1.2 (Nome, função, valor) foi violado em
@@ -293,7 +298,7 @@ intervalos entre quedas.
 
 ### 3.3 Conformidade geral ✅
 
-Mediana do ICA por página: **69,2** (IC 95% por bootstrap: 61,0–86,0; n = 16; Q1 = 60,4;
+Mediana do ICA por página: **69,2** (IC 95% por bootstrap: 61,0–84,9; n = 16; Q1 = 60,4;
 Q3 = 85,4; mín. 50,7; máx. 87,0).
 
 **125 violações confirmadas** e 49 achados indeterminados, em 174 achados.
@@ -425,7 +430,7 @@ conservadores frente a esses números.
 
 #### Resultados medidos ✅
 
-Peso mediano por página: **2,29 MB** (IC 95%: 1,59–4,15; n = 16). **4 de 16 páginas (25%)**
+Peso mediano por página: **2,29 MB** (IC 95%: 1,59–4,17; n = 16). **4 de 16 páginas (25%)**
 excedem o limiar de 2,5 MiB — a mediana da web comercial.
 
 | Plataforma | Peso mediano | Custo/acesso | % franquia | Terceiros |
@@ -436,8 +441,8 @@ excedem o limiar de 2,5 MiB — a mediana da web comercial.
 | SES-RJ | 1,60 MB | R$ 0,0047 | 0,016% | 16,6% |
 | Carioca Digital | 1,14 MB | R$ 0,0033 | 0,011% | 40,8% |
 
-**H4 não foi sustentada.** A correlação entre peso e fração de terceiros é **negativa**
-(Spearman ρ = −0,386), o oposto do previsto. O caso extremo explica: o Meu SUS Digital é a
+**H4 não foi sustentada.** A correlação entre peso e fração de terceiros é **fraca e de sinal contrário ao previsto**
+(Spearman ρ = −0,200; p = 0,747; n = 5): não há associação detectável. O caso extremo explica: o Meu SUS Digital é a
 página mais pesada (7,17 MB) e a que **menos** depende de terceiros (2,2%) — seu peso vem da
 própria aplicação. Já a seção de notícias da SMS Rio, com 2,11 MB, tem **69,4% do tráfego
 dirigido a terceiros**.
@@ -551,7 +556,8 @@ Seis achados a desenvolver, todos sustentados por dado:
    A distância é maior na *gravidade* das falhas que no número delas.
 4. **A barreira de refluxo só existe onde o usuário está.** O critério 1.4.10 apareceu
    exclusivamente no perfil de 320 px — auditoria de perfil único não a veria.
-5. **Peso próprio e dependência de terceiros são patologias distintas** (ρ = −0,386). A página
+5. **Peso próprio e dependência de terceiros são patologias distintas** (ρ = −0,200; p = 0,747;
+   sem associação detectável, e a leitura se apoia na dissociação qualitativa). A página
    mais pesada é a que menos depende de terceiros; a seção de notícias municipal dirige 69% do
    tráfego a domínios alheios ao serviço, e três das cinco plataformas passam de 40%.
 6. **Indisponibilidade como barreira.** O serviço estadual de resultado de exame não respondeu
@@ -565,8 +571,8 @@ Seis achados a desenvolver, todos sustentados por dado:
 
 ### 4.1.1 O achado contraintuitivo do perfil de exclusão ✍️
 
-Deficiência intelectual e neurodivergência lideram as ocorrências (1 149), acima de cegueira
-(489). O debate público e a prática de mercado organizam-se em torno do leitor de tela; a
+Deficiência intelectual e neurodivergência lideram as ocorrências (1 126), acima de cegueira
+(479). O debate público e a prática de mercado organizam-se em torno do leitor de tela; a
 medida sugere que a maior carga recai sobre quem depende de estrutura semântica, rotulagem
 consistente e linguagem previsível — precisamente o que se degrada primeiro quando a
 acessibilidade é tratada como conformidade formal.
@@ -599,11 +605,11 @@ tráfego destinada a terceiros, que não presta serviço público algum.
 
 1. Cobertura parcial (27/50 critérios, e apenas para alguns modos de falha).
 2. Áreas autenticadas não auditadas — índices possivelmente otimistas.
-3. **Amostra pequena:** 5 portais, 16 auditorias de página válidas, 3 no estrato estadual.
+3. **Amostra pequena:** 5 portais, 16 auditorias de página válidas, 2 no estrato estadual.
    Amostragem intencional, sem inferência para o universo nacional. Os testes são descritivos.
 4. **Perda de 20% das páginas**, concentrada no portal estadual (50%). A perda não é ruído:
    é informação sobre disponibilidade, mas reduz a base de comparação do estrato estadual a
-   três observações.
+   duas observações.
 5. **Janela única.** As quatro medições ocorreram em 47 minutos. **Não são janelas temporais
    distintas** e não permitem separar instabilidade circunstancial de crônica, nem detectar
    mudança nos portais. A estabilidade observada atesta a confiabilidade do instrumento, não a
@@ -680,7 +686,8 @@ tráfego destinada a terceiros, que não presta serviço público algum.
 - [ ] Citação da Anatel substituída pelo relatório primário, não pelo veículo especializado
 - [ ] Parâmetros de custo reconferidos nos sítios das operadoras, com captura arquivada
 - [ ] **Coletar em janelas separadas por dias** — as quatro medições atuais cobrem 47 minutos
-      e atestam confiabilidade do instrumento, não persistência das barreiras
+      e atestam confiabilidade do instrumento, não persistência das barreiras.
+      Automação pronta: ver [auditoria contínua](../operacao/auditoria-continua.md)
 - [ ] Ampliar a amostra: 2 páginas válidas no estrato estadual é pouco, e a causa é a
       indisponibilidade do próprio portal — o que sugere coletar em horários distintos
 - [ ] Órgãos auditados previamente comunicados, com relatório HTML encaminhado
