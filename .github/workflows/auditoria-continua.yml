@@ -87,15 +87,24 @@ jobs:
           # Intervalo entre requisições. Elevável por variável de repositório,
           # nunca reduzível abaixo do padrão do projeto sem decisão explícita.
           ACESSISAUDE_REQUEST_DELAY_MS: ${{ vars.REQUEST_DELAY_MS || '2000' }}
+          # As entradas do disparo manual chegam por ambiente, e não por
+          # interpolação no corpo do script: `${{ }}` é expandido ANTES de o
+          # shell existir, de modo que um valor com metacaracteres viraria
+          # comando. Aqui são apenas dados.
+          ENTRADA_ALVOS: ${{ inputs.alvos }}
+          ENTRADA_APENAS_AFERICAO: ${{ inputs.apenas_afericao }}
         run: |
           chmod +x scripts/coleta-continua.sh
-          if [ "${{ inputs.apenas_afericao }}" = "true" ]; then
+          if [ "$ENTRADA_APENAS_AFERICAO" = "true" ]; then
             python scripts/servidor_fixtures.py --porta 8080 &
             sleep 3
             acessisaude varrer fixtures-local --sem-relatorio
             python scripts/aferir_instrumento.py
           else
-            scripts/coleta-continua.sh ${{ inputs.alvos }}
+            # Sem aspas, de propósito: a entrada é uma lista de IDs separados
+            # por espaço. Os IDs válidos são validados pelo catálogo, e um ID
+            # inexistente faz a CLI sair com erro.
+            scripts/coleta-continua.sh $ENTRADA_ALVOS
           fi
 
       - name: Resumo da execução
@@ -145,7 +154,9 @@ jobs:
           if git ls-remote --exit-code --heads origin serie-temporal >/dev/null 2>&1; then
             git fetch origin serie-temporal:serie-temporal
           else
-            RAIZ=$(git commit-tree "$(git hash-object -t tree /dev/null)" \
+            # -w grava o objeto de árvore vazia no banco antes de referenciá-lo.
+            # Sem ele, versões mais antigas do git recusam commit-tree.
+            RAIZ=$(git commit-tree "$(git hash-object -w -t tree /dev/null)" \
               -m "Série temporal da auditoria contínua — raiz")
             git branch serie-temporal "$RAIZ"
           fi
