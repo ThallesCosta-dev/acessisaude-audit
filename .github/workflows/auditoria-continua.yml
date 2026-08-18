@@ -1,0 +1,182 @@
+# =============================================================================
+# Auditoria contínua — série temporal
+# =============================================================================
+# Converte a promessa do título do projeto em resultado. O estudo de referência
+# coletou quatro medições em 47 minutos: isso atesta a confiabilidade do
+# instrumento, não a persistência das barreiras no tempo. A série exige janelas
+# separadas por dias, e é o que este fluxo produz.
+#
+# Cada execução:
+#   1. afere o instrumento contra o conjunto de validação e ABORTA se reprovar;
+#   2. varre os alvos habilitados no catálogo;
+#   3. acumula os JSON e o CSV consolidado no ramo `serie-temporal`.
+#
+# CONDUTA DE COLETA. Este fluxo acessa portais públicos de saúde em horário
+# programado. Antes de habilitá-lo, leia docs/metodologia/etica-e-conduta-de-coleta.md
+# e defina a variável de repositório CONTATO_PESQUISA. Sem ela o fluxo falha de
+# propósito: coleta automatizada não identificada é conduta que este projeto
+# recusa.
+# =============================================================================
+name: Auditoria contínua
+
+on:
+  schedule:
+    # Três janelas diárias em horários dispersos (UTC). A dispersão é decisão
+    # metodológica: o estudo detectou indisponibilidade intermitente em escala
+    # de minutos no portal estadual, e coleta em horário fixo não distingue
+    # falha circunstancial de crônica. Minutos quebrados evitam o pico de carga
+    # do agendador do GitHub na virada da hora.
+    - cron: "17 3 * * *"    # ~00h17 (BRT)
+    - cron: "43 14 * * *"   # ~11h43 (BRT)
+    - cron: "29 21 * * *"   # ~18h29 (BRT)
+  workflow_dispatch:
+    inputs:
+      alvos:
+        description: "IDs do catálogo separados por espaço. Vazio = todos os habilitados."
+        required: false
+        default: ""
+      apenas_afericao:
+        description: "Só aferir o instrumento, sem tocar em portal público."
+        type: boolean
+        required: false
+        default: false
+
+# Duas execuções simultâneas duplicariam a carga sobre os portais e produziriam
+# dois pontos com o mesmo carimbo de tempo. Enfileira em vez de cancelar: um
+# ponto atrasado ainda é um ponto; um ponto cancelado é lacuna na série.
+concurrency:
+  group: auditoria-continua
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  coletar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Obter o código
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Instalar dependências
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e "backend[analysis]"
+          playwright install --with-deps chromium
+
+      - name: Exigir identificação da pesquisa
+        env:
+          CONTATO: ${{ vars.CONTATO_PESQUISA }}
+        run: |
+          if [ -z "$CONTATO" ]; then
+            echo "::error title=Identificação ausente::Defina a variável de repositório CONTATO_PESQUISA (Settings → Secrets and variables → Actions → Variables) com o contato responsável pela coleta. Ex.: 'AcessiSaude-Audit/pesquisa (+fulano@instituicao.br)'."
+            exit 1
+          fi
+
+      - name: Coletar
+        env:
+          ACESSISAUDE_USER_AGENT_SUFFIX: ${{ vars.CONTATO_PESQUISA }}
+          # Intervalo entre requisições. Elevável por variável de repositório,
+          # nunca reduzível abaixo do padrão do projeto sem decisão explícita.
+          ACESSISAUDE_REQUEST_DELAY_MS: ${{ vars.REQUEST_DELAY_MS || '2000' }}
+        run: |
+          chmod +x scripts/coleta-continua.sh
+          if [ "${{ inputs.apenas_afericao }}" = "true" ]; then
+            python scripts/servidor_fixtures.py --porta 8080 &
+            sleep 3
+            acessisaude varrer fixtures-local --sem-relatorio
+            python scripts/aferir_instrumento.py
+          else
+            scripts/coleta-continua.sh ${{ inputs.alvos }}
+          fi
+
+      - name: Resumo da execução
+        if: always()
+        run: |
+          python - >> "$GITHUB_STEP_SUMMARY" <<'PY'
+          import pathlib
+
+          from acessisaude_audit.analysis import dataset
+
+          scans = dataset.load_scans(pathlib.Path("data/scans"))
+          print("## Auditoria contínua\n")
+          if not scans:
+              print("Nenhuma varredura produzida nesta execução.")
+              raise SystemExit(0)
+
+          quadro = dataset.build_scans_frame(scans)
+          print("| Alvo | Páginas | Perda | Conformidade | Atrito | Exposição | Barreira absoluta |")
+          print("|---|---|---|---|---|---|---|")
+          for _, r in quadro.sort_values("target_id").iterrows():
+              # A barreira absoluta vem antes de qualquer número também aqui: é a
+              # única coluna que responde "dá para usar?", e nenhum índice a substitui.
+              barreira = "**sim**" if r["barreira_absoluta"] else "não"
+              print(
+                  f"| {r['target_id']} | {r['paginas']} | {r['taxa_de_perda']:.0%} "
+                  f"| {r['ica']:.1f} | {r['ian']:.1f} | {r['iej']:.1f} | {barreira} |"
+              )
+          print(
+              "\nConformidade e exposição: 0–100. Cobertura de 54% dos critérios — "
+              "**ausência de achado não equivale a conformidade**.\n"
+          )
+          print("Série acumulada no ramo `serie-temporal`.")
+          PY
+
+      - name: Publicar na série temporal
+        if: success() && inputs.apenas_afericao != true
+        env:
+          CARIMBO: ${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          git config user.name "auditoria-continua"
+          git config user.email "auditoria-continua@users.noreply.github.com"
+
+          # O ramo `serie-temporal` é órfão: guarda só dados, sem histórico de
+          # código. Mantém o ramo principal limpo e torna o dataset citável por
+          # um endereço estável.
+          if git ls-remote --exit-code --heads origin serie-temporal >/dev/null 2>&1; then
+            git fetch origin serie-temporal:serie-temporal
+          else
+            RAIZ=$(git commit-tree "$(git hash-object -t tree /dev/null)" \
+              -m "Série temporal da auditoria contínua — raiz")
+            git branch serie-temporal "$RAIZ"
+          fi
+
+          git worktree add serie serie-temporal
+          mkdir -p serie/scans
+          cp data/scans/*.json serie/scans/ 2>/dev/null || true
+
+          # Reexporta sobre a série INTEIRA, não só sobre a coleta desta
+          # execução: o CSV do ramo é o dataset acumulado da pesquisa.
+          acessisaude exportar --diretorio serie/scans --saida serie/exports
+
+          cd serie
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nada de novo a publicar."
+          else
+            N=$(ls scans/*.json 2>/dev/null | wc -l)
+            git commit -m "Coleta $(date -u +%Y-%m-%dT%H:%MZ) — ${N} varreduras acumuladas (execução ${CARIMBO})"
+            git push origin serie-temporal
+          fi
+
+      - name: Guardar artefatos da execução
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coleta-${{ github.run_id }}
+          # Retenção longa: os JSON são a fonte da verdade da pesquisa, e o ramo
+          # serie-temporal pode falhar por conflito. Redundância deliberada.
+          retention-days: 90
+          if-no-files-found: warn
+          path: |
+            data/scans/*.json
+            data/exports/*.csv

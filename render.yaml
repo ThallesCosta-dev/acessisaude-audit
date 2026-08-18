@@ -1,0 +1,95 @@
+# =============================================================================
+# Blueprint do Render — auditoria contínua com painel público
+# =============================================================================
+# Alternativa ao fluxo do GitHub Actions (.github/workflows/auditoria-continua.yml),
+# indicada quando se quer o PAINEL NO AR, e não apenas a série temporal.
+#
+# Diferença que importa para a pesquisa: o cron do Render não tem disco
+# persistente. Os JSON gravados em /app/data desaparecem ao fim de cada
+# execução. A procedência é preservada porque o repositório grava o documento
+# JSON íntegro na coluna `document` do banco — o índice relacional é derivado, e
+# o documento é a fonte da verdade. Com Postgres anexado, portanto, nada se
+# perde; sem ele, perde-se tudo. Não remova o banco.
+#
+# Antes de aplicar:
+#   1. Leia docs/metodologia/etica-e-conduta-de-coleta.md.
+#   2. Defina ACESSISAUDE_USER_AGENT_SUFFIX no painel do Render (sync: false).
+#      Sem essa variável o script de coleta recusa executar.
+#   3. Confira que os alvos que deseja auditar estão `enabled: true` no catálogo.
+# =============================================================================
+
+databases:
+  - name: acessisaude-db
+    databaseName: acessisaude
+    plan: free
+    # Guarda o documento JSON de cada varredura, além do índice de consulta.
+    # É a persistência da pesquisa, não um cache.
+
+services:
+  # ---------------------------------------------------------------------------
+  # Coleta agendada — um ponto da série por execução
+  # ---------------------------------------------------------------------------
+  - type: cron
+    name: acessisaude-coleta
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: starter
+    region: oregon
+    # Três janelas diárias, em horários dispersos. A dispersão é metodológica:
+    # o estudo detectou indisponibilidade intermitente em escala de minutos, e
+    # horário fixo não distingue falha circunstancial de crônica.
+    schedule: "17 3,14,21 * * *"
+    dockerCommand: scripts/coleta-continua.sh
+    envVars:
+      - key: ACESSISAUDE_USER_AGENT_SUFFIX
+        # Obrigatória e não versionada: identifica a pesquisa e o contato
+        # responsável perante os portais auditados.
+        sync: false
+      - key: ACESSISAUDE_DATABASE_URL
+        fromDatabase:
+          name: acessisaude-db
+          property: connectionString
+      - key: ACESSISAUDE_REQUEST_DELAY_MS
+        value: "2000"
+      - key: COLETA_RELATORIO
+        # Em coleta agendada o HTML cresce sem ser lido. O relatório para o
+        # gestor é gerado sob demanda pela API.
+        value: "0"
+
+  # ---------------------------------------------------------------------------
+  # API e painel
+  # ---------------------------------------------------------------------------
+  - type: web
+    name: acessisaude-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: starter
+    region: oregon
+    healthCheckPath: /saude
+    dockerCommand: sh -c "acessisaude servir --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: ACESSISAUDE_DATABASE_URL
+        fromDatabase:
+          name: acessisaude-db
+          property: connectionString
+      - key: ACESSISAUDE_CORS_ORIGINS
+        # Ajuste para o endereço do painel estático depois do primeiro deploy.
+        sync: false
+
+  # ---------------------------------------------------------------------------
+  # Painel React
+  # ---------------------------------------------------------------------------
+  - type: web
+    name: acessisaude-painel
+    runtime: static
+    buildCommand: cd frontend && npm ci && npm run build
+    staticPublishPath: ./frontend/dist
+    # O painel é auditado pelo mesmo axe-core que ele exibe, e a construção
+    # falha diante de qualquer violação de nível A ou AA. Publicar um painel de
+    # acessibilidade inacessível seria a contradição mais direta possível.
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

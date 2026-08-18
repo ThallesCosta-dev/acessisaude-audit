@@ -167,6 +167,7 @@ renderizado de páginas públicas — nada além disso.
 - [Dicionário de dados](docs/api/dicionario-de-dados.md)
 - [Referência da API](docs/api/referencia.md)
 - [Instalação e operação](docs/operacao/instalacao-e-uso.md)
+- [Auditoria contínua: coleta agendada e série temporal](docs/operacao/auditoria-continua.md)
 
 ### Para escrever o artigo
 - [Esqueleto IMRaD](docs/artigo/esqueleto.md)
