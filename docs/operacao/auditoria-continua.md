@@ -73,7 +73,15 @@ desprezível para qualquer portal em produção, e é menos do que um rastreador
 
 ## 4. Caminho A — GitHub Actions (recomendado para a pesquisa)
 
-[`.github/workflows/auditoria-continua.yml`](../../.github/workflows/auditoria-continua.yml)
+[`.github/workflows/coleta.yml`](../../.github/workflows/coleta.yml)
+
+> O arquivo se chama `coleta.yml`, e não `auditoria-continua.yml`, por um motivo
+> operacional: o GitHub não registrou o workflow quando ele chegou no push inicial do
+> repositório — a página respondia "This workflow does not exist" com o arquivo presente no
+> ramo padrão, sem erro de sintaxe e com o Actions habilitado. Um push adicional não resolveu;
+> renomear o arquivo resolveu, porque o GitHub passou a tratá-lo como workflow novo em vez de
+> reprocessar um que já havia classificado. Registrado aqui para poupar o diagnóstico a quem
+> reimplantar o projeto.
 
 **Por que este é o caminho padrão:** é gratuito, versiona os artefatos, e o dataset ganha um
 endereço estável e citável. Para produzir a série temporal que o artigo precisa, é o
