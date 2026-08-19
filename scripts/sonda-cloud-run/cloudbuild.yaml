@@ -1,0 +1,26 @@
+# Constroi a imagem da sonda a partir da RAIZ do repositorio.
+#
+# Existe porque `gcloud run jobs deploy --source .` procuraria o Dockerfile na
+# raiz, e la mora a imagem do coletor — com Chromium, ~1,5 GB, e um CMD que
+# varre portais publicos. Construir a imagem errada aqui nao seria so
+# desperdicio: seria carga indevida sobre servidor de terceiro.
+#
+# Uso, a partir da raiz do repositorio:
+#   gcloud builds submit --config scripts/sonda-cloud-run/cloudbuild.yaml \
+#       --substitutions=_IMAGEM=southamerica-east1-docker.pkg.dev/PROJETO/sondas/sonda:v1
+
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - -f
+      - scripts/sonda-cloud-run/Dockerfile
+      - -t
+      - ${_IMAGEM}
+      - .
+
+images:
+  - ${_IMAGEM}
+
+options:
+  logging: CLOUD_LOGGING_ONLY
