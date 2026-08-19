@@ -187,16 +187,41 @@ targets:
       # subdomínio saude.rj.gov.br. Sementes explícitas tornam a mistura
       # deliberada e auditável, em vez de acidental.
       - url: "https://www.rj.gov.br/saude/"
-        label: "Página inicial institucional"
+        label: "Portal institucional — índice, sem serviço transacional"
+        notes: >-
+          Caracterização medida em 19/08/2026: 1 formulário (busca), 1 campo
+          preenchível, 234 links, 31 domínios externos. É portal de índice,
+          organizado por público (cidadão, servidor, gestor, pesquisador,
+          imprensa, prestador). Não presta serviço ao cidadão diretamente."
       - url: "https://www.saude.rj.gov.br/ouvidoria/participe"
         label: "Ouvidoria — canal de manifestação do cidadão"
         critical: true
+        notes: >-
+          Caracterização medida em 19/08/2026: 5 formulários e 7 campos
+          preenchíveis. É a ÚNICA das três sementes do estrato estadual com
+          transação real — e a única que responde a todas as origens de rede
+          testadas. As outras duas são índices. O estrato estadual está, na
+          prática, representado por uma página transacional; a comparação entre
+          esferas precisa declarar isso.
       - url: "https://www.saude.rj.gov.br/laudos"
-        label: "Resultado de exame"
+        label: "Laudos e resultados de exames — índice de encaminhamento"
         critical: true
         notes: >-
-          Serviço transacional de maior sensibilidade no estrato estadual:
-          entrega resultado laboratorial ao cidadão.
+          CORRIGIDO em 19/08/2026. A descrição anterior — "entrega resultado
+          laboratorial ao cidadão" — estava errada. A página redireciona para
+          www.rj.gov.br/saude/laudos e é um ÍNDICE com cinco cartões (RIOIMAGEM,
+          RIOIMAGEM Baixada, Mamógrafo Móvel, Tomógrafo Móvel, Teste do
+          Pezinho). Não entrega laudo algum: encaminha a sistemas distintos, com
+          login próprio, entre eles clickexame.com e pixeon.clickvita.com.br —
+          plataformas privadas. Caracterização medida: 1 formulário (a busca do
+          portal), 1 campo preenchível, 104 links, 24 domínios externos.
+
+          Duas consequências para o estudo. A auditoria mede aqui um índice de
+          links, e não o serviço de resultado — o artigo precisa descrevê-lo
+          assim. E a etapa final da jornada do cidadão ocorre em plataforma
+          privada não auditada, embora igualmente obrigada pelo art. 63 da LBI,
+          que alcança empresas com sede ou representação comercial no País: o
+          dever segue o serviço, não o domínio.
 
   # ---------------------------------------------------------------------------
   # 4. Esfera municipal — Rio de Janeiro
