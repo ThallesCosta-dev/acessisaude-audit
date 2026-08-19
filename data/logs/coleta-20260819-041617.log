@@ -1,0 +1,53 @@
+﻿**********************
+Início da transcrição do Windows PowerShell
+Hora de início: 20260819041617
+Nome de Usuário: DESKTOP-NKQNLBA\Thalles
+Executar como Usuário: DESKTOP-NKQNLBA\Thalles
+Nome da Configuração: 
+Computador: DESKTOP-NKQNLBA (Microsoft Windows NT 10.0.19043.0)
+Aplicativo Host: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command try { $PSDefaultParameterValues['Out-File:Encoding'] = 'utf8' } catch {}; if ($ExecutionContext.SessionState.LanguageMode -eq 'FullLanguage') { try { $OutputEncoding = [System.Text.UTF8Encoding]::new() } catch {}; if ($null -ne $PSStyle) { try { $PSStyle.OutputRendering = 'PlainText' } catch {} } }; $erros = $null; $tokens = $null
+[System.Management.Automation.Language.Parser]::ParseFile((Resolve-Path "scripts\coleta-diaria.ps1"), [ref]$tokens, [ref]$erros) | Out-Null
+if ($erros) { "ERROS:"; $erros | ForEach-Object { "  linha $($_.Extent.StartLineNumber): $($_.Message)" }; exit 1 }
+"sintaxe: OK"
+& .\scripts\coleta-diaria.ps1 -SemPublicar
+; $_ec = if ($null -ne $LASTEXITCODE) { $LASTEXITCODE } elseif ($?) { 0 } else { 1 }
+; (Get-Location).Path | Out-File -FilePath 'C:\Users\Thalles\AppData\Local\Temp\claude\claude-pwd-ps-3d1f' -Encoding utf8 -NoNewline
+; if ($ExecutionContext.SessionState.LanguageMode -eq 'FullLanguage') { $host.SetShouldExit($_ec) } else { exit $_ec }
+ID do Processo: 32148
+PSVersion: 5.1.19041.610
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.610
+BuildVersion: 10.0.19041.610
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+[04:16:17] Coleta diaria — posicao de rede: residencial, Brasil
+[04:16:17] Registro: C:\Users\Thalles\Desktop\Projetos\AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de Acessibilidade Web (WCAGLBI) para Plataformas Públicas de Saúde\data\logs\coleta-20260819-041617.log
+[04:16:17] Subindo o servidor do conjunto de validacao...
+[04:16:18] Varrendo o conjunto de validacao...
+
+[04:17:09] Aferindo o instrumento...
+
+[04:17:09] Afericao aprovada.
+[04:17:09] Servidor de fixtures encerrado.
+[04:17:09] Alvos: conecte-sus-web gov-br-saude ses-rj sms-rio carioca-rio-saude
+[04:17:09] --- conecte-sus-web ---
+
+[04:17:29] --- gov-br-saude ---
+
+[04:18:06] --- ses-rj ---
+
+[04:20:34] --- sms-rio ---
+
+[04:20:50] --- carioca-rio-saude ---
+
+[04:22:35] Exportando o dataset acumulado...
+
+[04:22:36] Publicacao desativada por parametro.
+[04:22:36] Concluido. Alvos com falha de execucao: 0
+**********************
+Fim da transcrição do Windows PowerShell
+Hora de término: 20260819042236
+**********************

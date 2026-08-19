@@ -1,0 +1,15 @@
+﻿[04:14:56] Coleta diaria — posicao de rede: residencial, Brasil
+[04:14:56] Registro: C:\Users\Thalles\Desktop\Projetos\AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de Acessibilidade Web (WCAGLBI) para Plataformas Públicas de Saúde\data\logs\coleta-20260819-041456.log
+[04:14:56] Subindo o servidor do conjunto de validacao...
+[04:14:57] Varrendo o conjunto de validacao...
+┌───────────────────────────────── Varredura ─────────────────────────────────┐
+│ Conjunto de validação sintético (golden set)                                │
+│ http://127.0.0.1:8080                                                       │
+│                                                                             │
+│ Páginas auditáveis: 5                                                       │
+│ Lacunas declaradas (exigem autenticação): 0                                 │
+│ Perfis: mobile-320, desktop-1366                                            │
+│ Intervalo entre requisições: 2000 ms                                        │
+│ robots.txt: respeitado                                                      │
+└─────────────────────────────────────────────────────────────────────────────┘
+[04:14:59] Servidor de fixtures encerrado.
