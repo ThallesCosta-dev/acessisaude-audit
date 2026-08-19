@@ -146,7 +146,20 @@ jobs:
           quadro = dataset.build_scans_frame(scans)
           print("| Alvo | Páginas | Perda | Conformidade | Atrito | Exposição | Barreira absoluta |")
           print("|---|---|---|---|---|---|---|")
+          sem_veredito = []
           for _, r in quadro.sort_values("target_id").iterrows():
+              # Perda total: nenhuma página carregou, logo nenhum critério foi
+              # observado. Os índices degeneram — conformidade 100, exposição 0 —
+              # porque não há violação a somar, e não porque o portal esteja
+              # conforme. Exibi-los seria reportar ausência de observação como
+              # conformidade, que é o erro contra o qual todo o resto adverte.
+              if r["taxa_de_perda"] >= 1.0:
+                  sem_veredito.append(r["target_id"])
+                  print(
+                      f"| {r['target_id']} | 0/{r['paginas']} | **100%** "
+                      f"| — | — | — | sem veredito |"
+                  )
+                  continue
               # A barreira absoluta vem antes de qualquer número também aqui: é a
               # única coluna que responde "dá para usar?", e nenhum índice a substitui.
               barreira = "**sim**" if r["barreira_absoluta"] else "não"
@@ -158,6 +171,12 @@ jobs:
               "\nConformidade e exposição: 0–100. Cobertura de 54% dos critérios — "
               "**ausência de achado não equivale a conformidade**.\n"
           )
+          if sem_veredito:
+              print(
+                  f"**Sem veredito** ({', '.join(dict.fromkeys(sem_veredito))}): nenhuma página carregou. "
+                  "Não é conformidade nem não conformidade — é ausência de observação. "
+                  "O JSON da varredura registra o status HTTP de cada tentativa.\n"
+              )
           print("Série acumulada no ramo `serie-temporal`.")
           PY
 
