@@ -164,6 +164,24 @@ scans = [ScanResult.model_validate(row.document) for row in session.query(ScanRo
 
 ---
 
+## 5.1 Sonda de vantagem — controle de rede
+
+A coleta a partir de um único ponto de observação não distingue **portal indisponível** de
+**portal que recusa aquele IP**. A distinção é decisiva: a primeira é achado — disponibilidade
+como precondição da acessibilidade —, a segunda é artefato do instrumento, da mesma classe do
+User-Agent `HeadlessChrome` do ADR 0008.
+
+A primeira semana de coleta pelo runner do GitHub produziu o caso concreto: o Meu SUS Digital
+devolveu HTTP 403 em 8 de 8 tentativas e duas páginas da SES-RJ nunca carregaram, enquanto os
+mesmos endereços respondem HTTP 200 de um IP residencial brasileiro.
+
+A [sonda de vantagem](../../scripts/sonda-de-vantagem/) acrescenta um terceiro ponto de
+observação, no Google Apps Script. Não audita acessibilidade — apenas pergunta "este endereço
+responde?" — e por isso não precisa de navegador, o que a torna implantável em cinco minutos e
+sem custo. Ver [o README da sonda](../../scripts/sonda-de-vantagem/README.md).
+
+---
+
 ## 6. Comparação
 
 | | GitHub Actions | Render |
