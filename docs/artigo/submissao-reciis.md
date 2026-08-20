@@ -166,6 +166,22 @@ fechar a NBR 6023/2025:
 | CGI.br, 2025 | ⬜ Conferir título e ano de publicação do relatório da TIC Domicílios 2024 |
 | Anatel, 2026 | ⬜ Substituir pelo relatório primário; conferir título exato e data |
 | HTTP Archive, 2025 | ⬜ Conferir capítulo específico do *Web Almanac* e a data de acesso |
+| Caplovitz, 1963 | ⬜ Conferir editora e paginação na 1ª edição (Free Press of Glencoe) |
+| Brasil, 2014b | ✅ Conferido: Lei 12.965/2014, art. 9º, DOU de 24 abr. 2014 |
+
+**Correspondência entre citações e lista** — verificada em 19/08/2026: **22 referências**, todas
+citadas no corpo, e nenhuma citação no corpo sem entrada na lista.
+
+Três correções desta rodada:
+
+- a referência do W3C constava na lista e **não era citada** no texto, porque o corpo escreve
+  "diretrizes de acessibilidade para conteúdo web, versão 2.1" por extenso, sem a sigla.
+  Acrescentada a citação `(W3C, 2018)` nos objetivos específicos;
+- a expressão "penalidade da pobreza", usada na seção 4.5, é conceito de Caplovitz (1963) e
+  estava sem atribuição. A passagem foi reescrita para dar a lineagem;
+- a proposta de "correção regulatória" da seção 4.5 estava sem âncora normativa. Ancorada no
+  art. 9º da Lei 12.965/2014, que impõe tratamento isonômico de pacotes de dados. As entradas
+  de 2014 passaram a `2014a` (eMAG) e `2014b` (Marco Civil).
 
 ---
 

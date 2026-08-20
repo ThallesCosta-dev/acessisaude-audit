@@ -93,7 +93,7 @@ padrão técnico. Seu art. 63, caput, torna obrigatória a acessibilidade nos s�
 mantidos por órgãos de governo, "conforme as melhores práticas e diretrizes de acessibilidade
 adotadas internacionalmente". O dispositivo é, tecnicamente, uma norma em branco: o
 legislador não descreveu o padrão, incorporou-o por remissão. No arranjo brasileiro, essa
-remissão se concretiza pelo Modelo de Acessibilidade em Governo Eletrônico (Brasil, 2014),
+remissão se concretiza pelo Modelo de Acessibilidade em Governo Eletrônico (Brasil, 2014a),
 construído sobre as diretrizes do World Wide Web Consortium, e pelo art. 47 do Decreto
 5.296/2004 (Brasil, 2004), que já determinava acessibilidade obrigatória nos portais da
 administração pública.
@@ -188,8 +188,8 @@ fundamentos jurídicos distintos e correções distintas.
 converta falhas técnicas de acessibilidade em proposições jurídicas fundamentadas.
 
 **Objetivos específicos.** (1) Modelar a correspondência entre os 50 critérios de sucesso de
-níveis A e AA das diretrizes de acessibilidade para conteúdo web, versão 2.1, e o ordenamento
-jurídico brasileiro; (2) construir e aferir o instrumento contra um conjunto de referência com
+níveis A e AA das diretrizes de acessibilidade para conteúdo web, versão 2.1 (W3C, 2018), e
+o ordenamento jurídico brasileiro; (2) construir e aferir o instrumento contra um conjunto de referência com
 barreiras conhecidas; (3) aplicá-lo a plataformas de saúde com incidência no Rio de Janeiro,
 estratificadas por esfera federativa; (4) quantificar o custo de acesso em dados móveis como
 barreira; (5) caracterizar o perfil de exclusão por grupo de pessoas afetado.
@@ -946,13 +946,24 @@ municipal se dirija a domínios de terceiros significa que o cidadão custeia, d
 franquia, recursos alheios ao serviço público que foi buscar. É a métrica com fundamento
 jurídico mais direto, porque ali há transferência de custo sem contrapartida.
 
-Dois mecanismos observados nas ofertas comerciais reforçam a leitura. O primeiro é a
-penalidade da pobreza no dado móvel: fracionar a recarga não é conveniência, é restrição de
-fluxo de caixa, e custa 50% mais por unidade de dado. O segundo é a assimetria do tratamento
-tarifário: a oferta de entrada isenta um aplicativo privado de mensageria do consumo de
-franquia, e não isenta o portal público de saúde. Para o usuário de menor renda, o Estado é o
-único serviço que cobra pelo acesso. A observação sugere via de correção regulatória —
-inclusão de serviços públicos essenciais no tráfego não tarifado — e não apenas técnica.
+Dois mecanismos observados nas ofertas comerciais reforçam a leitura. O primeiro reproduz, na
+infraestrutura de acesso ao serviço público digital, o mecanismo que Caplovitz (1963) descreveu
+no consumo de bens duráveis por famílias de baixa renda: fracionar a recarga não é
+conveniência, é restrição de fluxo de caixa, e custa 50% mais por unidade de dado — o mais
+pobre paga mais caro pelo mesmo bem, e paga mais caro precisamente por ser mais pobre. O
+segundo é a assimetria do tratamento tarifário: a oferta de entrada isenta um aplicativo
+privado de mensageria do consumo de franquia, e não isenta o portal público de saúde. Para o
+usuário de menor renda, o Estado é o único serviço que cobra pelo acesso.
+
+A assimetria merece leitura à luz do art. 9º da Lei 12.965/2014 (Brasil, 2014b), que impõe ao
+responsável pela transmissão o dever de tratar de forma isonômica os pacotes de dados, sem
+distinção por conteúdo, origem, destino, serviço ou aplicação. Não cabe a este trabalho
+qualificar a licitude da prática, que depende de análise regulatória própria e não foi objeto
+do estudo. Cabe registrar o efeito medido: sob as ofertas consultadas, o serviço público de
+saúde ocupa posição tarifária desfavorável frente a aplicações privadas de mensageria. Se
+confirmada em levantamento dirigido ao mercado, a assimetria sugere via de correção
+regulatória — inclusão de serviços públicos de saúde no tráfego não tarifado — e não apenas
+técnica.
 
 Os dois mecanismos incidem sobre uma população cuja conectividade já é precária por outras
 razões: nas classes D e E, apenas 3% reúnem as condições do indicador de conectividade
@@ -1135,13 +1146,20 @@ no inciso XXXIII do art. 5º, no inciso II do § 3º do art. 37 e no § 2º do a
 Constituição Federal. **Diário Oficial da União**: seção 1, edição extra, Brasília, DF, 18
 nov. 2011.
 
+BRASIL. **Lei nº 12.965, de 23 de abril de 2014**. Estabelece princípios, garantias, direitos
+e deveres para o uso da internet no Brasil. **Diário Oficial da União**: seção 1, Brasília,
+DF, 24 abr. 2014b.
+
 BRASIL. Ministério do Planejamento, Orçamento e Gestão. **eMAG**: Modelo de Acessibilidade em
-Governo Eletrônico. Versão 3.1. Brasília, DF: MPOG, 2014. Disponível em:
+Governo Eletrônico. Versão 3.1. Brasília, DF: MPOG, 2014a. Disponível em:
 https://emag.governoeletronico.gov.br/. Acesso em: 16 ago. 2026.
 
 BRASIL. **Lei nº 13.146, de 6 de julho de 2015**. Institui a Lei Brasileira de Inclusão da
 Pessoa com Deficiência (Estatuto da Pessoa com Deficiência). **Diário Oficial da União**:
 seção 1, Brasília, DF, 7 jul. 2015.
+
+CAPLOVITZ, David. **The poor pay more**: consumer practices of low-income families. New York:
+The Free Press of Glencoe, 1963.
 
 CGI.BR — COMITÊ GESTOR DA INTERNET NO BRASIL. **Pesquisa sobre o uso das tecnologias de
 informação e comunicação nos domicílios brasileiros**: TIC Domicílios 2024. São Paulo:
