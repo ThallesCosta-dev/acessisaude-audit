@@ -58,3 +58,7 @@ docs/artigo/figuras/*.svg
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# PDFs das referências do artigo: copyright de terceiros, baixados para
+# consulta local (índice em docs/artigo/referencias/README.md).
+docs/artigo/referencias/pdf/

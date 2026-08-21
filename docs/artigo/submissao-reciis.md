@@ -157,11 +157,18 @@ fechar a NBR 6023/2025:
 | Barros *et al.*, 2024 | ✅ Conferido: seis autores, p. 50-61, DOI |
 | Brajnik, 2009 | ✅ Conferido: anais, p. 131-138, DOI |
 | Freire; Castro; Fortes, 2009 | ✅ Conferido: autoria, RAP v. 43, n. 2, DOI · ⬜ confirmar paginação |
-| Silva; La Rue, 2015 | ✅ Conferido: RAP v. 49, n. 2, p. 315-339, DOI |
-| Simão; Rodrigues, 2005 | ✅ Conferido: Ci. Inf. v. 34, n. 2, p. 234-245, DOI |
+| Silva; La Rue, 2015 | ✅ Reconferido em 21/08/2026 no Crossref e no PDF da RAP: v. 49, n. 2, **p. 315-336** (a lista trazia p. 315-339, corrigido), DOI |
+| Simão; Rodrigues, 2005 | ✅ Conferido em 21/08/2026 no Crossref e no OJS do IBICT: Ci. Inf. v. 34, n. 2, **p. 81-92** (a lista trazia p. 234-245, corrigido), DOI |
 | Vieira; Caniato; Yonemotu, 2017 | ✅ Conferido: Reciis v. 11, n. 2, DOI |
-| Power *et al.*, 2012 | ⬜ DOI e paginação exata nos anais da CHI '12 |
-| Vigo; Brown; Conway, 2013 | ⬜ Paginação e local do evento (W4A '13) |
+| Power *et al.*, 2012 | ✅ Conferido em 21/08/2026 no Crossref: CHI '12, Austin, p. 433-442, DOI 10.1145/2207676.2207736 (acrescentado à lista) |
+| Vigo; Brown; Conway, 2013 | ✅ Conferido em 21/08/2026 no Crossref: W4A '13, Rio de Janeiro, artigo 1, p. 1-10 (acrescentado à lista) |
+| Alismail; Chipidza, 2021 | ✅ Nova. Conferida no Crossref: JAMIA v. 28, n. 9, p. 1990-1995, DOI · PDF baixado (PMC) |
+| Belli, 2017 | ✅ Nova. Conferida no Crossref: J. Cyber Policy v. 2, n. 1, p. 96-122, DOI · PDF baixado (versão do autor, FGV) |
+| Frazão; Duarte, 2020 | ✅ Nova. Conferida no Crossref: W4A '20, Taipei, p. 1-11, DOI · ⬜ PDF não obtido (ACM bloqueia download automatizado; é CC BY-NC, baixar pelo navegador) |
+| Ismailova; Inal, 2022 | ✅ Nova. Conferida no Crossref: IEEE Access v. 10, p. 58233-58239, DOI · PDF baixado (acesso aberto) |
+| Acosta-Vargas *et al.*, 2022 | ✅ Nova (substitui Mason; Compton; Bhati, 2021, sem acesso aberto). Conferida no Crossref: IJERPH v. 19, n. 19, art. 12102, DOI · PDF baixado (MDPI, CC BY) |
+| Petrie; Kheir, 2007 | ✅ Nova. Conferida no Crossref: CHI '07, San Jose, p. 397-406, DOI · PDF baixado |
+| Yi, 2020 | ✅ Nova. Conferida no Crossref: UAIS v. 19, n. 1, p. 41-56, DOI · PDF baixado |
 | IBGE, 2025 | ⬜ Trocar pela referência do documento, não pela notícia de divulgação |
 | CGI.br, 2025 | ⬜ Conferir título e ano de publicação do relatório da TIC Domicílios 2024 |
 | Anatel, 2026 | ⬜ Substituir pelo relatório primário; conferir título exato e data |
@@ -169,10 +176,19 @@ fechar a NBR 6023/2025:
 | Caplovitz, 1963 | ⬜ Conferir editora e paginação na 1ª edição (Free Press of Glencoe) |
 | Brasil, 2014b | ✅ Conferido: Lei 12.965/2014, art. 9º, DOU de 24 abr. 2014 |
 
-**Correspondência entre citações e lista** — verificada em 19/08/2026: **22 referências**, todas
-citadas no corpo, e nenhuma citação no corpo sem entrada na lista.
+**Correspondência entre citações e lista** — verificada em 21/08/2026: **29 referências**, todas
+citadas no corpo, e nenhuma citação no corpo sem entrada na lista. Das 29, **16 são artigos
+científicos** (periódicos ou anais); as demais são leis, relatórios e a recomendação do W3C.
 
-Três correções desta rodada:
+**Rodada de 21/08/2026 — ampliação da literatura.** A lista tinha 9 artigos científicos.
+Foram acrescentados 7, todos conferidos no Crossref e citados no corpo: na subseção 1.2,
+Alismail e Chipidza (2021), Acosta-Vargas *et al.* (2022) e Yi (2020) reforçam a literatura
+de avaliação de sítios de saúde; Frazão e Duarte (2020), Ismailova e Inal (2022) e Petrie e
+Kheir (2007) reforçam a literatura de validade das ferramentas e diretrizes (também citados em
+4.7); na subseção 4.5, Belli (2017) ancora a leitura do *zero-rating*. Os PDFs obtidos estão
+em `docs/artigo/referencias/pdf/` (não versionados — ver `docs/artigo/referencias/README.md`).
+
+Três correções da rodada de 19/08/2026:
 
 - a referência do W3C constava na lista e **não era citada** no texto, porque o corpo escreve
   "diretrizes de acessibilidade para conteúdo web, versão 2.1" por extenso, sem a sigla.

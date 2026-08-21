@@ -114,10 +114,22 @@ Rue (2015) examinaram oito portais do Executivo estadual à luz dos direitos fun
 pessoas com deficiência e concluíram que nenhum atendia integralmente aos critérios mínimos.
 Mais recentemente, Barros *et al.* (2024) avaliaram a plataforma centralizada do governo
 federal por três ferramentas automatizadas e concluíram que o portal não atende a requisitos
-mínimos de acessibilidade. Fora do país, Alajarmeh (2021) auditou os sítios oficiais de saúde
-pública de 25 países durante a pandemia e encontrou apenas três aprovados em todos os testes
-aplicados, com predomínio de violações dos princípios perceptível e operável — a mesma
-distribuição que este estudo encontrará.
+mínimos de acessibilidade. Fora do país, a literatura específica sobre sítios de saúde
+converge no mesmo diagnóstico. Alajarmeh (2021) auditou os sítios oficiais de saúde pública de
+25 países durante a pandemia e encontrou apenas três aprovados em todos os testes aplicados,
+com predomínio de violações dos princípios perceptível e operável — a mesma distribuição que
+este estudo encontrará. Alismail e Chipidza (2021) avaliaram, por três ferramentas
+automáticas, os 54 sítios oficiais de registro para vacinação contra a covid-19 nos Estados
+Unidos e verificaram conformidade insatisfatória com as diretrizes precisamente no serviço de
+maior demanda do período. Acosta-Vargas *et al.* (2022), em 199 portais oficiais de
+informação sobre a covid-19 de governos, ministérios e entidades médicas de todo o mundo,
+encontraram 77,8% das barreiras concentradas no princípio perceptível e 17,7% no operável, e
+concluíram que a maioria não alcançava nível adequado de acessibilidade — acrescentando que a
+verificação precisa ser periódica, porque o conteúdo e a tecnologia mudam, premissa que este
+trabalho adota como desenho. Yi (2020), por sua vez, submeteu dez sítios de saúde de órgãos públicos
+sul-coreanos a teste com 25 usuários com deficiência visual e mostrou que as barreiras de
+alternativa textual, operação por teclado e ordem de foco persistem na experiência de uso, e
+não apenas na verificação automática.
 
 São trabalhos descritivos, úteis e convergentes no diagnóstico, mas com três fragilidades
 recorrentes. Raramente declaram a cobertura da ferramenta empregada, isto é, a fração dos
@@ -131,11 +143,22 @@ ferramentas de operacionalizá-las. Brajnik (2009) mostrou que critérios anunci
 testáveis apresentam variação relevante entre avaliadores. Vigo, Brown e Conway (2013)
 compararam seis ferramentas de avaliação automática e encontraram cobertura de, no máximo,
 50% dos critérios de sucesso, com completude entre 14% e 38% — resultado que estabelece um
-teto empírico para qualquer afirmação de conformidade baseada apenas em automação. Power
-*et al.* (2012), a partir de 1.383 instâncias de problema encontradas por 32 usuários cegos
-em 16 sítios, verificaram que apenas 50,4% dos problemas vividos correspondiam a algum
-critério de sucesso das diretrizes. As duas conclusões, somadas, delimitam o alcance legítimo
-do método automático: ele mede uma parte da norma, e a norma cobre uma parte da experiência.
+teto empírico para qualquer afirmação de conformidade baseada apenas em automação. O achado
+foi replicado em gerações posteriores de ferramentas: Frazão e Duarte (2020) compararam oito
+extensões de navegador sobre dez sítios de grande audiência e verificaram cobertura limitada
+dos critérios de sucesso, que varia de forma acentuada conforme o motor de avaliação; Ismailova
+e Inal (2022) submeteram 41 sítios governamentais a seis avaliadores on-line e observaram que
+cada ferramenta produz dados distintos para as mesmas páginas — de modo que a escolha do
+avaliador é, ela própria, decisão metodológica que precisa ser declarada, e ambos os estudos
+recomendam combinar ferramentas e complementá-las com verificação manual. Na outra ponta,
+Petrie e Kheir (2007), comparando usuários cegos e videntes em dois sítios, mostraram que os
+problemas vividos pelos dois grupos pouco se sobrepõem e que a gravidade atribuída pelos
+usuários não guarda relação significativa com a prioridade que as diretrizes conferem aos
+critérios. Power *et al.* (2012), a partir de 1.383 instâncias de problema encontradas por 32
+usuários cegos em 16 sítios, verificaram que apenas 50,4% dos problemas vividos correspondiam
+a algum critério de sucesso das diretrizes. Essas conclusões, somadas, delimitam o alcance
+legítimo do método automático: ele mede uma parte da norma, e a norma cobre uma parte da
+experiência.
 
 A terceira literatura, situada no campo da comunicação e informação em saúde, examina a
 barreira comunicacional no próprio serviço. Vieira, Caniato e Yonemotu (2017) descreveram as
@@ -398,11 +421,11 @@ As três barreiras que permaneceram fora do alcance automático estão descritas
 **Tabela 1** – Barreiras plantadas não detectáveis por verificação automática e julgamento
 exigido
 
-| Critério | Barreira plantada | Julgamento exigido |
-|---|---|---|
-| 1.4.1 Uso de cor | Situação da consulta indicada apenas por círculo colorido | A cor é o único portador do sentido? |
-| 2.4.2 Página com título | Título da página definido como "Documento1" | O título existe; é descritivo? |
-| 2.4.4 Finalidade do link | Quatro links com o texto "clique aqui" | O texto existe; descreve o destino? |
+| Critério                 | Barreira plantada                                            | Julgamento exigido                     |
+| ------------------------- | ------------------------------------------------------------ | -------------------------------------- |
+| 1.4.1 Uso de cor          | Situação da consulta indicada apenas por círculo colorido | A cor é o único portador do sentido? |
+| 2.4.2 Página com título | Título da página definido como "Documento1"                | O título existe; é descritivo?       |
+| 2.4.4 Finalidade do link  | Quatro links com o texto "clique aqui"                       | O texto existe; descreve o destino?    |
 
 Fonte: elaboração própria.
 
@@ -427,10 +450,10 @@ páginas por bloqueio, conforme a Tabela 2.
 **Tabela 2** – Perda de páginas no portal federal informacional antes e depois da correção do
 agente de usuário
 
-| Configuração do instrumento | Medições | Perda de páginas |
-|---|---|---|
-| Agente herdado, em modo headless | 3 | 17% · 17% · 33% |
-| Agente identificando a pesquisa | 3 | 0% · 0% · 0% |
+| Configuração do instrumento    | Medições | Perda de páginas |
+| -------------------------------- | ---------- | ----------------- |
+| Agente herdado, em modo headless | 3          | 17% · 17% · 33% |
+| Agente identificando a pesquisa  | 3          | 0% · 0% · 0%    |
 
 Fonte: elaboração própria.
 
@@ -448,13 +471,13 @@ Auditaram-se cinco plataformas, em 20 auditorias de página, das quais 16 foram 
 **Tabela 3** – Plataformas auditadas, perda de páginas e indicadores por plataforma, Rio de
 Janeiro, 16 de agosto de 2026
 
-| Plataforma | Esfera | Serviço | Páginas | Perda | ICA | IAN | IEJ | Violações | Ocorrências | Peso médio (MB) |
-|---|---|---|---|---|---|---|---|---|---|---|
-| Meu SUS Digital | Federal | Prontuário | 2 | 0% | 72,6 | 99,9 | 58,7 | 13 | 37 | 7,17 |
-| Portal federal de saúde | Federal | Informacional | 6 | 0% | 84,9 | 80,4 | 19,9 | 20 | 30 | 3,60 |
-| Secretaria estadual de saúde | Estadual | Ouvidoria, exames | 6 | 67% | 54,1 | 99,9 | 66,3 | 21 | 42 | 1,60 |
-| Secretaria municipal de saúde | Municipal | Informacional | 2 | 0% | 61,0 | 100,0 | 80,9 | 24 | 86 | 2,12 |
-| Portal municipal de serviços | Municipal | Serviços | 4 | 0% | 50,7 | 100,0 | 87,9 | 47 | 974 | 1,14 |
+| Plataforma                     | Esfera    | Serviço          | Páginas | Perda | ICA  | IAN   | IEJ  | Violações | Ocorrências | Peso médio (MB) |
+| ------------------------------ | --------- | ----------------- | -------- | ----- | ---- | ----- | ---- | ----------- | ------------ | ---------------- |
+| Meu SUS Digital                | Federal   | Prontuário       | 2        | 0%    | 72,6 | 99,9  | 58,7 | 13          | 37           | 7,17             |
+| Portal federal de saúde       | Federal   | Informacional     | 6        | 0%    | 84,9 | 80,4  | 19,9 | 20          | 30           | 3,60             |
+| Secretaria estadual de saúde  | Estadual  | Ouvidoria, exames | 6        | 67%   | 54,1 | 99,9  | 66,3 | 21          | 42           | 1,60             |
+| Secretaria municipal de saúde | Municipal | Informacional     | 2        | 0%    | 61,0 | 100,0 | 80,9 | 24          | 86           | 2,12             |
+| Portal municipal de serviços  | Municipal | Serviços         | 4        | 0%    | 50,7 | 100,0 | 87,9 | 47          | 974          | 1,14             |
 
 Fonte: elaboração própria.
 Notas: ICA — Índice de Conformidade de Acessibilidade (0–100, maior é melhor); IAN — Índice
@@ -489,13 +512,13 @@ disponibilidade dos dois hospedeiros envolvidos, sintetizada na Tabela 4.
 **Tabela 4** – Observação direta da disponibilidade dos hospedeiros do portal estadual, 16 de
 agosto de 2026
 
-| Instante (tempo universal coordenado) | Instrumento | Resultado |
-|---|---|---|
-| 00h47 | Cliente HTTP | Resposta 200 nos três endereços |
-| 01h00 · 01h04 · 01h31 · 01h40 | Navegador | Falha em 50% a 67% das páginas |
-| 01h06 | Cliente HTTP | Falha nos dois hospedeiros |
-| 01h29 | Cliente HTTP | Resposta 200 nos três endereços |
-| 01h37 | Cliente HTTP e navegador | Falha em ambos, simultaneamente |
+| Instante (tempo universal coordenado) | Instrumento              | Resultado                         |
+| ------------------------------------- | ------------------------ | --------------------------------- |
+| 00h47                                 | Cliente HTTP             | Resposta 200 nos três endereços |
+| 01h00 · 01h04 · 01h31 · 01h40      | Navegador                | Falha em 50% a 67% das páginas   |
+| 01h06                                 | Cliente HTTP             | Falha nos dois hospedeiros        |
+| 01h29                                 | Cliente HTTP             | Resposta 200 nos três endereços |
+| 01h37                                 | Cliente HTTP e navegador | Falha em ambos, simultaneamente   |
 
 Fonte: elaboração própria.
 
@@ -517,11 +540,11 @@ nuvem também nos Estados Unidos, e a conexão residencial brasileira da coleta 
 **Tabela 5** – Resposta dos hospedeiros do portal estadual por posição de rede, 19 de agosto de
 2026, entre 05h35 e 05h50 (tempo universal coordenado)
 
-| Endereço | Nuvem A (EUA) | Nuvem B (EUA) | Conexão residencial (Brasil) |
-|---|---|---|---|
-| Portal institucional | conexão encerrada | 500 | **200** |
-| Resultado de exame | conexão encerrada | 500 | **200** |
-| Ouvidoria | 200 | 200 | 200 |
+| Endereço            | Nuvem A (EUA)      | Nuvem B (EUA) | Conexão residencial (Brasil) |
+| -------------------- | ------------------ | ------------- | ----------------------------- |
+| Portal institucional | conexão encerrada | 500           | **200**                 |
+| Resultado de exame   | conexão encerrada | 500           | **200**                 |
+| Ouvidoria            | 200                | 200           | 200                           |
 
 Fonte: elaboração própria.
 
@@ -567,12 +590,12 @@ por isso não figuram nas distribuições por princípio e por nível de conform
 **Tabela 6** – Distribuição das violações por princípio, por nível de conformidade e por
 faixa de risco jurídico
 
-| Princípio | Violações | Nível | Violações | Risco jurídico | Violações |
-|---|---|---|---|---|---|
-| Perceptível | 64 | A | 82 | Crítico | 28 |
-| Operável | 18 | AA | 31 | Alto | 87 |
-| Compreensível | 16 | — | — | Moderado | 10 |
-| Robusto | 15 | — | — | Baixo | 0 |
+| Princípio      | Violações   | Nível          | Violações   | Risco jurídico | Violações   |
+| --------------- | ------------- | --------------- | ------------- | --------------- | ------------- |
+| Perceptível    | 64            | A               | 82            | Crítico        | 28            |
+| Operável       | 18            | AA              | 31            | Alto            | 87            |
+| Compreensível  | 16            | —              | —            | Moderado        | 10            |
+| Robusto         | 15            | —              | —            | Baixo           | 0             |
 | **Total** | **113** | **Total** | **113** | **Total** | **125** |
 
 Fonte: elaboração própria.
@@ -612,14 +635,14 @@ deficiência motora. A Tabela 7 decompõe as 28 violações críticas.
 **Tabela 7** – Regras que produziram violações de risco jurídico crítico e privação
 correspondente
 
-| Regra | Achados | Consequência para o usuário |
-|---|---|---|
-| Nome de botão ausente | 10 | A ação é inominada |
-| Nome de link ausente | 10 | O leitor de tela anuncia "link" e nada mais |
-| Nome de botão de formulário ausente | 4 | Controle de envio sem rótulo |
-| Controle não interativo com manipulador de clique | 2 | Elemento clicável inalcançável por teclado |
-| Alternativa textual de botão-imagem ausente | 1 | Botão sem descrição |
-| Rótulo programático de campo ausente | 1 | Campo sem identificação para tecnologia assistiva |
+| Regra                                              | Achados | Consequência para o usuário                       |
+| -------------------------------------------------- | ------- | --------------------------------------------------- |
+| Nome de botão ausente                             | 10      | A ação é inominada                               |
+| Nome de link ausente                               | 10      | O leitor de tela anuncia "link" e nada mais         |
+| Nome de botão de formulário ausente              | 4       | Controle de envio sem rótulo                       |
+| Controle não interativo com manipulador de clique | 2       | Elemento clicável inalcançável por teclado       |
+| Alternativa textual de botão-imagem ausente       | 1       | Botão sem descrição                              |
+| Rótulo programático de campo ausente             | 1       | Campo sem identificação para tecnologia assistiva |
 
 Fonte: elaboração própria.
 
@@ -633,11 +656,11 @@ A Tabela 8 apresenta as medianas dos três índices por esfera.
 
 **Tabela 8** – Medianas dos índices por esfera federativa
 
-| Esfera | Páginas | ICA | IAN | IEJ |
-|---|---|---|---|---|
-| Federal | 8 | 86,0 | 80,8 | 22,3 |
-| Estadual | 2 | 58,9 | 99,9 | 66,3 |
-| Municipal | 6 | 61,0 | 100,0 | 84,2 |
+| Esfera    | Páginas | ICA  | IAN   | IEJ  |
+| --------- | -------- | ---- | ----- | ---- |
+| Federal   | 8        | 86,0 | 80,8  | 22,3 |
+| Estadual  | 2        | 58,9 | 99,9  | 66,3 |
+| Municipal | 6        | 61,0 | 100,0 | 84,2 |
 
 Fonte: elaboração própria.
 
@@ -698,13 +721,13 @@ resultados por plataforma.
 **Tabela 9** – Peso mediano, custo por acesso, fração da franquia mensal e participação de
 tráfego de terceiros, por plataforma
 
-| Plataforma | Peso mediano (MB) | Custo por acesso (R$) | Fração da franquia | Tráfego de terceiros |
-|---|---|---|---|---|
-| Meu SUS Digital | 7,17 | 0,0210 | 0,070% | 2,2% |
-| Portal federal de saúde | 2,49 | 0,0073 | 0,024% | 41,9% |
-| Secretaria municipal de saúde | 2,11 | 0,0062 | 0,021% | 69,4% |
-| Secretaria estadual de saúde | 1,60 | 0,0047 | 0,016% | 16,6% |
-| Portal municipal de serviços | 1,14 | 0,0033 | 0,011% | 40,8% |
+| Plataforma                     | Peso mediano (MB) | Custo por acesso (R$) | Fração da franquia | Tráfego de terceiros |
+| ------------------------------ | ----------------- | --------------------- | -------------------- | --------------------- |
+| Meu SUS Digital                | 7,17              | 0,0210                | 0,070%               | 2,2%                  |
+| Portal federal de saúde       | 2,49              | 0,0073                | 0,024%               | 41,9%                 |
+| Secretaria municipal de saúde | 2,11              | 0,0062                | 0,021%               | 69,4%                 |
+| Secretaria estadual de saúde  | 1,60              | 0,0047                | 0,016%               | 16,6%                 |
+| Portal municipal de serviços  | 1,14              | 0,0033                | 0,011%               | 40,8%                 |
 
 Fonte: elaboração própria.
 
@@ -742,15 +765,15 @@ ocorrências por grupo de pessoas afetado.
 
 **Tabela 10** – Ocorrências de barreira e achados distintos, por grupo de pessoas afetado
 
-| Grupo afetado | Ocorrências | Achados |
-|---|---|---|
-| Deficiência intelectual ou neurodivergência | 1.126 | 96 |
-| Baixa visão | 1.060 | 76 |
-| Deficiência na visão de cores | 636 | 8 |
-| Cegueira, com uso de leitor de tela | 479 | 82 |
-| Deficiência motora | 116 | 37 |
-| Plano de dados limitado | 106 | 22 |
-| Uso de comando por voz | 84 | 26 |
+| Grupo afetado                                 | Ocorrências | Achados |
+| --------------------------------------------- | ------------ | ------- |
+| Deficiência intelectual ou neurodivergência | 1.126        | 96      |
+| Baixa visão                                  | 1.060        | 76      |
+| Deficiência na visão de cores               | 636          | 8       |
+| Cegueira, com uso de leitor de tela           | 479          | 82      |
+| Deficiência motora                           | 116          | 37      |
+| Plano de dados limitado                       | 106          | 22      |
+| Uso de comando por voz                        | 84           | 26      |
 
 Fonte: elaboração própria.
 
@@ -770,20 +793,20 @@ na subseção 2.4.
 
 **Tabela 11** – Dispositivos normativos invocados pelas violações confirmadas
 
-| Dispositivo | Invocações |
-|---|---|
-| Lei 13.146/2015, art. 18 — atenção integral à saúde da pessoa com deficiência | 125 |
-| Constituição Federal, art. 196 — acesso universal e igualitário | 125 |
-| Lei 13.146/2015, art. 63, caput — acessibilidade em sítios de órgãos de governo | 113 |
-| Lei 13.146/2015, art. 3º, IV, "d" — barreiras nas comunicações e na informação | 113 |
-| Lei 13.146/2015, art. 4º — igualdade e não discriminação | 113 |
-| Decreto 5.296/2004, art. 47 | 113 |
-| Modelo de Acessibilidade em Governo Eletrônico | 113 |
-| Convenção sobre os Direitos das Pessoas com Deficiência, art. 25 | 113 |
-| Lei 13.146/2015, art. 74 — tecnologia assistiva | 76 |
-| Constituição Federal, art. 5º, XIV — acesso à informação | 38 |
-| Convenção sobre os Direitos das Pessoas com Deficiência, art. 9 | 28 |
-| Lei 12.527/2011, art. 8º, § 3º, VIII — transparência ativa | 26 |
+| Dispositivo                                                                          | Invocações |
+| ------------------------------------------------------------------------------------ | ------------ |
+| Lei 13.146/2015, art. 18 — atenção integral à saúde da pessoa com deficiência  | 125          |
+| Constituição Federal, art. 196 — acesso universal e igualitário                  | 125          |
+| Lei 13.146/2015, art. 63, caput — acessibilidade em sítios de órgãos de governo  | 113          |
+| Lei 13.146/2015, art. 3º, IV, "d" — barreiras nas comunicações e na informação | 113          |
+| Lei 13.146/2015, art. 4º — igualdade e não discriminação                        | 113          |
+| Decreto 5.296/2004, art. 47                                                          | 113          |
+| Modelo de Acessibilidade em Governo Eletrônico                                      | 113          |
+| Convenção sobre os Direitos das Pessoas com Deficiência, art. 25                  | 113          |
+| Lei 13.146/2015, art. 74 — tecnologia assistiva                                     | 76           |
+| Constituição Federal, art. 5º, XIV — acesso à informação                      | 38           |
+| Convenção sobre os Direitos das Pessoas com Deficiência, art. 9                   | 28           |
+| Lei 12.527/2011, art. 8º, § 3º, VIII — transparência ativa                      | 26           |
 
 Fonte: elaboração própria.
 
@@ -963,7 +986,11 @@ do estudo. Cabe registrar o efeito medido: sob as ofertas consultadas, o serviç
 saúde ocupa posição tarifária desfavorável frente a aplicações privadas de mensageria. Se
 confirmada em levantamento dirigido ao mercado, a assimetria sugere via de correção
 regulatória — inclusão de serviços públicos de saúde no tráfego não tarifado — e não apenas
-técnica.
+técnica. A literatura regulatória sobre *zero-rating* já apontara o risco estrutural da
+prática: ao isentar de franquia aplicações previamente escolhidas, ela desloca a rede de
+propósito geral para um conjunto de serviços predeterminados e converte o usuário em
+consumidor passivo do que foi selecionado para ele (Belli, 2017) — e, no caso aqui medido, o
+que ficou fora da seleção foi o serviço público de saúde.
 
 Os dois mecanismos incidem sobre uma população cuja conectividade já é precária por outras
 razões: nas classes D e E, apenas 3% reúnem as condições do indicador de conectividade
@@ -1007,7 +1034,8 @@ Os limites a seguir devem acompanhar qualquer leitura dos resultados.
 
 A **cobertura é parcial**: 27 dos 50 critérios admitem veredito automático, e apenas para
 alguns modos de falha. O valor é coerente com o teto empírico reportado na literatura (Vigo;
-Brown; Conway, 2013) e reforça que ausência de achado não equivale a conformidade. A
+Brown; Conway, 2013; Frazão; Duarte, 2020; Ismailova; Inal, 2022) e reforça que ausência de
+achado não equivale a conformidade. A
 concentração das violações nos princípios perceptível e operável, aqui como em Alajarmeh
 (2021), é em parte propriedade do objeto e em parte propriedade do método: são os princípios
 que a verificação automática alcança melhor, e a leitura precisa considerar as duas causas.
@@ -1111,9 +1139,20 @@ que a barreira exclui.
 
 ## Referências
 
+ACOSTA-VARGAS, Patricia; NOVILLO-VILLEGAS, Sylvia; SALVADOR-ACOSTA, Belén; CALVOPINA, Manuel;
+KYRIAKIDIS, Nikolaos; ORTIZ-PRADO, Esteban; SALVADOR-ULLAURI, Luis. Accessibility analysis of
+worldwide COVID-19-related information portals. **International Journal of Environmental
+Research and Public Health**, Basel, v. 19, n. 19, art. 12102, 2022. DOI:
+https://doi.org/10.3390/ijerph191912102.
+
 ALAJARMEH, Nancy. Evaluating the accessibility of public health websites: an exploratory
 cross-country study. **Universal Access in the Information Society**, Berlin, v. 21, n. 3,
 p. 771-789, 2021. DOI: https://doi.org/10.1007/s10209-020-00788-7.
+
+ALISMAIL, Sarah; CHIPIDZA, Wallace. Accessibility evaluation of COVID-19 vaccine registration
+websites across the United States. **Journal of the American Medical Informatics
+Association**, Oxford, v. 28, n. 9, p. 1990-1995, 2021. DOI:
+https://doi.org/10.1093/jamia/ocab105.
 
 ANATEL — AGÊNCIA NACIONAL DE TELECOMUNICAÇÕES. **Panorama econômico-financeiro do setor de
 telecomunicações**: 1º trimestre de 2026. Brasília, DF: Anatel, 2026.
@@ -1123,6 +1162,10 @@ Bacellar Leal; PIMENTEL, Mariano Gomes; SANTOS, Rodrigo Pereira dos. Avaliação
 acessibilidade da plataforma Gov.br por ferramentas automatizadas. In: LATIN AMERICAN
 SYMPOSIUM ON DIGITAL GOVERNMENT, 12., 2024. **Anais** [...]. Porto Alegre: Sociedade
 Brasileira de Computação, 2024. p. 50-61. DOI: https://doi.org/10.5753/wcge.2024.2282.
+
+BELLI, Luca. Net neutrality, zero rating and the Minitelisation of the internet. **Journal of
+Cyber Policy**, London, v. 2, n. 1, p. 96-122, 2017. DOI:
+https://doi.org/10.1080/23738871.2016.1238954.
 
 BRAJNIK, Giorgio. Validity and reliability of web accessibility guidelines. In: INTERNATIONAL
 ACM SIGACCESS CONFERENCE ON COMPUTERS AND ACCESSIBILITY, 11., 2009, Pittsburgh.
@@ -1166,6 +1209,10 @@ informação e comunicação nos domicílios brasileiros**: TIC Domicílios 2024
 CGI.br; NIC.br; Cetic.br, 2025. Disponível em: https://cetic.br/pt/pesquisa/domicilios/.
 Acesso em: 16 ago. 2026.
 
+FRAZÃO, Tânia; DUARTE, Carlos. Comparing accessibility evaluation plug-ins. In: WEB FOR ALL
+CONFERENCE, 17., 2020, Taipei. **Proceedings** [...]. New York: ACM, 2020. p. 1-11. DOI:
+https://doi.org/10.1145/3371300.3383346.
+
 FREIRE, André Pimenta; CASTRO, Mário de; FORTES, Renata Pontin de Mattos. Acessibilidade dos
 sítios web dos governos estaduais brasileiros: uma análise quantitativa entre 1996 e 2007.
 **Revista de Administração Pública**, Rio de Janeiro, v. 43, n. 2, p. 395-414, 2009. DOI:
@@ -1178,19 +1225,27 @@ IBGE — INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. **Censo demográfico 
 com deficiência — resultados preliminares da amostra. Rio de Janeiro: IBGE, 2025. Disponível
 em: https://www.ibge.gov.br/. Acesso em: 16 ago. 2026.
 
+ISMAILOVA, Rita; INAL, Yavuz. Comparison of online accessibility evaluation tools: an analysis
+of tool effectiveness. **IEEE Access**, Piscataway, v. 10, p. 58233-58239, 2022. DOI:
+https://doi.org/10.1109/ACCESS.2022.3179375.
+
+PETRIE, Helen; KHEIR, Omar. The relationship between accessibility and usability of websites.
+In: SIGCHI CONFERENCE ON HUMAN FACTORS IN COMPUTING SYSTEMS, 2007, San Jose. **Proceedings**
+[...]. New York: ACM, 2007. p. 397-406. DOI: https://doi.org/10.1145/1240624.1240688.
+
 POWER, Christopher; FREIRE, André; PETRIE, Helen; SWALLOW, David. Guidelines are only half of
 the story: accessibility problems encountered by blind users on the web. In: SIGCHI CONFERENCE
 ON HUMAN FACTORS IN COMPUTING SYSTEMS, 2012, Austin. **Proceedings** [...]. New York: ACM,
-2012. p. 433-442.
+2012. p. 433-442. DOI: https://doi.org/10.1145/2207676.2207736.
 
 SILVA, Rosane Leal da; LA RUE, Letícia Almeida de. A acessibilidade nos sites do Poder
 Executivo estadual à luz dos direitos fundamentais das pessoas com deficiência. **Revista de
-Administração Pública**, Rio de Janeiro, v. 49, n. 2, p. 315-339, 2015. DOI:
+Administração Pública**, Rio de Janeiro, v. 49, n. 2, p. 315-336, 2015. DOI:
 https://doi.org/10.1590/0034-7612130130.
 
 SIMÃO, João Batista; RODRIGUES, Georgete. Acessibilidade às informações públicas: uma
 avaliação do portal de serviços e informações do governo federal. **Ciência da Informação**,
-Brasília, DF, v. 34, n. 2, p. 234-245, 2005. DOI:
+Brasília, DF, v. 34, n. 2, p. 81-92, 2005. DOI:
 https://doi.org/10.1590/S0100-19652005000200009.
 
 VIEIRA, Camila Mugnai; CANIATO, Daniela Godoi; YONEMOTU, Bruna Prado Ribeiro. Comunicação e
@@ -1201,8 +1256,14 @@ https://doi.org/10.29397/reciis.v11i2.1139.
 VIGO, Markel; BROWN, Justin; CONWAY, Vivienne. Benchmarking web accessibility evaluation
 tools: measuring the harm of sole reliance on automated tests. In: INTERNATIONAL
 CROSS-DISCIPLINARY CONFERENCE ON WEB ACCESSIBILITY, 10., 2013, Rio de Janeiro.
-**Proceedings** [...]. New York: ACM, 2013. DOI: https://doi.org/10.1145/2461121.2461124.
+**Proceedings** [...]. New York: ACM, 2013. p. 1-10. DOI:
+https://doi.org/10.1145/2461121.2461124.
 
 W3C — WORLD WIDE WEB CONSORTIUM. **Web Content Accessibility Guidelines (WCAG) 2.1**. W3C
 Recommendation, 5 jun. 2018. Disponível em: https://www.w3.org/TR/WCAG21/. Acesso em: 16 ago.
 2026.
+
+YI, Yong Jeong. Web accessibility of healthcare Web sites of Korean government and public
+agencies: a user test for persons with visual impairment. **Universal Access in the
+Information Society**, Berlin, v. 19, n. 1, p. 41-56, 2020. DOI:
+https://doi.org/10.1007/s10209-018-0625-5.
