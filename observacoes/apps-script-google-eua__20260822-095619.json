@@ -1,0 +1,119 @@
+{
+  "vantagem": "apps-script-google-eua",
+  "observado_em": "2026-08-22T09:56:19.070Z",
+  "agente": "AcessiSaude-Audit/0.1 (sonda de vantagem; +thalles.costa@ioc.fiocruz.br)",
+  "instrumento": "sonda-de-vantagem/apps-script",
+  "nota": "Controle de rede. Nao e auditoria de acessibilidade: mede apenas se o endereco responde.",
+  "observacoes": [
+    {
+      "observado_em": "2026-08-22T09:56:19.070Z",
+      "vantagem": "apps-script-google-eua",
+      "alvo": "conecte-sus-web",
+      "url": "https://meususdigital.saude.gov.br/",
+      "status_http": 200,
+      "bytes": 1490,
+      "duracao_ms": 719,
+      "url_final": "",
+      "erro": ""
+    },
+    {
+      "observado_em": "2026-08-22T09:56:19.070Z",
+      "vantagem": "apps-script-google-eua",
+      "alvo": "gov-br-saude",
+      "url": "https://www.gov.br/saude/pt-br",
+      "status_http": 200,
+      "bytes": 150132,
+      "duracao_ms": 267,
+      "url_final": "",
+      "erro": ""
+    },
+    {
+      "observado_em": "2026-08-22T09:56:19.070Z",
+      "vantagem": "apps-script-google-eua",
+      "alvo": "gov-br-saude",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z",
+      "status_http": 200,
+      "bytes": 134131,
+      "duracao_ms": 261,
+      "url_final": "",
+      "erro": ""
+    },
+    {
+      "observado_em": "2026-08-22T09:56:19.070Z",
+      "vantagem": "apps-script-google-eua",
+      "alvo": "gov-br-saude",
+      "url": "https://www.gov.br/saude/pt-br/composicao/saes",
+      "status_http": 200,
+      "bytes": 152572,
+      "duracao_ms": 276,
+      "url_final": "",
+      "erro": ""
+    },
+    {
+      "observado_em": "2026-08-22T09:56:19.070Z",
+      "vantagem": "apps-script-google-eua",
+      "alvo": "ses-rj",
+      "url": "https://www.rj.gov.br/saude/",
+      "status_http": 500,
+      "bytes": 39115,
+      "duracao_ms": 830,
+      "url_final": "",
+      "erro": ""
+    },
+    {
+      "observado_em": "2026-08-22T09:56:19.070Z",
+      "vantagem": "apps-script-google-eua",
+      "alvo": "ses-rj",
+      "url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+      "status_http": 200,
+      "bytes": 21487,
+      "duracao_ms": 1224,
+      "url_final": "",
+      "erro": ""
+    },
+    {
+      "observado_em": "2026-08-22T09:56:19.070Z",
+      "vantagem": "apps-script-google-eua",
+      "alvo": "ses-rj",
+      "url": "https://www.saude.rj.gov.br/laudos",
+      "status_http": 500,
+      "bytes": 39121,
+      "duracao_ms": 1444,
+      "url_final": "",
+      "erro": ""
+    },
+    {
+      "observado_em": "2026-08-22T09:56:19.070Z",
+      "vantagem": "apps-script-google-eua",
+      "alvo": "sms-rio",
+      "url": "https://prefeitura.rio/saude/",
+      "status_http": 200,
+      "bytes": 180406,
+      "duracao_ms": 3139,
+      "url_final": "",
+      "erro": ""
+    },
+    {
+      "observado_em": "2026-08-22T09:56:19.070Z",
+      "vantagem": "apps-script-google-eua",
+      "alvo": "carioca-rio-saude",
+      "url": "https://carioca.rio/tema/saude/",
+      "status_http": 200,
+      "bytes": 215565,
+      "duracao_ms": 5463,
+      "url_final": "",
+      "erro": ""
+    },
+    {
+      "observado_em": "2026-08-22T09:56:19.070Z",
+      "vantagem": "apps-script-google-eua",
+      "alvo": "carioca-rio-saude",
+      "url": "https://carioca.rio/servicos/atendimento-em-unidades-de-pronto-atendimento-upa-24-horas/",
+      "status_http": 200,
+      "bytes": 157115,
+      "duracao_ms": 3676,
+      "url_final": "",
+      "erro": ""
+    }
+  ]
+}
