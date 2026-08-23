@@ -1,0 +1,1406 @@
+{
+  "id": "877ae701-7385-42f6-a3db-9ebc0e201065",
+  "schema_version": "1.0.0",
+  "target_id": "conecte-sus-web",
+  "target_name": "Meu SUS Digital (Conecte SUS) — versão web",
+  "base_url": "https://meususdigital.saude.gov.br",
+  "status": "completed",
+  "started_at": "2026-08-23T12:20:59.224084Z",
+  "finished_at": "2026-08-23T12:21:20.276144Z",
+  "pages": [
+    {
+      "url": "https://meususdigital.saude.gov.br/",
+      "final_url": "https://meususdigital.saude.gov.br/login",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Meu SUS Digital",
+      "lang": "pt-BR",
+      "viewport": {
+        "name": "mobile-320",
+        "width": 320,
+        "height": 640,
+        "device_scale_factor": 2.0,
+        "is_mobile": true,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; SM-A105M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+      },
+      "started_at": "2026-08-23T12:21:00.057637Z",
+      "finished_at": "2026-08-23T12:21:11.658401Z",
+      "findings": [
+        {
+          "id": "2fcbe705-a762-4d03-a127-13adb85ff084",
+          "rule_id": "button-name",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "critical",
+          "criteria": [
+            "4.1.2"
+          ],
+          "summary": "Buttons must have discernible text",
+          "description": "Ensure buttons have discernible text",
+          "remediation": "Usar elementos nativos ou, quando inevitável, ARIA completo (role, nome acessível, estado) com teclado equivalente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/button-name?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "fala",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "['.item-menu:nth-child(1) > ion-button', 'button']",
+              "html": "<button type=\"button\" class=\"button-native\" part=\"native\"><span class=\"button-inner\"><slot name=\"icon-only\"></slot><slot name=\"start\"></slot><slot></slot><slot name=\"end\"></slot></span><ion-ripple-effect role=\"presentation\" class=\"md hydrated\"></ion-ripple-effect></button>",
+              "failure_summary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "['.item-menu:nth-child(2) > ion-button', 'button']",
+              "html": "<button type=\"button\" class=\"button-native\" part=\"native\"><span class=\"button-inner\"><slot name=\"icon-only\"></slot><slot name=\"start\"></slot><slot></slot><slot name=\"end\"></slot></span><ion-ripple-effect role=\"presentation\" class=\"md hydrated\"></ion-ripple-effect></button>",
+              "failure_summary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "['.item-menu:nth-child(3) > ion-button', 'button']",
+              "html": "<button type=\"button\" class=\"button-native\" part=\"native\"><span class=\"button-inner\"><slot name=\"icon-only\"></slot><slot name=\"start\"></slot><slot></slot><slot name=\"end\"></slot></span><ion-ripple-effect role=\"presentation\" class=\"md hydrated\"></ion-ripple-effect></button>",
+              "failure_summary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "['.item-menu:nth-child(4) > ion-button', 'button']",
+              "html": "<button type=\"button\" class=\"button-native\" part=\"native\"><span class=\"button-inner\"><slot name=\"icon-only\"></slot><slot name=\"start\"></slot><slot></slot><slot name=\"end\"></slot></span><ion-ripple-effect role=\"presentation\" class=\"md hydrated\"></ion-ripple-effect></button>",
+              "failure_summary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "['.item-menu:nth-child(5) > ion-button', 'button']",
+              "html": "<button type=\"button\" class=\"button-native\" part=\"native\"><span class=\"button-inner\"><slot name=\"icon-only\"></slot><slot name=\"start\"></slot><slot></slot><slot name=\"end\"></slot></span><ion-ripple-effect role=\"presentation\" class=\"md hydrated\"></ion-ripple-effect></button>",
+              "failure_summary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "['.item-menu:nth-child(6) > ion-button', 'button']",
+              "html": "<button type=\"button\" class=\"button-native\" part=\"native\"><span class=\"button-inner\"><slot name=\"icon-only\"></slot><slot name=\"start\"></slot><slot></slot><slot name=\"end\"></slot></span><ion-ripple-effect role=\"presentation\" class=\"md hydrated\"></ion-ripple-effect></button>",
+              "failure_summary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "['.item-menu:nth-child(7) > ion-button', 'button']",
+              "html": "<button type=\"button\" class=\"button-native\" part=\"native\"><span class=\"button-inner\"><slot name=\"icon-only\"></slot><slot name=\"start\"></slot><slot></slot><slot name=\"end\"></slot></span><ion-ripple-effect role=\"presentation\" class=\"md hydrated\"></ion-ripple-effect></button>",
+              "failure_summary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            }
+          ],
+          "page_url": "https://meususdigital.saude.gov.br/login",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-23T12:21:11.489667Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 7,
+          "legal_risk": "critico",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "onu.art9"
+          ],
+          "legal_thesis": "Controle sem nome, função ou valor expostos simplesmente não existe para a tecnologia assistiva: o serviço é, para o usuário cego, inexistente. É a forma mais severa de barreira na informação do art. 3º, IV, 'd'."
+        },
+        {
+          "id": "e12edce5-f9f4-4cfd-ba50-6cdab7ac9035",
+          "rule_id": "image-alt",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "critical",
+          "criteria": [
+            "1.1.1"
+          ],
+          "summary": "Images must have alternative text",
+          "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+          "remediation": "Prover atributo alt descritivo em imagens informativas e alt vazio em imagens decorativas; descrever gráficos e infográficos em texto adjacente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/image-alt?application=axeAPI",
+          "affects": [
+            "baixa_conectividade",
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "img",
+              "html": "<img src=\"/assets/imgs/bg-login.svg\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            }
+          ],
+          "page_url": "https://meususdigital.saude.gov.br/login",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-23T12:21:11.489742Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "A ausência de alternativa textual configura barreira na comunicação e na informação (art. 3º, IV, 'd', LBI): o conteúdo existe juridicamente como informação pública, mas não é recebível pelo usuário cego, esvaziando o dever de transparência ativa do art. 8º, § 3º, VIII da LAI."
+        },
+        {
+          "id": "7beea740-6f8c-41d5-ba33-2f52c0d027a1",
+          "rule_id": "meta-viewport",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "moderate",
+          "criteria": [
+            "1.4.4"
+          ],
+          "summary": "Zooming and scaling must not be disabled",
+          "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+          "remediation": "Usar unidades relativas e remover 'user-scalable=no' da meta viewport.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/meta-viewport?application=axeAPI",
+          "affects": [
+            "baixa_visao",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "meta[name=\"viewport\"]",
+              "html": "<meta name=\"viewport\" content=\"viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\">",
+              "failure_summary": "Fix any of the following:\n  user-scalable=no on <meta> tag disables zooming on mobile devices",
+              "target_frame": [],
+              "measured": {
+                "meta-viewport": "user-scalable=no"
+              }
+            }
+          ],
+          "page_url": "https://meususdigital.saude.gov.br/login",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-23T12:21:11.489792Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25"
+          ],
+          "legal_thesis": "O bloqueio de ampliação nega adaptação razoável, conduta equiparada a discriminação pelo art. 4º, § 1º da LBI."
+        },
+        {
+          "id": "2e6c5271-ffd6-4785-9262-099700f0c127",
+          "rule_id": "role-img-alt",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.1.1"
+          ],
+          "summary": "[role=\"img\"] and [role=\"image\"] elements must have alternative text",
+          "description": "Ensure [role=\"img\"] and [role=\"image\"] elements have alternative text",
+          "remediation": "Prover atributo alt descritivo em imagens informativas e alt vazio em imagens decorativas; descrever gráficos e infográficos em texto adjacente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/role-img-alt?application=axeAPI",
+          "affects": [
+            "baixa_conectividade",
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": ".item-menu:nth-child(1) > ion-button > ion-icon",
+              "html": "<ion-icon _ngcontent-ng-c1042447356=\"\" role=\"img\" class=\"md hydrated\"></ion-icon>",
+              "failure_summary": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".item-menu:nth-child(2) > ion-button > ion-icon",
+              "html": "<ion-icon _ngcontent-ng-c1042447356=\"\" role=\"img\" class=\"md hydrated\"></ion-icon>",
+              "failure_summary": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".item-menu:nth-child(3) > ion-button > ion-icon",
+              "html": "<ion-icon _ngcontent-ng-c1042447356=\"\" role=\"img\" class=\"md hydrated\"></ion-icon>",
+              "failure_summary": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".item-menu:nth-child(4) > ion-button > ion-icon",
+              "html": "<ion-icon _ngcontent-ng-c1042447356=\"\" role=\"img\" class=\"md hydrated\"></ion-icon>",
+              "failure_summary": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".item-menu:nth-child(5) > ion-button > ion-icon",
+              "html": "<ion-icon _ngcontent-ng-c1042447356=\"\" role=\"img\" class=\"md hydrated\"></ion-icon>",
+              "failure_summary": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".item-menu:nth-child(6) > ion-button > ion-icon",
+              "html": "<ion-icon _ngcontent-ng-c1042447356=\"\" role=\"img\" class=\"md hydrated\"></ion-icon>",
+              "failure_summary": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".item-menu:nth-child(7) > ion-button > ion-icon",
+              "html": "<ion-icon _ngcontent-ng-c1042447356=\"\" role=\"img\" class=\"md hydrated\"></ion-icon>",
+              "failure_summary": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            }
+          ],
+          "page_url": "https://meususdigital.saude.gov.br/login",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-23T12:21:11.489886Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 7,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "A ausência de alternativa textual configura barreira na comunicação e na informação (art. 3º, IV, 'd', LBI): o conteúdo existe juridicamente como informação pública, mas não é recebível pelo usuário cego, esvaziando o dever de transparência ativa do art. 8º, § 3º, VIII da LAI."
+        },
+        {
+          "id": "f5d8ebf4-2fcf-46a3-b40b-a72c75abd188",
+          "rule_id": "probe.landmarks.no-skip-link",
+          "source": "probe",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "2.4.1"
+          ],
+          "summary": "Nenhum link de salto para o conteúdo principal foi encontrado.",
+          "description": "Não há âncora funcional no início do documento que permita ignorar os blocos repetidos de navegação. A página declara marco principal, o que já satisfaz o critério pela técnica ARIA11; o link de salto permanece recomendável e a verificação fica registrada para revisão.",
+          "remediation": "Incluir link 'pular para o conteúdo principal' e marcos ARIA (landmarks).",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "",
+              "failure_summary": "Nenhuma âncora interna com destino existente.",
+              "target_frame": [],
+              "measured": {
+                "has_main": true
+              }
+            }
+          ],
+          "page_url": "https://meususdigital.saude.gov.br/login",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-23T12:21:11.500750Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "moderado",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art3.i"
+          ],
+          "legal_thesis": "A ausência de mecanismo de salto obriga a percorrer repetidamente blocos idênticos, esforço desproporcional vedado pelo conceito de acessibilidade com autonomia do art. 3º, I da LBI."
+        },
+        {
+          "id": "243dd5cb-699d-47c8-b121-21727b245150",
+          "rule_id": "probe.heading-structure.none",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.3.1",
+            "2.4.6"
+          ],
+          "summary": "A página não possui nenhum cabeçalho.",
+          "description": "Sem cabeçalhos, o principal atalho de navegação do leitor de tela — a lista de títulos — fica vazio. A página só pode ser percorrida linearmente, do começo ao fim.",
+          "remediation": "Escrever cabeçalhos que descrevam o conteúdo da seção e rótulos que descrevam o dado solicitado.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "",
+              "failure_summary": "Zero cabeçalhos.",
+              "target_frame": [],
+              "measured": {}
+            }
+          ],
+          "page_url": "https://meususdigital.saude.gov.br/login",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-23T12:21:11.507280Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "Sem estrutura semântica, a tecnologia assistiva não consegue reconstruir a relação entre rótulo e dado; o art. 74 da LBI assegura o acesso a tecnologias assistivas, o que pressupõe conteúdo com elas compatível."
+        },
+        {
+          "id": "aba5a868-c280-46e7-97e0-e1d9b3b92126",
+          "rule_id": "probe.zoom-lock",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.4.4"
+          ],
+          "summary": "A página bloqueia a ampliação pelo usuário.",
+          "description": "A meta viewport declara restrições de escala: 'user-scalable=no' impede totalmente a ampliação; 'maximum-scale=1' limita a ampliação abaixo dos 200% exigidos. Pessoas com baixa visão dependem da ampliação nativa do navegador para ler conteúdo de saúde; o bloqueio equivale a recusar adaptação razoável.",
+          "remediation": "Usar unidades relativas e remover 'user-scalable=no' da meta viewport.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html",
+          "affects": [
+            "baixa_visao",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "meta[name=viewport]",
+              "html": "<meta name=\"viewport\" content=\"viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\">",
+              "failure_summary": "'user-scalable=no' impede totalmente a ampliação; 'maximum-scale=1' limita a ampliação abaixo dos 200% exigidos",
+              "target_frame": [],
+              "measured": {
+                "content": "viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no",
+                "user_scalable_no": true,
+                "maximum_scale": 1
+              }
+            }
+          ],
+          "page_url": "https://meususdigital.saude.gov.br/login",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-23T12:21:11.532791Z",
+          "legal_risk_override": "alto",
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25"
+          ],
+          "legal_thesis": "O bloqueio de ampliação nega adaptação razoável, conduta equiparada a discriminação pelo art. 4º, § 1º da LBI."
+        },
+        {
+          "id": "abac21dd-705e-405c-9b91-27804d420d8d",
+          "rule_id": "probe.data-cost",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "moderate",
+          "criteria": [],
+          "summary": "Um único acesso a esta página consome 5.97 MB, ou 0.058% da franquia mensal do plano de referência (1.7 centavo).",
+          "description": "A página impõe custo de dados ao usuário com plano limitado: peso de 5.97 MB, acima do limiar de 2.50 MB. O peso foi medido em bytes efetivamente transferidos, em contexto sem cache — o cenário do primeiro acesso e daquele que limpa dados do aparelho por falta de armazenamento. Consultada quatro vezes ao mês, frequência mínima plausível para acompanhar um agendamento ou um resultado de exame, esta página consome 0.23% da franquia (7.0 centavos) — e cada tentativa frustrada por barreira de acessibilidade soma-se a essa conta, de modo que as duas dimensões se agravam mutuamente.",
+          "remediation": "Reduzir o peso da página: comprimir e redimensionar imagens, servir formatos modernos, remover scripts de terceiros não essenciais ao serviço, adiar carregamento de recursos fora da área visível e priorizar HTML semântico sobre renderização integral por JavaScript.",
+          "help_url": null,
+          "affects": [
+            "baixa_conectividade"
+          ],
+          "nodes": [
+            {
+              "selector": "document",
+              "html": "",
+              "failure_summary": "peso de 5.97 MB, acima do limiar de 2.50 MB",
+              "target_frame": [],
+              "measured": {
+                "total_mb": 5.97,
+                "total_bytes": 6259678,
+                "request_count": 118,
+                "third_party_share": 0.0469,
+                "third_party_domains": [
+                  "doubleclick.net",
+                  "google.com.br",
+                  "googletagmanager.com",
+                  "unpkg.com"
+                ],
+                "bytes_by_type": {
+                  "document": 851,
+                  "fetch": 51357,
+                  "font": 942395,
+                  "image": 67659,
+                  "ping": 565,
+                  "script": 5181522,
+                  "stylesheet": 13333,
+                  "xhr": 1996
+                },
+                "cost_brl": 0.01749,
+                "franchise_share_pct": 0.0583,
+                "price_per_mb_brl": 0.0029296875,
+                "franchise_mb": 10240.0
+              }
+            }
+          ],
+          "page_url": "https://meususdigital.saude.gov.br/login",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-23T12:21:11.543440Z",
+          "legal_risk_override": "alto",
+          "extra_provisions": [
+            "cf.art196",
+            "lbi.art18",
+            "lei13460.art5",
+            "cf.art5.xiv"
+          ],
+          "legal_thesis_override": "O custo de dados exigido para acessar o serviço digital de saúde transfere ao cidadão um ônus econômico como condição de exercício de direito fundamental. Quando esse ônus recai desproporcionalmente sobre a população de menor renda — a mesma que depende exclusivamente do SUS — o acesso deixa de ser universal e igualitário, em desacordo com o art. 196 da CF/88 e com o dever de informação adequada do art. 18, § 4º da Lei 13.146/2015. A parcela do tráfego destinada a terceiros agrava a situação: o usuário custeia recursos que não lhe prestam o serviço público solicitado.",
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "cf.art196",
+            "lbi.art18",
+            "lei13460.art5",
+            "cf.art5.xiv"
+          ],
+          "legal_thesis": "O custo de dados exigido para acessar o serviço digital de saúde transfere ao cidadão um ônus econômico como condição de exercício de direito fundamental. Quando esse ônus recai desproporcionalmente sobre a população de menor renda — a mesma que depende exclusivamente do SUS — o acesso deixa de ser universal e igualitário, em desacordo com o art. 196 da CF/88 e com o dever de informação adequada do art. 18, § 4º da Lei 13.146/2015. A parcela do tráfego destinada a terceiros agrava a situação: o usuário custeia recursos que não lhe prestam o serviço público solicitado."
+        }
+      ],
+      "network": {
+        "total_bytes": 6259678,
+        "total_uncompressed_bytes": 0,
+        "request_count": 118,
+        "bytes_by_type": {
+          "document": 851,
+          "fetch": 51357,
+          "font": 942395,
+          "image": 67659,
+          "ping": 565,
+          "script": 5181522,
+          "stylesheet": 13333,
+          "xhr": 1996
+        },
+        "third_party_bytes": 293848,
+        "third_party_domains": [
+          "doubleclick.net",
+          "google.com.br",
+          "googletagmanager.com",
+          "unpkg.com"
+        ],
+        "dom_content_loaded_ms": 4908.199999988079,
+        "load_complete_ms": 8120.799999982119,
+        "largest_contentful_paint_ms": null,
+        "blocked_requests": 1,
+        "total_mb": 5.97,
+        "third_party_share": 0.0469
+      },
+      "error": null,
+      "axe_version": "4.13.0",
+      "screenshot_path": "C:\\Users\\Thalles\\Desktop\\Projetos\\AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de Acessibilidade Web (WCAGLBI) para Plataformas Públicas de Saúde\\data\\screenshots\\meususdigital.saude.gov.br__7bb912ee14__mobile-320.png",
+      "is_critical_path": true,
+      "duration_ms": 11600.764
+    },
+    {
+      "url": "https://meususdigital.saude.gov.br/",
+      "final_url": "https://meususdigital.saude.gov.br/login",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Meu SUS Digital",
+      "lang": "pt-BR",
+      "viewport": {
+        "name": "desktop-1366",
+        "width": 1366,
+        "height": 768,
+        "device_scale_factor": 1.0,
+        "is_mobile": false,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+      },
+      "started_at": "2026-08-23T12:21:11.679641Z",
+      "finished_at": "2026-08-23T12:21:20.105554Z",
+      "findings": [
+        {
+          "id": "112bbebf-bc5f-485e-997a-d021e6b72f29",
+          "rule_id": "button-name",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "critical",
+          "criteria": [
+            "4.1.2"
+          ],
+          "summary": "Buttons must have discernible text",
+          "description": "Ensure buttons have discernible text",
+          "remediation": "Usar elementos nativos ou, quando inevitável, ARIA completo (role, nome acessível, estado) com teclado equivalente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/button-name?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "fala",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "['.item-menu:nth-child(1) > ion-button', 'button']",
+              "html": "<button type=\"button\" class=\"button-native\" part=\"native\"><span class=\"button-inner\"><slot name=\"icon-only\"></slot><slot name=\"start\"></slot><slot></slot><slot name=\"end\"></slot></span><ion-ripple-effect role=\"presentation\" class=\"md hydrated\"></ion-ripple-effect></button>",
+              "failure_summary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "['.item-menu:nth-child(2) > ion-button', 'button']",
+              "html": "<button type=\"button\" class=\"button-native\" part=\"native\"><span class=\"button-inner\"><slot name=\"icon-only\"></slot><slot name=\"start\"></slot><slot></slot><slot name=\"end\"></slot></span><ion-ripple-effect role=\"presentation\" class=\"md hydrated\"></ion-ripple-effect></button>",
+              "failure_summary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "['.item-menu:nth-child(3) > ion-button', 'button']",
+              "html": "<button type=\"button\" class=\"button-native\" part=\"native\"><span class=\"button-inner\"><slot name=\"icon-only\"></slot><slot name=\"start\"></slot><slot></slot><slot name=\"end\"></slot></span><ion-ripple-effect role=\"presentation\" class=\"md hydrated\"></ion-ripple-effect></button>",
+              "failure_summary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "['.item-menu:nth-child(4) > ion-button', 'button']",
+              "html": "<button type=\"button\" class=\"button-native\" part=\"native\"><span class=\"button-inner\"><slot name=\"icon-only\"></slot><slot name=\"start\"></slot><slot></slot><slot name=\"end\"></slot></span><ion-ripple-effect role=\"presentation\" class=\"md hydrated\"></ion-ripple-effect></button>",
+              "failure_summary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "['.item-menu:nth-child(5) > ion-button', 'button']",
+              "html": "<button type=\"button\" class=\"button-native\" part=\"native\"><span class=\"button-inner\"><slot name=\"icon-only\"></slot><slot name=\"start\"></slot><slot></slot><slot name=\"end\"></slot></span><ion-ripple-effect role=\"presentation\" class=\"md hydrated\"></ion-ripple-effect></button>",
+              "failure_summary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "['.item-menu:nth-child(6) > ion-button', 'button']",
+              "html": "<button type=\"button\" class=\"button-native\" part=\"native\"><span class=\"button-inner\"><slot name=\"icon-only\"></slot><slot name=\"start\"></slot><slot></slot><slot name=\"end\"></slot></span><ion-ripple-effect role=\"presentation\" class=\"md hydrated\"></ion-ripple-effect></button>",
+              "failure_summary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "['.item-menu:nth-child(7) > ion-button', 'button']",
+              "html": "<button type=\"button\" class=\"button-native\" part=\"native\"><span class=\"button-inner\"><slot name=\"icon-only\"></slot><slot name=\"start\"></slot><slot></slot><slot name=\"end\"></slot></span><ion-ripple-effect role=\"presentation\" class=\"md hydrated\"></ion-ripple-effect></button>",
+              "failure_summary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            }
+          ],
+          "page_url": "https://meususdigital.saude.gov.br/login",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-23T12:21:19.766253Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 7,
+          "legal_risk": "critico",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "onu.art9"
+          ],
+          "legal_thesis": "Controle sem nome, função ou valor expostos simplesmente não existe para a tecnologia assistiva: o serviço é, para o usuário cego, inexistente. É a forma mais severa de barreira na informação do art. 3º, IV, 'd'."
+        },
+        {
+          "id": "050c367f-3326-4f58-b861-63f0c9bab9e5",
+          "rule_id": "meta-viewport",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "moderate",
+          "criteria": [
+            "1.4.4"
+          ],
+          "summary": "Zooming and scaling must not be disabled",
+          "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+          "remediation": "Usar unidades relativas e remover 'user-scalable=no' da meta viewport.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/meta-viewport?application=axeAPI",
+          "affects": [
+            "baixa_visao",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "meta[name=\"viewport\"]",
+              "html": "<meta name=\"viewport\" content=\"viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\">",
+              "failure_summary": "Fix any of the following:\n  user-scalable=no on <meta> tag disables zooming on mobile devices",
+              "target_frame": [],
+              "measured": {
+                "meta-viewport": "user-scalable=no"
+              }
+            }
+          ],
+          "page_url": "https://meususdigital.saude.gov.br/login",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-23T12:21:19.766315Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25"
+          ],
+          "legal_thesis": "O bloqueio de ampliação nega adaptação razoável, conduta equiparada a discriminação pelo art. 4º, § 1º da LBI."
+        },
+        {
+          "id": "c9727696-ba85-41f9-bc82-5503ebd4c961",
+          "rule_id": "role-img-alt",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.1.1"
+          ],
+          "summary": "[role=\"img\"] and [role=\"image\"] elements must have alternative text",
+          "description": "Ensure [role=\"img\"] and [role=\"image\"] elements have alternative text",
+          "remediation": "Prover atributo alt descritivo em imagens informativas e alt vazio em imagens decorativas; descrever gráficos e infográficos em texto adjacente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/role-img-alt?application=axeAPI",
+          "affects": [
+            "baixa_conectividade",
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": ".item-menu:nth-child(1) > ion-button > ion-icon",
+              "html": "<ion-icon _ngcontent-ng-c1042447356=\"\" role=\"img\" class=\"md hydrated\"></ion-icon>",
+              "failure_summary": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".item-menu:nth-child(2) > ion-button > ion-icon",
+              "html": "<ion-icon _ngcontent-ng-c1042447356=\"\" role=\"img\" class=\"md hydrated\"></ion-icon>",
+              "failure_summary": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".item-menu:nth-child(3) > ion-button > ion-icon",
+              "html": "<ion-icon _ngcontent-ng-c1042447356=\"\" role=\"img\" class=\"md hydrated\"></ion-icon>",
+              "failure_summary": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".item-menu:nth-child(4) > ion-button > ion-icon",
+              "html": "<ion-icon _ngcontent-ng-c1042447356=\"\" role=\"img\" class=\"md hydrated\"></ion-icon>",
+              "failure_summary": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".item-menu:nth-child(5) > ion-button > ion-icon",
+              "html": "<ion-icon _ngcontent-ng-c1042447356=\"\" role=\"img\" class=\"md hydrated\"></ion-icon>",
+              "failure_summary": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".item-menu:nth-child(6) > ion-button > ion-icon",
+              "html": "<ion-icon _ngcontent-ng-c1042447356=\"\" role=\"img\" class=\"md hydrated\"></ion-icon>",
+              "failure_summary": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".item-menu:nth-child(7) > ion-button > ion-icon",
+              "html": "<ion-icon _ngcontent-ng-c1042447356=\"\" role=\"img\" class=\"md hydrated\"></ion-icon>",
+              "failure_summary": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            }
+          ],
+          "page_url": "https://meususdigital.saude.gov.br/login",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-23T12:21:19.766418Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 7,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "A ausência de alternativa textual configura barreira na comunicação e na informação (art. 3º, IV, 'd', LBI): o conteúdo existe juridicamente como informação pública, mas não é recebível pelo usuário cego, esvaziando o dever de transparência ativa do art. 8º, § 3º, VIII da LAI."
+        },
+        {
+          "id": "feaf616e-31ce-4478-bab1-badb12d5cf2b",
+          "rule_id": "color-contrast",
+          "source": "axe-core",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "1.4.3"
+          ],
+          "summary": "Elements must meet minimum color contrast ratio thresholds",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "remediation": "Ajustar a paleta para razão mínima de 4.5:1 (texto normal) e 3:1 (texto grande), validando os tokens de design, não apenas as telas.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axeAPI",
+          "affects": [
+            "baixa_visao",
+            "cognitiva_neurodivergencia",
+            "visao_de_cores"
+          ],
+          "nodes": [
+            {
+              "selector": ".box-text > label",
+              "html": "<label _ngcontent-ng-c1042447356=\"\">Olá, Usuário!</label>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "15.0pt (20px)",
+                "fontWeight": "normal",
+                "messageKey": "bgImage",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".box-text > span",
+              "html": "<span _ngcontent-ng-c1042447356=\"\">Entre com o Gov.br e acesse todas as aplicações que o Meu SUS Digital pode te oferecer.</span>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "normal",
+                "messageKey": "bgImage",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".title-menu > span",
+              "html": "<span _ngcontent-ng-c1042447356=\"\">Ações</span>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "normal",
+                "messageKey": "bgImage",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".item-menu:nth-child(1) > span",
+              "html": "<span _ngcontent-ng-c1042447356=\"\">Conteúdos</span>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "normal",
+                "messageKey": "bgImage",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".item-menu:nth-child(2) > span",
+              "html": "<span _ngcontent-ng-c1042447356=\"\">Rede de Saúde</span>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "normal",
+                "messageKey": "bgImage",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".item-menu:nth-child(3) > span",
+              "html": "<span _ngcontent-ng-c1042447356=\"\">Valida Certidão</span>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "normal",
+                "messageKey": "bgImage",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".item-menu:nth-child(4) > span",
+              "html": "<span _ngcontent-ng-c1042447356=\"\">Cartilha de Vacinas</span>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "normal",
+                "messageKey": "bgImage",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".item-menu:nth-child(5) > span",
+              "html": "<span _ngcontent-ng-c1042447356=\"\">Fale com o Meu SUS Digital</span>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "normal",
+                "messageKey": "bgImage",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".item-menu:nth-child(6) > span",
+              "html": "<span _ngcontent-ng-c1042447356=\"\">Sobre o SUS</span>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "normal",
+                "messageKey": "bgImage",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".item-menu:nth-child(7) > span",
+              "html": "<span _ngcontent-ng-c1042447356=\"\">Termos de Utilização</span>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "normal",
+                "messageKey": "bgImage",
+                "expectedContrastRatio": "4.5:1"
+              }
+            }
+          ],
+          "page_url": "https://meususdigital.saude.gov.br/login",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-23T12:21:19.766683Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 10,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "O contraste insuficiente é a barreira de comunicação mais prevalente e atinge diretamente a população idosa usuária do SUS; sua persistência em portal público caracteriza descumprimento continuado do art. 63, caput, da LBI e do art. 47 do Decreto 5.296/2004."
+        },
+        {
+          "id": "d720f523-6363-4890-b196-35618c7a8014",
+          "rule_id": "probe.landmarks.no-skip-link",
+          "source": "probe",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "2.4.1"
+          ],
+          "summary": "Nenhum link de salto para o conteúdo principal foi encontrado.",
+          "description": "Não há âncora funcional no início do documento que permita ignorar os blocos repetidos de navegação. A página declara marco principal, o que já satisfaz o critério pela técnica ARIA11; o link de salto permanece recomendável e a verificação fica registrada para revisão.",
+          "remediation": "Incluir link 'pular para o conteúdo principal' e marcos ARIA (landmarks).",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "",
+              "failure_summary": "Nenhuma âncora interna com destino existente.",
+              "target_frame": [],
+              "measured": {
+                "has_main": true
+              }
+            }
+          ],
+          "page_url": "https://meususdigital.saude.gov.br/login",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-23T12:21:19.776033Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "moderado",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art3.i"
+          ],
+          "legal_thesis": "A ausência de mecanismo de salto obriga a percorrer repetidamente blocos idênticos, esforço desproporcional vedado pelo conceito de acessibilidade com autonomia do art. 3º, I da LBI."
+        },
+        {
+          "id": "7a182e79-8750-4ed5-824f-f865c2a01bc6",
+          "rule_id": "probe.heading-structure.none",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.3.1",
+            "2.4.6"
+          ],
+          "summary": "A página não possui nenhum cabeçalho.",
+          "description": "Sem cabeçalhos, o principal atalho de navegação do leitor de tela — a lista de títulos — fica vazio. A página só pode ser percorrida linearmente, do começo ao fim.",
+          "remediation": "Escrever cabeçalhos que descrevam o conteúdo da seção e rótulos que descrevam o dado solicitado.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "",
+              "failure_summary": "Zero cabeçalhos.",
+              "target_frame": [],
+              "measured": {}
+            }
+          ],
+          "page_url": "https://meususdigital.saude.gov.br/login",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-23T12:21:19.779209Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "Sem estrutura semântica, a tecnologia assistiva não consegue reconstruir a relação entre rótulo e dado; o art. 74 da LBI assegura o acesso a tecnologias assistivas, o que pressupõe conteúdo com elas compatível."
+        },
+        {
+          "id": "d29c09cc-6ac8-4b53-9696-e0a7c593e81b",
+          "rule_id": "probe.zoom-lock",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.4.4"
+          ],
+          "summary": "A página bloqueia a ampliação pelo usuário.",
+          "description": "A meta viewport declara restrições de escala: 'user-scalable=no' impede totalmente a ampliação; 'maximum-scale=1' limita a ampliação abaixo dos 200% exigidos. Pessoas com baixa visão dependem da ampliação nativa do navegador para ler conteúdo de saúde; o bloqueio equivale a recusar adaptação razoável.",
+          "remediation": "Usar unidades relativas e remover 'user-scalable=no' da meta viewport.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html",
+          "affects": [
+            "baixa_visao",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "meta[name=viewport]",
+              "html": "<meta name=\"viewport\" content=\"viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\">",
+              "failure_summary": "'user-scalable=no' impede totalmente a ampliação; 'maximum-scale=1' limita a ampliação abaixo dos 200% exigidos",
+              "target_frame": [],
+              "measured": {
+                "content": "viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no",
+                "user_scalable_no": true,
+                "maximum_scale": 1
+              }
+            }
+          ],
+          "page_url": "https://meususdigital.saude.gov.br/login",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-23T12:21:19.799094Z",
+          "legal_risk_override": "alto",
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25"
+          ],
+          "legal_thesis": "O bloqueio de ampliação nega adaptação razoável, conduta equiparada a discriminação pelo art. 4º, § 1º da LBI."
+        },
+        {
+          "id": "11aa7c75-6bea-4164-8da7-43cfe65f9d40",
+          "rule_id": "probe.data-cost",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "moderate",
+          "criteria": [],
+          "summary": "Um único acesso a esta página consome 8.61 MB, ou 0.084% da franquia mensal do plano de referência (2.5 centavos).",
+          "description": "A página impõe custo de dados ao usuário com plano limitado: peso de 8.61 MB, acima do limiar de 2.50 MB. O peso foi medido em bytes efetivamente transferidos, em contexto sem cache — o cenário do primeiro acesso e daquele que limpa dados do aparelho por falta de armazenamento. Consultada quatro vezes ao mês, frequência mínima plausível para acompanhar um agendamento ou um resultado de exame, esta página consome 0.34% da franquia (10.1 centavos) — e cada tentativa frustrada por barreira de acessibilidade soma-se a essa conta, de modo que as duas dimensões se agravam mutuamente.",
+          "remediation": "Reduzir o peso da página: comprimir e redimensionar imagens, servir formatos modernos, remover scripts de terceiros não essenciais ao serviço, adiar carregamento de recursos fora da área visível e priorizar HTML semântico sobre renderização integral por JavaScript.",
+          "help_url": null,
+          "affects": [
+            "baixa_conectividade"
+          ],
+          "nodes": [
+            {
+              "selector": "document",
+              "html": "",
+              "failure_summary": "peso de 8.61 MB, acima do limiar de 2.50 MB",
+              "target_frame": [],
+              "measured": {
+                "total_mb": 8.613,
+                "total_bytes": 9030881,
+                "request_count": 110,
+                "third_party_share": 0.0325,
+                "third_party_domains": [
+                  "doubleclick.net",
+                  "google.com.br",
+                  "googletagmanager.com",
+                  "unpkg.com"
+                ],
+                "bytes_by_type": {
+                  "document": 851,
+                  "fetch": 42326,
+                  "font": 1106194,
+                  "image": 2700554,
+                  "ping": 565,
+                  "script": 5165637,
+                  "stylesheet": 13333,
+                  "xhr": 1421
+                },
+                "cost_brl": 0.025233,
+                "franchise_share_pct": 0.0841,
+                "price_per_mb_brl": 0.0029296875,
+                "franchise_mb": 10240.0
+              }
+            }
+          ],
+          "page_url": "https://meususdigital.saude.gov.br/login",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-23T12:21:19.809548Z",
+          "legal_risk_override": "alto",
+          "extra_provisions": [
+            "cf.art196",
+            "lbi.art18",
+            "lei13460.art5",
+            "cf.art5.xiv"
+          ],
+          "legal_thesis_override": "O custo de dados exigido para acessar o serviço digital de saúde transfere ao cidadão um ônus econômico como condição de exercício de direito fundamental. Quando esse ônus recai desproporcionalmente sobre a população de menor renda — a mesma que depende exclusivamente do SUS — o acesso deixa de ser universal e igualitário, em desacordo com o art. 196 da CF/88 e com o dever de informação adequada do art. 18, § 4º da Lei 13.146/2015. A parcela do tráfego destinada a terceiros agrava a situação: o usuário custeia recursos que não lhe prestam o serviço público solicitado.",
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "cf.art196",
+            "lbi.art18",
+            "lei13460.art5",
+            "cf.art5.xiv"
+          ],
+          "legal_thesis": "O custo de dados exigido para acessar o serviço digital de saúde transfere ao cidadão um ônus econômico como condição de exercício de direito fundamental. Quando esse ônus recai desproporcionalmente sobre a população de menor renda — a mesma que depende exclusivamente do SUS — o acesso deixa de ser universal e igualitário, em desacordo com o art. 196 da CF/88 e com o dever de informação adequada do art. 18, § 4º da Lei 13.146/2015. A parcela do tráfego destinada a terceiros agrava a situação: o usuário custeia recursos que não lhe prestam o serviço público solicitado."
+        }
+      ],
+      "network": {
+        "total_bytes": 9030881,
+        "total_uncompressed_bytes": 0,
+        "request_count": 110,
+        "bytes_by_type": {
+          "document": 851,
+          "fetch": 42326,
+          "font": 1106194,
+          "image": 2700554,
+          "ping": 565,
+          "script": 5165637,
+          "stylesheet": 13333,
+          "xhr": 1421
+        },
+        "third_party_bytes": 293856,
+        "third_party_domains": [
+          "doubleclick.net",
+          "google.com.br",
+          "googletagmanager.com",
+          "unpkg.com"
+        ],
+        "dom_content_loaded_ms": 2395.7999999821186,
+        "load_complete_ms": 5482.5,
+        "largest_contentful_paint_ms": null,
+        "blocked_requests": 1,
+        "total_mb": 8.613,
+        "third_party_share": 0.0325
+      },
+      "error": null,
+      "axe_version": "4.13.0",
+      "screenshot_path": "C:\\Users\\Thalles\\Desktop\\Projetos\\AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de Acessibilidade Web (WCAGLBI) para Plataformas Públicas de Saúde\\data\\screenshots\\meususdigital.saude.gov.br__7bb912ee14__desktop-1366.png",
+      "is_critical_path": true,
+      "duration_ms": 8425.912999999999
+    }
+  ],
+  "engine_version": "0.1.0",
+  "axe_version": "4.13.0",
+  "browser": "chromium 151.0.7922.34",
+  "config_snapshot": {
+    "browser": "chromium",
+    "headless": true,
+    "navigation_timeout_ms": 30000,
+    "settle_delay_ms": 1500,
+    "locale": "pt-BR",
+    "timezone_id": "America/Sao_Paulo",
+    "max_pages_per_target": 25,
+    "max_crawl_depth": 2,
+    "request_delay_ms": 2000,
+    "concurrency": 1,
+    "respect_robots_txt": true,
+    "robots_override_reason": "",
+    "axe_tags": [
+      "wcag2a",
+      "wcag2aa",
+      "wcag21a",
+      "wcag21aa"
+    ],
+    "viewports": [
+      {
+        "name": "mobile-320",
+        "width": 320,
+        "height": 640,
+        "device_scale_factor": 2.0,
+        "is_mobile": true,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; SM-A105M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+      },
+      {
+        "name": "desktop-1366",
+        "width": 1366,
+        "height": 768,
+        "device_scale_factor": 1.0,
+        "is_mobile": false,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+      }
+    ],
+    "scoring": {
+      "friction_kappa": 150.0,
+      "critical_path_multiplier": 1.5,
+      "price_per_mb_brl": 0.0029296875,
+      "franchise_mb": 10240.0,
+      "heavy_page_mb": 2.5
+    },
+    "random_seed": 42,
+    "plan": {
+      "total_tasks": 2,
+      "unique_urls": 1,
+      "discover_enabled": false,
+      "declared_gaps": [
+        {
+          "url": "https://meususdigital.saude.gov.br/login",
+          "label": "Autenticação gov.br",
+          "motivo": "Excluída da varredura. A área autenticada concentra as telas de maior risco (resultado de exame, carteira de vacinação) e sua ausência é uma limitação declarada do estudo — não uma omissão."
+        }
+      ]
+    },
+    "probes": [
+      "probe.page-language",
+      "probe.landmarks",
+      "probe.heading-structure",
+      "probe.id-duplicado",
+      "probe.non-interactive-control",
+      "probe.positive-tabindex",
+      "probe.focus-visible",
+      "probe.placeholder-como-rotulo",
+      "probe.erro-sem-mensagem",
+      "probe.reflow-320",
+      "probe.zoom-lock",
+      "probe.captions",
+      "probe.autoplay",
+      "probe.meta-refresh",
+      "probe.data-cost",
+      "probe.readability"
+    ]
+  },
+  "errors": [],
+  "page_count": 2,
+  "violation_count": 13,
+  "occurrence_count": 37
+}
