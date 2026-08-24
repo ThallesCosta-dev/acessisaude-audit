@@ -1,0 +1,3063 @@
+{
+  "id": "7af9cc69-ac7f-41cc-8912-b42c4bfe61ad",
+  "schema_version": "1.0.0",
+  "target_id": "sms-rio",
+  "target_name": "Secretaria Municipal de Saúde do Rio de Janeiro — seção informativa",
+  "base_url": "https://prefeitura.rio/saude",
+  "status": "completed",
+  "started_at": "2026-08-24T21:56:49.333401Z",
+  "finished_at": "2026-08-24T21:57:03.022450Z",
+  "pages": [
+    {
+      "url": "https://prefeitura.rio/saude",
+      "final_url": "https://prefeitura.rio/saude/",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Arquivos Saúde - Prefeitura da Cidade do Rio de Janeiro - prefeitura.rio",
+      "lang": "pt",
+      "viewport": {
+        "name": "mobile-320",
+        "width": 320,
+        "height": 640,
+        "device_scale_factor": 2.0,
+        "is_mobile": true,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; SM-A105M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+      },
+      "started_at": "2026-08-24T21:56:49.735088Z",
+      "finished_at": "2026-08-24T21:56:56.890735Z",
+      "findings": [
+        {
+          "id": "b8a66936-95e9-400a-afae-44991ce193c3",
+          "rule_id": "button-name",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "critical",
+          "criteria": [
+            "4.1.2"
+          ],
+          "summary": "Buttons must have discernible text",
+          "description": "Ensure buttons have discernible text",
+          "remediation": "Usar elementos nativos ou, quando inevitável, ARIA completo (role, nome acessível, estado) com teclado equivalente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/button-name?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "fala",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": ".btn-default",
+              "html": "<button type=\"submit\" role=\"button\" class=\"btn btn-default right\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-24T21:56:56.590348Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "critico",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "onu.art9"
+          ],
+          "legal_thesis": "Controle sem nome, função ou valor expostos simplesmente não existe para a tecnologia assistiva: o serviço é, para o usuário cego, inexistente. É a forma mais severa de barreira na informação do art. 3º, IV, 'd'."
+        },
+        {
+          "id": "8ac6ce3f-13cb-4480-9168-58dcce3e508c",
+          "rule_id": "color-contrast",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.4.3"
+          ],
+          "summary": "Elements must meet minimum color contrast ratio thresholds",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "remediation": "Ajustar a paleta para razão mínima de 4.5:1 (texto normal) e 3:1 (texto grande), validando os tokens de design, não apenas as telas.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axeAPI",
+          "affects": [
+            "baixa_visao",
+            "cognitiva_neurodivergencia",
+            "visao_de_cores"
+          ],
+          "nodes": [
+            {
+              "selector": ".section-content-categories:nth-child(1) > .wrapper-content > .wrapper-categories > .content > p",
+              "html": "<p>A campanha da Prefeitura do Rio de Janeiro do Dia D de vacinação alcançou a marca de 68.391 doses de […]</p>",
+              "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.38 (foreground color: #85868c, background color: #f7f7f7, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "target_frame": [],
+              "measured": {
+                "fgColor": "#85868c",
+                "bgColor": "#f7f7f7",
+                "contrastRatio": 3.38,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".section-content-categories:nth-child(2) > .wrapper-content > .wrapper-categories > .content > p",
+              "html": "<p>A Secretaria Municipal de Saúde (SMS) do Rio realiza neste sábado (22/8) o dia D de mobilização da campanha de […]</p>",
+              "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.38 (foreground color: #85868c, background color: #f7f7f7, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "target_frame": [],
+              "measured": {
+                "fgColor": "#85868c",
+                "bgColor": "#f7f7f7",
+                "contrastRatio": 3.38,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".section-content-categories:nth-child(3) > .wrapper-content > .wrapper-categories > .content > p",
+              "html": "<p>O Super Centro Carioca de Vacinação (SCCV) da Zona Norte completa um ano nesta quarta-feira (19/8) com mais de 81 […]</p>",
+              "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.38 (foreground color: #85868c, background color: #f7f7f7, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "target_frame": [],
+              "measured": {
+                "fgColor": "#85868c",
+                "bgColor": "#f7f7f7",
+                "contrastRatio": 3.38,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".section-content-categories:nth-child(4) > .wrapper-content > .wrapper-categories > .content > p",
+              "html": "<p>A Secretaria Municipal de Saúde (SMS) do Rio realiza neste sábado (22) o dia D de mobilização da campanha de […]</p>",
+              "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.38 (foreground color: #85868c, background color: #f7f7f7, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "target_frame": [],
+              "measured": {
+                "fgColor": "#85868c",
+                "bgColor": "#f7f7f7",
+                "contrastRatio": 3.38,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".section-content-categories:nth-child(5) > .wrapper-content > .wrapper-categories > .content > p",
+              "html": "<p>O Hospital Municipal Francisco da Silva Telles, em Irajá, realiza campanha de doação de sangue no dia 19 de agosto, […]</p>",
+              "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.38 (foreground color: #85868c, background color: #f7f7f7, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "target_frame": [],
+              "measured": {
+                "fgColor": "#85868c",
+                "bgColor": "#f7f7f7",
+                "contrastRatio": 3.38,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".section-content-categories:nth-child(6) > .wrapper-content > .wrapper-categories > .content > p",
+              "html": "<p>Amamentar é um gesto de amor, e o tema ganha ainda mais relevância neste mês, quando é celebrado o Agosto […]</p>",
+              "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.38 (foreground color: #85868c, background color: #f7f7f7, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "target_frame": [],
+              "measured": {
+                "fgColor": "#85868c",
+                "bgColor": "#f7f7f7",
+                "contrastRatio": 3.38,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".section-content-categories:nth-child(7) > .wrapper-content > .wrapper-categories > .content > p",
+              "html": "<p>A Secretaria Municipal de Saúde do Rio de Janeiro (SMS) ampliou na última quarta-feira (12/8) a vacinação atualizada contra a […]</p>",
+              "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.38 (foreground color: #85868c, background color: #f7f7f7, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "target_frame": [],
+              "measured": {
+                "fgColor": "#85868c",
+                "bgColor": "#f7f7f7",
+                "contrastRatio": 3.38,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".section-content-categories:nth-child(8) > .wrapper-content > .wrapper-categories > .content > p",
+              "html": "<p>Para marcar o Agosto Dourado, mês dedicado à conscientização sobre a importância do aleitamento materno, a Clínica da Família Antônio […]</p>",
+              "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.38 (foreground color: #85868c, background color: #f7f7f7, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "target_frame": [],
+              "measured": {
+                "fgColor": "#85868c",
+                "bgColor": "#f7f7f7",
+                "contrastRatio": 3.38,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".section-content-categories:nth-child(9) > .wrapper-content > .wrapper-categories > .content > p",
+              "html": "<p>Com a ocorrência de novos casos de sarampo no estado de São Paulo, totalizando 16, a Secretaria Municipal de Saúde […]</p>",
+              "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.38 (foreground color: #85868c, background color: #f7f7f7, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "target_frame": [],
+              "measured": {
+                "fgColor": "#85868c",
+                "bgColor": "#f7f7f7",
+                "contrastRatio": 3.38,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".section-content-categories:nth-child(10) > .wrapper-content > .wrapper-categories > .content > p",
+              "html": "<p>A Secretaria Municipal de Saúde (SMS) do Rio promove, entre os dias 3 de agosto e 1º de setembro, a […]</p>",
+              "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.38 (foreground color: #85868c, background color: #f7f7f7, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "target_frame": [],
+              "measured": {
+                "fgColor": "#85868c",
+                "bgColor": "#f7f7f7",
+                "contrastRatio": 3.38,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-24T21:56:56.590518Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 10,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "O contraste insuficiente é a barreira de comunicação mais prevalente e atinge diretamente a população idosa usuária do SUS; sua persistência em portal público caracteriza descumprimento continuado do art. 63, caput, da LBI e do art. 47 do Decreto 5.296/2004."
+        },
+        {
+          "id": "4ddb1e9b-89b9-45ac-ab30-daad65b4ff7e",
+          "rule_id": "image-alt",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "critical",
+          "criteria": [
+            "1.1.1"
+          ],
+          "summary": "Images must have alternative text",
+          "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+          "remediation": "Prover atributo alt descritivo em imagens informativas e alt vazio em imagens decorativas; descrever gráficos e infográficos em texto adjacente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/image-alt?application=axeAPI",
+          "affects": [
+            "baixa_conectividade",
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": ".logo-carioca",
+              "html": "<img class=\"logo-carioca lazyloaded\" src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-carioca.png\" data-src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-carioca.png\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".logo-1746",
+              "html": "<img class=\"logo-1746 lazyloaded\" src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-1746.png\" data-src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-1746.png\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".logo-informacao",
+              "html": "<img class=\"logo-informacao lazyloaded\" src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/acesso-a-informacao-v2.png\" data-src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/acesso-a-informacao-v2.png\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".logo-lgpd",
+              "html": "<img class=\"logo-lgpd lazyloaded\" src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/lgpd4.png\" data-src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/lgpd4.png\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "a[target=\"blank\"][role=\"link\"]:nth-child(1) > .midias-sociais.lazyloaded",
+              "html": "<img class=\"midias-sociais lazyloaded\" src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-twitter.png\" data-src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-twitter.png\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "a[target=\"blank\"][role=\"link\"]:nth-child(2) > .midias-sociais.lazyloaded",
+              "html": "<img class=\"midias-sociais lazyloaded\" src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-facebook.png\" data-src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-facebook.png\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "a[target=\"blank\"][role=\"link\"]:nth-child(3) > .midias-sociais.lazyloaded",
+              "html": "<img class=\"midias-sociais lazyloaded\" src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-instagram.png\" data-src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-instagram.png\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "a[target=\"blank\"][role=\"link\"]:nth-child(4) > .midias-sociais.lazyloaded",
+              "html": "<img class=\"midias-sociais lazyloaded\" src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-youtube.png\" data-src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-youtube.png\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".logo-prefeitura",
+              "html": "<img class=\"logo-prefeitura lazyloaded\" src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-pref-2025.png\" data-src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-pref-2025.png\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".btn-default > .lazyloaded",
+              "html": "<img class=\" lazyloaded\" style=\"width: 20px\" src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/search.svg\" data-src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/search.svg\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "['#vlibras-access-wrapper', '#vlibras-popup']",
+              "html": "<img id=\"vlibras-popup\" src=\"https://vlibras.gov.br/app/assets/images/vlibras-popup.webp\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "['#vlibras-access-wrapper', '#vlibras-button > img']",
+              "html": "<img src=\"https://vlibras.gov.br/app/assets/images/vlibras-access.svg\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-24T21:56:56.590604Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 12,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "A ausência de alternativa textual configura barreira na comunicação e na informação (art. 3º, IV, 'd', LBI): o conteúdo existe juridicamente como informação pública, mas não é recebível pelo usuário cego, esvaziando o dever de transparência ativa do art. 8º, § 3º, VIII da LAI."
+        },
+        {
+          "id": "35b3ef1f-cfbf-4d18-9cf3-7df3772ab726",
+          "rule_id": "link-name",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "2.4.4",
+            "4.1.2"
+          ],
+          "summary": "Links must have discernible text",
+          "description": "Ensure links have discernible text",
+          "remediation": "Reescrever textos de link para que descrevam o destino sem depender do parágrafo circundante. Usar elementos nativos ou, quando inevitável, ARIA completo (role, nome acessível, estado) com teclado equivalente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/link-name?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "fala",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "a[href$=\"carioca.rio/\"][target=\"blank\"][role=\"link\"]",
+              "html": "<a href=\"https://carioca.rio/\" target=\"blank\" role=\"link\">",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "a[href$=\"1746.rio/\"][target=\"blank\"][role=\"link\"]",
+              "html": "<a href=\"https://www.1746.rio/\" target=\"blank\" role=\"link\"><img class=\"logo-1746 lazyloaded\" src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-1746.png\" data-src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-1746.png\"></a>",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".logos-servicos > a[target=\"blank\"][role=\"link\"]:nth-child(3)",
+              "html": "<a href=\"https://transparencia.prefeitura.rio/\" target=\"blank\" role=\"link\">",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "a[href$=\"lgpd.prefeitura.rio\"]",
+              "html": "<a href=\"https://lgpd.prefeitura.rio\" target=\"_blank\" role=\"link\"><img class=\"logo-lgpd lazyloaded\" src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/lgpd4.png\" data-src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/lgpd4.png\"></a>",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".logos-social-media > a[target=\"blank\"][role=\"link\"]:nth-child(1)",
+              "html": "<a href=\"https://twitter.com/Prefeitura_Rio\" target=\"blank\" role=\"link\">",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".logos-social-media > a[target=\"blank\"][role=\"link\"]:nth-child(2)",
+              "html": "<a href=\"https://www.facebook.com/PrefeituradoRio\" target=\"blank\" role=\"link\">",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".logos-social-media > a[target=\"blank\"][role=\"link\"]:nth-child(3)",
+              "html": "<a href=\"https://www.instagram.com/prefeitura_rio\" target=\"blank\" role=\"link\">",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "a[target=\"blank\"][role=\"link\"]:nth-child(4)",
+              "html": "<a href=\"https://www.youtube.com/prefeiturario\" target=\"blank\" role=\"link\">",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".col-sm-12 > a[href$=\"prefeitura.rio\"]",
+              "html": "<a href=\"https://prefeitura.rio\" role=\"link\"><img class=\"logo-prefeitura lazyloaded\" src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-pref-2025.png\" data-src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-pref-2025.png\"></a>",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-24T21:56:56.590667Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 9,
+          "legal_risk": "critico",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "onu.art9"
+          ],
+          "legal_thesis": "Controle sem nome, função ou valor expostos simplesmente não existe para a tecnologia assistiva: o serviço é, para o usuário cego, inexistente. É a forma mais severa de barreira na informação do art. 3º, IV, 'd'."
+        },
+        {
+          "id": "7011dd93-5870-47d0-b634-c87d646537f2",
+          "rule_id": "list",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.3.1"
+          ],
+          "summary": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+          "description": "Ensure that lists are structured correctly",
+          "remediation": "Usar HTML semântico (label/for, th/scope, fieldset/legend, listas e cabeçalhos reais) em lugar de formatação puramente visual.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/list?application=axeAPI",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": ".footer-menu > ul",
+              "html": "<ul>",
+              "failure_summary": "Fix all of the following:\n  List element has direct children that are not allowed: div",
+              "target_frame": [],
+              "measured": {
+                "values": "div"
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-24T21:56:56.590687Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74"
+          ],
+          "legal_thesis": "Sem estrutura semântica, a tecnologia assistiva não consegue reconstruir a relação entre rótulo e dado; o art. 74 da LBI assegura o acesso a tecnologias assistivas, o que pressupõe conteúdo com elas compatível."
+        },
+        {
+          "id": "9a6fd564-b9f6-4047-80ae-3f54cf15ce8f",
+          "rule_id": "listitem",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.3.1"
+          ],
+          "summary": "<li> elements must be contained in a <ul> or <ol>",
+          "description": "Ensure <li> elements are used semantically",
+          "remediation": "Usar HTML semântico (label/for, th/scope, fieldset/legend, listas e cabeçalhos reais) em lugar de formatação puramente visual.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/listitem?application=axeAPI",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": ".col-md-4:nth-child(1) > .item-menu",
+              "html": "<li class=\"item-menu\">\n                                <a href=\"https://transparencia.prefeitura.rio/\" role=\"link\">LEI DE ACESSO À INFORMAÇÃO</a>\n                            </li>",
+              "failure_summary": "Fix any of the following:\n  List item does not have a <ul>, <ol> parent element",
+              "target_frame": [],
+              "measured": {}
+            },
+            {
+              "selector": ".col-md-4:nth-child(2) > .item-menu",
+              "html": "<li class=\"item-menu\">\n                                <a href=\"https://prefeitura.rio/area-de-imprensa/\" role=\"link\">ÁREA DE IMPRENSA</a>\n                            </li>",
+              "failure_summary": "Fix any of the following:\n  List item does not have a <ul>, <ol> parent element",
+              "target_frame": [],
+              "measured": {}
+            },
+            {
+              "selector": ".col-md-4:nth-child(3) > .item-menu",
+              "html": "<li class=\"item-menu\">\n                                <a href=\"https://prefeitura.rio/id-visual/\" role=\"link\">IDENTIDADE VISUAL DA MARCA</a>\n                            </li>",
+              "failure_summary": "Fix any of the following:\n  List item does not have a <ul>, <ol> parent element",
+              "target_frame": [],
+              "measured": {}
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-24T21:56:56.590716Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 3,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74"
+          ],
+          "legal_thesis": "Sem estrutura semântica, a tecnologia assistiva não consegue reconstruir a relação entre rótulo e dado; o art. 74 da LBI assegura o acesso a tecnologias assistivas, o que pressupõe conteúdo com elas compatível."
+        },
+        {
+          "id": "bc2f114f-0b93-4b66-83bb-261095d69233",
+          "rule_id": "meta-viewport",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "moderate",
+          "criteria": [
+            "1.4.4"
+          ],
+          "summary": "Zooming and scaling must not be disabled",
+          "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+          "remediation": "Usar unidades relativas e remover 'user-scalable=no' da meta viewport.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/meta-viewport?application=axeAPI",
+          "affects": [
+            "baixa_visao",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "meta[name=\"viewport\"]",
+              "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\">",
+              "failure_summary": "Fix any of the following:\n  maximum-scale on <meta> tag disables zooming on mobile devices",
+              "target_frame": [],
+              "measured": {
+                "meta-viewport": "maximum-scale"
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-24T21:56:56.590739Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25"
+          ],
+          "legal_thesis": "O bloqueio de ampliação nega adaptação razoável, conduta equiparada a discriminação pelo art. 4º, § 1º da LBI."
+        },
+        {
+          "id": "1ff7b038-ff8d-44cc-9325-da72723a7833",
+          "rule_id": "aria-valid-attr-value",
+          "source": "axe-core",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "4.1.2"
+          ],
+          "summary": "ARIA attributes must conform to valid values",
+          "description": "Ensure all ARIA attributes have valid values",
+          "remediation": "Usar elementos nativos ou, quando inevitável, ARIA completo (role, nome acessível, estado) com teclado equivalente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/aria-valid-attr-value?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "fala",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": ".cky-btn-customize",
+              "html": "<button class=\"cky-btn cky-btn-customize\" aria-label=\"Personalizar\" aria-haspopup=\"dialog\" aria-controls=\"ckyPreferenceCenter\" data-cky-tag=\"settings-button\" style=\"color: #1863DC; border-color: #1863DC; background-color: transparent;\">Personalizar</button>",
+              "failure_summary": "Fix all of the following:\n  Unable to determine if aria-controls referenced ID exists on the page while using aria-haspopup: aria-controls=\"ckyPreferenceCenter\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "controlsWithinPopup"
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-24T21:56:56.590767Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "critico",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "onu.art9"
+          ],
+          "legal_thesis": "Controle sem nome, função ou valor expostos simplesmente não existe para a tecnologia assistiva: o serviço é, para o usuário cego, inexistente. É a forma mais severa de barreira na informação do art. 3º, IV, 'd'."
+        },
+        {
+          "id": "b0cc446d-3dd6-4d77-9f28-1f568255a7f5",
+          "rule_id": "color-contrast",
+          "source": "axe-core",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "1.4.3"
+          ],
+          "summary": "Elements must meet minimum color contrast ratio thresholds",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "remediation": "Ajustar a paleta para razão mínima de 4.5:1 (texto normal) e 3:1 (texto grande), validando os tokens de design, não apenas as telas.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axeAPI",
+          "affects": [
+            "baixa_visao",
+            "cognitiva_neurodivergencia",
+            "visao_de_cores"
+          ],
+          "nodes": [
+            {
+              "selector": ".title-category > h3",
+              "html": "<h3>Notícias Saúde</h3>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "22.5pt (30px)",
+                "fontWeight": "bold",
+                "messageKey": "bgImage",
+                "expectedContrastRatio": "3:1"
+              }
+            },
+            {
+              "selector": ".active > a[href$=\"saude/\"][role=\"link\"]",
+              "html": "<a href=\"https://prefeitura.rio/saude/\" role=\"link\">1</a>",
+              "failure_summary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "bold",
+                "messageKey": "shortTextContent",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".navigation > ul > li:nth-child(2) > a[role=\"link\"]",
+              "html": "<a href=\"https://prefeitura.rio/saude/page/2/\" role=\"link\">2</a>",
+              "failure_summary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "bold",
+                "messageKey": "shortTextContent",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".navigation > ul > li:nth-child(3) > a[role=\"link\"]",
+              "html": "<a href=\"https://prefeitura.rio/saude/page/3/\" role=\"link\">3</a>",
+              "failure_summary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "bold",
+                "messageKey": "shortTextContent",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".navigation > ul > li:nth-child(5) > a[role=\"link\"]",
+              "html": "<a href=\"https://prefeitura.rio/saude/page/168/\" role=\"link\">168</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "bold",
+                "messageKey": "bgImage",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".seta",
+              "html": "<span class=\"seta\">→</span>",
+              "failure_summary": "Fix any of the following:\n  Element content contains only non-text characters",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "nonBmp"
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-24T21:56:56.590842Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 6,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "O contraste insuficiente é a barreira de comunicação mais prevalente e atinge diretamente a população idosa usuária do SUS; sua persistência em portal público caracteriza descumprimento continuado do art. 63, caput, da LBI e do art. 47 do Decreto 5.296/2004."
+        },
+        {
+          "id": "7765e335-2d4e-4ed2-a20f-9f3850444ae7",
+          "rule_id": "probe.landmarks.no-skip-link",
+          "source": "probe",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "2.4.1"
+          ],
+          "summary": "Nenhum link de salto para o conteúdo principal foi encontrado.",
+          "description": "Não há âncora funcional no início do documento que permita ignorar os blocos repetidos de navegação. A página declara marco principal, o que já satisfaz o critério pela técnica ARIA11; o link de salto permanece recomendável e a verificação fica registrada para revisão.",
+          "remediation": "Incluir link 'pular para o conteúdo principal' e marcos ARIA (landmarks).",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "",
+              "failure_summary": "Nenhuma âncora interna com destino existente.",
+              "target_frame": [],
+              "measured": {
+                "has_main": true
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-24T21:56:56.598859Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "moderado",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art3.i"
+          ],
+          "legal_thesis": "A ausência de mecanismo de salto obriga a percorrer repetidamente blocos idênticos, esforço desproporcional vedado pelo conceito de acessibilidade com autonomia do art. 3º, I da LBI."
+        },
+        {
+          "id": "8b49e014-15aa-4e6a-9529-dd7a572a8518",
+          "rule_id": "probe.heading-structure.no-h1",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "moderate",
+          "criteria": [
+            "1.3.1"
+          ],
+          "summary": "A página não declara um cabeçalho de primeiro nível (H1).",
+          "description": "O H1 é o que informa ao usuário de leitor de tela do que trata a página. Sem ele, a hierarquia começa no meio e o assunto principal precisa ser inferido.",
+          "remediation": "Declarar exatamente um H1 por página, descrevendo o serviço ou a informação ali oferecida.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "body > div:nth-of-type(3) > div > div > p",
+              "html": "<p class=\"cky-title\" data-cky-tag=\"title\" aria-level=\"2\" role=\"heading\" style=\"color: #212121;\">Valorizamos sua privacidade</p>",
+              "failure_summary": "Primeiro cabeçalho da página é de nível 2.",
+              "target_frame": [],
+              "measured": {
+                "headings_total": 19,
+                "h1_count": 0
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-24T21:56:56.601636Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74"
+          ],
+          "legal_thesis": "Sem estrutura semântica, a tecnologia assistiva não consegue reconstruir a relação entre rótulo e dado; o art. 74 da LBI assegura o acesso a tecnologias assistivas, o que pressupõe conteúdo com elas compatível."
+        },
+        {
+          "id": "18f58654-336d-4f3a-a018-bfe4553f63de",
+          "rule_id": "probe.heading-structure.level-skip",
+          "source": "probe",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "1.3.1"
+          ],
+          "summary": "1 salto(s) de nível na hierarquia de cabeçalhos.",
+          "description": "A sequência de níveis pula degraus (por exemplo, de H2 para H4). Isso sugere que os cabeçalhos foram escolhidos pelo tamanho da fonte, e não pela estrutura do conteúdo. Há casos legítimos em páginas com blocos independentes, razão pela qual o achado fica registrado para revisão humana em vez de reprovado.",
+          "remediation": "Escolher o nível pelo lugar na hierarquia do conteúdo e ajustar o tamanho visual por CSS.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "div:nth-of-type(5) > div:nth-of-type(1) > div > div:nth-of-type(1) > h5",
+              "html": "<h5>Acessibilidade</h5>",
+              "failure_summary": "Nível 2 seguido diretamente de nível 5 ('Acessibilidade').",
+              "target_frame": [],
+              "measured": {
+                "from_level": 2,
+                "to_level": 5
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-24T21:56:56.601662Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74"
+          ],
+          "legal_thesis": "Sem estrutura semântica, a tecnologia assistiva não consegue reconstruir a relação entre rótulo e dado; o art. 74 da LBI assegura o acesso a tecnologias assistivas, o que pressupõe conteúdo com elas compatível."
+        },
+        {
+          "id": "703cc80f-8034-404a-86cc-272a79c84b54",
+          "rule_id": "probe.positive-tabindex",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "moderate",
+          "criteria": [
+            "2.4.3"
+          ],
+          "summary": "1 elemento(s) usam tabindex positivo, alterando a ordem natural de tabulação.",
+          "description": "Valores de tabindex maiores que zero criam uma ordem de foco paralela à ordem visual do documento. O usuário de teclado passa a percorrer a página em sequência imprevisível, o que em um formulário de agendamento produz preenchimento fora de ordem e submissão prematura.",
+          "remediation": "Alinhar a ordem de tabulação à ordem visual; evitar tabindex positivo.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "#pojo-a11y-skip-content",
+              "html": "<a id=\"pojo-a11y-skip-content\" class=\"pojo-skip-link pojo-skip-content\" tabindex=\"1\" accesskey=\"s\" href=\"#content\" role=\"link\">Pular para o conteúdo</a>",
+              "failure_summary": "<a> declara tabindex=1.",
+              "target_frame": [],
+              "measured": {
+                "tabindex": 1
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-24T21:56:56.607400Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25"
+          ],
+          "legal_thesis": "Ordem de foco incoerente induz erro na submissão de dados de saúde, com risco de agendamento equivocado — dano ao acesso ao serviço."
+        },
+        {
+          "id": "c15dd2f8-cd18-4731-acfd-bf8abc0055a3",
+          "rule_id": "probe.placeholder-como-rotulo",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "3.3.2"
+          ],
+          "summary": "1 campo(s) de formulário são identificados apenas pelo texto de placeholder.",
+          "description": "Estes campos não possuem <label>, aria-label nem aria-labelledby: sua única identificação é o placeholder, que desaparece assim que o usuário digita o primeiro caractere. Quem usa leitor de tela e retorna ao campo para conferir o que preencheu ouve apenas 'caixa de edição' e o valor digitado, sem saber se ali se pedia o CPF ou o Cartão Nacional de Saúde. O padrão também falha para pessoas com deficiência intelectual, que perdem a instrução ao começar a responder. Registre-se que a verificação automática do axe-core aceita o placeholder como nome acessível válido; esta sonda existe precisamente para cobrir essa lacuna.",
+          "remediation": "Associar label a todo campo; placeholder não substitui rótulo.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/labels-or-instructions.html",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "div > div:nth-of-type(1) > div > form > input:nth-of-type(2)",
+              "html": "<input type=\"search\" class=\"form-control search-input mr-sm-2\" placeholder=\"O que você procura?\" value=\"\" name=\"s\" title=\"Pesquisar por:\">",
+              "failure_summary": "<input> identificado apenas por placeholder='O que você procura?'.",
+              "target_frame": [],
+              "measured": {
+                "placeholder": "O que você procura?",
+                "name": "s",
+                "type": "search",
+                "obrigatorio": false
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-24T21:56:56.771592Z",
+          "legal_risk_override": "alto",
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "lbi.art3.i"
+          ],
+          "legal_thesis": "Campo sem rótulo programático torna indeterminável o dado solicitado, inviabilizando o preenchimento autônomo (art. 3º, I, LBI)."
+        },
+        {
+          "id": "6ff3d9b8-5eda-492b-8c03-8df4bd832f7e",
+          "rule_id": "probe.zoom-lock",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.4.4"
+          ],
+          "summary": "A página bloqueia a ampliação pelo usuário.",
+          "description": "A meta viewport declara restrições de escala: 'maximum-scale=1' limita a ampliação abaixo dos 200% exigidos. Pessoas com baixa visão dependem da ampliação nativa do navegador para ler conteúdo de saúde; o bloqueio equivale a recusar adaptação razoável.",
+          "remediation": "Usar unidades relativas e remover 'user-scalable=no' da meta viewport.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html",
+          "affects": [
+            "baixa_visao",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "meta[name=viewport]",
+              "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\">",
+              "failure_summary": "'maximum-scale=1' limita a ampliação abaixo dos 200% exigidos",
+              "target_frame": [],
+              "measured": {
+                "content": "width=device-width, initial-scale=1, maximum-scale=1",
+                "user_scalable_no": false,
+                "maximum_scale": 1
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-24T21:56:56.776073Z",
+          "legal_risk_override": "alto",
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25"
+          ],
+          "legal_thesis": "O bloqueio de ampliação nega adaptação razoável, conduta equiparada a discriminação pelo art. 4º, § 1º da LBI."
+        },
+        {
+          "id": "2f242084-43bb-437e-809c-58b1a3b3869e",
+          "rule_id": "probe.captions.embedded-player",
+          "source": "probe",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "1.2.2"
+          ],
+          "summary": "1 player(s) de terceiros embutidos — região opaca à auditoria automática.",
+          "description": "Players hospedados em outro domínio não podem ser inspecionados a partir da página, por restrição de mesma origem do navegador. A existência de legendas precisa ser verificada manualmente. Este achado é registrado para que a lacuna conste do relatório: ausência de detecção não é evidência de conformidade.",
+          "remediation": "Verificar manualmente as legendas no player e garantir que o iframe tenha atributo title descritivo.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/captions-prerecorded.html",
+          "affects": [
+            "surdez"
+          ],
+          "nodes": [
+            {
+              "selector": "#popmake-86088 > div > p > iframe",
+              "html": "<iframe width=\"640\" height=\"360\" src=\" https://www.youtube.com/embed/GGC9Y7UD1f4?feature=oembed&amp;start=1 \"></iframe>",
+              "failure_summary": "Player embutido de https://www.youtube.com/embed/GGC9Y7UD1f4?feature=oembed&start=1",
+              "target_frame": [],
+              "measured": {
+                "title": null
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-24T21:56:56.778752Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "dec5626.art26"
+          ],
+          "legal_thesis": "Vídeo de orientação em saúde sem legenda nega à pessoa surda o acesso à informação sanitária, violando o art. 26 do Decreto 5.626/2005 e o direito à atenção integral do art. 18 da LBI."
+        },
+        {
+          "id": "9f320965-0dc6-4927-9d43-1426765e9f40",
+          "rule_id": "probe.data-cost",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [],
+          "summary": "Um único acesso a esta página consome 2.07 MB, ou 0.020% da franquia mensal do plano de referência (0.6 centavo).",
+          "description": "A página impõe custo de dados ao usuário com plano limitado: 71% do tráfego dirigido a 14 domínio(s) de terceiros. O peso foi medido em bytes efetivamente transferidos, em contexto sem cache — o cenário do primeiro acesso e daquele que limpa dados do aparelho por falta de armazenamento. Consultada quatro vezes ao mês, frequência mínima plausível para acompanhar um agendamento ou um resultado de exame, esta página consome 0.08% da franquia (2.4 centavos) — e cada tentativa frustrada por barreira de acessibilidade soma-se a essa conta, de modo que as duas dimensões se agravam mutuamente.",
+          "remediation": "Reduzir o peso da página: comprimir e redimensionar imagens, servir formatos modernos, remover scripts de terceiros não essenciais ao serviço, adiar carregamento de recursos fora da área visível e priorizar HTML semântico sobre renderização integral por JavaScript.",
+          "help_url": null,
+          "affects": [
+            "baixa_conectividade"
+          ],
+          "nodes": [
+            {
+              "selector": "document",
+              "html": "",
+              "failure_summary": "71% do tráfego dirigido a 14 domínio(s) de terceiros",
+              "target_frame": [],
+              "measured": {
+                "total_mb": 2.074,
+                "total_bytes": 2174494,
+                "request_count": 85,
+                "third_party_share": 0.708,
+                "third_party_domains": [
+                  "bootstrapcdn.com",
+                  "cdn-cookieyes.com",
+                  "cookieyes.com",
+                  "doubleclick.net",
+                  "google-analytics.com",
+                  "google.com",
+                  "googleapis.com",
+                  "googletagmanager.com",
+                  "gstatic.com",
+                  "jquery.com",
+                  "jsdelivr.net",
+                  "vlibras.gov.br",
+                  "youtube.com",
+                  "ytimg.com"
+                ],
+                "bytes_by_type": {
+                  "document": 112033,
+                  "fetch": 8444,
+                  "font": 72875,
+                  "image": 291117,
+                  "ping": 220,
+                  "script": 1526969,
+                  "stylesheet": 161549,
+                  "xhr": 1287
+                },
+                "cost_brl": 0.006076,
+                "franchise_share_pct": 0.0203,
+                "price_per_mb_brl": 0.0029296875,
+                "franchise_mb": 10240.0
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-24T21:56:56.781586Z",
+          "legal_risk_override": "alto",
+          "extra_provisions": [
+            "cf.art196",
+            "lbi.art18",
+            "lei13460.art5",
+            "cf.art5.xiv"
+          ],
+          "legal_thesis_override": "O custo de dados exigido para acessar o serviço digital de saúde transfere ao cidadão um ônus econômico como condição de exercício de direito fundamental. Quando esse ônus recai desproporcionalmente sobre a população de menor renda — a mesma que depende exclusivamente do SUS — o acesso deixa de ser universal e igualitário, em desacordo com o art. 196 da CF/88 e com o dever de informação adequada do art. 18, § 4º da Lei 13.146/2015. A parcela do tráfego destinada a terceiros agrava a situação: o usuário custeia recursos que não lhe prestam o serviço público solicitado.",
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "cf.art196",
+            "lbi.art18",
+            "lei13460.art5",
+            "cf.art5.xiv"
+          ],
+          "legal_thesis": "O custo de dados exigido para acessar o serviço digital de saúde transfere ao cidadão um ônus econômico como condição de exercício de direito fundamental. Quando esse ônus recai desproporcionalmente sobre a população de menor renda — a mesma que depende exclusivamente do SUS — o acesso deixa de ser universal e igualitário, em desacordo com o art. 196 da CF/88 e com o dever de informação adequada do art. 18, § 4º da Lei 13.146/2015. A parcela do tráfego destinada a terceiros agrava a situação: o usuário custeia recursos que não lhe prestam o serviço público solicitado."
+        }
+      ],
+      "network": {
+        "total_bytes": 2174494,
+        "total_uncompressed_bytes": 0,
+        "request_count": 85,
+        "bytes_by_type": {
+          "document": 112033,
+          "fetch": 8444,
+          "font": 72875,
+          "image": 291117,
+          "ping": 220,
+          "script": 1526969,
+          "stylesheet": 161549,
+          "xhr": 1287
+        },
+        "third_party_bytes": 1539506,
+        "third_party_domains": [
+          "bootstrapcdn.com",
+          "cdn-cookieyes.com",
+          "cookieyes.com",
+          "doubleclick.net",
+          "google-analytics.com",
+          "google.com",
+          "googleapis.com",
+          "googletagmanager.com",
+          "gstatic.com",
+          "jquery.com",
+          "jsdelivr.net",
+          "vlibras.gov.br",
+          "youtube.com",
+          "ytimg.com"
+        ],
+        "dom_content_loaded_ms": 2440.899999999994,
+        "load_complete_ms": 3040.5,
+        "largest_contentful_paint_ms": null,
+        "blocked_requests": 1,
+        "total_mb": 2.074,
+        "third_party_share": 0.708
+      },
+      "error": null,
+      "axe_version": "4.13.0",
+      "screenshot_path": "/home/runner/work/acessisaude-audit/acessisaude-audit/data/screenshots/prefeitura.rio__70bc77e2a6__mobile-320.png",
+      "is_critical_path": true,
+      "duration_ms": 7155.647
+    },
+    {
+      "url": "https://prefeitura.rio/saude",
+      "final_url": "https://prefeitura.rio/saude/",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Arquivos Saúde - Prefeitura da Cidade do Rio de Janeiro - prefeitura.rio",
+      "lang": "pt",
+      "viewport": {
+        "name": "desktop-1366",
+        "width": 1366,
+        "height": 768,
+        "device_scale_factor": 1.0,
+        "is_mobile": false,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+      },
+      "started_at": "2026-08-24T21:56:56.901611Z",
+      "finished_at": "2026-08-24T21:57:02.959592Z",
+      "findings": [
+        {
+          "id": "de3b5218-77d3-47f2-8bc3-a9383ed320ef",
+          "rule_id": "button-name",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "critical",
+          "criteria": [
+            "4.1.2"
+          ],
+          "summary": "Buttons must have discernible text",
+          "description": "Ensure buttons have discernible text",
+          "remediation": "Usar elementos nativos ou, quando inevitável, ARIA completo (role, nome acessível, estado) com teclado equivalente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/button-name?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "fala",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": ".btn-default",
+              "html": "<button type=\"submit\" role=\"button\" class=\"btn btn-default right\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-24T21:57:02.664946Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "critico",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "onu.art9"
+          ],
+          "legal_thesis": "Controle sem nome, função ou valor expostos simplesmente não existe para a tecnologia assistiva: o serviço é, para o usuário cego, inexistente. É a forma mais severa de barreira na informação do art. 3º, IV, 'd'."
+        },
+        {
+          "id": "a0f415c7-8b92-4a4b-9159-2fdab8ce42ef",
+          "rule_id": "color-contrast",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.4.3"
+          ],
+          "summary": "Elements must meet minimum color contrast ratio thresholds",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "remediation": "Ajustar a paleta para razão mínima de 4.5:1 (texto normal) e 3:1 (texto grande), validando os tokens de design, não apenas as telas.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axeAPI",
+          "affects": [
+            "baixa_visao",
+            "cognitiva_neurodivergencia",
+            "visao_de_cores"
+          ],
+          "nodes": [
+            {
+              "selector": ".section-content-categories:nth-child(1) > .wrapper-content > .wrapper-categories > .content > p",
+              "html": "<p>A campanha da Prefeitura do Rio de Janeiro do Dia D de vacinação alcançou a marca de 68.391 doses de […]</p>",
+              "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.38 (foreground color: #85868c, background color: #f7f7f7, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "target_frame": [],
+              "measured": {
+                "fgColor": "#85868c",
+                "bgColor": "#f7f7f7",
+                "contrastRatio": 3.38,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".section-content-categories:nth-child(2) > .wrapper-content > .wrapper-categories > .content > p",
+              "html": "<p>A Secretaria Municipal de Saúde (SMS) do Rio realiza neste sábado (22/8) o dia D de mobilização da campanha de […]</p>",
+              "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.38 (foreground color: #85868c, background color: #f7f7f7, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "target_frame": [],
+              "measured": {
+                "fgColor": "#85868c",
+                "bgColor": "#f7f7f7",
+                "contrastRatio": 3.38,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".section-content-categories:nth-child(3) > .wrapper-content > .wrapper-categories > .content > p",
+              "html": "<p>O Super Centro Carioca de Vacinação (SCCV) da Zona Norte completa um ano nesta quarta-feira (19/8) com mais de 81 […]</p>",
+              "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.38 (foreground color: #85868c, background color: #f7f7f7, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "target_frame": [],
+              "measured": {
+                "fgColor": "#85868c",
+                "bgColor": "#f7f7f7",
+                "contrastRatio": 3.38,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".section-content-categories:nth-child(4) > .wrapper-content > .wrapper-categories > .content > p",
+              "html": "<p>A Secretaria Municipal de Saúde (SMS) do Rio realiza neste sábado (22) o dia D de mobilização da campanha de […]</p>",
+              "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.38 (foreground color: #85868c, background color: #f7f7f7, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "target_frame": [],
+              "measured": {
+                "fgColor": "#85868c",
+                "bgColor": "#f7f7f7",
+                "contrastRatio": 3.38,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".section-content-categories:nth-child(5) > .wrapper-content > .wrapper-categories > .content > p",
+              "html": "<p>O Hospital Municipal Francisco da Silva Telles, em Irajá, realiza campanha de doação de sangue no dia 19 de agosto, […]</p>",
+              "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.38 (foreground color: #85868c, background color: #f7f7f7, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "target_frame": [],
+              "measured": {
+                "fgColor": "#85868c",
+                "bgColor": "#f7f7f7",
+                "contrastRatio": 3.38,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".section-content-categories:nth-child(6) > .wrapper-content > .wrapper-categories > .content > p",
+              "html": "<p>Amamentar é um gesto de amor, e o tema ganha ainda mais relevância neste mês, quando é celebrado o Agosto […]</p>",
+              "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.38 (foreground color: #85868c, background color: #f7f7f7, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "target_frame": [],
+              "measured": {
+                "fgColor": "#85868c",
+                "bgColor": "#f7f7f7",
+                "contrastRatio": 3.38,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".section-content-categories:nth-child(7) > .wrapper-content > .wrapper-categories > .content > p",
+              "html": "<p>A Secretaria Municipal de Saúde do Rio de Janeiro (SMS) ampliou na última quarta-feira (12/8) a vacinação atualizada contra a […]</p>",
+              "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.38 (foreground color: #85868c, background color: #f7f7f7, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "target_frame": [],
+              "measured": {
+                "fgColor": "#85868c",
+                "bgColor": "#f7f7f7",
+                "contrastRatio": 3.38,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".section-content-categories:nth-child(8) > .wrapper-content > .wrapper-categories > .content > p",
+              "html": "<p>Para marcar o Agosto Dourado, mês dedicado à conscientização sobre a importância do aleitamento materno, a Clínica da Família Antônio […]</p>",
+              "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.38 (foreground color: #85868c, background color: #f7f7f7, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "target_frame": [],
+              "measured": {
+                "fgColor": "#85868c",
+                "bgColor": "#f7f7f7",
+                "contrastRatio": 3.38,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".section-content-categories:nth-child(9) > .wrapper-content > .wrapper-categories > .content > p",
+              "html": "<p>Com a ocorrência de novos casos de sarampo no estado de São Paulo, totalizando 16, a Secretaria Municipal de Saúde […]</p>",
+              "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.38 (foreground color: #85868c, background color: #f7f7f7, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "target_frame": [],
+              "measured": {
+                "fgColor": "#85868c",
+                "bgColor": "#f7f7f7",
+                "contrastRatio": 3.38,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".section-content-categories:nth-child(10) > .wrapper-content > .wrapper-categories > .content > p",
+              "html": "<p>A Secretaria Municipal de Saúde (SMS) do Rio promove, entre os dias 3 de agosto e 1º de setembro, a […]</p>",
+              "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.38 (foreground color: #85868c, background color: #f7f7f7, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "target_frame": [],
+              "measured": {
+                "fgColor": "#85868c",
+                "bgColor": "#f7f7f7",
+                "contrastRatio": 3.38,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-24T21:57:02.665100Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 10,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "O contraste insuficiente é a barreira de comunicação mais prevalente e atinge diretamente a população idosa usuária do SUS; sua persistência em portal público caracteriza descumprimento continuado do art. 63, caput, da LBI e do art. 47 do Decreto 5.296/2004."
+        },
+        {
+          "id": "c34973fa-3389-4055-a58c-d697a97156df",
+          "rule_id": "image-alt",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "critical",
+          "criteria": [
+            "1.1.1"
+          ],
+          "summary": "Images must have alternative text",
+          "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+          "remediation": "Prover atributo alt descritivo em imagens informativas e alt vazio em imagens decorativas; descrever gráficos e infográficos em texto adjacente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/image-alt?application=axeAPI",
+          "affects": [
+            "baixa_conectividade",
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": ".logo-sitecompativel",
+              "html": "<img class=\"logo-sitecompativel lazyloaded\" src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/sitecompativel.png\" data-src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/sitecompativel.png\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".logo-carioca",
+              "html": "<img class=\"logo-carioca lazyloaded\" src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-carioca.png\" data-src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-carioca.png\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".logo-1746",
+              "html": "<img class=\"logo-1746 lazyloaded\" src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-1746.png\" data-src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-1746.png\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".logo-informacao",
+              "html": "<img class=\"logo-informacao lazyloaded\" src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/acesso-a-informacao-v2.png\" data-src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/acesso-a-informacao-v2.png\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".logo-lgpd",
+              "html": "<img class=\"logo-lgpd lazyloaded\" src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/lgpd4.png\" data-src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/lgpd4.png\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "a[target=\"blank\"][role=\"link\"]:nth-child(1) > .midias-sociais.lazyloaded",
+              "html": "<img class=\"midias-sociais lazyloaded\" src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-twitter.png\" data-src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-twitter.png\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "a[target=\"blank\"][role=\"link\"]:nth-child(2) > .midias-sociais.lazyloaded",
+              "html": "<img class=\"midias-sociais lazyloaded\" src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-facebook.png\" data-src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-facebook.png\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "a[target=\"blank\"][role=\"link\"]:nth-child(3) > .midias-sociais.lazyloaded",
+              "html": "<img class=\"midias-sociais lazyloaded\" src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-instagram.png\" data-src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-instagram.png\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "a[target=\"blank\"][role=\"link\"]:nth-child(4) > .midias-sociais.lazyloaded",
+              "html": "<img class=\"midias-sociais lazyloaded\" src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-youtube.png\" data-src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-youtube.png\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".logo-prefeitura",
+              "html": "<img class=\"logo-prefeitura lazyloaded\" src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-pref-2025.png\" data-src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-pref-2025.png\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".btn-default > .lazyloaded",
+              "html": "<img class=\" lazyloaded\" style=\"width: 20px\" src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/search.svg\" data-src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/search.svg\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "#aprefeitura > header > .img-icon.lazyload",
+              "html": "<img class=\"img-icon lazyload\" src=\"data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\" data-src=\"https://prefeitura.rio/wp-content/uploads/2023/07/aprefeitura.png\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "#turismo > header > .img-icon.lazyload",
+              "html": "<img class=\"img-icon lazyload\" src=\"data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\" data-src=\"https://prefeitura.rio/wp-content/uploads/2023/07/turismo.png\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "#cidadao > header > .img-icon.lazyload",
+              "html": "<img class=\"img-icon lazyload\" src=\"data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\" data-src=\"https://prefeitura.rio/wp-content/uploads/2023/07/cidadao.png\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "#servidor > header > .img-icon.lazyload",
+              "html": "<img class=\"img-icon lazyload\" src=\"data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\" data-src=\"https://prefeitura.rio/wp-content/uploads/2023/07/servidor.png\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "#empresa > header > .img-icon.lazyload",
+              "html": "<img class=\"img-icon lazyload\" src=\"data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\" data-src=\"https://prefeitura.rio/wp-content/uploads/2023/07/empresa.png\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "['#vlibras-access-wrapper', '#vlibras-popup']",
+              "html": "<img id=\"vlibras-popup\" src=\"https://vlibras.gov.br/app/assets/images/vlibras-popup.webp\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "['#vlibras-access-wrapper', '#vlibras-button > img']",
+              "html": "<img src=\"https://vlibras.gov.br/app/assets/images/vlibras-access.svg\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-24T21:57:02.665206Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 18,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "A ausência de alternativa textual configura barreira na comunicação e na informação (art. 3º, IV, 'd', LBI): o conteúdo existe juridicamente como informação pública, mas não é recebível pelo usuário cego, esvaziando o dever de transparência ativa do art. 8º, § 3º, VIII da LAI."
+        },
+        {
+          "id": "91ca03ec-0d6a-4213-be43-42ae2510d925",
+          "rule_id": "link-name",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "2.4.4",
+            "4.1.2"
+          ],
+          "summary": "Links must have discernible text",
+          "description": "Ensure links have discernible text",
+          "remediation": "Reescrever textos de link para que descrevam o destino sem depender do parágrafo circundante. Usar elementos nativos ou, quando inevitável, ARIA completo (role, nome acessível, estado) com teclado equivalente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/link-name?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "fala",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "a[href$=\"carioca.rio/\"][target=\"blank\"][role=\"link\"]",
+              "html": "<a href=\"https://carioca.rio/\" target=\"blank\" role=\"link\">",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "a[href$=\"1746.rio/\"][target=\"blank\"][role=\"link\"]",
+              "html": "<a href=\"https://www.1746.rio/\" target=\"blank\" role=\"link\"><img class=\"logo-1746 lazyloaded\" src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-1746.png\" data-src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-1746.png\"></a>",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".logos-servicos > a[target=\"blank\"][role=\"link\"]:nth-child(3)",
+              "html": "<a href=\"https://transparencia.prefeitura.rio/\" target=\"blank\" role=\"link\">",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "a[href$=\"lgpd.prefeitura.rio\"]",
+              "html": "<a href=\"https://lgpd.prefeitura.rio\" target=\"_blank\" role=\"link\"><img class=\"logo-lgpd lazyloaded\" src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/lgpd4.png\" data-src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/lgpd4.png\"></a>",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".logos-social-media > a[target=\"blank\"][role=\"link\"]:nth-child(1)",
+              "html": "<a href=\"https://twitter.com/Prefeitura_Rio\" target=\"blank\" role=\"link\">",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".logos-social-media > a[target=\"blank\"][role=\"link\"]:nth-child(2)",
+              "html": "<a href=\"https://www.facebook.com/PrefeituradoRio\" target=\"blank\" role=\"link\">",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".logos-social-media > a[target=\"blank\"][role=\"link\"]:nth-child(3)",
+              "html": "<a href=\"https://www.instagram.com/prefeitura_rio\" target=\"blank\" role=\"link\">",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "a[target=\"blank\"][role=\"link\"]:nth-child(4)",
+              "html": "<a href=\"https://www.youtube.com/prefeiturario\" target=\"blank\" role=\"link\">",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".col-sm-12 > a[href$=\"prefeitura.rio\"]",
+              "html": "<a href=\"https://prefeitura.rio\" role=\"link\"><img class=\"logo-prefeitura lazyloaded\" src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-pref-2025.png\" data-src=\"https://prefeitura.rio/wp-content/themes/prefeitura-rio/layouts/images/header/logo-pref-2025.png\"></a>",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-24T21:57:02.665282Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 9,
+          "legal_risk": "critico",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "onu.art9"
+          ],
+          "legal_thesis": "Controle sem nome, função ou valor expostos simplesmente não existe para a tecnologia assistiva: o serviço é, para o usuário cego, inexistente. É a forma mais severa de barreira na informação do art. 3º, IV, 'd'."
+        },
+        {
+          "id": "79f7ec97-91c3-434e-affa-4dbc97a92462",
+          "rule_id": "list",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.3.1"
+          ],
+          "summary": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+          "description": "Ensure that lists are structured correctly",
+          "remediation": "Usar HTML semântico (label/for, th/scope, fieldset/legend, listas e cabeçalhos reais) em lugar de formatação puramente visual.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/list?application=axeAPI",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": ".footer-menu > ul",
+              "html": "<ul>",
+              "failure_summary": "Fix all of the following:\n  List element has direct children that are not allowed: div",
+              "target_frame": [],
+              "measured": {
+                "values": "div"
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-24T21:57:02.665302Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74"
+          ],
+          "legal_thesis": "Sem estrutura semântica, a tecnologia assistiva não consegue reconstruir a relação entre rótulo e dado; o art. 74 da LBI assegura o acesso a tecnologias assistivas, o que pressupõe conteúdo com elas compatível."
+        },
+        {
+          "id": "e85fc968-800e-47c9-9974-84dd1232d452",
+          "rule_id": "listitem",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.3.1"
+          ],
+          "summary": "<li> elements must be contained in a <ul> or <ol>",
+          "description": "Ensure <li> elements are used semantically",
+          "remediation": "Usar HTML semântico (label/for, th/scope, fieldset/legend, listas e cabeçalhos reais) em lugar de formatação puramente visual.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/listitem?application=axeAPI",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": ".col-md-4:nth-child(1) > .item-menu",
+              "html": "<li class=\"item-menu\">\n                                <a href=\"https://transparencia.prefeitura.rio/\" role=\"link\">LEI DE ACESSO À INFORMAÇÃO</a>\n                            </li>",
+              "failure_summary": "Fix any of the following:\n  List item does not have a <ul>, <ol> parent element",
+              "target_frame": [],
+              "measured": {}
+            },
+            {
+              "selector": ".col-md-4:nth-child(2) > .item-menu",
+              "html": "<li class=\"item-menu\">\n                                <a href=\"https://prefeitura.rio/area-de-imprensa/\" role=\"link\">ÁREA DE IMPRENSA</a>\n                            </li>",
+              "failure_summary": "Fix any of the following:\n  List item does not have a <ul>, <ol> parent element",
+              "target_frame": [],
+              "measured": {}
+            },
+            {
+              "selector": ".col-md-4:nth-child(3) > .item-menu",
+              "html": "<li class=\"item-menu\">\n                                <a href=\"https://prefeitura.rio/id-visual/\" role=\"link\">IDENTIDADE VISUAL DA MARCA</a>\n                            </li>",
+              "failure_summary": "Fix any of the following:\n  List item does not have a <ul>, <ol> parent element",
+              "target_frame": [],
+              "measured": {}
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-24T21:57:02.665324Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 3,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74"
+          ],
+          "legal_thesis": "Sem estrutura semântica, a tecnologia assistiva não consegue reconstruir a relação entre rótulo e dado; o art. 74 da LBI assegura o acesso a tecnologias assistivas, o que pressupõe conteúdo com elas compatível."
+        },
+        {
+          "id": "8b77283d-f51e-496b-8b73-9060156c3567",
+          "rule_id": "meta-viewport",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "moderate",
+          "criteria": [
+            "1.4.4"
+          ],
+          "summary": "Zooming and scaling must not be disabled",
+          "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+          "remediation": "Usar unidades relativas e remover 'user-scalable=no' da meta viewport.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/meta-viewport?application=axeAPI",
+          "affects": [
+            "baixa_visao",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "meta[name=\"viewport\"]",
+              "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\">",
+              "failure_summary": "Fix any of the following:\n  maximum-scale on <meta> tag disables zooming on mobile devices",
+              "target_frame": [],
+              "measured": {
+                "meta-viewport": "maximum-scale"
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-24T21:57:02.665347Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25"
+          ],
+          "legal_thesis": "O bloqueio de ampliação nega adaptação razoável, conduta equiparada a discriminação pelo art. 4º, § 1º da LBI."
+        },
+        {
+          "id": "e4b058f2-586e-4d94-90ac-bdae78507bc6",
+          "rule_id": "aria-valid-attr-value",
+          "source": "axe-core",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "4.1.2"
+          ],
+          "summary": "ARIA attributes must conform to valid values",
+          "description": "Ensure all ARIA attributes have valid values",
+          "remediation": "Usar elementos nativos ou, quando inevitável, ARIA completo (role, nome acessível, estado) com teclado equivalente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/aria-valid-attr-value?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "fala",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": ".cky-btn-customize",
+              "html": "<button class=\"cky-btn cky-btn-customize\" aria-label=\"Personalizar\" aria-haspopup=\"dialog\" aria-controls=\"ckyPreferenceCenter\" data-cky-tag=\"settings-button\" style=\"color: #1863DC; border-color: #1863DC; background-color: transparent;\">Personalizar</button>",
+              "failure_summary": "Fix all of the following:\n  Unable to determine if aria-controls referenced ID exists on the page while using aria-haspopup: aria-controls=\"ckyPreferenceCenter\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "controlsWithinPopup"
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-24T21:57:02.665368Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "critico",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "onu.art9"
+          ],
+          "legal_thesis": "Controle sem nome, função ou valor expostos simplesmente não existe para a tecnologia assistiva: o serviço é, para o usuário cego, inexistente. É a forma mais severa de barreira na informação do art. 3º, IV, 'd'."
+        },
+        {
+          "id": "3d46c5a2-7653-4274-854a-11b86b22a659",
+          "rule_id": "color-contrast",
+          "source": "axe-core",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "1.4.3"
+          ],
+          "summary": "Elements must meet minimum color contrast ratio thresholds",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "remediation": "Ajustar a paleta para razão mínima de 4.5:1 (texto normal) e 3:1 (texto grande), validando os tokens de design, não apenas as telas.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axeAPI",
+          "affects": [
+            "baixa_visao",
+            "cognitiva_neurodivergencia",
+            "visao_de_cores"
+          ],
+          "nodes": [
+            {
+              "selector": ".cky-notice-des > p",
+              "html": "<p>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": "elmPartiallyObscuring",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "h5",
+              "html": "<h5>Acessibilidade</h5>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "10.0pt (13.3333px)",
+                "fontWeight": "bold",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".diminuir-fonte > a[href=\"#\"][role=\"link\"]",
+              "html": "<a href=\"#\" role=\"link\">-A</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "bold",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".aumentar-fonte > a[href=\"#\"][role=\"link\"]",
+              "html": "<a href=\"#\" role=\"link\">+A</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "bold",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".form-control",
+              "html": "<input type=\"search\" class=\"form-control search-input mr-sm-2\" placeholder=\"O que você procura?\" value=\"\" name=\"s\" title=\"Pesquisar por:\">",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "8.3pt (11px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "#menu-item-18033 > a[href=\"#\"][role=\"link\"]",
+              "html": "<a href=\"#\" role=\"link\">A PREFEITURA</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "9.8pt (13px)",
+                "fontWeight": "bold",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "#menu-item-18040 > a[href=\"#\"][role=\"link\"]",
+              "html": "<a href=\"#\" role=\"link\">TURISMO</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "9.8pt (13px)",
+                "fontWeight": "bold",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "#menu-item-18054 > a[href=\"#\"][role=\"link\"]",
+              "html": "<a href=\"#\" role=\"link\">CIDADÃO</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "9.8pt (13px)",
+                "fontWeight": "bold",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "#menu-item-18060 > a[href=\"#\"][role=\"link\"]",
+              "html": "<a href=\"#\" role=\"link\">SERVIDOR</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "9.8pt (13px)",
+                "fontWeight": "bold",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "#menu-item-18067 > a[href=\"#\"][role=\"link\"]",
+              "html": "<a href=\"#\" role=\"link\">EMPRESA</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "9.8pt (13px)",
+                "fontWeight": "bold",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "#menu-item-18080 > a[role=\"link\"]",
+              "html": "<a href=\"https://ouvidoria.prefeitura.rio\" role=\"link\">OUVIDORIA</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "9.8pt (13px)",
+                "fontWeight": "bold",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".title-category > h3",
+              "html": "<h3>Notícias Saúde</h3>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "22.5pt (30px)",
+                "fontWeight": "bold",
+                "messageKey": "bgImage",
+                "expectedContrastRatio": "3:1"
+              }
+            },
+            {
+              "selector": ".active > a[href$=\"saude/\"][role=\"link\"]",
+              "html": "<a href=\"https://prefeitura.rio/saude/\" role=\"link\">1</a>",
+              "failure_summary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "bold",
+                "messageKey": "shortTextContent",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".navigation > ul > li:nth-child(2) > a[role=\"link\"]",
+              "html": "<a href=\"https://prefeitura.rio/saude/page/2/\" role=\"link\">2</a>",
+              "failure_summary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "bold",
+                "messageKey": "shortTextContent",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".navigation > ul > li:nth-child(3) > a[role=\"link\"]",
+              "html": "<a href=\"https://prefeitura.rio/saude/page/3/\" role=\"link\">3</a>",
+              "failure_summary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "bold",
+                "messageKey": "shortTextContent",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".navigation > ul > li:nth-child(5) > a[role=\"link\"]",
+              "html": "<a href=\"https://prefeitura.rio/saude/page/168/\" role=\"link\">168</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "bold",
+                "messageKey": "bgImage",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".seta",
+              "html": "<span class=\"seta\">→</span>",
+              "failure_summary": "Fix any of the following:\n  Element content contains only non-text characters",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "nonBmp"
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-24T21:57:02.665552Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 17,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "O contraste insuficiente é a barreira de comunicação mais prevalente e atinge diretamente a população idosa usuária do SUS; sua persistência em portal público caracteriza descumprimento continuado do art. 63, caput, da LBI e do art. 47 do Decreto 5.296/2004."
+        },
+        {
+          "id": "d29e7f2f-8439-4c43-8b79-fd158fe0ff3f",
+          "rule_id": "probe.landmarks.no-skip-link",
+          "source": "probe",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "2.4.1"
+          ],
+          "summary": "Nenhum link de salto para o conteúdo principal foi encontrado.",
+          "description": "Não há âncora funcional no início do documento que permita ignorar os blocos repetidos de navegação. A página declara marco principal, o que já satisfaz o critério pela técnica ARIA11; o link de salto permanece recomendável e a verificação fica registrada para revisão.",
+          "remediation": "Incluir link 'pular para o conteúdo principal' e marcos ARIA (landmarks).",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "",
+              "failure_summary": "Nenhuma âncora interna com destino existente.",
+              "target_frame": [],
+              "measured": {
+                "has_main": true
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-24T21:57:02.673354Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "moderado",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art3.i"
+          ],
+          "legal_thesis": "A ausência de mecanismo de salto obriga a percorrer repetidamente blocos idênticos, esforço desproporcional vedado pelo conceito de acessibilidade com autonomia do art. 3º, I da LBI."
+        },
+        {
+          "id": "cc48275a-38b6-423c-9bf6-783b49b6f8e7",
+          "rule_id": "probe.heading-structure.no-h1",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "moderate",
+          "criteria": [
+            "1.3.1"
+          ],
+          "summary": "A página não declara um cabeçalho de primeiro nível (H1).",
+          "description": "O H1 é o que informa ao usuário de leitor de tela do que trata a página. Sem ele, a hierarquia começa no meio e o assunto principal precisa ser inferido.",
+          "remediation": "Declarar exatamente um H1 por página, descrevendo o serviço ou a informação ali oferecida.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "body > div:nth-of-type(3) > div > div > p",
+              "html": "<p class=\"cky-title\" data-cky-tag=\"title\" aria-level=\"2\" role=\"heading\" style=\"color: #212121;\">Valorizamos sua privacidade</p>",
+              "failure_summary": "Primeiro cabeçalho da página é de nível 2.",
+              "target_frame": [],
+              "measured": {
+                "headings_total": 19,
+                "h1_count": 0
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-24T21:57:02.676128Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74"
+          ],
+          "legal_thesis": "Sem estrutura semântica, a tecnologia assistiva não consegue reconstruir a relação entre rótulo e dado; o art. 74 da LBI assegura o acesso a tecnologias assistivas, o que pressupõe conteúdo com elas compatível."
+        },
+        {
+          "id": "542b98c5-fa29-4c63-a3d8-1616afe19e89",
+          "rule_id": "probe.heading-structure.level-skip",
+          "source": "probe",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "1.3.1"
+          ],
+          "summary": "1 salto(s) de nível na hierarquia de cabeçalhos.",
+          "description": "A sequência de níveis pula degraus (por exemplo, de H2 para H4). Isso sugere que os cabeçalhos foram escolhidos pelo tamanho da fonte, e não pela estrutura do conteúdo. Há casos legítimos em páginas com blocos independentes, razão pela qual o achado fica registrado para revisão humana em vez de reprovado.",
+          "remediation": "Escolher o nível pelo lugar na hierarquia do conteúdo e ajustar o tamanho visual por CSS.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "div:nth-of-type(5) > div:nth-of-type(1) > div > div:nth-of-type(1) > h5",
+              "html": "<h5>Acessibilidade</h5>",
+              "failure_summary": "Nível 2 seguido diretamente de nível 5 ('Acessibilidade').",
+              "target_frame": [],
+              "measured": {
+                "from_level": 2,
+                "to_level": 5
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-24T21:57:02.676156Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74"
+          ],
+          "legal_thesis": "Sem estrutura semântica, a tecnologia assistiva não consegue reconstruir a relação entre rótulo e dado; o art. 74 da LBI assegura o acesso a tecnologias assistivas, o que pressupõe conteúdo com elas compatível."
+        },
+        {
+          "id": "1917a1a5-91f4-4014-a92d-c4f317c31728",
+          "rule_id": "probe.positive-tabindex",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "moderate",
+          "criteria": [
+            "2.4.3"
+          ],
+          "summary": "1 elemento(s) usam tabindex positivo, alterando a ordem natural de tabulação.",
+          "description": "Valores de tabindex maiores que zero criam uma ordem de foco paralela à ordem visual do documento. O usuário de teclado passa a percorrer a página em sequência imprevisível, o que em um formulário de agendamento produz preenchimento fora de ordem e submissão prematura.",
+          "remediation": "Alinhar a ordem de tabulação à ordem visual; evitar tabindex positivo.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "#pojo-a11y-skip-content",
+              "html": "<a id=\"pojo-a11y-skip-content\" class=\"pojo-skip-link pojo-skip-content\" tabindex=\"1\" accesskey=\"s\" href=\"#content\" role=\"link\">Pular para o conteúdo</a>",
+              "failure_summary": "<a> declara tabindex=1.",
+              "target_frame": [],
+              "measured": {
+                "tabindex": 1
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-24T21:57:02.681388Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25"
+          ],
+          "legal_thesis": "Ordem de foco incoerente induz erro na submissão de dados de saúde, com risco de agendamento equivocado — dano ao acesso ao serviço."
+        },
+        {
+          "id": "6a88ceaf-81c4-4614-9c7d-da7c1d7a4f26",
+          "rule_id": "probe.placeholder-como-rotulo",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "3.3.2"
+          ],
+          "summary": "1 campo(s) de formulário são identificados apenas pelo texto de placeholder.",
+          "description": "Estes campos não possuem <label>, aria-label nem aria-labelledby: sua única identificação é o placeholder, que desaparece assim que o usuário digita o primeiro caractere. Quem usa leitor de tela e retorna ao campo para conferir o que preencheu ouve apenas 'caixa de edição' e o valor digitado, sem saber se ali se pedia o CPF ou o Cartão Nacional de Saúde. O padrão também falha para pessoas com deficiência intelectual, que perdem a instrução ao começar a responder. Registre-se que a verificação automática do axe-core aceita o placeholder como nome acessível válido; esta sonda existe precisamente para cobrir essa lacuna.",
+          "remediation": "Associar label a todo campo; placeholder não substitui rótulo.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/labels-or-instructions.html",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "div > div:nth-of-type(1) > div > form > input:nth-of-type(2)",
+              "html": "<input type=\"search\" class=\"form-control search-input mr-sm-2\" placeholder=\"O que você procura?\" value=\"\" name=\"s\" title=\"Pesquisar por:\">",
+              "failure_summary": "<input> identificado apenas por placeholder='O que você procura?'.",
+              "target_frame": [],
+              "measured": {
+                "placeholder": "O que você procura?",
+                "name": "s",
+                "type": "search",
+                "obrigatorio": false
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-24T21:57:02.848582Z",
+          "legal_risk_override": "alto",
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "lbi.art3.i"
+          ],
+          "legal_thesis": "Campo sem rótulo programático torna indeterminável o dado solicitado, inviabilizando o preenchimento autônomo (art. 3º, I, LBI)."
+        },
+        {
+          "id": "40370c98-51a1-46ca-97cd-19a0b41e4487",
+          "rule_id": "probe.zoom-lock",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.4.4"
+          ],
+          "summary": "A página bloqueia a ampliação pelo usuário.",
+          "description": "A meta viewport declara restrições de escala: 'maximum-scale=1' limita a ampliação abaixo dos 200% exigidos. Pessoas com baixa visão dependem da ampliação nativa do navegador para ler conteúdo de saúde; o bloqueio equivale a recusar adaptação razoável.",
+          "remediation": "Usar unidades relativas e remover 'user-scalable=no' da meta viewport.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html",
+          "affects": [
+            "baixa_visao",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "meta[name=viewport]",
+              "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\">",
+              "failure_summary": "'maximum-scale=1' limita a ampliação abaixo dos 200% exigidos",
+              "target_frame": [],
+              "measured": {
+                "content": "width=device-width, initial-scale=1, maximum-scale=1",
+                "user_scalable_no": false,
+                "maximum_scale": 1
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-24T21:57:02.854087Z",
+          "legal_risk_override": "alto",
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25"
+          ],
+          "legal_thesis": "O bloqueio de ampliação nega adaptação razoável, conduta equiparada a discriminação pelo art. 4º, § 1º da LBI."
+        },
+        {
+          "id": "6abcbcc1-314a-4bec-84c0-b5ee03ad4570",
+          "rule_id": "probe.captions.embedded-player",
+          "source": "probe",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "1.2.2"
+          ],
+          "summary": "1 player(s) de terceiros embutidos — região opaca à auditoria automática.",
+          "description": "Players hospedados em outro domínio não podem ser inspecionados a partir da página, por restrição de mesma origem do navegador. A existência de legendas precisa ser verificada manualmente. Este achado é registrado para que a lacuna conste do relatório: ausência de detecção não é evidência de conformidade.",
+          "remediation": "Verificar manualmente as legendas no player e garantir que o iframe tenha atributo title descritivo.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/captions-prerecorded.html",
+          "affects": [
+            "surdez"
+          ],
+          "nodes": [
+            {
+              "selector": "#popmake-86088 > div > p > iframe",
+              "html": "<iframe width=\"640\" height=\"360\" src=\" https://www.youtube.com/embed/GGC9Y7UD1f4?feature=oembed&amp;start=1 \"></iframe>",
+              "failure_summary": "Player embutido de https://www.youtube.com/embed/GGC9Y7UD1f4?feature=oembed&start=1",
+              "target_frame": [],
+              "measured": {
+                "title": null
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-24T21:57:02.857446Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "dec5626.art26"
+          ],
+          "legal_thesis": "Vídeo de orientação em saúde sem legenda nega à pessoa surda o acesso à informação sanitária, violando o art. 26 do Decreto 5.626/2005 e o direito à atenção integral do art. 18 da LBI."
+        },
+        {
+          "id": "d3aeb889-0ce3-46da-8dd2-2899abba6899",
+          "rule_id": "probe.data-cost",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [],
+          "summary": "Um único acesso a esta página consome 2.11 MB, ou 0.021% da franquia mensal do plano de referência (0.6 centavo).",
+          "description": "A página impõe custo de dados ao usuário com plano limitado: 70% do tráfego dirigido a 14 domínio(s) de terceiros. O peso foi medido em bytes efetivamente transferidos, em contexto sem cache — o cenário do primeiro acesso e daquele que limpa dados do aparelho por falta de armazenamento. Consultada quatro vezes ao mês, frequência mínima plausível para acompanhar um agendamento ou um resultado de exame, esta página consome 0.08% da franquia (2.5 centavos) — e cada tentativa frustrada por barreira de acessibilidade soma-se a essa conta, de modo que as duas dimensões se agravam mutuamente.",
+          "remediation": "Reduzir o peso da página: comprimir e redimensionar imagens, servir formatos modernos, remover scripts de terceiros não essenciais ao serviço, adiar carregamento de recursos fora da área visível e priorizar HTML semântico sobre renderização integral por JavaScript.",
+          "help_url": null,
+          "affects": [
+            "baixa_conectividade"
+          ],
+          "nodes": [
+            {
+              "selector": "document",
+              "html": "",
+              "failure_summary": "70% do tráfego dirigido a 14 domínio(s) de terceiros",
+              "target_frame": [],
+              "measured": {
+                "total_mb": 2.109,
+                "total_bytes": 2211241,
+                "request_count": 88,
+                "third_party_share": 0.7012,
+                "third_party_domains": [
+                  "bootstrapcdn.com",
+                  "cdn-cookieyes.com",
+                  "cookieyes.com",
+                  "doubleclick.net",
+                  "google-analytics.com",
+                  "google.com",
+                  "googleapis.com",
+                  "googletagmanager.com",
+                  "gstatic.com",
+                  "jquery.com",
+                  "jsdelivr.net",
+                  "vlibras.gov.br",
+                  "youtube.com",
+                  "ytimg.com"
+                ],
+                "bytes_by_type": {
+                  "document": 112065,
+                  "fetch": 8442,
+                  "font": 83951,
+                  "image": 316809,
+                  "ping": 220,
+                  "script": 1526949,
+                  "stylesheet": 161518,
+                  "xhr": 1287
+                },
+                "cost_brl": 0.006179,
+                "franchise_share_pct": 0.0206,
+                "price_per_mb_brl": 0.0029296875,
+                "franchise_mb": 10240.0
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-24T21:57:02.862011Z",
+          "legal_risk_override": "alto",
+          "extra_provisions": [
+            "cf.art196",
+            "lbi.art18",
+            "lei13460.art5",
+            "cf.art5.xiv"
+          ],
+          "legal_thesis_override": "O custo de dados exigido para acessar o serviço digital de saúde transfere ao cidadão um ônus econômico como condição de exercício de direito fundamental. Quando esse ônus recai desproporcionalmente sobre a população de menor renda — a mesma que depende exclusivamente do SUS — o acesso deixa de ser universal e igualitário, em desacordo com o art. 196 da CF/88 e com o dever de informação adequada do art. 18, § 4º da Lei 13.146/2015. A parcela do tráfego destinada a terceiros agrava a situação: o usuário custeia recursos que não lhe prestam o serviço público solicitado.",
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "cf.art196",
+            "lbi.art18",
+            "lei13460.art5",
+            "cf.art5.xiv"
+          ],
+          "legal_thesis": "O custo de dados exigido para acessar o serviço digital de saúde transfere ao cidadão um ônus econômico como condição de exercício de direito fundamental. Quando esse ônus recai desproporcionalmente sobre a população de menor renda — a mesma que depende exclusivamente do SUS — o acesso deixa de ser universal e igualitário, em desacordo com o art. 196 da CF/88 e com o dever de informação adequada do art. 18, § 4º da Lei 13.146/2015. A parcela do tráfego destinada a terceiros agrava a situação: o usuário custeia recursos que não lhe prestam o serviço público solicitado."
+        },
+        {
+          "id": "6dcf068d-820b-41a0-ab86-8007a0921ab3",
+          "rule_id": "probe.readability",
+          "source": "heuristic",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [],
+          "summary": "Legibilidade do conteúdo principal em 0.0 pontos — faixa muito difícil (exige ensino superior).",
+          "description": "O texto principal apresenta média de 276.5 palavras por frase e 2.356 sílabas por palavra. Nessa faixa, a compreensão autônoma exige escolaridade acima da média da população que depende exclusivamente do SUS. A informação está publicada e tecnicamente disponível, mas o registro de linguagem opera como barreira de acesso — em especial para pessoas com deficiência intelectual, para quem o art. 3º, IV, 'd' da LBI expressamente reconhece a barreira na comunicação. Índices de legibilidade medem estrutura, não compreensão: este achado sinaliza revisão editorial e não constitui, por si só, violação de critério normativo.",
+          "remediation": "Revisar o conteúdo em linguagem simples: frases curtas, ordem direta, voz ativa, termos técnicos explicados na primeira ocorrência e uma ideia por parágrafo. Manter a versão formal como documento anexo quando houver exigência legal de redação técnica.",
+          "help_url": null,
+          "affects": [
+            "cognitiva_neurodivergencia",
+            "baixa_conectividade"
+          ],
+          "nodes": [
+            {
+              "selector": "main",
+              "html": "Notícias Saúde Dia D de Vacinação: mais de 68 mil doses aplicadas na cidade do Rio Cidade Notícias Saúde A campanha da Prefeitura do Rio de Janeiro do Dia D de vacinação alcançou a marca de 68.391 doses de […] Dia D de Multivacinação acontece neste sábado em mais de 400 pontos de atendimento na cida…",
+              "failure_summary": "Flesch adaptado = 0.0 (muito difícil (exige ensino superior)).",
+              "target_frame": [],
+              "measured": {
+                "index": 0.0,
+                "band": "muito difícil (exige ensino superior)",
+                "words": 553,
+                "sentences": 2,
+                "syllables": 1303,
+                "words_per_sentence": 276.5,
+                "syllables_per_word": 2.356
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude/",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-24T21:57:02.867904Z",
+          "legal_risk_override": "moderado",
+          "extra_provisions": [
+            "lbi.art18",
+            "lai.art8.par3.viii",
+            "lei13460.art5"
+          ],
+          "legal_thesis_override": "A publicação de informação de saúde em registro linguístico inacessível à população destinatária esvazia materialmente o dever de oferta de comunicação e informação adequadas (art. 18, § 4º, IV, LBI) e o dever de transparência ativa (art. 8º, § 3º, LAI). A informação torna-se disponível sem se tornar acessível.",
+          "occurrences": 1,
+          "legal_risk": "moderado",
+          "legal_provisions": [
+            "lbi.art18",
+            "lai.art8.par3.viii",
+            "lei13460.art5"
+          ],
+          "legal_thesis": "A publicação de informação de saúde em registro linguístico inacessível à população destinatária esvazia materialmente o dever de oferta de comunicação e informação adequadas (art. 18, § 4º, IV, LBI) e o dever de transparência ativa (art. 8º, § 3º, LAI). A informação torna-se disponível sem se tornar acessível."
+        }
+      ],
+      "network": {
+        "total_bytes": 2211241,
+        "total_uncompressed_bytes": 0,
+        "request_count": 88,
+        "bytes_by_type": {
+          "document": 112065,
+          "fetch": 8442,
+          "font": 83951,
+          "image": 316809,
+          "ping": 220,
+          "script": 1526949,
+          "stylesheet": 161518,
+          "xhr": 1287
+        },
+        "third_party_bytes": 1550623,
+        "third_party_domains": [
+          "bootstrapcdn.com",
+          "cdn-cookieyes.com",
+          "cookieyes.com",
+          "doubleclick.net",
+          "google-analytics.com",
+          "google.com",
+          "googleapis.com",
+          "googletagmanager.com",
+          "gstatic.com",
+          "jquery.com",
+          "jsdelivr.net",
+          "vlibras.gov.br",
+          "youtube.com",
+          "ytimg.com"
+        ],
+        "dom_content_loaded_ms": 2262.5,
+        "load_complete_ms": 2849.7000000000116,
+        "largest_contentful_paint_ms": null,
+        "blocked_requests": 1,
+        "total_mb": 2.109,
+        "third_party_share": 0.7012
+      },
+      "error": null,
+      "axe_version": "4.13.0",
+      "screenshot_path": "/home/runner/work/acessisaude-audit/acessisaude-audit/data/screenshots/prefeitura.rio__70bc77e2a6__desktop-1366.png",
+      "is_critical_path": true,
+      "duration_ms": 6057.981
+    }
+  ],
+  "engine_version": "0.1.0",
+  "axe_version": "4.13.0",
+  "browser": "chromium 151.0.7922.34",
+  "config_snapshot": {
+    "browser": "chromium",
+    "headless": true,
+    "navigation_timeout_ms": 30000,
+    "settle_delay_ms": 1500,
+    "locale": "pt-BR",
+    "timezone_id": "America/Sao_Paulo",
+    "max_pages_per_target": 25,
+    "max_crawl_depth": 2,
+    "request_delay_ms": 2000,
+    "concurrency": 1,
+    "respect_robots_txt": true,
+    "robots_override_reason": "",
+    "axe_tags": [
+      "wcag2a",
+      "wcag2aa",
+      "wcag21a",
+      "wcag21aa"
+    ],
+    "viewports": [
+      {
+        "name": "mobile-320",
+        "width": 320,
+        "height": 640,
+        "device_scale_factor": 2.0,
+        "is_mobile": true,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; SM-A105M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+      },
+      {
+        "name": "desktop-1366",
+        "width": 1366,
+        "height": 768,
+        "device_scale_factor": 1.0,
+        "is_mobile": false,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+      }
+    ],
+    "scoring": {
+      "friction_kappa": 150.0,
+      "critical_path_multiplier": 1.5,
+      "price_per_mb_brl": 0.0029296875,
+      "franchise_mb": 10240.0,
+      "heavy_page_mb": 2.5
+    },
+    "random_seed": 42,
+    "plan": {
+      "total_tasks": 2,
+      "unique_urls": 1,
+      "discover_enabled": false,
+      "declared_gaps": []
+    },
+    "probes": [
+      "probe.page-language",
+      "probe.landmarks",
+      "probe.heading-structure",
+      "probe.id-duplicado",
+      "probe.non-interactive-control",
+      "probe.positive-tabindex",
+      "probe.focus-visible",
+      "probe.placeholder-como-rotulo",
+      "probe.erro-sem-mensagem",
+      "probe.reflow-320",
+      "probe.zoom-lock",
+      "probe.captions",
+      "probe.autoplay",
+      "probe.meta-refresh",
+      "probe.data-cost",
+      "probe.readability"
+    ]
+  },
+  "errors": [],
+  "page_count": 2,
+  "violation_count": 24,
+  "occurrence_count": 90
+}
