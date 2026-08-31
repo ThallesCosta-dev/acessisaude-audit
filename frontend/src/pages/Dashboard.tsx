@@ -19,6 +19,7 @@ import {
   dataHora,
   faixaDeAtrito,
   faixaDeConformidade,
+  SEM_VEREDITO,
   indice,
   inteiro,
   megabytes,
@@ -39,7 +40,7 @@ export function Dashboard() {
   const criterios = useRecurso(() => api.frequenciaDeCriterios(), []);
 
   const lista = varreduras.dados?.items ?? [];
-  const comBarreiraAbsoluta = lista.filter((v) => v.absolute_barrier);
+  const comBarreiraAbsoluta = lista.filter((v) => v.observed && v.absolute_barrier);
 
   return (
     <>
@@ -177,7 +178,15 @@ export function Dashboard() {
                 <span className="texto-suave">{reais(v.mean_cost_brl)}</span>
               </td>
               <td>
-                {v.absolute_barrier ? (
+                {/* Três estados, e não dois: `null` significa que nada foi
+                    observado. Tratá-lo como falso faria o painel anunciar
+                    "sem barreira absoluta" para uma varredura em que nenhuma
+                    página carregou — a leitura mais enganosa possível. */}
+                {!v.observed ? (
+                  <Selo variante="moderado" descricao={SEM_VEREDITO}>
+                    Sem veredito
+                  </Selo>
+                ) : v.absolute_barrier ? (
                   <Selo
                     variante="critico"
                     descricao="Há barreira que impede completamente o uso por um grupo identificável."

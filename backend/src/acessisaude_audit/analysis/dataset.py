@@ -264,6 +264,11 @@ def build_scans_frame(
                 "situacao": scan.status.value,
                 "paginas": scan.page_count,
                 "taxa_de_perda": scan.loss_rate,
+                # Espelha `auditada` do quadro de páginas: filtrar por
+                # `observado` antes de agregar é obrigatório, pelo mesmo motivo.
+                # Índices nulos viram NaN, que pandas já exclui de médias — mas
+                # não de contagens, e é por isso que o sinalizador existe.
+                "observado": score.observed,
                 "ica": score.conformance_index,
                 "ian": score.friction_index,
                 "iej": score.legal_exposure_index,

@@ -9,13 +9,14 @@ a exigir revarrer os portais.
 from __future__ import annotations
 
 import csv
+import re
 from pathlib import Path
 
 import pytest
 
 from acessisaude_audit.catalog.loader import load_catalog
 from acessisaude_audit.config import Settings
-from acessisaude_audit.domain.models import ScanResult
+from acessisaude_audit.domain.models import PageAudit, PageStatus, ScanResult, Viewport
 from acessisaude_audit.domain.scoring import score_scan
 from acessisaude_audit.persistence.database import (
     create_database_engine,
@@ -272,3 +273,83 @@ class TestCatalogo:
         assert conecte.declared_gaps
         assert all(s.requires_auth for s in conecte.declared_gaps)
         assert all(not s.requires_auth for s in conecte.auditable_seeds)
+
+
+class TestVarreduraSemObservacao:
+    """A ausência de veredito precisa atravessar índice, CSV e relatório.
+
+    Corrigir apenas o cálculo não bastaria: se o índice relacional gravasse
+    zero, o CSV escrevesse ``0,0`` ou o relatório imprimisse ``0``, a leitura
+    enganosa reapareceria na saída — e é a saída que circula. O contrato só
+    vale se o nulo sobreviver às três travessias.
+    """
+
+    @pytest.fixture
+    def scan_perdido(self) -> ScanResult:
+        """Varredura em que nenhuma página carregou — o caso de 25/08/2026."""
+        return ScanResult(
+            target_id="alvo-teste",
+            target_name="Alvo de teste",
+            base_url="http://exemplo.test/",
+            pages=[
+                PageAudit(
+                    url=f"http://exemplo.test/{i}",
+                    viewport=Viewport(name="desktop-1366", width=1366, height=768),
+                    status=PageStatus.NAVIGATION_ERROR,
+                    error="net::ERR_NAME_NOT_RESOLVED",
+                )
+                for i in range(4)
+            ],
+        )
+
+    def test_indice_relacional_grava_nulo(
+        self, repositorio: ScanRepository, scan_perdido: ScanResult
+    ) -> None:
+        row = repositorio.save(scan_perdido, sphere="federal")
+        assert row.observed is False
+        assert row.conformance_index is None
+        assert row.friction_index is None
+        assert row.legal_exposure_index is None
+        assert row.absolute_barrier is None
+        assert row.loss_rate == 1.0
+
+    def test_reindexacao_preserva_a_ausencia(
+        self, repositorio: ScanRepository, scan_perdido: ScanResult
+    ) -> None:
+        """Reindexar uma coleta perdida não pode fabricar um veredito."""
+        repositorio.save(scan_perdido, sphere="federal")
+        reindexado = repositorio.reindex(str(scan_perdido.id))
+        assert reindexado is not None
+        assert reindexado.observed is False
+        assert reindexado.conformance_index is None
+
+    def test_csv_de_paginas_marca_a_pagina_como_nao_auditada(
+        self, scan_perdido: ScanResult, tmp_path: Path
+    ) -> None:
+        path = export_pages_csv([scan_perdido], tmp_path / "paginas.csv")
+        with path.open(encoding="utf-8-sig", newline="") as handle:
+            linhas = list(csv.DictReader(handle, delimiter=";"))
+
+        assert linhas
+        assert all(linha["observado"] == "0" for linha in linhas)
+        # Vazio, e não zero: não há índice, e "0,0" seria um veredito inventado.
+        assert all(linha["indice_conformidade"] == "" for linha in linhas)
+        assert all(linha["barreira_absoluta"] == "" for linha in linhas)
+
+    def test_relatorio_anuncia_a_ausencia_de_veredito(self, scan_perdido: ScanResult) -> None:
+        """O leitor precisa saber disso antes de interpretar qualquer número."""
+        html = render_report(scan_perdido)
+        assert "Sem veredito" in html
+        assert "não significa conformidade nem não conformidade" in html
+
+    def test_relatorio_nao_exibe_conformidade_perfeita(self, scan_perdido: ScanResult) -> None:
+        """A regressão que motivou o contrato: 100,0 impresso sobre zero observação.
+
+        A asserção mira os cartões de índice, e não o documento inteiro: a taxa
+        de perda desta varredura é legitimamente 100%, e proibir a cadeia em
+        qualquer posição confundiria o número que descreve a falha com o número
+        que a esconderia.
+        """
+        html = render_report(scan_perdido)
+        valores = re.findall(r'class="valor">([^<]*)<', html)
+        assert valores[:3] == ["—", "—", "—"]

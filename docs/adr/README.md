@@ -17,6 +17,8 @@ Formato: contexto → decisão → consequências → alternativas descartadas.
 | [0006](0006-custo-de-dados-como-barreira.md) | Tratar o custo de acesso como barreira auditável | Aceita |
 | [0007](0007-calibracao-empirica-de-kappa.md) | Recalibrar κ empiricamente (40 → 150) | Aceita |
 | [0008](0008-user-agent-em-todos-os-perfis.md) | User-Agent explícito em todos os perfis | Aceita |
+| [0009](0009-ponto-de-observacao-como-variavel.md) | O ponto de observação de rede é variável do estudo | Aceita |
+| [0010](0010-indices-nulos-sem-observacao.md) | Índices nulos quando não há observação — nulo não é zero | Aceita |
 
 ## Quando escrever uma nova ADR
 

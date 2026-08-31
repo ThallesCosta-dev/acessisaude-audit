@@ -116,6 +116,7 @@ class ScanRepository:
             extra={
                 "scan": str(scan.id),
                 "alvo": scan.target_id,
+                "observado": score.observed,
                 "ica": score.conformance_index,
                 "ian": score.friction_index,
             },
@@ -230,6 +231,7 @@ class ScanRepository:
             occurrence_count=scan.occurrence_count,
             incomplete_count=score.incomplete,
             loss_rate=scan.loss_rate,
+            observed=score.observed,
             conformance_index=score.conformance_index,
             friction_index=score.friction_index,
             legal_exposure_index=score.legal_exposure_index,

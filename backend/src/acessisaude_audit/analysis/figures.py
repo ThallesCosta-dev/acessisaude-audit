@@ -37,6 +37,7 @@ if TYPE_CHECKING:  # pragma: no cover
 __all__ = [
     "apply_style",
     "figure_criterion_prevalence",
+    "figure_daily_series",
     "figure_data_cost",
     "figure_exclusion_profile",
     "figure_index_by_sphere",
@@ -246,6 +247,89 @@ def figure_index_by_sphere(pages: pd.DataFrame, *, index: str = "ica") -> Figure
     return fig
 
 
+def figure_daily_series(scans: pd.DataFrame, *, index: str = "ica") -> Figure:
+    """Série diária de um índice, uma linha por plataforma.
+
+    A figura do componente longitudinal. Duas decisões de desenho respondem ao
+    que a série precisa comunicar:
+
+    **Dias sem veredito são interrompidos, não interpolados.** Quando nenhuma
+    página foi auditada, o índice é nulo, e ligar os pontos vizinhos por cima da
+    lacuna desenharia uma continuidade que não foi observada. A linha quebra, e
+    a faixa cinza marca o dia — a ausência é informação, e é justamente a que
+    motivou a ADR 0010.
+
+    **O eixo vertical vai de 0 a 100, sem truncamento.** Truncar amplificaria
+    visualmente oscilações de poucos pontos e sugeriria variação onde há
+    estabilidade; como o resultado central da série é que três plataformas
+    *não* variam, o truncamento inverteria a leitura.
+
+    Args:
+        scans: Quadro de varreduras, com ``coletado_em``, ``target_name``,
+            ``observado`` e a coluna do índice.
+        index: Índice a plotar (``ica``, ``ian`` ou ``iej``).
+    """
+    plt = _plt()
+    apply_style()
+
+    titulos = {
+        "ica": "Índice de Conformidade (ICA)",
+        "ian": "Índice de Atrito de Navegação (IAN)",
+        "iej": "Índice de Exposição Jurídica (IEJ)",
+    }
+    fig, ax = plt.subplots(figsize=(7.5, 4.2))
+
+    dados = scans.copy()
+    dados["dia"] = dados["coletado_em"].dt.date
+    # Uma varredura por plataforma por dia: se houver mais de uma, a série está
+    # mal recortada, e agregar silenciosamente esconderia o erro.
+    nomes = sorted(dados["target_name"].dropna().unique())
+    dias = sorted(dados["dia"].unique())
+
+    marcadores = ("o", "s", "^", "D", "v", "P")
+    for i, nome in enumerate(nomes):
+        serie = dados[dados["target_name"] == nome].set_index("dia").reindex(dias)
+        valores = serie[index].tolist()
+        ax.plot(
+            range(len(dias)),
+            valores,
+            marker=marcadores[i % len(marcadores)],
+            color=_GRAYS[i % len(_GRAYS)],
+            markersize=4,
+            linewidth=1.4,
+            label=nome,
+        )
+
+    # Faixa nos dias em que nenhuma plataforma foi observada.
+    sem_veredito = [
+        j for j, dia in enumerate(dias) if not dados.loc[dados["dia"] == dia, "observado"].any()
+    ]
+    for j in sem_veredito:
+        ax.axvspan(j - 0.4, j + 0.4, color="#e6e6e6", zorder=0)
+    if sem_veredito:
+        # Anotação no topo: embaixo ela colidiria com a legenda, e a colisão
+        # atinge justamente o rótulo que explica a lacuna.
+        ax.annotate(
+            "sem veredito",
+            xy=(sem_veredito[0], 97),
+            ha="center",
+            va="top",
+            fontsize=7,
+            rotation=90,
+            color="#4a4a4a",
+        )
+
+    ax.set_ylim(0, 100)
+    ax.set_xticks(range(len(dias)))
+    ax.set_xticklabels([d.strftime("%d/%m") for d in dias], rotation=45, ha="right")
+    ax.set_ylabel(titulos.get(index, index.upper()))
+    ax.set_xlabel("Dia da coleta")
+    ax.set_title(f"{titulos.get(index, index.upper())} em série diária, por plataforma")
+    ax.legend(fontsize=7, loc="lower left", framealpha=0.95)
+    fig.tight_layout()
+    return fig
+
+
 def figure_data_cost(pages: pd.DataFrame, *, franchise_mb: float = 10240.0) -> Figure:
     """Custo de acesso por página, em fração da franquia mensal de dados.
 
@@ -294,6 +378,7 @@ def save_all(
     pages: pd.DataFrame,
     directory: Path,
     *,
+    scans: pd.DataFrame | None = None,
     franchise_mb: float = 10240.0,
 ) -> list[Path]:
     """Gera e grava todas as figuras do artigo.
@@ -338,6 +423,15 @@ def save_all(
 
     if not pages.empty:
         _save(figure_data_cost(pages, franchise_mb=franchise_mb), "fig4-custo-de-acesso")
+
+    # A figura da série só existe se houver série: com um único dia de coleta,
+    # o gráfico de linhas seria uma coluna de pontos, e desenhá-lo sugeriria
+    # uma dimensão temporal que o dado não tem.
+    if scans is not None:
+        if not scans.empty and scans["coletado_em"].dt.date.nunique() > 1:
+            _save(figure_daily_series(scans, index="ica"), "fig5-serie-diaria-ica")
+        else:
+            logger.warning("menos de dois dias de coleta: figura 5 não gerada")
 
     return written
 

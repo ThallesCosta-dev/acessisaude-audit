@@ -21,8 +21,10 @@ Quatro medições de cada plataforma entre 00h58 e 01h45 UTC. Dois desfechos pri
 > **O que esta coleta NÃO estabelece.** As quatro medições ocorreram em **47 minutos**. Não
 > constituem janelas temporais distintas e não permitem separar instabilidade circunstancial de
 > crônica, nem detectar mudança nos portais. Uma série temporal genuína — a premissa de
-> "auditoria contínua" que o projeto defende — exige coletas separadas por dias ou semanas, e
-> permanece pendente.
+> "auditoria contínua" que o projeto defende — exige coletas separadas por dias.
+>
+> Essa lacuna foi coberta depois: ver
+> [registro da série diária](registro-da-serie-diaria.md), 19 a 31/08/2026.
 
 ---
 

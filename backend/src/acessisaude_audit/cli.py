@@ -308,6 +308,19 @@ def _print_summary(scan: ScanResult) -> None:
     """Imprime os índices e o perfil de exclusão da varredura."""
     score = score_scan(scan, get_settings().scoring_parameters())
 
+    if not score.observed:
+        console.print(
+            Panel(
+                "Nenhuma página desta varredura carregou, de modo que não há observação "
+                "sobre a qual emitir juízo. Os índices aparecem como traços: isso "
+                "[bold]não é conformidade nem não conformidade[/].\n\n"
+                "Se a falha atingiu todos os alvos da coleta, suspeite primeiro da rede "
+                "de quem audita, e não dos portais auditados.",
+                title="[yellow]Sem veredito[/]",
+                border_style="yellow",
+            )
+        )
+
     if score.absolute_barrier:
         console.print(
             Panel(
@@ -324,10 +337,17 @@ def _print_summary(scan: ScanResult) -> None:
     table.add_column("indicador")
     table.add_column("valor", justify="right")
     table.add_column("leitura")
-    table.add_row("ICA — Conformidade", f"{score.conformance_index:.1f}", "0–100, maior é melhor")
-    table.add_row("IAN — Atrito", f"{score.friction_index:.1f}", "0–100, menor é melhor")
+
+    def _indice(valor: float | None) -> str:
+        """Traço quando não houve observação — nunca um número inventado."""
+        return f"{valor:.1f}" if valor is not None else "—"
+
+    table.add_row("ICA — Conformidade", _indice(score.conformance_index), "0–100, maior é melhor")
+    table.add_row("IAN — Atrito", _indice(score.friction_index), "0–100, menor é melhor")
     table.add_row(
-        "IEJ — Exposição jurídica", f"{score.legal_exposure_index:.1f}", "0–100, menor é melhor"
+        "IEJ — Exposição jurídica",
+        _indice(score.legal_exposure_index),
+        "0–100, menor é melhor",
     )
     table.add_row("Violações", str(score.violations), f"{score.occurrences} ocorrências")
     table.add_row("Revisão humana", str(score.incomplete), "achados indeterminados")
@@ -419,6 +439,69 @@ def export(
     console.print(f"[green]Varreduras processadas:[/] {len(scans)}")
     console.print(f"[green]Achados:[/] {findings_path}")
     console.print(f"[green]Páginas:[/] {pages_path}")
+
+
+@app.command("reindexar")
+def reindex(
+    diretorio: Annotated[
+        Path | None, typer.Option(help="Diretório com os JSON. Padrão: data/scans/.")
+    ] = None,
+) -> None:
+    """Reconstrói o índice relacional a partir dos JSON já coletados.
+
+    Torna operacional a promessa da ADR 0003: o documento JSON é a fonte da
+    verdade e o banco é índice derivável. Quando o cálculo de um índice muda —
+    ou quando uma coluna nova aparece, como ``observed`` na ADR 0010 — as
+    varreduras já coletadas se atualizam sem que nenhum portal seja varrido de
+    novo. É a diferença entre corrigir um erro de método e refazer o campo.
+
+    Reindexar é idempotente e substitui integralmente cada linha de mesmo ``id``.
+    """
+    settings = get_settings()
+    settings.ensure_directories()
+
+    store = JsonScanStore(diretorio or settings.scans_dir)
+    files = store.list_files()
+    if not files:
+        console.print("[yellow]Nenhuma varredura encontrada.[/]")
+        raise typer.Exit(code=1)
+
+    engine = create_database_engine(settings.resolved_database_url())
+    init_database(engine)
+    factory = make_session_factory(engine)
+
+    catalogo = {alvo.id: alvo for alvo in load_catalog(settings.catalog_path).targets}
+    reindexadas = 0
+    sem_veredito = 0
+    falhas: list[tuple[Path, str]] = []
+
+    with session_scope(factory) as session:
+        repo = ScanRepository(session, params=settings.scoring_parameters())
+        for arquivo in files:
+            try:
+                scan = store.load(arquivo)
+            # Um arquivo ilegível é sinal de dataset de versão anterior; ele
+            # é reportado ao final, mas não interrompe o lote — reindexar
+            # parcialmente é melhor do que não reindexar.
+            except Exception as exc:
+                falhas.append((arquivo, str(exc)))
+                continue
+
+            alvo = catalogo.get(scan.target_id)
+            repo.save(scan, json_path=arquivo, sphere=alvo.sphere if alvo else None)
+            reindexadas += 1
+            if not scan.successful_pages:
+                sem_veredito += 1
+
+    console.print(f"[green]Varreduras reindexadas:[/] {reindexadas}")
+    if sem_veredito:
+        # Contagem explícita: são exatamente as varreduras que, sob o contrato
+        # anterior, apareciam como conformidade perfeita.
+        console.print(f"[yellow]Sem veredito (nenhuma página auditada):[/] {sem_veredito}")
+    for arquivo, erro in falhas:
+        console.print(f"[red]Ilegível:[/] {arquivo.name} — {erro}")
+    if falhas:
+        raise typer.Exit(code=1)
 
 
 @app.command("servir")

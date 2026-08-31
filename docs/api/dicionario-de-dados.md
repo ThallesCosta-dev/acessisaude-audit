@@ -62,10 +62,11 @@ template — ver [índices](../metodologia/indices.md).
 | `viewport` | texto | |
 | `situacao` | enum | `ok`, `http_error`, `timeout`, `blocked_by_robots`, `navigation_error` |
 | `http_status` | inteiro | **Vazio** se a navegação falhou antes da resposta |
-| `indice_conformidade` | 0–100 | ICA da página |
-| `indice_atrito` | 0–100 | IAN da página |
-| `indice_exposicao_juridica` | 0–100 | IEJ da página |
-| `barreira_absoluta` | 0/1 | Há violação de risco crítico |
+| `observado` | 0/1 | A página foi auditada com sucesso. Quando `0`, as quatro colunas abaixo ficam **vazias** |
+| `indice_conformidade` | 0–100 | ICA da página; **vazio** se `observado = 0` |
+| `indice_atrito` | 0–100 | IAN da página; **vazio** se `observado = 0` |
+| `indice_exposicao_juridica` | 0–100 | IEJ da página; **vazio** se `observado = 0` |
+| `barreira_absoluta` | 0/1 | Há violação de risco crítico; **vazio** se `observado = 0` |
 | `violacoes` | inteiro | Achados com veredito `fail` |
 | `ocorrencias` | inteiro | Elementos em falha |
 | `incompletos` | inteiro | Achados pendentes de revisão |
@@ -84,6 +85,22 @@ Regra que atravessa os dois arquivos. `lcp_ms` vazio significa "não medido"; `l
 significaria "carregamento instantâneo". Confundi-los inventaria observações e distorceria
 qualquer média.
 
+A regra vale com força particular para os índices. Uma página que não carregou não produz
+achado nenhum, e um índice de conformidade calculado sobre zero achado vale **100** — o topo
+da escala — sem que nada tenha sido verificado. Por isso `observado` existe e por isso as
+quatro colunas de índice ficam vazias quando ele é `0`:
+
+| Valor de `indice_conformidade` | Significado |
+|---|---|
+| `100` | Nenhuma violação detectada entre os critérios verificáveis |
+| `0` | Todos os critérios verificáveis violados |
+| *(vazio)* | **Não houve observação.** Não é conformidade nem não conformidade |
+
+Ao carregar o arquivo em pandas, as colunas vazias chegam como `NaN`, e as agregações
+(`mean`, `median`) as ignoram por padrão — que é o comportamento desejado. **Não aplique
+`fillna(0)`**: isso converteria falha de coleta em portal ruim. A decisão está registrada em
+[ADR 0010](../adr/0010-indices-nulos-sem-observacao.md), com o caso de campo que a motivou.
+
 ---
 
 ## 3. Tabelas SQL
@@ -95,6 +112,11 @@ qualquer média.
 Uma linha por varredura, com índices pré-calculados: `conformance_index`, `friction_index`,
 `legal_exposure_index`, `absolute_barrier`, `coverage`, `mean_page_mb`, `mean_cost_brl`,
 `loss_rate`, além de procedência (`engine_version`, `axe_version`, `browser`).
+
+A coluna **`observed`** indica se alguma página foi auditada com sucesso. Quando é falsa, os
+quatro índices são **`NULL`** — não zero. Consultas que agregam índices devem filtrar por
+`observed = 1` ou confiar em que `AVG`/`MIN`/`MAX` do SQL ignoram `NULL`; `COALESCE(..., 0)`
+sobre essas colunas reintroduz o erro que a coluna existe para impedir.
 
 A coluna **`document`** guarda o `ScanResult` completo em JSON — a fonte da verdade.
 

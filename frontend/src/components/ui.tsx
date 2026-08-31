@@ -135,6 +135,32 @@ export function Erro({
   );
 }
 
+/**
+ * Aviso de que a varredura não observou nada.
+ *
+ * Precede o aviso de barreira absoluta e o substitui: sem página auditada não há
+ * o que afirmar, nem a favor nem contra. É `role="alert"` porque o leitor
+ * precisa saber disso antes de interpretar qualquer número da tela.
+ */
+export function AvisoSemVeredito() {
+  return (
+    <div role="alert" className="aviso aviso--atencao">
+      <h2>Sem veredito: nenhuma página foi auditada</h2>
+      <p>
+        Todas as páginas desta varredura falharam ao carregar. Os índices
+        aparecem como traços porque não há observação sobre a qual emitir juízo
+        — <strong>isso não significa conformidade nem não conformidade</strong>.
+      </p>
+      <p>
+        O estado de cada tentativa está registrado na procedência do dado, ao
+        final desta página. Uma falha que atinja simultaneamente todos os alvos
+        de uma coleta costuma ser da rede de quem audita, e não dos portais
+        auditados.
+      </p>
+    </div>
+  );
+}
+
 /** Aviso de barreira absoluta — a informação mais importante de toda a tela. */
 export function AvisoDeBarreiraAbsoluta() {
   return (

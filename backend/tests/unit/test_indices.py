@@ -15,6 +15,7 @@ from acessisaude_audit.domain.models import (
     NetworkMetrics,
     Outcome,
     PageAudit,
+    PageStatus,
     ScanResult,
     Viewport,
 )
@@ -328,3 +329,80 @@ class TestParametrosSaoExplicitos:
             "heavy_page_mb",
         }
         assert all(isinstance(v, float) for v in dump.values())
+
+
+class TestAusenciaDeObservacao:
+    """Perda total de páginas não pode ser lida como conformidade.
+
+    Este é o defeito que motivou o contrato nulo, e ele apareceu em coleta
+    real: em 25/08/2026 uma falha de DNS do coletor derrubou as 20 páginas dos
+    cinco alvos, e a versão anterior reportou ICA 100,0 para todos — o número
+    máximo da escala, indistinguível de um portal impecável. Como o ICA é a
+    razão entre critérios não violados e critérios avaliados, zero violação
+    sobre zero observação produzia o numerador cheio.
+
+    A correção é de tipo, não de apresentação: os quatro índices passam a
+    aceitar nulo, e nulo significa *sem veredito* — nem conformidade, nem não
+    conformidade. Os campos descritivos (cobertura, contagens, taxa de perda)
+    continuam preenchidos, porque descrevem a tentativa, e é a tentativa que
+    ficou registrada.
+    """
+
+    def _scan_totalmente_perdido(self) -> ScanResult:
+        return ScanResult(
+            target_id="t",
+            pages=[
+                PageAudit(
+                    url=f"http://exemplo.test/{i}",
+                    viewport=VP,
+                    status=PageStatus.NAVIGATION_ERROR,
+                    error="net::ERR_NAME_NOT_RESOLVED",
+                )
+                for i in range(4)
+            ],
+        )
+
+    def test_sem_pagina_auditada_nao_ha_observacao(self) -> None:
+        score = score_scan(self._scan_totalmente_perdido())
+        assert score.observed is False
+
+    def test_sem_observacao_os_quatro_indices_sao_nulos(self) -> None:
+        """Nulo, e não zero: zero é um veredito, e não há veredito a dar."""
+        score = score_scan(self._scan_totalmente_perdido())
+        assert score.conformance_index is None
+        assert score.friction_index is None
+        assert score.legal_exposure_index is None
+        assert score.absolute_barrier is None
+
+    def test_perda_total_nunca_pontua_como_conformidade_perfeita(self) -> None:
+        """A regressão específica: 20 páginas em erro reportavam ICA 100,0."""
+        assert score_scan(self._scan_totalmente_perdido()).conformance_index != 100.0
+
+    def test_a_tentativa_permanece_descrita(self) -> None:
+        """Sem veredito não é sem registro — a perda precisa ser auditável."""
+        scan = self._scan_totalmente_perdido()
+        score = score_scan(scan)
+        assert scan.loss_rate == 1.0
+        assert score.violations == 0
+        assert score.coverage > 0
+
+    def test_uma_unica_pagina_auditada_ja_produz_veredito(self) -> None:
+        """A fronteira é a existência de observação, não a sua quantidade.
+
+        Uma varredura com perda parcial continua pontuando: o que ela mede é
+        parcial, e a taxa de perda — reportada ao lado — é o que qualifica a
+        leitura.
+        """
+        scan = ScanResult(
+            target_id="t",
+            pages=[
+                page_with(make_finding(criteria=["1.4.3"])),
+                PageAudit(
+                    url="http://exemplo.test/x", viewport=VP, status=PageStatus.NAVIGATION_ERROR
+                ),
+            ],
+        )
+        score = score_scan(scan)
+        assert score.observed is True
+        assert score.conformance_index is not None
+        assert scan.loss_rate == 0.5

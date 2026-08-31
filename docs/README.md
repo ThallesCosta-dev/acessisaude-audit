@@ -18,7 +18,8 @@
 → [Protocolo metodológico](metodologia/protocolo.md)
 → [Índices: construção e calibração](metodologia/indices.md)
 → [Parâmetros de custo: valores, fontes e datas](metodologia/parametros-de-custo.md)
-→ [Registro da coleta de campo](metodologia/registro-de-coleta.md)
+→ [Registro da coleta de campo](metodologia/registro-de-coleta.md) — braço transversal, 16/08
+→ [Registro da série diária](metodologia/registro-da-serie-diaria.md) — braço longitudinal, 19 a 31/08
 → [Limites conhecidos do axe-core](metodologia/limites-do-axe-core.md)
 → [Desenho amostral](metodologia/amostragem.md)
 → [Reprodutibilidade](metodologia/reprodutibilidade.md)

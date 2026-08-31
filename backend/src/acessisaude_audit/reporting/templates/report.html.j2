@@ -112,6 +112,23 @@
 
   <h2 id="sumario">Sumário executivo</h2>
 
+  {% if not score.observed %}
+  <div class="alerta" role="alert">
+    <h2>Sem veredito: nenhuma página foi auditada</h2>
+    <p>
+      Todas as páginas desta varredura falharam ao carregar, de modo que não há
+      observação sobre a qual emitir juízo. Os índices aparecem como traços, e
+      <strong>isso não significa conformidade nem não conformidade</strong>:
+      significa que a auditoria não pôde ser realizada.
+    </p>
+    <p>
+      A causa está registrada no bloco de procedência, abaixo, com o estado de
+      cada tentativa. Uma falha que atinja simultaneamente todos os alvos de uma
+      coleta costuma ser da rede de quem audita, e não dos portais auditados.
+    </p>
+  </div>
+  {% endif %}
+
   {% if score.absolute_barrier %}
   <div class="alerta" role="alert">
     <h2>Barreira absoluta identificada</h2>
@@ -128,17 +145,17 @@
 
   <ul class="indicadores">
     <li class="indicador">
-      <span class="valor">{{ '%.1f'|format(score.conformance_index) }}</span>
+      <span class="valor">{% if score.observed %}{{ '%.1f'|format(score.conformance_index) }}{% else %}—{% endif %}</span>
       <span class="rotulo">Índice de Conformidade (ICA)</span>
       <span class="nota">0 a 100. Fração ponderada por risco jurídico dos critérios automatizáveis não violados.</span>
     </li>
     <li class="indicador">
-      <span class="valor">{{ '%.1f'|format(score.friction_index) }}</span>
+      <span class="valor">{% if score.observed %}{{ '%.1f'|format(score.friction_index) }}{% else %}—{% endif %}</span>
       <span class="rotulo">Índice de Atrito (IAN)</span>
       <span class="nota">0 a 100. Quanto custa usar a plataforma apesar das barreiras. Menor é melhor.</span>
     </li>
     <li class="indicador">
-      <span class="valor">{{ '%.1f'|format(score.legal_exposure_index) }}</span>
+      <span class="valor">{% if score.observed %}{{ '%.1f'|format(score.legal_exposure_index) }}{% else %}—{% endif %}</span>
       <span class="rotulo">Exposição Jurídica (IEJ)</span>
       <span class="nota">0 a 100. Concentra-se nas violações de risco moderado ou superior.</span>
     </li>

@@ -22,10 +22,11 @@ pd = pytest.importorskip("pandas", reason="requer o extra 'analysis'")
 from acessisaude_audit.analysis.dataset import (  # noqa: E402
     build_findings_frame,
     build_pages_frame,
+    build_scans_frame,
     criterion_prevalence,
     exclusion_profile,
 )
-from acessisaude_audit.analysis.figures import only_audited  # noqa: E402
+from acessisaude_audit.analysis.figures import figure_daily_series, only_audited  # noqa: E402
 
 VP = Viewport(name="desktop-1366", width=1366, height=768)
 
@@ -56,29 +57,44 @@ def scan_com_perda(sample_page: PageAudit) -> ScanResult:
 
 
 class TestExclusaoDePaginasEmErro:
-    def test_pagina_em_erro_recebe_ica_100(self, scan_com_perda: ScanResult) -> None:
-        """Demonstra o mecanismo do defeito, para que ele não seja esquecido.
+    """Duas defesas contra o mesmo erro, em camadas diferentes.
 
-        Não é bug do índice: uma página sem achados É conforme sob os critérios
-        verificados. O erro está em agregar o que não foi medido.
+    O defeito original: uma página que não carregou não produz achado nenhum, e
+    o índice lia zero violação como conformidade — atribuindo ICA 100 a um
+    endereço que sequer respondeu. A defesa de raiz está no domínio, que agora
+    devolve nulo sem observação; ``only_audited`` permanece como segunda linha,
+    porque a análise também recebe quadros vindos de coletas antigas, gravadas
+    sob o contrato anterior.
+    """
+
+    def test_pagina_em_erro_nao_recebe_indice(self, scan_com_perda: ScanResult) -> None:
+        """A correção de raiz: sem carregamento, sem veredito.
+
+        Não era bug de aritmética — uma página sem achados É conforme sob os
+        critérios verificados. O erro estava em pontuar o que não foi medido.
         """
         paginas = build_pages_frame([scan_com_perda])
         falhas = paginas[~paginas["auditada"]]
         assert len(falhas) == 2
-        assert (falhas["ica"] == 100.0).all()
+        assert falhas["ica"].isna().all()
 
     def test_only_audited_remove_as_paginas_em_erro(self, scan_com_perda: ScanResult) -> None:
         paginas = build_pages_frame([scan_com_perda])
         assert len(paginas) == 3
         assert len(only_audited(paginas)) == 1
 
-    def test_exclusao_altera_materialmente_a_mediana(self, scan_com_perda: ScanResult) -> None:
-        """A diferença não é cosmética: muda a conclusão sobre o portal."""
+    def test_nulo_nao_e_confundido_com_zero_em_agregacao(self, scan_com_perda: ScanResult) -> None:
+        """O nulo tem de sobreviver ao pandas, e não virar zero na média.
+
+        ``Series.mean`` ignora ``NaN`` por padrão, o que é o comportamento
+        desejado; o risco seria um ``fillna(0)`` em algum ponto do caminho,
+        que puxaria a média para baixo e trocaria uma falha de coleta por um
+        portal ruim. A asserção fixa que a agregação de três páginas, das
+        quais duas não carregaram, é a da única que carregou.
+        """
         paginas = build_pages_frame([scan_com_perda])
-        com_falhas = paginas["ica"].median()
-        so_auditadas = only_audited(paginas)["ica"].median()
-        assert com_falhas > so_auditadas
-        assert com_falhas == 100.0
+        assert paginas["ica"].count() == 1
+        assert paginas["ica"].mean() == pytest.approx(only_audited(paginas)["ica"].mean())
 
     def test_only_audited_tolera_quadro_sem_a_coluna(self) -> None:
         """Robustez: quadros de outra origem não devem quebrar a figura."""
@@ -124,3 +140,53 @@ class TestMontagemDoDataset:
     def test_quadro_vazio_nao_quebra(self) -> None:
         assert build_findings_frame([]).empty
         assert criterion_prevalence(pd.DataFrame()).empty
+
+
+class TestFiguraDaSerieDiaria:
+    """A figura do braço longitudinal não pode inventar continuidade.
+
+    O risco específico: matplotlib desenha uma linha reta entre dois pontos
+    válidos separados por um ``NaN`` se o valor ausente for removido antes de
+    plotar. Isso emendaria visualmente os dois lados de um dia sem observação,
+    desenhando exatamente a continuidade que a ADR 0010 existe para negar.
+    """
+
+    @pytest.fixture
+    def serie(self, sample_page: PageAudit) -> pd.DataFrame:
+        """Três dias de um alvo, o do meio sem nenhuma página auditada."""
+        from datetime import datetime
+
+        scans = []
+        for i, perdido in enumerate([False, True, False]):
+            paginas = (
+                [PageAudit(url="http://exemplo.test/x", viewport=VP, status=PageStatus.TIMEOUT)]
+                if perdido
+                else [sample_page]
+            )
+            scans.append(
+                ScanResult(
+                    target_id="alvo",
+                    target_name="Alvo",
+                    started_at=datetime(2026, 8, 20 + i, 12, 20),
+                    pages=paginas,
+                )
+            )
+        return build_scans_frame(scans)
+
+    def test_o_dia_sem_veredito_fica_ausente_na_serie(self, serie: pd.DataFrame) -> None:
+        assert list(serie["observado"]) == [True, False, True]
+        assert serie["ica"].isna().tolist() == [False, True, False]
+
+    def test_a_linha_e_interrompida_e_nao_interpolada(self, serie: pd.DataFrame) -> None:
+        fig = figure_daily_series(serie)
+        try:
+            (linha,) = fig.axes[0].get_lines()
+            ys = linha.get_ydata()
+            assert len(ys) == 3
+            # O ponto do meio precisa chegar ao matplotlib como ausente: é o que
+            # faz a linha quebrar em vez de atravessar a lacuna.
+            assert ys[1] != ys[1]  # NaN
+        finally:
+            import matplotlib.pyplot as plt
+
+            plt.close(fig)

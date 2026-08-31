@@ -36,9 +36,7 @@ def _pagina(url: str, regras: list[str], criterios: list[str]) -> dict:
     return {
         "url": url,
         "viewport": {"name": "mobile-320"},
-        "findings": [
-            {"rule_id": r, "outcome": "fail", "criteria": criterios} for r in regras
-        ],
+        "findings": [{"rule_id": r, "outcome": "fail", "criteria": criterios} for r in regras],
     }
 
 

@@ -76,10 +76,16 @@ class ScanRow(Base):
     incomplete_count: Mapped[int] = mapped_column(Integer, default=0)
     loss_rate: Mapped[float] = mapped_column(Float, default=0.0)
 
-    conformance_index: Mapped[float] = mapped_column(Float, default=0.0)
-    friction_index: Mapped[float] = mapped_column(Float, default=0.0)
-    legal_exposure_index: Mapped[float] = mapped_column(Float, default=0.0)
-    absolute_barrier: Mapped[bool] = mapped_column(Boolean, default=False, index=True)
+    # Índices anuláveis: nulo significa "não observado", e é distinto de zero.
+    # Uma varredura em que nenhuma página carregou não tem veredito — ver
+    # AccessibilityScore.observed. Filtrar por `observed.is_(True)` antes de
+    # agregar é obrigatório; sem isso, a ausência de observação entra na média
+    # como se fosse conformidade perfeita.
+    observed: Mapped[bool] = mapped_column(Boolean, default=True, index=True)
+    conformance_index: Mapped[float | None] = mapped_column(Float)
+    friction_index: Mapped[float | None] = mapped_column(Float)
+    legal_exposure_index: Mapped[float | None] = mapped_column(Float)
+    absolute_barrier: Mapped[bool | None] = mapped_column(Boolean, index=True)
     coverage: Mapped[float] = mapped_column(Float, default=0.0)
 
     mean_page_mb: Mapped[float] = mapped_column(Float, default=0.0)
@@ -98,7 +104,8 @@ class ScanRow(Base):
     __table_args__ = (Index("ix_scans_target_started", "target_id", "started_at"),)
 
     def __repr__(self) -> str:  # pragma: no cover - conveniência de depuração
-        return f"<ScanRow {self.target_id} {self.started_at:%Y-%m-%d} ICA={self.conformance_index}>"
+        ica = self.conformance_index if self.observed else "sem veredito"
+        return f"<ScanRow {self.target_id} {self.started_at:%Y-%m-%d} ICA={ica}>"
 
 
 class FindingRow(Base):

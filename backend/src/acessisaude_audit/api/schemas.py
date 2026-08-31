@@ -80,10 +80,14 @@ class ScanSummary(BaseModel):
     incomplete_count: int
     loss_rate: float
 
-    conformance_index: float
-    friction_index: float
-    legal_exposure_index: float
-    absolute_barrier: bool
+    # Nulos quando `observed` é falso: nenhuma página foi auditada e não há
+    # veredito. O consumidor precisa distinguir isso de conformidade — ver
+    # AccessibilityScore.observed.
+    observed: bool
+    conformance_index: float | None
+    friction_index: float | None
+    legal_exposure_index: float | None
+    absolute_barrier: bool | None
     coverage: float
 
     mean_page_mb: float

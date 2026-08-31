@@ -8,8 +8,8 @@ Fluxo típico::
 
     from pathlib import Path
     from acessisaude_audit.analysis import (
-        build_findings_frame, build_pages_frame, criterion_prevalence,
-        load_scans, save_all,
+        build_findings_frame, build_pages_frame, build_scans_frame,
+        criterion_prevalence, load_scans, save_all,
     )
     from acessisaude_audit.catalog.loader import load_catalog
     from acessisaude_audit.config import get_settings
@@ -20,9 +20,10 @@ Fluxo típico::
 
     achados = build_findings_frame(scans, catalog=catalogo)
     paginas = build_pages_frame(scans, catalog=catalogo)
+    varreduras = build_scans_frame(scans, catalog=catalogo)
 
     print(criterion_prevalence(achados).head(15))
-    save_all(achados, paginas, Path("docs/artigo/figuras"))
+    save_all(achados, paginas, Path("docs/artigo/figuras"), scans=varreduras)
 """
 
 from acessisaude_audit.analysis.dataset import (
@@ -36,6 +37,7 @@ from acessisaude_audit.analysis.dataset import (
 from acessisaude_audit.analysis.figures import (
     apply_style,
     figure_criterion_prevalence,
+    figure_daily_series,
     figure_data_cost,
     figure_exclusion_profile,
     figure_index_by_sphere,
@@ -62,6 +64,7 @@ __all__ = [
     "describe",
     "exclusion_profile",
     "figure_criterion_prevalence",
+    "figure_daily_series",
     "figure_data_cost",
     "figure_exclusion_profile",
     "figure_index_by_sphere",

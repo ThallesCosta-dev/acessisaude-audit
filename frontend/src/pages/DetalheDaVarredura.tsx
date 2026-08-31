@@ -30,6 +30,7 @@ import {
 } from '../lib/format';
 import {
   AvisoDeBarreiraAbsoluta,
+  AvisoSemVeredito,
   AvisoDeCobertura,
   Barra,
   Carregando,
@@ -99,7 +100,8 @@ export function DetalheDaVarredura() {
         Varredura de {dataHora(v.started_at)} · {v.base_url}
       </p>
 
-      {s.absolute_barrier ? <AvisoDeBarreiraAbsoluta /> : null}
+      {!s.observed ? <AvisoSemVeredito /> : null}
+      {s.observed && s.absolute_barrier ? <AvisoDeBarreiraAbsoluta /> : null}
 
       {/* -------------------------------------------------------- índices */}
       <h2 id="indices">Índices agregados</h2>

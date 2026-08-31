@@ -19,12 +19,16 @@ direito. Este estudo desenvolveu, validou e aplicou um instrumento de auditoria 
 que converte falhas técnicas de acessibilidade em proposições jurídicas fundamentadas na Lei
 Brasileira de Inclusão. Foi aferido contra conjunto de referência com barreiras conhecidas e
 aplicado a cinco plataformas de saúde do Rio de Janeiro, estratificadas por esfera
-federativa, em dois perfis de dispositivo, com quatro medições repetidas. Realizaram-se vinte
-auditorias de página, dezesseis bem-sucedidas, com 125 violações confirmadas. Todas as
-páginas apresentaram ao menos uma barreira crítica, sem rota alternativa, e o critério
-relativo a nome, função e valor dos componentes de interface foi violado em todas elas.
-Observou-se gradiente entre esferas federativas. A auditoria automática estabelece um piso de
-não conformidade e sustenta qualificação jurídica auditável.
+federativa, em dois perfis de dispositivo, com medições repetidas e com série diária de treze
+dias consecutivos. Realizaram-se vinte auditorias de página no corte transversal, dezesseis
+bem-sucedidas, com 125 violações confirmadas. Todas as páginas apresentaram ao menos uma
+barreira crítica, sem rota alternativa, e o critério relativo a nome, função e valor dos
+componentes de interface foi violado em todas elas. Observou-se gradiente entre esferas
+federativas. Na série diária, três plataformas não apresentaram variação alguma, ao passo que
+em duas houve mudança: uma barreira crítica de operação por teclado desapareceu por quatro
+dias e retornou, e uma violação de alternativa textual foi introduzida e não corrigida —
+evidência de que a periodicidade da verificação é parte do método. A auditoria automática
+estabelece um piso de não conformidade e sustenta qualificação jurídica auditável.
 
 **Palavras-chave:** Pessoas com Deficiência; Acesso aos Serviços de Saúde; Saúde Digital;
 Direito à Saúde; Exclusão Digital.
@@ -36,13 +40,16 @@ their inaccessibility shifts from a usability problem to a restriction of a righ
 developed, validated and applied an algorithmic auditing instrument that converts technical
 accessibility failures into legal propositions grounded in the Brazilian Inclusion Law. It
 was assessed against a reference set with known barriers and applied to five health platforms
-in Rio de Janeiro, stratified by federative level, under two device profiles, with four
-repeated measurements. Twenty page audits were carried out, sixteen of them successful,
-yielding 125 confirmed violations. Every page presented at least one critical barrier, with
-no alternative route, and the criterion concerning name, role and value of interface
-components was violated in all of them. A gradient across federative levels was observed.
-Automated auditing establishes a floor of non-compliance and supports auditable legal
-qualification.
+in Rio de Janeiro, stratified by federative level, under two device profiles, with repeated
+measurements and a thirteen-day daily series. Twenty page audits were carried out in the
+cross-sectional block, sixteen of them successful, yielding 125 confirmed violations. Every
+page presented at least one critical barrier, with no alternative route, and the criterion
+concerning name, role and value of interface components was violated in all of them. A
+gradient across federative levels was observed. In the daily series, three platforms showed no
+variation at all, while two changed: a critical keyboard-operation barrier disappeared for
+four days and returned, and a text-alternative violation was introduced and left uncorrected —
+evidence that the periodicity of verification is part of the method. Automated auditing
+establishes a floor of non-compliance and supports auditable legal qualification.
 
 **Keywords:** Persons with Disabilities; Health Services Accessibility; Digital Health; Right
 to Health; Digital Divide.
@@ -55,12 +62,16 @@ restricción de derecho. Este estudio desarrolló, validó y aplicó un instrume
 algorítmica que convierte fallas técnicas de accesibilidad en proposiciones jurídicas
 fundamentadas en la Ley Brasileña de Inclusión. Fue verificado con un conjunto de referencia
 con barreras conocidas y aplicado a cinco plataformas de salud de Río de Janeiro,
-estratificadas por esfera federativa, en dos perfiles de dispositivo y cuatro mediciones
-repetidas. Se realizaron veinte auditorías de página, dieciséis exitosas, con 125 violaciones
-confirmadas. Todas presentaron al menos una barrera crítica, sin ruta alternativa, y el
-criterio sobre nombre, función y valor de los componentes de interfaz fue violado en todas.
-Se observó gradiente entre esferas federativas. La auditoría automática establece un piso de
-incumplimiento y sostiene calificación jurídica auditable.
+estratificadas por esfera federativa, en dos perfiles de dispositivo, con mediciones repetidas
+y una serie diaria de trece días consecutivos. Se realizaron veinte auditorías de página en el
+corte transversal, dieciséis exitosas, con 125 violaciones confirmadas. Todas presentaron al
+menos una barrera crítica, sin ruta alternativa, y el criterio sobre nombre, función y valor de
+los componentes de interfaz fue violado en todas. Se observó gradiente entre esferas
+federativas. En la serie diaria, tres plataformas no presentaron variación alguna, mientras que
+dos cambiaron: una barrera crítica de operación por teclado desapareció durante cuatro días y
+retornó, y una violación de alternativa textual fue introducida y no corregida — evidencia de
+que la periodicidad de la verificación es parte del método. La auditoría automática establece
+un piso de incumplimiento y sostiene calificación jurídica auditable.
 
 **Palabras clave:** Personas con Discapacidad; Accesibilidad a los Servicios de Salud; Salud
 Digital; Derecho a la Salud; Brecha Digital.
@@ -200,8 +211,14 @@ barreira; (5) caracterizar o perfil de exclusão por grupo de pessoas afetado.
 
 ### 2.1 Desenho do estudo
 
-Estudo observacional, transversal, de auditoria algorítmica, estratificado por esfera
-federativa. A unidade de observação é a página web em um perfil de dispositivo; a unidade de
+Estudo observacional de auditoria algorítmica, estratificado por esfera federativa, com dois
+componentes. O componente **transversal** compara plataformas entre si em uma janela de
+medição. O componente **longitudinal** repete a mesma auditoria, com a mesma configuração, em
+dias sucessivos, e é o que permite distinguir barreira persistente de barreira transitória —
+distinção que a auditoria pontual, por construção, não pode fazer, e sem a qual a proposta de
+auditoria *contínua* seria apenas uma promessa de arquitetura.
+
+A unidade de observação é a página web em um perfil de dispositivo, em um dia; a unidade de
 análise é o achado de auditoria; a unidade de comparação entre instituições é a plataforma.
 A distinção entre as três é necessária e é frequentemente colapsada na literatura da área,
 com consequências que a subseção 2.7 detalha.
@@ -226,6 +243,16 @@ milissegundos entre requisições e identificação da pesquisa no campo `User-A
 instrumento lê o documento renderizado de páginas públicas: não preenche formulários, não
 autentica e não transmite dados. Áreas autenticadas foram excluídas e reportadas como lacunas
 declaradas da amostra.
+
+A **janela de coleta** compreendeu dois blocos, declarados aqui porque o segundo é condição
+do componente longitudinal. O bloco transversal ocorreu em 16 e 19 de agosto de 2026, com
+medições repetidas em intervalo de minutos, e sustenta os resultados das subseções 3.1 a 3.11.
+O bloco longitudinal ocorreu entre **19 e 31 de agosto de 2026**, em treze dias consecutivos,
+por tarefa agendada disparada diariamente entre 12h20 e 12h25 em tempo universal coordenado
+(9h20 a 9h25 no horário de Brasília), sempre com a mesma configuração e a mesma lista de
+páginas. O horário fixo é decisão metodológica: variação de horário confundiria mudança do
+portal com variação de carga do servidor ao longo do dia. Produziram-se 65 varreduras e 260
+tentativas de auditoria de página, das quais 219 foram bem-sucedidas.
 
 ### 2.3 Perfis de dispositivo
 
@@ -439,6 +466,34 @@ que têm outra causa (subseção 3.4), mas explicava as do portal federal: as pe
 artefato do instrumento, e não propriedade do portal. Em consequência, o conjunto de dados
 primário passou a ser o das medições posteriores à correção; usar as anteriores propagaria um
 viés do instrumento para os resultados publicados.
+
+A série diária revelou um segundo defeito, de natureza distinta e mais grave, porque afetava a
+interpretação e não a coleta. Em 25 de agosto de 2026, uma falha de resolução de nomes na
+máquina coletora impediu o carregamento das 20 páginas das cinco plataformas. O índice de
+conformidade é a razão entre critérios não violados e critérios avaliados: sem página
+carregada não há achado, o numerador fica cheio, e o instrumento registrou **100 pontos —
+o máximo da escala — para as cinco plataformas**, no único dia em que nada foi observado.
+Nenhuma exceção foi levantada; a taxa de perda de 100% ficou registrada num campo ao lado.
+
+O defeito é da classe que interessa a um trabalho metodológico, por três razões. A direção do
+erro é a mais desfavorável possível: falha de coleta empurra o índice para cima, produzindo
+elogio onde deveria haver silêncio. O resultado é indistinguível na saída, porque conformidade
+perfeita e ausência de observação ocupam a mesma célula. E o efeito sobre uma série temporal é
+específico: um dia falsamente perfeito cria uma melhora aparente seguida de uma piora
+aparente, ambas artefatos da rede de quem observa.
+
+A correção foi de tipo, e não de apresentação. Os quatro índices passaram a admitir valor
+nulo, e nulo passou a significar *sem veredito* — nem conformidade, nem não conformidade. O
+acumulador do instrumento passou a contar páginas observadas, e não tentativas. Os campos
+descritivos — cobertura, contagens, taxa de perda, estado de cada tentativa — continuam
+preenchidos, porque a tentativa fracassada é justamente o que precisa permanecer auditável.
+Como o documento primário de cada varredura armazena páginas e achados, e não índices, as
+coletas anteriores foram reprocessadas sem que nenhum portal precisasse ser varrido de novo:
+o erro de método custou uma reindexação, e não um retorno a campo.
+
+O episódio é reportado, e não apagado, porque **uma auditoria contínua precisa saber dizer que
+não sabe**. Um instrumento que converte silêncio em aprovação é, num domínio de exigibilidade
+jurídica, pior do que instrumento nenhum: produz atestado de conformidade sobre o vazio.
 
 ### 3.3 Caracterização da amostra
 
@@ -798,6 +853,120 @@ orçamentária do art. 64 da Lei Brasileira de Inclusão. Na estadual e na munic
 externo cabe aos respectivos tribunais de contas, com o Ministério Público estadual e as
 ouvidorias como vias complementares.
 
+### 3.12 Série temporal diária
+
+A série de treze dias (19 a 31 de agosto de 2026) produziu 65 varreduras e 260 tentativas de
+auditoria de página. Em 25 de agosto, a falha do coletor descrita na subseção 3.2 impediu
+qualquer observação, e o dia consta da série **sem veredito**: não entra como conformidade
+nem como não conformidade. Restam doze dias observados. A Tabela 12 apresenta o índice de
+conformidade por plataforma e por dia.
+
+**Tabela 12** – Índice de conformidade acessível por plataforma, em série diária, 19 a 31 de
+agosto de 2026
+
+| Dia | Meu SUS Digital | Portal federal de saúde | Secretaria estadual | Secretaria municipal | Portal municipal de serviços |
+|---|---|---|---|---|---|
+| 19/08 | 72,6 | 84,9 | 49,3 | 61,0 | 50,7 |
+| 20/08 | 72,6 | 84,9 | 49,3 | 61,0 | 50,7 |
+| 21/08 | 72,6 | 84,9 | 49,3 | 61,0 | 50,7 |
+| 22/08 | 72,6 | 84,9 | 49,3 | 61,0 | 50,7 |
+| 23/08 | 72,6 | 84,9 | 49,3 | 61,0 | 50,7 |
+| 24/08 | 72,6 | 80,1 | 49,3 | 61,0 | 58,9 |
+| 25/08 | — | — | — | — | — |
+| 26/08 | 72,6 | 75,3 | 49,3 | 61,0 | 58,9 |
+| 27/08 | 72,6 | 80,1 | 49,3 | 61,0 | 58,9 |
+| 28/08 | 72,6 | 80,1 | 49,3 | 61,0 | 58,9 |
+| 29/08 | 72,6 | 75,3 | 49,3 | 61,0 | 50,7 |
+| 30/08 | 72,6 | 75,3 | 49,3 | 61,0 | 50,7 |
+| 31/08 | 72,6 | 80,1 | 49,3 | 61,0 | 50,7 |
+
+Nota: o travessão indica ausência de observação — nenhuma página carregou, por falha do
+coletor, e não há veredito a reportar. Fonte: elaboração própria.
+
+A Figura 5 representa a mesma série. O dia sem veredito aparece como interrupção das linhas,
+e não como interpolação entre os dias vizinhos: ligar os pontos por cima da lacuna desenharia
+uma continuidade que não foi observada.
+
+**Figura 5** – Índice de conformidade acessível em série diária, por plataforma, 19 a 31 de
+agosto de 2026
+Fonte: elaboração própria.
+
+#### 3.12.1 Estabilidade: a barreira típica é estrutural
+
+Três das cinco plataformas — o Meu SUS Digital, a secretaria estadual e a secretaria municipal —
+apresentaram **variação nula** ao longo dos doze dias observados: índice idêntico e, mais
+significativo, **conjunto de critérios violados idêntico**, respectivamente 5, 11 e 8
+critérios, em todos os dias e nos dois perfis de dispositivo. Nenhuma barreira apareceu,
+desapareceu ou se deslocou de página.
+
+O resultado é de interpretação direta: a barreira típica destes portais não é acidente de
+publicação, é propriedade do sistema que os produz. Ela sobrevive a doze ciclos de publicação
+de conteúdo porque não está no conteúdo — está no *template*, no componente reaproveitado, na
+ausência de verificação na homologação. É o mesmo diagnóstico que a prevalência de 100% do
+critério 4.1.2 sugeria no corte transversal, agora sustentado por evidência de persistência,
+e não apenas de disseminação.
+
+#### 3.12.2 Mudança: duas barreiras que se moveram
+
+Duas plataformas variaram, e as duas variações são qualitativamente distintas. A Tabela 13
+sintetiza os critérios cuja violação mudou de estado ao longo da série.
+
+**Tabela 13** – Critérios de sucesso cuja violação mudou de estado na série diária
+
+| Plataforma | Critério | Risco jurídico | 19 a 23/08 | 24 a 28/08 | 29 a 31/08 |
+|---|---|---|---|---|---|
+| Portal municipal de serviços | 2.1.1 Teclado | Crítico | Violado | Não violado | Violado |
+| Portal federal de saúde | 1.1.1 Conteúdo não textual | Alto | Não violado | Violado | Violado |
+
+Fonte: elaboração própria.
+
+A **violação do critério 2.1.1** no portal municipal de serviços é o achado de maior
+consequência da série. Trata-se de elemento não interativo empregado como controle, detectado
+pela sonda própria do instrumento, na página do serviço de atendimento em unidades de pronto
+atendimento, **nos dois perfis de dispositivo simultaneamente**. Ela esteve presente em 19,
+20, 21, 22 e 23 de agosto; ausente em 24, 26, 27 e 28; e presente novamente em 29, 30 e 31.
+A ausência não é artefato de cobertura: em 24, 26 e 28 as quatro auditorias de página foram
+bem-sucedidas, de modo que a barreira foi procurada onde estava e não foi encontrada.
+
+Um controle inoperável por teclado impede a conclusão da tarefa por quem não usa mouse, sem
+rota alternativa, na página que informa como obter atendimento de urgência. A consequência
+metodológica é imediata: **uma auditoria pontual realizada em 26 de agosto teria declarado
+essa página livre da barreira; a mesma auditoria, em 22 ou em 30, a teria encontrado.** As
+duas auditorias seriam corretas quanto ao instante e erradas quanto ao portal. É a
+demonstração empírica, e não meramente argumentativa, de que a periodicidade da verificação é
+parte do método, e não detalhe operacional.
+
+A **violação do critério 1.1.1** no portal federal de saúde tem o sinal oposto: é uma
+regressão introduzida e não corrigida. Ausente nos cinco primeiros dias, apareceu em 24 de
+agosto e permaneceu em todos os oito dias observados subsequentes. Nos dois dias de cobertura
+integral do período (24 e 27 de agosto), a violação foi detectada em **todas as páginas
+auditadas e nos dois perfis**, o que a caracteriza como alteração de escopo do portal, e não
+como propriedade de uma página. Conteúdo não textual sem alternativa equivalente exclui o
+usuário de leitor de tela do acesso à informação veiculada.
+
+Três outros critérios da mesma plataforma — 1.4.1, 1.4.3 e 2.4.7 — apareceram de forma
+esporádica, em um ou dois dias, sempre em uma única página e em um único perfil. Reporta-se a
+ocorrência, mas não se extrai dela interpretação: são compatíveis com conteúdo rotativo e
+ocorreram justamente no portal de disponibilidade mais instável, o que impede separar mudança
+do portal de variação de amostra observada.
+
+#### 3.12.3 Disponibilidade ao longo da série
+
+Excluído o dia sem veredito, a série confirma e quantifica o achado da subseção 3.4. A perda
+de páginas concentra-se em uma única plataforma: **26,4% no portal federal de saúde**, contra
+**0% no Meu SUS Digital, na secretaria estadual e na secretaria municipal** e 4,2% no portal
+municipal de serviços, ao longo dos mesmos doze dias, do mesmo ponto de rede e no mesmo
+horário. As falhas do portal federal de saúde recaíram sobre dois caminhos
+específicos — a página de secretaria finalística e o índice temático de saúde —, enquanto a
+página inicial falhou uma única vez em doze dias.
+
+Registre-se ainda a mudança na secretaria estadual, cuja perda passou de 50% a 67% nas
+medições de 16 de agosto para **0% nos doze dias da série**, com cobertura integral das seis
+auditorias de página diárias. A instabilidade de infraestrutura documentada na subseção 3.4
+foi, portanto, episódica, e o índice de conformidade do portal sob cobertura integral — 49,3
+pontos, o mais baixo da amostra — é agora medido sobre a amostra completa de páginas, e não
+sobre o resíduo que sobrevivia às quedas.
+
 ---
 
 ## 4 Discussão
@@ -819,8 +988,11 @@ argumento empírico mais direto contra a auditoria de perfil único. **Peso pró
 dependência de terceiros variam de forma independente**, e o instrumento só pôde exibir a
 dissociação por separá-los desde o desenho. **A disponibilidade depende da posição de rede do
 observador** (subseção 4.3). **O serviço raramente está onde o portal oficial o anuncia**
-(subseção 4.4). E **as medições repetidas foram perfeitamente estáveis**, com a ressalva, na
-subseção 4.7, de que 47 minutos não constituem série temporal.
+(subseção 4.4). E, na série de treze dias, **três das cinco plataformas não variaram em nada,
+enquanto duas mudaram** — uma barreira crítica de teclado desapareceu por quatro dias e
+retornou, e uma violação de alternativa textual foi introduzida e não corrigida (subseção
+4.7). Os dois fatos, juntos, sustentam a tese do trabalho: a barreira típica é estrutural e
+persistente, mas não *todas* são, e distinguir umas das outras exige repetição.
 
 ### 4.2 O art. 63 como norma em branco
 
@@ -847,7 +1019,7 @@ e encontraram avanço modesto. Quase duas décadas depois, com a Lei Brasileira 
 vigor há mais de dez anos, os resultados aqui obtidos — nível A violado em 73% dos casos,
 barreira absoluta em todas as páginas — sugerem que a resposta continua a mesma. A norma
 existe; o efeito mensurável, não. É argumento a favor de deslocar a atenção da produção
-normativa para os mecanismos de verificação e indução, tema da subseção 4.8.
+normativa para os mecanismos de verificação e indução, tema da subseção 4.9.
 
 O achado tem, por fim, uma implicação metodológica que extrapola este trabalho. Se o conteúdo
 do dever é definido por remissão a um padrão que evolui, então a ferramenta de auditoria
@@ -1001,7 +1173,51 @@ corrigi-lo em um lugar resolveria centenas de elementos. É exatamente o tipo de
 amortecimento logarítmico do índice de atrito evita superponderar, e é também o tipo de achado
 que sugere onde a correção tem melhor relação entre custo e efeito.
 
-### 4.7 Limites do estudo
+### 4.7 A periodicidade como parte do método
+
+A série de treze dias permite responder a uma objeção que a auditoria pontual não consegue
+sequer formular: as barreiras medidas são propriedade do portal ou do dia em que ele foi
+medido?
+
+Para a maior parte do que se mediu, a resposta é inequívoca. Três plataformas repetiram, por
+doze dias, o mesmo conjunto de critérios violados, elemento por elemento. Barreiras que
+sobrevivem a doze ciclos de publicação não são falha de conteúdo; estão no componente
+reutilizado e no processo que o homologa sem verificar acessibilidade. Isso desloca o alvo da
+recomendação: corrigir página é enxugar gelo, e o ponto de intervenção eficiente é o padrão de
+componente e o requisito de contratação — argumento que a subseção 4.9 desenvolve.
+
+Mas a resposta não é uniforme, e é aí que está a contribuição da série. Duas barreiras se
+moveram, em direções opostas e com significados opostos. No portal municipal de serviços, um
+controle inoperável por teclado — risco crítico, sem rota alternativa, na página do
+atendimento de urgência — esteve presente em cinco dias, ausente em quatro e presente
+novamente em três. Uma auditoria realizada em 26 de agosto teria certificado a ausência da
+barreira que uma auditoria de 30 de agosto teria encontrado. Nenhuma das duas estaria errada
+sobre o instante; ambas estariam erradas sobre o portal.
+
+No portal federal de saúde, o movimento foi o inverso: uma violação de alternativa textual
+introduzida entre 23 e 24 de agosto, presente em todas as páginas e nos dois perfis, e não
+corrigida em nenhum dos oito dias observados seguintes. Nesse caso, a auditoria pontual
+anterior à data teria produzido um retrato favorável de um portal que estava a um dia de
+piorar — e nada, no relatório, indicaria a possibilidade.
+
+A consequência prática interessa mais ao regime jurídico do que ao método. O dever do art. 63
+da Lei Brasileira de Inclusão é continuado: o portal precisa ser acessível enquanto for
+oferecido, e não no dia da vistoria. Um regime de verificação que produz um laudo por exercício
+mede uma amostra de tamanho um de um processo que varia — e, pior, cria o incentivo previsível
+de conformidade concentrada na data conhecida. A auditoria contínua não é uma versão mais
+frequente da auditoria pontual; é o único desenho cuja unidade de observação corresponde à
+estrutura temporal do dever que pretende verificar.
+
+A série também expôs o requisito que o instrumento precisou incorporar para sustentar essa
+afirmação. Uma verificação contínua acumula, necessariamente, dias em que a coleta falha — e um
+instrumento que converte ausência de observação em conformidade transforma sua própria
+instabilidade em elogio ao objeto auditado. A correção descrita na subseção 3.2 é, por isso,
+menos um detalhe de implementação do que uma condição de validade: **em auditoria contínua,
+"não sei" precisa ser um valor representável**, distinto de "está conforme" e de "não está
+conforme". Ferramentas que reportam percentuais de acessibilidade sem representar esse terceiro
+estado publicam, em cada falha de rede, um atestado de conformidade sobre o vazio.
+
+### 4.8 Limites do estudo
 
 Os limites a seguir devem acompanhar qualquer leitura dos resultados.
 
@@ -1015,17 +1231,30 @@ que a verificação automática alcança melhor, e a leitura precisa considerar 
 As **áreas autenticadas não foram auditadas**, o que deixa fora da amostra as telas de maior
 consequência assistencial e torna os índices possivelmente otimistas.
 
-A **amostra é pequena**: cinco portais e 16 auditorias de página válidas, com apenas duas no
-estrato estadual, reduzido a essa base pela perda de 20% das páginas. A amostragem foi
+A **amostra é pequena**: cinco portais, com apenas um no estrato estadual. A amostragem foi
 intencional e não comporta inferência para o universo nacional; os testes são descritivos, e a
 **pseudorreplicação** — páginas do mesmo portal compartilham template e equipe — é mitigada
-pela agregação por portal reportada em paralelo, não eliminada.
+pela agregação por portal reportada em paralelo, não eliminada. A série diária **não amplia a
+amostra de portais**: doze observações do mesmo portal são doze observações de um portal, e
+tratá-las como doze unidades independentes inflaria o *n* de forma ainda mais grave que a
+pseudorreplicação entre páginas. Ela responde a uma pergunta diferente — a de persistência —,
+não à de generalização.
 
-A **janela é única**: as quatro medições ocorreram em 47 minutos e não constituem janelas
-temporais distintas. Não permitem separar instabilidade circunstancial de crônica nem detectar
-mudança nos portais. A estabilidade observada atesta a confiabilidade do instrumento, não a
-persistência das barreiras no tempo. Uma série temporal genuína — premissa da auditoria
-contínua que o trabalho defende — exige coletas separadas por dias, e permanece pendente.
+A **série é curta e tem um único ponto no dia**. Treze dias detectam mudança, mas não
+caracterizam sazonalidade, não distinguem manutenção programada de regressão, e não alcançam
+variações intradiárias: a coleta ocorre uma vez por dia, sempre no mesmo horário, e uma
+barreira que existisse apenas fora dessa janela seria invisível ao estudo. A escolha de
+horário fixo, necessária para não confundir mudança do portal com carga do servidor, tem esse
+custo declarado. A atribuição de causa às mudanças observadas também permanece fora do
+alcance do método: o instrumento constata que o critério 2.1.1 deixou de ser violado em 24 de
+agosto e voltou a sê-lo em 29, mas não distingue correção revertida, variante de página
+servida por infraestrutura de cache ou implantação parcial — a distinção exigiria informação
+que só o órgão responsável possui.
+
+Os **dias sem observação são parte da série, e não ruído removido**. Dos treze dias, um não
+produziu veredito, e a série é reportada com essa lacuna explícita. O procedimento evita o
+viés que o descarte silencioso produziria, mas não elimina o fato de que doze dias observados
+são menos do que treze.
 
 Três limites menores completam a lista. O **preço do dado é parâmetro externo**, coletado e
 datado, mas é oferta comercial que muda, e o valor de uma operadora não representa o mercado.
@@ -1042,7 +1271,7 @@ inclusive deste. O que se propõe não é substituto da avaliação com usuário
 mecanismo de monitoramento contínuo, de baixo custo marginal, capaz de estabelecer um piso e
 de dirigi-lo a quem tem competência para exigir correção.
 
-### 4.8 Implicações para a política pública
+### 4.9 Implicações para a política pública
 
 Três implicações decorrem dos achados.
 
@@ -1068,14 +1297,16 @@ adequação ao caso concreto depende de análise profissional, que envolve eleme
 ferramenta verifica — a identificação do sujeito obrigado em arranjos de contratação
 complexos e a eventual incidência de excludentes, entre outros.
 
-### 4.9 Trabalhos futuros
+### 4.10 Trabalhos futuros
 
 Quatro desdobramentos são prioritários: avaliação com usuários reais de tecnologia assistiva,
-que nenhuma auditoria automática substitui; coleta em série temporal genuína, com janelas
-separadas por dias, que é a premissa da auditoria contínua e permanece pendente; extensão a
-aplicativos móveis nativos, onde reside parte relevante do acesso; e modelo de efeitos mistos,
-com portal como efeito aleatório, para tratar formalmente a pseudorreplicação que este desenho
-apenas declara e mitiga.
+que nenhuma auditoria automática substitui; **extensão da série diária**, que treze dias
+apenas inauguram — uma janela de meses permitiria caracterizar sazonalidade, associar mudanças
+a ciclos de publicação e estimar o tempo de permanência de uma barreira, que é a grandeza de
+interesse para a exigibilidade; extensão a aplicativos móveis nativos, onde reside parte
+relevante do acesso; e modelo de efeitos mistos, com portal como efeito aleatório e dia como
+medida repetida, para tratar formalmente a pseudorreplicação que este desenho apenas declara e
+mitiga.
 
 ---
 
@@ -1094,18 +1325,26 @@ elas, nas três esferas. Essa prevalência total, em amostra estratificada, apon
 estrutural do ecossistema e desloca a resposta adequada da correção pontual para os padrões de
 desenvolvimento e os requisitos de contratação.
 
-A contribuição metodológica que se pretende oferecer é menos o valor de qualquer índice do que
-três exigências que o instrumento incorpora e que a literatura da área frequentemente dispensa:
-declarar a cobertura em toda saída, de modo que nenhum percentual seja lido sobre denominador
-oculto; jamais converter veredito indeterminado em violação, mantendo separadas a detecção de
-falha e a indicação de revisão humana; e vincular cada achado a um dispositivo determinado, com
-sujeito obrigado e via de exigibilidade, para que o relatório encontre quem tem competência
-para agir sobre ele.
+A série de treze dias converteu a auditoria contínua de desenho em resultado. Três plataformas
+repetiram, dia após dia, exatamente o mesmo conjunto de critérios violados — o que caracteriza
+a barreira típica como estrutural, e não circunstancial. Duas mudaram: em uma, uma barreira
+crítica de operação por teclado, na página do atendimento de urgência, esteve ausente por
+quatro dias e voltou; em outra, uma violação de alternativa textual foi introduzida e
+permaneceu. A conclusão que daí se extrai não é sobre esses portais, e sim sobre o método:
+como o dever do art. 63 é continuado, uma verificação que produz um laudo por exercício mede
+uma amostra de tamanho um de um processo que varia.
 
-Permanece pendente a coleta em janelas separadas por dias, sem a qual a auditoria contínua que
-o trabalho defende é um desenho, e não um resultado. E permanece intransponível, por
-construção, o limite de que nenhum instrumento automático substitui a avaliação com as pessoas
-que a barreira exclui.
+A contribuição metodológica que se pretende oferecer é menos o valor de qualquer índice do que
+quatro exigências que o instrumento incorpora e que a literatura da área frequentemente
+dispensa: declarar a cobertura em toda saída, de modo que nenhum percentual seja lido sobre
+denominador oculto; jamais converter veredito indeterminado em violação, mantendo separadas a
+detecção de falha e a indicação de revisão humana; **jamais converter ausência de observação em
+conformidade**, mantendo o "não sei" como valor representável, distinto de "conforme" e de "não
+conforme"; e vincular cada achado a um dispositivo determinado, com sujeito obrigado e via de
+exigibilidade, para que o relatório encontre quem tem competência para agir sobre ele.
+
+Permanece intransponível, por construção, o limite de que nenhum instrumento automático
+substitui a avaliação com as pessoas que a barreira exclui.
 
 ---
 

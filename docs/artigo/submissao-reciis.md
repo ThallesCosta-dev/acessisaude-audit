@@ -107,7 +107,7 @@ perguntando.
 
 - [ ] Folha de Rosto preenchida e salva em `.pdf`
 - [ ] Declaração de responsabilidade e cessão de direitos, assinada, em `.pdf`
-- [ ] Figuras 1 a 4 em arquivo editável
+- [ ] Figuras 1 a 5 em arquivo editável (SVG em `docs/artigo/figuras/`, reconstruíveis por `python scripts/gerar_figuras.py`)
 - [ ] Metadados de autoria completos no sistema (nome, e-mail, ORCID, Lattes, afiliação por
       extenso na língua original com cidade, estado e país, país, biografia)
 
@@ -117,16 +117,21 @@ perguntando.
 
 Em ordem de risco para o parecer.
 
-1. **Coleta em janelas separadas por dias.** É a pendência que mais fragiliza o título: o
-   trabalho propõe auditoria *contínua* e apresenta quatro medições em 47 minutos. A automação
-   está pronta e testada — ver [auditoria contínua](../operacao/auditoria-continua.md) —, mas
-   precisa **rodar** por algumas semanas antes da submissão. Duas ou três semanas já
-   converteriam a promessa em resultado e permitiriam substituir a ressalva da janela única,
-   em § 4.6, por uma seção de série temporal.
+1. **Estender a série diária.** Treze dias (19 a 31/08/2026) já converteram a promessa em
+   resultado — ver § 3.12 e § 4.7 — e detectaram mudança em duas das cinco plataformas. Mas
+   treze dias não caracterizam sazonalidade nem estimam tempo de permanência de barreira, que
+   é a grandeza de interesse para exigibilidade. A tarefa agendada continua rodando; cada
+   semana adicional antes da submissão fortalece a seção sem custo de trabalho. Reprocessar é
+   `acessisaude reindexar` seguido de `acessisaude exportar`, e a análise da série é
+   reprodutível pela consulta declarada em
+   [registro da série diária](../metodologia/registro-da-serie-diaria.md).
 
-2. **Ampliar o estrato estadual.** Duas páginas válidas é pouco, e a causa é a
-   indisponibilidade do próprio portal. A coleta contínua em três janelas diárias ataca isso
-   pelo mesmo mecanismo: alguma das janelas encontra o portal no ar.
+2. **Atualizar os números do braço transversal com a cobertura da SES-RJ.** Na série, o portal
+   estadual estabilizou (perda 0% em doze dias, contra 50–67% em 16/08) e seu ICA sob cobertura
+   integral é **49,3**, não 54,1. As Tabelas 3, 6, 8 e as Figuras 1 e 2 ainda descrevem o corte
+   de 16/08. Decidir entre (a) manter os dois blocos explicitamente separados, como está, ou
+   (b) recompor as tabelas transversais sobre um dia de cobertura integral da série. A opção
+   (b) é mais forte e exige regerar figuras.
 
 3. **Citação da Anatel pelo relatório primário**, e não por veículo especializado.
    Reconferir também os parâmetros de custo nos sítios das operadoras, com captura arquivada.
@@ -143,6 +148,13 @@ Em ordem de risco para o parecer.
 verificadas, com precedente brasileiro direto (Freire; Castro; Fortes, 2009), e a subseção 1.3
 deixou de argumentar a categoria de usuário periférico para quantificá-la, com o Censo 2022 e a
 TIC Domicílios 2024.
+
+**Resolvido na revisão da série.** A pendência da janela única deixou de existir: o manuscrito
+passou a ter componente longitudinal declarado (§ 2.1 e § 2.2), seção de resultados (§ 3.12,
+Tabelas 12 e 13), discussão (§ 4.7) e limites reescritos (§ 4.8). A série também expôs um
+defeito do instrumento — índice de conformidade máximo em dia sem observação — corrigido pela
+[ADR 0010](../adr/0010-indices-nulos-sem-observacao.md) e reportado no próprio artigo (§ 3.2),
+por ser contribuição metodológica e não detalhe de implementação.
 
 ---
 

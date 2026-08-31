@@ -27,8 +27,19 @@ const DATA = new Intl.DateTimeFormat('pt-BR', {
 /** Inteiro com separador de milhar. */
 export const inteiro = (valor: number): string => NUM.format(valor);
 
-/** Índice em escala 0–100, com uma casa decimal. */
-export const indice = (valor: number): string => DEC1.format(valor);
+/**
+ * Índice em escala 0–100, com uma casa decimal.
+ *
+ * Aceita nulo e devolve travessão. Nulo significa que nenhuma página foi
+ * auditada: não há veredito, o que difere tanto de conformidade quanto de não
+ * conformidade. Exibir 0 ou 100 nesse caso inventaria um resultado.
+ */
+export const indice = (valor: number | null | undefined): string =>
+  valor === null || valor === undefined ? '—' : DEC1.format(valor);
+
+/** Rótulo textual para o estado "sem observação", usado por leitor de tela. */
+export const SEM_VEREDITO =
+  'sem veredito — nenhuma página foi auditada; não é conformidade nem não conformidade';
 
 /** Megabytes com duas casas. */
 export const megabytes = (valor: number): string => `${DEC2.format(valor)} MB`;
@@ -149,7 +160,8 @@ export const ROTULO_ORIGEM: Record<string, string> = {
  * texto diz isso explicitamente para não induzir a leitura de que "78 é
  * aprovado".
  */
-export function faixaDeConformidade(valor: number): string {
+export function faixaDeConformidade(valor: number | null | undefined): string {
+  if (valor === null || valor === undefined) return SEM_VEREDITO;
   if (valor >= 90) return 'poucas violações detectadas entre os critérios verificáveis';
   if (valor >= 70) return 'violações relevantes entre os critérios verificáveis';
   if (valor >= 40) return 'violações extensas entre os critérios verificáveis';
@@ -157,7 +169,8 @@ export function faixaDeConformidade(valor: number): string {
 }
 
 /** Interpreta o índice de atrito. */
-export function faixaDeAtrito(valor: number): string {
+export function faixaDeAtrito(valor: number | null | undefined): string {
+  if (valor === null || valor === undefined) return SEM_VEREDITO;
   if (valor < 20) return 'atrito baixo';
   if (valor < 50) return 'atrito moderado';
   if (valor < 80) return 'atrito alto';

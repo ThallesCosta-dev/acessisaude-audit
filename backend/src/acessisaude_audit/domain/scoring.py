@@ -36,6 +36,7 @@ from acessisaude_audit.domain.models import (
     NetworkMetrics,
     Outcome,
     PageAudit,
+    PageStatus,
     ScanResult,
 )
 from acessisaude_audit.domain.wcag import (
@@ -188,11 +189,34 @@ class AccessibilityScore(BaseModel):
     usar mesmo assim", e ``absolute_barrier`` responde "é possível usar?".
     Um portal pode ter conformidade de 85% e ainda assim ser inutilizável por
     uma única armadilha de teclado.
+
+    Ausência de observação não é conformidade
+    -----------------------------------------
+    Quando **nenhuma página foi auditada** — porque todas falharam ao carregar —
+    não há violação a somar, e os índices degeneram para o valor de um portal
+    perfeito: conformidade 100, atrito 0, sem barreira absoluta. Foi o que
+    ocorreu em 25 de agosto de 2026, quando uma falha de DNS na máquina coletora
+    derrubou as 20 páginas dos cinco alvos e a série reportou conformidade
+    máxima para todos.
+
+    Por isso :attr:`observed` existe e os quatro índices são **nulos** quando ele
+    é falso. É a mesma advertência que o projeto faz sobre cobertura parcial,
+    levada ao limite: se ausência de achado não equivale a conformidade, ausência
+    de **observação** muito menos.
     """
 
     model_config = ConfigDict(frozen=True)
 
-    conformance_index: float = Field(
+    observed: bool = Field(
+        default=True,
+        description=(
+            "Houve ao menos uma página auditada com sucesso. Quando falso, os "
+            "quatro índices abaixo são nulos: não há veredito, o que difere "
+            "tanto de conformidade quanto de não conformidade."
+        ),
+    )
+    conformance_index: float | None = Field(
+        default=None,
         ge=0,
         le=100,
         description=(
@@ -201,7 +225,8 @@ class AccessibilityScore(BaseModel):
             "não violados."
         ),
     )
-    friction_index: float = Field(
+    friction_index: float | None = Field(
+        default=None,
         ge=0,
         le=100,
         description=(
@@ -210,7 +235,8 @@ class AccessibilityScore(BaseModel):
             "número de ocorrências. 0 = sem atrito detectado."
         ),
     )
-    legal_exposure_index: float = Field(
+    legal_exposure_index: float | None = Field(
+        default=None,
         ge=0,
         le=100,
         description=(
@@ -219,12 +245,13 @@ class AccessibilityScore(BaseModel):
             "à pergunta do gestor: 'qual o tamanho do meu passivo?'"
         ),
     )
-    absolute_barrier: bool = Field(
+    absolute_barrier: bool | None = Field(
+        default=None,
         description=(
             "Há ao menos uma violação de risco jurídico CRÍTICO — barreira sem "
             "rota alternativa. Torna o serviço inacessível de fato, "
             "independentemente do valor dos demais índices."
-        )
+        ),
     )
     coverage: float = Field(
         ge=0,
@@ -291,7 +318,20 @@ def _finding_weight(finding: Finding) -> tuple[float, float]:
 
 
 def _accumulate(acc: _Accumulator, page: PageAudit, params: ScoringParameters) -> None:
-    """Incorpora uma página ao acumulador."""
+    """Incorpora uma página ao acumulador.
+
+    ``acc.pages`` conta **páginas observadas**, e não tentativas: é ele que
+    decide, em :func:`_build`, se há veredito a dar. Uma página que não carregou
+    não produz achado nenhum, e contá-la faria "zero violação por ausência de
+    conteúdo" ser indistinguível de "zero violação por conformidade" — que é
+    exatamente o modo como uma falha de rede do coletor se disfarçava de portal
+    impecável. :func:`score_scan` já filtra por
+    :attr:`~acessisaude_audit.domain.models.ScanResult.successful_pages`; a
+    guarda aqui existe para :func:`score_page`, que recebe a página como veio.
+    """
+    if page.status is not PageStatus.OK:
+        return
+
     acc.pages += 1
     path_factor = params.critical_path_multiplier if page.is_critical_path else 1.0
 
@@ -395,15 +435,31 @@ def _build(
     params: ScoringParameters,
     data_cost: DataCostScore | None,
 ) -> AccessibilityScore:
-    """Materializa o resultado a partir do acumulador."""
+    """Materializa o resultado a partir do acumulador.
+
+    Sem nenhuma página auditada, os quatro índices ficam **nulos**. Calculá-los
+    devolveria conformidade 100, atrito 0 e ausência de barreira absoluta — os
+    valores de um portal perfeito — porque não há violação a somar. A degeneração
+    não é do cálculo: é da tentativa de resumir o que não foi observado.
+
+    Os campos de contagem permanecem preenchidos com zero, que ali é a medida
+    correta: zero achados foram registrados, e ``ScanResult.loss_rate`` diz por
+    quê.
+    """
+    observed = acc.pages > 0
     # O atrito é normalizado por página para permitir comparar portais de
     # tamanhos diferentes — sem isso, varrer mais páginas pioraria o índice.
     pages = max(acc.pages, 1)
     return AccessibilityScore(
-        conformance_index=_conformance(acc.violated_criteria, evaluated),
-        friction_index=_saturate(acc.raw_friction / pages, params.friction_kappa),
-        legal_exposure_index=_saturate(acc.raw_legal / pages, params.friction_kappa),
-        absolute_barrier=acc.absolute_barrier,
+        observed=observed,
+        conformance_index=(_conformance(acc.violated_criteria, evaluated) if observed else None),
+        friction_index=(
+            _saturate(acc.raw_friction / pages, params.friction_kappa) if observed else None
+        ),
+        legal_exposure_index=(
+            _saturate(acc.raw_legal / pages, params.friction_kappa) if observed else None
+        ),
+        absolute_barrier=acc.absolute_barrier if observed else None,
         coverage=round(len(evaluated) / len(WCAG_CRITERIA), 4),
         criteria_evaluated=len(evaluated),
         criteria_violated=len(acc.violated_criteria & evaluated),

@@ -73,10 +73,16 @@ export interface ResumoVarredura {
   incomplete_count: number;
   loss_rate: number;
 
-  conformance_index: number;
-  friction_index: number;
-  legal_exposure_index: number;
-  absolute_barrier: boolean;
+  /**
+   * Nulos quando `observed` é falso: nenhuma página foi auditada, e não há
+   * veredito. Distinto de conformidade e de não conformidade — a interface
+   * precisa exibir traço, nunca zero nem cem.
+   */
+  observed: boolean;
+  conformance_index: number | null;
+  friction_index: number | null;
+  legal_exposure_index: number | null;
+  absolute_barrier: boolean | null;
   coverage: number;
 
   mean_page_mb: number;
@@ -166,10 +172,16 @@ export interface Varredura {
 
 /** Índices agregados de uma varredura. */
 export interface Indices {
-  conformance_index: number;
-  friction_index: number;
-  legal_exposure_index: number;
-  absolute_barrier: boolean;
+  /**
+   * Nulos quando `observed` é falso: nenhuma página foi auditada, e não há
+   * veredito. Distinto de conformidade e de não conformidade — a interface
+   * precisa exibir traço, nunca zero nem cem.
+   */
+  observed: boolean;
+  conformance_index: number | null;
+  friction_index: number | null;
+  legal_exposure_index: number | null;
+  absolute_barrier: boolean | null;
   coverage: number;
   criteria_evaluated: number;
   criteria_violated: number;
