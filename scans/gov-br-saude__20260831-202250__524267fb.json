@@ -1,0 +1,2100 @@
+{
+  "id": "524267fb-c498-4123-be09-49734a72152f",
+  "schema_version": "1.0.0",
+  "target_id": "gov-br-saude",
+  "target_name": "Portal gov.br — área de Saúde",
+  "base_url": "https://www.gov.br/saude/pt-br",
+  "status": "partial",
+  "started_at": "2026-08-31T20:22:50.735681Z",
+  "finished_at": "2026-08-31T20:23:20.764252Z",
+  "pages": [
+    {
+      "url": "https://www.gov.br/saude/pt-br",
+      "final_url": "https://www.gov.br/saude/pt-br",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Ministério da Saúde",
+      "lang": "pt-br",
+      "viewport": {
+        "name": "mobile-320",
+        "width": 320,
+        "height": 640,
+        "device_scale_factor": 2.0,
+        "is_mobile": true,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; SM-A105M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+      },
+      "started_at": "2026-08-31T20:22:51.099976Z",
+      "finished_at": "2026-08-31T20:23:00.384041Z",
+      "findings": [
+        {
+          "id": "d5ceb34f-3ba7-41b6-b9ab-85f0932ae953",
+          "rule_id": "button-name",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "critical",
+          "criteria": [
+            "4.1.2"
+          ],
+          "summary": "Buttons must have discernible text",
+          "description": "Ensure buttons have discernible text",
+          "remediation": "Usar elementos nativos ou, quando inevitável, ARIA completo (role, nome acessível, estado) com teclado equivalente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/button-name?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "fala",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "['#barra-govbr', '.br-sign-in']",
+              "html": "<button class=\"br-sign-in small primary ml-2 cta svelte-qdqhy1\" type=\"button\"><i class=\"fas fa-user\" aria-hidden=\"true\"></i> <span class=\"login-text svelte-qdqhy1\"></span></button>",
+              "failure_summary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            }
+          ],
+          "page_url": "https://www.gov.br/saude/pt-br",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-31T20:22:59.954232Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "critico",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "onu.art9"
+          ],
+          "legal_thesis": "Controle sem nome, função ou valor expostos simplesmente não existe para a tecnologia assistiva: o serviço é, para o usuário cego, inexistente. É a forma mais severa de barreira na informação do art. 3º, IV, 'd'."
+        },
+        {
+          "id": "84d10836-389c-4c9f-b3d6-901ccea050f5",
+          "rule_id": "image-alt",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "critical",
+          "criteria": [
+            "1.1.1"
+          ],
+          "summary": "Images must have alternative text",
+          "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+          "remediation": "Prover atributo alt descritivo em imagens informativas e alt vazio em imagens decorativas; descrever gráficos e infográficos em texto adjacente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/image-alt?application=axeAPI",
+          "affects": [
+            "baixa_conectividade",
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "['#vlibras-access-wrapper', '#vlibras-popup']",
+              "html": "<img id=\"vlibras-popup\" src=\"https://vlibras.gov.br/app/assets/images/vlibras-popup.webp\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "['#vlibras-access-wrapper', '#vlibras-button > img']",
+              "html": "<img src=\"https://vlibras.gov.br/app/assets/images/vlibras-access.svg\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            }
+          ],
+          "page_url": "https://www.gov.br/saude/pt-br",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-31T20:22:59.954288Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 2,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "A ausência de alternativa textual configura barreira na comunicação e na informação (art. 3º, IV, 'd', LBI): o conteúdo existe juridicamente como informação pública, mas não é recebível pelo usuário cego, esvaziando o dever de transparência ativa do art. 8º, § 3º, VIII da LAI."
+        },
+        {
+          "id": "b45b8e2d-00ac-40d3-8c1d-de3ea9d401d5",
+          "rule_id": "link-name",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "2.4.4",
+            "4.1.2"
+          ],
+          "summary": "Links must have discernible text",
+          "description": "Ensure links have discernible text",
+          "remediation": "Reescrever textos de link para que descrevam o destino sem depender do parágrafo circundante. Usar elementos nativos ou, quando inevitável, ARIA completo (role, nome acessível, estado) com teclado equivalente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/link-name?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "fala",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "#e473b5a0-2f2c-4fcd-abf2-eb88c21a6623 > .nitf-basic-tile.tile-content > .tile-subtitle > .social-links > .toggle-social-links[href=\"#\"]",
+              "html": "<a href=\"#\" class=\"toggle-social-links\"><span class=\"fas fa-share-alt\"></span><span class=\"fas fa-times\"></span></a>",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "#e80eb8bf-b443-4363-b221-c295f280ace1 > .nitf-basic-tile.tile-content > .tile-subtitle > .social-links > .toggle-social-links[href=\"#\"]",
+              "html": "<a href=\"#\" class=\"toggle-social-links\"><span class=\"fas fa-share-alt\"></span><span class=\"fas fa-times\"></span></a>",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "#d19c02c6-78e3-4b3e-bcc8-512e5282c56b > .nitf-basic-tile.tile-content > .tile-subtitle > .social-links > .toggle-social-links[href=\"#\"]",
+              "html": "<a href=\"#\" class=\"toggle-social-links\"><span class=\"fas fa-share-alt\"></span><span class=\"fas fa-times\"></span></a>",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "#a55197fe-0655-468c-bdd2-cf8cf42f2a69 > .nitf-basic-tile.tile-content > .tile-subtitle > .social-links > .toggle-social-links[href=\"#\"]",
+              "html": "<a href=\"#\" class=\"toggle-social-links\"><span class=\"fas fa-share-alt\"></span><span class=\"fas fa-times\"></span></a>",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "#afc4666f-b13c-4ef0-a3ce-d65534b2086b > .nitf-basic-tile.tile-content > .tile-subtitle > .social-links > .toggle-social-links[href=\"#\"]",
+              "html": "<a href=\"#\" class=\"toggle-social-links\"><span class=\"fas fa-share-alt\"></span><span class=\"fas fa-times\"></span></a>",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "#cbb9c598-ee2e-474c-8b71-d5835a47252a > .nitf-basic-tile.tile-content > .tile-subtitle > .social-links > .toggle-social-links[href=\"#\"]",
+              "html": "<a href=\"#\" class=\"toggle-social-links\"><span class=\"fas fa-share-alt\"></span><span class=\"fas fa-times\"></span></a>",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            }
+          ],
+          "page_url": "https://www.gov.br/saude/pt-br",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-31T20:22:59.954348Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 6,
+          "legal_risk": "critico",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "onu.art9"
+          ],
+          "legal_thesis": "Controle sem nome, função ou valor expostos simplesmente não existe para a tecnologia assistiva: o serviço é, para o usuário cego, inexistente. É a forma mais severa de barreira na informação do art. 3º, IV, 'd'."
+        },
+        {
+          "id": "f56144cc-6263-48c6-ad62-307dd0644214",
+          "rule_id": "aria-valid-attr-value",
+          "source": "axe-core",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "4.1.2"
+          ],
+          "summary": "ARIA attributes must conform to valid values",
+          "description": "Ensure all ARIA attributes have valid values",
+          "remediation": "Usar elementos nativos ou, quando inevitável, ARIA completo (role, nome acessível, estado) com teclado equivalente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/aria-valid-attr-value?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "fala",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": ".aa-Autocomplete",
+              "html": "<div class=\"aa-Autocomplete\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-labelledby=\"searchtext-label\">",
+              "failure_summary": "Fix all of the following:\n  ARIA attribute element ID does not exist on the page or is a descendant of a different shadow DOM tree: aria-labelledby=\"searchtext-label\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noIdShadow"
+              }
+            },
+            {
+              "selector": "#searchtext-input",
+              "html": "<input class=\"aa-Input\" aria-autocomplete=\"both\" aria-labelledby=\"searchtext-label\" id=\"searchtext-input\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" enterkeyhint=\"search\" spellcheck=\"false\" placeholder=\"O que você procura?\" maxlength=\"512\" type=\"search\">",
+              "failure_summary": "Fix all of the following:\n  ARIA attribute element ID does not exist on the page or is a descendant of a different shadow DOM tree: aria-labelledby=\"searchtext-label\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noIdShadow"
+              }
+            }
+          ],
+          "page_url": "https://www.gov.br/saude/pt-br",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-31T20:22:59.954380Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 2,
+          "legal_risk": "critico",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "onu.art9"
+          ],
+          "legal_thesis": "Controle sem nome, função ou valor expostos simplesmente não existe para a tecnologia assistiva: o serviço é, para o usuário cego, inexistente. É a forma mais severa de barreira na informação do art. 3º, IV, 'd'."
+        },
+        {
+          "id": "975f9795-02c0-4ba4-986c-ffa6fe0b725b",
+          "rule_id": "color-contrast",
+          "source": "axe-core",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "1.4.3"
+          ],
+          "summary": "Elements must meet minimum color contrast ratio thresholds",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "remediation": "Ajustar a paleta para razão mínima de 4.5:1 (texto normal) e 3:1 (texto grande), validando os tokens de design, não apenas as telas.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axeAPI",
+          "affects": [
+            "baixa_visao",
+            "cognitiva_neurodivergencia",
+            "visao_de_cores"
+          ],
+          "nodes": [
+            {
+              "selector": "['#barra-govbr', '.popup-login-overlay > div:nth-child(2)']",
+              "html": "<div>Clique em <span class=\"svelte-wsj7mr\">Entrar</span>\n\t\tpara acessar sua conta gov.br</div>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "9.8pt (13px)",
+                "fontWeight": "normal",
+                "messageKey": "elmPartiallyObscuring",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "#e473b5a0-2f2c-4fcd-abf2-eb88c21a6623 > .nitf-basic-tile.tile-content > .tile-subtitle",
+              "html": "<p class=\"tile-subtitle\">",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "#e473b5a0-2f2c-4fcd-abf2-eb88c21a6623 > .nitf-basic-tile.tile-content > h2 > a",
+              "html": "<a href=\"https://www.gov.br/saude/pt-br/assuntos/noticias-ms/2026/agosto/ministerio-da-saude-destaca-acoes-para-enfrentar-a-judicializacao-as-mudancas-climaticas-e-ampliar-a-inovacao-tecnologica-na-saude\">Ministério destaca ações para enfrentar mudanças climáticas</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "15.0pt (20px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "#e80eb8bf-b443-4363-b221-c295f280ace1 > .nitf-basic-tile.tile-content > .tile-subtitle",
+              "html": "<p class=\"tile-subtitle\">",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "#e80eb8bf-b443-4363-b221-c295f280ace1 > .nitf-basic-tile.tile-content > h2 > a",
+              "html": "<a href=\"https://www.gov.br/saude/pt-br/assuntos/noticias-ms/2026/agosto/brasil-mantem-acoes-de-resposta-ao-sarampo-e-reforca-importancia-da-vacinacao\">Brasil mantém ações de resposta ao sarampo e reforça vacinação</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "15.0pt (20px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "#d19c02c6-78e3-4b3e-bcc8-512e5282c56b > .nitf-basic-tile.tile-content > .tile-subtitle",
+              "html": "<p class=\"tile-subtitle\">",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "#d19c02c6-78e3-4b3e-bcc8-512e5282c56b > .nitf-basic-tile.tile-content > h2 > a",
+              "html": "<a href=\"https://www.gov.br/saude/pt-br/assuntos/noticias-ms/2026/agosto/mortes-por-desnutricao-caem-75-7-na-terra-indigena-yanomami\">Mortes por desnutrição caem 75,7% na Terra Indígena Yanomami</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "15.0pt (20px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "tspan[y=\"18\"]",
+              "html": "<tspan class=\"a\" y=\"18\">Acesso à</tspan>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "8.3pt (11px)",
+                "fontWeight": "bold",
+                "messageKey": "imgNode",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "tspan[y=\"31\"]",
+              "html": "<tspan class=\"a\" x=\"47\" y=\"31\">Informação</tspan>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "8.3pt (11px)",
+                "fontWeight": "bold",
+                "messageKey": "imgNode",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".info-text",
+              "html": "<div class=\"info-text\">",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "normal",
+                "messageKey": "elmPartiallyObscuring",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".info-text > strong",
+              "html": "<strong>Ao aceitar, você terá acesso a todas as funcionalidades do site. Se clicar em \"Rejeitar Cookies\", os cookies que não forem estritamente necessários serão desativados.</strong>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "bold",
+                "messageKey": "elmPartiallyObscuring",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".btn-accept",
+              "html": "<button class=\"br-button secondary small btn-accept block\" type=\"button\" aria-label=\"Aceitar cookies\">Aceitar cookies</button>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": "imgNode",
+                "expectedContrastRatio": "4.5:1"
+              }
+            }
+          ],
+          "page_url": "https://www.gov.br/saude/pt-br",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-31T20:22:59.954529Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 12,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "O contraste insuficiente é a barreira de comunicação mais prevalente e atinge diretamente a população idosa usuária do SUS; sua persistência em portal público caracteriza descumprimento continuado do art. 63, caput, da LBI e do art. 47 do Decreto 5.296/2004."
+        },
+        {
+          "id": "69f97dc8-29d4-4ae1-9e49-7cc714c55441",
+          "rule_id": "probe.placeholder-como-rotulo",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "3.3.2"
+          ],
+          "summary": "1 campo(s) de formulário são identificados apenas pelo texto de placeholder.",
+          "description": "Estes campos não possuem <label>, aria-label nem aria-labelledby: sua única identificação é o placeholder, que desaparece assim que o usuário digita o primeiro caractere. Quem usa leitor de tela e retorna ao campo para conferir o que preencheu ouve apenas 'caixa de edição' e o valor digitado, sem saber se ali se pedia o CPF ou o Cartão Nacional de Saúde. O padrão também falha para pessoas com deficiência intelectual, que perdem a instrução ao começar a responder. Registre-se que a verificação automática do axe-core aceita o placeholder como nome acessível válido; esta sonda existe precisamente para cobrir essa lacuna.",
+          "remediation": "Associar label a todo campo; placeholder não substitui rótulo.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/labels-or-instructions.html",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "#searchtext-input",
+              "html": "<input class=\"aa-Input\" aria-autocomplete=\"both\" aria-labelledby=\"searchtext-label\" id=\"searchtext-input\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" enterkeyhint=\"search\" spellcheck=\"false\" placeholder=\"O que você procura?\" maxlength=\"512\" type=\"search\">",
+              "failure_summary": "<input> identificado apenas por placeholder='O que você procura?'.",
+              "target_frame": [],
+              "measured": {
+                "placeholder": "O que você procura?",
+                "name": null,
+                "type": "search",
+                "obrigatorio": false
+              }
+            }
+          ],
+          "page_url": "https://www.gov.br/saude/pt-br",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-31T20:23:00.168381Z",
+          "legal_risk_override": "alto",
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "lbi.art3.i"
+          ],
+          "legal_thesis": "Campo sem rótulo programático torna indeterminável o dado solicitado, inviabilizando o preenchimento autônomo (art. 3º, I, LBI)."
+        },
+        {
+          "id": "27a543c0-1935-4af8-a2a3-3455a4446546",
+          "rule_id": "probe.data-cost",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "moderate",
+          "criteria": [],
+          "summary": "Um único acesso a esta página consome 5.50 MB, ou 0.054% da franquia mensal do plano de referência (1.6 centavo).",
+          "description": "A página impõe custo de dados ao usuário com plano limitado: peso de 5.50 MB, acima do limiar de 2.50 MB. O peso foi medido em bytes efetivamente transferidos, em contexto sem cache — o cenário do primeiro acesso e daquele que limpa dados do aparelho por falta de armazenamento. Consultada quatro vezes ao mês, frequência mínima plausível para acompanhar um agendamento ou um resultado de exame, esta página consome 0.21% da franquia (6.4 centavos) — e cada tentativa frustrada por barreira de acessibilidade soma-se a essa conta, de modo que as duas dimensões se agravam mutuamente.",
+          "remediation": "Reduzir o peso da página: comprimir e redimensionar imagens, servir formatos modernos, remover scripts de terceiros não essenciais ao serviço, adiar carregamento de recursos fora da área visível e priorizar HTML semântico sobre renderização integral por JavaScript.",
+          "help_url": null,
+          "affects": [
+            "baixa_conectividade"
+          ],
+          "nodes": [
+            {
+              "selector": "document",
+              "html": "",
+              "failure_summary": "peso de 5.50 MB, acima do limiar de 2.50 MB",
+              "target_frame": [],
+              "measured": {
+                "total_mb": 5.501,
+                "total_bytes": 5768071,
+                "request_count": 84,
+                "third_party_share": 0.1896,
+                "third_party_domains": [
+                  "browser-update.org",
+                  "cloudflare.com",
+                  "jsdelivr.net",
+                  "sistema.gov.br",
+                  "vlibras.gov.br"
+                ],
+                "bytes_by_type": {
+                  "document": 24809,
+                  "fetch": 11618,
+                  "font": 1428143,
+                  "image": 3284031,
+                  "script": 637413,
+                  "stylesheet": 382057
+                },
+                "cost_brl": 0.016116,
+                "franchise_share_pct": 0.0537,
+                "price_per_mb_brl": 0.0029296875,
+                "franchise_mb": 10240.0
+              }
+            }
+          ],
+          "page_url": "https://www.gov.br/saude/pt-br",
+          "viewport": "mobile-320",
+          "detected_at": "2026-08-31T20:23:00.182975Z",
+          "legal_risk_override": "moderado",
+          "extra_provisions": [
+            "cf.art196",
+            "lbi.art18",
+            "lei13460.art5",
+            "cf.art5.xiv"
+          ],
+          "legal_thesis_override": "O custo de dados exigido para acessar o serviço digital de saúde transfere ao cidadão um ônus econômico como condição de exercício de direito fundamental. Quando esse ônus recai desproporcionalmente sobre a população de menor renda — a mesma que depende exclusivamente do SUS — o acesso deixa de ser universal e igualitário, em desacordo com o art. 196 da CF/88 e com o dever de informação adequada do art. 18, § 4º da Lei 13.146/2015. A parcela do tráfego destinada a terceiros agrava a situação: o usuário custeia recursos que não lhe prestam o serviço público solicitado.",
+          "occurrences": 1,
+          "legal_risk": "moderado",
+          "legal_provisions": [
+            "cf.art196",
+            "lbi.art18",
+            "lei13460.art5",
+            "cf.art5.xiv"
+          ],
+          "legal_thesis": "O custo de dados exigido para acessar o serviço digital de saúde transfere ao cidadão um ônus econômico como condição de exercício de direito fundamental. Quando esse ônus recai desproporcionalmente sobre a população de menor renda — a mesma que depende exclusivamente do SUS — o acesso deixa de ser universal e igualitário, em desacordo com o art. 196 da CF/88 e com o dever de informação adequada do art. 18, § 4º da Lei 13.146/2015. A parcela do tráfego destinada a terceiros agrava a situação: o usuário custeia recursos que não lhe prestam o serviço público solicitado."
+        }
+      ],
+      "network": {
+        "total_bytes": 5768071,
+        "total_uncompressed_bytes": 0,
+        "request_count": 84,
+        "bytes_by_type": {
+          "document": 24809,
+          "fetch": 11618,
+          "font": 1428143,
+          "image": 3284031,
+          "script": 637413,
+          "stylesheet": 382057
+        },
+        "third_party_bytes": 1093893,
+        "third_party_domains": [
+          "browser-update.org",
+          "cloudflare.com",
+          "jsdelivr.net",
+          "sistema.gov.br",
+          "vlibras.gov.br"
+        ],
+        "dom_content_loaded_ms": 3468.7999999999884,
+        "load_complete_ms": 4898.799999999988,
+        "largest_contentful_paint_ms": null,
+        "blocked_requests": 0,
+        "total_mb": 5.501,
+        "third_party_share": 0.1896
+      },
+      "error": null,
+      "axe_version": "4.13.0",
+      "screenshot_path": "/home/runner/work/acessisaude-audit/acessisaude-audit/data/screenshots/www.gov.br__049346d966__mobile-320.png",
+      "is_critical_path": false,
+      "duration_ms": 9284.065
+    },
+    {
+      "url": "https://www.gov.br/saude/pt-br",
+      "final_url": "https://www.gov.br/saude/pt-br",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Ministério da Saúde",
+      "lang": "pt-br",
+      "viewport": {
+        "name": "desktop-1366",
+        "width": 1366,
+        "height": 768,
+        "device_scale_factor": 1.0,
+        "is_mobile": false,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+      },
+      "started_at": "2026-08-31T20:23:00.393615Z",
+      "finished_at": "2026-08-31T20:23:08.339702Z",
+      "findings": [
+        {
+          "id": "ab769423-42c6-417c-ab2e-97772b1f5ef6",
+          "rule_id": "button-name",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "critical",
+          "criteria": [
+            "4.1.2"
+          ],
+          "summary": "Buttons must have discernible text",
+          "description": "Ensure buttons have discernible text",
+          "remediation": "Usar elementos nativos ou, quando inevitável, ARIA completo (role, nome acessível, estado) com teclado equivalente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/button-name?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "fala",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "['#barra-govbr', '.loading']",
+              "html": "<button class=\"br-button loading small primary ml-2 false svelte-qdqhy1\" type=\"button\" disabled=\"\"><i class=\"fas fa-user\" aria-hidden=\"true\"></i> <span class=\"login-text svelte-qdqhy1\"></span></button>",
+              "failure_summary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            }
+          ],
+          "page_url": "https://www.gov.br/saude/pt-br",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-31T20:23:07.915657Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "critico",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "onu.art9"
+          ],
+          "legal_thesis": "Controle sem nome, função ou valor expostos simplesmente não existe para a tecnologia assistiva: o serviço é, para o usuário cego, inexistente. É a forma mais severa de barreira na informação do art. 3º, IV, 'd'."
+        },
+        {
+          "id": "b1e64bc4-9267-45e2-88b9-80291a2da75b",
+          "rule_id": "image-alt",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "critical",
+          "criteria": [
+            "1.1.1"
+          ],
+          "summary": "Images must have alternative text",
+          "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+          "remediation": "Prover atributo alt descritivo em imagens informativas e alt vazio em imagens decorativas; descrever gráficos e infográficos em texto adjacente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/image-alt?application=axeAPI",
+          "affects": [
+            "baixa_conectividade",
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "['#vlibras-access-wrapper', '#vlibras-popup']",
+              "html": "<img id=\"vlibras-popup\" src=\"https://vlibras.gov.br/app/assets/images/vlibras-popup.webp\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "['#vlibras-access-wrapper', '#vlibras-button > img']",
+              "html": "<img src=\"https://vlibras.gov.br/app/assets/images/vlibras-access.svg\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            }
+          ],
+          "page_url": "https://www.gov.br/saude/pt-br",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-31T20:23:07.915706Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 2,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "A ausência de alternativa textual configura barreira na comunicação e na informação (art. 3º, IV, 'd', LBI): o conteúdo existe juridicamente como informação pública, mas não é recebível pelo usuário cego, esvaziando o dever de transparência ativa do art. 8º, § 3º, VIII da LAI."
+        },
+        {
+          "id": "65e21557-229c-4d20-a95e-2563df64f6ac",
+          "rule_id": "link-name",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "2.4.4",
+            "4.1.2"
+          ],
+          "summary": "Links must have discernible text",
+          "description": "Ensure links have discernible text",
+          "remediation": "Reescrever textos de link para que descrevam o destino sem depender do parágrafo circundante. Usar elementos nativos ou, quando inevitável, ARIA completo (role, nome acessível, estado) com teclado equivalente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/link-name?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "fala",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "#e473b5a0-2f2c-4fcd-abf2-eb88c21a6623 > .nitf-basic-tile.tile-content > .tile-subtitle > .social-links > .toggle-social-links[href=\"#\"]",
+              "html": "<a href=\"#\" class=\"toggle-social-links\"><span class=\"fas fa-share-alt\"></span><span class=\"fas fa-times\"></span></a>",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "#e80eb8bf-b443-4363-b221-c295f280ace1 > .nitf-basic-tile.tile-content > .tile-subtitle > .social-links > .toggle-social-links[href=\"#\"]",
+              "html": "<a href=\"#\" class=\"toggle-social-links\"><span class=\"fas fa-share-alt\"></span><span class=\"fas fa-times\"></span></a>",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "#d19c02c6-78e3-4b3e-bcc8-512e5282c56b > .nitf-basic-tile.tile-content > .tile-subtitle > .social-links > .toggle-social-links[href=\"#\"]",
+              "html": "<a href=\"#\" class=\"toggle-social-links\"><span class=\"fas fa-share-alt\"></span><span class=\"fas fa-times\"></span></a>",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "#a55197fe-0655-468c-bdd2-cf8cf42f2a69 > .nitf-basic-tile.tile-content > .tile-subtitle > .social-links > .toggle-social-links[href=\"#\"]",
+              "html": "<a href=\"#\" class=\"toggle-social-links\"><span class=\"fas fa-share-alt\"></span><span class=\"fas fa-times\"></span></a>",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "#afc4666f-b13c-4ef0-a3ce-d65534b2086b > .nitf-basic-tile.tile-content > .tile-subtitle > .social-links > .toggle-social-links[href=\"#\"]",
+              "html": "<a href=\"#\" class=\"toggle-social-links\"><span class=\"fas fa-share-alt\"></span><span class=\"fas fa-times\"></span></a>",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "#cbb9c598-ee2e-474c-8b71-d5835a47252a > .nitf-basic-tile.tile-content > .tile-subtitle > .social-links > .toggle-social-links[href=\"#\"]",
+              "html": "<a href=\"#\" class=\"toggle-social-links\"><span class=\"fas fa-share-alt\"></span><span class=\"fas fa-times\"></span></a>",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            }
+          ],
+          "page_url": "https://www.gov.br/saude/pt-br",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-31T20:23:07.915779Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 6,
+          "legal_risk": "critico",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "onu.art9"
+          ],
+          "legal_thesis": "Controle sem nome, função ou valor expostos simplesmente não existe para a tecnologia assistiva: o serviço é, para o usuário cego, inexistente. É a forma mais severa de barreira na informação do art. 3º, IV, 'd'."
+        },
+        {
+          "id": "5220c71a-b334-43bc-9723-61274d0f44f5",
+          "rule_id": "aria-valid-attr-value",
+          "source": "axe-core",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "4.1.2"
+          ],
+          "summary": "ARIA attributes must conform to valid values",
+          "description": "Ensure all ARIA attributes have valid values",
+          "remediation": "Usar elementos nativos ou, quando inevitável, ARIA completo (role, nome acessível, estado) com teclado equivalente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/aria-valid-attr-value?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "fala",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": ".aa-Autocomplete",
+              "html": "<div class=\"aa-Autocomplete\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-labelledby=\"searchtext-label\">",
+              "failure_summary": "Fix all of the following:\n  ARIA attribute element ID does not exist on the page or is a descendant of a different shadow DOM tree: aria-labelledby=\"searchtext-label\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noIdShadow"
+              }
+            },
+            {
+              "selector": "#searchtext-input",
+              "html": "<input class=\"aa-Input\" aria-autocomplete=\"both\" aria-labelledby=\"searchtext-label\" id=\"searchtext-input\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" enterkeyhint=\"search\" spellcheck=\"false\" placeholder=\"O que você procura?\" maxlength=\"512\" type=\"search\">",
+              "failure_summary": "Fix all of the following:\n  ARIA attribute element ID does not exist on the page or is a descendant of a different shadow DOM tree: aria-labelledby=\"searchtext-label\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noIdShadow"
+              }
+            }
+          ],
+          "page_url": "https://www.gov.br/saude/pt-br",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-31T20:23:07.915808Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 2,
+          "legal_risk": "critico",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "onu.art9"
+          ],
+          "legal_thesis": "Controle sem nome, função ou valor expostos simplesmente não existe para a tecnologia assistiva: o serviço é, para o usuário cego, inexistente. É a forma mais severa de barreira na informação do art. 3º, IV, 'd'."
+        },
+        {
+          "id": "9ba64e82-9d6a-449b-b000-18e22e2bf097",
+          "rule_id": "color-contrast",
+          "source": "axe-core",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "1.4.3"
+          ],
+          "summary": "Elements must meet minimum color contrast ratio thresholds",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "remediation": "Ajustar a paleta para razão mínima de 4.5:1 (texto normal) e 3:1 (texto grande), validando os tokens de design, não apenas as telas.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axeAPI",
+          "affects": [
+            "baixa_visao",
+            "cognitiva_neurodivergencia",
+            "visao_de_cores"
+          ],
+          "nodes": [
+            {
+              "selector": ".recomendado.desktop-toggle-btn[data-slider=\"0\"]",
+              "html": "<a class=\"desktop-toggle-btn tile-name recomendado\" href=\"#\" data-slider=\"0\">Serviços recomendados para você</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "bold",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".desktop-toggle-btn.mais-acessados[data-slider=\"1\"]",
+              "html": "<a class=\"desktop-toggle-btn tile-name mais-acessados\" href=\"#\" data-slider=\"1\">Serviços mais acessados do govbr</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "bold",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".desktop-toggle-btn.destaque[data-slider=\"2\"]",
+              "html": "<a class=\"desktop-toggle-btn tile-name destaque\" href=\"#\" data-slider=\"2\">Serviços em destaque do govbr</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "bold",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".swiper-slide-active > .carousel-information > .carousel-title",
+              "html": "<div class=\"carousel-title\">CUIDADO ONCOLÓGICO</div>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "24.0pt (32px)",
+                "fontWeight": "normal",
+                "messageKey": "bgGradient",
+                "expectedContrastRatio": "3:1"
+              }
+            },
+            {
+              "selector": ".swiper-slide-active > .carousel-information > .carousel-description",
+              "html": "<div class=\"carousel-description\">SUS vai ofertar três novos medicamentos para o tratamento de câncer de pulmão</div>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "16.5pt (22px)",
+                "fontWeight": "normal",
+                "messageKey": "bgGradient",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "#e473b5a0-2f2c-4fcd-abf2-eb88c21a6623 > .nitf-basic-tile.tile-content > .tile-subtitle",
+              "html": "<p class=\"tile-subtitle\">",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "#e473b5a0-2f2c-4fcd-abf2-eb88c21a6623 > .nitf-basic-tile.tile-content > h2 > a",
+              "html": "<a href=\"https://www.gov.br/saude/pt-br/assuntos/noticias-ms/2026/agosto/ministerio-da-saude-destaca-acoes-para-enfrentar-a-judicializacao-as-mudancas-climaticas-e-ampliar-a-inovacao-tecnologica-na-saude\">Ministério destaca ações para enfrentar mudanças climáticas</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "15.0pt (20px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "#e80eb8bf-b443-4363-b221-c295f280ace1 > .nitf-basic-tile.tile-content > .tile-subtitle",
+              "html": "<p class=\"tile-subtitle\">",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "#e80eb8bf-b443-4363-b221-c295f280ace1 > .nitf-basic-tile.tile-content > h2 > a",
+              "html": "<a href=\"https://www.gov.br/saude/pt-br/assuntos/noticias-ms/2026/agosto/brasil-mantem-acoes-de-resposta-ao-sarampo-e-reforca-importancia-da-vacinacao\">Brasil mantém ações de resposta ao sarampo e reforça vacinação</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "15.0pt (20px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "#d19c02c6-78e3-4b3e-bcc8-512e5282c56b > .nitf-basic-tile.tile-content > .tile-subtitle",
+              "html": "<p class=\"tile-subtitle\">",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "#d19c02c6-78e3-4b3e-bcc8-512e5282c56b > .nitf-basic-tile.tile-content > h2 > a",
+              "html": "<a href=\"https://www.gov.br/saude/pt-br/assuntos/noticias-ms/2026/agosto/mortes-por-desnutricao-caem-75-7-na-terra-indigena-yanomami\">Mortes por desnutrição caem 75,7% na Terra Indígena Yanomami</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "15.0pt (20px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "tspan[y=\"18\"]",
+              "html": "<tspan class=\"a\" y=\"18\">Acesso à</tspan>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "8.3pt (11px)",
+                "fontWeight": "bold",
+                "messageKey": "imgNode",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "tspan[y=\"31\"]",
+              "html": "<tspan class=\"a\" x=\"47\" y=\"31\">Informação</tspan>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "8.3pt (11px)",
+                "fontWeight": "bold",
+                "messageKey": "imgNode",
+                "expectedContrastRatio": "4.5:1"
+              }
+            }
+          ],
+          "page_url": "https://www.gov.br/saude/pt-br",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-31T20:23:07.915958Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 13,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "O contraste insuficiente é a barreira de comunicação mais prevalente e atinge diretamente a população idosa usuária do SUS; sua persistência em portal público caracteriza descumprimento continuado do art. 63, caput, da LBI e do art. 47 do Decreto 5.296/2004."
+        },
+        {
+          "id": "0029963d-0356-42dc-a2ec-103113ec5ba4",
+          "rule_id": "probe.placeholder-como-rotulo",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "3.3.2"
+          ],
+          "summary": "1 campo(s) de formulário são identificados apenas pelo texto de placeholder.",
+          "description": "Estes campos não possuem <label>, aria-label nem aria-labelledby: sua única identificação é o placeholder, que desaparece assim que o usuário digita o primeiro caractere. Quem usa leitor de tela e retorna ao campo para conferir o que preencheu ouve apenas 'caixa de edição' e o valor digitado, sem saber se ali se pedia o CPF ou o Cartão Nacional de Saúde. O padrão também falha para pessoas com deficiência intelectual, que perdem a instrução ao começar a responder. Registre-se que a verificação automática do axe-core aceita o placeholder como nome acessível válido; esta sonda existe precisamente para cobrir essa lacuna.",
+          "remediation": "Associar label a todo campo; placeholder não substitui rótulo.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/labels-or-instructions.html",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "#searchtext-input",
+              "html": "<input class=\"aa-Input\" aria-autocomplete=\"both\" aria-labelledby=\"searchtext-label\" id=\"searchtext-input\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" enterkeyhint=\"search\" spellcheck=\"false\" placeholder=\"O que você procura?\" maxlength=\"512\" type=\"search\">",
+              "failure_summary": "<input> identificado apenas por placeholder='O que você procura?'.",
+              "target_frame": [],
+              "measured": {
+                "placeholder": "O que você procura?",
+                "name": null,
+                "type": "search",
+                "obrigatorio": false
+              }
+            }
+          ],
+          "page_url": "https://www.gov.br/saude/pt-br",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-31T20:23:08.111829Z",
+          "legal_risk_override": "alto",
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "lbi.art3.i"
+          ],
+          "legal_thesis": "Campo sem rótulo programático torna indeterminável o dado solicitado, inviabilizando o preenchimento autônomo (art. 3º, I, LBI)."
+        },
+        {
+          "id": "5f83ec11-8ab1-43e1-b9eb-fbff98b0e202",
+          "rule_id": "probe.data-cost",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "moderate",
+          "criteria": [],
+          "summary": "Um único acesso a esta página consome 5.49 MB, ou 0.054% da franquia mensal do plano de referência (1.6 centavo).",
+          "description": "A página impõe custo de dados ao usuário com plano limitado: peso de 5.49 MB, acima do limiar de 2.50 MB. O peso foi medido em bytes efetivamente transferidos, em contexto sem cache — o cenário do primeiro acesso e daquele que limpa dados do aparelho por falta de armazenamento. Consultada quatro vezes ao mês, frequência mínima plausível para acompanhar um agendamento ou um resultado de exame, esta página consome 0.21% da franquia (6.4 centavos) — e cada tentativa frustrada por barreira de acessibilidade soma-se a essa conta, de modo que as duas dimensões se agravam mutuamente.",
+          "remediation": "Reduzir o peso da página: comprimir e redimensionar imagens, servir formatos modernos, remover scripts de terceiros não essenciais ao serviço, adiar carregamento de recursos fora da área visível e priorizar HTML semântico sobre renderização integral por JavaScript.",
+          "help_url": null,
+          "affects": [
+            "baixa_conectividade"
+          ],
+          "nodes": [
+            {
+              "selector": "document",
+              "html": "",
+              "failure_summary": "peso de 5.49 MB, acima do limiar de 2.50 MB",
+              "target_frame": [],
+              "measured": {
+                "total_mb": 5.492,
+                "total_bytes": 5758791,
+                "request_count": 78,
+                "third_party_share": 0.1899,
+                "third_party_domains": [
+                  "browser-update.org",
+                  "cloudflare.com",
+                  "jsdelivr.net",
+                  "sistema.gov.br",
+                  "vlibras.gov.br"
+                ],
+                "bytes_by_type": {
+                  "document": 24809,
+                  "fetch": 1890,
+                  "font": 1465884,
+                  "image": 3264242,
+                  "script": 619833,
+                  "stylesheet": 382133
+                },
+                "cost_brl": 0.01609,
+                "franchise_share_pct": 0.0536,
+                "price_per_mb_brl": 0.0029296875,
+                "franchise_mb": 10240.0
+              }
+            }
+          ],
+          "page_url": "https://www.gov.br/saude/pt-br",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-31T20:23:08.117692Z",
+          "legal_risk_override": "moderado",
+          "extra_provisions": [
+            "cf.art196",
+            "lbi.art18",
+            "lei13460.art5",
+            "cf.art5.xiv"
+          ],
+          "legal_thesis_override": "O custo de dados exigido para acessar o serviço digital de saúde transfere ao cidadão um ônus econômico como condição de exercício de direito fundamental. Quando esse ônus recai desproporcionalmente sobre a população de menor renda — a mesma que depende exclusivamente do SUS — o acesso deixa de ser universal e igualitário, em desacordo com o art. 196 da CF/88 e com o dever de informação adequada do art. 18, § 4º da Lei 13.146/2015. A parcela do tráfego destinada a terceiros agrava a situação: o usuário custeia recursos que não lhe prestam o serviço público solicitado.",
+          "occurrences": 1,
+          "legal_risk": "moderado",
+          "legal_provisions": [
+            "cf.art196",
+            "lbi.art18",
+            "lei13460.art5",
+            "cf.art5.xiv"
+          ],
+          "legal_thesis": "O custo de dados exigido para acessar o serviço digital de saúde transfere ao cidadão um ônus econômico como condição de exercício de direito fundamental. Quando esse ônus recai desproporcionalmente sobre a população de menor renda — a mesma que depende exclusivamente do SUS — o acesso deixa de ser universal e igualitário, em desacordo com o art. 196 da CF/88 e com o dever de informação adequada do art. 18, § 4º da Lei 13.146/2015. A parcela do tráfego destinada a terceiros agrava a situação: o usuário custeia recursos que não lhe prestam o serviço público solicitado."
+        },
+        {
+          "id": "012c02aa-7773-482e-bcae-73afb20eade2",
+          "rule_id": "probe.readability",
+          "source": "heuristic",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [],
+          "summary": "Legibilidade do conteúdo principal em 0.0 pontos — faixa muito difícil (exige ensino superior).",
+          "description": "O texto principal apresenta média de 105.0 palavras por frase e 2.317 sílabas por palavra. Nessa faixa, a compreensão autônoma exige escolaridade acima da média da população que depende exclusivamente do SUS. A informação está publicada e tecnicamente disponível, mas o registro de linguagem opera como barreira de acesso — em especial para pessoas com deficiência intelectual, para quem o art. 3º, IV, 'd' da LBI expressamente reconhece a barreira na comunicação. Índices de legibilidade medem estrutura, não compreensão: este achado sinaliza revisão editorial e não constitui, por si só, violação de critério normativo.",
+          "remediation": "Revisar o conteúdo em linguagem simples: frases curtas, ordem direta, voz ativa, termos técnicos explicados na primeira ocorrência e uma ideia por parágrafo. Manter a versão formal como documento anexo quando houver exigência legal de redação técnica.",
+          "help_url": null,
+          "affects": [
+            "cognitiva_neurodivergencia",
+            "baixa_conectividade"
+          ],
+          "nodes": [
+            {
+              "selector": "main",
+              "html": "SAÚDE DA MULHER SUS oferece 100 mil teleatendimentos para mulheres em situação de violência e mães atípicas Saiba mais sobre SAÚDE DA MULHER CUIDADO ONCOLÓGICO SUS vai ofertar três novos medicamentos para o tratamento de câncer de pulmão Saiba mais sobre CUIDADO ONCOLÓGICO AGORA TEM ESPECIALISTAS Pa…",
+              "failure_summary": "Flesch adaptado = 0.0 (muito difícil (exige ensino superior)).",
+              "target_frame": [],
+              "measured": {
+                "index": 0.0,
+                "band": "muito difícil (exige ensino superior)",
+                "words": 315,
+                "sentences": 3,
+                "syllables": 730,
+                "words_per_sentence": 105.0,
+                "syllables_per_word": 2.317
+              }
+            }
+          ],
+          "page_url": "https://www.gov.br/saude/pt-br",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-31T20:23:08.120584Z",
+          "legal_risk_override": "moderado",
+          "extra_provisions": [
+            "lbi.art18",
+            "lai.art8.par3.viii",
+            "lei13460.art5"
+          ],
+          "legal_thesis_override": "A publicação de informação de saúde em registro linguístico inacessível à população destinatária esvazia materialmente o dever de oferta de comunicação e informação adequadas (art. 18, § 4º, IV, LBI) e o dever de transparência ativa (art. 8º, § 3º, LAI). A informação torna-se disponível sem se tornar acessível.",
+          "occurrences": 1,
+          "legal_risk": "moderado",
+          "legal_provisions": [
+            "lbi.art18",
+            "lai.art8.par3.viii",
+            "lei13460.art5"
+          ],
+          "legal_thesis": "A publicação de informação de saúde em registro linguístico inacessível à população destinatária esvazia materialmente o dever de oferta de comunicação e informação adequadas (art. 18, § 4º, IV, LBI) e o dever de transparência ativa (art. 8º, § 3º, LAI). A informação torna-se disponível sem se tornar acessível."
+        }
+      ],
+      "network": {
+        "total_bytes": 5758791,
+        "total_uncompressed_bytes": 0,
+        "request_count": 78,
+        "bytes_by_type": {
+          "document": 24809,
+          "fetch": 1890,
+          "font": 1465884,
+          "image": 3264242,
+          "script": 619833,
+          "stylesheet": 382133
+        },
+        "third_party_bytes": 1093703,
+        "third_party_domains": [
+          "browser-update.org",
+          "cloudflare.com",
+          "jsdelivr.net",
+          "sistema.gov.br",
+          "vlibras.gov.br"
+        ],
+        "dom_content_loaded_ms": 3504.600000000006,
+        "load_complete_ms": 4942.5,
+        "largest_contentful_paint_ms": null,
+        "blocked_requests": 6,
+        "total_mb": 5.492,
+        "third_party_share": 0.1899
+      },
+      "error": null,
+      "axe_version": "4.13.0",
+      "screenshot_path": "/home/runner/work/acessisaude-audit/acessisaude-audit/data/screenshots/www.gov.br__049346d966__desktop-1366.png",
+      "is_critical_path": false,
+      "duration_ms": 7946.087
+    },
+    {
+      "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z",
+      "final_url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z",
+      "status": "navigation_error",
+      "http_status": null,
+      "title": null,
+      "lang": null,
+      "viewport": {
+        "name": "mobile-320",
+        "width": 320,
+        "height": 640,
+        "device_scale_factor": 2.0,
+        "is_mobile": true,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; SM-A105M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+      },
+      "started_at": "2026-08-31T20:23:08.346473Z",
+      "finished_at": "2026-08-31T20:23:08.866369Z",
+      "findings": [],
+      "network": {
+        "total_bytes": 0,
+        "total_uncompressed_bytes": 0,
+        "request_count": 0,
+        "bytes_by_type": {},
+        "third_party_bytes": 0,
+        "third_party_domains": [],
+        "dom_content_loaded_ms": null,
+        "load_complete_ms": null,
+        "largest_contentful_paint_ms": null,
+        "blocked_requests": 1,
+        "total_mb": 0.0,
+        "third_party_share": 0.0
+      },
+      "error": "Page.goto: net::ERR_CONNECTION_RESET at https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z\nCall log:\n  - navigating to \"https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z\", waiting until \"domcontentloaded\"\n",
+      "axe_version": null,
+      "screenshot_path": null,
+      "is_critical_path": false,
+      "duration_ms": 519.8960000000001
+    },
+    {
+      "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z",
+      "final_url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Saúde de A a Z — Ministério da Saúde",
+      "lang": "pt-br",
+      "viewport": {
+        "name": "desktop-1366",
+        "width": 1366,
+        "height": 768,
+        "device_scale_factor": 1.0,
+        "is_mobile": false,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+      },
+      "started_at": "2026-08-31T20:23:08.873908Z",
+      "finished_at": "2026-08-31T20:23:18.180439Z",
+      "findings": [
+        {
+          "id": "5573890f-1f1a-48a0-a0ef-d0cd08fcb2f3",
+          "rule_id": "button-name",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "critical",
+          "criteria": [
+            "4.1.2"
+          ],
+          "summary": "Buttons must have discernible text",
+          "description": "Ensure buttons have discernible text",
+          "remediation": "Usar elementos nativos ou, quando inevitável, ARIA completo (role, nome acessível, estado) com teclado equivalente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/button-name?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "fala",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "['#barra-govbr', '.br-sign-in']",
+              "html": "<button class=\"br-sign-in small primary ml-2 cta svelte-qdqhy1\" type=\"button\"><i class=\"fas fa-user\" aria-hidden=\"true\"></i> <span class=\"login-text svelte-qdqhy1\"></span></button>",
+              "failure_summary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            }
+          ],
+          "page_url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-31T20:23:17.932957Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "critico",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "onu.art9"
+          ],
+          "legal_thesis": "Controle sem nome, função ou valor expostos simplesmente não existe para a tecnologia assistiva: o serviço é, para o usuário cego, inexistente. É a forma mais severa de barreira na informação do art. 3º, IV, 'd'."
+        },
+        {
+          "id": "7d292453-ae0e-438e-baea-62f74fc71e85",
+          "rule_id": "image-alt",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "critical",
+          "criteria": [
+            "1.1.1"
+          ],
+          "summary": "Images must have alternative text",
+          "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+          "remediation": "Prover atributo alt descritivo em imagens informativas e alt vazio em imagens decorativas; descrever gráficos e infográficos em texto adjacente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/image-alt?application=axeAPI",
+          "affects": [
+            "baixa_conectividade",
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "['#vlibras-access-wrapper', '#vlibras-popup']",
+              "html": "<img id=\"vlibras-popup\" src=\"https://vlibras.gov.br/app/assets/images/vlibras-popup.webp\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "['#vlibras-access-wrapper', '#vlibras-button > img']",
+              "html": "<img src=\"https://vlibras.gov.br/app/assets/images/vlibras-access.svg\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            }
+          ],
+          "page_url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-31T20:23:17.932999Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 2,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "A ausência de alternativa textual configura barreira na comunicação e na informação (art. 3º, IV, 'd', LBI): o conteúdo existe juridicamente como informação pública, mas não é recebível pelo usuário cego, esvaziando o dever de transparência ativa do art. 8º, § 3º, VIII da LAI."
+        },
+        {
+          "id": "f44fd8b6-b7e5-41d4-b099-8631adfacbe6",
+          "rule_id": "link-name",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "2.4.4",
+            "4.1.2"
+          ],
+          "summary": "Links must have discernible text",
+          "description": "Ensure links have discernible text",
+          "remediation": "Reescrever textos de link para que descrevam o destino sem depender do parágrafo circundante. Usar elementos nativos ou, quando inevitável, ARIA completo (role, nome acessível, estado) com teclado equivalente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/link-name?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "fala",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "#btn-ouvindo",
+              "html": "<a href=\"#\" id=\"btn-ouvindo\" class=\"btn-microfone ouvindo\">\n                <span class=\"fas fa-microphone\"></span>\n            </a>",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "#btn-nao-entendi",
+              "html": "<a href=\"#\" id=\"btn-nao-entendi\" class=\"btn-microfone nao-entendi\">\n                <span class=\"fas fa-microphone\"></span>\n            </a>",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": "#btn-fechar",
+              "html": "<a href=\"#\" id=\"btn-fechar\">\n                <span class=\"fas fa-times\"></span>\n            </a>",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            }
+          ],
+          "page_url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-31T20:23:17.933035Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 3,
+          "legal_risk": "critico",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "onu.art9"
+          ],
+          "legal_thesis": "Controle sem nome, função ou valor expostos simplesmente não existe para a tecnologia assistiva: o serviço é, para o usuário cego, inexistente. É a forma mais severa de barreira na informação do art. 3º, IV, 'd'."
+        },
+        {
+          "id": "777075c3-6199-49ac-b0a4-63eb5c35cc47",
+          "rule_id": "aria-prohibited-attr",
+          "source": "axe-core",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "4.1.2"
+          ],
+          "summary": "Elements must only use permitted ARIA attributes",
+          "description": "Ensure ARIA attributes are not prohibited for an element's role",
+          "remediation": "Usar elementos nativos ou, quando inevitável, ARIA completo (role, nome acessível, estado) com teclado equivalente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/aria-prohibited-attr?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "fala",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "#searchtext-label",
+              "html": "<label class=\"aa-Label\" aria-label=\"Submit\" for=\"searchtext-input\" id=\"searchtext-label\">",
+              "failure_summary": "Fix all of the following:\n  aria-label attribute is not well supported on a label with no valid role attribute.",
+              "target_frame": [],
+              "measured": {
+                "role": null,
+                "messageKey": "noRoleSingular"
+              }
+            }
+          ],
+          "page_url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-31T20:23:17.933066Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "critico",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "onu.art9"
+          ],
+          "legal_thesis": "Controle sem nome, função ou valor expostos simplesmente não existe para a tecnologia assistiva: o serviço é, para o usuário cego, inexistente. É a forma mais severa de barreira na informação do art. 3º, IV, 'd'."
+        },
+        {
+          "id": "f9be75ad-5737-4a8b-8319-480ae0412981",
+          "rule_id": "color-contrast",
+          "source": "axe-core",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "1.4.3"
+          ],
+          "summary": "Elements must meet minimum color contrast ratio thresholds",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "remediation": "Ajustar a paleta para razão mínima de 4.5:1 (texto normal) e 3:1 (texto grande), validando os tokens de design, não apenas as telas.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axeAPI",
+          "affects": [
+            "baixa_visao",
+            "cognitiva_neurodivergencia",
+            "visao_de_cores"
+          ],
+          "nodes": [
+            {
+              "selector": "['#barra-govbr', '.popup-login-overlay > div:nth-child(2)']",
+              "html": "<div>Clique em <span class=\"svelte-wsj7mr\">Entrar</span>\n\t\tpara acessar sua conta gov.br</div>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "9.8pt (13px)",
+                "fontWeight": "normal",
+                "messageKey": "elmPartiallyObscuring",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "tspan[y=\"18\"]",
+              "html": "<tspan class=\"a\" y=\"18\">Acesso à</tspan>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "8.3pt (11px)",
+                "fontWeight": "bold",
+                "messageKey": "imgNode",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "tspan[y=\"31\"]",
+              "html": "<tspan class=\"a\" x=\"47\" y=\"31\">Informação</tspan>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "8.3pt (11px)",
+                "fontWeight": "bold",
+                "messageKey": "imgNode",
+                "expectedContrastRatio": "4.5:1"
+              }
+            }
+          ],
+          "page_url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-31T20:23:17.933118Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 3,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "O contraste insuficiente é a barreira de comunicação mais prevalente e atinge diretamente a população idosa usuária do SUS; sua persistência em portal público caracteriza descumprimento continuado do art. 63, caput, da LBI e do art. 47 do Decreto 5.296/2004."
+        },
+        {
+          "id": "34add825-63d3-4673-8eca-6b0fa9b6fecd",
+          "rule_id": "probe.placeholder-como-rotulo",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "3.3.2"
+          ],
+          "summary": "1 campo(s) de formulário são identificados apenas pelo texto de placeholder.",
+          "description": "Estes campos não possuem <label>, aria-label nem aria-labelledby: sua única identificação é o placeholder, que desaparece assim que o usuário digita o primeiro caractere. Quem usa leitor de tela e retorna ao campo para conferir o que preencheu ouve apenas 'caixa de edição' e o valor digitado, sem saber se ali se pedia o CPF ou o Cartão Nacional de Saúde. O padrão também falha para pessoas com deficiência intelectual, que perdem a instrução ao começar a responder. Registre-se que a verificação automática do axe-core aceita o placeholder como nome acessível válido; esta sonda existe precisamente para cobrir essa lacuna.",
+          "remediation": "Associar label a todo campo; placeholder não substitui rótulo.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/labels-or-instructions.html",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "#searchtext-input",
+              "html": "<input class=\"aa-Input\" aria-autocomplete=\"both\" aria-labelledby=\"searchtext-label\" id=\"searchtext-input\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" enterkeyhint=\"search\" spellcheck=\"false\" placeholder=\"O que você procura?\" maxlength=\"512\" type=\"search\">",
+              "failure_summary": "<input> identificado apenas por placeholder='O que você procura?'.",
+              "target_frame": [],
+              "measured": {
+                "placeholder": "O que você procura?",
+                "name": null,
+                "type": "search",
+                "obrigatorio": false
+              }
+            }
+          ],
+          "page_url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-31T20:23:18.085186Z",
+          "legal_risk_override": "alto",
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "lbi.art3.i"
+          ],
+          "legal_thesis": "Campo sem rótulo programático torna indeterminável o dado solicitado, inviabilizando o preenchimento autônomo (art. 3º, I, LBI)."
+        },
+        {
+          "id": "ec5a083c-c96a-4d46-afe6-0030cd474795",
+          "rule_id": "probe.data-cost",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [],
+          "summary": "Um único acesso a esta página consome 1.33 MB, ou 0.013% da franquia mensal do plano de referência (0.4 centavo).",
+          "description": "A página impõe custo de dados ao usuário com plano limitado: 52% do tráfego dirigido a 5 domínio(s) de terceiros. O peso foi medido em bytes efetivamente transferidos, em contexto sem cache — o cenário do primeiro acesso e daquele que limpa dados do aparelho por falta de armazenamento. Consultada quatro vezes ao mês, frequência mínima plausível para acompanhar um agendamento ou um resultado de exame, esta página consome 0.05% da franquia (1.6 centavo) — e cada tentativa frustrada por barreira de acessibilidade soma-se a essa conta, de modo que as duas dimensões se agravam mutuamente.",
+          "remediation": "Reduzir o peso da página: comprimir e redimensionar imagens, servir formatos modernos, remover scripts de terceiros não essenciais ao serviço, adiar carregamento de recursos fora da área visível e priorizar HTML semântico sobre renderização integral por JavaScript.",
+          "help_url": null,
+          "affects": [
+            "baixa_conectividade"
+          ],
+          "nodes": [
+            {
+              "selector": "document",
+              "html": "",
+              "failure_summary": "52% do tráfego dirigido a 5 domínio(s) de terceiros",
+              "target_frame": [],
+              "measured": {
+                "total_mb": 1.334,
+                "total_bytes": 1399067,
+                "request_count": 57,
+                "third_party_share": 0.5229,
+                "third_party_domains": [
+                  "browser-update.org",
+                  "cloudflare.com",
+                  "jsdelivr.net",
+                  "sistema.gov.br",
+                  "vlibras.gov.br"
+                ],
+                "bytes_by_type": {
+                  "document": 21118,
+                  "fetch": 1890,
+                  "font": 567672,
+                  "image": 71498,
+                  "script": 595523,
+                  "stylesheet": 141366
+                },
+                "cost_brl": 0.003908,
+                "franchise_share_pct": 0.013,
+                "price_per_mb_brl": 0.0029296875,
+                "franchise_mb": 10240.0
+              }
+            }
+          ],
+          "page_url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-08-31T20:23:18.092200Z",
+          "legal_risk_override": "moderado",
+          "extra_provisions": [
+            "cf.art196",
+            "lbi.art18",
+            "lei13460.art5",
+            "cf.art5.xiv"
+          ],
+          "legal_thesis_override": "O custo de dados exigido para acessar o serviço digital de saúde transfere ao cidadão um ônus econômico como condição de exercício de direito fundamental. Quando esse ônus recai desproporcionalmente sobre a população de menor renda — a mesma que depende exclusivamente do SUS — o acesso deixa de ser universal e igualitário, em desacordo com o art. 196 da CF/88 e com o dever de informação adequada do art. 18, § 4º da Lei 13.146/2015. A parcela do tráfego destinada a terceiros agrava a situação: o usuário custeia recursos que não lhe prestam o serviço público solicitado.",
+          "occurrences": 1,
+          "legal_risk": "moderado",
+          "legal_provisions": [
+            "cf.art196",
+            "lbi.art18",
+            "lei13460.art5",
+            "cf.art5.xiv"
+          ],
+          "legal_thesis": "O custo de dados exigido para acessar o serviço digital de saúde transfere ao cidadão um ônus econômico como condição de exercício de direito fundamental. Quando esse ônus recai desproporcionalmente sobre a população de menor renda — a mesma que depende exclusivamente do SUS — o acesso deixa de ser universal e igualitário, em desacordo com o art. 196 da CF/88 e com o dever de informação adequada do art. 18, § 4º da Lei 13.146/2015. A parcela do tráfego destinada a terceiros agrava a situação: o usuário custeia recursos que não lhe prestam o serviço público solicitado."
+        }
+      ],
+      "network": {
+        "total_bytes": 1399067,
+        "total_uncompressed_bytes": 0,
+        "request_count": 57,
+        "bytes_by_type": {
+          "document": 21118,
+          "fetch": 1890,
+          "font": 567672,
+          "image": 71498,
+          "script": 595523,
+          "stylesheet": 141366
+        },
+        "third_party_bytes": 731588,
+        "third_party_domains": [
+          "browser-update.org",
+          "cloudflare.com",
+          "jsdelivr.net",
+          "sistema.gov.br",
+          "vlibras.gov.br"
+        ],
+        "dom_content_loaded_ms": 3034.3000000000175,
+        "load_complete_ms": 3460.2000000000116,
+        "largest_contentful_paint_ms": null,
+        "blocked_requests": 6,
+        "total_mb": 1.334,
+        "third_party_share": 0.5229
+      },
+      "error": null,
+      "axe_version": "4.13.0",
+      "screenshot_path": "/home/runner/work/acessisaude-audit/acessisaude-audit/data/screenshots/www.gov.br__b943b4bc82__desktop-1366.png",
+      "is_critical_path": false,
+      "duration_ms": 9306.530999999999
+    },
+    {
+      "url": "https://www.gov.br/saude/pt-br/composicao/saes",
+      "final_url": "https://www.gov.br/saude/pt-br/composicao/saes",
+      "status": "navigation_error",
+      "http_status": null,
+      "title": null,
+      "lang": null,
+      "viewport": {
+        "name": "mobile-320",
+        "width": 320,
+        "height": 640,
+        "device_scale_factor": 2.0,
+        "is_mobile": true,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; SM-A105M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+      },
+      "started_at": "2026-08-31T20:23:18.185561Z",
+      "finished_at": "2026-08-31T20:23:18.703563Z",
+      "findings": [],
+      "network": {
+        "total_bytes": 0,
+        "total_uncompressed_bytes": 0,
+        "request_count": 0,
+        "bytes_by_type": {},
+        "third_party_bytes": 0,
+        "third_party_domains": [],
+        "dom_content_loaded_ms": null,
+        "load_complete_ms": null,
+        "largest_contentful_paint_ms": null,
+        "blocked_requests": 1,
+        "total_mb": 0.0,
+        "third_party_share": 0.0
+      },
+      "error": "Page.goto: net::ERR_CONNECTION_RESET at https://www.gov.br/saude/pt-br/composicao/saes\nCall log:\n  - navigating to \"https://www.gov.br/saude/pt-br/composicao/saes\", waiting until \"domcontentloaded\"\n",
+      "axe_version": null,
+      "screenshot_path": null,
+      "is_critical_path": false,
+      "duration_ms": 518.002
+    },
+    {
+      "url": "https://www.gov.br/saude/pt-br/composicao/saes",
+      "final_url": "https://www.gov.br/saude/pt-br/composicao/saes",
+      "status": "navigation_error",
+      "http_status": null,
+      "title": null,
+      "lang": null,
+      "viewport": {
+        "name": "desktop-1366",
+        "width": 1366,
+        "height": 768,
+        "device_scale_factor": 1.0,
+        "is_mobile": false,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+      },
+      "started_at": "2026-08-31T20:23:18.711133Z",
+      "finished_at": "2026-08-31T20:23:20.713192Z",
+      "findings": [],
+      "network": {
+        "total_bytes": 0,
+        "total_uncompressed_bytes": 0,
+        "request_count": 0,
+        "bytes_by_type": {},
+        "third_party_bytes": 0,
+        "third_party_domains": [],
+        "dom_content_loaded_ms": null,
+        "load_complete_ms": null,
+        "largest_contentful_paint_ms": null,
+        "blocked_requests": 1,
+        "total_mb": 0.0,
+        "third_party_share": 0.0
+      },
+      "error": "Page.goto: net::ERR_CONNECTION_RESET at https://www.gov.br/saude/pt-br/composicao/saes\nCall log:\n  - navigating to \"https://www.gov.br/saude/pt-br/composicao/saes\", waiting until \"domcontentloaded\"\n",
+      "axe_version": null,
+      "screenshot_path": null,
+      "is_critical_path": false,
+      "duration_ms": 2002.059
+    }
+  ],
+  "engine_version": "0.1.0",
+  "axe_version": "4.13.0",
+  "browser": "chromium 151.0.7922.34",
+  "config_snapshot": {
+    "browser": "chromium",
+    "headless": true,
+    "navigation_timeout_ms": 30000,
+    "settle_delay_ms": 1500,
+    "locale": "pt-BR",
+    "timezone_id": "America/Sao_Paulo",
+    "max_pages_per_target": 25,
+    "max_crawl_depth": 2,
+    "request_delay_ms": 2000,
+    "concurrency": 1,
+    "respect_robots_txt": true,
+    "robots_override_reason": "",
+    "axe_tags": [
+      "wcag2a",
+      "wcag2aa",
+      "wcag21a",
+      "wcag21aa"
+    ],
+    "viewports": [
+      {
+        "name": "mobile-320",
+        "width": 320,
+        "height": 640,
+        "device_scale_factor": 2.0,
+        "is_mobile": true,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; SM-A105M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+      },
+      {
+        "name": "desktop-1366",
+        "width": 1366,
+        "height": 768,
+        "device_scale_factor": 1.0,
+        "is_mobile": false,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+      }
+    ],
+    "scoring": {
+      "friction_kappa": 150.0,
+      "critical_path_multiplier": 1.5,
+      "price_per_mb_brl": 0.0029296875,
+      "franchise_mb": 10240.0,
+      "heavy_page_mb": 2.5
+    },
+    "random_seed": 42,
+    "plan": {
+      "total_tasks": 6,
+      "unique_urls": 3,
+      "discover_enabled": false,
+      "declared_gaps": []
+    },
+    "probes": [
+      "probe.page-language",
+      "probe.landmarks",
+      "probe.heading-structure",
+      "probe.id-duplicado",
+      "probe.non-interactive-control",
+      "probe.positive-tabindex",
+      "probe.focus-visible",
+      "probe.placeholder-como-rotulo",
+      "probe.erro-sem-mensagem",
+      "probe.reflow-320",
+      "probe.zoom-lock",
+      "probe.captions",
+      "probe.autoplay",
+      "probe.meta-refresh",
+      "probe.data-cost",
+      "probe.readability"
+    ]
+  },
+  "errors": [],
+  "page_count": 6,
+  "violation_count": 15,
+  "occurrence_count": 30
+}
