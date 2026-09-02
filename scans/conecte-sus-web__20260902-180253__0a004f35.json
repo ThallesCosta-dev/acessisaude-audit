@@ -1,0 +1,175 @@
+{
+  "id": "0a004f35-8d5f-4098-a688-04b993db5c5e",
+  "schema_version": "1.0.0",
+  "target_id": "conecte-sus-web",
+  "target_name": "Meu SUS Digital (Conecte SUS) — versão web",
+  "base_url": "https://meususdigital.saude.gov.br",
+  "status": "partial",
+  "started_at": "2026-09-02T18:02:53.130914Z",
+  "finished_at": "2026-09-02T18:02:59.431743Z",
+  "pages": [
+    {
+      "url": "https://meususdigital.saude.gov.br/",
+      "final_url": "https://meususdigital.saude.gov.br/",
+      "status": "http_error",
+      "http_status": 403,
+      "title": null,
+      "lang": null,
+      "viewport": {
+        "name": "mobile-320",
+        "width": 320,
+        "height": 640,
+        "device_scale_factor": 2.0,
+        "is_mobile": true,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; SM-A105M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+      },
+      "started_at": "2026-09-02T18:02:53.514102Z",
+      "finished_at": "2026-09-02T18:02:56.944389Z",
+      "findings": [],
+      "network": {
+        "total_bytes": 591,
+        "total_uncompressed_bytes": 0,
+        "request_count": 1,
+        "bytes_by_type": {
+          "document": 591
+        },
+        "third_party_bytes": 0,
+        "third_party_domains": [],
+        "dom_content_loaded_ms": null,
+        "load_complete_ms": null,
+        "largest_contentful_paint_ms": null,
+        "blocked_requests": 0,
+        "total_mb": 0.001,
+        "third_party_share": 0.0
+      },
+      "error": "HTTP 403",
+      "axe_version": null,
+      "screenshot_path": null,
+      "is_critical_path": true,
+      "duration_ms": 3430.287
+    },
+    {
+      "url": "https://meususdigital.saude.gov.br/",
+      "final_url": "https://meususdigital.saude.gov.br/",
+      "status": "http_error",
+      "http_status": 403,
+      "title": null,
+      "lang": null,
+      "viewport": {
+        "name": "desktop-1366",
+        "width": 1366,
+        "height": 768,
+        "device_scale_factor": 1.0,
+        "is_mobile": false,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+      },
+      "started_at": "2026-09-02T18:02:56.951617Z",
+      "finished_at": "2026-09-02T18:02:59.396133Z",
+      "findings": [],
+      "network": {
+        "total_bytes": 591,
+        "total_uncompressed_bytes": 0,
+        "request_count": 1,
+        "bytes_by_type": {
+          "document": 591
+        },
+        "third_party_bytes": 0,
+        "third_party_domains": [],
+        "dom_content_loaded_ms": null,
+        "load_complete_ms": null,
+        "largest_contentful_paint_ms": null,
+        "blocked_requests": 0,
+        "total_mb": 0.001,
+        "third_party_share": 0.0
+      },
+      "error": "HTTP 403",
+      "axe_version": null,
+      "screenshot_path": null,
+      "is_critical_path": true,
+      "duration_ms": 2444.516
+    }
+  ],
+  "engine_version": "0.1.0",
+  "axe_version": null,
+  "browser": "chromium 151.0.7922.34",
+  "config_snapshot": {
+    "browser": "chromium",
+    "headless": true,
+    "navigation_timeout_ms": 30000,
+    "settle_delay_ms": 1500,
+    "locale": "pt-BR",
+    "timezone_id": "America/Sao_Paulo",
+    "max_pages_per_target": 25,
+    "max_crawl_depth": 2,
+    "request_delay_ms": 2000,
+    "concurrency": 1,
+    "respect_robots_txt": true,
+    "robots_override_reason": "",
+    "axe_tags": [
+      "wcag2a",
+      "wcag2aa",
+      "wcag21a",
+      "wcag21aa"
+    ],
+    "viewports": [
+      {
+        "name": "mobile-320",
+        "width": 320,
+        "height": 640,
+        "device_scale_factor": 2.0,
+        "is_mobile": true,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; SM-A105M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+      },
+      {
+        "name": "desktop-1366",
+        "width": 1366,
+        "height": 768,
+        "device_scale_factor": 1.0,
+        "is_mobile": false,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+      }
+    ],
+    "scoring": {
+      "friction_kappa": 150.0,
+      "critical_path_multiplier": 1.5,
+      "price_per_mb_brl": 0.0029296875,
+      "franchise_mb": 10240.0,
+      "heavy_page_mb": 2.5
+    },
+    "random_seed": 42,
+    "plan": {
+      "total_tasks": 2,
+      "unique_urls": 1,
+      "discover_enabled": false,
+      "declared_gaps": [
+        {
+          "url": "https://meususdigital.saude.gov.br/login",
+          "label": "Autenticação gov.br",
+          "motivo": "Excluída da varredura. A área autenticada concentra as telas de maior risco (resultado de exame, carteira de vacinação) e sua ausência é uma limitação declarada do estudo — não uma omissão."
+        }
+      ]
+    },
+    "probes": [
+      "probe.page-language",
+      "probe.landmarks",
+      "probe.heading-structure",
+      "probe.id-duplicado",
+      "probe.non-interactive-control",
+      "probe.positive-tabindex",
+      "probe.focus-visible",
+      "probe.placeholder-como-rotulo",
+      "probe.erro-sem-mensagem",
+      "probe.reflow-320",
+      "probe.zoom-lock",
+      "probe.captions",
+      "probe.autoplay",
+      "probe.meta-refresh",
+      "probe.data-cost",
+      "probe.readability"
+    ]
+  },
+  "errors": [],
+  "page_count": 2,
+  "violation_count": 0,
+  "occurrence_count": 0
+}
