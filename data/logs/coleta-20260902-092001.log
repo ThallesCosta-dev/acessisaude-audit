@@ -1,0 +1,458 @@
+﻿**********************
+Início da transcrição do Windows PowerShell
+Hora de início: 20260902092001
+Nome de Usuário: DESKTOP-NKQNLBA\Thalles
+Executar como Usuário: DESKTOP-NKQNLBA\Thalles
+Nome da Configuração: 
+Computador: DESKTOP-NKQNLBA (Microsoft Windows NT 10.0.19043.0)
+Aplicativo Host: powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\Users\Thalles\Desktop\Projetos\AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de Acessibilidade Web (WCAGLBI) para Plataformas Públicas de Saúde\scripts\coleta-diaria.ps1
+ID do Processo: 15844
+PSVersion: 5.1.19041.610
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.610
+BuildVersion: 10.0.19041.610
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+[09:20:01] Coleta diaria — posicao de rede: residencial, Brasil
+[09:20:01] Registro: C:\Users\Thalles\Desktop\Projetos\AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de Acessibilidade Web (WCAGLBI) para Plataformas Públicas de Saúde\data\logs\coleta-20260902-092001.log
+[09:20:01] Subindo o servidor do conjunto de validacao...
+[09:20:02] Varrendo o conjunto de validacao...
+┌───────────────────────────────────────────────────── Varredura ─────────────────────────────────────────────────────┐
+│ Conjunto de validação sintético (golden set)                                                                        │
+│ http://127.0.0.1:8080                                                                                               │
+│                                                                                                                     │
+│ Páginas auditáveis: 5                                                                                               │
+│ Lacunas declaradas (exigem autenticação): 0                                                                         │
+│ Perfis: mobile-320, desktop-1366                                                                                    │
+│ Intervalo entre requisições: 2000 ms                                                                                │
+│ robots.txt: respeitado                                                                                              │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+⠋ Auditando… ----------------------------------------  12:20:04 INFO    acessisaude_audit.auditor.engine       varredura
+ iniciada  {'alvo': 'fixtures-local', 'tarefas': 10, 'urls': 5, 'lacunas_declaradas': 0}
+⠏ Auditando… ----------------------------------------  12:20:05 INFO    acessisaude_audit.auditor.browser      navegador
+ iniciado  {'browser': 'chromium 151.0.7922.34'}
+⠦12:20:05 INFO    acessisaude_audit.auditor.crawler      robots.txt indisponível — coleta permitida  {'origem': 'http://
+127.0.0.1:8080', 'http': 404}
+⠇ http://127.0.0.1:8080/pages/pagina-pesada.html ------------------------------------ ---  90%12:20:53 INFO    acessisau
+de_audit.auditor.browser      navegador encerrado
+12:20:53 INFO    acessisaude_audit.auditor.engine       varredura concluída  {'alvo': 'fixtures-local', 'status': 'compl
+eted', 'paginas': 10, 'violacoes': 50, 'perda': 0.0}
+  http://127.0.0.1:8080/pages/pagina-pesada.html ---------------------------------------- 100%
+┌───────────────────────────────────────────────── Barreira absoluta ─────────────────────────────────────────────────┐
+│ Foram detectadas violações de risco jurídico crítico: barreiras que impedem completamente o uso por um grupo        │
+│ identificável, sem rota alternativa. Os demais índices descrevem a dificuldade de um serviço que, para essas        │
+│ pessoas, está indisponível.                                                                                         │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+                                          Índices agregados
+┌──────────────────────────┬─────────────┬───────────────────────────────────────────────────────────┐
+│ indicador                │       valor │ leitura                                                   │
+├──────────────────────────┼─────────────┼───────────────────────────────────────────────────────────┤
+│ ICA — Conformidade       │        30.8 │ 0–100, maior é melhor                                     │
+│ IAN — Atrito             │        96.6 │ 0–100, menor é melhor                                     │
+│ IEJ — Exposição jurídica │        40.0 │ 0–100, menor é melhor                                     │
+│ Violações                │          50 │ 119 ocorrências                                           │
+│ Revisão humana           │          21 │ achados indeterminados                                    │
+│ Cobertura                │         54% │ 27/50 critérios                                           │
+│ Perda de páginas         │        0.0% │ erros de navegação                                        │
+│ Peso médio               │     0.69 MB │ 0,2 centavo por acesso, 0.007% da franquia mensal         │
+│ Custo da jornada         │ 0,8 centavo │ 4 acessos/mês · 0.03% da franquia                         │
+│ Tráfego de terceiros     │         22% │ custo transferido ao usuário sem contrapartida no serviço │
+└──────────────────────────┴─────────────┴───────────────────────────────────────────────────────────┘
+  Quem é excluído (ocorrências por grupo)
+┌────────────────────────────┬─────────────┐
+│ grupo                      │ ocorrências │
+├────────────────────────────┼─────────────┤
+│ cognitiva_neurodivergencia │         107 │
+│ baixa_visao                │          91 │
+│ motora                     │          69 │
+│ cegueira                   │          44 │
+│ visao_de_cores             │          16 │
+│ baixa_conectividade        │          10 │
+│ fala                       │           4 │
+│ surdez                     │           2 │
+└────────────────────────────┴─────────────┘
+A verificação automática cobre parte dos critérios A/AA. Ausência de achado não equivale a conformidade.
+12:20:53 INFO    acessisaude_audit.persistence.repositories varredura gravada em disco  {'arquivo': 'C:\\Users\\Thalles\
+\Desktop\\Projetos\\AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de Acessibilidade Web (WCAGLBI) par
+a Plataformas Públicas de Saúde\\data\\scans\\fixtures-local__20260902-122004__e8936e22.json', 'bytes': 244967}
+JSON: C:\Users\Thalles\Desktop\Projetos\AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de
+Acessibilidade Web (WCAGLBI) para Plataformas Públicas de
+Saúde\data\scans\fixtures-local__20260902-122004__e8936e22.json
+12:20:53 INFO    acessisaude_audit.persistence.database esquema do banco verificado  {'url': 'sqlite:///C:/Users/Thalles
+/Desktop/Projetos/AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de Acessibilidade Web (WCAGLBI) para
+Plataformas Públicas de Saúde/data/acessisaude.sqlite'}
+12:20:53 INFO    acessisaude_audit.persistence.repositories varredura indexada  {'scan': 'e8936e22-8523-4bc3-aac1-731907
+8a095b', 'alvo': 'fixtures-local', 'observado': True, 'ica': 30.82, 'ian': 96.64}
+Banco: sqlite:///C:/Users/Thalles/Desktop/Projetos/AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de
+Acessibilidade Web (WCAGLBI) para Plataformas Públicas de Saúde/data/acessisaude.sqlite
+[09:20:53] Aferindo o instrumento...
+[aferição] Aprovado — fixtures-local__20260902-122004__e8936e22.json
+[09:20:53] Afericao aprovada.
+[09:20:53] Servidor de fixtures encerrado.
+[09:20:54] Alvos: conecte-sus-web gov-br-saude ses-rj sms-rio carioca-rio-saude
+[09:20:54] --- conecte-sus-web ---
+┌───────────────────────────────────────────────────── Varredura ─────────────────────────────────────────────────────┐
+│ Meu SUS Digital (Conecte SUS) — versão web                                                                          │
+│ https://meususdigital.saude.gov.br                                                                                  │
+│                                                                                                                     │
+│ Páginas auditáveis: 1                                                                                               │
+│ Lacunas declaradas (exigem autenticação): 1                                                                         │
+│ Perfis: mobile-320, desktop-1366                                                                                    │
+│ Intervalo entre requisições: 2000 ms                                                                                │
+│ robots.txt: respeitado                                                                                              │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+⠋ Auditando… ----------------------------------------  12:20:55 INFO    acessisaude_audit.auditor.engine       varredura
+ iniciada  {'alvo': 'conecte-sus-web', 'tarefas': 2, 'urls': 1, 'lacunas_declaradas': 1}
+⠧ Auditando… ----------------------------------------  12:20:56 INFO    acessisaude_audit.auditor.browser      navegador
+ iniciado  {'browser': 'chromium 151.0.7922.34'}
+⠦ Auditando… ----------------------------------------  12:20:57 INFO    acessisaude_audit.auditor.crawler      robots.tx
+t carregado  {'origem': 'https://meususdigital.saude.gov.br'}
+  https://meususdigital.saude.gov.br/ ---------------------------------------- 100%12:21:15 INFO    acessisaude_audit.au
+ditor.browser      navegador encerrado
+12:21:15 INFO    acessisaude_audit.auditor.engine       varredura concluída  {'alvo': 'conecte-sus-web', 'status': 'comp
+leted', 'paginas': 2, 'violacoes': 13, 'perda': 0.0}
+  https://meususdigital.saude.gov.br/ ---------------------------------------- 100%
+┌───────────────────────────────────────────────── Barreira absoluta ─────────────────────────────────────────────────┐
+│ Foram detectadas violações de risco jurídico crítico: barreiras que impedem completamente o uso por um grupo        │
+│ identificável, sem rota alternativa. Os demais índices descrevem a dificuldade de um serviço que, para essas        │
+│ pessoas, está indisponível.                                                                                         │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+                                        Índices agregados
+┌──────────────────────────┬─────────┬───────────────────────────────────────────────────────────┐
+│ indicador                │   valor │ leitura                                                   │
+├──────────────────────────┼─────────┼───────────────────────────────────────────────────────────┤
+│ ICA — Conformidade       │    72.6 │ 0–100, maior é melhor                                     │
+│ IAN — Atrito             │    99.8 │ 0–100, menor é melhor                                     │
+│ IEJ — Exposição jurídica │    58.7 │ 0–100, menor é melhor                                     │
+│ Violações                │      13 │ 37 ocorrências                                            │
+│ Revisão humana           │       3 │ achados indeterminados                                    │
+│ Cobertura                │     54% │ 27/50 critérios                                           │
+│ Perda de páginas         │    0.0% │ erros de navegação                                        │
+│ Peso médio               │ 7.29 MB │ R$ 0,02 por acesso, 0.071% da franquia mensal             │
+│ Custo da jornada         │ R$ 0,09 │ 4 acessos/mês · 0.28% da franquia                         │
+│ Tráfego de terceiros     │      4% │ custo transferido ao usuário sem contrapartida no serviço │
+└──────────────────────────┴─────────┴───────────────────────────────────────────────────────────┘
+  Quem é excluído (ocorrências por grupo)
+┌────────────────────────────┬─────────────┐
+│ grupo                      │ ocorrências │
+├────────────────────────────┼─────────────┤
+│ cegueira                   │          31 │
+│ baixa_visao                │          21 │
+│ cognitiva_neurodivergencia │          21 │
+│ baixa_conectividade        │          17 │
+│ fala                       │          14 │
+│ motora                     │          14 │
+└────────────────────────────┴─────────────┘
+A verificação automática cobre parte dos critérios A/AA. Ausência de achado não equivale a conformidade.
+12:21:15 INFO    acessisaude_audit.persistence.repositories varredura gravada em disco  {'arquivo': 'C:\\Users\\Thalles\
+\Desktop\\Projetos\\AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de Acessibilidade Web (WCAGLBI) par
+a Plataformas Públicas de Saúde\\data\\scans\\conecte-sus-web__20260902-122055__924519b5.json', 'bytes': 75981}
+JSON: C:\Users\Thalles\Desktop\Projetos\AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de
+Acessibilidade Web (WCAGLBI) para Plataformas Públicas de
+Saúde\data\scans\conecte-sus-web__20260902-122055__924519b5.json
+12:21:15 INFO    acessisaude_audit.persistence.database esquema do banco verificado  {'url': 'sqlite:///C:/Users/Thalles
+/Desktop/Projetos/AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de Acessibilidade Web (WCAGLBI) para
+Plataformas Públicas de Saúde/data/acessisaude.sqlite'}
+12:21:15 INFO    acessisaude_audit.persistence.repositories varredura indexada  {'scan': '924519b5-5f67-4a58-a6ad-d59b9d
+ab28cb', 'alvo': 'conecte-sus-web', 'observado': True, 'ica': 72.6, 'ian': 99.85}
+Banco: sqlite:///C:/Users/Thalles/Desktop/Projetos/AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de
+Acessibilidade Web (WCAGLBI) para Plataformas Públicas de Saúde/data/acessisaude.sqlite
+[09:21:15] --- gov-br-saude ---
+┌───────────────────────────────────────────────────── Varredura ─────────────────────────────────────────────────────┐
+│ Portal gov.br — área de Saúde                                                                                       │
+│ https://www.gov.br/saude/pt-br                                                                                      │
+│                                                                                                                     │
+│ Páginas auditáveis: 3                                                                                               │
+│ Lacunas declaradas (exigem autenticação): 0                                                                         │
+│ Perfis: mobile-320, desktop-1366                                                                                    │
+│ Intervalo entre requisições: 2000 ms                                                                                │
+│ robots.txt: respeitado                                                                                              │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+⠋ Auditando… ----------------------------------------  12:21:16 INFO    acessisaude_audit.auditor.engine       varredura
+ iniciada  {'alvo': 'gov-br-saude', 'tarefas': 6, 'urls': 3, 'lacunas_declaradas': 0}
+⠧ Auditando… ----------------------------------------  12:21:17 INFO    acessisaude_audit.auditor.browser      navegador
+ iniciado  {'browser': 'chromium 151.0.7922.34'}
+⠦ Auditando… -------------------------12:21:18 INFO    acessisaude_audit.auditor.crawler      robots.txt carregado  {'or
+igem': 'https://www.gov.br'}
+⠏ https://www.gov.br/saude/pt-br/composicao/saes --------------------------------- ------  83%12:21:48 INFO    acessisau
+de_audit.auditor.browser      navegador encerrado
+12:21:48 INFO    acessisaude_audit.auditor.engine       varredura concluída  {'alvo': 'gov-br-saude', 'status': 'partial
+', 'paginas': 6, 'violacoes': 22, 'perda': 0.1667}
+  https://www.gov.br/saude/pt-br/composicao/saes ---------------------------------------- 100%
+┌───────────────────────────────────────────────── Barreira absoluta ─────────────────────────────────────────────────┐
+│ Foram detectadas violações de risco jurídico crítico: barreiras que impedem completamente o uso por um grupo        │
+│ identificável, sem rota alternativa. Os demais índices descrevem a dificuldade de um serviço que, para essas        │
+│ pessoas, está indisponível.                                                                                         │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+                                        Índices agregados
+┌──────────────────────────┬─────────┬───────────────────────────────────────────────────────────┐
+│ indicador                │   valor │ leitura                                                   │
+├──────────────────────────┼─────────┼───────────────────────────────────────────────────────────┤
+│ ICA — Conformidade       │    80.1 │ 0–100, maior é melhor                                     │
+│ IAN — Atrito             │    91.4 │ 0–100, menor é melhor                                     │
+│ IEJ — Exposição jurídica │    26.7 │ 0–100, menor é melhor                                     │
+│ Violações                │      22 │ 37 ocorrências                                            │
+│ Revisão humana           │      12 │ achados indeterminados                                    │
+│ Cobertura                │     54% │ 27/50 critérios                                           │
+│ Perda de páginas         │   16.7% │ erros de navegação                                        │
+│ Peso médio               │ 4.07 MB │ R$ 0,01 por acesso, 0.040% da franquia mensal             │
+│ Custo da jornada         │ R$ 0,05 │ 4 acessos/mês · 0.16% da franquia                         │
+│ Tráfego de terceiros     │     26% │ custo transferido ao usuário sem contrapartida no serviço │
+└──────────────────────────┴─────────┴───────────────────────────────────────────────────────────┘
+  Quem é excluído (ocorrências por grupo)
+┌────────────────────────────┬─────────────┐
+│ grupo                      │ ocorrências │
+├────────────────────────────┼─────────────┤
+│ cegueira                   │          32 │
+│ cognitiva_neurodivergencia │          27 │
+│ fala                       │          17 │
+│ motora                     │          17 │
+│ baixa_conectividade        │          15 │
+│ baixa_visao                │          15 │
+└────────────────────────────┴─────────────┘
+A verificação automática cobre parte dos critérios A/AA. Ausência de achado não equivale a conformidade.
+12:21:48 INFO    acessisaude_audit.persistence.repositories varredura gravada em disco  {'arquivo': 'C:\\Users\\Thalles\
+\Desktop\\Projetos\\AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de Acessibilidade Web (WCAGLBI) par
+a Plataformas Públicas de Saúde\\data\\scans\\gov-br-saude__20260902-122116__c44ae46b.json', 'bytes': 164323}
+JSON: C:\Users\Thalles\Desktop\Projetos\AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de
+Acessibilidade Web (WCAGLBI) para Plataformas Públicas de Saúde\data\scans\gov-br-saude__20260902-122116__c44ae46b.json
+12:21:48 INFO    acessisaude_audit.persistence.database esquema do banco verificado  {'url': 'sqlite:///C:/Users/Thalles
+/Desktop/Projetos/AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de Acessibilidade Web (WCAGLBI) para
+Plataformas Públicas de Saúde/data/acessisaude.sqlite'}
+12:21:48 INFO    acessisaude_audit.persistence.repositories varredura indexada  {'scan': 'c44ae46b-413c-4c19-a3f0-aeb911
+c557b8', 'alvo': 'gov-br-saude', 'observado': True, 'ica': 80.14, 'ian': 91.41}
+Banco: sqlite:///C:/Users/Thalles/Desktop/Projetos/AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de
+Acessibilidade Web (WCAGLBI) para Plataformas Públicas de Saúde/data/acessisaude.sqlite
+[09:21:48] --- ses-rj ---
+┌───────────────────────────────────────────────────── Varredura ─────────────────────────────────────────────────────┐
+│ Secretaria de Estado de Saúde do Rio de Janeiro                                                                     │
+│ https://www.rj.gov.br/saude                                                                                         │
+│                                                                                                                     │
+│ Páginas auditáveis: 3                                                                                               │
+│ Lacunas declaradas (exigem autenticação): 0                                                                         │
+│ Perfis: mobile-320, desktop-1366                                                                                    │
+│ Intervalo entre requisições: 2000 ms                                                                                │
+│ robots.txt: respeitado                                                                                              │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+⠋ Auditando… ----------------------------------------  12:21:49 INFO    acessisaude_audit.auditor.engine       varredura
+ iniciada  {'alvo': 'ses-rj', 'tarefas': 6, 'urls': 3, 'lacunas_declaradas': 0}
+⠧ Auditando… ----------------------------------------  12:21:50 INFO    acessisaude_audit.auditor.browser      navegador
+ iniciado  {'browser': 'chromium 151.0.7922.34'}
+⠦ Auditando… ----------------------------------------  12:21:51 INFO    acessisaude_audit.auditor.crawler      robots.tx
+t carregado  {'origem': 'https://www.rj.gov.br'}
+⠹ https://www.rj.gov.br/saude ------------- --------------------------  33%12:23:00 INFO    acessisaude_audit.auditor.cr
+awler      robots.txt indisponível — coleta permitida  {'origem': 'https://www.saude.rj.gov.br', 'http': 404}
+  https://www.saude.rj.gov.br/laudos ---------------------------------------- 100%12:24:16 INFO    acessisaude_audit.aud
+itor.browser      navegador encerrado
+12:24:16 INFO    acessisaude_audit.auditor.engine       varredura concluída  {'alvo': 'ses-rj', 'status': 'completed', '
+paginas': 6, 'violacoes': 60, 'perda': 0.0}
+  https://www.saude.rj.gov.br/laudos ---------------------------------------- 100%
+┌───────────────────────────────────────────────── Barreira absoluta ─────────────────────────────────────────────────┐
+│ Foram detectadas violações de risco jurídico crítico: barreiras que impedem completamente o uso por um grupo        │
+│ identificável, sem rota alternativa. Os demais índices descrevem a dificuldade de um serviço que, para essas        │
+│ pessoas, está indisponível.                                                                                         │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+                                        Índices agregados
+┌──────────────────────────┬─────────┬───────────────────────────────────────────────────────────┐
+│ indicador                │   valor │ leitura                                                   │
+├──────────────────────────┼─────────┼───────────────────────────────────────────────────────────┤
+│ ICA — Conformidade       │    49.3 │ 0–100, maior é melhor                                     │
+│ IAN — Atrito             │    99.9 │ 0–100, menor é melhor                                     │
+│ IEJ — Exposição jurídica │    67.1 │ 0–100, menor é melhor                                     │
+│ Violações                │      60 │ 142 ocorrências                                           │
+│ Revisão humana           │      22 │ achados indeterminados                                    │
+│ Cobertura                │     54% │ 27/50 critérios                                           │
+│ Perda de páginas         │    0.0% │ erros de navegação                                        │
+│ Peso médio               │ 3.06 MB │ 0,9 centavo por acesso, 0.030% da franquia mensal         │
+│ Custo da jornada         │ R$ 0,04 │ 4 acessos/mês · 0.12% da franquia                         │
+│ Tráfego de terceiros     │     27% │ custo transferido ao usuário sem contrapartida no serviço │
+└──────────────────────────┴─────────┴───────────────────────────────────────────────────────────┘
+  Quem é excluído (ocorrências por grupo)
+┌────────────────────────────┬─────────────┐
+│ grupo                      │ ocorrências │
+├────────────────────────────┼─────────────┤
+│ cognitiva_neurodivergencia │         113 │
+│ motora                     │         104 │
+│ cegueira                   │          96 │
+│ fala                       │          68 │
+│ baixa_visao                │          61 │
+│ baixa_conectividade        │           9 │
+│ visao_de_cores             │           8 │
+└────────────────────────────┴─────────────┘
+A verificação automática cobre parte dos critérios A/AA. Ausência de achado não equivale a conformidade.
+12:24:16 INFO    acessisaude_audit.persistence.repositories varredura gravada em disco  {'arquivo': 'C:\\Users\\Thalles\
+\Desktop\\Projetos\\AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de Acessibilidade Web (WCAGLBI) par
+a Plataformas Públicas de Saúde\\data\\scans\\ses-rj__20260902-122149__38a8e890.json', 'bytes': 435924}
+JSON: C:\Users\Thalles\Desktop\Projetos\AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de
+Acessibilidade Web (WCAGLBI) para Plataformas Públicas de Saúde\data\scans\ses-rj__20260902-122149__38a8e890.json
+12:24:16 INFO    acessisaude_audit.persistence.database esquema do banco verificado  {'url': 'sqlite:///C:/Users/Thalles
+/Desktop/Projetos/AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de Acessibilidade Web (WCAGLBI) para
+Plataformas Públicas de Saúde/data/acessisaude.sqlite'}
+12:24:17 INFO    acessisaude_audit.persistence.repositories varredura indexada  {'scan': '38a8e890-7039-42f8-b9e0-c62fc1
+3b44eb', 'alvo': 'ses-rj', 'observado': True, 'ica': 49.32, 'ian': 99.91}
+Banco: sqlite:///C:/Users/Thalles/Desktop/Projetos/AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de
+Acessibilidade Web (WCAGLBI) para Plataformas Públicas de Saúde/data/acessisaude.sqlite
+[09:24:17] --- sms-rio ---
+┌───────────────────────────────────────────────────── Varredura ─────────────────────────────────────────────────────┐
+│ Secretaria Municipal de Saúde do Rio de Janeiro — seção informativa                                                 │
+│ https://prefeitura.rio/saude                                                                                        │
+│                                                                                                                     │
+│ Páginas auditáveis: 1                                                                                               │
+│ Lacunas declaradas (exigem autenticação): 0                                                                         │
+│ Perfis: mobile-320, desktop-1366                                                                                    │
+│ Intervalo entre requisições: 2000 ms                                                                                │
+│ robots.txt: respeitado                                                                                              │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+⠋ Auditando… ----------------------------------------  12:24:18 INFO    acessisaude_audit.auditor.engine       varredura
+ iniciada  {'alvo': 'sms-rio', 'tarefas': 2, 'urls': 1, 'lacunas_declaradas': 0}
+⠧ Auditando… ----------------------------------------  12:24:19 INFO    acessisaude_audit.auditor.browser      navegador
+ iniciado  {'browser': 'chromium 151.0.7922.34'}
+⠇ Auditando… ----------------------------------------  12:24:20 INFO    acessisaude_audit.auditor.crawler      robots.tx
+t carregado  {'origem': 'https://prefeitura.rio'}
+  https://prefeitura.rio/saude ---------------------------------------- 100%12:24:31 INFO    acessisaude_audit.auditor.b
+rowser      navegador encerrado
+12:24:31 INFO    acessisaude_audit.auditor.engine       varredura concluída  {'alvo': 'sms-rio', 'status': 'completed',
+'paginas': 2, 'violacoes': 24, 'perda': 0.0}
+  https://prefeitura.rio/saude ---------------------------------------- 100%
+┌───────────────────────────────────────────────── Barreira absoluta ─────────────────────────────────────────────────┐
+│ Foram detectadas violações de risco jurídico crítico: barreiras que impedem completamente o uso por um grupo        │
+│ identificável, sem rota alternativa. Os demais índices descrevem a dificuldade de um serviço que, para essas        │
+│ pessoas, está indisponível.                                                                                         │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+                                        Índices agregados
+┌──────────────────────────┬─────────┬───────────────────────────────────────────────────────────┐
+│ indicador                │   valor │ leitura                                                   │
+├──────────────────────────┼─────────┼───────────────────────────────────────────────────────────┤
+│ ICA — Conformidade       │    61.0 │ 0–100, maior é melhor                                     │
+│ IAN — Atrito             │   100.0 │ 0–100, menor é melhor                                     │
+│ IEJ — Exposição jurídica │    81.2 │ 0–100, menor é melhor                                     │
+│ Violações                │      24 │ 90 ocorrências                                            │
+│ Revisão humana           │      11 │ achados indeterminados                                    │
+│ Cobertura                │     54% │ 27/50 critérios                                           │
+│ Perda de páginas         │    0.0% │ erros de navegação                                        │
+│ Peso médio               │ 2.11 MB │ 0,6 centavo por acesso, 0.021% da franquia mensal         │
+│ Custo da jornada         │ R$ 0,02 │ 4 acessos/mês · 0.08% da franquia                         │
+│ Tráfego de terceiros     │     70% │ custo transferido ao usuário sem contrapartida no serviço │
+└──────────────────────────┴─────────┴───────────────────────────────────────────────────────────┘
+  Quem é excluído (ocorrências por grupo)
+┌────────────────────────────┬─────────────┐
+│ grupo                      │ ocorrências │
+├────────────────────────────┼─────────────┤
+│ cognitiva_neurodivergencia │          86 │
+│ baixa_visao                │          66 │
+│ cegueira                   │          64 │
+│ baixa_conectividade        │          32 │
+│ motora                     │          22 │
+│ fala                       │          20 │
+│ visao_de_cores             │          20 │
+└────────────────────────────┴─────────────┘
+A verificação automática cobre parte dos critérios A/AA. Ausência de achado não equivale a conformidade.
+12:24:31 INFO    acessisaude_audit.persistence.repositories varredura gravada em disco  {'arquivo': 'C:\\Users\\Thalles\
+\Desktop\\Projetos\\AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de Acessibilidade Web (WCAGLBI) par
+a Plataformas Públicas de Saúde\\data\\scans\\sms-rio__20260902-122418__29759e51.json', 'bytes': 169248}
+JSON: C:\Users\Thalles\Desktop\Projetos\AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de
+Acessibilidade Web (WCAGLBI) para Plataformas Públicas de Saúde\data\scans\sms-rio__20260902-122418__29759e51.json
+12:24:31 INFO    acessisaude_audit.persistence.database esquema do banco verificado  {'url': 'sqlite:///C:/Users/Thalles
+/Desktop/Projetos/AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de Acessibilidade Web (WCAGLBI) para
+Plataformas Públicas de Saúde/data/acessisaude.sqlite'}
+12:24:31 INFO    acessisaude_audit.persistence.repositories varredura indexada  {'scan': '29759e51-0639-48a5-98ce-0b2a10
+ca36f6', 'alvo': 'sms-rio', 'observado': True, 'ica': 60.96, 'ian': 100.0}
+Banco: sqlite:///C:/Users/Thalles/Desktop/Projetos/AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de
+Acessibilidade Web (WCAGLBI) para Plataformas Públicas de Saúde/data/acessisaude.sqlite
+[09:24:32] --- carioca-rio-saude ---
+┌───────────────────────────────────────────────────── Varredura ─────────────────────────────────────────────────────┐
+│ Carioca Digital — catálogo de serviços de saúde                                                                     │
+│ https://carioca.rio                                                                                                 │
+│                                                                                                                     │
+│ Páginas auditáveis: 2                                                                                               │
+│ Lacunas declaradas (exigem autenticação): 0                                                                         │
+│ Perfis: mobile-320, desktop-1366                                                                                    │
+│ Intervalo entre requisições: 2000 ms                                                                                │
+│ robots.txt: respeitado                                                                                              │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+⠋ Auditando… ----------------------------------------  12:24:33 INFO    acessisaude_audit.auditor.engine       varredura
+ iniciada  {'alvo': 'carioca-rio-saude', 'tarefas': 4, 'urls': 2, 'lacunas_declaradas': 0}
+⠧ Auditando… ----------------------------------------  12:24:33 INFO    acessisaude_audit.auditor.browser      navegador
+ iniciado  {'browser': 'chromium 151.0.7922.34'}
+⠦ Auditando… ---------------12:24:34 INFO    acessisaude_audit.auditor.crawler      robots.txt carregado  {'origem': 'ht
+tps://carioca.rio'}
+  https://carioca.rio/servicos/atendimento-em-unidades-de-pronto-atendim ---------------------------------------- 100%12
+:26:19 INFO    acessisaude_audit.auditor.browser      navegador encerrado
+12:26:19 INFO    acessisaude_audit.auditor.engine       varredura concluída  {'alvo': 'carioca-rio-saude', 'status': 'co
+mpleted', 'paginas': 4, 'violacoes': 47, 'perda': 0.0}
+  https://carioca.rio/servicos/atendimento-em-unidades-de-pronto-atendim ---------------------------------------- 100%
+┌───────────────────────────────────────────────── Barreira absoluta ─────────────────────────────────────────────────┐
+│ Foram detectadas violações de risco jurídico crítico: barreiras que impedem completamente o uso por um grupo        │
+│ identificável, sem rota alternativa. Os demais índices descrevem a dificuldade de um serviço que, para essas        │
+│ pessoas, está indisponível.                                                                                         │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+                                        Índices agregados
+┌──────────────────────────┬─────────┬───────────────────────────────────────────────────────────┐
+│ indicador                │   valor │ leitura                                                   │
+├──────────────────────────┼─────────┼───────────────────────────────────────────────────────────┤
+│ ICA — Conformidade       │    50.7 │ 0–100, maior é melhor                                     │
+│ IAN — Atrito             │   100.0 │ 0–100, menor é melhor                                     │
+│ IEJ — Exposição jurídica │    87.9 │ 0–100, menor é melhor                                     │
+│ Violações                │      47 │ 978 ocorrências                                           │
+│ Revisão humana           │      16 │ achados indeterminados                                    │
+│ Cobertura                │     54% │ 27/50 critérios                                           │
+│ Perda de páginas         │    0.0% │ erros de navegação                                        │
+│ Peso médio               │ 1.15 MB │ 0,3 centavo por acesso, 0.011% da franquia mensal         │
+│ Custo da jornada         │ R$ 0,01 │ 4 acessos/mês · 0.04% da franquia                         │
+│ Tráfego de terceiros     │     42% │ custo transferido ao usuário sem contrapartida no serviço │
+└──────────────────────────┴─────────┴───────────────────────────────────────────────────────────┘
+  Quem é excluído (ocorrências por grupo)
+┌────────────────────────────┬─────────────┐
+│ grupo                      │ ocorrências │
+├────────────────────────────┼─────────────┤
+│ cognitiva_neurodivergencia │         968 │
+│ baixa_visao                │         946 │
+│ visao_de_cores             │         610 │
+│ cegueira                   │         348 │
+│ baixa_conectividade        │          54 │
+│ motora                     │          40 │
+│ fala                       │          24 │
+└────────────────────────────┴─────────────┘
+A verificação automática cobre parte dos critérios A/AA. Ausência de achado não equivale a conformidade.
+12:26:19 INFO    acessisaude_audit.persistence.repositories varredura gravada em disco  {'arquivo': 'C:\\Users\\Thalles\
+\Desktop\\Projetos\\AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de Acessibilidade Web (WCAGLBI) par
+a Plataformas Públicas de Saúde\\data\\scans\\carioca-rio-saude__20260902-122433__63c6bea7.json', 'bytes': 846680}
+JSON: C:\Users\Thalles\Desktop\Projetos\AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de
+Acessibilidade Web (WCAGLBI) para Plataformas Públicas de
+Saúde\data\scans\carioca-rio-saude__20260902-122433__63c6bea7.json
+12:26:19 INFO    acessisaude_audit.persistence.database esquema do banco verificado  {'url': 'sqlite:///C:/Users/Thalles
+/Desktop/Projetos/AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de Acessibilidade Web (WCAGLBI) para
+Plataformas Públicas de Saúde/data/acessisaude.sqlite'}
+12:26:19 INFO    acessisaude_audit.persistence.repositories varredura indexada  {'scan': '63c6bea7-23eb-4633-9dee-2bf511
+cea4be', 'alvo': 'carioca-rio-saude', 'observado': True, 'ica': 50.68, 'ian': 100.0}
+Banco: sqlite:///C:/Users/Thalles/Desktop/Projetos/AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de
+Acessibilidade Web (WCAGLBI) para Plataformas Públicas de Saúde/data/acessisaude.sqlite
+[09:26:19] Exportando o dataset acumulado...
+12:26:22 INFO    acessisaude_audit.reporting.exports    achados exportados  {'arquivo': 'C:\\Users\\Thalles\\Desktop\\Pr
+ojetos\\AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de Acessibilidade Web (WCAGLBI) para Plataforma
+s Públicas de Saúde\\data\\exports\\achados.csv', 'linhas': 5807}
+12:26:22 INFO    acessisaude_audit.reporting.exports    páginas exportadas  {'arquivo': 'C:\\Users\\Thalles\\Desktop\\Pr
+ojetos\\AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de Acessibilidade Web (WCAGLBI) para Plataforma
+s Públicas de Saúde\\data\\exports\\paginas.csv', 'linhas': 654}
+Varreduras processadas: 127
+Achados: C:\Users\Thalles\Desktop\Projetos\AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de
+Acessibilidade Web (WCAGLBI) para Plataformas Públicas de Saúde\data\exports\achados.csv
+Páginas: C:\Users\Thalles\Desktop\Projetos\AcessiSaúde-Audit Ferramenta Computacional de Auditoria Contínua de
+Acessibilidade Web (WCAGLBI) para Plataformas Públicas de Saúde\data\exports\paginas.csv
+[09:26:22] Publicando em serie-temporal/scans-br ...
+
+
+
+
+
+
+[09:26:29] Publicado: 127 varreduras no braco brasileiro.
+
+[09:26:29] Concluido. Alvos com falha de execucao: 0
+**********************
+Fim da transcrição do Windows PowerShell
+Hora de término: 20260902092629
+**********************
