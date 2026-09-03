@@ -1,0 +1,2210 @@
+{
+  "id": "1ca54e94-4903-4d12-abb8-1bbbdccbbeab",
+  "schema_version": "1.0.0",
+  "target_id": "ses-rj",
+  "target_name": "Secretaria de Estado de Saúde do Rio de Janeiro",
+  "base_url": "https://www.rj.gov.br/saude",
+  "status": "partial",
+  "started_at": "2026-09-03T23:29:13.344641Z",
+  "finished_at": "2026-09-03T23:29:32.225880Z",
+  "pages": [
+    {
+      "url": "https://www.rj.gov.br/saude",
+      "final_url": "https://www.rj.gov.br/saude",
+      "status": "navigation_error",
+      "http_status": null,
+      "title": null,
+      "lang": null,
+      "viewport": {
+        "name": "mobile-320",
+        "width": 320,
+        "height": 640,
+        "device_scale_factor": 2.0,
+        "is_mobile": true,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; SM-A105M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+      },
+      "started_at": "2026-09-03T23:29:13.732404Z",
+      "finished_at": "2026-09-03T23:29:15.253411Z",
+      "findings": [],
+      "network": {
+        "total_bytes": 0,
+        "total_uncompressed_bytes": 0,
+        "request_count": 0,
+        "bytes_by_type": {},
+        "third_party_bytes": 0,
+        "third_party_domains": [],
+        "dom_content_loaded_ms": null,
+        "load_complete_ms": null,
+        "largest_contentful_paint_ms": null,
+        "blocked_requests": 1,
+        "total_mb": 0.0,
+        "third_party_share": 0.0
+      },
+      "error": "Page.goto: net::ERR_CONNECTION_CLOSED at https://www.rj.gov.br/saude\nCall log:\n  - navigating to \"https://www.rj.gov.br/saude\", waiting until \"domcontentloaded\"\n",
+      "axe_version": null,
+      "screenshot_path": null,
+      "is_critical_path": false,
+      "duration_ms": 1521.007
+    },
+    {
+      "url": "https://www.rj.gov.br/saude",
+      "final_url": "https://www.rj.gov.br/saude",
+      "status": "navigation_error",
+      "http_status": null,
+      "title": null,
+      "lang": null,
+      "viewport": {
+        "name": "desktop-1366",
+        "width": 1366,
+        "height": 768,
+        "device_scale_factor": 1.0,
+        "is_mobile": false,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+      },
+      "started_at": "2026-09-03T23:29:15.264099Z",
+      "finished_at": "2026-09-03T23:29:17.244764Z",
+      "findings": [],
+      "network": {
+        "total_bytes": 0,
+        "total_uncompressed_bytes": 0,
+        "request_count": 0,
+        "bytes_by_type": {},
+        "third_party_bytes": 0,
+        "third_party_domains": [],
+        "dom_content_loaded_ms": null,
+        "load_complete_ms": null,
+        "largest_contentful_paint_ms": null,
+        "blocked_requests": 1,
+        "total_mb": 0.0,
+        "third_party_share": 0.0
+      },
+      "error": "Page.goto: net::ERR_CONNECTION_CLOSED at https://www.rj.gov.br/saude\nCall log:\n  - navigating to \"https://www.rj.gov.br/saude\", waiting until \"domcontentloaded\"\n",
+      "axe_version": null,
+      "screenshot_path": null,
+      "is_critical_path": false,
+      "duration_ms": 1980.665
+    },
+    {
+      "url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+      "final_url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Saúde RJ - Subsecretaria de Controle Interno e Compliance - Ouvidoria - Participe",
+      "lang": null,
+      "viewport": {
+        "name": "mobile-320",
+        "width": 320,
+        "height": 640,
+        "device_scale_factor": 2.0,
+        "is_mobile": true,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; SM-A105M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+      },
+      "started_at": "2026-09-03T23:29:17.251680Z",
+      "finished_at": "2026-09-03T23:29:23.556244Z",
+      "findings": [
+        {
+          "id": "eba74fcf-a341-4896-a384-9467e1e22366",
+          "rule_id": "color-contrast",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.4.3"
+          ],
+          "summary": "Elements must meet minimum color contrast ratio thresholds",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "remediation": "Ajustar a paleta para razão mínima de 4.5:1 (texto normal) e 3:1 (texto grande), validando os tokens de design, não apenas as telas.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axeAPI",
+          "affects": [
+            "baixa_visao",
+            "cognitiva_neurodivergencia",
+            "visao_de_cores"
+          ],
+          "nodes": [
+            {
+              "selector": ".dentro > .itens > a[target=\"_blank\"]:nth-child(1)",
+              "html": "<a href=\"http://www.riocomsaude.rj.gov.br/\" target=\"_blank\">Rio com Saúde</a>",
+              "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.09 (foreground color: #999999, background color: #dddddd, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "target_frame": [],
+              "measured": {
+                "fgColor": "#999999",
+                "bgColor": "#dddddd",
+                "contrastRatio": 2.09,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "bold",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".itens > a[target=\"_blank\"]:nth-child(2)",
+              "html": "<a href=\"http://www.informacaoemsaude.rj.gov.br\" target=\"_blank\">informação em saúde</a>",
+              "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.09 (foreground color: #999999, background color: #dddddd, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "target_frame": [],
+              "measured": {
+                "fgColor": "#999999",
+                "bgColor": "#dddddd",
+                "contrastRatio": 2.09,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "bold",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              }
+            }
+          ],
+          "page_url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-03T23:29:23.320163Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 2,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "O contraste insuficiente é a barreira de comunicação mais prevalente e atinge diretamente a população idosa usuária do SUS; sua persistência em portal público caracteriza descumprimento continuado do art. 63, caput, da LBI e do art. 47 do Decreto 5.296/2004."
+        },
+        {
+          "id": "1900a554-30f4-43e7-bb41-6183e53da44c",
+          "rule_id": "html-has-lang",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "3.1.1"
+          ],
+          "summary": "<html> element must have a lang attribute",
+          "description": "Ensure every HTML document has a lang attribute",
+          "remediation": "Declarar lang='pt-BR' no elemento html de todas as páginas.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/html-has-lang?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "html",
+              "html": "<html xmlns=\"http://www.w3.org/1999/xhtml\">",
+              "failure_summary": "Fix any of the following:\n  The <html> element does not have a lang attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noLang"
+              }
+            }
+          ],
+          "page_url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-03T23:29:23.320209Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "Sem declaração de idioma, o sintetizador de voz pronuncia o português com fonética estrangeira e a informação em saúde se torna ininteligível — a informação é publicada, mas não é comunicada (art. 3º, IV, 'd', LBI)."
+        },
+        {
+          "id": "a1ea6656-e52b-477c-9950-8332e3d37386",
+          "rule_id": "link-name",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "2.4.4",
+            "4.1.2"
+          ],
+          "summary": "Links must have discernible text",
+          "description": "Ensure links have discernible text",
+          "remediation": "Reescrever textos de link para que descrevam o destino sem depender do parágrafo circundante. Usar elementos nativos ou, quando inevitável, ARIA completo (role, nome acessível, estado) com teclado equivalente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/link-name?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "fala",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "a[href$=\"www.rj.gov.br\"]",
+              "html": "<a href=\"http://www.rj.gov.br\" target=\"_blank\"><img src=\"/site/img/governo2.png\" alt=\"Governo do Estado do Rio de Janeiro\" title=\"Governo do Estado do Rio de Janeiro\" class=\"governo\"></a>",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".menu",
+              "html": "<a href=\"javascript:AbrirMenu();\" class=\"menu\" accesskey=\"2\">\n\t\t\t<span>Menu</span>\n\t\t</a>",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".no-menu > a[href=\"/\"]",
+              "html": "<a href=\"/\">\n\t\t\t<img src=\"/site/img/topo_governo.png\" alt=\"\" class=\"logo\">\n\t\t</a>",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".sub-topo > a",
+              "html": "<a href=\"javascript:TrocarMenuInterna();\"><img src=\"/site/img/menu_seta2.png\" alt=\"\" class=\"botao-menu\"></a>",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            }
+          ],
+          "page_url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-03T23:29:23.320266Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 4,
+          "legal_risk": "critico",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "onu.art9"
+          ],
+          "legal_thesis": "Controle sem nome, função ou valor expostos simplesmente não existe para a tecnologia assistiva: o serviço é, para o usuário cego, inexistente. É a forma mais severa de barreira na informação do art. 3º, IV, 'd'."
+        },
+        {
+          "id": "aa376bed-1554-4495-a349-94eb2b155e70",
+          "rule_id": "meta-viewport",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "moderate",
+          "criteria": [
+            "1.4.4"
+          ],
+          "summary": "Zooming and scaling must not be disabled",
+          "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+          "remediation": "Usar unidades relativas e remover 'user-scalable=no' da meta viewport.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/meta-viewport?application=axeAPI",
+          "affects": [
+            "baixa_visao",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "meta[name=\"viewport\"]",
+              "html": "<meta name=\"viewport\" content=\"width=device-width, maximum-scale=1.1, minimum-scale=0.9\">",
+              "failure_summary": "Fix any of the following:\n  maximum-scale on <meta> tag disables zooming on mobile devices",
+              "target_frame": [],
+              "measured": {
+                "meta-viewport": "maximum-scale"
+              }
+            }
+          ],
+          "page_url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-03T23:29:23.320294Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25"
+          ],
+          "legal_thesis": "O bloqueio de ampliação nega adaptação razoável, conduta equiparada a discriminação pelo art. 4º, § 1º da LBI."
+        },
+        {
+          "id": "1f90ef60-9d68-4dc4-b481-f68c563717c2",
+          "rule_id": "bypass",
+          "source": "axe-core",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "2.4.1"
+          ],
+          "summary": "Page must have means to bypass repeated blocks",
+          "description": "Ensure each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+          "remediation": "Incluir link 'pular para o conteúdo principal' e marcos ARIA (landmarks).",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/bypass?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "html",
+              "html": "<html xmlns=\"http://www.w3.org/1999/xhtml\">",
+              "failure_summary": "Fix any of the following:\n  No valid skip link found\n  Page does not have a heading\n  Page does not have a landmark region",
+              "target_frame": [],
+              "measured": {}
+            }
+          ],
+          "page_url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-03T23:29:23.320320Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "moderado",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art3.i"
+          ],
+          "legal_thesis": "A ausência de mecanismo de salto obriga a percorrer repetidamente blocos idênticos, esforço desproporcional vedado pelo conceito de acessibilidade com autonomia do art. 3º, I da LBI."
+        },
+        {
+          "id": "631cdb95-7cbb-4ce7-8ebf-08a84e5abc75",
+          "rule_id": "color-contrast",
+          "source": "axe-core",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "1.4.3"
+          ],
+          "summary": "Elements must meet minimum color contrast ratio thresholds",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "remediation": "Ajustar a paleta para razão mínima de 4.5:1 (texto normal) e 3:1 (texto grande), validando os tokens de design, não apenas as telas.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axeAPI",
+          "affects": [
+            "baixa_visao",
+            "cognitiva_neurodivergencia",
+            "visao_de_cores"
+          ],
+          "nodes": [
+            {
+              "selector": "#Procurar",
+              "html": "<input id=\"Procurar\" type=\"submit\" value=\"Procurar\">",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "bold",
+                "messageKey": "bgImage",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "a[target=\"_blank\"]:nth-child(2) > span",
+              "html": "<span>Disque Rio Contra a Corrupção</span>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".ouvidoria",
+              "html": "<a href=\"/ouvidoria\" class=\"ouvidoria\">Ouvidoria</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "26.3pt (35px)",
+                "fontWeight": "normal",
+                "messageKey": "bgImage",
+                "expectedContrastRatio": "3:1"
+              }
+            },
+            {
+              "selector": ".fale-conosco",
+              "html": "<a href=\"/fale-conosco\" class=\"fale-conosco\">Fale conosco</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "26.3pt (35px)",
+                "fontWeight": "normal",
+                "messageKey": "bgImage",
+                "expectedContrastRatio": "3:1"
+              }
+            },
+            {
+              "selector": ".imprensa",
+              "html": "<a href=\"/assessoria-de-comunicacao\" class=\"imprensa\">Imprensa</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "26.3pt (35px)",
+                "fontWeight": "normal",
+                "messageKey": "bgImage",
+                "expectedContrastRatio": "3:1"
+              }
+            },
+            {
+              "selector": "a[href$=\"acessibilidade\"]",
+              "html": "<a href=\"/acessibilidade\">Acessibilidade</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "9.8pt (13px)",
+                "fontWeight": "normal",
+                "messageKey": "bgImage",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "a[href$=\"mapa-do-site\"]",
+              "html": "<a href=\"/mapa-do-site\">Mapa do site</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "9.8pt (13px)",
+                "fontWeight": "normal",
+                "messageKey": "bgImage",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".copyright",
+              "html": "<div class=\"copyright\">\n\t\t<a href=\"https://creativecommons.org/licenses/by/3.0/br/\" target=\"_blank\"><img src=\"/site/img/copyright.png\" alt=\"Creative Commons\"></a><br>\n\t\tEsta obra é licenciada sob uma licença Creative Commons Atribuição 3.0 Brasil\n\t</div>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "normal",
+                "messageKey": "bgImage",
+                "expectedContrastRatio": "4.5:1"
+              }
+            }
+          ],
+          "page_url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-03T23:29:23.320447Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 8,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "O contraste insuficiente é a barreira de comunicação mais prevalente e atinge diretamente a população idosa usuária do SUS; sua persistência em portal público caracteriza descumprimento continuado do art. 63, caput, da LBI e do art. 47 do Decreto 5.296/2004."
+        },
+        {
+          "id": "c1776a26-e7f5-4b59-90e4-d8c3a1d7e990",
+          "rule_id": "probe.page-language.missing",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "3.1.1"
+          ],
+          "summary": "O documento não declara o idioma (atributo lang ausente).",
+          "description": "Sem declaração de idioma, o leitor de tela aplica a fonética do idioma configurado no sistema do usuário. Termos de saúde em português pronunciados com fonemas de outro idioma tornam-se ininteligíveis: a informação pública existe, mas não chega.",
+          "remediation": "Declarar lang='pt-BR' no elemento html de todas as páginas.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/language-of-page.html",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "html",
+              "html": "<html xmlns=\"http://www.w3.org/1999/xhtml\"><head>\n\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n\t<title>Saúde RJ - Subsecretaria de Contr",
+              "failure_summary": "Elemento <html> sem atributo lang.",
+              "target_frame": [],
+              "measured": {
+                "lang": null
+              }
+            }
+          ],
+          "page_url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-03T23:29:23.323601Z",
+          "legal_risk_override": "alto",
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "Sem declaração de idioma, o sintetizador de voz pronuncia o português com fonética estrangeira e a informação em saúde se torna ininteligível — a informação é publicada, mas não é comunicada (art. 3º, IV, 'd', LBI)."
+        },
+        {
+          "id": "44d18eaa-dea4-4f4f-83d2-922d98c69e6b",
+          "rule_id": "probe.landmarks.no-main",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.3.1"
+          ],
+          "summary": "A página não declara marco de conteúdo principal (<main>).",
+          "description": "Sem <main> ou role=\"main\", o leitor de tela não distingue o conteúdo da moldura de navegação. O usuário cego precisa ouvir todo o cabeçalho e todo o menu a cada página que abre — em um portal com sessenta itens de menu, isso são minutos de áudio antes da primeira informação útil sobre a consulta.",
+          "remediation": "Envolver o conteúdo específico da página em <main> e reservar <header>, <nav> e <footer> para as regiões repetidas.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "<body class=\"vigilancia site interna sub-interna noticias\" id=\"eventos\">\n<!--robot_noindex-->\n\t<div class=\"super-desktop\"></div>\n\t<div class=\"desktop-mini\"></div>\n\t<div class=\"desktop\"></div>\n\t<div cl",
+              "failure_summary": "Nenhum elemento <main> ou role=\"main\" no documento.",
+              "target_frame": [],
+              "measured": {
+                "main": 0,
+                "nav": 0,
+                "banner": 0,
+                "contentinfo": 0
+              }
+            }
+          ],
+          "page_url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-03T23:29:23.325730Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74"
+          ],
+          "legal_thesis": "Sem estrutura semântica, a tecnologia assistiva não consegue reconstruir a relação entre rótulo e dado; o art. 74 da LBI assegura o acesso a tecnologias assistivas, o que pressupõe conteúdo com elas compatível."
+        },
+        {
+          "id": "62c3dfb6-c581-4788-a965-4a80340ae68a",
+          "rule_id": "probe.landmarks.no-skip-link",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "moderate",
+          "criteria": [
+            "2.4.1"
+          ],
+          "summary": "Nenhum link de salto para o conteúdo principal foi encontrado.",
+          "description": "Não há âncora funcional no início do documento que permita ignorar os blocos repetidos de navegação. Como a página também não declara marco principal, não existe mecanismo algum de bypass: o critério 2.4.1 está violado.",
+          "remediation": "Incluir link 'pular para o conteúdo principal' e marcos ARIA (landmarks).",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "",
+              "failure_summary": "Nenhuma âncora interna com destino existente.",
+              "target_frame": [],
+              "measured": {
+                "has_main": false
+              }
+            }
+          ],
+          "page_url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-03T23:29:23.325756Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "moderado",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art3.i"
+          ],
+          "legal_thesis": "A ausência de mecanismo de salto obriga a percorrer repetidamente blocos idênticos, esforço desproporcional vedado pelo conceito de acessibilidade com autonomia do art. 3º, I da LBI."
+        },
+        {
+          "id": "eb8d24f7-6737-48ad-9151-7a4baf2db243",
+          "rule_id": "probe.heading-structure.none",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.3.1",
+            "2.4.6"
+          ],
+          "summary": "A página não possui nenhum cabeçalho.",
+          "description": "Sem cabeçalhos, o principal atalho de navegação do leitor de tela — a lista de títulos — fica vazio. A página só pode ser percorrida linearmente, do começo ao fim.",
+          "remediation": "Escrever cabeçalhos que descrevam o conteúdo da seção e rótulos que descrevam o dado solicitado.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "",
+              "failure_summary": "Zero cabeçalhos.",
+              "target_frame": [],
+              "measured": {}
+            }
+          ],
+          "page_url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-03T23:29:23.327134Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "Sem estrutura semântica, a tecnologia assistiva não consegue reconstruir a relação entre rótulo e dado; o art. 74 da LBI assegura o acesso a tecnologias assistivas, o que pressupõe conteúdo com elas compatível."
+        },
+        {
+          "id": "ae5384ed-1768-4f5f-9a2b-f8474f2aecc8",
+          "rule_id": "probe.reflow-320",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.4.10"
+          ],
+          "summary": "A página exige rolagem horizontal em tela de 320 px (30 px de transbordo).",
+          "description": "Em viewport de 320 CSS px — largura mínima exigida pelo critério 1.4.10 e representativa dos aparelhos de entrada mais comuns entre usuários de baixa renda — o conteúdo não se reorganiza em coluna única. Parte da informação fica fora da área visível sem qualquer indicação de que exista, o que difere de um simples desconforto: o usuário não busca aquilo cuja existência desconhece.",
+          "remediation": "Adotar layout responsivo que preserve conteúdo e função em viewport de 320 CSS px sem rolagem horizontal.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/reflow.html",
+          "affects": [
+            "baixa_visao",
+            "cognitiva_neurodivergencia",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "#eventos > div:nth-of-type(9)",
+              "html": "<div class=\"topo\">\n\t<div class=\"pre-menu\">\n\n\t\t<a href=\"http://www.rj.gov.br\" target=\"_blank\"><img src=\"/site/img/governo2.png\" alt=\"Governo do Estado do Rio de Janeiro\" title=\"Governo do Estado do Rio de Janeiro\" class=\"governo\"></a>\n\n\t\t<div class=\"itens\">\n\t\t\t<a href=\"https://painel.saude.rj.gov.br/",
+              "failure_summary": "O elemento <div> estende-se até 350 px, além da borda do viewport de 320 px.",
+              "target_frame": [],
+              "measured": {
+                "right_px": 350,
+                "width_px": 350,
+                "viewport_width_px": 320
+              }
+            },
+            {
+              "selector": "#eventos > div:nth-of-type(9) > div:nth-of-type(1)",
+              "html": "<div class=\"pre-menu\">\n\n\t\t<a href=\"http://www.rj.gov.br\" target=\"_blank\"><img src=\"/site/img/governo2.png\" alt=\"Governo do Estado do Rio de Janeiro\" title=\"Governo do Estado do Rio de Janeiro\" class=\"governo\"></a>\n\n\t\t<div class=\"itens\">\n\t\t\t<a href=\"https://painel.saude.rj.gov.br/contratos/transparen",
+              "failure_summary": "O elemento <div> estende-se até 350 px, além da borda do viewport de 320 px.",
+              "target_frame": [],
+              "measured": {
+                "right_px": 350,
+                "width_px": 350,
+                "viewport_width_px": 320
+              }
+            },
+            {
+              "selector": "#eventos > div:nth-of-type(9) > div:nth-of-type(3)",
+              "html": "<div class=\"no-menu\">\n\n\t\t<a href=\"javascript:AbrirMenu();\" class=\"menu\" accesskey=\"2\">\n\t\t\t<span>Menu</span>\n\t\t</a>\n\n\t\t<a href=\"/\">\n\t\t\t<img src=\"/site/img/topo_governo.png\" alt=\"\" class=\"logo\">\n\t\t</a>\n\n\t\t<div class=\"itens\">\n\t\t\t<form name=\"FRC\" id=\"FRC\" method=\"post\" action=\"https://www.saude.rj.gov.b",
+              "failure_summary": "O elemento <div> estende-se até 350 px, além da borda do viewport de 320 px.",
+              "target_frame": [],
+              "measured": {
+                "right_px": 350,
+                "width_px": 350,
+                "viewport_width_px": 320
+              }
+            },
+            {
+              "selector": "#eventos > div:nth-of-type(9) > div:nth-of-type(3) > div:nth-of-type(1)",
+              "html": "<div class=\"itens\">\n\t\t\t<form name=\"FRC\" id=\"FRC\" method=\"post\" action=\"https://www.saude.rj.gov.br:443/ouvidoria/participe\">\n\t\t\t\t<input type=\"hidden\" id=\"_ct_\" name=\"_ct_\" value=\"\">\n\t\t\t\t<a href=\"javascript:MudarContraste();\" class=\"contraste\">Contraste</a>\n\t\t\t</form>\n\n\t\t\t<a href=\"javascript:AbrirRed",
+              "failure_summary": "O elemento <div> estende-se até 340 px, além da borda do viewport de 320 px.",
+              "target_frame": [],
+              "measured": {
+                "right_px": 340,
+                "width_px": 45,
+                "viewport_width_px": 320
+              }
+            },
+            {
+              "selector": "#eventos > div:nth-of-type(9) > div:nth-of-type(3) > div:nth-of-type(1) > a",
+              "html": "<a href=\"javascript:AbrirRede();\">\n\t\t\t\t<img src=\"/site/img/redes.png\" alt=\"Redes\">\n\t\t\t</a>",
+              "failure_summary": "O elemento <a> estende-se até 340 px, além da borda do viewport de 320 px.",
+              "target_frame": [],
+              "measured": {
+                "right_px": 340,
+                "width_px": 41,
+                "viewport_width_px": 320
+              }
+            },
+            {
+              "selector": "div:nth-of-type(9) > div:nth-of-type(3) > div:nth-of-type(1) > a > img",
+              "html": "<img src=\"/site/img/redes.png\" alt=\"Redes\">",
+              "failure_summary": "O elemento <img> estende-se até 340 px, além da borda do viewport de 320 px.",
+              "target_frame": [],
+              "measured": {
+                "right_px": 340,
+                "width_px": 41,
+                "viewport_width_px": 320
+              }
+            },
+            {
+              "selector": "#eventos > div:nth-of-type(10)",
+              "html": "<div class=\"topo-invertido\" style=\"display: block; opacity: 0.0442984;\">\n\t<div class=\"dentro\">\n\t\t<a href=\"/\">\n\t\t\t<img src=\"/site/img/home_pe.png\" alt=\"Home\">\n\t\t</a>\n\n\t\t<a href=\"\">\n\t\t\t<img src=\"/site/img/busca_pe.png\" alt=\"Busca\">\n\t\t</a>\n\n\t\t<a id=\"TopoInvertidoMenu\" href=\"javascript:TrocarMenu();\">\n\t",
+              "failure_summary": "O elemento <div> estende-se até 350 px, além da borda do viewport de 320 px.",
+              "target_frame": [],
+              "measured": {
+                "right_px": 350,
+                "width_px": 350,
+                "viewport_width_px": 320
+              }
+            },
+            {
+              "selector": "#eventos > div:nth-of-type(12)",
+              "html": "<div class=\"migalha\">\n\t\t<div class=\"texto\">\n\t\t\t<div class=\"tela\">\n\t\t\t\tSetores da Saúde<div>●</div>Subsecretaria de Controle Interno e Compliance<div>●</div>Ouvidoria<div>●</div><span class=\"ativo\">Participe</span>\n\t\t\t</div>\n\t\t</div>\n\t</div>",
+              "failure_summary": "O elemento <div> estende-se até 350 px, além da borda do viewport de 320 px.",
+              "target_frame": [],
+              "measured": {
+                "right_px": 350,
+                "width_px": 350,
+                "viewport_width_px": 320
+              }
+            },
+            {
+              "selector": "#eventos > div:nth-of-type(12) > div",
+              "html": "<div class=\"texto\">\n\t\t\t<div class=\"tela\">\n\t\t\t\tSetores da Saúde<div>●</div>Subsecretaria de Controle Interno e Compliance<div>●</div>Ouvidoria<div>●</div><span class=\"ativo\">Participe</span>\n\t\t\t</div>\n\t\t</div>",
+              "failure_summary": "O elemento <div> estende-se até 350 px, além da borda do viewport de 320 px.",
+              "target_frame": [],
+              "measured": {
+                "right_px": 350,
+                "width_px": 350,
+                "viewport_width_px": 320
+              }
+            },
+            {
+              "selector": "#eventos > div:nth-of-type(13)",
+              "html": "<div class=\"conteudo\">\n\t\t<div class=\"barra\"></div>\n\t\t<div class=\"tela\">\n\t\t\t<div class=\"sub-topo sub-topo4\">Ouvidoria<a href=\"javascript:TrocarMenuInterna();\"><img src=\"/site/img/menu_seta2.png\" alt=\"\" class=\"botao-menu\"></a><img src=\"/site/img/logo_ouvidoria.png\" alt=\"\" class=\"logo-menu\"></div>\n\t\t\t<",
+              "failure_summary": "O elemento <div> estende-se até 350 px, além da borda do viewport de 320 px.",
+              "target_frame": [],
+              "measured": {
+                "right_px": 350,
+                "width_px": 350,
+                "viewport_width_px": 320
+              }
+            },
+            {
+              "selector": "#eventos > div:nth-of-type(13) > div:nth-of-type(1)",
+              "html": "<div class=\"barra\"></div>",
+              "failure_summary": "O elemento <div> estende-se até 350 px, além da borda do viewport de 320 px.",
+              "target_frame": [],
+              "measured": {
+                "right_px": 350,
+                "width_px": 350,
+                "viewport_width_px": 320
+              }
+            },
+            {
+              "selector": "#eventos > div:nth-of-type(13) > div:nth-of-type(2)",
+              "html": "<div class=\"tela\">\n\t\t\t<div class=\"sub-topo sub-topo4\">Ouvidoria<a href=\"javascript:TrocarMenuInterna();\"><img src=\"/site/img/menu_seta2.png\" alt=\"\" class=\"botao-menu\"></a><img src=\"/site/img/logo_ouvidoria.png\" alt=\"\" class=\"logo-menu\"></div>\n\t\t\t<div class=\"sub-lados\">\n\t\t\t\t<div class=\"sub-lateral\">\n",
+              "failure_summary": "O elemento <div> estende-se até 350 px, além da borda do viewport de 320 px.",
+              "target_frame": [],
+              "measured": {
+                "right_px": 350,
+                "width_px": 350,
+                "viewport_width_px": 320
+              }
+            }
+          ],
+          "page_url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-03T23:29:23.443187Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 12,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lei13460.art5"
+          ],
+          "legal_thesis": "O acesso majoritário aos serviços públicos de saúde no Brasil se dá por telefone celular; a exigência de rolagem bidirecional em telas estreitas inviabiliza o uso e frustra o acesso universal do art. 196 da CF/88."
+        },
+        {
+          "id": "ee178565-6be7-4a4a-b076-f45d6f411f1b",
+          "rule_id": "probe.zoom-lock",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.4.4"
+          ],
+          "summary": "A página bloqueia a ampliação pelo usuário.",
+          "description": "A meta viewport declara restrições de escala: 'maximum-scale=1.1' limita a ampliação abaixo dos 200% exigidos. Pessoas com baixa visão dependem da ampliação nativa do navegador para ler conteúdo de saúde; o bloqueio equivale a recusar adaptação razoável.",
+          "remediation": "Usar unidades relativas e remover 'user-scalable=no' da meta viewport.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html",
+          "affects": [
+            "baixa_visao",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "meta[name=viewport]",
+              "html": "<meta name=\"viewport\" content=\"width=device-width, maximum-scale=1.1, minimum-scale=0.9\">",
+              "failure_summary": "'maximum-scale=1.1' limita a ampliação abaixo dos 200% exigidos",
+              "target_frame": [],
+              "measured": {
+                "content": "width=device-width, maximum-scale=1.1, minimum-scale=0.9",
+                "user_scalable_no": false,
+                "maximum_scale": 1.1
+              }
+            }
+          ],
+          "page_url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-03T23:29:23.444562Z",
+          "legal_risk_override": "alto",
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25"
+          ],
+          "legal_thesis": "O bloqueio de ampliação nega adaptação razoável, conduta equiparada a discriminação pelo art. 4º, § 1º da LBI."
+        }
+      ],
+      "network": {
+        "total_bytes": 1243312,
+        "total_uncompressed_bytes": 0,
+        "request_count": 69,
+        "bytes_by_type": {
+          "document": 22003,
+          "font": 43513,
+          "image": 799129,
+          "script": 303400,
+          "stylesheet": 71115,
+          "xhr": 4152
+        },
+        "third_party_bytes": 263769,
+        "third_party_domains": [
+          "google-analytics.com",
+          "googleapis.com",
+          "googletagmanager.com",
+          "gstatic.com"
+        ],
+        "dom_content_loaded_ms": 1548.2000000000116,
+        "load_complete_ms": 2985.3000000000175,
+        "largest_contentful_paint_ms": null,
+        "blocked_requests": 1,
+        "total_mb": 1.186,
+        "third_party_share": 0.2122
+      },
+      "error": null,
+      "axe_version": "4.13.0",
+      "screenshot_path": "/home/runner/work/acessisaude-audit/acessisaude-audit/data/screenshots/www.saude.rj.gov.br__bbc87712b8__mobile-320.png",
+      "is_critical_path": true,
+      "duration_ms": 6304.564
+    },
+    {
+      "url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+      "final_url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Saúde RJ - Subsecretaria de Controle Interno e Compliance - Ouvidoria - Participe",
+      "lang": null,
+      "viewport": {
+        "name": "desktop-1366",
+        "width": 1366,
+        "height": 768,
+        "device_scale_factor": 1.0,
+        "is_mobile": false,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+      },
+      "started_at": "2026-09-03T23:29:23.563911Z",
+      "finished_at": "2026-09-03T23:29:29.161420Z",
+      "findings": [
+        {
+          "id": "d84a5252-804f-497f-aa35-671a90cfd4a8",
+          "rule_id": "color-contrast",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.4.3"
+          ],
+          "summary": "Elements must meet minimum color contrast ratio thresholds",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "remediation": "Ajustar a paleta para razão mínima de 4.5:1 (texto normal) e 3:1 (texto grande), validando os tokens de design, não apenas as telas.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axeAPI",
+          "affects": [
+            "baixa_visao",
+            "cognitiva_neurodivergencia",
+            "visao_de_cores"
+          ],
+          "nodes": [
+            {
+              "selector": "#qw",
+              "html": "<input id=\"qw\" name=\"qw\" type=\"text\" class=\"tb\" accesskey=\"3\" placeholder=\"\" value=\"\">",
+              "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.08 (foreground color: #ffffff, background color: #299ec6, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "target_frame": [],
+              "measured": {
+                "fgColor": "#ffffff",
+                "bgColor": "#299ec6",
+                "contrastRatio": 3.08,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "normal",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".texto > .tela",
+              "html": "<div class=\"tela\">\n\t\t\t\tSetores da Saúde<div>●</div>Subsecretaria de Controle Interno e Compliance<div>●</div>Ouvidoria<div>●</div><span class=\"ativo\">Participe</span>\n\t\t\t</div>",
+              "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.07 (foreground color: #b4b4b4, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "target_frame": [],
+              "measured": {
+                "fgColor": "#b4b4b4",
+                "bgColor": "#ffffff",
+                "contrastRatio": 2.07,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "normal",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".tela > .ativo",
+              "html": "<span class=\"ativo\">Participe</span>",
+              "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.97 (foreground color: #abbbc4, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "target_frame": [],
+              "measured": {
+                "fgColor": "#abbbc4",
+                "bgColor": "#ffffff",
+                "contrastRatio": 1.97,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "normal",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "a[href$=\"participe\"]",
+              "html": "<a href=\"/ouvidoria/participe\" class=\"ativo sem-seta\">Participe!</a>",
+              "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.18 (foreground color: #ffffff, background color: #31869b, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "target_frame": [],
+              "measured": {
+                "fgColor": "#ffffff",
+                "bgColor": "#31869b",
+                "contrastRatio": 4.18,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "bold",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".dentro > .itens > a[target=\"_blank\"]:nth-child(1)",
+              "html": "<a href=\"http://www.riocomsaude.rj.gov.br/\" target=\"_blank\">Rio com Saúde</a>",
+              "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.09 (foreground color: #999999, background color: #dddddd, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "target_frame": [],
+              "measured": {
+                "fgColor": "#999999",
+                "bgColor": "#dddddd",
+                "contrastRatio": 2.09,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "bold",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".itens > a[target=\"_blank\"]:nth-child(2)",
+              "html": "<a href=\"http://www.informacaoemsaude.rj.gov.br\" target=\"_blank\">informação em saúde</a>",
+              "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.09 (foreground color: #999999, background color: #dddddd, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "target_frame": [],
+              "measured": {
+                "fgColor": "#999999",
+                "bgColor": "#dddddd",
+                "contrastRatio": 2.09,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "bold",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              }
+            }
+          ],
+          "page_url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-03T23:29:28.975964Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 6,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "O contraste insuficiente é a barreira de comunicação mais prevalente e atinge diretamente a população idosa usuária do SUS; sua persistência em portal público caracteriza descumprimento continuado do art. 63, caput, da LBI e do art. 47 do Decreto 5.296/2004."
+        },
+        {
+          "id": "86938cdb-db81-4c55-a764-474b4e497249",
+          "rule_id": "html-has-lang",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "3.1.1"
+          ],
+          "summary": "<html> element must have a lang attribute",
+          "description": "Ensure every HTML document has a lang attribute",
+          "remediation": "Declarar lang='pt-BR' no elemento html de todas as páginas.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/html-has-lang?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "html",
+              "html": "<html xmlns=\"http://www.w3.org/1999/xhtml\">",
+              "failure_summary": "Fix any of the following:\n  The <html> element does not have a lang attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noLang"
+              }
+            }
+          ],
+          "page_url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-03T23:29:28.976009Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "Sem declaração de idioma, o sintetizador de voz pronuncia o português com fonética estrangeira e a informação em saúde se torna ininteligível — a informação é publicada, mas não é comunicada (art. 3º, IV, 'd', LBI)."
+        },
+        {
+          "id": "88c0fc07-6adf-40c8-8255-7b2d6e31a27a",
+          "rule_id": "input-image-alt",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "critical",
+          "criteria": [
+            "1.1.1",
+            "4.1.2"
+          ],
+          "summary": "Image buttons must have alternative text",
+          "description": "Ensure <input type=\"image\"> elements have alternative text",
+          "remediation": "Prover atributo alt descritivo em imagens informativas e alt vazio em imagens decorativas; descrever gráficos e infográficos em texto adjacente. Usar elementos nativos ou, quando inevitável, ARIA completo (role, nome acessível, estado) com teclado equivalente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/input-image-alt?application=axeAPI",
+          "affects": [
+            "baixa_conectividade",
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "fala",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "input[src$=\"busca.png\"]",
+              "html": "<input type=\"image\" src=\"/site/img/busca.png\">",
+              "failure_summary": "Fix any of the following:\n  Element has no alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            }
+          ],
+          "page_url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-03T23:29:28.976042Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "critico",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii",
+            "onu.art9"
+          ],
+          "legal_thesis": "Controle sem nome, função ou valor expostos simplesmente não existe para a tecnologia assistiva: o serviço é, para o usuário cego, inexistente. É a forma mais severa de barreira na informação do art. 3º, IV, 'd'."
+        },
+        {
+          "id": "b6be3391-7f5b-4232-b25b-e6229d87b702",
+          "rule_id": "label",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "critical",
+          "criteria": [
+            "4.1.2"
+          ],
+          "summary": "Form elements must have labels",
+          "description": "Ensure every form element has a label",
+          "remediation": "Usar elementos nativos ou, quando inevitável, ARIA completo (role, nome acessível, estado) com teclado equivalente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/label?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "fala",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "#qw",
+              "html": "<input id=\"qw\" name=\"qw\" type=\"text\" class=\"tb\" accesskey=\"3\" placeholder=\"\" value=\"\">",
+              "failure_summary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has an empty placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            }
+          ],
+          "page_url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-03T23:29:28.976071Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "critico",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "onu.art9"
+          ],
+          "legal_thesis": "Controle sem nome, função ou valor expostos simplesmente não existe para a tecnologia assistiva: o serviço é, para o usuário cego, inexistente. É a forma mais severa de barreira na informação do art. 3º, IV, 'd'."
+        },
+        {
+          "id": "76fcef2d-739c-461d-a3ff-6aef2ad76a63",
+          "rule_id": "link-name",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "2.4.4",
+            "4.1.2"
+          ],
+          "summary": "Links must have discernible text",
+          "description": "Ensure links have discernible text",
+          "remediation": "Reescrever textos de link para que descrevam o destino sem depender do parágrafo circundante. Usar elementos nativos ou, quando inevitável, ARIA completo (role, nome acessível, estado) com teclado equivalente.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/link-name?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "fala",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": ".no-menu > a[href=\"/\"]",
+              "html": "<a href=\"/\">\n\t\t\t<img src=\"/site/img/topo_governo.png\" alt=\"\" class=\"logo\">\n\t\t</a>",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            },
+            {
+              "selector": ".sub-topo > a",
+              "html": "<a href=\"javascript:TrocarMenuInterna();\"><img src=\"/site/img/menu_seta2.png\" alt=\"\" class=\"botao-menu\"></a>",
+              "failure_summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noAttr"
+              }
+            }
+          ],
+          "page_url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-03T23:29:28.976099Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 2,
+          "legal_risk": "critico",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "onu.art9"
+          ],
+          "legal_thesis": "Controle sem nome, função ou valor expostos simplesmente não existe para a tecnologia assistiva: o serviço é, para o usuário cego, inexistente. É a forma mais severa de barreira na informação do art. 3º, IV, 'd'."
+        },
+        {
+          "id": "664f251c-0220-42c5-9e96-d57eb8a49ce3",
+          "rule_id": "meta-viewport",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "moderate",
+          "criteria": [
+            "1.4.4"
+          ],
+          "summary": "Zooming and scaling must not be disabled",
+          "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+          "remediation": "Usar unidades relativas e remover 'user-scalable=no' da meta viewport.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/meta-viewport?application=axeAPI",
+          "affects": [
+            "baixa_visao",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "meta[name=\"viewport\"]",
+              "html": "<meta name=\"viewport\" content=\"width=device-width, maximum-scale=1.1, minimum-scale=0.9\">",
+              "failure_summary": "Fix any of the following:\n  maximum-scale on <meta> tag disables zooming on mobile devices",
+              "target_frame": [],
+              "measured": {
+                "meta-viewport": "maximum-scale"
+              }
+            }
+          ],
+          "page_url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-03T23:29:28.976121Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25"
+          ],
+          "legal_thesis": "O bloqueio de ampliação nega adaptação razoável, conduta equiparada a discriminação pelo art. 4º, § 1º da LBI."
+        },
+        {
+          "id": "b1104fb4-4f3f-4314-9dc3-a1842c0f5b34",
+          "rule_id": "bypass",
+          "source": "axe-core",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "2.4.1"
+          ],
+          "summary": "Page must have means to bypass repeated blocks",
+          "description": "Ensure each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+          "remediation": "Incluir link 'pular para o conteúdo principal' e marcos ARIA (landmarks).",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/bypass?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "html",
+              "html": "<html xmlns=\"http://www.w3.org/1999/xhtml\">",
+              "failure_summary": "Fix any of the following:\n  No valid skip link found\n  Page does not have a heading\n  Page does not have a landmark region",
+              "target_frame": [],
+              "measured": {}
+            }
+          ],
+          "page_url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-03T23:29:28.976145Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "moderado",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art3.i"
+          ],
+          "legal_thesis": "A ausência de mecanismo de salto obriga a percorrer repetidamente blocos idênticos, esforço desproporcional vedado pelo conceito de acessibilidade com autonomia do art. 3º, I da LBI."
+        },
+        {
+          "id": "8a494a6f-d1c9-4ee0-a2b6-61f55f501097",
+          "rule_id": "color-contrast",
+          "source": "axe-core",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "1.4.3"
+          ],
+          "summary": "Elements must meet minimum color contrast ratio thresholds",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "remediation": "Ajustar a paleta para razão mínima de 4.5:1 (texto normal) e 3:1 (texto grande), validando os tokens de design, não apenas as telas.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axeAPI",
+          "affects": [
+            "baixa_visao",
+            "cognitiva_neurodivergencia",
+            "visao_de_cores"
+          ],
+          "nodes": [
+            {
+              "selector": ".menu > span",
+              "html": "<span>Menu</span>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "15.0pt (20px)",
+                "fontWeight": "normal",
+                "messageKey": "bgImage",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".contraste",
+              "html": "<a href=\"javascript:MudarContraste();\" class=\"contraste\">Contraste</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".texto > .tela > div:nth-child(1)",
+              "html": "<div>●</div>",
+              "failure_summary": "Fix any of the following:\n  Element content contains only non-text characters",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "nonBmp"
+              }
+            },
+            {
+              "selector": ".texto > .tela > div:nth-child(2)",
+              "html": "<div>●</div>",
+              "failure_summary": "Fix any of the following:\n  Element content contains only non-text characters",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "nonBmp"
+              }
+            },
+            {
+              "selector": ".tela > div:nth-child(3)",
+              "html": "<div>●</div>",
+              "failure_summary": "Fix any of the following:\n  Element content contains only non-text characters",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "nonBmp"
+              }
+            },
+            {
+              "selector": "#Procurar",
+              "html": "<input id=\"Procurar\" type=\"submit\" value=\"Procurar\">",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "bold",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "a[target=\"_blank\"]:nth-child(2) > span",
+              "html": "<span>Disque Rio Contra a Corrupção</span>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".ouvidoria",
+              "html": "<a href=\"/ouvidoria\" class=\"ouvidoria\">Ouvidoria</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "26.3pt (35px)",
+                "fontWeight": "normal",
+                "messageKey": "bgImage",
+                "expectedContrastRatio": "3:1"
+              }
+            },
+            {
+              "selector": ".fale-conosco",
+              "html": "<a href=\"/fale-conosco\" class=\"fale-conosco\">Fale conosco</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "26.3pt (35px)",
+                "fontWeight": "normal",
+                "messageKey": "bgImage",
+                "expectedContrastRatio": "3:1"
+              }
+            },
+            {
+              "selector": ".imprensa",
+              "html": "<a href=\"/assessoria-de-comunicacao\" class=\"imprensa\">Imprensa</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "26.3pt (35px)",
+                "fontWeight": "normal",
+                "messageKey": "bgImage",
+                "expectedContrastRatio": "3:1"
+              }
+            },
+            {
+              "selector": "a[href$=\"acessibilidade\"]",
+              "html": "<a href=\"/acessibilidade\">Acessibilidade</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "9.8pt (13px)",
+                "fontWeight": "normal",
+                "messageKey": "bgImage",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": "a[href$=\"mapa-do-site\"]",
+              "html": "<a href=\"/mapa-do-site\">Mapa do site</a>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "9.8pt (13px)",
+                "fontWeight": "normal",
+                "messageKey": "bgImage",
+                "expectedContrastRatio": "4.5:1"
+              }
+            },
+            {
+              "selector": ".copyright",
+              "html": "<div class=\"copyright\">\n\t\t<a href=\"https://creativecommons.org/licenses/by/3.0/br/\" target=\"_blank\"><img src=\"/site/img/copyright.png\" alt=\"Creative Commons\"></a><br>\n\t\tEsta obra é licenciada sob uma licença Creative Commons Atribuição 3.0 Brasil\n\t</div>",
+              "failure_summary": "Fix any of the following:\n  Element's background color could not be determined due to a background image",
+              "target_frame": [],
+              "measured": {
+                "fgColor": null,
+                "bgColor": null,
+                "contrastRatio": 0,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "normal",
+                "messageKey": "bgImage",
+                "expectedContrastRatio": "4.5:1"
+              }
+            }
+          ],
+          "page_url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-03T23:29:28.976278Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 13,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "O contraste insuficiente é a barreira de comunicação mais prevalente e atinge diretamente a população idosa usuária do SUS; sua persistência em portal público caracteriza descumprimento continuado do art. 63, caput, da LBI e do art. 47 do Decreto 5.296/2004."
+        },
+        {
+          "id": "c041b8b1-1564-40ed-8047-4f1e0b55bdea",
+          "rule_id": "probe.page-language.missing",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "3.1.1"
+          ],
+          "summary": "O documento não declara o idioma (atributo lang ausente).",
+          "description": "Sem declaração de idioma, o leitor de tela aplica a fonética do idioma configurado no sistema do usuário. Termos de saúde em português pronunciados com fonemas de outro idioma tornam-se ininteligíveis: a informação pública existe, mas não chega.",
+          "remediation": "Declarar lang='pt-BR' no elemento html de todas as páginas.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/language-of-page.html",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "html",
+              "html": "<html xmlns=\"http://www.w3.org/1999/xhtml\"><head>\n\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n\t<title>Saúde RJ - Subsecretaria de Contr",
+              "failure_summary": "Elemento <html> sem atributo lang.",
+              "target_frame": [],
+              "measured": {
+                "lang": null
+              }
+            }
+          ],
+          "page_url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-03T23:29:28.978144Z",
+          "legal_risk_override": "alto",
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "Sem declaração de idioma, o sintetizador de voz pronuncia o português com fonética estrangeira e a informação em saúde se torna ininteligível — a informação é publicada, mas não é comunicada (art. 3º, IV, 'd', LBI)."
+        },
+        {
+          "id": "f91f2082-f4cc-4c5a-ac73-1e54794f209b",
+          "rule_id": "probe.landmarks.no-main",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.3.1"
+          ],
+          "summary": "A página não declara marco de conteúdo principal (<main>).",
+          "description": "Sem <main> ou role=\"main\", o leitor de tela não distingue o conteúdo da moldura de navegação. O usuário cego precisa ouvir todo o cabeçalho e todo o menu a cada página que abre — em um portal com sessenta itens de menu, isso são minutos de áudio antes da primeira informação útil sobre a consulta.",
+          "remediation": "Envolver o conteúdo específico da página em <main> e reservar <header>, <nav> e <footer> para as regiões repetidas.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "<body class=\"vigilancia site interna sub-interna noticias\" id=\"eventos\">\n<!--robot_noindex-->\n\t<div class=\"super-desktop\"></div>\n\t<div class=\"desktop-mini\"></div>\n\t<div class=\"desktop\"></div>\n\t<div cl",
+              "failure_summary": "Nenhum elemento <main> ou role=\"main\" no documento.",
+              "target_frame": [],
+              "measured": {
+                "main": 0,
+                "nav": 0,
+                "banner": 0,
+                "contentinfo": 0
+              }
+            }
+          ],
+          "page_url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-03T23:29:28.979857Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74"
+          ],
+          "legal_thesis": "Sem estrutura semântica, a tecnologia assistiva não consegue reconstruir a relação entre rótulo e dado; o art. 74 da LBI assegura o acesso a tecnologias assistivas, o que pressupõe conteúdo com elas compatível."
+        },
+        {
+          "id": "1a23fc4f-7525-42a8-a4af-995558808e19",
+          "rule_id": "probe.landmarks.no-skip-link",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "moderate",
+          "criteria": [
+            "2.4.1"
+          ],
+          "summary": "Nenhum link de salto para o conteúdo principal foi encontrado.",
+          "description": "Não há âncora funcional no início do documento que permita ignorar os blocos repetidos de navegação. Como a página também não declara marco principal, não existe mecanismo algum de bypass: o critério 2.4.1 está violado.",
+          "remediation": "Incluir link 'pular para o conteúdo principal' e marcos ARIA (landmarks).",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "",
+              "failure_summary": "Nenhuma âncora interna com destino existente.",
+              "target_frame": [],
+              "measured": {
+                "has_main": false
+              }
+            }
+          ],
+          "page_url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-03T23:29:28.979880Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "moderado",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art3.i"
+          ],
+          "legal_thesis": "A ausência de mecanismo de salto obriga a percorrer repetidamente blocos idênticos, esforço desproporcional vedado pelo conceito de acessibilidade com autonomia do art. 3º, I da LBI."
+        },
+        {
+          "id": "27fb0293-e41f-40c3-8ee3-ebb6fa3a0c1e",
+          "rule_id": "probe.heading-structure.none",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.3.1",
+            "2.4.6"
+          ],
+          "summary": "A página não possui nenhum cabeçalho.",
+          "description": "Sem cabeçalhos, o principal atalho de navegação do leitor de tela — a lista de títulos — fica vazio. A página só pode ser percorrida linearmente, do começo ao fim.",
+          "remediation": "Escrever cabeçalhos que descrevam o conteúdo da seção e rótulos que descrevam o dado solicitado.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "",
+              "failure_summary": "Zero cabeçalhos.",
+              "target_frame": [],
+              "measured": {}
+            }
+          ],
+          "page_url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-03T23:29:28.981185Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "Sem estrutura semântica, a tecnologia assistiva não consegue reconstruir a relação entre rótulo e dado; o art. 74 da LBI assegura o acesso a tecnologias assistivas, o que pressupõe conteúdo com elas compatível."
+        },
+        {
+          "id": "43bd3625-a990-4435-9576-9db37450543a",
+          "rule_id": "probe.zoom-lock",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.4.4"
+          ],
+          "summary": "A página bloqueia a ampliação pelo usuário.",
+          "description": "A meta viewport declara restrições de escala: 'maximum-scale=1.1' limita a ampliação abaixo dos 200% exigidos. Pessoas com baixa visão dependem da ampliação nativa do navegador para ler conteúdo de saúde; o bloqueio equivale a recusar adaptação razoável.",
+          "remediation": "Usar unidades relativas e remover 'user-scalable=no' da meta viewport.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html",
+          "affects": [
+            "baixa_visao",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "meta[name=viewport]",
+              "html": "<meta name=\"viewport\" content=\"width=device-width, maximum-scale=1.1, minimum-scale=0.9\">",
+              "failure_summary": "'maximum-scale=1.1' limita a ampliação abaixo dos 200% exigidos",
+              "target_frame": [],
+              "measured": {
+                "content": "width=device-width, maximum-scale=1.1, minimum-scale=0.9",
+                "user_scalable_no": false,
+                "maximum_scale": 1.1
+              }
+            }
+          ],
+          "page_url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-03T23:29:29.102714Z",
+          "legal_risk_override": "alto",
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25"
+          ],
+          "legal_thesis": "O bloqueio de ampliação nega adaptação razoável, conduta equiparada a discriminação pelo art. 4º, § 1º da LBI."
+        },
+        {
+          "id": "584cc2a8-4a14-46b2-8a3f-cb6b21cf4d39",
+          "rule_id": "probe.readability",
+          "source": "heuristic",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [],
+          "summary": "Legibilidade do conteúdo principal em 0.0 pontos — faixa muito difícil (exige ensino superior).",
+          "description": "O texto principal apresenta média de 78.33 palavras por frase e 2.621 sílabas por palavra. Nessa faixa, a compreensão autônoma exige escolaridade acima da média da população que depende exclusivamente do SUS. A informação está publicada e tecnicamente disponível, mas o registro de linguagem opera como barreira de acesso — em especial para pessoas com deficiência intelectual, para quem o art. 3º, IV, 'd' da LBI expressamente reconhece a barreira na comunicação. Índices de legibilidade medem estrutura, não compreensão: este achado sinaliza revisão editorial e não constitui, por si só, violação de critério normativo.",
+          "remediation": "Revisar o conteúdo em linguagem simples: frases curtas, ordem direta, voz ativa, termos técnicos explicados na primeira ocorrência e uma ideia por parágrafo. Manter a versão formal como documento anexo quando houver exigência legal de redação técnica.",
+          "help_url": null,
+          "affects": [
+            "cognitiva_neurodivergencia",
+            "baixa_conectividade"
+          ],
+          "nodes": [
+            {
+              "selector": "main",
+              "html": "Viver melhor Cidadão Profissional de saúde Gestor Pesquisador Setores da Saúde Assessoria de Regionalização Atendimento Atenção Especializada, Controle e Avaliação Atenção Psicossocial e Populações em Situação de Vulnerabilidade Atenção Primária à Saúde Auditoria Design em Saúde Contratações Educaçã…",
+              "failure_summary": "Flesch adaptado = 0.0 (muito difícil (exige ensino superior)).",
+              "target_frame": [],
+              "measured": {
+                "index": 0.0,
+                "band": "muito difícil (exige ensino superior)",
+                "words": 235,
+                "sentences": 3,
+                "syllables": 616,
+                "words_per_sentence": 78.33,
+                "syllables_per_word": 2.621
+              }
+            }
+          ],
+          "page_url": "https://www.saude.rj.gov.br/ouvidoria/participe",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-03T23:29:29.111127Z",
+          "legal_risk_override": "moderado",
+          "extra_provisions": [
+            "lbi.art18",
+            "lai.art8.par3.viii",
+            "lei13460.art5"
+          ],
+          "legal_thesis_override": "A publicação de informação de saúde em registro linguístico inacessível à população destinatária esvazia materialmente o dever de oferta de comunicação e informação adequadas (art. 18, § 4º, IV, LBI) e o dever de transparência ativa (art. 8º, § 3º, LAI). A informação torna-se disponível sem se tornar acessível.",
+          "occurrences": 1,
+          "legal_risk": "moderado",
+          "legal_provisions": [
+            "lbi.art18",
+            "lai.art8.par3.viii",
+            "lei13460.art5"
+          ],
+          "legal_thesis": "A publicação de informação de saúde em registro linguístico inacessível à população destinatária esvazia materialmente o dever de oferta de comunicação e informação adequadas (art. 18, § 4º, IV, LBI) e o dever de transparência ativa (art. 8º, § 3º, LAI). A informação torna-se disponível sem se tornar acessível."
+        }
+      ],
+      "network": {
+        "total_bytes": 1246110,
+        "total_uncompressed_bytes": 0,
+        "request_count": 71,
+        "bytes_by_type": {
+          "document": 22003,
+          "font": 75592,
+          "image": 799822,
+          "script": 295666,
+          "stylesheet": 48875,
+          "xhr": 4152
+        },
+        "third_party_bytes": 295799,
+        "third_party_domains": [
+          "google-analytics.com",
+          "googleapis.com",
+          "googletagmanager.com",
+          "gstatic.com"
+        ],
+        "dom_content_loaded_ms": 1717.5,
+        "load_complete_ms": 3026.100000000006,
+        "largest_contentful_paint_ms": null,
+        "blocked_requests": 1,
+        "total_mb": 1.188,
+        "third_party_share": 0.2374
+      },
+      "error": null,
+      "axe_version": "4.13.0",
+      "screenshot_path": "/home/runner/work/acessisaude-audit/acessisaude-audit/data/screenshots/www.saude.rj.gov.br__bbc87712b8__desktop-1366.png",
+      "is_critical_path": true,
+      "duration_ms": 5597.509
+    },
+    {
+      "url": "https://www.saude.rj.gov.br/laudos",
+      "final_url": "https://www.saude.rj.gov.br/laudos",
+      "status": "navigation_error",
+      "http_status": null,
+      "title": null,
+      "lang": null,
+      "viewport": {
+        "name": "mobile-320",
+        "width": 320,
+        "height": 640,
+        "device_scale_factor": 2.0,
+        "is_mobile": true,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; SM-A105M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+      },
+      "started_at": "2026-09-03T23:29:29.168771Z",
+      "finished_at": "2026-09-03T23:29:30.181077Z",
+      "findings": [],
+      "network": {
+        "total_bytes": 362,
+        "total_uncompressed_bytes": 0,
+        "request_count": 1,
+        "bytes_by_type": {
+          "document": 362
+        },
+        "third_party_bytes": 0,
+        "third_party_domains": [],
+        "dom_content_loaded_ms": null,
+        "load_complete_ms": null,
+        "largest_contentful_paint_ms": null,
+        "blocked_requests": 1,
+        "total_mb": 0.0,
+        "third_party_share": 0.0
+      },
+      "error": "Page.goto: net::ERR_CONNECTION_CLOSED at https://www.saude.rj.gov.br/laudos\nCall log:\n  - navigating to \"https://www.saude.rj.gov.br/laudos\", waiting until \"domcontentloaded\"\n",
+      "axe_version": null,
+      "screenshot_path": null,
+      "is_critical_path": true,
+      "duration_ms": 1012.3059999999999
+    },
+    {
+      "url": "https://www.saude.rj.gov.br/laudos",
+      "final_url": "https://www.saude.rj.gov.br/laudos",
+      "status": "navigation_error",
+      "http_status": null,
+      "title": null,
+      "lang": null,
+      "viewport": {
+        "name": "desktop-1366",
+        "width": 1366,
+        "height": 768,
+        "device_scale_factor": 1.0,
+        "is_mobile": false,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+      },
+      "started_at": "2026-09-03T23:29:30.188126Z",
+      "finished_at": "2026-09-03T23:29:32.178271Z",
+      "findings": [],
+      "network": {
+        "total_bytes": 362,
+        "total_uncompressed_bytes": 0,
+        "request_count": 1,
+        "bytes_by_type": {
+          "document": 362
+        },
+        "third_party_bytes": 0,
+        "third_party_domains": [],
+        "dom_content_loaded_ms": null,
+        "load_complete_ms": null,
+        "largest_contentful_paint_ms": null,
+        "blocked_requests": 1,
+        "total_mb": 0.0,
+        "third_party_share": 0.0
+      },
+      "error": "Page.goto: net::ERR_CONNECTION_CLOSED at https://www.saude.rj.gov.br/laudos\nCall log:\n  - navigating to \"https://www.saude.rj.gov.br/laudos\", waiting until \"domcontentloaded\"\n",
+      "axe_version": null,
+      "screenshot_path": null,
+      "is_critical_path": true,
+      "duration_ms": 1990.145
+    }
+  ],
+  "engine_version": "0.1.0",
+  "axe_version": "4.13.0",
+  "browser": "chromium 151.0.7922.34",
+  "config_snapshot": {
+    "browser": "chromium",
+    "headless": true,
+    "navigation_timeout_ms": 30000,
+    "settle_delay_ms": 1500,
+    "locale": "pt-BR",
+    "timezone_id": "America/Sao_Paulo",
+    "max_pages_per_target": 25,
+    "max_crawl_depth": 2,
+    "request_delay_ms": 2000,
+    "concurrency": 1,
+    "respect_robots_txt": true,
+    "robots_override_reason": "",
+    "axe_tags": [
+      "wcag2a",
+      "wcag2aa",
+      "wcag21a",
+      "wcag21aa"
+    ],
+    "viewports": [
+      {
+        "name": "mobile-320",
+        "width": 320,
+        "height": 640,
+        "device_scale_factor": 2.0,
+        "is_mobile": true,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; SM-A105M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+      },
+      {
+        "name": "desktop-1366",
+        "width": 1366,
+        "height": 768,
+        "device_scale_factor": 1.0,
+        "is_mobile": false,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+      }
+    ],
+    "scoring": {
+      "friction_kappa": 150.0,
+      "critical_path_multiplier": 1.5,
+      "price_per_mb_brl": 0.0029296875,
+      "franchise_mb": 10240.0,
+      "heavy_page_mb": 2.5
+    },
+    "random_seed": 42,
+    "plan": {
+      "total_tasks": 6,
+      "unique_urls": 3,
+      "discover_enabled": false,
+      "declared_gaps": []
+    },
+    "probes": [
+      "probe.page-language",
+      "probe.landmarks",
+      "probe.heading-structure",
+      "probe.id-duplicado",
+      "probe.non-interactive-control",
+      "probe.positive-tabindex",
+      "probe.focus-visible",
+      "probe.placeholder-como-rotulo",
+      "probe.erro-sem-mensagem",
+      "probe.reflow-320",
+      "probe.zoom-lock",
+      "probe.captions",
+      "probe.autoplay",
+      "probe.meta-refresh",
+      "probe.data-cost",
+      "probe.readability"
+    ]
+  },
+  "errors": [],
+  "page_count": 6,
+  "violation_count": 21,
+  "occurrence_count": 42
+}
