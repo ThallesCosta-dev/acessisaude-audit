@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "humanizar": {
+      "source": "fabricioctelles/skills",
+      "sourceType": "github",
+      "skillPath": "skills/humanizar/SKILL.md",
+      "computedHash": "e3808fbed2063f7cde288407efb001df5e6a9c3faf989c42bbeaced9e8a6a2da"
+    }
+  }
+}
