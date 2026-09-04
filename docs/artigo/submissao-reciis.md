@@ -10,7 +10,7 @@ Manuscrito: [`manuscrito-reciis.md`](manuscrito-reciis.md).
 | Item | Decisão |
 |---|---|
 | Seção | **Artigos originais** (40–60 mil caracteres com espaços) |
-| Extensão atual | **~59,7 mil** no corpo; **~64,9 mil** com as referências — ver § 3.1 |
+| Extensão atual | **63,5 mil** de texto corrido; **73,3 mil** com tabelas e referências — ver § 3.1 |
 | Idioma | Português, com título, resumo e palavras-chave em inglês e espanhol |
 | Avaliação | Duplo-cega — manuscrito sem identificação de autoria |
 | Comitê de ética | Não aplicável (sem seres humanos, sem dados pessoais); declarado na subseção 2.9 |
@@ -58,22 +58,28 @@ Não houve apresentação prévia.
 
 ### 3.1 Contagem de caracteres — decisão pendente
 
-A norma diz "entre 40 e 60 mil caracteres com espaços" sem esclarecer se as referências
-entram na conta. O manuscrito está em **59,7 mil no corpo** e **64,9 mil com as referências**.
+A norma diz "entre 40 e 60 mil caracteres com espaços" sem esclarecer o que entra na conta. O
+manuscrito está assim:
 
-- Se a contagem for só do texto, está conforme, com margem estreita.
-- Se incluir as referências, **excede em cerca de 5 mil caracteres**.
+| Componente | Caracteres |
+|---|---|
+| Texto corrido | 63.460 |
+| Tabelas e legendas | 4.307 |
+| Referências | 5.511 |
+| **Total** | **73.278** |
+
+Uma revisão anterior reduziu o texto corrido de 91,2 mil para 63,5 mil, com troca do bloco
+transversal e supressão de material de aparelho, que passou ao material suplementar. **Faltam
+cerca de 3,5 mil caracteres** para o teto, sob a leitura mais provável, a de que a contagem
+incide sobre o texto corrido.
 
 Duas saídas, em ordem de preferência:
 
-1. **Perguntar à secretaria da revista** antes de submeter. É uma mensagem, e resolve.
-2. **Cortar ~6 mil caracteres**, o que é factível sem perder resultado: as seções com maior
-   redundância interna são 3.3 (caracterização da amostra), 4.4 (exclusão digital) e 5
-   (considerações finais), que juntas somam cerca de 6,5 mil. Uma passagem de compressão
-   nessas três resolve sem tocar em Métodos nem nas tabelas.
-
-Não cortei preventivamente porque a compressão custa substância e a dúvida se resolve
-perguntando.
+1. **Perguntar à secretaria da revista** o que entra na contagem. É uma mensagem, e resolve a
+   diferença entre 63,5 mil e 73,3 mil.
+2. **Cortar os 3,5 mil restantes.** O material com menor densidade por caractere, nesta versão,
+   está em § 2.4 (matriz normativa, cuja enumeração de dispositivos se repete na Tabela 7), em
+   § 4.5 (exclusão digital) e em § 5. Cortar além disso passa a custar resultado.
 
 **Já atendido no manuscrito**
 
@@ -122,18 +128,11 @@ Em ordem de risco para o parecer.
    **fechado** e mensurável, regressão do portal federal com piso de onze dias observados e
    transição ancorada em cobertura integral dos dois lados, três portais com dezesseis dias de
    variação nula. O que ainda falta e só o tempo dá: **um segundo episódio de intermitência**,
-   sem o qual não se pode dizer com que frequência barreiras mudam — hoje o artigo afirma
-   apenas que mudam. E o fechamento da regressão do gov.br, que converteria "≥ 11 dias" em uma
-   duração. Reprocessar custa dois comandos: `acessisaude reindexar` e
-   `python scripts/gerar_figuras.py`. Fixar a data de corte no
-   [registro da série](../metodologia/registro-da-serie-diaria.md) antes de submeter.
-
-2. **Atualizar os números do braço transversal com a cobertura da SES-RJ.** Na série, o portal
-   estadual estabilizou (perda 0% em doze dias, contra 50–67% em 16/08) e seu ICA sob cobertura
-   integral é **49,3**, não 54,1. As Tabelas 3, 6, 8 e as Figuras 1 e 2 ainda descrevem o corte
-   de 16/08. Decidir entre (a) manter os dois blocos explicitamente separados, como está, ou
-   (b) recompor as tabelas transversais sobre um dia de cobertura integral da série. A opção
-   (b) é mais forte e exige regerar figuras.
+   sem o qual não se pode dizer com que frequência barreiras mudam, e o fechamento da regressão
+   do gov.br, que converteria "≥ 11 dias" em uma duração. Reprocessar custa dois comandos:
+   `acessisaude reindexar` e `python scripts/gerar_figuras.py`. Fixar a data de corte no
+   [registro da série](../metodologia/registro-da-serie-diaria.md) antes de submeter, e refazer
+   a contagem de caracteres depois, porque a série cresce dentro do texto.
 
 3. **Citação da Anatel pelo relatório primário**, e não por veículo especializado.
    Reconferir também os parâmetros de custo nos sítios das operadoras, com captura arquivada.
@@ -157,6 +156,16 @@ Tabelas 12 e 13, Figura 5), discussão (§ 4.7) e limites reescritos (§ 4.8). A
 expôs um defeito do instrumento — índice de conformidade máximo em dia sem observação —
 corrigido pela [ADR 0010](../adr/0010-indices-nulos-sem-observacao.md) e reportado no próprio
 artigo (§ 3.2), por ser contribuição metodológica e não detalhe de implementação.
+
+**Bloco transversal trocado para 04/09/2026.** O corte de 16/08 tinha 16 de 20 auditorias
+válidas e reduzia o estrato estadual a duas páginas, por indisponibilidade do portal naquela
+janela. A série ofereceu cinco dias de cobertura integral, e o manuscrito passou a usar
+04/09: **20 de 20 auditorias, perda nula, estrato estadual com seis páginas**. As duas
+afirmações centrais sobreviveram ao *n* maior — barreira absoluta em 20/20 e prevalência total
+do critério 4.1.2, agora acompanhado do 1.1.1 —, e as 125 violações passaram a 168. Sumiram, com
+a troca, a inconsistência entre o ICA da secretaria estadual nos dois blocos e a limitação mais
+citada do estudo, a de duas observações no estrato estadual. Tabelas e figuras foram regeradas
+por `python scripts/gerar_figuras.py`, que fixa qual bloco alimenta cada uma.
 
 **Ampliação da janela para 17 dias.** Nenhuma conclusão foi invertida; o que mudou foi a força
 das afirmações. O episódio de intermitência fechou e passou a ter duração; a regressão do

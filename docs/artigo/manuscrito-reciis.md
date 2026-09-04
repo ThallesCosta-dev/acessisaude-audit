@@ -18,8 +18,7 @@ sua inacessibilidade restringe um direito. Desenvolveu-se um instrumento de audi
 algorítmica que converte falhas técnicas de acessibilidade em proposições jurídicas
 fundamentadas na Lei Brasileira de Inclusão. Aferido contra conjunto de referência com
 barreiras conhecidas, foi aplicado a cinco plataformas de saúde do Rio de Janeiro,
-estratificadas por esfera federativa, em série diária de dezessete dias. No corte transversal,
-vinte auditorias produziram dezesseis medições válidas e 125 violações confirmadas. Todas
+estratificadas por esfera federativa, em série diária de dezessete dias. No corte transversal, vinte auditorias de página produziram 168 violações confirmadas. Todas
 apresentaram ao menos uma barreira crítica, sem rota alternativa, e o critério de nome, função
 e valor dos componentes foi violado em todas. Observou-se gradiente entre esferas federativas.
 Na série, três plataformas não variaram em dezesseis dias observados e duas mudaram, o que
@@ -35,9 +34,7 @@ Digital platforms have become the preferred channel for public health services, 
 inaccessibility restricts a right. An algorithmic auditing instrument converts technical
 accessibility failures into legal propositions grounded in the Brazilian Inclusion Law.
 Assessed against a reference set with known barriers, it was applied to five health platforms
-in Rio de Janeiro, stratified by federative level, and in a seventeen-day series. In the
-cross-sectional block, twenty audits yielded sixteen valid measurements and 125 confirmed
-violations. Every page presented at least one critical barrier, with no alternative route, and
+in Rio de Janeiro, stratified by federative level, and in a seventeen-day series. In the cross-sectional block, twenty page audits yielded 168 confirmed violations. Every page presented at least one critical barrier, with no alternative route, and
 the criterion on name, role and value of interface components was violated in all. A gradient
 across federative levels was observed. In the series, three platforms showed no variation
 across sixteen observed days and two changed, which indicates that the periodicity of
@@ -54,8 +51,7 @@ inaccesibilidad restringe un derecho. Se desarrolló un instrumento de auditorí
 que convierte fallas de accesibilidad en proposiciones jurídicas fundamentadas en la Ley
 Brasileña de Inclusión. Verificado con un conjunto de referencia con barreras conocidas, se
 aplicó a cinco plataformas de salud de Río de Janeiro, estratificadas por esfera federativa,
-en serie diaria de diecisiete días. Veinte auditorías del corte transversal produjeron
-dieciséis mediciones válidas y 125 violaciones confirmadas. Todas presentaron al menos una
+en serie diaria de diecisiete días. Veinte auditorías del corte transversal produjeron 168 violaciones confirmadas. Todas presentaron al menos una
 barrera crítica, sin ruta alternativa, y el criterio sobre nombre, función y valor de los
 componentes fue violado en todas. Se observó gradiente entre esferas. En la serie, tres
 plataformas no variaron en dieciséis días observados y dos cambiaron, lo que muestra que la
@@ -101,51 +97,42 @@ administração pública.
 
 Três literaturas se aproximam do problema sem convergir.
 
-A primeira, de avaliação técnica de conformidade, é a mais desenvolvida e tem no Brasil
-percurso de duas décadas. Simão e Rodrigues (2005) avaliaram o portal federal de serviços e
-informações e já registravam barreiras para o cidadão com deficiência. Freire, Castro e Fortes
-(2009) produziram o estudo longitudinal mais consequente da série: mediram 1.232 páginas dos
-27 sítios estaduais entre 1996 e 2007 e verificaram avanço modesto, ainda distante das
-diretrizes internacionais, mesmo após o prazo de conformidade fixado pelo Decreto 5.296/2004.
-O achado é decisivo para o presente trabalho, porque converte uma questão doutrinária em
-questão empírica: a existência da norma não produziu, por si, efeito mensurável. Silva e La
-Rue (2015) examinaram oito portais do Executivo estadual à luz dos direitos fundamentais das
-pessoas com deficiência e concluíram que nenhum atendia integralmente aos critérios mínimos.
-Mais recentemente, Barros *et al.* (2024) avaliaram a plataforma centralizada do governo
-federal por três ferramentas automatizadas e concluíram que o portal não atende a requisitos
-mínimos de acessibilidade. Fora do país, Alajarmeh (2021) auditou os sítios oficiais de saúde
-pública de 25 países durante a pandemia e encontrou apenas três aprovados em todos os testes
-aplicados, com predomínio de violações dos princípios perceptível e operável, a mesma
-distribuição que este estudo encontrará.
+A primeira, de avaliação técnica de conformidade, tem no Brasil percurso de duas décadas.
+Simão e Rodrigues (2005) avaliaram o portal federal de serviços e informações e já registravam
+barreiras para o cidadão com deficiência. Freire, Castro e Fortes (2009) produziram o estudo
+longitudinal mais consequente da série: mediram 1.232 páginas dos 27 sítios estaduais entre
+1996 e 2007 e verificaram avanço modesto, ainda distante das diretrizes internacionais, mesmo
+após o prazo fixado pelo Decreto 5.296/2004. O achado é decisivo aqui, porque converte questão
+doutrinária em questão empírica: a existência da norma não produziu, por si, efeito mensurável.
+Silva e La Rue (2015) examinaram oito portais do Executivo estadual e concluíram que nenhum
+atendia integralmente aos critérios mínimos, e Barros *et al.* (2024) chegaram a conclusão
+equivalente sobre a plataforma centralizada do governo federal. Fora do país, Alajarmeh (2021)
+auditou os sítios oficiais de saúde pública de 25 países durante a pandemia e encontrou apenas
+três aprovados em todos os testes, com predomínio de violações dos princípios perceptível e
+operável, a mesma distribuição que este estudo encontrará.
 
-São trabalhos descritivos, úteis e convergentes no diagnóstico, mas com três fragilidades
-recorrentes. Raramente declaram a cobertura da ferramenta empregada, isto é, a fração dos
-critérios normativos que ela é capaz de verificar, o que torna qualquer percentual de
-conformidade um número sobre denominador oculto. Quase nunca reportam a perda de páginas na
-coleta, tratando-a como incidente e não como dado. E não qualificam juridicamente o achado, de
-modo que o relatório se dirige ao desenvolvedor, e não ao gestor ou ao órgão de controle.
+São trabalhos convergentes no diagnóstico, com três fragilidades recorrentes. Raramente
+declaram a cobertura da ferramenta empregada, o que torna qualquer percentual de conformidade
+um número sobre denominador oculto. Quase nunca reportam a perda de páginas na coleta,
+tratando-a como incidente e não como dado. E não qualificam juridicamente o achado, de modo que
+o relatório se dirige ao desenvolvedor, e não ao gestor ou ao órgão de controle.
 
-A segunda literatura examina a validade das próprias diretrizes e a capacidade das
-ferramentas de operacionalizá-las. Brajnik (2009) mostrou que critérios anunciados como
-testáveis apresentam variação relevante entre avaliadores. Vigo, Brown e Conway (2013)
-compararam seis ferramentas de avaliação automática e encontraram cobertura de, no máximo,
-50% dos critérios de sucesso, com completude entre 14% e 38%. O resultado estabelece um teto
-empírico para qualquer afirmação de conformidade baseada apenas em automação. Power
-*et al.* (2012), a partir de 1.383 instâncias de problema encontradas por 32 usuários cegos
-em 16 sítios, verificaram que apenas 50,4% dos problemas vividos correspondiam a algum
-critério de sucesso das diretrizes. As duas conclusões, somadas, delimitam o alcance legítimo
-do método automático: ele mede uma parte da norma, e a norma cobre uma parte da experiência.
+A segunda literatura examina a validade das diretrizes e a capacidade das ferramentas de
+operacionalizá-las. Brajnik (2009) mostrou que critérios anunciados como testáveis apresentam
+variação relevante entre avaliadores. Vigo, Brown e Conway (2013) compararam seis ferramentas e
+encontraram cobertura de, no máximo, 50% dos critérios de sucesso, com completude entre 14% e
+38%, o que estabelece um teto empírico para qualquer afirmação de conformidade baseada apenas
+em automação. Power *et al.* (2012), a partir de 1.383 instâncias encontradas por 32 usuários
+cegos em 16 sítios, verificaram que apenas 50,4% dos problemas vividos correspondiam a algum
+critério de sucesso. Somadas, as conclusões delimitam o alcance do método automático: ele mede
+uma parte da norma, e a norma cobre uma parte da experiência.
 
-A terceira literatura, situada no campo da comunicação e informação em saúde, examina a
-barreira comunicacional no próprio serviço. Vieira, Caniato e Yonemotu (2017) descreveram as
-percepções de pessoas com deficiência auditiva sobre o atendimento recebido e mostraram que a
-barreira de comunicação opera dentro do serviço de saúde, e não apenas no acesso a ele.
-Deslocada para o canal digital, essa barreira muda de forma e conserva a natureza. É esse
-deslocamento que carece de instrumento de medida.
-
-A literatura jurídica sobre o art. 63 da Lei Brasileira de Inclusão, por fim, analisa o
-dispositivo em chave doutrinária, sem instrumento de mensuração: discute-se o alcance do
-dever sem produzir evidência sobre seu descumprimento.
+A terceira, no campo da comunicação e informação em saúde, examina a barreira comunicacional
+dentro do serviço. Vieira, Caniato e Yonemotu (2017) descreveram as percepções de pessoas com
+deficiência auditiva sobre o atendimento recebido e mostraram que a barreira opera dentro do
+serviço, e não apenas no acesso a ele; deslocada para o canal digital, ela muda de forma e
+conserva a natureza. A literatura jurídica sobre o art. 63, por fim, analisa o dispositivo em
+chave doutrinária, sem instrumento de mensuração.
 
 A lacuna de que este trabalho trata está na articulação. Não há instrumento que produza, do
 mesmo dado e com procedência auditável, a afirmação técnica e a proposição jurídica
@@ -160,15 +147,13 @@ acesso com o mesmo efeito prático da barreira de acessibilidade clássica, e fr
 mesma pessoa. O peso de uma página, medido em bytes efetivamente trafegados, é uma barreira
 que as diretrizes de acessibilidade não enxergam, porque pressupõem um usuário que já chegou.
 
-Os dados disponíveis sustentam a sobreposição. O Censo 2022 identificou 14,4 milhões de
-pessoas com deficiência no país, 7,3% da população de dois anos ou mais; entre elas, a taxa de
+Os dados disponíveis sustentam a sobreposição. O Censo 2022 identificou 14,4 milhões de pessoas
+com deficiência no país, 7,3% da população de dois anos ou mais; entre elas, a taxa de
 analfabetismo era de 21,3%, quatro vezes a das pessoas sem deficiência, e apenas 7,4% haviam
-concluído o ensino superior, contra 19,5% (IBGE, 2025). A pesquisa TIC Domicílios 2024, por
-sua vez, mostra que a internet está presente em 68% dos domicílios das classes D e E, contra a
-totalidade dos da classe A, e que apenas 3% das pessoas dessas classes reúnem as condições do
-indicador de conectividade significativa (que combina custo, velocidade, banda larga fixa e
-acesso por mais de um dispositivo), contra 73% na classe A; entre quem tem telefone celular
-nas classes D e E, 86% acessam a rede exclusivamente por esse aparelho (CGI.br, 2025).
+concluído o ensino superior, contra 19,5% (IBGE, 2025). A TIC Domicílios 2024 mostra que apenas
+3% das pessoas das classes D e E reúnem as condições do indicador de conectividade
+significativa, contra 73% na classe A, e que 86% de quem tem celular nessas classes acessa a
+rede exclusivamente por esse aparelho (CGI.br, 2025).
 
 Escolaridade mais baixa, conectividade precária e dependência exclusiva do aparelho móvel são
 as condições concretas em que a interface do serviço público de saúde é usada, e não variáveis
@@ -201,123 +186,114 @@ afetado.
 ### 2.1 Desenho do estudo
 
 Estudo observacional de auditoria algorítmica, estratificado por esfera federativa, com dois
-componentes. O componente **transversal** compara plataformas entre si em uma janela de
-medição. O componente **longitudinal** repete a mesma auditoria, com a mesma configuração, em
-dias sucessivos, e é o que permite distinguir barreira persistente de barreira transitória,
-distinção que a auditoria pontual, por construção, não pode fazer, e sem a qual a proposta de
-auditoria *contínua* seria apenas uma promessa de arquitetura.
+componentes. O componente transversal compara plataformas entre si em uma janela de medição. O
+componente longitudinal repete a mesma auditoria, com a mesma configuração, em dias sucessivos,
+e é o que permite distinguir barreira persistente de barreira transitória, distinção que a
+auditoria pontual, por construção, não pode fazer, e sem a qual a proposta de auditoria
+*contínua* seria apenas uma promessa de arquitetura.
 
 A unidade de observação é a página web em um perfil de dispositivo, em um dia; a unidade de
-análise é o achado de auditoria; a unidade de comparação entre instituições é a plataforma.
-A distinção entre as três é necessária e é frequentemente colapsada na literatura da área,
-com consequências que a subseção 2.7 detalha.
+análise é o achado de auditoria; a unidade de comparação entre instituições é a plataforma. A
+distinção entre as três é frequentemente colapsada na literatura da área, com consequências que
+a subseção 2.7 detalha.
 
 ### 2.2 População, amostra e conduta de coleta
 
-A população é o conjunto de plataformas digitais de saúde pública com incidência no município
-e no estado do Rio de Janeiro. A amostragem foi intencional, estratificada por esfera
-federativa (federal, estadual, municipal) e por natureza do serviço (informacional,
-transacional). A escolha se justifica porque a população é pequena e conhecida e porque o
-interesse é comparar estratos de gestão, não estimar parâmetro populacional. A justificativa
-de inclusão de cada alvo consta do catálogo versionado do instrumento.
+A população é o conjunto de plataformas digitais de saúde pública com incidência no município e
+no estado do Rio de Janeiro. A amostragem foi intencional, estratificada por esfera federativa e
+por natureza do serviço, o que se justifica porque a população é pequena e conhecida e porque o
+interesse é comparar estratos de gestão, não estimar parâmetro populacional. A justificativa de
+inclusão de cada alvo consta do catálogo versionado do instrumento.
 
 As páginas auditadas foram declaradas explicitamente, e não descobertas por rastreamento
-automático: a descoberta automática produz amostra não reproduzível, porque o conjunto de
-links muda a cada publicação de conteúdo. Fixou-se teto de 25 páginas por plataforma, por
-razão ética (carga sobre servidores públicos) e metodológica (comparabilidade entre portais de
-tamanhos distintos).
+automático, que produz amostra não reproduzível porque o conjunto de links muda a cada
+publicação. Fixou-se teto de 25 páginas por plataforma, por razão ética (carga sobre servidores
+públicos) e metodológica (comparabilidade entre portais de tamanhos distintos). A conduta
+observou o `robots.txt` de cada origem, intervalo mínimo de 2.000 milissegundos entre
+requisições e identificação da pesquisa no campo `User-Agent`. O instrumento lê o documento
+renderizado de páginas públicas: não preenche formulários, não autentica e não transmite dados.
+Áreas autenticadas foram excluídas e reportadas como lacunas declaradas.
 
-A conduta de coleta observou o arquivo `robots.txt` de cada origem, intervalo mínimo de 2.000
-milissegundos entre requisições e identificação da pesquisa no campo `User-Agent`. O
-instrumento lê o documento renderizado de páginas públicas: não preenche formulários, não
-autentica e não transmite dados. Áreas autenticadas foram excluídas e reportadas como lacunas
-declaradas da amostra.
+A coleta ocorreu entre 16 de agosto e 4 de setembro de 2026. Um primeiro bloco, em 16 e 19 de
+agosto, com medições repetidas em intervalo de minutos, sustenta a análise de confiabilidade e
+o exame de disponibilidade das subseções 3.2 e 3.4. A partir de 19 de agosto, tarefa agendada
+passou a executar a mesma configuração diariamente, entre 12h20 e 12h25 em tempo universal
+coordenado, sobre a mesma lista de páginas, por dezessete dias consecutivos. O horário fixo é
+decisão metodológica: variação de horário confundiria mudança do portal com variação de carga
+do servidor ao longo do dia. Produziram-se 85 varreduras e 340 tentativas de auditoria de
+página, das quais 297 foram bem-sucedidas.
 
-A **janela de coleta** compreendeu dois blocos, declarados aqui porque o segundo é condição
-do componente longitudinal. O bloco transversal ocorreu em 16 e 19 de agosto de 2026, com
-medições repetidas em intervalo de minutos, e sustenta os resultados das subseções 3.1 a 3.11.
-O bloco longitudinal ocorreu entre 19 de agosto e 4 de setembro de 2026, em dezessete
-dias consecutivos, por tarefa agendada disparada diariamente entre 12h20 e 12h25 em tempo
-universal coordenado (9h20 a 9h25 no horário de Brasília), sempre com a mesma configuração e a
-mesma lista de páginas. O horário fixo é decisão metodológica: variação de horário confundiria
-mudança do portal com variação de carga do servidor ao longo do dia. Produziram-se 85
-varreduras e 340 tentativas de auditoria de página, das quais 297 foram bem-sucedidas.
+O **bloco transversal** das subseções 3.3 e 3.5 a 3.11 corresponde a 4 de setembro, único
+critério de escolha sendo a cobertura: é dia em que as cinco plataformas responderam
+integralmente, o que impede que a comparação entre esferas seja contaminada por
+indisponibilidade de infraestrutura.
 
-Registram-se dois desvios da cadência, ambos mantidos na análise por não afetarem os
-resultados e por serem menos danosos declarados que suprimidos. Em 1º de setembro a tarefa
-agendada não disparou e a coleta foi executada manualmente às 18h07, fora da janela habitual;
-os cinco índices daquele dia são idênticos aos dos dias vizinhos, de modo que o desvio de
-horário não produziu efeito detectável. Em 25 de agosto, falha de resolução de nomes na
-máquina coletora impediu qualquer observação, e o dia integra a série sem veredito (subseções
-3.2 e 3.12).
+Registram-se dois desvios da cadência, ambos mantidos na análise por não afetarem os resultados
+e por serem menos danosos declarados que suprimidos. Em 1º de setembro a tarefa não disparou e
+a coleta foi executada manualmente às 18h07, fora da janela habitual; os cinco índices daquele
+dia são idênticos aos dos vizinhos, de modo que o desvio não produziu efeito detectável. Em 25
+de agosto, falha de resolução de nomes na máquina coletora impediu qualquer observação, e o dia
+integra a série sem veredito (subseções 3.2 e 3.12).
 
 ### 2.3 Perfis de dispositivo
 
 Adotaram-se dois perfis, por decisão metodológica e não técnica. O perfil `mobile-320` (320 ×
 640 pixels, densidade 2, agente de aparelho de entrada) corresponde à largura mínima exigida
-pelo critério 1.4.10 e aproxima o aparelho predominante entre usuários de menor renda. O
-perfil `desktop-1366` (1366 × 768) corresponde à resolução de desktop mais comum no país e ao
-ambiente em que os portais costumam ser homologados. O contraste entre os dois é, por si, um
-resultado do estudo.
+pelo critério 1.4.10 e aproxima o aparelho predominante entre usuários de menor renda. O perfil
+`desktop-1366` (1366 × 768) corresponde à resolução de desktop mais comum no país e ao ambiente
+em que os portais costumam ser homologados. O contraste entre os dois é, por si, um resultado
+do estudo.
 
 ### 2.4 A matriz de correspondência normativa
 
 A contribuição central do instrumento é a matriz que vincula cada critério de sucesso a
 dispositivos do ordenamento brasileiro, em três camadas cumulativas.
 
-A **camada geral** incide sobre qualquer barreira e reúne o art. 63, caput, da Lei Brasileira
-de Inclusão; o art. 3º, IV, "d", que tipifica as barreiras nas comunicações e na informação;
-o art. 4º, sobre igualdade e não discriminação; o art. 47 do Decreto 5.296/2004; e o Modelo
-de Acessibilidade em Governo Eletrônico.
-
-A **camada de saúde** incide sobre todos os alvos deste estudo e acrescenta o art. 18 da Lei
-Brasileira de Inclusão, sobre atenção integral à saúde da pessoa com deficiência; o art. 196
-da Constituição; e o art. 25 da Convenção Internacional sobre os Direitos das Pessoas com
-Deficiência, promulgada pelo Decreto 6.949/2009 (Brasil, 2009) com status de emenda
-constitucional.
-
-A **camada específica** varia conforme a natureza da barreira e acrescenta, por exemplo, o
-art. 74 da Lei Brasileira de Inclusão quando há dependência de tecnologia assistiva; o art.
-8º, § 3º, VIII, da Lei de Acesso à Informação (Brasil, 2011) quando se trata de transparência
-ativa; e o art. 9 da Convenção quando a barreira é absoluta, isto é, quando não há rota
-alternativa acessível. Essa terceira camada evita o vício, comum na literatura, de invocar o
-mesmo bloco de dispositivos para toda e qualquer falha, o que dilui a força argumentativa e
-impede graduar a gravidade.
+A camada geral incide sobre qualquer barreira e reúne o art. 63, caput, da Lei Brasileira de
+Inclusão, o art. 3º, IV, "d", o art. 4º, o art. 47 do Decreto 5.296/2004 e o Modelo de
+Acessibilidade em Governo Eletrônico. A camada de saúde incide sobre todos os alvos deste
+estudo e acrescenta o art. 18 da Lei Brasileira de Inclusão, o art. 196 da Constituição e o
+art. 25 da Convenção Internacional sobre os Direitos das Pessoas com Deficiência, promulgada
+pelo Decreto 6.949/2009 (Brasil, 2009) com status de emenda constitucional. A camada específica
+varia com a natureza da barreira e acrescenta, por exemplo, o art. 74 da Lei Brasileira de
+Inclusão quando há dependência de tecnologia assistiva, o art. 8º, § 3º, VIII, da Lei de Acesso
+à Informação (Brasil, 2011) em matéria de transparência ativa, e o art. 9 da Convenção quando a
+barreira é absoluta. Essa terceira camada evita o vício, comum na literatura, de invocar o mesmo
+bloco de dispositivos para qualquer falha, o que dilui a força argumentativa e impede graduar a
+gravidade.
 
 O risco jurídico de cada critério foi graduado pela combinação de três vetores (essencialidade
 do serviço obstruído, existência de rota alternativa e reversibilidade do dano) em quatro
-faixas, com os pesos empregados nos índices: crítico (peso 12; 4 critérios), alto
-(peso 7; 18), moderado (peso 3; 19) e baixo (peso 1; 9). A escala é independente da gravidade
-técnica atribuída pelo motor de regras, e ambas são reportadas. A matriz cobre os 50 de 50
-critérios do escopo, e a completude é verificada por teste automatizado.
+faixas, com os pesos empregados nos índices: crítico (peso 12; 4 critérios), alto (peso 7; 18),
+moderado (peso 3; 19) e baixo (peso 1; 9). A escala é independente da gravidade técnica
+atribuída pelo motor de regras, e ambas são reportadas. A matriz cobre os 50 critérios do
+escopo, e a completude é verificada por teste automatizado.
 
 ### 2.5 Instrumento
 
-O instrumento executa o navegador Chromium por automação, aplica sobre o documento
-renderizado o motor de regras `axe-core` na versão 4.13.0, vendorizada para garantir
-reprodutibilidade, e acrescenta 16 sondas próprias que cobrem 18 critérios e duas dimensões
-sem correspondência normativa. O recorte de regras restringiu-se às marcações `wcag2a`,
-`wcag2aa`, `wcag21a` e `wcag21aa`; a categoria de boas práticas foi excluída, porque
-recomendação sem lastro normativo não sustenta afirmação de violação legal.
+O instrumento executa o navegador Chromium por automação, aplica sobre o documento renderizado
+o motor de regras `axe-core` na versão 4.13.0, vendorizada para garantir reprodutibilidade, e
+acrescenta 16 sondas próprias que cobrem 18 critérios e duas dimensões sem correspondência
+normativa. O recorte de regras restringiu-se às marcações `wcag2a`, `wcag2aa`, `wcag21a` e
+`wcag21aa`; a categoria de boas práticas foi excluída, porque recomendação sem lastro normativo
+não sustenta afirmação de violação legal.
 
-Dois achados metodológicos emergiram da construção das sondas e merecem registro, por
-afetarem qualquer estudo que empregue o mesmo motor. O primeiro: o `axe-core` aceita o
-atributo `placeholder` como nome acessível válido. Como esse é o padrão mais comum nos
-formulários de agendamento dos portais públicos brasileiros, a omissão tornaria a auditoria
-cega precisamente na tela de maior consequência assistencial. O segundo: o critério 4.1.1 foi
-removido na versão 2.2 das diretrizes, e o motor acompanhou a norma técnica, enquanto a
-referência normativa brasileira permanece na versão 2.1. Trata-se de caso em que a ferramenta
-de referência e a norma de referência divergem, e a opção adotada foi seguir a norma que rege
-o objeto.
+Dois achados da construção das sondas afetam qualquer estudo que empregue o mesmo motor. O
+`axe-core` aceita o atributo `placeholder` como nome acessível válido, e como esse é o padrão
+mais comum nos formulários de agendamento dos portais públicos brasileiros, a omissão tornaria
+a auditoria cega precisamente na tela de maior consequência assistencial. E o critério 4.1.1 foi
+removido na versão 2.2 das diretrizes, acompanhado pelo motor, enquanto a referência normativa
+brasileira permanece na 2.1: em caso de divergência entre a ferramenta de referência e a norma
+de referência, adotou-se a norma que rege o objeto.
 
 ### 2.6 Índices
 
 Contar violações produz três vieses, cada um suficiente para invalidar comparações entre
 portais. O **viés de template**: uma página com 400 links sem nome acessível recebe 400
-ocorrências, mas tem um defeito: o componente de link do sistema de design. O **viés de
+ocorrências, mas tem um defeito, o componente de link do sistema de design. O **viés de
 equivalência**: somar uma falha de declaração de idioma com uma armadilha de teclado supõe que
-ambas pesam igual. E o **viés de cobertura**, já discutido na subseção 1.2. Construíram-se,
-por isso, quatro indicadores.
+ambas pesam igual. E o **viés de cobertura**, discutido na subseção 1.2. Daí quatro
+indicadores.
 
 O **Índice de Conformidade de Acessibilidade** (ICA) é dado por
 ICA = 100 × (1 − Σ*w*(*c*) para *c* violado ⁄ Σ*w*(*c*) para *c* verificável), em que *w*(*c*)
@@ -325,87 +301,75 @@ ICA = 100 × (1 − Σ*w*(*c*) para *c* violado ⁄ Σ*w*(*c*) para *c* verific�
 automático possível, e a razão entre eles e o total (27/50 = 0,54) acompanha todo índice
 publicado, sob o rótulo de cobertura.
 
-O **Índice de Atrito de Navegação** (IAN) agrega, por achado, o produto do peso técnico, do
-peso jurídico e de log₂(1 + ocorrências), multiplicado por 1,5 nas páginas de fluxo essencial
-declarado, e satura por IAN = 100 × (1 − *e*^(−atrito⁄κ)). O amortecimento logarítmico corrige
-o viés de template: cem elementos com o mesmo defeito pesam 6,7 vezes um, e não cem vezes. A
-saturação exponencial mantém o índice limitado e comparável entre portais de tamanhos
-distintos.
+O **Índice de Atrito de Navegação** (IAN) agrega, por achado, o produto do peso técnico, do peso
+jurídico e de log₂(1 + ocorrências), multiplicado por 1,5 nas páginas de fluxo essencial
+declarado, e satura por IAN = 100 × (1 − *e*^(−atrito⁄κ)). O amortecimento logarítmico corrige o
+viés de template, fazendo cem elementos com o mesmo defeito pesarem 6,7 vezes um, e a saturação
+mantém o índice comparável entre portais de tamanhos distintos. O **Índice de Exposição
+Jurídica** (IEJ) tem a mesma forma funcional, ignora o peso técnico e descarta os achados de
+risco baixo, porque passivo jurídico não se mede por irregularidade formal, e sim por obstrução
+efetiva de direito.
 
-O **Índice de Exposição Jurídica** (IEJ) tem a mesma forma funcional, ignora o peso técnico e
-descarta os achados de risco baixo, porque passivo jurídico não se mede por irregularidade
-formal,
-e sim por obstrução efetiva de direito.
-
-O sinalizador de barreira absoluta é booleano e indica a presença de violação de risco
+O **sinalizador de barreira absoluta** é booleano e indica a presença de violação de risco
 crítico. Não é um índice, e é o mais importante: um portal pode ter conformidade alta e ser
 inutilizável por uma única armadilha de teclado. Nenhum índice contínuo distingue "difícil" de
 "impossível", razão pela qual o sinalizador precede qualquer número em todas as saídas.
 
-O custo de acesso foi calculado como o produto do peso da página, em mebibytes efetivamente
-trafegados, pelo preço do dado móvel, e expresso também como fração da franquia mensal. Os
-parâmetros foram coletados e datados: R$ 3,00 por gibibyte (oferta pré-paga de R$ 15,00 por
-5 GB em 15 dias, consultada em 10 de agosto de 2026); franquia de 10 gibibytes mensais; e
-limiar de página onerosa de 2,5 mebibytes, correspondente ao peso mediano móvel reportado
-pelo *Web Almanac* (HTTP Archive, 2025). Os três parâmetros são conservadores frente aos
-dados setoriais oficiais, que apontam preço efetivo médio superior e receita média por usuário
-pré-pago inferior à franquia adotada (Anatel, 2026): a estimativa erra para menos.
-
-Todos os parâmetros que afetam número publicável são serializados junto de cada varredura, de
-modo que nenhum resultado dependa de constante implícita no código.
+O custo de acesso é o produto do peso da página, em mebibytes efetivamente trafegados, pelo
+preço do dado móvel, expresso também como fração da franquia mensal. Os parâmetros foram
+coletados e datados: R$ 3,00 por gibibyte (oferta pré-paga consultada em 10 de agosto de 2026),
+franquia de 10 gibibytes mensais e limiar de página onerosa de 2,5 mebibytes, o peso mediano
+móvel reportado pelo *Web Almanac* (HTTP Archive, 2025). Os três são conservadores frente aos
+dados setoriais oficiais (Anatel, 2026): a estimativa erra para menos. Todos os parâmetros que
+afetam número publicável são serializados junto de cada varredura.
 
 ### 2.7 Análise estatística
 
-Empregou-se estatística não paramétrica, por assimetria conhecida das distribuições de
-índices de acessibilidade: teste de Mann-Whitney para dois grupos, com δ de Cliff como
-tamanho de efeito, e teste de Kruskal-Wallis para três ou mais, com ε². Intervalos de
-confiança por *bootstrap* percentílico, com 10.000 reamostragens e semente fixa. O tamanho de
-efeito é reportado sempre, ao lado do valor-p: com poucas instituições por estrato, um p
-pequeno pode acompanhar diferença irrelevante e um p grande pode esconder diferença
-substantiva por falta de potência.
+Empregou-se estatística não paramétrica, por assimetria conhecida das distribuições de índices
+de acessibilidade: Mann-Whitney para dois grupos, com δ de Cliff como tamanho de efeito, e
+Kruskal-Wallis para três ou mais, com ε². O tamanho de efeito é reportado sempre, ao lado do
+valor-p: com poucas instituições por estrato, um p pequeno pode acompanhar diferença
+irrelevante e um p grande pode esconder diferença substantiva por falta de potência.
 
-Duas ameaças à validade foram declaradas no desenho e não apenas na discussão. A
+Duas ameaças à validade foram declaradas no desenho, e não apenas na discussão. A
 **pseudorreplicação**: páginas do mesmo portal compartilham template, equipe e decisões de
 projeto, e não são observações independentes; tratá-las como tal infla o *n* e produz
-significância espúria. A mitigação adotada foi reportar as comparações entre esferas também
-em nível de portal, com uma observação por plataforma, e apresentar a análise por página como
-descritiva. A **potência insuficiente**: os resultados são formulados como ausência de
-diferença detectável, nunca como igualdade entre grupos.
+significância espúria. A mitigação foi reportar as comparações entre esferas também em nível de
+portal e apresentar a análise por página como descritiva. A **potência insuficiente**: os
+resultados são formulados como ausência de diferença detectável, nunca como igualdade entre
+grupos.
 
 As hipóteses são exploratórias e assim devem ser lidas: o desenho não comporta confirmação.
-Formularam-se quatro: gradiente de conformidade entre esferas federativas (H1); maior atrito
-em serviços transacionais que em informacionais (H2); barreiras reveladas exclusivamente pelo
+Formularam-se quatro: gradiente de conformidade entre esferas federativas (H1); maior atrito em
+serviços transacionais que em informacionais (H2); barreiras reveladas exclusivamente pelo
 perfil móvel (H3); e associação positiva entre peso da página e participação de tráfego de
 terceiros (H4).
 
 ### 2.8 Validação do instrumento
 
 Antes de qualquer afirmação sobre portais reais, o instrumento foi aferido contra um conjunto
-de referência composto por cinco páginas sintéticas, servidas localmente, com verdade
-declarada em manifesto versionado. O conjunto inclui um controle negativo (página construída
-em conformidade) e um controle positivo com 20 barreiras plantadas, cada uma anotada com o
-critério que deveria ser detectado.
+de referência de cinco páginas sintéticas, servidas localmente, com verdade declarada em
+manifesto versionado: um controle negativo (página construída em conformidade) e um controle
+positivo com 20 barreiras plantadas, cada uma anotada com o critério que deveria ser detectado.
 
-O parâmetro de saturação κ do índice de atrito foi determinado empiricamente por esse
-conjunto, e não escolhido *a priori*. O valor inicialmente estimado (κ = 40) foi rejeitado
-pela aferição: com ele, quatro das cinco páginas de referência pontuavam acima de 98 e uma
-única falha séria já marcava 65, de modo que o índice deixava de distinguir "ruim" de
-"inutilizável", exatamente a distinção que ele existe para fazer. A recalibração fixou
-κ = 150.
+O parâmetro de saturação κ do índice de atrito foi determinado empiricamente por esse conjunto,
+e não escolhido *a priori*. O valor inicialmente estimado (κ = 40) foi rejeitado pela aferição:
+com ele, quatro das cinco páginas de referência pontuavam acima de 98 e uma única falha séria
+já marcava 65, de modo que o índice deixava de distinguir "ruim" de "inutilizável", exatamente
+a distinção que ele existe para fazer. A recalibração fixou κ = 150.
 
 ### 2.9 Reprodutibilidade e ética
 
-Cada varredura carrega o registro completo de configuração, incluindo versões do navegador,
-do motor de regras e do próprio instrumento, além da data e hora da coleta. O motor de regras
-está vendorizado em versão fixa e o catálogo de alvos é versionado. O código e os dados
-primários estão depositados em repositório público sob licença livre, cujo endereço será
-informado após a avaliação por pares, em razão da política de avaliação cega.
+Cada varredura carrega o registro completo de configuração, incluindo versões do navegador, do
+motor de regras e do próprio instrumento, além da data e hora da coleta. O motor está
+vendorizado em versão fixa e o catálogo de alvos é versionado. O código e os dados primários
+estão depositados em repositório público sob licença livre, cujo endereço será informado após a
+avaliação por pares, em razão da política de avaliação cega.
 
 O estudo não envolveu seres humanos nem dados pessoais: a coleta se restringiu ao documento
 renderizado de páginas públicas, sem autenticação, sem preenchimento de formulário e sem
-transmissão de dados. Não houve, portanto, submissão a comitê de ética em pesquisa, nos
-termos da Resolução 510/2016 do Conselho Nacional de Saúde. A conduta de coleta observou os
-limites descritos na subseção 2.2.
+transmissão de dados. Não houve, portanto, submissão a comitê de ética em pesquisa, nos termos
+da Resolução 510/2016 do Conselho Nacional de Saúde.
 
 ---
 
@@ -418,76 +382,48 @@ construída em conformidade e detectou 18 dos 20 critérios distintos plantados 
 positivo. A cobertura declarada (critérios com veredito automático possível) é de 27 dos 50
 critérios do escopo, ou 54%.
 
-As três barreiras que permaneceram fora do alcance automático estão descritas na Tabela 1.
+As três barreiras que permaneceram fora do alcance automático têm a mesma natureza: exigem
+julgamento semântico que nenhuma ferramenta emite. A situação da consulta indicada apenas por
+círculo colorido (critério 1.4.1) requer decidir se a cor é o único portador do sentido; o
+título "Documento1" (2.4.2) existe, e a pergunta é se descreve a página; os links com o texto
+"clique aqui" (2.4.4) têm texto, e a pergunta é se ele descreve o destino. O resultado não é
+uma limitação envergonhada: é evidência empírica, produzida pelo próprio instrumento, de que a
+auditoria automática estabelece um piso de não conformidade e nunca um atestado de
+acessibilidade.
 
-**Tabela 1** – Barreiras plantadas não detectáveis por verificação automática e julgamento
-exigido
+### 3.2 Confiabilidade e correções do instrumento durante a coleta
 
-| Critério | Barreira plantada | Julgamento exigido |
-|---|---|---|
-| 1.4.1 Uso de cor | Situação da consulta indicada apenas por círculo colorido | A cor é o único portador do sentido? |
-| 2.4.2 Página com título | Título da página definido como "Documento1" | O título existe; é descritivo? |
-| 2.4.4 Finalidade do link | Quatro links com o texto "clique aqui" | O texto existe; descreve o destino? |
-
-Fonte: elaboração própria.
-
-O resultado não é uma limitação envergonhada: é evidência empírica, produzida pelo próprio
-instrumento, de que a auditoria automática estabelece um piso de não conformidade e nunca um
-atestado de acessibilidade. As três barreiras exigem julgamento semântico, e nenhuma delas
-seria resolvida por refinamento da implementação.
-
-### 3.2 Confiabilidade teste-reteste e correção do instrumento durante a coleta
-
-Cada plataforma foi medida quatro vezes, entre 00h58 e 01h45 (tempo universal coordenado) de
-16 de agosto de 2026. O índice de conformidade foi idêntico em todas as medições, nas cinco
-plataformas, com variação nula, e o conjunto de critérios violados repetiu-se integralmente
-em quatro delas. É o resultado esperado de barreiras estruturais, e evidência de que o
-instrumento mede o portal, e não o momento.
+Cada plataforma foi medida quatro vezes, entre 00h58 e 01h45 de 16 de agosto de 2026. O índice
+de conformidade foi idêntico em todas as medições, nas cinco plataformas, com variação nula, e
+o conjunto de critérios violados repetiu-se integralmente em quatro delas. É o resultado
+esperado de barreiras estruturais, e evidência de que o instrumento mede o portal, e não o
+momento.
 
 A repetição revelou um defeito do próprio instrumento. O perfil de desktop não declarava
 agente explícito e herdava o padrão da biblioteca de automação, que anuncia navegador em modo
 headless. Isso violava a conduta declarada de identificar a pesquisa e produzia perda de
-páginas por bloqueio, conforme a Tabela 2.
+páginas por bloqueio: três medições com o agente herdado perderam 17%, 17% e 33% das páginas
+do portal federal informacional, e três medições posteriores à correção não perderam nenhuma.
+Teste direto confirmou que o agente não explicava as falhas do portal estadual, que têm outra
+causa (subseção 3.4). Todas as medições reportadas neste trabalho são posteriores à correção.
 
-**Tabela 2** – Perda de páginas no portal federal informacional antes e depois da correção do
-agente de usuário
+A série diária revelou um segundo defeito, mais grave, porque afetava a interpretação e não a
+coleta. Em 25 de agosto, uma falha de resolução de nomes na máquina coletora impediu o
+carregamento das 20 páginas das cinco plataformas. O índice de conformidade é a razão entre
+critérios não violados e critérios avaliados: sem página carregada não há achado, o numerador
+fica cheio, e o instrumento registrou 100 pontos, o máximo da escala, para as cinco
+plataformas, no único dia em que nada foi observado. Nenhuma exceção foi levantada; a taxa de
+perda de 100% ficou registrada num campo ao lado.
 
-| Configuração do instrumento | Medições | Perda de páginas |
-|---|---|---|
-| Agente herdado, em modo headless | 3 | 17% · 17% · 33% |
-| Agente identificando a pesquisa | 3 | 0% · 0% · 0% |
-
-Fonte: elaboração própria.
-
-Teste direto confirmou que o agente de usuário não explicava as falhas do portal estadual,
-que têm outra causa (subseção 3.4), mas explicava as do portal federal: as perdas ali eram
-artefato do instrumento, e não propriedade do portal. Em consequência, o conjunto de dados
-primário passou a ser o das medições posteriores à correção; usar as anteriores propagaria um
-viés do instrumento para os resultados publicados.
-
-A série diária revelou um segundo defeito, de natureza distinta e mais grave, porque afetava a
-interpretação e não a coleta. Em 25 de agosto de 2026, uma falha de resolução de nomes na
-máquina coletora impediu o carregamento das 20 páginas das cinco plataformas. O índice de
-conformidade é a razão entre critérios não violados e critérios avaliados: sem página
-carregada não há achado, o numerador fica cheio, e o instrumento registrou **100 pontos, o
-máximo da escala, para as cinco plataformas**, no único dia em que nada foi observado.
-Nenhuma exceção foi levantada; a taxa de perda de 100% ficou registrada num campo ao lado.
-
-O defeito é da classe que interessa a um trabalho metodológico, por três razões. A direção do
-erro é a mais desfavorável possível: falha de coleta empurra o índice para cima, produzindo
-elogio onde deveria haver silêncio. O resultado é indistinguível na saída, porque conformidade
-perfeita e ausência de observação ocupam a mesma célula. E o efeito sobre uma série temporal é
-específico: um dia falsamente perfeito cria uma melhora aparente seguida de uma piora
-aparente, ambas artefatos da rede de quem observa.
-
-A correção foi de tipo, e não de apresentação. Os quatro índices passaram a admitir valor
-nulo, e nulo passou a significar *sem veredito*: nem conformidade, nem não conformidade. O
-acumulador do instrumento passou a contar páginas observadas, e não tentativas. Os campos
-descritivos (cobertura, contagens, taxa de perda, estado de cada tentativa) continuam
-preenchidos, porque a tentativa fracassada é justamente o que precisa permanecer auditável.
-Como o documento primário de cada varredura armazena páginas e achados, e não índices, as
-coletas anteriores foram reprocessadas sem que nenhum portal precisasse ser varrido de novo:
-o erro de método custou uma reindexação, e não um retorno a campo.
+A direção do erro é a mais desfavorável possível, porque falha de coleta empurra o índice para
+cima e produz elogio onde deveria haver silêncio; e o resultado é indistinguível na saída, já
+que conformidade perfeita e ausência de observação ocupam a mesma célula. A correção foi de
+tipo, e não de apresentação: os quatro índices passaram a admitir valor nulo, com nulo
+significando *sem veredito*, e o acumulador passou a contar páginas observadas, e não
+tentativas. Os campos descritivos continuam preenchidos, porque a tentativa fracassada é o que
+precisa permanecer auditável. Como o documento primário armazena páginas e achados, e não
+índices, as coletas anteriores foram reprocessadas sem que nenhum portal precisasse ser varrido
+de novo.
 
 O episódio é reportado, e não apagado, porque **uma auditoria contínua precisa saber dizer que
 não sabe**. Um instrumento que converte silêncio em aprovação é, num domínio de exigibilidade
@@ -495,352 +431,266 @@ jurídica, pior do que instrumento nenhum: produz atestado de conformidade sobre
 
 ### 3.3 Caracterização da amostra
 
-Auditaram-se cinco plataformas, em 20 auditorias de página, das quais 16 foram bem-sucedidas,
-com perda global de 20%, concentrada no portal estadual. A Tabela 3 apresenta a caracterização.
+O bloco transversal corresponde a 4 de setembro de 2026, dia em que as cinco plataformas
+responderam integralmente: 20 auditorias de página, 20 bem-sucedidas, perda nula. A escolha de
+um dia de cobertura completa evita que a comparação entre esferas seja contaminada por
+indisponibilidade de infraestrutura, cujo tratamento próprio está na subseção 3.4. A Tabela 1
+apresenta a caracterização.
 
-**Tabela 3** – Plataformas auditadas, perda de páginas e indicadores por plataforma, Rio de
-Janeiro, 16 de agosto de 2026
+**Tabela 1** – Plataformas auditadas e indicadores por plataforma, Rio de Janeiro, 4 de
+setembro de 2026
 
-| Plataforma | Esfera | Serviço | Páginas | Perda | ICA | IAN | IEJ | Violações | Ocorrências | Peso médio (MB) |
-|---|---|---|---|---|---|---|---|---|---|---|
-| Meu SUS Digital | Federal | Prontuário | 2 | 0% | 72,6 | 99,9 | 58,7 | 13 | 37 | 7,17 |
-| Portal federal de saúde | Federal | Informacional | 6 | 0% | 84,9 | 80,4 | 19,9 | 20 | 30 | 3,60 |
-| Secretaria estadual de saúde | Estadual | Ouvidoria, exames | 6 | 67% | 54,1 | 99,9 | 66,3 | 21 | 42 | 1,60 |
-| Secretaria municipal de saúde | Municipal | Informacional | 2 | 0% | 61,0 | 100,0 | 80,9 | 24 | 86 | 2,12 |
-| Portal municipal de serviços | Municipal | Serviços | 4 | 0% | 50,7 | 100,0 | 87,9 | 47 | 974 | 1,14 |
+| Plataforma | Esfera | Serviço | Páginas | ICA | IAN | IEJ | Violações | Ocorrências | Peso (MB) |
+|---|---|---|---|---|---|---|---|---|---|
+| Meu SUS Digital | Federal | Prontuário | 2 | 72,6 | 99,8 | 58,7 | 13 | 37 | 7,29 |
+| Portal federal de saúde | Federal | Informacional | 6 | 80,1 | 90,6 | 25,6 | 26 | 42 | 3,55 |
+| Secretaria estadual de saúde | Estadual | Ouvidoria, exames | 6 | 49,3 | 99,9 | 67,1 | 60 | 142 | 3,07 |
+| Secretaria municipal de saúde | Municipal | Informacional | 2 | 61,0 | 100,0 | 81,2 | 24 | 90 | 2,12 |
+| Portal municipal de serviços | Municipal | Serviços | 4 | 50,7 | 100,0 | 87,5 | 45 | 976 | 1,06 |
 
 Fonte: elaboração própria.
 Notas: ICA — Índice de Conformidade de Acessibilidade (0–100, maior é melhor); IAN — Índice
 de Atrito de Navegação (0–100, menor é melhor); IEJ — Índice de Exposição Jurídica (0–100,
 menor é melhor).
 
-A verificação prévia dos alvos, realizada na data da coleta, produziu quatro achados com
-consequência para a leitura dos resultados, todos registrados no catálogo.
+A verificação prévia dos alvos produziu quatro achados registrados no catálogo. O endereço
+institucional da secretaria estadual havia sido reduzido a um documento de 935 bytes que
+redirecionava por script, porque o portal migrou de domínio e os serviços ao cidadão
+permaneceram no subdomínio antigo. A seção de saúde do portal da prefeitura não é portal de
+serviços, e sim jornalismo institucional. O antigo canal da atenção primária municipal
+converteu-se em repositório técnico dirigido a profissionais e foi excluído da amostra, sem
+substituto anunciado ao usuário. E a plataforma federal de prontuário serve a mesma casca de
+1.418 bytes em toda rota, por ser aplicação de página única: sem renderização por navegador, a
+auditoria mediria uma casca vazia.
 
-O endereço institucional da secretaria estadual havia sido reduzido a um documento de 935
-bytes que redirecionava por script e declarava idioma inglês: o portal migrou de domínio, mas
-os serviços ao cidadão permaneceram no subdomínio antigo. A seção de saúde do portal da
-prefeitura não é um portal de serviços: seu título é "Arquivos Saúde" e seu conteúdo é
-jornalismo institucional, enquanto os serviços residem em endereço distinto. O antigo canal da
-atenção primária municipal converteu-se em repositório técnico dirigido a profissionais e foi
-excluído da amostra: um canal antes voltado ao usuário deixou de sê-lo, sem substituto
-anunciado. Por fim, a plataforma federal de prontuário serve a mesma casca de 1.418 bytes em
-toda rota, inclusive no `robots.txt`, por ser aplicação de página única. Sem renderização por
-navegador, a auditoria mediria uma casca vazia.
+A limitação mais relevante da amostra é declarada: a área autenticada da plataforma federal de
+prontuário, onde residem resultado de exame e carteira de vacinação, foi excluída por conduta
+de coleta. As telas de maior consequência assistencial ficaram fora, e os índices podem estar
+otimistas.
 
-A limitação mais relevante da amostra é declarada: a área autenticada da plataforma federal
-de prontuário, onde residem resultado de exame e carteira de vacinação, foi excluída por
-conduta de coleta. As telas de maior consequência assistencial ficaram fora, e os índices
-podem estar otimistas.
+### 3.4 Disponibilidade e posição de rede do observador
 
-### 3.4 Disponibilidade como precondição da acessibilidade
+A cobertura integral de 4 de setembro é recente. Em 16 de agosto, o portal estadual perdeu
+entre 50% e 67% das páginas em todas as quatro medições, e o diagnóstico dessa perda produziu
+um resultado metodológico que sobrevive à normalização posterior. Descartado o agente de
+usuário como causa, a observação direta dos dois hospedeiros mostrou oscilação em escala de
+minutos, atingindo navegador e cliente HTTP simples: a página de resultado de exame falhou em
+oito de oito tentativas por navegador, embora o cliente HTTP a tenha alcançado duas vezes nos
+intervalos entre quedas.
 
-O portal estadual perdeu entre 50% e 67% das páginas em todas as quatro medições. Descartado
-o agente de usuário como causa, o diagnóstico prosseguiu por observação direta da
-disponibilidade dos dois hospedeiros envolvidos, sintetizada na Tabela 4.
+A conclusão de que se tratava de indisponibilidade repousava, porém, sobre um único ponto de
+observação: uma conexão residencial no Rio de Janeiro. Verificação em 19 de agosto, com o
+instrumento executado a partir de três posições de rede em intervalo de minutos, mostrou que a
+atribuição era insuficiente, conforme a Tabela 2.
 
-**Tabela 4** – Observação direta da disponibilidade dos hospedeiros do portal estadual, 16 de
-agosto de 2026
-
-| Instante (tempo universal coordenado) | Instrumento | Resultado |
-|---|---|---|
-| 00h47 | Cliente HTTP | Resposta 200 nos três endereços |
-| 01h00 · 01h04 · 01h31 · 01h40 | Navegador | Falha em 50% a 67% das páginas |
-| 01h06 | Cliente HTTP | Falha nos dois hospedeiros |
-| 01h29 | Cliente HTTP | Resposta 200 nos três endereços |
-| 01h37 | Cliente HTTP e navegador | Falha em ambos, simultaneamente |
-
-Fonte: elaboração própria.
-
-Na janela de coleta, portanto, a infraestrutura oscilou em escala de minutos, com falha
-atingindo navegador e cliente HTTP simples. A página de resultado de exame não foi auditada
-com sucesso nenhuma vez, tendo falhado em oito de oito tentativas por navegador, embora o
-cliente HTTP a tenha alcançado duas vezes, nos intervalos entre quedas.
-
-#### 3.4.1 Verificação por múltiplos pontos de observação
-
-A conclusão de que se tratava de indisponibilidade repousava sobre um único ponto de
-observação: uma conexão residencial no Rio de Janeiro. Verificação posterior, em 19 de agosto
-de 2026, mostrou que essa atribuição era insuficiente, e o resultado corrige a leitura.
-
-O instrumento foi executado a partir de três posições de rede distintas, com medições
-separadas por poucos minutos: um servidor em nuvem nos Estados Unidos, um segundo serviço em
-nuvem também nos Estados Unidos, e a conexão residencial brasileira da coleta original.
-
-**Tabela 5** – Resposta dos hospedeiros do portal estadual por posição de rede, 19 de agosto de
-2026, entre 05h35 e 05h50 (tempo universal coordenado)
+**Tabela 2** – Resposta dos hospedeiros do portal estadual por posição de rede, 19 de agosto de
+2026
 
 | Endereço | Nuvem A (EUA) | Nuvem B (EUA) | Conexão residencial (Brasil) |
 |---|---|---|---|
-| Portal institucional | conexão encerrada | 500 | **200** |
-| Resultado de exame | conexão encerrada | 500 | **200** |
+| Portal institucional | conexão encerrada | 500 | 200 |
+| Resultado de exame | conexão encerrada | 500 | 200 |
 | Ouvidoria | 200 | 200 | 200 |
 
 Fonte: elaboração própria.
 
-O padrão é consistente e não é de indisponibilidade: **o mesmo hospedeiro atende a ouvidoria a
-todas as posições e recusa dois endereços específicos às posições estrangeiras**, servindo-os
-normalmente à posição brasileira, no mesmo intervalo de minutos.
-
-Três hipóteses alternativas foram testadas e descartadas. A negociação do protocolo HTTP/2 não
-explica o comportamento. O servidor não a oferece, e as requisições ocorrem em HTTP/1.1 em
-todos os casos. A detecção de navegador automatizado também não: execuções em modo visível e
-em modo automatizado, a partir da posição brasileira, obtiveram resposta 200 nos dois
-endereços, e a abertura manual em navegador comum confirmou. E não se trata de recusa
-indiscriminada a origem estrangeira, porque as duas nuvens receberam respostas distintas entre
-si em um dos alvos federais examinados em paralelo.
-
-O achado que sobrevive é mais específico, e mais forte, que o original: **o portal estadual
+O padrão não é de indisponibilidade: o mesmo hospedeiro atende a ouvidoria a todas as posições
+e recusa dois endereços específicos às posições estrangeiras, servindo-os normalmente à posição
+brasileira, no mesmo intervalo de minutos. Negociação de HTTP/2, detecção de navegador
+automatizado e recusa indiscriminada a origem estrangeira foram testadas e descartadas. O
+achado que sobrevive é mais específico, e mais forte, que o original: **o portal estadual
 diferencia a resposta conforme a origem de rede da requisição**, em endereços determinados. A
-indisponibilidade observada em 16 de agosto foi real naquela janela, já que a posição
-brasileira também falhou, mas não pode ser inferida a partir de observação estrangeira, e as
-duas situações têm a mesma aparência para um instrumento com um único ponto de vista.
-
-A consequência metodológica é imediata e está incorporada ao desenho: **a posição de rede
-passa a ser variável declarada do estudo, e nenhuma afirmação de indisponibilidade é
-sustentada a partir de um ponto único.** A alternativa, que seria tratar a origem como
-constante implícita, produziria, em auditoria continuada a partir de infraestrutura em nuvem,
-uma série em que dois dos cinco alvos apareceriam permanentemente fora do ar, com a limitação
-indistinguível do achado.
+indisponibilidade de 16 de agosto foi real naquela janela, já que a posição brasileira também
+falhou, mas não pode ser inferida de observação estrangeira, e as duas situações têm a mesma
+aparência para um instrumento com um único ponto de vista. A consequência está incorporada ao
+desenho: a posição de rede passa a ser variável declarada do estudo, e nenhuma afirmação de
+indisponibilidade é sustentada a partir de um ponto único.
 
 ### 3.5 Conformidade geral
 
-A mediana do índice de conformidade por página foi de 69,2 (intervalo de confiança de 95% por
-*bootstrap*: 61,0–84,9; *n* = 16; primeiro quartil 60,4; terceiro quartil 85,4; mínimo 50,7;
-máximo 87,0).
+As 20 auditorias de página produziram **168 violações confirmadas**, 1.287 ocorrências e 66
+achados pendentes de revisão humana. Das 168 violações, 154 correspondem a um critério de
+sucesso das diretrizes; as 14 restantes decorrem da sonda de custo de acesso, que mede
+dimensão sem correspondência normativa direta, e por isso não figuram nas distribuições da
+Tabela 3.
 
-Registraram-se 174 achados, dos quais 125 violações confirmadas e 49 vereditos indeterminados.
-Vereditos indeterminados jamais foram convertidos em violação, e as sondas declaradas
-heurísticas estão impedidas, por contrato verificado em teste, de produzir reprovação.
-
-Das 125 violações, 113 correspondem a um critério de sucesso das diretrizes; as 12 restantes
-decorrem de sondas que medem dimensões sem correspondência normativa, o custo de acesso, e por
-isso não figuram nas distribuições por princípio e por nível de conformidade da Tabela 6.
-
-**Tabela 6** – Distribuição das violações por princípio, por nível de conformidade e por
-faixa de risco jurídico
+**Tabela 3** – Distribuição das 154 violações vinculadas a critério, por princípio, por nível
+de conformidade e por risco jurídico
 
 | Princípio | Violações | Nível | Violações | Risco jurídico | Violações |
 |---|---|---|---|---|---|
-| Perceptível | 64 | A | 82 | Crítico | 28 |
-| Operável | 18 | AA | 31 | Alto | 87 |
-| Compreensível | 16 | — | — | Moderado | 10 |
-| Robusto | 15 | — | — | Baixo | 0 |
-| **Total** | **113** | **Total** | **113** | **Total** | **125** |
+| Perceptível | 85 | A | 120 | Alto | 110 |
+| Operável | 28 | AA | 34 | Crítico | 42 |
+| Robusto | 25 | | | Moderado | 16 |
+| Compreensível | 16 | | | | |
 
 Fonte: elaboração própria.
 
-Duas leituras merecem destaque. Primeira: 73% das violações vinculadas a critério são de
-nível A, o patamar mínimo de conformidade. Não se trata de refinamento, mas do piso que não
-foi alcançado. Segunda: nenhuma violação de risco baixo. Todas as barreiras detectadas
-obstruem tarefa ou exigem esforço desproporcional; o instrumento não está reportando
-irregularidade formal.
+Duas leituras se impõem. A primeira é que 78% das violações vinculadas a critério são de nível
+A, o patamar mínimo de conformidade: não se trata de refinamento, mas do piso que não foi
+alcançado. A segunda é que a concentração no princípio perceptível reproduz o padrão relatado
+por Alajarmeh (2021) e é, em parte, propriedade do método.
 
-A Figura 1 apresenta a prevalência por critério, isto é, a fração dos oito endereços distintos
-auditados com sucesso (as 16 auditorias correspondem a esses oito endereços em dois perfis) em
-que cada critério foi violado. O critério 4.1.2 (Nome, função, valor) foi violado em 100%
-dos endereços; seguem-se 3.3.2 (Rótulos ou instruções), com 75,0%; e 1.1.1 (Conteúdo não
-textual), 1.3.1 (Informações e relações), 1.4.4 (Redimensionar texto) e 2.4.4 (Finalidade do
-link), com 62,5% cada. O critério 1.4.3 (Contraste mínimo) aparece em 50,0%, 1.4.10 (Refluxo)
-em 37,5% e 2.4.1 (Ignorar blocos) em 25,0%. Com 12,5% cada, fecham a distribuição os critérios
-2.1.1 (Teclado), 2.4.3 (Ordem de foco) e 3.1.1 (Idioma da página).
+A Figura 1 apresenta a prevalência por critério, a fração dos dez endereços distintos auditados
+em que cada um foi violado. **Dois critérios foram violados em 100% dos endereços**: 4.1.2
+(Nome, função, valor) e 1.1.1 (Conteúdo não textual). Seguem-se 1.3.1 e 2.4.4 em 70%, e 3.3.2
+em 60%.
 
-**Figura 1** – Prevalência de violação por critério de sucesso, em fração das páginas
-auditadas
+**Figura 1** – Prevalência de violação por critério de sucesso, em fração dos endereços
+auditados
 Fonte: elaboração própria.
 
-O achado central do estudo é a prevalência total do critério 4.1.2. Em todas as páginas, das
-cinco plataformas, nas três esferas de governo, existe ao menos um controle que a tecnologia
-assistiva não consegue anunciar: para o usuário de leitor de tela, aquele botão ou aquele
-link simplesmente não existe. Prevalência de 100% em amostra estratificada por esfera aponta
-falha estrutural do ecossistema, e não deficiência de um órgão.
+Prevalência total de 4.1.2 em amostra estratificada por esfera federativa significa que nenhum
+dos três níveis de governo produz interface cujos componentes anunciem corretamente nome,
+função e valor à tecnologia assistiva. Um controle que a tecnologia assistiva não consegue
+anunciar não é um controle difícil: para o usuário de leitor de tela, aquele botão não existe.
 
 ### 3.6 Barreiras absolutas
 
-Todas as cinco plataformas e todas as 16 páginas auditadas apresentam violação de risco
-jurídico crítico, isto é, barreira sem rota alternativa. Não há, no conjunto examinado, uma
-única página de serviço público digital de saúde plenamente utilizável por pessoa cega ou com
-deficiência motora. A Tabela 7 decompõe as 28 violações críticas.
+**As 20 páginas auditadas apresentam ao menos uma violação de risco jurídico crítico**, isto é,
+barreira que impede o uso do serviço por um grupo identificável, sem rota alternativa. São 42
+achados, e a origem deles é monótona: 14 vínculos e 10 botões sem nome acessível, que deixam
+navegação e ação sem anúncio para o leitor de tela; 5 campos sem rótulo associado e 4 botões de
+formulário sem nome, que tornam o formulário não preenchível; 4 elementos interativos
+aninhados, que produzem foco e anúncio ambíguos; 2 elementos não interativos usados como
+controle, inoperáveis por teclado; 2 resumos de bloco expansível sem nome; e 1 imagem-botão sem
+alternativa textual.
 
-**Tabela 7** – Regras que produziram violações de risco jurídico crítico e privação
-correspondente
-
-| Regra | Achados | Consequência para o usuário |
-|---|---|---|
-| Nome de botão ausente | 10 | A ação é inominada |
-| Nome de link ausente | 10 | O leitor de tela anuncia "link" e nada mais |
-| Nome de botão de formulário ausente | 4 | Controle de envio sem rótulo |
-| Controle não interativo com manipulador de clique | 2 | Elemento clicável inalcançável por teclado |
-| Alternativa textual de botão-imagem ausente | 1 | Botão sem descrição |
-| Rótulo programático de campo ausente | 1 | Campo sem identificação para tecnologia assistiva |
-
-Fonte: elaboração própria.
-
-Todas se reduzem à mesma privação: o controle existe visualmente e não existe para quem não
-enxerga. É a forma mais severa da barreira tipificada no art. 3º, IV, "d", da Lei Brasileira
-de Inclusão.
+A composição importa mais que o total. As barreiras críticas recaem sobre campos de busca,
+botões de busca e de autenticação e vínculos de navegação, que são elementos do caminho do
+serviço, e não acessórios dele. Isso separa este estudo dos que reportam percentuais: um
+portal com conformidade de 80 pontos e uma barreira absoluta não é majoritariamente acessível;
+é um portal que impede o uso por um grupo determinado.
 
 ### 3.7 Gradiente por esfera federativa
 
-A Tabela 8 apresenta as medianas dos três índices por esfera.
+A Tabela 4 apresenta as medianas dos três índices por esfera, em nível de página.
 
-**Tabela 8** – Medianas dos índices por esfera federativa
+**Tabela 4** – Medianas dos índices por esfera federativa
 
 | Esfera | Páginas | ICA | IAN | IEJ |
 |---|---|---|---|---|
-| Federal | 8 | 86,0 | 80,8 | 22,3 |
-| Estadual | 2 | 58,9 | 99,9 | 66,3 |
-| Municipal | 6 | 61,0 | 100,0 | 84,2 |
+| Federal | 8 | 81,2 | 90,8 | 27,9 |
+| Estadual | 6 | 73,3 | 99,9 | 66,3 |
+| Municipal | 6 | 61,0 | 100,0 | 83,5 |
 
 Fonte: elaboração própria.
 
-Para o índice de conformidade, o teste de Kruskal-Wallis resultou em p = 0,0029, com
-ε² = 0,746; para o índice de atrito, p = 0,0017, com ε² = 0,831, efeitos grandes em ambos os
-casos. Agregando em nível de portal, para contornar a pseudorreplicação, os valores de
-conformidade são 72,6 e 84,9 na esfera federal, 54,1 na estadual e 50,7 e 61,0 na municipal,
-preservando a direção observada. A Figura 2 representa a distribuição.
+O teste de Kruskal-Wallis resultou em p = 0,0031 e ε² = 0,563 para o índice de conformidade,
+p = 0,0004 e ε² = 0,798 para o índice de atrito, e p = 0,0004 e ε² = 0,813 para o índice de
+exposição jurídica: efeitos grandes nos três casos. O índice de exposição jurídica separa os
+estratos com mais nitidez que o de conformidade (27,9 contra 83,5, três vezes mais), o que
+sugere que a distância entre esferas está menos no número de falhas e mais na gravidade delas.
+A Figura 2 representa a distribuição.
 
 **Figura 2** – Distribuição do índice de conformidade por esfera federativa
 Fonte: elaboração própria.
 
-As ressalvas são obrigatórias, e uma delas é de composição, não de tamanho. O *n* é pequeno:
-cinco portais, e apenas duas páginas válidas no estrato estadual, em razão do descrito na
-subseção 3.4. As páginas de um mesmo portal também não são independentes.
-
-Além disso, os estratos não comparam objetos equivalentes. Das três páginas amostradas no
-estrato estadual, apenas a ouvidoria é transacional: apresenta cinco formulários e sete campos
-preenchíveis, contra um único campo, o da busca, nas outras duas. O estrato estadual entra na
-comparação representado, na prática, por uma página de manifestação do cidadão, enquanto o
-federal é representado por um prontuário eletrônico e o municipal por um catálogo de serviços.
-Como páginas transacionais concentram mais controles interativos, e é sobre controles que
-recaem os critérios de risco crítico, a heterogeneidade tende a **atenuar** o gradiente
-observado, e não a produzi-lo. Ainda assim, ela precisa ser declarada: o que a amostra compara
-é o que cada esfera oferece sob o rótulo de saúde, e não a mesma tarefa em três esferas. Os
-testes são descritivos, não confirmatórios. O que a amostra sustenta é a direção do gradiente
-e a magnitude do efeito, não a generalização para o universo de portais brasileiros.
-
-Note-se que o índice de exposição jurídica separa os estratos com mais nitidez que o de
-conformidade (22,3 contra 84,2, quase o quádruplo), o que sugere que a distância entre
-esferas está menos no número de falhas e mais na gravidade delas.
+Duas ressalvas são obrigatórias. O *n* é pequeno, cinco portais em três estratos, e as páginas
+de um mesmo portal não são independentes, o que expõe o resultado à pseudorreplicação
+declarada na subseção 2.7. E os estratos não comparam objetos equivalentes: das seis páginas
+do estrato estadual, apenas a ouvidoria é transacional, ao passo que o estrato municipal
+concentra páginas de serviço. Como páginas transacionais concentram mais controles
+interativos, e é sobre controles que recaem os critérios de risco crítico, a heterogeneidade
+tende a atenuar o gradiente observado, e não a produzi-lo.
 
 ### 3.8 Efeito do perfil de dispositivo
 
-A comparação entre perfis não revelou diferença nos índices agregados: mediana de conformidade
-de 69,2 no perfil de desktop e 66,8 no perfil móvel; mediana de atrito de 99,8 em ambos; peso
-mediano de 2,29 e 2,26 mebibytes, respectivamente. O teste de Mann-Whitney para o atrito
-resultou em p = 1,000, com δ de Cliff igual a 0,000.
+A comparação entre perfis não revelou diferença nos índices agregados: a mediana de
+conformidade é 72,9 nos dois, e a de atrito, 99,8. O resultado agregado, porém, esconde o
+achado. **O critério 1.4.10 (Refluxo) foi violado exclusivamente no perfil de 320 pixels**, em
+quatro dos dez endereços, e nenhum critério foi exclusivo do desktop.
 
-A comparação de agregados, porém, esconde o achado relevante: o critério 1.4.10 (Refluxo)
-apareceu exclusivamente no perfil móvel, e nenhum critério apareceu exclusivamente no perfil
-de desktop. A barreira existe apenas onde o usuário está. Auditar somente em desktop, prática
-comum na literatura e nas homologações, teria produzido um relatório sem essa classe inteira
-de barreira.
-
-Registre-se uma correção relativa à leitura preliminar. Com o instrumento defeituoso descrito
-na subseção 3.2, o peso mediano parecia 70% maior no perfil móvel (2,44 contra 1,44
-mebibytes). Com o instrumento corrigido, os pesos são equivalentes: a assimetria era artefato
-de quais páginas conseguiam carregar em cada perfil, e não característica dos portais. O caso
-ilustra por que perda diferencial de dados não pode ser tratada como ruído aleatório.
+A barreira de refluxo obriga o usuário a rolar horizontalmente para ler uma linha de texto, e
+existe apenas na largura em que a maior parte da população de interesse acessa o serviço.
+Auditar somente em desktop, prática comum na literatura e nas homologações, teria produzido um
+relatório sem essa classe inteira de barreira.
 
 ### 3.9 Custo de acesso
 
-O peso mediano por página foi de 2,29 mebibytes (intervalo de confiança de 95%: 1,59–4,17;
-*n* = 16), e 4 das 16 páginas (25%) excedem o limiar de 2,5 mebibytes. A Tabela 9 apresenta os
-resultados por plataforma.
+A Tabela 5 apresenta o peso, o custo por acesso e a participação de terceiros por plataforma,
+sob os parâmetros declarados na subseção 2.6.
 
-**Tabela 9** – Peso mediano, custo por acesso, fração da franquia mensal e participação de
-tráfego de terceiros, por plataforma
+**Tabela 5** – Peso, custo por acesso, fração da franquia mensal e participação de terceiros
 
-| Plataforma | Peso mediano (MB) | Custo por acesso (R$) | Fração da franquia | Tráfego de terceiros |
+| Plataforma | Peso (MB) | Custo (R$) | Franquia (%) | Terceiros (%) |
 |---|---|---|---|---|
-| Meu SUS Digital | 7,17 | 0,0210 | 0,070% | 2,2% |
-| Portal federal de saúde | 2,49 | 0,0073 | 0,024% | 41,9% |
-| Secretaria municipal de saúde | 2,11 | 0,0062 | 0,021% | 69,4% |
-| Secretaria estadual de saúde | 1,60 | 0,0047 | 0,016% | 16,6% |
-| Portal municipal de serviços | 1,14 | 0,0033 | 0,011% | 40,8% |
+| Meu SUS Digital | 7,29 | 0,0214 | 0,07 | 3,9 |
+| Portal federal de saúde | 3,55 | 0,0104 | 0,03 | 29,4 |
+| Secretaria estadual de saúde | 3,07 | 0,0090 | 0,03 | 26,8 |
+| Secretaria municipal de saúde | 2,12 | 0,0062 | 0,02 | 69,9 |
+| Portal municipal de serviços | 1,06 | 0,0031 | 0,01 | 37,1 |
 
 Fonte: elaboração própria.
 
-A hipótese H4 não foi sustentada. A correlação entre peso da página e participação de
-terceiros é fraca e de sinal contrário ao previsto (ρ de Spearman = −0,200; p = 0,747),
-calculada sobre apenas cinco plataformas: o coeficiente não sustenta afirmação sobre direção
-alguma, e o que se pode dizer com honestidade é que não há associação detectável entre as
-duas grandezas.
+Seis das vinte auditorias excedem 2,5 mebibytes. O custo monetário de um acesso isolado é
+pequeno, de R$ 0,003 a R$ 0,021, e o texto o afirma explicitamente: a relevância do achado não
+está no valor unitário, e a subseção 4.5 desenvolve por quê.
 
-O que sustenta a leitura é a dissociação qualitativa, visível na Tabela 9 e na Figura 3. A
-plataforma federal de prontuário é a página mais pesada do conjunto (7,17 mebibytes) e a que
-menos depende de terceiros (2,2%): seu peso vem da própria aplicação. Já a seção de notícias
-municipal, com menos de um terço daquele peso (2,11 mebibytes), dirige 69,4% do tráfego a
-domínios de terceiros. Uma grandeza varia sem a outra, e três das cinco plataformas dirigem
-mais de 40% do tráfego a terceiros.
+A decomposição revela dissociação que a média esconde: a plataforma federal de prontuário é a
+página mais pesada e a que menos depende de terceiros, porque seu peso vem da própria
+aplicação, enquanto a secretaria municipal é leve e dirige 69,9% do tráfego a domínios de
+terceiros. **Peso próprio e dependência de terceiros são dimensões independentes**, e o
+instrumento só pôde exibir a dissociação por separá-las desde o desenho, como mostra a Figura 3.
 
 **Figura 3** – Peso da página decomposto em tráfego próprio e de terceiros, por plataforma
 Fonte: elaboração própria.
 
-O custo monetário de um acesso isolado é pequeno, de R$ 0,003 a R$ 0,021, e o texto o afirma
-explicitamente. A relevância do achado não está no valor unitário, e a subseção 4.5
-desenvolve por quê.
-
-Dois elementos de contexto, colhidos na mesma consulta às ofertas comerciais, qualificam a
-leitura. A mesma operadora cobra R$ 3,00 por gibibyte de quem recarrega R$ 15,00 a cada 15
-dias e R$ 2,00 por gibibyte de quem recarrega R$ 30,00 por 30 dias: 50% a mais para quem não
-consegue comprometer o valor cheio. E a oferta de entrada consultada isenta explicitamente um
-aplicativo de mensageria do consumo de franquia, ao passo que o portal público de saúde não é
-isento.
-
 ### 3.10 Perfil de exclusão
 
-A Figura 4 e a Tabela 10 convertem contagem de defeitos em população impactada, agregando
-ocorrências por grupo de pessoas afetado.
+A Tabela 6 agrega as ocorrências por grupo de pessoas afetado, o que desloca a leitura da
+contagem de defeitos para a identificação de quem fica de fora.
 
-**Tabela 10** – Ocorrências de barreira e achados distintos, por grupo de pessoas afetado
+**Tabela 6** – Ocorrências de barreira e achados distintos, por grupo de pessoas afetado
 
-| Grupo afetado | Ocorrências | Achados |
+| Grupo afetado | Ocorrências | Achados distintos |
 |---|---|---|
-| Deficiência intelectual ou neurodivergência | 1.126 | 96 |
-| Baixa visão | 1.060 | 76 |
-| Deficiência na visão de cores | 636 | 8 |
-| Cegueira, com uso de leitor de tela | 479 | 82 |
-| Deficiência motora | 116 | 37 |
-| Plano de dados limitado | 106 | 22 |
-| Uso de comando por voz | 84 | 26 |
+| Deficiência intelectual e neurodivergência | 1.218 | 127 |
+| Baixa visão | 1.112 | 99 |
+| Deficiência na visão de cores | 638 | 8 |
+| Cegueira (leitor de tela) | 575 | 120 |
+| Deficiência motora (sem mouse) | 198 | 58 |
+| Usuários de comando por voz | 144 | 40 |
+| Plano de dados limitado | 128 | 34 |
 
 Fonte: elaboração própria.
+
+Dois padrões merecem leitura. O primeiro é de política: a maior carga não recai sobre o grupo
+que a discussão pública associa à acessibilidade digital, e sim sobre quem depende de
+estrutura semântica e linguagem previsível. O segundo é diagnóstico: a deficiência na visão de
+cores reúne 638 ocorrências em apenas 8 achados distintos, razão de 80 ocorrências por achado
+e retrato do defeito de sistema de design, em que uma decisão de paleta se replica por
+centenas de elementos. A Figura 4 representa a distribuição.
 
 **Figura 4** – Ocorrências de barreira por grupo de pessoas afetado
 Fonte: elaboração própria.
 
-Um achado é contraintuitivo: deficiência intelectual e neurodivergência encabeçam a lista, com
-mais ocorrências que cegueira. Outro é diagnóstico: a deficiência na visão de cores reúne 636
-ocorrências em apenas 8 achados distintos, razão de 79 ocorrências por achado e retrato do
-defeito de sistema de design, em que uma decisão de paleta se replica por centenas de
-elementos.
-
 ### 3.11 Qualificação jurídica
 
-A Tabela 11 apresenta os dispositivos invocados pelas 125 violações, segundo a matriz descrita
+A Tabela 7 apresenta os dispositivos invocados pelas 168 violações, segundo a matriz descrita
 na subseção 2.4.
 
-**Tabela 11** – Dispositivos normativos invocados pelas violações confirmadas
+**Tabela 7** – Dispositivos normativos invocados pelas violações confirmadas
 
 | Dispositivo | Invocações |
 |---|---|
-| Lei 13.146/2015, art. 18 — atenção integral à saúde da pessoa com deficiência | 125 |
-| Constituição Federal, art. 196 — acesso universal e igualitário | 125 |
-| Lei 13.146/2015, art. 63, caput — acessibilidade em sítios de órgãos de governo | 113 |
-| Lei 13.146/2015, art. 3º, IV, "d" — barreiras nas comunicações e na informação | 113 |
-| Lei 13.146/2015, art. 4º — igualdade e não discriminação | 113 |
-| Decreto 5.296/2004, art. 47 | 113 |
-| Modelo de Acessibilidade em Governo Eletrônico | 113 |
-| Convenção sobre os Direitos das Pessoas com Deficiência, art. 25 | 113 |
-| Lei 13.146/2015, art. 74 — tecnologia assistiva | 76 |
-| Constituição Federal, art. 5º, XIV — acesso à informação | 38 |
-| Convenção sobre os Direitos das Pessoas com Deficiência, art. 9 | 28 |
-| Lei 12.527/2011, art. 8º, § 3º, VIII — transparência ativa | 26 |
+| Lei 13.146/2015, art. 18 — atenção integral à saúde da pessoa com deficiência | 168 |
+| Constituição Federal, art. 196 — acesso universal e igualitário | 168 |
+| Lei 13.146/2015, art. 63, caput — acessibilidade em sítios de órgãos de governo | 154 |
+| Lei 13.146/2015, art. 3º, IV, "d" — barreiras nas comunicações e na informação | 154 |
+| Lei 13.146/2015, art. 4º — igualdade e não discriminação | 154 |
+| Decreto 5.296/2004, art. 47 | 154 |
+| Modelo de Acessibilidade em Governo Eletrônico | 154 |
+| Convenção sobre os Direitos das Pessoas com Deficiência, art. 25 | 154 |
+| Lei 13.146/2015, art. 74 — tecnologia assistiva | 110 |
+| Constituição Federal, art. 5º, XIV — acesso à informação | 50 |
+| Convenção sobre os Direitos das Pessoas com Deficiência, art. 9 | 42 |
+| Lei 12.527/2011, art. 8º, § 3º, VIII — transparência ativa | 36 |
+| Lei 13.460/2017, art. 5º — direitos do usuário de serviço público | 18 |
 
 Fonte: elaboração própria.
 
-As 28 invocações do art. 9 da Convenção correspondem exatamente às 28 violações de risco
+As 42 invocações do art. 9 da Convenção correspondem exatamente às 42 violações de risco
 crítico, as barreiras sem rota alternativa. É o dado de maior densidade normativa do estudo:
 em todas as cinco plataformas, e em todas as páginas auditadas, há descumprimento de norma com
 hierarquia constitucional.
@@ -853,69 +703,28 @@ ouvidorias como vias complementares.
 
 ### 3.12 Série temporal diária
 
-A série de dezessete dias (19 de agosto a 4 de setembro de 2026) produziu 85 varreduras e 340
-tentativas de auditoria de página, das quais 297 foram bem-sucedidas. Em 25 de agosto, a falha
-do coletor descrita na subseção 3.2 impediu qualquer observação, e o dia consta da série
-**sem veredito**: não entra como conformidade nem como não conformidade. Restam dezesseis dias
-observados. A Tabela 12 apresenta o índice de conformidade por plataforma e por dia.
-
-**Tabela 12** – Índice de conformidade acessível por plataforma, em série diária, 19 de agosto
-a 4 de setembro de 2026
-
-| Dia | Meu SUS Digital | Portal federal de saúde | Secretaria estadual | Secretaria municipal | Portal municipal de serviços |
-|---|---|---|---|---|---|
-| 19/08 | 72,6 | 84,9 | 49,3 | 61,0 | 50,7 |
-| 20/08 | 72,6 | 84,9 | 49,3 | 61,0 | 50,7 |
-| 21/08 | 72,6 | 84,9 | 49,3 | 61,0 | 50,7 |
-| 22/08 | 72,6 | 84,9 | 49,3 | 61,0 | 50,7 |
-| 23/08 | 72,6 | 84,9 | 49,3 | 61,0 | 50,7 |
-| 24/08 | 72,6 | 80,1 | 49,3 | 61,0 | 58,9 |
-| 25/08 | — | — | — | — | — |
-| 26/08 | 72,6 | 75,3 | 49,3 | 61,0 | 58,9 |
-| 27/08 | 72,6 | 80,1 | 49,3 | 61,0 | 58,9 |
-| 28/08 | 72,6 | 80,1 | 49,3 | 61,0 | 58,9 |
-| 29/08 | 72,6 | 75,3 | 49,3 | 61,0 | 50,7 |
-| 30/08 | 72,6 | 75,3 | 49,3 | 61,0 | 50,7 |
-| 31/08 | 72,6 | 80,1 | 49,3 | 61,0 | 50,7 |
-| 01/09 | 72,6 | 80,1 | 49,3 | 61,0 | 50,7 |
-| 02/09 | 72,6 | 80,1 | 49,3 | 61,0 | 50,7 |
-| 03/09 | 72,6 | 80,1 | 49,3 | 61,0 | 50,7 |
-| 04/09 | 72,6 | 80,1 | 49,3 | 61,0 | 50,7 |
-
-Nota: o travessão indica ausência de observação: nenhuma página carregou, por falha do
-coletor, e não há veredito a reportar. A coleta de 1º de setembro ocorreu às 18h07, e não na
-janela habitual, por falha de disparo da tarefa agendada; o desvio está declarado na subseção
-2.2. Fonte: elaboração própria.
-
-A Figura 5 representa a mesma série. O dia sem veredito aparece como interrupção das linhas,
-e não como interpolação entre os dias vizinhos: ligar os pontos por cima da lacuna desenharia
-uma continuidade que não foi observada.
+A série de dezessete dias produziu 85 varreduras e 340 tentativas de auditoria de página, das
+quais 297 foram bem-sucedidas. Em 25 de agosto a falha do coletor descrita na subseção 3.2
+impediu qualquer observação, e o dia consta sem veredito; restam dezesseis dias observados. A
+Figura 5 apresenta o índice de conformidade por plataforma e por dia, com o dia sem veredito
+como interrupção das linhas, e não como interpolação, porque ligar os pontos por cima da lacuna
+desenharia continuidade que não foi observada.
 
 **Figura 5** – Índice de conformidade acessível em série diária, por plataforma, 19 de agosto
 a 4 de setembro de 2026
 Fonte: elaboração própria.
 
-#### 3.12.1 Estabilidade: a barreira típica é estrutural
+**Três das cinco plataformas apresentaram variação nula** ao longo dos dezesseis dias
+observados: índice idêntico e, mais significativo, conjunto de critérios violados idêntico,
+respectivamente 5, 11 e 8 critérios, em todos os dias e nos dois perfis de dispositivo.
+Nenhuma barreira apareceu, desapareceu ou se deslocou de página em duas semanas e meia. A
+barreira típica destes portais não é acidente de publicação: sobrevive a dezesseis ciclos de
+publicação de conteúdo porque não está no conteúdo, e sim no *template*, no componente
+reaproveitado e na ausência de verificação na homologação.
 
-Três das cinco plataformas (o Meu SUS Digital, a secretaria estadual e a secretaria municipal)
-apresentaram **variação nula** ao longo dos dezesseis dias observados: índice
-idêntico e, mais significativo, conjunto de critérios violados idêntico, respectivamente
-5, 11 e 8 critérios, em todos os dias e nos dois perfis de dispositivo. Nenhuma barreira
-apareceu, desapareceu ou se deslocou de página em duas semanas e meia.
+Duas plataformas variaram, em direções opostas, conforme a Tabela 8.
 
-O resultado é de interpretação direta: a barreira típica destes portais não é acidente de
-publicação, é propriedade do sistema que os produz. Ela sobrevive a dezesseis ciclos de
-publicação de conteúdo porque não está no conteúdo: está no *template*, no componente
-reaproveitado, na ausência de verificação na homologação. É o mesmo diagnóstico que a
-prevalência de 100% do critério 4.1.2 sugeria no corte transversal, agora sustentado por
-evidência de persistência, e não apenas de disseminação.
-
-#### 3.12.2 Mudança: duas barreiras que se moveram
-
-Duas plataformas variaram, e as duas variações são qualitativamente distintas. A Tabela 13
-sintetiza os critérios cuja violação mudou de estado ao longo da série.
-
-**Tabela 13** – Critérios de sucesso cuja violação mudou de estado na série diária
+**Tabela 8** – Critérios de sucesso cuja violação mudou de estado na série diária
 
 | Plataforma | Critério | Risco jurídico | 19 a 23/08 | 24 a 28/08 | 29/08 a 04/09 |
 |---|---|---|---|---|---|
@@ -924,105 +733,51 @@ sintetiza os critérios cuja violação mudou de estado ao longo da série.
 
 Fonte: elaboração própria.
 
-A violação do critério 2.1.1 no portal municipal de serviços é o achado que melhor ilustra
-o valor da repetição. Trata-se de elemento `span` com manipulador de clique, sem papel
-declarado e não focalizável, detectado pela sonda própria do instrumento na página do serviço
-de atendimento em unidades de pronto atendimento, **nos dois perfis de dispositivo
-simultaneamente**. Esteve presente de 19 a 23 de agosto; ausente de 24 a 28; e presente
-novamente em todos os sete dias de 29 de agosto a 4 de setembro, sempre com cobertura integral
-das quatro auditorias de página diárias.
+O episódio do critério 2.1.1 é delimitado nos dois extremos, e a ausência não é artefato de
+amostragem: em 24, 26 e 28 as quatro auditorias diárias foram bem-sucedidas, de modo que a
+barreira foi procurada onde estava e não foi encontrada. A evidência armazenada permite atribuir
+causa, e a atribuição é o ponto de maior interesse metodológico. O elemento pertence a um
+componente de engajamento fornecido por terceiro, um botão de curtida embarcado na página, e nos
+cinco dias do episódio desapareceram simultaneamente os três achados que tocavam esse
+componente, retornando juntos em 29 de agosto, enquanto o domínio do fornecedor permaneceu entre
+os terceiros requisitados em todos os dias: o script foi buscado, mas o componente não se
+materializou no documento. A leitura consistente com a evidência é a de falha de renderização de
+componente de terceiro, e não a de correção e regressão promovidas pelo órgão. O portal manteve
+barreira absoluta em todos os dias do episódio, por outras violações críticas.
 
-O episódio é delimitado nos dois extremos: a barreira foi observada em 23 de agosto, não
-foi observada nos quatro dias seguintes em que houve cobertura integral, e voltou a ser
-observada em 29. A ausência não é artefato de amostragem: em 24, 26 e 28 as quatro auditorias
-foram bem-sucedidas, de modo que a barreira foi procurada onde estava e não foi encontrada.
+A violação do critério 1.1.1 no portal federal tem o sinal oposto: apareceu em 24 de agosto e
+permaneceu nos onze dias observados subsequentes. A transição está ancorada em cobertura
+integral dos dois lados, com o critério não violado em nenhuma das seis auditorias nos dias 6/6
+anteriores e violado em todas as seis nos posteriores, o que descarta barreira que já existisse
+e escapasse à amostra. Outros três critérios da mesma plataforma apareceram de forma esporádica
+no fim de agosto e não reapareceram: reporta-se a ocorrência sem extrair dela interpretação.
 
-A inspeção da evidência armazenada permite atribuir causa, e a atribuição é o ponto de maior
-interesse metodológico. **O elemento pertence a um componente de engajamento social fornecido
-por terceiro**: um botão de curtida embarcado na página. Nos cinco dias do episódio,
-desapareceram simultaneamente os três achados distintos que tocavam esse componente (o do
-critério 2.1.1, um de alternativa textual e um de contraste), e os três retornaram juntos em
-29 de agosto. O domínio do fornecedor continuou entre os terceiros requisitados em todos os
-dias, inclusive nos do episódio: **o script foi buscado, mas o componente não se materializou
-no documento**. A leitura consistente com a evidência é a de falha de renderização do
-componente de terceiro, e não a de correção e regressão promovidas pelo órgão municipal.
+#### 3.12.1 Sobreposições de tela
 
-Duas ressalvas seguem daí, e ambas foram incorporadas à leitura dos resultados. Primeira: o
-portal manteve barreira absoluta em todos os dias do episódio, por outras violações de
-risco crítico (botão de busca sem nome acessível, vínculos sem nome), de modo que o
-desaparecimento do 2.1.1 não tornou a página conforme em momento algum. Segunda: o critério
-2.1.1 é classificado como de risco crítico pela matriz normativa, que opera por critério e não
-por elemento; aplicada a um componente periférico de engajamento, essa classificação é
-desproporcional à consequência assistencial concreta, e a subseção 4.8 declara o limite.
+Quatro das cinco plataformas exibem banner de consentimento de cookies fixo sobre o conteúdo, e
+a verificação de seu efeito é obrigatória. A sobreposição é visual e não afeta a leitura do
+instrumento, que percorre o documento renderizado e não a imagem: o banner acrescenta nós, não
+subtrai. Nenhum critério de sucesso é exclusivo do banner em nenhuma plataforma, de modo que o
+índice de conformidade é por construção insensível a ele; os índices de atrito e de exposição
+jurídica operam sobre ocorrências e admitem influência pequena, de 4,5% na secretaria municipal
+e nula ou desprezível nas demais. A camada tampouco suprime detecção: se marcasse o restante do
+documento como oculto para tecnologia assistiva, prática comum em gerenciadores de
+consentimento, a análise ficaria restrita ao banner, e observa-se o oposto, com mais de 95% das
+ocorrências fora dele. Componentes de engajamento embarcados não recebem o mesmo
+salvo-conduto, como o episódio acima demonstra.
 
-O que o episódio demonstra, então, é mais específico e mais interessante do que a formulação
-usual. **Uma auditoria pontual realizada em 26 de agosto não teria registrado essa violação;
-a mesma auditoria, em 22 de agosto ou em 3 de setembro, a teria registrado.** As duas seriam
-corretas quanto ao instante e ambas descreveriam mal o portal, e a causa da divergência não
-está sob controle do órgão auditado, mas de um fornecedor externo cujo componente ele
-embarcou. A periodicidade da verificação é, portanto, parte do método, e não detalhe
-operacional.
+#### 3.12.2 Disponibilidade ao longo da série
 
-A violação do critério 1.1.1 no portal federal de saúde tem o sinal oposto: é uma
-regressão introduzida e não corrigida. Apareceu em 24 de agosto e permaneceu em todos os onze
-dias observados subsequentes, até o encerramento da série. A transição está ancorada em
-cobertura integral dos dois lados: nos dias de cobertura 6/6 anteriores (20 e 21 de agosto), o
-critério não foi violado em **nenhuma** das seis auditorias de página; nos dias de cobertura
-6/6 posteriores (24 e 27 de agosto, 3 e 4 de setembro), foi violado em **todas as seis**. Não
-se trata, portanto, de barreira que já existisse e escapasse à amostra, e sim de alteração de
-escopo do portal. Conteúdo não textual sem alternativa equivalente exclui o usuário de leitor
-de tela do acesso à informação veiculada.
+Excluído o dia sem veredito, a perda de páginas concentra-se em uma única plataforma: 21,9% no
+portal federal de saúde, contra 0% no Meu SUS Digital, na secretaria estadual e na secretaria
+municipal, e 3,1% no portal municipal de serviços, ao longo dos mesmos dezesseis dias e do
+mesmo ponto de rede. As falhas do portal federal recaíram sobre dois caminhos específicos, a
+página de secretaria finalística e o índice temático de saúde, enquanto a página inicial
+falhou uma única vez em dezesseis dias.
 
-Três outros critérios da mesma plataforma (1.4.1, 1.4.3 e 2.4.7) apareceram de forma
-esporádica, em um ou dois dias do fim de agosto, sempre em uma única página e em um único
-perfil, e não reapareceram nos onze dias seguintes. Reporta-se a ocorrência, mas não se extrai
-dela interpretação: são compatíveis com conteúdo rotativo e ocorreram justamente no portal de
-disponibilidade mais instável, o que impede separar mudança do portal de variação da amostra
-observada.
-
-#### 3.12.3 Componentes de terceiro e camadas de consentimento
-
-A investigação do episódio anterior motivou a verificação sistemática de duas classes de
-componente que se sobrepõem ao conteúdo dos portais e poderiam contaminar os índices.
-
-**Camadas de consentimento de cookies.** Quatro das cinco plataformas exibem banner de
-consentimento fixo sobre o conteúdo. A sobreposição é visual e não afeta a leitura do
-instrumento, que percorre o documento renderizado e não a imagem: o banner acrescenta nós ao
-documento, não subtrai. Verificou-se que nenhum critério de sucesso é exclusivo do banner
-em nenhuma das cinco plataformas: todo critério violado dentro da camada de consentimento
-também é violado fora dela, no conteúdo próprio do portal. O índice de conformidade, que opera
-sobre critérios, é por construção insensível a esses componentes.
-
-Os índices de atrito e de exposição jurídica operam sobre ocorrências e, portanto, admitem
-influência. Ela é pequena e concentrada: 4,5% das ocorrências na secretaria municipal, 0,2% no
-portal federal e nula nas demais. Verificou-se também que a camada **não suprime detecção**:
-se ela marcasse o restante do documento como oculto para tecnologia assistiva, prática comum
-em gerenciadores de consentimento, a análise ficaria restrita ao banner, e o que se observa é
-o oposto, com mais de 95% das ocorrências fora dele.
-
-**Componentes de engajamento e widgets embarcados.** Não recebem o mesmo salvo-conduto. O
-episódio de intermitência descrito acima originou-se de um deles, e o instrumento os atribui
-ao portal que os embarca, o que é correto do ponto de vista do dever jurídico, já que a
-escolha de embarcar o componente é do órgão, mas exige que a origem do achado seja
-recuperável. Ela é: o seletor e o fragmento de documento de cada ocorrência ficam gravados no
-artefato primário, e foi por eles que a atribuição acima pôde ser feita.
-
-#### 3.12.4 Disponibilidade ao longo da série
-
-Excluído o dia sem veredito, a série confirma e quantifica o achado da subseção 3.4. A perda
-de páginas concentra-se em uma única plataforma: 21,9% no portal federal de saúde, contra
-0% no Meu SUS Digital, na secretaria estadual e na secretaria municipal e 3,1% no portal
-municipal de serviços, ao longo dos mesmos dezesseis dias, do mesmo ponto de rede e, salvo o
-desvio de 1º de setembro, no mesmo horário. As falhas do portal federal de saúde recaíram
-sobre dois caminhos específicos, a página de secretaria finalística e o índice temático de
-saúde, enquanto a página inicial falhou uma única vez em dezesseis dias.
-
-Registre-se ainda a mudança na secretaria estadual, cuja perda passou de 50% a 67% nas
-medições de 16 de agosto para 0% nos dezesseis dias da série, com cobertura integral das
-seis auditorias de página diárias. A instabilidade de infraestrutura documentada na subseção
-3.4 foi, portanto, episódica, e o índice de conformidade do portal sob cobertura integral
-(49,3 pontos, o mais baixo da amostra) é agora medido sobre a amostra completa de páginas, e
-não sobre o resíduo que sobrevivia às quedas.
+A instabilidade da secretaria estadual documentada na subseção 3.4 foi episódica: sua perda
+passou de 50% a 67% em 16 de agosto para 0% nos dezesseis dias da série, o que torna legítimo
+adotar um dia de cobertura completa como bloco transversal.
 
 ---
 
@@ -1030,216 +785,147 @@ não sobre o resíduo que sobrevivia às quedas.
 
 ### 4.1 Principais achados
 
-Oito resultados sustentam a discussão, todos ancorados em dado medido, e cada um é
-desenvolvido adiante. O critério 4.1.2 foi violado em 100% das páginas, nas três esferas:
-prevalência total em amostra estratificada indica falha estrutural do ecossistema de
-desenvolvimento (padrões de componente, ausência de verificação na homologação, contratação
-que não exige acessibilidade), e não deficiência isolada de um órgão, do que segue que a
-correção órgão a órgão tende a ser menos eficiente que a atuação sobre padrões e requisitos de
-compra. Todas as 16 páginas apresentam barreira absoluta, o que separa este estudo dos que
-reportam percentuais: um portal com conformidade de 86 pontos e uma barreira absoluta não é
-"majoritariamente acessível", é um portal que impede o uso por um grupo determinado. **O
-gradiente por esfera** tem efeito grande e distância maior na gravidade que no número das
-falhas. A barreira de refluxo só existe onde o usuário está, no perfil de 320 pixels, o
-argumento empírico mais direto contra a auditoria de perfil único. **Peso próprio e
-dependência de terceiros variam de forma independente**, e o instrumento só pôde exibir a
-dissociação por separá-los desde o desenho. **A disponibilidade depende da posição de rede do
-observador** (subseção 4.3). **O serviço raramente está onde o portal oficial o anuncia**
-(subseção 4.4). E, na série de dezessete dias, **três das cinco plataformas não variaram em
-nada, enquanto duas mudaram**: uma violação de operação por teclado desapareceu por cinco
-dias corridos e retornou, permanecendo pelos sete dias seguintes, e uma violação de alternativa
-textual foi introduzida e seguia sem correção ao fim da série (subseção 4.7). Os dois fatos,
-juntos, sustentam a tese do trabalho: a barreira típica é estrutural e persistente, mas não
-*todas* são, e distinguir umas das outras exige repetição. A primeira delas acrescenta um
-elemento que a auditoria pontual não alcançaria: a intermitência veio de **componente de
-terceiro embarcado**, de modo que a conformidade do serviço variou sem que a conduta do órgão
-mudasse (subseção 4.7).
+Dois achados organizam a discussão. O primeiro é de escala: dois critérios violados em 100% dos
+endereços, nas três esferas, e barreira absoluta nas 20 páginas indicam falha estrutural do
+ecossistema de desenvolvimento, e não deficiência isolada de um órgão; segue daí que corrigir
+órgão a órgão tende a ser menos eficiente que atuar sobre padrões de componente e requisitos de
+compra. O segundo é de tempo: três das cinco plataformas não variaram em nada ao longo de
+dezesseis dias observados, enquanto duas mudaram. Juntos, sustentam a tese do trabalho, de que
+a barreira típica é estrutural e persistente, mas não *todas* são, e distinguir umas das outras
+exige repetição.
+
+Um portal com conformidade de 80 pontos e uma barreira absoluta não é majoritariamente
+acessível; é um portal que impede o uso por um grupo determinado. É o que separa este estudo dos
+que reportam percentuais, e o que motiva as subseções seguintes.
 
 ### 4.2 O art. 63 como norma em branco
 
 A remissão do art. 63 da Lei Brasileira de Inclusão às "melhores práticas e diretrizes de
 acessibilidade adotadas internacionalmente" transforma um padrão técnico produzido por
 consórcio privado em conteúdo de dever jurídico estatal. A construção tem três consequências
-que este trabalho pôde observar empiricamente.
+observáveis.
 
-A primeira é que a atualização do padrão altera o conteúdo do dever sem alteração
-legislativa. A segunda é que o Modelo de Acessibilidade em Governo Eletrônico funciona como
-vetor de concretização, mas é norma administrativa, e a última versão de referência data de
-2014, o que abre distância crescente em relação ao padrão internacional que pretende
-incorporar. A terceira é a zona de indeterminação criada pela divergência entre versões, de
-que o critério 4.1.1 é exemplo concreto e documentado neste estudo: o critério foi removido na
-versão 2.2 das diretrizes, e o motor de regras acompanhou a norma técnica, enquanto a
-referência normativa brasileira permanece na versão 2.1. Descumprir hoje um critério que a
-versão mais recente da norma técnica abandonou é, ou não é, violação de dever jurídico? A
-pergunta não é acadêmica: dela depende a exigibilidade concreta.
+A atualização do padrão altera o conteúdo do dever sem alteração legislativa. O Modelo de
+Acessibilidade em Governo Eletrônico funciona como vetor de concretização, mas é norma
+administrativa cuja última versão de referência data de 2014, o que abre distância crescente em
+relação ao padrão que pretende incorporar. E a divergência entre versões cria zona de
+indeterminação, de que o critério 4.1.1 é exemplo documentado neste estudo: removido na versão
+2.2 das diretrizes e acompanhado pelo motor de regras, permanece na referência normativa
+brasileira. Descumpri-lo hoje é, ou não é, violação de dever jurídico? Da resposta depende a
+exigibilidade concreta.
 
-Há, além disso, uma questão empírica embutida na construção, e a literatura brasileira já a
-formulou. Freire, Castro e Fortes (2009) mediram os sítios estaduais ao longo de doze anos
-para verificar se o prazo de conformidade do Decreto 5.296/2004 produziria efeito observável,
-e encontraram avanço modesto. Quase duas décadas depois, com a Lei Brasileira de Inclusão em
-vigor há mais de dez anos, os resultados aqui obtidos (nível A violado em 73% dos casos,
-barreira absoluta em todas as páginas) sugerem que a resposta continua a mesma. A norma
-existe; o efeito mensurável, não. É argumento a favor de deslocar a atenção da produção
-normativa para os mecanismos de verificação e indução, tema da subseção 4.9.
+Há uma questão empírica embutida na construção, e a literatura brasileira já a formulou.
+Freire, Castro e Fortes (2009) mediram os sítios estaduais ao longo de doze anos para verificar
+se o prazo do Decreto 5.296/2004 produziria efeito observável, e encontraram avanço modesto.
+Quase duas décadas depois, com a Lei Brasileira de Inclusão em vigor há mais de dez anos, os
+resultados aqui obtidos (nível A violado em 78% dos casos, barreira absoluta em todas as
+páginas) sugerem que a resposta continua a mesma. A norma existe; o efeito mensurável, não. É
+argumento a favor de deslocar a atenção da produção normativa para os mecanismos de
+verificação e indução, tema da subseção 4.9.
 
-O achado tem, por fim, uma implicação metodológica que extrapola este trabalho. Se o conteúdo
-do dever é definido por remissão a um padrão que evolui, então a ferramenta de auditoria
-precisa declarar a versão do padrão que aplica, e não apenas a sua própria. Do contrário, dois
-relatórios sobre o mesmo portal, produzidos em datas distintas, tornam-se incomparáveis sem
-que se saiba por quê.
+Segue daí uma exigência metodológica que extrapola este trabalho. Se o conteúdo do dever é
+definido por remissão a um padrão que evolui, a ferramenta de auditoria precisa declarar a
+versão do padrão que aplica, e não apenas a sua própria. Do contrário, dois relatórios sobre o
+mesmo portal, produzidos em datas distintas, tornam-se incomparáveis sem que se saiba por quê.
 
 ### 4.3 Disponibilidade como precondição da acessibilidade
 
 A disponibilidade é precondição da acessibilidade, e nenhum índice de conformidade a captura.
-Um serviço de resultado de exame que responde de forma intermitente não é um serviço difícil
-de usar: é um serviço que, para quem tenta no minuto errado, não existe. O estudo só registrou
-o fenômeno porque o instrumento trata falha de carregamento como dado, com taxa de perda
-reportada em toda saída, e não como interrupção da coleta.
+Um serviço de resultado de exame que responde de forma intermitente não é difícil de usar: para
+quem tenta no minuto errado, é um serviço que não existe. Daí que a taxa de perda deva ser
+desfecho reportado, e não incidente descartado em silêncio, porque excluir as páginas que não
+carregaram produz retrato sistematicamente mais favorável que a realidade do serviço.
 
-Registre-se a assimetria informacional que a situação produz. O cidadão que encontra a página
-fora do ar não sabe se o problema é do seu aparelho, da sua conexão ou do Estado. Do ponto de
-vista da experiência, a indisponibilidade intermitente é pior que a queda franca: convida à
-repetição da tentativa, e cada tentativa consome franquia de dados.
+A verificação por múltiplos pontos acrescenta uma exigência, e é a contribuição metodológica
+mais transferível deste trabalho. **Reportar perda de páginas só é informativo se a posição de
+rede do observador for declarada.** Uma mesma taxa significa indisponibilidade do serviço, se
+medida de onde o cidadão está, ou política de rede do portal, se medida de outra posição, e as
+duas são indistinguíveis sem um segundo ponto de observação. A consequência atinge a proposta
+de auditoria continuada: executada em infraestrutura de nuvem, como é natural para
+monitoramento automatizado, ela reportaria indefinidamente como indisponíveis dois dos cinco
+alvos, produzindo um falso achado estável, robusto à repetição e indistinguível de um resultado
+verdadeiro justamente por não variar. É a forma mais perigosa de erro em série temporal: a que
+a consistência confirma.
 
-O caso sugere que a taxa de perda de páginas deveria ser desfecho reportado nos estudos de
-acessibilidade, e não incidente de coleta silenciosamente descartado: excluir as páginas que
-não carregaram produz retrato sistematicamente mais favorável que a realidade do serviço. A
-verificação por múltiplos pontos (subseção 3.4.1) acrescenta uma exigência a isso, e é a
-contribuição metodológica mais transferível deste trabalho. **Reportar perda de páginas só é
-informativo se a posição de rede do observador for declarada.** Uma mesma taxa de perda
-significa indisponibilidade do serviço, se medida da posição em que o cidadão está, ou
-política de rede do portal, se medida de outra. As duas são indistinguíveis sem um segundo
-ponto de observação.
+### 4.4 O alcance do dever e a arquitetura de encaminhamento
 
-A consequência prática atinge diretamente a proposta de auditoria continuada. Executada em
-infraestrutura de nuvem, como é natural para um monitoramento automatizado, ela reportaria
-indefinidamente como indisponíveis dois dos cinco alvos, entre eles o serviço de resultado de
-exame, produzindo um falso achado estável, robusto à repetição e indistinguível de um
-resultado verdadeiro justamente por não variar. É a forma mais perigosa de erro em série
-temporal: a que a consistência confirma.
+Um padrão atravessa a verificação prévia dos alvos e não estava previsto no desenho: **o
+cidadão que procura um serviço de saúde no portal oficial encontra, na maior parte das vezes,
+um índice que aponta para outro lugar.** A seção de saúde do portal municipal é um arquivo de
+notícias; o portal institucional estadual organiza-se por público e não oferece transação; e a
+página de resultado de exame apresenta cinco cartões que encaminham a sistemas distintos, com
+autenticação própria, entre os quais duas plataformas privadas. A caracterização é qualitativa,
+e assim deve ser reportada.
 
-Registre-se, por fim, o que a diferenciação por origem significa do ponto de vista do direito
-de acesso. Ela não é, em si, barreira de acessibilidade. O cidadão brasileiro alcança o
-serviço. Mas revela que a camada de rede aplica ao serviço público de saúde políticas de
-discriminação que não constam de norma alguma, não são publicadas e não são recorríveis: o
-usuário a quem a resposta for negada não recebe explicação nem via de contestação.
-
-### 4.4 A arquitetura de encaminhamento
-
-Um padrão atravessa a verificação prévia dos alvos e a caracterização das páginas, e não estava
-previsto no desenho: **o cidadão que procura um serviço de saúde no portal oficial encontra,
-na maior parte das vezes, um índice que aponta para outro lugar.**
-
-A seção de saúde do portal municipal é um arquivo de notícias. O antigo canal da atenção
-primária tornou-se repositório técnico dirigido a profissionais. O portal institucional
-estadual organiza-se por público (cidadão, servidor, gestor, pesquisador, imprensa) e não
-oferece transação. E a página de resultado de exame não entrega resultado algum: apresenta
-cinco cartões que encaminham a sistemas distintos, com autenticação própria, entre os quais
-duas plataformas de empresas privadas.
-
-A caracterização é qualitativa, e assim deve ser reportada: tentativas de quantificá-la por
-contagem de elementos de formulário mostraram-se inúteis, porque filtros de listagem, campos
-de busca e avisos de consentimento inflam a contagem em páginas que não oferecem transação
-alguma. O que sustenta o padrão é a inspeção de cada alvo, registrada no catálogo do estudo.
-
-O achado tem três consequências, e a terceira é jurídica.
-
-**Metodológica.** Auditar o portal oficial não é auditar o serviço. A conformidade medida
-descreve a camada de encaminhamento, e o ponto em que a tarefa é efetivamente concluída
-permanece fora do alcance, atrás de autenticação e frequentemente em outro domínio. Os
-índices aqui reportados descrevem, portanto, o que o cidadão encontra antes de chegar ao
-serviço, o que reforça a leitura de que constituem piso e não retrato.
-
-**Sobre a experiência.** Cada salto acrescenta uma superfície de acessibilidade que ninguém
-audita, e o custo se acumula sobre quem menos pode absorvê-lo: mais páginas carregadas, mais
-franquia de dados consumida, mais oportunidades de encontrar a barreira que interrompe a
-tarefa. Para o usuário de leitor de tela, cada camada é um novo conjunto de controles a
-reconhecer; e o critério mais violado neste estudo, com prevalência total, é justamente o que
-governa o reconhecimento de controles.
-
-**Jurídica.** Que a etapa final ocorra em plataforma privada não afasta o dever de
-acessibilidade; desloca o sujeito obrigado. O art. 63 da Lei Brasileira de Inclusão alcança
-os sítios mantidos por empresas com sede ou representação comercial no País, de modo que o
-prestador privado que entrega o resultado do exame está tão vinculado quanto a secretaria que
-o contratou. O dever segue o serviço, e não o domínio. A consequência prática interessa ao
-controle externo: a via do art. 64, que condiciona financiamento e aprovação de projetos à
-acessibilidade, alcança o arranjo contratual inteiro, e não apenas a página que ostenta o
-brasão.
+Seguem daí duas consequências. A metodológica é que auditar o portal oficial não é auditar o
+serviço: a conformidade medida descreve a camada de encaminhamento, e o ponto em que a tarefa é
+concluída permanece atrás de autenticação e frequentemente em outro domínio, o que reforça a
+leitura de que os índices constituem piso e não retrato. A jurídica é que a etapa final ocorrer
+em plataforma privada não afasta o dever de acessibilidade; desloca o sujeito obrigado. O art.
+63 alcança os sítios mantidos por empresas com sede ou representação comercial no País, de modo
+que o prestador privado que entrega o resultado do exame está tão vinculado quanto a secretaria
+que o contratou. **O dever segue o serviço, e não o domínio.** A via do art. 64, que condiciona
+financiamento e aprovação de projetos à acessibilidade, alcança por isso o arranjo contratual
+inteiro, e não apenas a página que ostenta o brasão.
 
 ### 4.5 Exclusão digital e exclusão por deficiência
 
 O custo monetário de um acesso isolado é pequeno, e inflá-lo seria fabricar evidência. A força
-do argumento está em três lugares, todos mensurados.
+do argumento está em três lugares, todos mensurados. O primeiro é a jornada completa, já que
+acompanhar um agendamento não é ato único. O segundo é a tentativa frustrada: cada barreira que
+obriga a repetir o fluxo soma-se à conta, de modo que as duas dimensões auditadas se agravam
+mutuamente, e essa interação é a contribuição original da medida. O terceiro é o tráfego de
+terceiros: que quase 70% do tráfego da seção de saúde do portal municipal se dirija a domínios
+de terceiros significa que o cidadão custeia, da própria franquia, recursos alheios ao serviço
+que foi buscar, e é a métrica com fundamento jurídico mais direto, porque ali há transferência
+de custo sem contrapartida.
 
-O primeiro é a jornada completa: acompanhar um agendamento não é ato único, e o consumo se
-acumula sobre acessos repetidos. O segundo é a tentativa frustrada: cada barreira de
-acessibilidade que obriga a repetir o fluxo soma-se à conta, de modo que as duas dimensões
-auditadas se agravam mutuamente, e essa interação é a contribuição original da medida. O
-terceiro é o tráfego de terceiros: que quase 70% do tráfego da seção de saúde do portal
-municipal se dirija a domínios de terceiros significa que o cidadão custeia, da própria
-franquia, recursos alheios ao serviço público que foi buscar. É a métrica com fundamento
-jurídico mais direto, porque ali há transferência de custo sem contrapartida.
-
-Dois mecanismos observados nas ofertas comerciais reforçam a leitura. O primeiro reproduz, na
-infraestrutura de acesso ao serviço público digital, o mecanismo que Caplovitz (1963) descreveu
-no consumo de bens duráveis por famílias de baixa renda: fracionar a recarga não é
-conveniência, é restrição de fluxo de caixa, e custa 50% mais por unidade de dado. O mais
-pobre paga mais caro pelo mesmo bem, e paga mais caro por ser mais pobre. O
-segundo é a assimetria do tratamento tarifário: a oferta de entrada isenta um aplicativo
-privado de mensageria do consumo de franquia, e não isenta o portal público de saúde. Para o
-usuário de menor renda, o Estado é o único serviço que cobra pelo acesso.
+Dois mecanismos das ofertas comerciais reforçam a leitura. O primeiro reproduz, na
+infraestrutura de acesso ao serviço público digital, o que Caplovitz (1963) descreveu no consumo
+de bens duráveis por famílias de baixa renda: fracionar a recarga não é conveniência, é
+restrição de fluxo de caixa, e custa 50% mais por unidade de dado. O mais pobre paga mais caro
+pelo mesmo bem, e paga mais caro por ser mais pobre. O segundo é a assimetria tarifária: a
+oferta de entrada isenta um aplicativo privado de mensageria do consumo de franquia, e não
+isenta o portal público de saúde.
 
 A assimetria merece leitura à luz do art. 9º da Lei 12.965/2014 (Brasil, 2014b), que impõe ao
 responsável pela transmissão o dever de tratar de forma isonômica os pacotes de dados, sem
-distinção por conteúdo, origem, destino, serviço ou aplicação. Não cabe a este trabalho
-qualificar a licitude da prática, que depende de análise regulatória própria e não foi objeto
-do estudo. Cabe registrar o efeito medido: sob as ofertas consultadas, o serviço público de
-saúde ocupa posição tarifária desfavorável frente a aplicações privadas de mensageria. Se
-confirmada em levantamento dirigido ao mercado, a assimetria sugere via de correção
-regulatória, com a inclusão de serviços públicos de saúde no tráfego não tarifado, e não
-apenas técnica.
-
-Os dois mecanismos incidem sobre uma população cuja conectividade já é precária por outras
-razões: nas classes D e E, apenas 3% reúnem as condições do indicador de conectividade
-significativa e 86% de quem tem celular acessa a rede exclusivamente por ele (CGI.br, 2025).
-Somar a essa base uma página de vários mebibytes, com parcela relevante do tráfego destinada
-a terceiros, é agravar uma restrição preexistente. É sobre esse agravamento, e não sobre o
-centavo isolado, que a discussão jurídica deve incidir.
+distinção por conteúdo, serviço ou aplicação. Não cabe a este trabalho qualificar a licitude da
+prática, que depende de análise regulatória própria; cabe registrar o efeito medido e a via de
+correção que ele sugere, regulatória e não apenas técnica. Os dois mecanismos incidem sobre
+população cuja conectividade já é precária por outras razões: nas classes D e E, apenas 3%
+reúnem as condições do indicador de conectividade significativa (CGI.br, 2025). Somar a essa
+base uma página de vários mebibytes é agravar restrição preexistente, e é sobre esse
+agravamento, e não sobre o centavo isolado, que a discussão jurídica deve incidir.
 
 Sustenta-se, com isso, que exclusão digital e exclusão por deficiência são barreiras de mesma
 natureza jurídica: ambas obstruem o acesso ao direito, ambas incidem sobre a mesma população
 dependente do sistema público, e ambas encontram fundamento no art. 196 da Constituição
 combinado com o dever de comunicação e informação adequadas do art. 18 da Lei Brasileira de
-Inclusão. Reconheça-se, porém, que a tese sobre custo de dados é de princípio, e não de
-regra: não há norma que fixe limite de peso de página, e o argumento é, por isso, mais frágil
-que o ancorado em critério de sucesso, diferença que este trabalho declara em vez de
-dissimular.
+Inclusão. Reconheça-se, porém, que a tese sobre custo de dados é de princípio, e não de regra:
+não há norma que fixe limite de peso de página, e o argumento é, por isso, mais frágil que o
+ancorado em critério de sucesso, diferença que este trabalho declara em vez de dissimular.
 
 ### 4.6 O perfil de exclusão e o que ele desloca
 
-O debate público sobre acessibilidade digital, e boa parte da prática de mercado,
-organiza-se em torno do leitor de tela. A medida de perfil de exclusão sugere outro arranjo:
-deficiência intelectual e neurodivergência lideram as ocorrências, acima de cegueira. A maior
-carga recai sobre quem depende de estrutura semântica, rotulagem consistente e linguagem
-previsível, o que se degrada primeiro quando a acessibilidade é tratada como
-conformidade formal, verificada por lista de checagem ao fim do desenvolvimento.
+O debate público sobre acessibilidade digital, e boa parte da prática de mercado, organiza-se em
+torno do leitor de tela. O perfil de exclusão sugere outro arranjo, com a maior carga recaindo
+sobre quem depende de estrutura semântica, rotulagem consistente e linguagem previsível, que é o
+que se degrada primeiro quando a acessibilidade é tratada como conformidade formal, verificada
+por lista de checagem ao fim do desenvolvimento. A leitura pede uma ressalva: a atribuição de
+grupos afetados a cada critério é modelagem do instrumento, e não dado observado, de modo que o
+resultado sustenta ordem de grandeza relativa, não estimativa populacional.
 
-A leitura precisa de uma ressalva metodológica: o número de ocorrências depende da atribuição
-de grupos afetados a cada critério, que é uma modelagem do instrumento e não um dado
-observado, e um mesmo achado pode afetar mais de um grupo. O que o resultado sustenta é a
-ordem de grandeza relativa, não uma estimativa populacional.
-
-A razão entre ocorrências e achados distintos, por sua vez, é diagnóstica de outro modo. As
-79 ocorrências por achado no grupo de visão de cores revelam o defeito de sistema de design:
-corrigi-lo em um lugar resolveria centenas de elementos. É exatamente o tipo de achado que o
-amortecimento logarítmico do índice de atrito evita superponderar, e é também o tipo de achado
-que sugere onde a correção tem melhor relação entre custo e efeito.
+A razão entre ocorrências e achados distintos é diagnóstica de outro modo: as 80 ocorrências por
+achado no grupo de visão de cores revelam defeito de sistema de design, cuja correção em um
+lugar resolveria centenas de elementos. É o tipo de achado que o amortecimento logarítmico do
+índice de atrito evita superponderar, e também o que sugere onde a correção tem melhor relação
+entre custo e efeito.
 
 ### 4.7 A periodicidade como parte do método
 
-A série de dezessete dias permite responder a uma objeção que a auditoria pontual não consegue
-sequer formular: as barreiras medidas são propriedade do portal ou do dia em que ele foi
-medido?
+A série responde a uma objeção que a auditoria pontual não consegue formular: as barreiras
+medidas são propriedade do portal ou do dia em que ele foi medido?
 
 Para a maior parte do que se mediu, a resposta é inequívoca. Três plataformas repetiram, por
 dezesseis dias, o mesmo conjunto de critérios violados, elemento por elemento. Barreiras que
@@ -1248,160 +934,108 @@ reutilizado e no processo que o homologa sem verificar acessibilidade. Isso desl
 recomendação: corrigir página é enxugar gelo, e o ponto de intervenção eficiente é o padrão de
 componente e o requisito de contratação, argumento que a subseção 4.9 desenvolve.
 
-Mas a resposta não é uniforme, e é aí que está a contribuição da série. Duas barreiras se
-moveram, em direções opostas e com significados opostos. No portal municipal de serviços, um
-elemento inoperável por teclado esteve presente por cinco dias, ausente pelos cinco seguintes e
-presente de novo nos sete últimos. Uma auditoria realizada em 26 de agosto não teria registrado
-a violação que uma auditoria de 30 de agosto teria registrado. Nenhuma das duas estaria errada
-sobre o instante; ambas descreveriam mal o portal.
+Mas a resposta não é uniforme, e é aí que está a contribuição da série. Uma auditoria do portal
+municipal em 26 de agosto não teria registrado a violação que uma auditoria de 30 de agosto
+teria registrado; nenhuma das duas estaria errada sobre o instante, e ambas descreveriam mal o
+portal. No portal federal o movimento foi o inverso, e a auditoria anterior a 24 de agosto teria
+produzido retrato favorável de um portal que estava a um dia de piorar.
 
-Esse episódio traz, além disso, um deslocamento de responsabilidade que merece registro. O
-elemento pertencia a um componente de engajamento fornecido por terceiro, e sua intermitência
-acompanhou a renderização do componente, não uma intervenção do órgão municipal (subseção
-3.12.2). A acessibilidade do serviço público passou, nesses cinco dias, a depender do
-comportamento de um fornecedor externo, e a variar sem que nada mudasse na conduta de quem
-responde juridicamente por ela. O art. 63 da Lei Brasileira de Inclusão não distingue o código
-próprio do código embarcado, e nem deveria: quem escolhe embarcar responde pelo que embarcou.
-Mas a consequência prática é que o órgão não pode assegurar conformidade continuada por
-inspeção do próprio código, o que é mais um argumento para verificação contínua e menos um
-argumento para auditoria de entrega.
+O episódio municipal traz um deslocamento de responsabilidade. O elemento pertencia a componente
+de terceiro, e sua intermitência acompanhou a renderização do componente, não uma intervenção do
+órgão: a acessibilidade do serviço variou por cinco dias sem que nada mudasse na conduta de quem
+responde juridicamente por ela. O art. 63 não distingue código próprio de código embarcado, e
+nem deveria, porque quem escolhe embarcar responde pelo que embarcou. Mas o órgão não pode
+assegurar conformidade continuada por inspeção do próprio código, o que é argumento para
+verificação contínua e contra auditoria de entrega. As duas trajetórias diferem, ainda, no que
+se pode afirmar sobre duração: o episódio municipal está fechado e é mensurável, ao passo que a
+regressão federal está censurada à direita, e o estudo estabelece um piso de onze dias
+observados, não a duração.
 
-No portal federal de saúde, o movimento foi o inverso: uma violação de alternativa textual
-introduzida entre 23 e 24 de agosto, presente em todas as páginas e nos dois perfis, e não
-corrigida em nenhum dos onze dias observados seguintes. Nesse caso, a auditoria pontual
-anterior à data teria produzido um retrato favorável de um portal que estava a um dia de
-piorar, e nada no relatório indicaria a possibilidade.
-
-As duas trajetórias diferem também no que se pode afirmar sobre a duração. O episódio do
-portal municipal está **fechado**: a barreira foi observada antes, deixou de ser observada por
-cinco dias corridos e voltou a ser observada, com cobertura integral nos pontos que delimitam
-a janela. Já a regressão do portal federal está **censurada à direita**: persistia no último
-dia da série, e o estudo estabelece um piso de onze dias observados para sua duração, não a
-duração. É a assimetria que uma janela curta impõe: episódios que começam e terminam dentro
-dela são mensuráveis; os que a atravessam, apenas limitáveis por baixo.
-
-A consequência prática interessa mais ao regime jurídico do que ao método. O dever do art. 63
-da Lei Brasileira de Inclusão é continuado: o portal precisa ser acessível enquanto for
-oferecido, e não no dia da vistoria. Um regime de verificação que produz um laudo por exercício
-mede uma amostra de tamanho um de um processo que varia. Pior: cria o incentivo previsível de
-conformidade concentrada na data conhecida. A auditoria contínua não é uma versão mais
-frequente da auditoria pontual; é o único desenho cuja unidade de observação corresponde à
-estrutura temporal do dever que pretende verificar.
-
-A série também expôs o requisito que o instrumento precisou incorporar para sustentar essa
-afirmação. Uma verificação contínua acumula, necessariamente, dias em que a coleta falha, e um
-instrumento que converte ausência de observação em conformidade transforma sua própria
-instabilidade em elogio ao objeto auditado. A correção descrita na subseção 3.2 é, por isso,
-menos um detalhe de implementação do que uma condição de validade: **em auditoria contínua,
-"não sei" precisa ser um valor representável**, distinto de "está conforme" e de "não está
-conforme". Ferramentas que reportam percentuais de acessibilidade sem representar esse terceiro
-estado publicam, em cada falha de rede, um atestado de conformidade sobre o vazio.
+A consequência interessa mais ao regime jurídico do que ao método. O dever do art. 63 é
+continuado: o portal precisa ser acessível enquanto for oferecido, e não no dia da vistoria. Um
+regime que produz um laudo por exercício mede uma amostra de tamanho um de um processo que
+varia e cria o incentivo previsível de conformidade concentrada na data conhecida. A auditoria
+contínua não é uma versão mais frequente da auditoria pontual; é o único desenho cuja unidade
+de observação corresponde à estrutura temporal do dever que pretende verificar. Ela impõe, em
+contrapartida, um requisito ao instrumento: como acumula dias em que a coleta falha, **"não
+sei" precisa ser um valor representável**, distinto de "está conforme" e de "não está
+conforme".
 
 ### 4.8 Limites do estudo
 
-Os limites a seguir devem acompanhar qualquer leitura dos resultados.
-
 A **cobertura é parcial**: 27 dos 50 critérios admitem veredito automático, e apenas para
 alguns modos de falha. O valor é coerente com o teto empírico reportado na literatura (Vigo;
-Brown; Conway, 2013) e reforça que ausência de achado não equivale a conformidade. A
-concentração das violações nos princípios perceptível e operável, aqui como em Alajarmeh
-(2021), é em parte propriedade do objeto e em parte propriedade do método: são os princípios
-que a verificação automática alcança melhor, e a leitura precisa considerar as duas causas.
+Brown; Conway, 2013) e reforça que ausência de achado não equivale a conformidade. As **áreas
+autenticadas não foram auditadas**, o que deixa fora da amostra as telas de maior consequência
+assistencial e torna os índices possivelmente otimistas.
 
-As áreas autenticadas não foram auditadas, o que deixa fora da amostra as telas de maior
-consequência assistencial e torna os índices possivelmente otimistas.
+A **amostra é pequena**: cinco portais em três estratos. A amostragem foi intencional e não
+comporta inferência para o universo nacional; os testes são descritivos, e a
+**pseudorreplicação** (páginas do mesmo portal compartilham template e equipe) é mitigada pela
+agregação por portal reportada em paralelo, não eliminada. A série não amplia a amostra de
+portais: dezesseis observações do mesmo portal são dezesseis observações de um portal, e
+responde a pergunta diferente, a de persistência, e não à de generalização.
 
-A **amostra é pequena**: cinco portais, com apenas um no estrato estadual. A amostragem foi
-intencional e não comporta inferência para o universo nacional; os testes são descritivos, e a
-**pseudorreplicação** (páginas do mesmo portal compartilham template e equipe) é mitigada
-pela agregação por portal reportada em paralelo, não eliminada. A série diária **não amplia a
-amostra de portais**: doze observações do mesmo portal são doze observações de um portal, e
-tratá-las como doze unidades independentes inflaria o *n* de forma ainda mais grave que a
-pseudorreplicação entre páginas. Ela responde a uma pergunta diferente, a de persistência, e
-não à de generalização.
+A **série é curta e tem um único ponto no dia**. Dezessete dias detectam mudança, mas não
+caracterizam sazonalidade, não distinguem manutenção programada de regressão e não alcançam
+variações intradiárias. Observou-se um único episódio de barreira intermitente, o que basta
+para estabelecer que barreiras mudam, mas não para caracterizar com que frequência: qualquer
+regularidade sugerida por um episódio isolado permaneceria indistinguível de coincidência. A
+atribuição de causa também fica fora do alcance do método, que constata a mudança de estado sem
+distinguir correção revertida, variante servida por cache ou implantação parcial.
 
-A série é curta e tem um único ponto no dia. Dezessete dias detectam mudança, mas não
-caracterizam sazonalidade, não distinguem manutenção programada de regressão, e não alcançam
-variações intradiárias: a coleta ocorre uma vez por dia, quase sempre no mesmo horário, e uma
-barreira que existisse apenas fora dessa janela seria invisível ao estudo. **Observou-se um
-único episódio de barreira intermitente**, o que basta para estabelecer que barreiras mudam,
-mas não para caracterizar com que frequência mudam: qualquer regularidade sugerida por um
-episódio isolado, seja de calendário, seja de ciclo de implantação, permaneceria
-indistinguível de coincidência, e por isso não se formula. A escolha de
-horário fixo, necessária para não confundir mudança do portal com carga do servidor, tem esse
-custo declarado. A atribuição de causa às mudanças observadas também permanece fora do
-alcance do método: o instrumento constata que o critério 2.1.1 deixou de ser violado em 24 de
-agosto e voltou a sê-lo em 29, mas não distingue correção revertida, variante de página
-servida por infraestrutura de cache ou implantação parcial. A distinção exigiria informação
-que só o órgão responsável possui.
+O **risco jurídico é atribuído por critério, e não por elemento**. Uma violação do critério de
+operação por teclado recebe classificação crítica esteja ela no botão que agenda a consulta ou
+em componente periférico de engajamento, e a série produziu exatamente esse segundo caso. A
+escolha é conservadora, porque decidir automaticamente o que é periférico exigiria julgamento
+sobre a tarefa do usuário que o instrumento não tem como fazer, mas sobrestima a consequência
+assistencial de parte dos achados críticos. No conjunto da amostra o efeito é limitado: as
+violações críticas são majoritariamente de campos de busca sem rótulo, botões sem nome
+acessível e vínculos sem nome, elementos do caminho do serviço e não acessórios dele.
 
-Os dias sem observação são parte da série, e não ruído removido. Dos dezessete dias, um não
-produziu veredito, e a série é reportada com essa lacuna explícita. O procedimento evita o
-viés que o descarte silencioso produziria, mas não elimina o fato de que dezesseis dias
-observados são menos do que dezessete.
+Três limites menores completam a lista. O **preço do dado é parâmetro externo**, coletado e
+datado, mas é oferta comercial que muda. Os **critérios da versão 2.2 estão fora do escopo**,
+notadamente o de tamanho do alvo de toque. E há **viés conhecido e medido na sonda de
+legibilidade**, que subconta hiatos e superestima a facilidade de leitura, erro na direção
+conservadora.
 
-Três limites menores completam a lista. O preço do dado é parâmetro externo, coletado e
-datado, mas é oferta comercial que muda, e o valor de uma operadora não representa o mercado.
-Os critérios da versão 2.2 estão fora do escopo, notadamente o de tamanho do alvo de
-toque, relevante para o uso móvel que os próprios dados sugerem ser predominante. E há **viés
-conhecido e medido na sonda de legibilidade**, que subconta hiatos e superestima a facilidade
-de leitura, erro na direção conservadora.
-
-O risco jurídico é atribuído por critério, e não por elemento. Uma violação do critério de
-operação por teclado recebe classificação de risco crítico esteja ela no botão que agenda a
-consulta ou em um componente periférico de engajamento, e a série produziu exatamente esse
-segundo caso. A escolha é deliberada e conservadora, porque decidir automaticamente o que é
-periférico exigiria julgamento sobre a tarefa do usuário que o instrumento não tem como fazer;
-mas ela sobrestima a consequência assistencial de parte dos achados críticos, e a leitura de
-qualquer achado isolado exige inspecionar o elemento, que fica gravado no artefato primário.
-No conjunto da amostra o efeito é limitado: as violações de risco crítico são majoritariamente
-de campos de busca sem rótulo, botões de busca e de autenticação sem nome acessível e vínculos
-sem nome, elementos do caminho do serviço e não acessórios dele.
-
-Acima de todos, permanece o limite estrutural do método: a auditoria automática não substitui
-a avaliação com usuários reais de tecnologia assistiva. A evidência de que apenas metade dos
+Acima de todos, permanece o limite estrutural do método: a auditoria automática não substitui a
+avaliação com usuários reais de tecnologia assistiva. A evidência de que apenas metade dos
 problemas efetivamente vividos por usuários cegos corresponde a critério de sucesso das
 diretrizes (Power *et al.*, 2012) delimita o alcance de qualquer instrumento desta natureza,
-inclusive deste. O que se propõe não é substituto da avaliação com usuários, e sim um
-mecanismo de monitoramento contínuo, de baixo custo marginal, capaz de estabelecer um piso e
-de dirigi-lo a quem tem competência para exigir correção.
+inclusive deste. O que se propõe não é substituto da avaliação com usuários, e sim um mecanismo
+de monitoramento contínuo, de baixo custo marginal, capaz de estabelecer um piso e de dirigi-lo
+a quem tem competência para exigir correção.
 
 ### 4.9 Implicações para a política pública
 
-Três implicações decorrem dos achados.
+Três implicações decorrem dos achados. A primeira é o subaproveitamento do art. 64 da Lei
+Brasileira de Inclusão, que permite condicionar a aprovação de projetos e o financiamento com
+recursos públicos à observância das regras de acessibilidade. A via orçamentária induz mais
+rápido que a judicial, e incide sobre o momento em que a barreira é criada, a contratação, e
+não sobre o momento em que ela é constatada. A segunda é o valor da auditoria contínua e
+pública como mecanismo de responsabilização: relatórios acessíveis, reexecutáveis e endereçados
+ao gestor e ao órgão de controle mudam o destinatário da informação, que deixa de circular
+apenas entre desenvolvedores. A terceira é a ausência de regulamentação do selo de
+acessibilidade digital previsto no art. 63, § 1º, que priva o sistema de mecanismo oficial de
+aferição e transfere a órgãos de controle e ao Ministério Público uma função que a lei previu
+como administrativa.
 
-A primeira é o subaproveitamento do art. 64 da Lei Brasileira de Inclusão, que permite
-condicionar a aprovação de projetos e o financiamento com recursos públicos à observância das
-regras de acessibilidade. A via orçamentária é instrumento de indução mais rápido que a
-judicial, e incide sobre o momento em que a barreira é criada, a contratação, e não sobre o
-momento em que ela é constatada.
-
-A segunda é o valor da auditoria contínua e pública como mecanismo de responsabilização.
-Relatórios acessíveis, reexecutáveis e endereçados ao gestor e ao órgão de controle mudam o
-destinatário da informação: o dado deixa de circular apenas entre desenvolvedores.
-
-A terceira é a ausência de regulamentação do selo de acessibilidade digital previsto no art.
-63, § 1º, da Lei Brasileira de Inclusão, que priva o sistema de um mecanismo oficial de
-aferição e, na prática, transfere a órgãos de controle e ao Ministério Público uma função
-que a lei previu como administrativa.
-
-Cabe, por fim, a ressalva que o próprio instrumento reproduz em todas as suas saídas: as
-proposições jurídicas aqui apresentadas indicam fundamentos normativos aplicáveis segundo uma
-matriz documentada e contestável, e não constituem parecer jurídico nem prova pericial. Sua
-adequação ao caso concreto depende de análise profissional, que envolve elementos que nenhuma
-ferramenta verifica, entre eles a identificação do sujeito obrigado em arranjos de contratação
-complexos e a eventual incidência de excludentes, entre outros.
+Cabe a ressalva que o próprio instrumento reproduz em todas as suas saídas: as proposições
+jurídicas aqui apresentadas indicam fundamentos normativos aplicáveis segundo uma matriz
+documentada e contestável, e não constituem parecer jurídico nem prova pericial. Sua adequação
+ao caso concreto depende de análise profissional, que envolve elementos que nenhuma ferramenta
+verifica, entre eles a identificação do sujeito obrigado em arranjos de contratação complexos.
 
 ### 4.10 Trabalhos futuros
 
 Quatro desdobramentos são prioritários: avaliação com usuários reais de tecnologia assistiva,
-que nenhuma auditoria automática substitui; extensão da série diária, que dezessete dias
-apenas inauguram, já que uma janela de meses permitiria caracterizar sazonalidade, associar
-mudanças a ciclos de publicação e estimar o tempo de permanência de uma barreira, que é a
+que nenhuma auditoria automática substitui; extensão da série diária, que dezessete dias apenas
+inauguram, já que uma janela de meses permitiria estimar o tempo de permanência de uma barreira,
 grandeza de interesse para a exigibilidade; extensão a aplicativos móveis nativos, onde reside
 parte relevante do acesso; e modelo de efeitos mistos, com portal como efeito aleatório e dia
-como medida repetida, para tratar formalmente a pseudorreplicação que este desenho apenas
-declara e mitiga.
+como medida repetida, para tratar formalmente a pseudorreplicação que este desenho declara e
+mitiga.
 
 ---
 
@@ -1413,12 +1047,11 @@ aferição não produziu falsos positivos e detectou 18 das 20 barreiras plantad
 fora do alcance automático por exigirem julgamento semântico, evidência produzida pelo próprio
 instrumento contra a leitura de que auditoria automática atesta acessibilidade.
 
-Aplicado a cinco plataformas de saúde com incidência no Rio de Janeiro, encontrou 125
-violações confirmadas em 16 auditorias de página. Todas apresentaram barreira sem rota
-alternativa, e o critério relativo a nome, função e valor dos componentes foi violado em todas
-elas, nas três esferas. Essa prevalência total, em amostra estratificada, aponta falha
-estrutural do ecossistema e desloca a resposta adequada da correção pontual para os padrões de
-desenvolvimento e os requisitos de contratação.
+Aplicado a cinco plataformas de saúde com incidência no Rio de Janeiro, encontrou 168 violações
+confirmadas em 20 auditorias de página. Todas apresentaram barreira sem rota alternativa, e dois
+critérios foram violados em todos os endereços, nas três esferas. Essa prevalência total, em
+amostra estratificada, aponta falha estrutural do ecossistema e desloca a resposta adequada da
+correção pontual para os padrões de desenvolvimento e os requisitos de contratação.
 
 A série de dezessete dias converteu a auditoria contínua de desenho em resultado. Três
 plataformas repetiram, dia após dia, exatamente o mesmo conjunto de critérios violados, o que
@@ -1431,13 +1064,11 @@ art. 63 é continuado, uma verificação que produz um laudo por exercício mede
 tamanho um de um processo que varia.
 
 A contribuição metodológica que se pretende oferecer é menos o valor de qualquer índice do que
-quatro exigências que o instrumento incorpora e que a literatura da área frequentemente
-dispensa: declarar a cobertura em toda saída, de modo que nenhum percentual seja lido sobre
-denominador oculto; jamais converter veredito indeterminado em violação, mantendo separadas a
-detecção de falha e a indicação de revisão humana; **jamais converter ausência de observação em
-conformidade**, mantendo o "não sei" como valor representável, distinto de "conforme" e de "não
-conforme"; e vincular cada achado a um dispositivo determinado, com sujeito obrigado e via de
-exigibilidade, para que o relatório encontre quem tem competência para agir sobre ele.
+quatro exigências que o instrumento incorpora e que a literatura frequentemente dispensa:
+declarar a cobertura em toda saída; jamais converter veredito indeterminado em violação; jamais
+converter ausência de observação em conformidade, mantendo o "não sei" como valor
+representável; e vincular cada achado a um dispositivo determinado, com sujeito obrigado e via
+de exigibilidade.
 
 Permanece intransponível, por construção, o limite de que nenhum instrumento automático
 substitui a avaliação com as pessoas que a barreira exclui.

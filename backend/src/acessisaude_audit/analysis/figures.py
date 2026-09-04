@@ -412,17 +412,17 @@ def save_all(
 
         profile = exclusion_profile(findings)
         if not profile.empty:
-            _save(figure_exclusion_profile(profile), "fig2-perfil-de-exclusao")
+            _save(figure_exclusion_profile(profile), "fig4-perfil-de-exclusao")
     else:
-        logger.warning("sem achados: figuras 1 e 2 não geradas")
+        logger.warning("sem achados: figuras 1 e 4 não geradas")
 
     if not pages.empty and "esfera" in pages and pages["esfera"].nunique() > 1:
-        _save(figure_index_by_sphere(pages, index="ica"), "fig3-ica-por-esfera")
+        _save(figure_index_by_sphere(pages, index="ica"), "fig2-ica-por-esfera")
     else:
-        logger.warning("esfera federativa ausente ou com um único valor: figura 3 não gerada")
+        logger.warning("esfera federativa ausente ou com um único valor: figura 2 não gerada")
 
     if not pages.empty:
-        _save(figure_data_cost(pages, franchise_mb=franchise_mb), "fig4-custo-de-acesso")
+        _save(figure_data_cost(pages, franchise_mb=franchise_mb), "fig3-custo-de-acesso")
 
     # A figura da série só existe se houver série: com um único dia de coleta,
     # o gráfico de linhas seria uma coluna de pontos, e desenhá-lo sugeriria
