@@ -56,30 +56,30 @@ Não houve apresentação prévia.
 
 ## 3. Conformidade com as normas da revista
 
-### 3.1 Contagem de caracteres — decisão pendente
+### 3.1 Contagem de caracteres — resolvida
 
-A norma diz "entre 40 e 60 mil caracteres com espaços" sem esclarecer o que entra na conta. O
-manuscrito está assim:
+A norma diz "entre 40 e 60 mil caracteres com espaços" sem esclarecer o escopo, e as diretrizes
+publicadas não o esclarecem. A dúvida foi resolvida por medição de artigos originais já
+publicados na própria revista, com extração do texto dos PDF:
+
+| Artigo | Páginas | Corpo, com tabelas | Referências |
+|---|---|---|---|
+| v. 20, e3739 | 22 | 54.801 | 19.764 |
+| v. 20, outro original | 18 | 50.280 | 17.041 |
+
+Os dois excederiam 60 mil se as referências contassem. **A contagem incide sobre o corpo,
+incluindo tabelas, e exclui a lista de referências.** O manuscrito foi ajustado a esse critério:
 
 | Componente | Caracteres |
 |---|---|
-| Texto corrido | 63.460 |
-| Tabelas e legendas | 4.307 |
-| Referências | 5.511 |
-| **Total** | **73.278** |
+| Texto corrido | 57.551 |
+| Tabelas e legendas | 2.444 |
+| **Corpo (conta para o limite)** | **59.995** |
+| Referências (fora da conta) | 5.511 |
 
-Uma revisão anterior reduziu o texto corrido de 91,2 mil para 63,5 mil, com troca do bloco
-transversal e supressão de material de aparelho, que passou ao material suplementar. **Faltam
-cerca de 3,5 mil caracteres** para o teto, sob a leitura mais provável, a de que a contagem
-incide sobre o texto corrido.
-
-Duas saídas, em ordem de preferência:
-
-1. **Perguntar à secretaria da revista** o que entra na contagem. É uma mensagem, e resolve a
-   diferença entre 63,5 mil e 73,3 mil.
-2. **Cortar os 3,5 mil restantes.** O material com menor densidade por caractere, nesta versão,
-   está em § 2.4 (matriz normativa, cuja enumeração de dispositivos se repete na Tabela 7), em
-   § 4.5 (exclusão digital) e em § 5. Cortar além disso passa a custar resultado.
+Chegou-se a esse número reduzindo o texto corrido de 91,2 mil, com troca do bloco transversal,
+supressão de material de aparelho para o suplementar, e consolidação de treze tabelas em cinco.
+Confirmar o critério com a secretaria continua sendo prudente, mas deixou de ser bloqueante.
 
 **Já atendido no manuscrito**
 
