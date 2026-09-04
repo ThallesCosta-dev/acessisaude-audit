@@ -23,9 +23,11 @@ Quatro desfechos:
 3. **Um defeito grave do instrumento foi encontrado pelo dia 25/08**, em que a coleta falhou
    inteiramente e o instrumento reportou conformidade máxima para as cinco plataformas.
 4. **Uma hipótese foi levantada e não se sustentou** com os dias adicionais — ver seção 3.5.
+5. **A intermitência veio de componente de terceiro embarcado**, e não de intervenção do órgão
+   — ver seção 5, que também descarta a camada de cookies como fonte de contaminação.
 
 > **Histórico da janela.** A análise foi fechada primeiro com 13 dias (19 a 31/08) e depois
-> estendida para 17 (até 04/09). O que os quatro dias extras mudaram está na seção 5.
+> estendida para 17 (até 04/09). O que os quatro dias extras mudaram está na seção 6.
 
 ---
 
@@ -196,7 +198,90 @@ validação local, em que a página deliberadamente acessível *deve* pontuar 10
 
 ---
 
-## 5. O que os quatro dias extras mudaram
+## 5. Sobreposições na tela: o que contamina e o que não contamina
+
+Investigação motivada por uma observação simples: **as capturas de tela dos portais reais têm
+banner de cookies na frente**. A pergunta era se isso contamina a auditoria. A resposta é não
+para a camada de consentimento e sim, de outra forma, para os componentes embarcados — e o
+caminho até a segunda parte revelou a causa do episódio da seção 3.2.
+
+### Camada de consentimento: não contamina o ICA
+
+O instrumento percorre o documento renderizado, não a imagem. Um banner sobreposto **acrescenta
+nós ao documento; não subtrai**. Três verificações:
+
+| Verificação | Resultado |
+|---|---|
+| Critérios exclusivos do banner | **nenhum**, nas cinco plataformas |
+| Ocorrências vindas do banner | 4,5% (SMS-Rio), 0,2% (gov.br), 0% nas demais |
+| Supressão de detecção fora do banner | **não ocorre** — mais de 95% das ocorrências são de fora |
+
+A terceira é a que importava mais. Gerenciadores de consentimento costumam marcar o restante
+do documento como oculto para tecnologia assistiva enquanto o banner está aberto; se isso
+acontecesse, a análise ficaria confinada ao banner e o portal pareceria **melhor** do que é —
+a direção perigosa de erro. Não é o caso: o volume de achados fora da camada descarta a
+hipótese empiricamente.
+
+Conclusão: o **ICA é insensível** por construção, já que opera sobre critérios e nenhum
+critério é exclusivo do banner. IAN e IEJ operam sobre ocorrências e admitem influência
+pequena, concentrada em um portal.
+
+Achados que de fato vêm da camada de consentimento do SMS-Rio, para registro: `image-alt` em
+`.logo-lgpd` e `link-name` no vínculo para `lgpd.prefeitura.rio`. Ambos os critérios também são
+violados no conteúdo próprio do portal, e por isso não alteram o conjunto.
+
+### Componente embarcado: contamina, e explicou o episódio
+
+Ao inspecionar o elemento por trás do achado de 2.1.1 no Carioca Digital, a evidência gravada
+mostrou:
+
+```html
+<span onclick="LikeBtn.vote(1, 0, event);" class="lb-a" data-lb_index="0">
+```
+
+É um **botão de curtida de um fornecedor externo**, não um controle do serviço de atendimento.
+Daí duas consequências.
+
+**A primeira é a causa do episódio.** Nos cinco dias de ausência, sumiram juntos os *três*
+achados que tocavam esse componente — 2.1.1, alternativa textual e contraste — e os três
+voltaram juntos em 29/08. Enquanto isso, o domínio do fornecedor permaneceu entre os terceiros
+requisitados **todos os dias, inclusive nos do episódio**: o script foi buscado, mas o
+componente não se materializou no documento.
+
+| Dia | Domínio do fornecedor requisitado | Componente no documento |
+|---|---|---|
+| 19 a 23/08 | sim | sim |
+| 24 a 28/08 | **sim** | **não** |
+| 29/08 a 04/09 | sim | sim |
+
+Isso **descarta a leitura de correção e regressão pelo órgão municipal**. O que oscilou foi a
+renderização de um componente de terceiro.
+
+**A segunda é um limite do modelo de risco.** O risco jurídico é atribuído por critério: 2.1.1
+é crítico esteja o elemento no botão que agenda a consulta ou num botão de curtida. Para este
+achado, a classificação é desproporcional à consequência assistencial. O limite passou a estar
+declarado em § 4.8 do manuscrito.
+
+Verificou-se, por isso, o que sustenta a afirmação central do artigo. As violações de risco
+crítico do conjunto vêm majoritariamente de **elementos do caminho do serviço**: campo de busca
+sem rótulo (`#edit-busca`), botão de busca sem nome (`#searchsubmit`), botão de autenticação
+sem nome (`.br-sign-in` na barra gov.br), vínculos sem nome. O componente de terceiro responde
+por 24 dos 148 achados críticos do Carioca Digital, e por nenhum nos demais portais. **A
+afirmação de barreira absoluta em todas as páginas não repousa sobre widgets.**
+
+Registre-se ainda que o portal manteve barreira absoluta **em todos os cinco dias do episódio**,
+por outras violações críticas. Nenhum dia da série teve o Carioca Digital sem barreira absoluta.
+
+### O que ficou de correção no manuscrito
+
+A redação anterior de § 3.12.2 e § 4.7 dizia "um controle inoperável por teclado impede a
+conclusão da tarefa (...) na página que informa como obter atendimento de urgência". A frase é
+verdadeira sobre o critério e enganosa sobre o elemento: sugere que o serviço de urgência ficou
+inoperável por teclado, quando o elemento é acessório. Corrigida.
+
+---
+
+## 6. O que os quatro dias extras mudaram
 
 A análise foi fechada com 13 dias e reaberta com 17. Vale registrar o que a extensão produziu,
 porque é o argumento operacional a favor de deixar a coleta rodando:
@@ -217,7 +302,7 @@ agendada já rodava.
 
 ---
 
-## 6. Reprodução
+## 7. Reprodução
 
 ```powershell
 # A tarefa agendada executa, uma vez por dia:

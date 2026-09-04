@@ -25,10 +25,10 @@ bem-sucedidas, com 125 violações confirmadas. Todas as páginas apresentaram a
 barreira crítica, sem rota alternativa, e o critério relativo a nome, função e valor dos
 componentes de interface foi violado em todas elas. Observou-se gradiente entre esferas
 federativas. Na série diária, três plataformas não apresentaram variação alguma em dezesseis
-dias observados, ao passo que em duas houve mudança: uma barreira crítica de operação por
-teclado desapareceu por cinco dias e retornou, e uma violação de alternativa textual foi
-introduzida e seguia sem correção ao fim da série — evidência de que a periodicidade da
-verificação é parte do método. A auditoria automática
+dias observados, ao passo que em duas houve mudança: uma violação de operação por teclado,
+originada em componente de terceiro embarcado, desapareceu por cinco dias e retornou, e uma
+violação de alternativa textual foi introduzida e seguia sem correção ao fim da série —
+evidência de que a periodicidade da verificação é parte do método. A auditoria automática
 estabelece um piso de não conformidade e sustenta qualificação jurídica auditável.
 
 **Palavras-chave:** Pessoas com Deficiência; Acesso aos Serviços de Saúde; Saúde Digital;
@@ -47,10 +47,10 @@ cross-sectional block, sixteen of them successful, yielding 125 confirmed violat
 page presented at least one critical barrier, with no alternative route, and the criterion
 concerning name, role and value of interface components was violated in all of them. A
 gradient across federative levels was observed. In the daily series, three platforms showed no
-variation at all across sixteen observed days, while two changed: a critical keyboard-operation
-barrier disappeared for five days and returned, and a text-alternative violation was introduced
-and remained uncorrected through the end of the series — evidence that the periodicity of
-verification is part of the method. Automated auditing
+variation at all across sixteen observed days, while two changed: a keyboard-operation
+violation arising from an embedded third-party component disappeared for five days and
+returned, and a text-alternative violation was introduced and remained uncorrected through the
+end of the series — evidence that the periodicity of verification is part of the method. Automated auditing
 establishes a floor of non-compliance and supports auditable legal qualification.
 
 **Keywords:** Persons with Disabilities; Health Services Accessibility; Digital Health; Right
@@ -70,10 +70,10 @@ corte transversal, dieciséis exitosas, con 125 violaciones confirmadas. Todas p
 menos una barrera crítica, sin ruta alternativa, y el criterio sobre nombre, función y valor de
 los componentes de interfaz fue violado en todas. Se observó gradiente entre esferas
 federativas. En la serie diaria, tres plataformas no presentaron variación alguna en dieciséis
-días observados, mientras que dos cambiaron: una barrera crítica de operación por teclado
-desapareció durante cinco días y retornó, y una violación de alternativa textual fue
-introducida y seguía sin corregir al final de la serie — evidencia de que la periodicidad de la
-verificación es parte del método. La auditoría automática establece
+días observados, mientras que dos cambiaron: una violación de operación por teclado, originada
+en un componente de terceros embebido, desapareció durante cinco días y retornó, y una
+violación de alternativa textual fue introducida y seguía sin corregir al final de la serie —
+evidencia de que la periodicidad de la verificación es parte del método. La auditoría automática establece
 un piso de incumplimiento y sostiene calificación jurídica auditable.
 
 **Palabras clave:** Personas con Discapacidad; Accesibilidad a los Servicios de Salud; Salud
@@ -937,27 +937,44 @@ sintetiza os critérios cuja violação mudou de estado ao longo da série.
 
 Fonte: elaboração própria.
 
-A **violação do critério 2.1.1** no portal municipal de serviços é o achado de maior
-consequência da série. Trata-se de elemento não interativo empregado como controle, detectado
-pela sonda própria do instrumento, na página do serviço de atendimento em unidades de pronto
-atendimento, **nos dois perfis de dispositivo simultaneamente**. Esteve presente de 19 a 23 de
-agosto; ausente de 24 a 28; e presente novamente em todos os sete dias de 29 de agosto a 4 de
-setembro, sempre com cobertura integral das quatro auditorias de página diárias.
+A **violação do critério 2.1.1** no portal municipal de serviços é o achado que melhor ilustra
+o valor da repetição. Trata-se de elemento `span` com manipulador de clique, sem papel
+declarado e não focalizável, detectado pela sonda própria do instrumento na página do serviço
+de atendimento em unidades de pronto atendimento, **nos dois perfis de dispositivo
+simultaneamente**. Esteve presente de 19 a 23 de agosto; ausente de 24 a 28; e presente
+novamente em todos os sete dias de 29 de agosto a 4 de setembro, sempre com cobertura integral
+das quatro auditorias de página diárias.
 
-O episódio é, portanto, **delimitado nos dois extremos**: a barreira foi observada em 23 de
-agosto, não foi observada nos quatro dias seguintes em que houve cobertura integral, e voltou
-a ser observada em 29. A ausência não é artefato de amostragem — em 24, 26 e 28 as quatro
-auditorias foram bem-sucedidas, de modo que a barreira foi procurada onde estava e não foi
-encontrada. Uma janela de cinco dias corridos separa a última observação da barreira antes do
-episódio da primeira observação depois dele.
+O episódio é **delimitado nos dois extremos**: a barreira foi observada em 23 de agosto, não
+foi observada nos quatro dias seguintes em que houve cobertura integral, e voltou a ser
+observada em 29. A ausência não é artefato de amostragem — em 24, 26 e 28 as quatro auditorias
+foram bem-sucedidas, de modo que a barreira foi procurada onde estava e não foi encontrada.
 
-Um controle inoperável por teclado impede a conclusão da tarefa por quem não usa mouse, sem
-rota alternativa, na página que informa como obter atendimento de urgência. A consequência
-metodológica é imediata: **uma auditoria pontual realizada em 26 de agosto teria declarado
-essa página livre da barreira; a mesma auditoria, em 22 de agosto ou em 3 de setembro, a
-teria encontrado.** As duas auditorias seriam corretas quanto ao instante e erradas quanto ao
-portal. É a demonstração empírica, e não meramente argumentativa, de que a periodicidade da
-verificação é parte do método, e não detalhe operacional.
+A inspeção da evidência armazenada permite atribuir causa, e a atribuição é o ponto de maior
+interesse metodológico. **O elemento pertence a um componente de engajamento social fornecido
+por terceiro** — um botão de curtida embarcado na página. Nos cinco dias do episódio,
+desapareceram simultaneamente os três achados distintos que tocavam esse componente — o do
+critério 2.1.1, um de alternativa textual e um de contraste —, e os três retornaram juntos em
+29 de agosto. O domínio do fornecedor continuou entre os terceiros requisitados em todos os
+dias, inclusive nos do episódio: **o script foi buscado, mas o componente não se materializou
+no documento**. A leitura consistente com a evidência é a de falha de renderização do
+componente de terceiro, e não a de correção e regressão promovidas pelo órgão municipal.
+
+Duas ressalvas seguem daí, e ambas foram incorporadas à leitura dos resultados. Primeira: o
+portal **manteve barreira absoluta em todos os dias do episódio**, por outras violações de
+risco crítico — botão de busca sem nome acessível, vínculos sem nome —, de modo que o
+desaparecimento do 2.1.1 não tornou a página conforme em momento algum. Segunda: o critério
+2.1.1 é classificado como de risco crítico pela matriz normativa, que opera por critério e não
+por elemento; aplicada a um componente periférico de engajamento, essa classificação é
+desproporcional à consequência assistencial concreta, e a subseção 4.8 declara o limite.
+
+O que o episódio demonstra, então, é mais específico e mais interessante do que a formulação
+usual. **Uma auditoria pontual realizada em 26 de agosto não teria registrado essa violação;
+a mesma auditoria, em 22 de agosto ou em 3 de setembro, a teria registrado.** As duas seriam
+corretas quanto ao instante e ambas descreveriam mal o portal — e a causa da divergência não
+está sob controle do órgão auditado, mas de um fornecedor externo cujo componente ele
+embarcou. A periodicidade da verificação é, portanto, parte do método, e não detalhe
+operacional.
 
 A **violação do critério 1.1.1** no portal federal de saúde tem o sinal oposto: é uma
 regressão introduzida e não corrigida. Apareceu em 24 de agosto e permaneceu em todos os onze
@@ -976,7 +993,34 @@ dela interpretação: são compatíveis com conteúdo rotativo e ocorreram justa
 disponibilidade mais instável, o que impede separar mudança do portal de variação da amostra
 observada.
 
-#### 3.12.3 Disponibilidade ao longo da série
+#### 3.12.3 Componentes de terceiro e camadas de consentimento
+
+A investigação do episódio anterior motivou a verificação sistemática de duas classes de
+componente que se sobrepõem ao conteúdo dos portais e poderiam contaminar os índices.
+
+**Camadas de consentimento de cookies.** Quatro das cinco plataformas exibem banner de
+consentimento fixo sobre o conteúdo. A sobreposição é visual e não afeta a leitura do
+instrumento, que percorre o documento renderizado e não a imagem: o banner acrescenta nós ao
+documento, não subtrai. Verificou-se que **nenhum critério de sucesso é exclusivo do banner**
+em nenhuma das cinco plataformas — todo critério violado dentro da camada de consentimento
+também é violado fora dela, no conteúdo próprio do portal. O índice de conformidade, que opera
+sobre critérios, é por construção insensível a esses componentes.
+
+Os índices de atrito e de exposição jurídica operam sobre ocorrências e, portanto, admitem
+influência. Ela é pequena e concentrada: 4,5% das ocorrências na secretaria municipal, 0,2% no
+portal federal e nula nas demais. Verificou-se também que a camada **não suprime detecção**:
+se ela marcasse o restante do documento como oculto para tecnologia assistiva — prática comum
+em gerenciadores de consentimento —, a análise ficaria restrita ao banner, e o que se observa é
+o oposto, com mais de 95% das ocorrências fora dele.
+
+**Componentes de engajamento e widgets embarcados.** Não recebem o mesmo salvo-conduto. O
+episódio de intermitência descrito acima originou-se de um deles, e o instrumento os atribui ao
+portal que os embarca — o que é correto do ponto de vista do dever jurídico, já que a escolha de
+embarcar o componente é do órgão, mas exige que a origem do achado seja recuperável. Ela é: o
+seletor e o fragmento de documento de cada ocorrência ficam gravados no artefato primário, e foi
+por eles que a atribuição acima pôde ser feita.
+
+#### 3.12.4 Disponibilidade ao longo da série
 
 Excluído o dia sem veredito, a série confirma e quantifica o achado da subseção 3.4. A perda
 de páginas concentra-se em uma única plataforma: **21,9% no portal federal de saúde**, contra
@@ -1015,11 +1059,14 @@ dependência de terceiros variam de forma independente**, e o instrumento só p�
 dissociação por separá-los desde o desenho. **A disponibilidade depende da posição de rede do
 observador** (subseção 4.3). **O serviço raramente está onde o portal oficial o anuncia**
 (subseção 4.4). E, na série de dezessete dias, **três das cinco plataformas não variaram em
-nada, enquanto duas mudaram** — uma barreira crítica de teclado desapareceu por cinco dias
-corridos e retornou, permanecendo pelos sete dias seguintes, e uma violação de alternativa
+nada, enquanto duas mudaram** — uma violação de operação por teclado desapareceu por cinco
+dias corridos e retornou, permanecendo pelos sete dias seguintes, e uma violação de alternativa
 textual foi introduzida e seguia sem correção ao fim da série (subseção 4.7). Os dois fatos,
 juntos, sustentam a tese do trabalho: a barreira típica é estrutural e persistente, mas não
-*todas* são, e distinguir umas das outras exige repetição.
+*todas* são, e distinguir umas das outras exige repetição. A primeira delas acrescenta um
+elemento que a auditoria pontual não alcançaria: a intermitência veio de **componente de
+terceiro embarcado**, de modo que a conformidade do serviço variou sem que a conduta do órgão
+mudasse (subseção 4.7).
 
 ### 4.2 O art. 63 como norma em branco
 
@@ -1215,11 +1262,21 @@ componente e o requisito de contratação — argumento que a subseção 4.9 des
 
 Mas a resposta não é uniforme, e é aí que está a contribuição da série. Duas barreiras se
 moveram, em direções opostas e com significados opostos. No portal municipal de serviços, um
-controle inoperável por teclado — risco crítico, sem rota alternativa, na página do
-atendimento de urgência — esteve presente por cinco dias, ausente pelos cinco seguintes e
-presente de novo nos sete últimos. Uma auditoria realizada em 26 de agosto teria certificado a
-ausência da barreira que uma auditoria de 30 de agosto teria encontrado. Nenhuma das duas
-estaria errada sobre o instante; ambas estariam erradas sobre o portal.
+elemento inoperável por teclado esteve presente por cinco dias, ausente pelos cinco seguintes e
+presente de novo nos sete últimos. Uma auditoria realizada em 26 de agosto não teria registrado
+a violação que uma auditoria de 30 de agosto teria registrado. Nenhuma das duas estaria errada
+sobre o instante; ambas descreveriam mal o portal.
+
+Esse episódio traz, além disso, um deslocamento de responsabilidade que merece registro. O
+elemento pertencia a um componente de engajamento fornecido por terceiro, e sua intermitência
+acompanhou a renderização do componente, não uma intervenção do órgão municipal (subseção
+3.12.2). A acessibilidade do serviço público passou, nesses cinco dias, a depender do
+comportamento de um fornecedor externo — e a variar sem que nada mudasse na conduta de quem
+responde juridicamente por ela. O art. 63 da Lei Brasileira de Inclusão não distingue o código
+próprio do código embarcado, e nem deveria: quem escolhe embarcar responde pelo que embarcou.
+Mas a consequência prática é que o órgão não pode assegurar conformidade continuada por
+inspeção do próprio código, o que é mais um argumento para verificação contínua e menos um
+argumento para auditoria de entrega.
 
 No portal federal de saúde, o movimento foi o inverso: uma violação de alternativa textual
 introduzida entre 23 e 24 de agosto, presente em todas as páginas e nos dois perfis, e não
@@ -1302,6 +1359,17 @@ toque, relevante para o uso móvel que os próprios dados sugerem ser predominan
 conhecido e medido na sonda de legibilidade**, que subconta hiatos e superestima a facilidade
 de leitura — erro na direção conservadora.
 
+O **risco jurídico é atribuído por critério, e não por elemento**. Uma violação do critério de
+operação por teclado recebe classificação de risco crítico esteja ela no botão que agenda a
+consulta ou em um componente periférico de engajamento — e a série produziu exatamente esse
+segundo caso. A escolha é deliberada e conservadora, porque decidir automaticamente o que é
+periférico exigiria julgamento sobre a tarefa do usuário que o instrumento não tem como fazer;
+mas ela sobrestima a consequência assistencial de parte dos achados críticos, e a leitura de
+qualquer achado isolado exige inspecionar o elemento, que fica gravado no artefato primário.
+No conjunto da amostra o efeito é limitado: as violações de risco crítico são majoritariamente
+de campos de busca sem rótulo, botões de busca e de autenticação sem nome acessível e vínculos
+sem nome — elementos do caminho do serviço, e não acessórios dele.
+
 Acima de todos, permanece o limite estrutural do método: a auditoria automática não substitui
 a avaliação com usuários reais de tecnologia assistiva. A evidência de que apenas metade dos
 problemas efetivamente vividos por usuários cegos corresponde a critério de sucesso das
@@ -1367,9 +1435,9 @@ desenvolvimento e os requisitos de contratação.
 A série de dezessete dias converteu a auditoria contínua de desenho em resultado. Três
 plataformas repetiram, dia após dia, exatamente o mesmo conjunto de critérios violados — o que
 caracteriza a barreira típica como estrutural, e não circunstancial. Duas mudaram: em uma, uma
-barreira crítica de operação por teclado, na página do atendimento de urgência, esteve ausente
-por cinco dias e voltou, permanecendo até o fim da série; em outra, uma violação de alternativa
-textual foi introduzida e nunca foi corrigida. A conclusão que daí se extrai não é sobre esses portais, e sim sobre o método:
+violação de operação por teclado, originada em componente de terceiro embarcado na página do
+atendimento de urgência, esteve ausente por cinco dias e voltou, permanecendo até o fim da
+série; em outra, uma violação de alternativa textual foi introduzida e nunca foi corrigida. A conclusão que daí se extrai não é sobre esses portais, e sim sobre o método:
 como o dever do art. 63 é continuado, uma verificação que produz um laudo por exercício mede
 uma amostra de tamanho um de um processo que varia.
 
