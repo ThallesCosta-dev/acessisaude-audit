@@ -117,14 +117,16 @@ perguntando.
 
 Em ordem de risco para o parecer.
 
-1. **Estender a série diária.** Treze dias (19 a 31/08/2026) já converteram a promessa em
-   resultado — ver § 3.12 e § 4.7 — e detectaram mudança em duas das cinco plataformas. Mas
-   treze dias não caracterizam sazonalidade nem estimam tempo de permanência de barreira, que
-   é a grandeza de interesse para exigibilidade. A tarefa agendada continua rodando; cada
-   semana adicional antes da submissão fortalece a seção sem custo de trabalho. Reprocessar é
-   `acessisaude reindexar` seguido de `acessisaude exportar`, e a análise da série é
-   reprodutível pela consulta declarada em
-   [registro da série diária](../metodologia/registro-da-serie-diaria.md).
+1. **Decidir onde fechar a série.** A janela está em dezessete dias (19/08 a 04/09/2026) e a
+   tarefa agendada continua rodando. O que já está garantido: episódio de barreira intermitente
+   **fechado** e mensurável, regressão do portal federal com piso de onze dias observados e
+   transição ancorada em cobertura integral dos dois lados, três portais com dezesseis dias de
+   variação nula. O que ainda falta e só o tempo dá: **um segundo episódio de intermitência**,
+   sem o qual não se pode dizer com que frequência barreiras mudam — hoje o artigo afirma
+   apenas que mudam. E o fechamento da regressão do gov.br, que converteria "≥ 11 dias" em uma
+   duração. Reprocessar custa dois comandos: `acessisaude reindexar` e
+   `python scripts/gerar_figuras.py`. Fixar a data de corte no
+   [registro da série](../metodologia/registro-da-serie-diaria.md) antes de submeter.
 
 2. **Atualizar os números do braço transversal com a cobertura da SES-RJ.** Na série, o portal
    estadual estabilizou (perda 0% em doze dias, contra 50–67% em 16/08) e seu ICA sob cobertura
@@ -151,10 +153,18 @@ TIC Domicílios 2024.
 
 **Resolvido na revisão da série.** A pendência da janela única deixou de existir: o manuscrito
 passou a ter componente longitudinal declarado (§ 2.1 e § 2.2), seção de resultados (§ 3.12,
-Tabelas 12 e 13), discussão (§ 4.7) e limites reescritos (§ 4.8). A série também expôs um
-defeito do instrumento — índice de conformidade máximo em dia sem observação — corrigido pela
-[ADR 0010](../adr/0010-indices-nulos-sem-observacao.md) e reportado no próprio artigo (§ 3.2),
-por ser contribuição metodológica e não detalhe de implementação.
+Tabelas 12 e 13, Figura 5), discussão (§ 4.7) e limites reescritos (§ 4.8). A série também
+expôs um defeito do instrumento — índice de conformidade máximo em dia sem observação —
+corrigido pela [ADR 0010](../adr/0010-indices-nulos-sem-observacao.md) e reportado no próprio
+artigo (§ 3.2), por ser contribuição metodológica e não detalhe de implementação.
+
+**Ampliação da janela para 17 dias.** Nenhuma conclusão foi invertida; o que mudou foi a força
+das afirmações. O episódio de intermitência fechou e passou a ter duração; a regressão do
+portal federal ganhou piso maior e controle de cobertura integral dos dois lados; e uma
+hipótese de ciclo semanal de implantação, plausível com treze dias, **não replicou** na semana
+seguinte e por isso não chegou ao manuscrito. O registro dessa hipótese descartada está na
+seção 3.5 do [registro da série](../metodologia/registro-da-serie-diaria.md) — é diário de
+campo, não resultado.
 
 ---
 
