@@ -14,6 +14,11 @@
 → [O motor de auditoria](arquitetura/motor-de-auditoria.md)
 → [Decisões de arquitetura](adr/)
 
+### Quero ler o artigo
+→ [Manuscrito, versão reduzida](artigo/manuscrito-reciis.md) — 59,7 mil caracteres, para a Reciis
+→ [Manuscrito, versão estendida](artigo/manuscrito-extenso.md) — 70,7 mil, para periódico de limite maior
+→ [Folha de submissão](artigo/submissao-reciis.md) — conformidade e pendências
+
 ### Quero avaliar se o método se sustenta
 → [Protocolo metodológico](metodologia/protocolo.md)
 → [Índices: construção e calibração](metodologia/indices.md)

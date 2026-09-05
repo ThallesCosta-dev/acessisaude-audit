@@ -3,6 +3,17 @@
 Documento de apoio. **Não faz parte do manuscrito** e não deve ser anexado à submissão.
 Manuscrito: [`manuscrito-reciis.md`](manuscrito-reciis.md).
 
+> **Duas versões.** O estudo existe em duas formas: a reduzida
+> ([`manuscrito-reciis.md`](manuscrito-reciis.md), corpo de 59,7 mil caracteres), preparada para
+> a Reciis, e a estendida ([`manuscrito-extenso.md`](manuscrito-extenso.md), 70,7 mil), para
+> periódico de limite maior. A diferença é só de extensão: a estendida tem onze tabelas em vez
+> de cinco, mantém a granularidade das subseções da série e traz os parágrafos da Discussão na
+> forma anterior ao corte.
+>
+> **Toda correção de conteúdo entra nas duas.** `python scripts/conferir_manuscritos.py`
+> verifica que os números, as citações e os resumos coincidem, e que a reduzida continua no
+> limite. Rodar antes de qualquer submissão.
+
 ---
 
 ## 1. Enquadramento
