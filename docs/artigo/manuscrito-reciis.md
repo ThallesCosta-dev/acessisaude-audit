@@ -8,11 +8,7 @@
 > **Documento sem identificação de autoria**, conforme a política de avaliação duplo-cega da
 > Reciis. Os dados de autoria constam exclusivamente da Folha de Rosto e dos metadados da
 > submissão.
->
-> **Versão reduzida.** Existe uma versão estendida deste mesmo estudo em
-> `manuscrito-extenso.md`, com onze tabelas em vez de cinco e as subseções na forma anterior
-> ao corte por limite de caracteres. As duas afirmam exatamente o mesmo: toda correção de
-> conteúdo entra nas duas, e `scripts/conferir_manuscritos.py` acusa se divergirem.
+
 
 ---
 
