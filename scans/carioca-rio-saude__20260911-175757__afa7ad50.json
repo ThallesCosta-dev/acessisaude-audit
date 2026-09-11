@@ -1,0 +1,1469 @@
+{
+  "id": "afa7ad50-ac9b-427c-b42c-ad7f9002f85a",
+  "schema_version": "1.0.0",
+  "target_id": "carioca-rio-saude",
+  "target_name": "Carioca Digital — catálogo de serviços de saúde",
+  "base_url": "https://carioca.rio",
+  "status": "completed",
+  "started_at": "2026-09-11T17:57:57.416827Z",
+  "finished_at": "2026-09-11T17:58:13.183229Z",
+  "pages": [
+    {
+      "url": "https://carioca.rio/tema/saude",
+      "final_url": "https://carioca.rio/tema/saude",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Request Rejected",
+      "lang": null,
+      "viewport": {
+        "name": "mobile-320",
+        "width": 320,
+        "height": 640,
+        "device_scale_factor": 2.0,
+        "is_mobile": true,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; SM-A105M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+      },
+      "started_at": "2026-09-11T17:57:57.805018Z",
+      "finished_at": "2026-09-11T17:58:03.407943Z",
+      "findings": [
+        {
+          "id": "a7aed19e-d0c3-40bb-a6ff-eaaa10ac4e7c",
+          "rule_id": "html-has-lang",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "3.1.1"
+          ],
+          "summary": "<html> element must have a lang attribute",
+          "description": "Ensure every HTML document has a lang attribute",
+          "remediation": "Declarar lang='pt-BR' no elemento html de todas as páginas.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/html-has-lang?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "html",
+              "html": "<html><head><title>Request Rejected</title></head><body>The requested URL was rejected. Please consult with your administrator.<br><br>Your support ID is: 13133004680425257352<br><br><a href=\"javascript:history.back();\">[Go Back]</a></body></html>",
+              "failure_summary": "Fix any of the following:\n  The <html> element does not have a lang attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noLang"
+              }
+            }
+          ],
+          "page_url": "https://carioca.rio/tema/saude",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-11T17:58:03.316089Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "Sem declaração de idioma, o sintetizador de voz pronuncia o português com fonética estrangeira e a informação em saúde se torna ininteligível — a informação é publicada, mas não é comunicada (art. 3º, IV, 'd', LBI)."
+        },
+        {
+          "id": "01dd865d-6205-43aa-b49f-bd66372bca2d",
+          "rule_id": "bypass",
+          "source": "axe-core",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "2.4.1"
+          ],
+          "summary": "Page must have means to bypass repeated blocks",
+          "description": "Ensure each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+          "remediation": "Incluir link 'pular para o conteúdo principal' e marcos ARIA (landmarks).",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/bypass?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "html",
+              "html": "<html><head><title>Request Rejected</title></head><body>The requested URL was rejected. Please consult with your administrator.<br><br>Your support ID is: 13133004680425257352<br><br><a href=\"javascript:history.back();\">[Go Back]</a></body></html>",
+              "failure_summary": "Fix any of the following:\n  No valid skip link found\n  Page does not have a heading\n  Page does not have a landmark region",
+              "target_frame": [],
+              "measured": {}
+            }
+          ],
+          "page_url": "https://carioca.rio/tema/saude",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-11T17:58:03.316155Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "moderado",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art3.i"
+          ],
+          "legal_thesis": "A ausência de mecanismo de salto obriga a percorrer repetidamente blocos idênticos, esforço desproporcional vedado pelo conceito de acessibilidade com autonomia do art. 3º, I da LBI."
+        },
+        {
+          "id": "d3e2e96c-9d08-4bef-910d-d1fee97f6681",
+          "rule_id": "probe.page-language.missing",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "3.1.1"
+          ],
+          "summary": "O documento não declara o idioma (atributo lang ausente).",
+          "description": "Sem declaração de idioma, o leitor de tela aplica a fonética do idioma configurado no sistema do usuário. Termos de saúde em português pronunciados com fonemas de outro idioma tornam-se ininteligíveis: a informação pública existe, mas não chega.",
+          "remediation": "Declarar lang='pt-BR' no elemento html de todas as páginas.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/language-of-page.html",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "html",
+              "html": "<html><head><title>Request Rejected</title></head><body>The requested URL was rejected. Please consult with your administrator.<br><br>Your support ID is: 13133",
+              "failure_summary": "Elemento <html> sem atributo lang.",
+              "target_frame": [],
+              "measured": {
+                "lang": null
+              }
+            }
+          ],
+          "page_url": "https://carioca.rio/tema/saude",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-11T17:58:03.319887Z",
+          "legal_risk_override": "alto",
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "Sem declaração de idioma, o sintetizador de voz pronuncia o português com fonética estrangeira e a informação em saúde se torna ininteligível — a informação é publicada, mas não é comunicada (art. 3º, IV, 'd', LBI)."
+        },
+        {
+          "id": "375f2a42-1132-48a2-acce-accfabf30b86",
+          "rule_id": "probe.landmarks.no-main",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.3.1"
+          ],
+          "summary": "A página não declara marco de conteúdo principal (<main>).",
+          "description": "Sem <main> ou role=\"main\", o leitor de tela não distingue o conteúdo da moldura de navegação. O usuário cego precisa ouvir todo o cabeçalho e todo o menu a cada página que abre — em um portal com sessenta itens de menu, isso são minutos de áudio antes da primeira informação útil sobre a consulta.",
+          "remediation": "Envolver o conteúdo específico da página em <main> e reservar <header>, <nav> e <footer> para as regiões repetidas.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "<body>The requested URL was rejected. Please consult with your administrator.<br><br>Your support ID is: 13133004680425257352<br><br><a href=\"javascript:history.back();\">[Go Back]</a></body>",
+              "failure_summary": "Nenhum elemento <main> ou role=\"main\" no documento.",
+              "target_frame": [],
+              "measured": {
+                "main": 0,
+                "nav": 0,
+                "banner": 0,
+                "contentinfo": 0
+              }
+            }
+          ],
+          "page_url": "https://carioca.rio/tema/saude",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-11T17:58:03.322158Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74"
+          ],
+          "legal_thesis": "Sem estrutura semântica, a tecnologia assistiva não consegue reconstruir a relação entre rótulo e dado; o art. 74 da LBI assegura o acesso a tecnologias assistivas, o que pressupõe conteúdo com elas compatível."
+        },
+        {
+          "id": "2310c87f-23fe-4e21-837c-92dede766959",
+          "rule_id": "probe.landmarks.no-skip-link",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "moderate",
+          "criteria": [
+            "2.4.1"
+          ],
+          "summary": "Nenhum link de salto para o conteúdo principal foi encontrado.",
+          "description": "Não há âncora funcional no início do documento que permita ignorar os blocos repetidos de navegação. Como a página também não declara marco principal, não existe mecanismo algum de bypass: o critério 2.4.1 está violado.",
+          "remediation": "Incluir link 'pular para o conteúdo principal' e marcos ARIA (landmarks).",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "",
+              "failure_summary": "Nenhuma âncora interna com destino existente.",
+              "target_frame": [],
+              "measured": {
+                "has_main": false
+              }
+            }
+          ],
+          "page_url": "https://carioca.rio/tema/saude",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-11T17:58:03.322192Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "moderado",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art3.i"
+          ],
+          "legal_thesis": "A ausência de mecanismo de salto obriga a percorrer repetidamente blocos idênticos, esforço desproporcional vedado pelo conceito de acessibilidade com autonomia do art. 3º, I da LBI."
+        },
+        {
+          "id": "286d9552-4a15-45d7-ba0e-80154d73fb39",
+          "rule_id": "probe.heading-structure.none",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.3.1",
+            "2.4.6"
+          ],
+          "summary": "A página não possui nenhum cabeçalho.",
+          "description": "Sem cabeçalhos, o principal atalho de navegação do leitor de tela — a lista de títulos — fica vazio. A página só pode ser percorrida linearmente, do começo ao fim.",
+          "remediation": "Escrever cabeçalhos que descrevam o conteúdo da seção e rótulos que descrevam o dado solicitado.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "",
+              "failure_summary": "Zero cabeçalhos.",
+              "target_frame": [],
+              "measured": {}
+            }
+          ],
+          "page_url": "https://carioca.rio/tema/saude",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-11T17:58:03.328560Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "Sem estrutura semântica, a tecnologia assistiva não consegue reconstruir a relação entre rótulo e dado; o art. 74 da LBI assegura o acesso a tecnologias assistivas, o que pressupõe conteúdo com elas compatível."
+        }
+      ],
+      "network": {
+        "total_bytes": 720,
+        "total_uncompressed_bytes": 0,
+        "request_count": 1,
+        "bytes_by_type": {
+          "document": 720
+        },
+        "third_party_bytes": 0,
+        "third_party_domains": [],
+        "dom_content_loaded_ms": 869.7999999999884,
+        "load_complete_ms": 870.0,
+        "largest_contentful_paint_ms": null,
+        "blocked_requests": 0,
+        "total_mb": 0.001,
+        "third_party_share": 0.0
+      },
+      "error": null,
+      "axe_version": "4.13.0",
+      "screenshot_path": "/home/runner/work/acessisaude-audit/acessisaude-audit/data/screenshots/carioca.rio__5d7ea804c2__mobile-320.png",
+      "is_critical_path": true,
+      "duration_ms": 5602.925
+    },
+    {
+      "url": "https://carioca.rio/tema/saude",
+      "final_url": "https://carioca.rio/tema/saude",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Request Rejected",
+      "lang": null,
+      "viewport": {
+        "name": "desktop-1366",
+        "width": 1366,
+        "height": 768,
+        "device_scale_factor": 1.0,
+        "is_mobile": false,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+      },
+      "started_at": "2026-09-11T17:58:03.414373Z",
+      "finished_at": "2026-09-11T17:58:06.708933Z",
+      "findings": [
+        {
+          "id": "625f1d44-a0c2-4275-9e02-c1d07fd71c2d",
+          "rule_id": "html-has-lang",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "3.1.1"
+          ],
+          "summary": "<html> element must have a lang attribute",
+          "description": "Ensure every HTML document has a lang attribute",
+          "remediation": "Declarar lang='pt-BR' no elemento html de todas as páginas.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/html-has-lang?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "html",
+              "html": "<html><head><title>Request Rejected</title></head><body>The requested URL was rejected. Please consult with your administrator.<br><br>Your support ID is: 13133004681976941081<br><br><a href=\"javascript:history.back();\">[Go Back]</a></body></html>",
+              "failure_summary": "Fix any of the following:\n  The <html> element does not have a lang attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noLang"
+              }
+            }
+          ],
+          "page_url": "https://carioca.rio/tema/saude",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-11T17:58:06.653263Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "Sem declaração de idioma, o sintetizador de voz pronuncia o português com fonética estrangeira e a informação em saúde se torna ininteligível — a informação é publicada, mas não é comunicada (art. 3º, IV, 'd', LBI)."
+        },
+        {
+          "id": "31a821e8-8ee9-461f-a499-2a34b83681db",
+          "rule_id": "bypass",
+          "source": "axe-core",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "2.4.1"
+          ],
+          "summary": "Page must have means to bypass repeated blocks",
+          "description": "Ensure each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+          "remediation": "Incluir link 'pular para o conteúdo principal' e marcos ARIA (landmarks).",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/bypass?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "html",
+              "html": "<html><head><title>Request Rejected</title></head><body>The requested URL was rejected. Please consult with your administrator.<br><br>Your support ID is: 13133004681976941081<br><br><a href=\"javascript:history.back();\">[Go Back]</a></body></html>",
+              "failure_summary": "Fix any of the following:\n  No valid skip link found\n  Page does not have a heading\n  Page does not have a landmark region",
+              "target_frame": [],
+              "measured": {}
+            }
+          ],
+          "page_url": "https://carioca.rio/tema/saude",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-11T17:58:06.653306Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "moderado",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art3.i"
+          ],
+          "legal_thesis": "A ausência de mecanismo de salto obriga a percorrer repetidamente blocos idênticos, esforço desproporcional vedado pelo conceito de acessibilidade com autonomia do art. 3º, I da LBI."
+        },
+        {
+          "id": "d8d96111-3035-4141-bb2b-84a103a66265",
+          "rule_id": "probe.page-language.missing",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "3.1.1"
+          ],
+          "summary": "O documento não declara o idioma (atributo lang ausente).",
+          "description": "Sem declaração de idioma, o leitor de tela aplica a fonética do idioma configurado no sistema do usuário. Termos de saúde em português pronunciados com fonemas de outro idioma tornam-se ininteligíveis: a informação pública existe, mas não chega.",
+          "remediation": "Declarar lang='pt-BR' no elemento html de todas as páginas.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/language-of-page.html",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "html",
+              "html": "<html><head><title>Request Rejected</title></head><body>The requested URL was rejected. Please consult with your administrator.<br><br>Your support ID is: 13133",
+              "failure_summary": "Elemento <html> sem atributo lang.",
+              "target_frame": [],
+              "measured": {
+                "lang": null
+              }
+            }
+          ],
+          "page_url": "https://carioca.rio/tema/saude",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-11T17:58:06.655131Z",
+          "legal_risk_override": "alto",
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "Sem declaração de idioma, o sintetizador de voz pronuncia o português com fonética estrangeira e a informação em saúde se torna ininteligível — a informação é publicada, mas não é comunicada (art. 3º, IV, 'd', LBI)."
+        },
+        {
+          "id": "1edb052a-2e73-41dd-8811-ae3ac8693e3c",
+          "rule_id": "probe.landmarks.no-main",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.3.1"
+          ],
+          "summary": "A página não declara marco de conteúdo principal (<main>).",
+          "description": "Sem <main> ou role=\"main\", o leitor de tela não distingue o conteúdo da moldura de navegação. O usuário cego precisa ouvir todo o cabeçalho e todo o menu a cada página que abre — em um portal com sessenta itens de menu, isso são minutos de áudio antes da primeira informação útil sobre a consulta.",
+          "remediation": "Envolver o conteúdo específico da página em <main> e reservar <header>, <nav> e <footer> para as regiões repetidas.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "<body>The requested URL was rejected. Please consult with your administrator.<br><br>Your support ID is: 13133004681976941081<br><br><a href=\"javascript:history.back();\">[Go Back]</a></body>",
+              "failure_summary": "Nenhum elemento <main> ou role=\"main\" no documento.",
+              "target_frame": [],
+              "measured": {
+                "main": 0,
+                "nav": 0,
+                "banner": 0,
+                "contentinfo": 0
+              }
+            }
+          ],
+          "page_url": "https://carioca.rio/tema/saude",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-11T17:58:06.656765Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74"
+          ],
+          "legal_thesis": "Sem estrutura semântica, a tecnologia assistiva não consegue reconstruir a relação entre rótulo e dado; o art. 74 da LBI assegura o acesso a tecnologias assistivas, o que pressupõe conteúdo com elas compatível."
+        },
+        {
+          "id": "0358aa55-2a0f-459d-bdd8-7c0bed1e1376",
+          "rule_id": "probe.landmarks.no-skip-link",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "moderate",
+          "criteria": [
+            "2.4.1"
+          ],
+          "summary": "Nenhum link de salto para o conteúdo principal foi encontrado.",
+          "description": "Não há âncora funcional no início do documento que permita ignorar os blocos repetidos de navegação. Como a página também não declara marco principal, não existe mecanismo algum de bypass: o critério 2.4.1 está violado.",
+          "remediation": "Incluir link 'pular para o conteúdo principal' e marcos ARIA (landmarks).",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "",
+              "failure_summary": "Nenhuma âncora interna com destino existente.",
+              "target_frame": [],
+              "measured": {
+                "has_main": false
+              }
+            }
+          ],
+          "page_url": "https://carioca.rio/tema/saude",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-11T17:58:06.656789Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "moderado",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art3.i"
+          ],
+          "legal_thesis": "A ausência de mecanismo de salto obriga a percorrer repetidamente blocos idênticos, esforço desproporcional vedado pelo conceito de acessibilidade com autonomia do art. 3º, I da LBI."
+        },
+        {
+          "id": "9cbd0432-a6d0-4878-a054-00dd9f3642ba",
+          "rule_id": "probe.heading-structure.none",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.3.1",
+            "2.4.6"
+          ],
+          "summary": "A página não possui nenhum cabeçalho.",
+          "description": "Sem cabeçalhos, o principal atalho de navegação do leitor de tela — a lista de títulos — fica vazio. A página só pode ser percorrida linearmente, do começo ao fim.",
+          "remediation": "Escrever cabeçalhos que descrevam o conteúdo da seção e rótulos que descrevam o dado solicitado.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "",
+              "failure_summary": "Zero cabeçalhos.",
+              "target_frame": [],
+              "measured": {}
+            }
+          ],
+          "page_url": "https://carioca.rio/tema/saude",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-11T17:58:06.658167Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "Sem estrutura semântica, a tecnologia assistiva não consegue reconstruir a relação entre rótulo e dado; o art. 74 da LBI assegura o acesso a tecnologias assistivas, o que pressupõe conteúdo com elas compatível."
+        }
+      ],
+      "network": {
+        "total_bytes": 720,
+        "total_uncompressed_bytes": 0,
+        "request_count": 1,
+        "bytes_by_type": {
+          "document": 720
+        },
+        "third_party_bytes": 0,
+        "third_party_domains": [],
+        "dom_content_loaded_ms": 1016.2000000000116,
+        "load_complete_ms": 1016.2000000000116,
+        "largest_contentful_paint_ms": null,
+        "blocked_requests": 0,
+        "total_mb": 0.001,
+        "third_party_share": 0.0
+      },
+      "error": null,
+      "axe_version": "4.13.0",
+      "screenshot_path": "/home/runner/work/acessisaude-audit/acessisaude-audit/data/screenshots/carioca.rio__5d7ea804c2__desktop-1366.png",
+      "is_critical_path": true,
+      "duration_ms": 3294.56
+    },
+    {
+      "url": "https://carioca.rio/servicos/atendimento-em-unidades-de-pronto-atendimento-upa-24-horas",
+      "final_url": "https://carioca.rio/servicos/atendimento-em-unidades-de-pronto-atendimento-upa-24-horas",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Request Rejected",
+      "lang": null,
+      "viewport": {
+        "name": "mobile-320",
+        "width": 320,
+        "height": 640,
+        "device_scale_factor": 2.0,
+        "is_mobile": true,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; SM-A105M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+      },
+      "started_at": "2026-09-11T17:58:06.713496Z",
+      "finished_at": "2026-09-11T17:58:09.973868Z",
+      "findings": [
+        {
+          "id": "a5e303f0-7a49-481e-84eb-20d775b69be1",
+          "rule_id": "html-has-lang",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "3.1.1"
+          ],
+          "summary": "<html> element must have a lang attribute",
+          "description": "Ensure every HTML document has a lang attribute",
+          "remediation": "Declarar lang='pt-BR' no elemento html de todas as páginas.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/html-has-lang?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "html",
+              "html": "<html><head><title>Request Rejected</title></head><body>The requested URL was rejected. Please consult with your administrator.<br><br>Your support ID is: 13133004680425264552<br><br><a href=\"javascript:history.back();\">[Go Back]</a></body></html>",
+              "failure_summary": "Fix any of the following:\n  The <html> element does not have a lang attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noLang"
+              }
+            }
+          ],
+          "page_url": "https://carioca.rio/servicos/atendimento-em-unidades-de-pronto-atendimento-upa-24-horas",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-11T17:58:09.874690Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "Sem declaração de idioma, o sintetizador de voz pronuncia o português com fonética estrangeira e a informação em saúde se torna ininteligível — a informação é publicada, mas não é comunicada (art. 3º, IV, 'd', LBI)."
+        },
+        {
+          "id": "ef548e71-4ea5-4a8a-8572-563b96461a66",
+          "rule_id": "bypass",
+          "source": "axe-core",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "2.4.1"
+          ],
+          "summary": "Page must have means to bypass repeated blocks",
+          "description": "Ensure each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+          "remediation": "Incluir link 'pular para o conteúdo principal' e marcos ARIA (landmarks).",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/bypass?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "html",
+              "html": "<html><head><title>Request Rejected</title></head><body>The requested URL was rejected. Please consult with your administrator.<br><br>Your support ID is: 13133004680425264552<br><br><a href=\"javascript:history.back();\">[Go Back]</a></body></html>",
+              "failure_summary": "Fix any of the following:\n  No valid skip link found\n  Page does not have a heading\n  Page does not have a landmark region",
+              "target_frame": [],
+              "measured": {}
+            }
+          ],
+          "page_url": "https://carioca.rio/servicos/atendimento-em-unidades-de-pronto-atendimento-upa-24-horas",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-11T17:58:09.874732Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "moderado",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art3.i"
+          ],
+          "legal_thesis": "A ausência de mecanismo de salto obriga a percorrer repetidamente blocos idênticos, esforço desproporcional vedado pelo conceito de acessibilidade com autonomia do art. 3º, I da LBI."
+        },
+        {
+          "id": "18e7e158-c01f-490e-a88a-036649a58dba",
+          "rule_id": "probe.page-language.missing",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "3.1.1"
+          ],
+          "summary": "O documento não declara o idioma (atributo lang ausente).",
+          "description": "Sem declaração de idioma, o leitor de tela aplica a fonética do idioma configurado no sistema do usuário. Termos de saúde em português pronunciados com fonemas de outro idioma tornam-se ininteligíveis: a informação pública existe, mas não chega.",
+          "remediation": "Declarar lang='pt-BR' no elemento html de todas as páginas.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/language-of-page.html",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "html",
+              "html": "<html><head><title>Request Rejected</title></head><body>The requested URL was rejected. Please consult with your administrator.<br><br>Your support ID is: 13133",
+              "failure_summary": "Elemento <html> sem atributo lang.",
+              "target_frame": [],
+              "measured": {
+                "lang": null
+              }
+            }
+          ],
+          "page_url": "https://carioca.rio/servicos/atendimento-em-unidades-de-pronto-atendimento-upa-24-horas",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-11T17:58:09.877131Z",
+          "legal_risk_override": "alto",
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "Sem declaração de idioma, o sintetizador de voz pronuncia o português com fonética estrangeira e a informação em saúde se torna ininteligível — a informação é publicada, mas não é comunicada (art. 3º, IV, 'd', LBI)."
+        },
+        {
+          "id": "cb20a604-844b-4839-889f-7e08a70be3f1",
+          "rule_id": "probe.landmarks.no-main",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.3.1"
+          ],
+          "summary": "A página não declara marco de conteúdo principal (<main>).",
+          "description": "Sem <main> ou role=\"main\", o leitor de tela não distingue o conteúdo da moldura de navegação. O usuário cego precisa ouvir todo o cabeçalho e todo o menu a cada página que abre — em um portal com sessenta itens de menu, isso são minutos de áudio antes da primeira informação útil sobre a consulta.",
+          "remediation": "Envolver o conteúdo específico da página em <main> e reservar <header>, <nav> e <footer> para as regiões repetidas.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "<body>The requested URL was rejected. Please consult with your administrator.<br><br>Your support ID is: 13133004680425264552<br><br><a href=\"javascript:history.back();\">[Go Back]</a></body>",
+              "failure_summary": "Nenhum elemento <main> ou role=\"main\" no documento.",
+              "target_frame": [],
+              "measured": {
+                "main": 0,
+                "nav": 0,
+                "banner": 0,
+                "contentinfo": 0
+              }
+            }
+          ],
+          "page_url": "https://carioca.rio/servicos/atendimento-em-unidades-de-pronto-atendimento-upa-24-horas",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-11T17:58:09.878781Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74"
+          ],
+          "legal_thesis": "Sem estrutura semântica, a tecnologia assistiva não consegue reconstruir a relação entre rótulo e dado; o art. 74 da LBI assegura o acesso a tecnologias assistivas, o que pressupõe conteúdo com elas compatível."
+        },
+        {
+          "id": "797ddc47-1675-49a3-87ff-def5e9cdb2e0",
+          "rule_id": "probe.landmarks.no-skip-link",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "moderate",
+          "criteria": [
+            "2.4.1"
+          ],
+          "summary": "Nenhum link de salto para o conteúdo principal foi encontrado.",
+          "description": "Não há âncora funcional no início do documento que permita ignorar os blocos repetidos de navegação. Como a página também não declara marco principal, não existe mecanismo algum de bypass: o critério 2.4.1 está violado.",
+          "remediation": "Incluir link 'pular para o conteúdo principal' e marcos ARIA (landmarks).",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "",
+              "failure_summary": "Nenhuma âncora interna com destino existente.",
+              "target_frame": [],
+              "measured": {
+                "has_main": false
+              }
+            }
+          ],
+          "page_url": "https://carioca.rio/servicos/atendimento-em-unidades-de-pronto-atendimento-upa-24-horas",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-11T17:58:09.878804Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "moderado",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art3.i"
+          ],
+          "legal_thesis": "A ausência de mecanismo de salto obriga a percorrer repetidamente blocos idênticos, esforço desproporcional vedado pelo conceito de acessibilidade com autonomia do art. 3º, I da LBI."
+        },
+        {
+          "id": "ec459914-6133-433c-aa7e-346b38d0ab76",
+          "rule_id": "probe.heading-structure.none",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.3.1",
+            "2.4.6"
+          ],
+          "summary": "A página não possui nenhum cabeçalho.",
+          "description": "Sem cabeçalhos, o principal atalho de navegação do leitor de tela — a lista de títulos — fica vazio. A página só pode ser percorrida linearmente, do começo ao fim.",
+          "remediation": "Escrever cabeçalhos que descrevam o conteúdo da seção e rótulos que descrevam o dado solicitado.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "",
+              "failure_summary": "Zero cabeçalhos.",
+              "target_frame": [],
+              "measured": {}
+            }
+          ],
+          "page_url": "https://carioca.rio/servicos/atendimento-em-unidades-de-pronto-atendimento-upa-24-horas",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-11T17:58:09.880276Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "Sem estrutura semântica, a tecnologia assistiva não consegue reconstruir a relação entre rótulo e dado; o art. 74 da LBI assegura o acesso a tecnologias assistivas, o que pressupõe conteúdo com elas compatível."
+        }
+      ],
+      "network": {
+        "total_bytes": 720,
+        "total_uncompressed_bytes": 0,
+        "request_count": 1,
+        "bytes_by_type": {
+          "document": 720
+        },
+        "third_party_bytes": 0,
+        "third_party_domains": [],
+        "dom_content_loaded_ms": 910.7000000000116,
+        "load_complete_ms": 911.0,
+        "largest_contentful_paint_ms": null,
+        "blocked_requests": 0,
+        "total_mb": 0.001,
+        "third_party_share": 0.0
+      },
+      "error": null,
+      "axe_version": "4.13.0",
+      "screenshot_path": "/home/runner/work/acessisaude-audit/acessisaude-audit/data/screenshots/carioca.rio__6588547b3e__mobile-320.png",
+      "is_critical_path": true,
+      "duration_ms": 3260.372
+    },
+    {
+      "url": "https://carioca.rio/servicos/atendimento-em-unidades-de-pronto-atendimento-upa-24-horas",
+      "final_url": "https://carioca.rio/servicos/atendimento-em-unidades-de-pronto-atendimento-upa-24-horas",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Request Rejected",
+      "lang": null,
+      "viewport": {
+        "name": "desktop-1366",
+        "width": 1366,
+        "height": 768,
+        "device_scale_factor": 1.0,
+        "is_mobile": false,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+      },
+      "started_at": "2026-09-11T17:58:09.978324Z",
+      "finished_at": "2026-09-11T17:58:13.143403Z",
+      "findings": [
+        {
+          "id": "44abbda7-8228-4293-a42d-7b8e48732a90",
+          "rule_id": "html-has-lang",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "3.1.1"
+          ],
+          "summary": "<html> element must have a lang attribute",
+          "description": "Ensure every HTML document has a lang attribute",
+          "remediation": "Declarar lang='pt-BR' no elemento html de todas as páginas.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/html-has-lang?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "html",
+              "html": "<html><head><title>Request Rejected</title></head><body>The requested URL was rejected. Please consult with your administrator.<br><br>Your support ID is: 13133004681976949481<br><br><a href=\"javascript:history.back();\">[Go Back]</a></body></html>",
+              "failure_summary": "Fix any of the following:\n  The <html> element does not have a lang attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noLang"
+              }
+            }
+          ],
+          "page_url": "https://carioca.rio/servicos/atendimento-em-unidades-de-pronto-atendimento-upa-24-horas",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-11T17:58:13.075123Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "Sem declaração de idioma, o sintetizador de voz pronuncia o português com fonética estrangeira e a informação em saúde se torna ininteligível — a informação é publicada, mas não é comunicada (art. 3º, IV, 'd', LBI)."
+        },
+        {
+          "id": "ed6826e5-acf4-477d-aa13-ffe26469a261",
+          "rule_id": "bypass",
+          "source": "axe-core",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "2.4.1"
+          ],
+          "summary": "Page must have means to bypass repeated blocks",
+          "description": "Ensure each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+          "remediation": "Incluir link 'pular para o conteúdo principal' e marcos ARIA (landmarks).",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/bypass?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "html",
+              "html": "<html><head><title>Request Rejected</title></head><body>The requested URL was rejected. Please consult with your administrator.<br><br>Your support ID is: 13133004681976949481<br><br><a href=\"javascript:history.back();\">[Go Back]</a></body></html>",
+              "failure_summary": "Fix any of the following:\n  No valid skip link found\n  Page does not have a heading\n  Page does not have a landmark region",
+              "target_frame": [],
+              "measured": {}
+            }
+          ],
+          "page_url": "https://carioca.rio/servicos/atendimento-em-unidades-de-pronto-atendimento-upa-24-horas",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-11T17:58:13.075169Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "moderado",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art3.i"
+          ],
+          "legal_thesis": "A ausência de mecanismo de salto obriga a percorrer repetidamente blocos idênticos, esforço desproporcional vedado pelo conceito de acessibilidade com autonomia do art. 3º, I da LBI."
+        },
+        {
+          "id": "2d1df22f-392e-4321-a7d1-257ac7b9e5ce",
+          "rule_id": "probe.page-language.missing",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "3.1.1"
+          ],
+          "summary": "O documento não declara o idioma (atributo lang ausente).",
+          "description": "Sem declaração de idioma, o leitor de tela aplica a fonética do idioma configurado no sistema do usuário. Termos de saúde em português pronunciados com fonemas de outro idioma tornam-se ininteligíveis: a informação pública existe, mas não chega.",
+          "remediation": "Declarar lang='pt-BR' no elemento html de todas as páginas.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/language-of-page.html",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "html",
+              "html": "<html><head><title>Request Rejected</title></head><body>The requested URL was rejected. Please consult with your administrator.<br><br>Your support ID is: 13133",
+              "failure_summary": "Elemento <html> sem atributo lang.",
+              "target_frame": [],
+              "measured": {
+                "lang": null
+              }
+            }
+          ],
+          "page_url": "https://carioca.rio/servicos/atendimento-em-unidades-de-pronto-atendimento-upa-24-horas",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-11T17:58:13.076961Z",
+          "legal_risk_override": "alto",
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "Sem declaração de idioma, o sintetizador de voz pronuncia o português com fonética estrangeira e a informação em saúde se torna ininteligível — a informação é publicada, mas não é comunicada (art. 3º, IV, 'd', LBI)."
+        },
+        {
+          "id": "386dd6d0-c143-4c9e-beee-97c18825b92a",
+          "rule_id": "probe.landmarks.no-main",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.3.1"
+          ],
+          "summary": "A página não declara marco de conteúdo principal (<main>).",
+          "description": "Sem <main> ou role=\"main\", o leitor de tela não distingue o conteúdo da moldura de navegação. O usuário cego precisa ouvir todo o cabeçalho e todo o menu a cada página que abre — em um portal com sessenta itens de menu, isso são minutos de áudio antes da primeira informação útil sobre a consulta.",
+          "remediation": "Envolver o conteúdo específico da página em <main> e reservar <header>, <nav> e <footer> para as regiões repetidas.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "<body>The requested URL was rejected. Please consult with your administrator.<br><br>Your support ID is: 13133004681976949481<br><br><a href=\"javascript:history.back();\">[Go Back]</a></body>",
+              "failure_summary": "Nenhum elemento <main> ou role=\"main\" no documento.",
+              "target_frame": [],
+              "measured": {
+                "main": 0,
+                "nav": 0,
+                "banner": 0,
+                "contentinfo": 0
+              }
+            }
+          ],
+          "page_url": "https://carioca.rio/servicos/atendimento-em-unidades-de-pronto-atendimento-upa-24-horas",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-11T17:58:13.078533Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74"
+          ],
+          "legal_thesis": "Sem estrutura semântica, a tecnologia assistiva não consegue reconstruir a relação entre rótulo e dado; o art. 74 da LBI assegura o acesso a tecnologias assistivas, o que pressupõe conteúdo com elas compatível."
+        },
+        {
+          "id": "5fb01163-5e1b-497f-80b9-786faaf5e32f",
+          "rule_id": "probe.landmarks.no-skip-link",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "moderate",
+          "criteria": [
+            "2.4.1"
+          ],
+          "summary": "Nenhum link de salto para o conteúdo principal foi encontrado.",
+          "description": "Não há âncora funcional no início do documento que permita ignorar os blocos repetidos de navegação. Como a página também não declara marco principal, não existe mecanismo algum de bypass: o critério 2.4.1 está violado.",
+          "remediation": "Incluir link 'pular para o conteúdo principal' e marcos ARIA (landmarks).",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "",
+              "failure_summary": "Nenhuma âncora interna com destino existente.",
+              "target_frame": [],
+              "measured": {
+                "has_main": false
+              }
+            }
+          ],
+          "page_url": "https://carioca.rio/servicos/atendimento-em-unidades-de-pronto-atendimento-upa-24-horas",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-11T17:58:13.078556Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "moderado",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art3.i"
+          ],
+          "legal_thesis": "A ausência de mecanismo de salto obriga a percorrer repetidamente blocos idênticos, esforço desproporcional vedado pelo conceito de acessibilidade com autonomia do art. 3º, I da LBI."
+        },
+        {
+          "id": "c4ee3d31-bb6f-40d7-9f2b-ea0b2cb308f3",
+          "rule_id": "probe.heading-structure.none",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.3.1",
+            "2.4.6"
+          ],
+          "summary": "A página não possui nenhum cabeçalho.",
+          "description": "Sem cabeçalhos, o principal atalho de navegação do leitor de tela — a lista de títulos — fica vazio. A página só pode ser percorrida linearmente, do começo ao fim.",
+          "remediation": "Escrever cabeçalhos que descrevam o conteúdo da seção e rótulos que descrevam o dado solicitado.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "",
+              "failure_summary": "Zero cabeçalhos.",
+              "target_frame": [],
+              "measured": {}
+            }
+          ],
+          "page_url": "https://carioca.rio/servicos/atendimento-em-unidades-de-pronto-atendimento-upa-24-horas",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-11T17:58:13.079884Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "Sem estrutura semântica, a tecnologia assistiva não consegue reconstruir a relação entre rótulo e dado; o art. 74 da LBI assegura o acesso a tecnologias assistivas, o que pressupõe conteúdo com elas compatível."
+        }
+      ],
+      "network": {
+        "total_bytes": 720,
+        "total_uncompressed_bytes": 0,
+        "request_count": 1,
+        "bytes_by_type": {
+          "document": 720
+        },
+        "third_party_bytes": 0,
+        "third_party_domains": [],
+        "dom_content_loaded_ms": 876.0,
+        "load_complete_ms": 876.1000000000349,
+        "largest_contentful_paint_ms": null,
+        "blocked_requests": 0,
+        "total_mb": 0.001,
+        "third_party_share": 0.0
+      },
+      "error": null,
+      "axe_version": "4.13.0",
+      "screenshot_path": "/home/runner/work/acessisaude-audit/acessisaude-audit/data/screenshots/carioca.rio__6588547b3e__desktop-1366.png",
+      "is_critical_path": true,
+      "duration_ms": 3165.079
+    }
+  ],
+  "engine_version": "0.1.0",
+  "axe_version": "4.13.0",
+  "browser": "chromium 151.0.7922.34",
+  "config_snapshot": {
+    "browser": "chromium",
+    "headless": true,
+    "navigation_timeout_ms": 30000,
+    "settle_delay_ms": 1500,
+    "locale": "pt-BR",
+    "timezone_id": "America/Sao_Paulo",
+    "max_pages_per_target": 25,
+    "max_crawl_depth": 2,
+    "request_delay_ms": 2000,
+    "concurrency": 1,
+    "respect_robots_txt": true,
+    "robots_override_reason": "",
+    "axe_tags": [
+      "wcag2a",
+      "wcag2aa",
+      "wcag21a",
+      "wcag21aa"
+    ],
+    "viewports": [
+      {
+        "name": "mobile-320",
+        "width": 320,
+        "height": 640,
+        "device_scale_factor": 2.0,
+        "is_mobile": true,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; SM-A105M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+      },
+      {
+        "name": "desktop-1366",
+        "width": 1366,
+        "height": 768,
+        "device_scale_factor": 1.0,
+        "is_mobile": false,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+      }
+    ],
+    "scoring": {
+      "friction_kappa": 150.0,
+      "critical_path_multiplier": 1.5,
+      "price_per_mb_brl": 0.0029296875,
+      "franchise_mb": 10240.0,
+      "heavy_page_mb": 2.5
+    },
+    "random_seed": 42,
+    "plan": {
+      "total_tasks": 4,
+      "unique_urls": 2,
+      "discover_enabled": false,
+      "declared_gaps": []
+    },
+    "probes": [
+      "probe.page-language",
+      "probe.landmarks",
+      "probe.heading-structure",
+      "probe.id-duplicado",
+      "probe.non-interactive-control",
+      "probe.positive-tabindex",
+      "probe.focus-visible",
+      "probe.placeholder-como-rotulo",
+      "probe.erro-sem-mensagem",
+      "probe.reflow-320",
+      "probe.zoom-lock",
+      "probe.captions",
+      "probe.autoplay",
+      "probe.meta-refresh",
+      "probe.data-cost",
+      "probe.readability"
+    ]
+  },
+  "errors": [],
+  "page_count": 4,
+  "violation_count": 20,
+  "occurrence_count": 20
+}

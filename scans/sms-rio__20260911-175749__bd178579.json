@@ -1,0 +1,779 @@
+{
+  "id": "bd178579-4503-4148-afb7-abd8727c0c9d",
+  "schema_version": "1.0.0",
+  "target_id": "sms-rio",
+  "target_name": "Secretaria Municipal de Saúde do Rio de Janeiro — seção informativa",
+  "base_url": "https://prefeitura.rio/saude",
+  "status": "completed",
+  "started_at": "2026-09-11T17:57:49.032663Z",
+  "finished_at": "2026-09-11T17:57:56.734002Z",
+  "pages": [
+    {
+      "url": "https://prefeitura.rio/saude",
+      "final_url": "https://prefeitura.rio/saude",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Requisição Negada",
+      "lang": null,
+      "viewport": {
+        "name": "mobile-320",
+        "width": 320,
+        "height": 640,
+        "device_scale_factor": 2.0,
+        "is_mobile": true,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; SM-A105M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+      },
+      "started_at": "2026-09-11T17:57:49.423162Z",
+      "finished_at": "2026-09-11T17:57:53.691534Z",
+      "findings": [
+        {
+          "id": "3e9d72b7-9a0c-4908-ad01-2d84584775b0",
+          "rule_id": "html-has-lang",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "3.1.1"
+          ],
+          "summary": "<html> element must have a lang attribute",
+          "description": "Ensure every HTML document has a lang attribute",
+          "remediation": "Declarar lang='pt-BR' no elemento html de todas as páginas.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/html-has-lang?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "html",
+              "html": "<html><head><title>Requisição Negada</title></head><body>Sua requisição foi negada.<br><br>Em caso de necessidade de contato, informe o support ID: 13133004680425247432<br><br><a href=\"javascript:history.back();\">[Go Back]</a></body></html>",
+              "failure_summary": "Fix any of the following:\n  The <html> element does not have a lang attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noLang"
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-11T17:57:53.595697Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "Sem declaração de idioma, o sintetizador de voz pronuncia o português com fonética estrangeira e a informação em saúde se torna ininteligível — a informação é publicada, mas não é comunicada (art. 3º, IV, 'd', LBI)."
+        },
+        {
+          "id": "22e0df60-344a-4fe8-bf05-84754ecbfb50",
+          "rule_id": "bypass",
+          "source": "axe-core",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "2.4.1"
+          ],
+          "summary": "Page must have means to bypass repeated blocks",
+          "description": "Ensure each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+          "remediation": "Incluir link 'pular para o conteúdo principal' e marcos ARIA (landmarks).",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/bypass?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "html",
+              "html": "<html><head><title>Requisição Negada</title></head><body>Sua requisição foi negada.<br><br>Em caso de necessidade de contato, informe o support ID: 13133004680425247432<br><br><a href=\"javascript:history.back();\">[Go Back]</a></body></html>",
+              "failure_summary": "Fix any of the following:\n  No valid skip link found\n  Page does not have a heading\n  Page does not have a landmark region",
+              "target_frame": [],
+              "measured": {}
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-11T17:57:53.595767Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "moderado",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art3.i"
+          ],
+          "legal_thesis": "A ausência de mecanismo de salto obriga a percorrer repetidamente blocos idênticos, esforço desproporcional vedado pelo conceito de acessibilidade com autonomia do art. 3º, I da LBI."
+        },
+        {
+          "id": "a26db9b1-240b-45c4-a8c6-e3d4b59befb1",
+          "rule_id": "probe.page-language.missing",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "3.1.1"
+          ],
+          "summary": "O documento não declara o idioma (atributo lang ausente).",
+          "description": "Sem declaração de idioma, o leitor de tela aplica a fonética do idioma configurado no sistema do usuário. Termos de saúde em português pronunciados com fonemas de outro idioma tornam-se ininteligíveis: a informação pública existe, mas não chega.",
+          "remediation": "Declarar lang='pt-BR' no elemento html de todas as páginas.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/language-of-page.html",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "html",
+              "html": "<html><head><title>Requisição Negada</title></head><body>Sua requisição foi negada.<br><br>Em caso de necessidade de contato, informe o support ID: 131330046804",
+              "failure_summary": "Elemento <html> sem atributo lang.",
+              "target_frame": [],
+              "measured": {
+                "lang": null
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-11T17:57:53.607229Z",
+          "legal_risk_override": "alto",
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "Sem declaração de idioma, o sintetizador de voz pronuncia o português com fonética estrangeira e a informação em saúde se torna ininteligível — a informação é publicada, mas não é comunicada (art. 3º, IV, 'd', LBI)."
+        },
+        {
+          "id": "9c3b2be7-fe71-459d-86ed-c87f6dd92b14",
+          "rule_id": "probe.landmarks.no-main",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.3.1"
+          ],
+          "summary": "A página não declara marco de conteúdo principal (<main>).",
+          "description": "Sem <main> ou role=\"main\", o leitor de tela não distingue o conteúdo da moldura de navegação. O usuário cego precisa ouvir todo o cabeçalho e todo o menu a cada página que abre — em um portal com sessenta itens de menu, isso são minutos de áudio antes da primeira informação útil sobre a consulta.",
+          "remediation": "Envolver o conteúdo específico da página em <main> e reservar <header>, <nav> e <footer> para as regiões repetidas.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "<body>Sua requisição foi negada.<br><br>Em caso de necessidade de contato, informe o support ID: 13133004680425247432<br><br><a href=\"javascript:history.back();\">[Go Back]</a></body>",
+              "failure_summary": "Nenhum elemento <main> ou role=\"main\" no documento.",
+              "target_frame": [],
+              "measured": {
+                "main": 0,
+                "nav": 0,
+                "banner": 0,
+                "contentinfo": 0
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-11T17:57:53.613642Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74"
+          ],
+          "legal_thesis": "Sem estrutura semântica, a tecnologia assistiva não consegue reconstruir a relação entre rótulo e dado; o art. 74 da LBI assegura o acesso a tecnologias assistivas, o que pressupõe conteúdo com elas compatível."
+        },
+        {
+          "id": "15d44130-b98f-4787-9dc1-4b0cf54ceddd",
+          "rule_id": "probe.landmarks.no-skip-link",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "moderate",
+          "criteria": [
+            "2.4.1"
+          ],
+          "summary": "Nenhum link de salto para o conteúdo principal foi encontrado.",
+          "description": "Não há âncora funcional no início do documento que permita ignorar os blocos repetidos de navegação. Como a página também não declara marco principal, não existe mecanismo algum de bypass: o critério 2.4.1 está violado.",
+          "remediation": "Incluir link 'pular para o conteúdo principal' e marcos ARIA (landmarks).",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "",
+              "failure_summary": "Nenhuma âncora interna com destino existente.",
+              "target_frame": [],
+              "measured": {
+                "has_main": false
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-11T17:57:53.613673Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "moderado",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art3.i"
+          ],
+          "legal_thesis": "A ausência de mecanismo de salto obriga a percorrer repetidamente blocos idênticos, esforço desproporcional vedado pelo conceito de acessibilidade com autonomia do art. 3º, I da LBI."
+        },
+        {
+          "id": "241bd532-594e-43cc-9c41-dd547fe345bc",
+          "rule_id": "probe.heading-structure.none",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.3.1",
+            "2.4.6"
+          ],
+          "summary": "A página não possui nenhum cabeçalho.",
+          "description": "Sem cabeçalhos, o principal atalho de navegação do leitor de tela — a lista de títulos — fica vazio. A página só pode ser percorrida linearmente, do começo ao fim.",
+          "remediation": "Escrever cabeçalhos que descrevam o conteúdo da seção e rótulos que descrevam o dado solicitado.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "",
+              "failure_summary": "Zero cabeçalhos.",
+              "target_frame": [],
+              "measured": {}
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude",
+          "viewport": "mobile-320",
+          "detected_at": "2026-09-11T17:57:53.615189Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "Sem estrutura semântica, a tecnologia assistiva não consegue reconstruir a relação entre rótulo e dado; o art. 74 da LBI assegura o acesso a tecnologias assistivas, o que pressupõe conteúdo com elas compatível."
+        }
+      ],
+      "network": {
+        "total_bytes": 732,
+        "total_uncompressed_bytes": 0,
+        "request_count": 1,
+        "bytes_by_type": {
+          "document": 732
+        },
+        "third_party_bytes": 0,
+        "third_party_domains": [],
+        "dom_content_loaded_ms": 942.5999999999767,
+        "load_complete_ms": 942.7000000000116,
+        "largest_contentful_paint_ms": null,
+        "blocked_requests": 0,
+        "total_mb": 0.001,
+        "third_party_share": 0.0
+      },
+      "error": null,
+      "axe_version": "4.13.0",
+      "screenshot_path": "/home/runner/work/acessisaude-audit/acessisaude-audit/data/screenshots/prefeitura.rio__70bc77e2a6__mobile-320.png",
+      "is_critical_path": true,
+      "duration_ms": 4268.372
+    },
+    {
+      "url": "https://prefeitura.rio/saude",
+      "final_url": "https://prefeitura.rio/saude",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Requisição Negada",
+      "lang": null,
+      "viewport": {
+        "name": "desktop-1366",
+        "width": 1366,
+        "height": 768,
+        "device_scale_factor": 1.0,
+        "is_mobile": false,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+      },
+      "started_at": "2026-09-11T17:57:53.698317Z",
+      "finished_at": "2026-09-11T17:57:56.693495Z",
+      "findings": [
+        {
+          "id": "e17bee6e-ba2a-4501-90da-cd51d7534369",
+          "rule_id": "html-has-lang",
+          "source": "axe-core",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "3.1.1"
+          ],
+          "summary": "<html> element must have a lang attribute",
+          "description": "Ensure every HTML document has a lang attribute",
+          "remediation": "Declarar lang='pt-BR' no elemento html de todas as páginas.",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/html-has-lang?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "html",
+              "html": "<html><head><title>Requisição Negada</title></head><body>Sua requisição foi negada.<br><br>Em caso de necessidade de contato, informe o support ID: 13133004681976931113<br><br><a href=\"javascript:history.back();\">[Go Back]</a></body></html>",
+              "failure_summary": "Fix any of the following:\n  The <html> element does not have a lang attribute",
+              "target_frame": [],
+              "measured": {
+                "messageKey": "noLang"
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-11T17:57:56.628844Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "Sem declaração de idioma, o sintetizador de voz pronuncia o português com fonética estrangeira e a informação em saúde se torna ininteligível — a informação é publicada, mas não é comunicada (art. 3º, IV, 'd', LBI)."
+        },
+        {
+          "id": "7cbe9690-471f-4029-9f17-ae29fc601eb2",
+          "rule_id": "bypass",
+          "source": "axe-core",
+          "outcome": "incomplete",
+          "impact": null,
+          "criteria": [
+            "2.4.1"
+          ],
+          "summary": "Page must have means to bypass repeated blocks",
+          "description": "Ensure each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+          "remediation": "Incluir link 'pular para o conteúdo principal' e marcos ARIA (landmarks).",
+          "help_url": "https://dequeuniversity.com/rules/axe/4.13/bypass?application=axeAPI",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "html",
+              "html": "<html><head><title>Requisição Negada</title></head><body>Sua requisição foi negada.<br><br>Em caso de necessidade de contato, informe o support ID: 13133004681976931113<br><br><a href=\"javascript:history.back();\">[Go Back]</a></body></html>",
+              "failure_summary": "Fix any of the following:\n  No valid skip link found\n  Page does not have a heading\n  Page does not have a landmark region",
+              "target_frame": [],
+              "measured": {}
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-11T17:57:56.628888Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "moderado",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art3.i"
+          ],
+          "legal_thesis": "A ausência de mecanismo de salto obriga a percorrer repetidamente blocos idênticos, esforço desproporcional vedado pelo conceito de acessibilidade com autonomia do art. 3º, I da LBI."
+        },
+        {
+          "id": "24e547be-d935-4c40-a623-9ddda924c4a9",
+          "rule_id": "probe.page-language.missing",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "3.1.1"
+          ],
+          "summary": "O documento não declara o idioma (atributo lang ausente).",
+          "description": "Sem declaração de idioma, o leitor de tela aplica a fonética do idioma configurado no sistema do usuário. Termos de saúde em português pronunciados com fonemas de outro idioma tornam-se ininteligíveis: a informação pública existe, mas não chega.",
+          "remediation": "Declarar lang='pt-BR' no elemento html de todas as páginas.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/language-of-page.html",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "html",
+              "html": "<html><head><title>Requisição Negada</title></head><body>Sua requisição foi negada.<br><br>Em caso de necessidade de contato, informe o support ID: 131330046819",
+              "failure_summary": "Elemento <html> sem atributo lang.",
+              "target_frame": [],
+              "measured": {
+                "lang": null
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-11T17:57:56.630759Z",
+          "legal_risk_override": "alto",
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "Sem declaração de idioma, o sintetizador de voz pronuncia o português com fonética estrangeira e a informação em saúde se torna ininteligível — a informação é publicada, mas não é comunicada (art. 3º, IV, 'd', LBI)."
+        },
+        {
+          "id": "fd7ba864-62a1-49de-b42d-cd9e64e03ee4",
+          "rule_id": "probe.landmarks.no-main",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.3.1"
+          ],
+          "summary": "A página não declara marco de conteúdo principal (<main>).",
+          "description": "Sem <main> ou role=\"main\", o leitor de tela não distingue o conteúdo da moldura de navegação. O usuário cego precisa ouvir todo o cabeçalho e todo o menu a cada página que abre — em um portal com sessenta itens de menu, isso são minutos de áudio antes da primeira informação útil sobre a consulta.",
+          "remediation": "Envolver o conteúdo específico da página em <main> e reservar <header>, <nav> e <footer> para as regiões repetidas.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "<body>Sua requisição foi negada.<br><br>Em caso de necessidade de contato, informe o support ID: 13133004681976931113<br><br><a href=\"javascript:history.back();\">[Go Back]</a></body>",
+              "failure_summary": "Nenhum elemento <main> ou role=\"main\" no documento.",
+              "target_frame": [],
+              "measured": {
+                "main": 0,
+                "nav": 0,
+                "banner": 0,
+                "contentinfo": 0
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-11T17:57:56.632287Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74"
+          ],
+          "legal_thesis": "Sem estrutura semântica, a tecnologia assistiva não consegue reconstruir a relação entre rótulo e dado; o art. 74 da LBI assegura o acesso a tecnologias assistivas, o que pressupõe conteúdo com elas compatível."
+        },
+        {
+          "id": "b469df84-70fb-4ab2-a25f-de9f239f35aa",
+          "rule_id": "probe.landmarks.no-skip-link",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "moderate",
+          "criteria": [
+            "2.4.1"
+          ],
+          "summary": "Nenhum link de salto para o conteúdo principal foi encontrado.",
+          "description": "Não há âncora funcional no início do documento que permita ignorar os blocos repetidos de navegação. Como a página também não declara marco principal, não existe mecanismo algum de bypass: o critério 2.4.1 está violado.",
+          "remediation": "Incluir link 'pular para o conteúdo principal' e marcos ARIA (landmarks).",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html",
+          "affects": [
+            "cegueira",
+            "cognitiva_neurodivergencia",
+            "motora"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "",
+              "failure_summary": "Nenhuma âncora interna com destino existente.",
+              "target_frame": [],
+              "measured": {
+                "has_main": false
+              }
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-11T17:57:56.632310Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "moderado",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art3.i"
+          ],
+          "legal_thesis": "A ausência de mecanismo de salto obriga a percorrer repetidamente blocos idênticos, esforço desproporcional vedado pelo conceito de acessibilidade com autonomia do art. 3º, I da LBI."
+        },
+        {
+          "id": "764f5141-e927-4d3d-96f7-65617573f0d7",
+          "rule_id": "probe.heading-structure.none",
+          "source": "probe",
+          "outcome": "fail",
+          "impact": "serious",
+          "criteria": [
+            "1.3.1",
+            "2.4.6"
+          ],
+          "summary": "A página não possui nenhum cabeçalho.",
+          "description": "Sem cabeçalhos, o principal atalho de navegação do leitor de tela — a lista de títulos — fica vazio. A página só pode ser percorrida linearmente, do começo ao fim.",
+          "remediation": "Escrever cabeçalhos que descrevam o conteúdo da seção e rótulos que descrevam o dado solicitado.",
+          "help_url": "https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html",
+          "affects": [
+            "baixa_visao",
+            "cegueira",
+            "cognitiva_neurodivergencia"
+          ],
+          "nodes": [
+            {
+              "selector": "body",
+              "html": "",
+              "failure_summary": "Zero cabeçalhos.",
+              "target_frame": [],
+              "measured": {}
+            }
+          ],
+          "page_url": "https://prefeitura.rio/saude",
+          "viewport": "desktop-1366",
+          "detected_at": "2026-09-11T17:57:56.633750Z",
+          "legal_risk_override": null,
+          "extra_provisions": [],
+          "legal_thesis_override": null,
+          "occurrences": 1,
+          "legal_risk": "alto",
+          "legal_provisions": [
+            "lbi.art63.caput",
+            "lbi.art3.iv.d",
+            "lbi.art4",
+            "dec5296.art47",
+            "emag.3.1",
+            "lbi.art18",
+            "cf.art196",
+            "onu.art25",
+            "lbi.art74",
+            "cf.art5.xiv",
+            "lai.art8.par3.viii"
+          ],
+          "legal_thesis": "Sem estrutura semântica, a tecnologia assistiva não consegue reconstruir a relação entre rótulo e dado; o art. 74 da LBI assegura o acesso a tecnologias assistivas, o que pressupõe conteúdo com elas compatível."
+        }
+      ],
+      "network": {
+        "total_bytes": 732,
+        "total_uncompressed_bytes": 0,
+        "request_count": 1,
+        "bytes_by_type": {
+          "document": 732
+        },
+        "third_party_bytes": 0,
+        "third_party_domains": [],
+        "dom_content_loaded_ms": 703.7999999999884,
+        "load_complete_ms": 704.0,
+        "largest_contentful_paint_ms": null,
+        "blocked_requests": 0,
+        "total_mb": 0.001,
+        "third_party_share": 0.0
+      },
+      "error": null,
+      "axe_version": "4.13.0",
+      "screenshot_path": "/home/runner/work/acessisaude-audit/acessisaude-audit/data/screenshots/prefeitura.rio__70bc77e2a6__desktop-1366.png",
+      "is_critical_path": true,
+      "duration_ms": 2995.1780000000003
+    }
+  ],
+  "engine_version": "0.1.0",
+  "axe_version": "4.13.0",
+  "browser": "chromium 151.0.7922.34",
+  "config_snapshot": {
+    "browser": "chromium",
+    "headless": true,
+    "navigation_timeout_ms": 30000,
+    "settle_delay_ms": 1500,
+    "locale": "pt-BR",
+    "timezone_id": "America/Sao_Paulo",
+    "max_pages_per_target": 25,
+    "max_crawl_depth": 2,
+    "request_delay_ms": 2000,
+    "concurrency": 1,
+    "respect_robots_txt": true,
+    "robots_override_reason": "",
+    "axe_tags": [
+      "wcag2a",
+      "wcag2aa",
+      "wcag21a",
+      "wcag21aa"
+    ],
+    "viewports": [
+      {
+        "name": "mobile-320",
+        "width": 320,
+        "height": 640,
+        "device_scale_factor": 2.0,
+        "is_mobile": true,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; SM-A105M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+      },
+      {
+        "name": "desktop-1366",
+        "width": 1366,
+        "height": 768,
+        "device_scale_factor": 1.0,
+        "is_mobile": false,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+      }
+    ],
+    "scoring": {
+      "friction_kappa": 150.0,
+      "critical_path_multiplier": 1.5,
+      "price_per_mb_brl": 0.0029296875,
+      "franchise_mb": 10240.0,
+      "heavy_page_mb": 2.5
+    },
+    "random_seed": 42,
+    "plan": {
+      "total_tasks": 2,
+      "unique_urls": 1,
+      "discover_enabled": false,
+      "declared_gaps": []
+    },
+    "probes": [
+      "probe.page-language",
+      "probe.landmarks",
+      "probe.heading-structure",
+      "probe.id-duplicado",
+      "probe.non-interactive-control",
+      "probe.positive-tabindex",
+      "probe.focus-visible",
+      "probe.placeholder-como-rotulo",
+      "probe.erro-sem-mensagem",
+      "probe.reflow-320",
+      "probe.zoom-lock",
+      "probe.captions",
+      "probe.autoplay",
+      "probe.meta-refresh",
+      "probe.data-cost",
+      "probe.readability"
+    ]
+  },
+  "errors": [],
+  "page_count": 2,
+  "violation_count": 10,
+  "occurrence_count": 10
+}
