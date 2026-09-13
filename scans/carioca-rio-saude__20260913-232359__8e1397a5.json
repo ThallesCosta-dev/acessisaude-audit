@@ -1,0 +1,293 @@
+{
+  "id": "8e1397a5-df0e-4170-af6b-81e79296532d",
+  "schema_version": "1.0.0",
+  "target_id": "carioca-rio-saude",
+  "target_name": "Carioca Digital — catálogo de serviços de saúde",
+  "base_url": "https://carioca.rio",
+  "status": "partial",
+  "started_at": "2026-09-13T23:23:59.649672Z",
+  "finished_at": "2026-09-13T23:26:01.383983Z",
+  "pages": [
+    {
+      "url": "https://carioca.rio/tema/saude",
+      "final_url": "https://carioca.rio/tema/saude",
+      "status": "timeout",
+      "http_status": null,
+      "title": null,
+      "lang": null,
+      "viewport": {
+        "name": "mobile-320",
+        "width": 320,
+        "height": 640,
+        "device_scale_factor": 2.0,
+        "is_mobile": true,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; SM-A105M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+      },
+      "started_at": "2026-09-13T23:24:00.039314Z",
+      "finished_at": "2026-09-13T23:24:31.210872Z",
+      "findings": [],
+      "network": {
+        "total_bytes": 1208069,
+        "total_uncompressed_bytes": 0,
+        "request_count": 49,
+        "bytes_by_type": {
+          "document": 76080,
+          "fetch": 487,
+          "font": 62576,
+          "image": 77143,
+          "ping": 545,
+          "script": 822435,
+          "stylesheet": 168803
+        },
+        "third_party_bytes": 414267,
+        "third_party_domains": [
+          "bootstrapcdn.com",
+          "doubleclick.net",
+          "googletagmanager.com",
+          "likebtn.com"
+        ],
+        "dom_content_loaded_ms": null,
+        "load_complete_ms": null,
+        "largest_contentful_paint_ms": null,
+        "blocked_requests": 2,
+        "total_mb": 1.152,
+        "third_party_share": 0.3429
+      },
+      "error": "Timeout de navegação após 30000 ms: Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://carioca.rio/tema/saude\", waiting until \"domcontentloaded\"\n",
+      "axe_version": null,
+      "screenshot_path": null,
+      "is_critical_path": true,
+      "duration_ms": 31171.558
+    },
+    {
+      "url": "https://carioca.rio/tema/saude",
+      "final_url": "https://carioca.rio/tema/saude",
+      "status": "timeout",
+      "http_status": null,
+      "title": null,
+      "lang": null,
+      "viewport": {
+        "name": "desktop-1366",
+        "width": 1366,
+        "height": 768,
+        "device_scale_factor": 1.0,
+        "is_mobile": false,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+      },
+      "started_at": "2026-09-13T23:24:31.218456Z",
+      "finished_at": "2026-09-13T23:25:01.261080Z",
+      "findings": [],
+      "network": {
+        "total_bytes": 1239032,
+        "total_uncompressed_bytes": 0,
+        "request_count": 49,
+        "bytes_by_type": {
+          "document": 76038,
+          "fetch": 506,
+          "font": 62784,
+          "image": 107914,
+          "ping": 554,
+          "script": 822434,
+          "stylesheet": 168802
+        },
+        "third_party_bytes": 414274,
+        "third_party_domains": [
+          "bootstrapcdn.com",
+          "doubleclick.net",
+          "googletagmanager.com",
+          "likebtn.com"
+        ],
+        "dom_content_loaded_ms": null,
+        "load_complete_ms": null,
+        "largest_contentful_paint_ms": null,
+        "blocked_requests": 2,
+        "total_mb": 1.182,
+        "third_party_share": 0.3344
+      },
+      "error": "Timeout de navegação após 30000 ms: Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://carioca.rio/tema/saude\", waiting until \"domcontentloaded\"\n",
+      "axe_version": null,
+      "screenshot_path": null,
+      "is_critical_path": true,
+      "duration_ms": 30042.624
+    },
+    {
+      "url": "https://carioca.rio/servicos/atendimento-em-unidades-de-pronto-atendimento-upa-24-horas",
+      "final_url": "https://carioca.rio/servicos/atendimento-em-unidades-de-pronto-atendimento-upa-24-horas/",
+      "status": "timeout",
+      "http_status": null,
+      "title": null,
+      "lang": null,
+      "viewport": {
+        "name": "mobile-320",
+        "width": 320,
+        "height": 640,
+        "device_scale_factor": 2.0,
+        "is_mobile": true,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; SM-A105M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+      },
+      "started_at": "2026-09-13T23:25:01.266259Z",
+      "finished_at": "2026-09-13T23:25:31.303450Z",
+      "findings": [],
+      "network": {
+        "total_bytes": 1283699,
+        "total_uncompressed_bytes": 0,
+        "request_count": 56,
+        "bytes_by_type": {
+          "document": 60705,
+          "fetch": 487,
+          "font": 83400,
+          "image": 146848,
+          "ping": 554,
+          "script": 822906,
+          "stylesheet": 168799
+        },
+        "third_party_bytes": 415030,
+        "third_party_domains": [
+          "bootstrapcdn.com",
+          "doubleclick.net",
+          "googletagmanager.com",
+          "likebtn.com"
+        ],
+        "dom_content_loaded_ms": null,
+        "load_complete_ms": null,
+        "largest_contentful_paint_ms": null,
+        "blocked_requests": 2,
+        "total_mb": 1.224,
+        "third_party_share": 0.3233
+      },
+      "error": "Timeout de navegação após 30000 ms: Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://carioca.rio/servicos/atendimento-em-unidades-de-pronto-atendimento-upa-24-horas\", waiting until \"domcontentloaded\"\n",
+      "axe_version": null,
+      "screenshot_path": null,
+      "is_critical_path": true,
+      "duration_ms": 30037.191
+    },
+    {
+      "url": "https://carioca.rio/servicos/atendimento-em-unidades-de-pronto-atendimento-upa-24-horas",
+      "final_url": "https://carioca.rio/servicos/atendimento-em-unidades-de-pronto-atendimento-upa-24-horas/",
+      "status": "timeout",
+      "http_status": null,
+      "title": null,
+      "lang": null,
+      "viewport": {
+        "name": "desktop-1366",
+        "width": 1366,
+        "height": 768,
+        "device_scale_factor": 1.0,
+        "is_mobile": false,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+      },
+      "started_at": "2026-09-13T23:25:31.308271Z",
+      "finished_at": "2026-09-13T23:26:01.341361Z",
+      "findings": [],
+      "network": {
+        "total_bytes": 1236080,
+        "total_uncompressed_bytes": 0,
+        "request_count": 55,
+        "bytes_by_type": {
+          "document": 60711,
+          "fetch": 487,
+          "font": 62784,
+          "image": 119848,
+          "ping": 545,
+          "script": 822903,
+          "stylesheet": 168802
+        },
+        "third_party_bytes": 415021,
+        "third_party_domains": [
+          "bootstrapcdn.com",
+          "doubleclick.net",
+          "googletagmanager.com",
+          "likebtn.com"
+        ],
+        "dom_content_loaded_ms": null,
+        "load_complete_ms": null,
+        "largest_contentful_paint_ms": null,
+        "blocked_requests": 2,
+        "total_mb": 1.179,
+        "third_party_share": 0.3358
+      },
+      "error": "Timeout de navegação após 30000 ms: Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://carioca.rio/servicos/atendimento-em-unidades-de-pronto-atendimento-upa-24-horas\", waiting until \"domcontentloaded\"\n",
+      "axe_version": null,
+      "screenshot_path": null,
+      "is_critical_path": true,
+      "duration_ms": 30033.09
+    }
+  ],
+  "engine_version": "0.1.0",
+  "axe_version": null,
+  "browser": "chromium 151.0.7922.34",
+  "config_snapshot": {
+    "browser": "chromium",
+    "headless": true,
+    "navigation_timeout_ms": 30000,
+    "settle_delay_ms": 1500,
+    "locale": "pt-BR",
+    "timezone_id": "America/Sao_Paulo",
+    "max_pages_per_target": 25,
+    "max_crawl_depth": 2,
+    "request_delay_ms": 2000,
+    "concurrency": 1,
+    "respect_robots_txt": true,
+    "robots_override_reason": "",
+    "axe_tags": [
+      "wcag2a",
+      "wcag2aa",
+      "wcag21a",
+      "wcag21aa"
+    ],
+    "viewports": [
+      {
+        "name": "mobile-320",
+        "width": 320,
+        "height": 640,
+        "device_scale_factor": 2.0,
+        "is_mobile": true,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; SM-A105M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+      },
+      {
+        "name": "desktop-1366",
+        "width": 1366,
+        "height": 768,
+        "device_scale_factor": 1.0,
+        "is_mobile": false,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+      }
+    ],
+    "scoring": {
+      "friction_kappa": 150.0,
+      "critical_path_multiplier": 1.5,
+      "price_per_mb_brl": 0.0029296875,
+      "franchise_mb": 10240.0,
+      "heavy_page_mb": 2.5
+    },
+    "random_seed": 42,
+    "plan": {
+      "total_tasks": 4,
+      "unique_urls": 2,
+      "discover_enabled": false,
+      "declared_gaps": []
+    },
+    "probes": [
+      "probe.page-language",
+      "probe.landmarks",
+      "probe.heading-structure",
+      "probe.id-duplicado",
+      "probe.non-interactive-control",
+      "probe.positive-tabindex",
+      "probe.focus-visible",
+      "probe.placeholder-como-rotulo",
+      "probe.erro-sem-mensagem",
+      "probe.reflow-320",
+      "probe.zoom-lock",
+      "probe.captions",
+      "probe.autoplay",
+      "probe.meta-refresh",
+      "probe.data-cost",
+      "probe.readability"
+    ]
+  },
+  "errors": [],
+  "page_count": 4,
+  "violation_count": 0,
+  "occurrence_count": 0
+}
