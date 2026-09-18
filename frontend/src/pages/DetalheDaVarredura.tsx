@@ -35,6 +35,7 @@ import {
   Barra,
   Carregando,
   Erro,
+  Icone,
   Indicador,
   Selo,
   SeloDeRisco,
@@ -91,21 +92,39 @@ export function DetalheDaVarredura() {
 
   return (
     <>
-      <p>
-        <Link to="/">← Voltar ao painel</Link>
-      </p>
-
-      <TituloDePagina>{v.target_name || v.target_id}</TituloDePagina>
-      <p className="texto-suave">
-        Varredura de {dataHora(v.started_at)} · {v.base_url}
-      </p>
+      <div className="pagina-cabecalho">
+        <Link to="/" className="pagina-cabecalho__voltar">
+          <Icone.Voltar />
+          Voltar ao painel
+        </Link>
+        <span className="rotulo-alto">Varredura</span>
+        <TituloDePagina>{v.target_name || v.target_id}</TituloDePagina>
+        <ul className="pagina-cabecalho__meta">
+          <li>
+            <Icone.Calendario />
+            {dataHora(v.started_at)}
+          </li>
+          <li>
+            <Icone.Globo />
+            <a href={v.base_url}>{v.base_url}</a>
+          </li>
+          <li>
+            <Icone.Paginas />
+            {inteiro(v.page_count)} {v.page_count === 1 ? 'página auditada' : 'páginas auditadas'}
+          </li>
+          <li>
+            <Icone.Navegador />
+            {v.browser}
+          </li>
+        </ul>
+      </div>
 
       {!s.observed ? <AvisoSemVeredito /> : null}
       {s.observed && s.absolute_barrier ? <AvisoDeBarreiraAbsoluta /> : null}
 
       {/* -------------------------------------------------------- índices */}
       <h2 id="indices">Índices agregados</h2>
-      <ul className="grade lista-limpa">
+      <ul className="grade grade--indicadores lista-limpa">
         <Indicador
           valor={indice(s.conformance_index)}
           rotulo="ICA — Conformidade"
@@ -129,6 +148,7 @@ export function DetalheDaVarredura() {
           nota={`${inteiro(s.occurrences)} ocorrências em elementos distintos. ${inteiro(
             s.incomplete,
           )} achados requerem revisão humana.`}
+          variante={s.violations > 0 ? 'alto' : 'ok'}
         />
         {custo ? (
           <Indicador
@@ -139,25 +159,28 @@ export function DetalheDaVarredura() {
             )}% da franquia mensal de referência. ${custo.third_party_share_pct.toFixed(
               0,
             )}% do tráfego vai a domínios de terceiros.`}
+            variante="neutro"
           />
         ) : null}
       </ul>
 
       <AvisoDeCobertura criteriosAvaliados={s.criteria_evaluated} cobertura={s.coverage} />
 
-      <p className="linha">
+      <p className="acoes">
         <a className="botao" href={api.urlRelatorio(v.id)} target="_blank" rel="noreferrer">
+          <Icone.Externo />
           Abrir relatório completo em HTML
           <span className="apenas-leitor-de-tela"> (abre em nova aba)</span>
         </a>
         <a className="botao botao--secundario" href={api.urlCsv(v.id)}>
+          <Icone.Baixar />
           Exportar achados em CSV
         </a>
       </p>
 
       {/* ---------------------------------------------- perfil de exclusão */}
       <h2 id="exclusao">Quem é excluído</h2>
-      <p>
+      <p className="secao-intro">
         Converte a contagem de defeitos em população impactada. É a leitura que
         importa para a decisão de gestão e para o argumento jurídico: o dano
         juridicamente relevante é o da pessoa excluída, não o do elemento HTML
@@ -167,6 +190,7 @@ export function DetalheDaVarredura() {
       {indices.dados.grupos_excluidos.length > 0 ? (
         <Tabela
           legenda="Ocorrências de barreira por grupo de pessoas afetado"
+          explicacao="Do grupo mais atingido ao menos atingido. Um mesmo elemento pode afetar mais de um grupo."
           cabecalhos={
             <>
               <th scope="col">Grupo</th>
@@ -209,10 +233,10 @@ export function DetalheDaVarredura() {
         const itens = porRisco.get(risco);
         if (!itens || itens.length === 0) return null;
         return (
-          <section key={risco} aria-labelledby={`risco-${risco}`}>
+          <section key={risco} className="secao-risco" aria-labelledby={`risco-${risco}`}>
             <h3 id={`risco-${risco}`}>
-              <SeloDeRisco risco={risco} />{' '}
-              <span>
+              <SeloDeRisco risco={risco} />
+              <span className="secao-risco__contagem">
                 {itens.length} {itens.length === 1 ? 'achado' : 'achados'}
               </span>
             </h3>
@@ -225,7 +249,7 @@ export function DetalheDaVarredura() {
 
       {/* --------------------------------------------------- indeterminados */}
       <h2 id="revisao">Achados que exigem revisão humana</h2>
-      <p>
+      <p className="secao-intro">
         Os itens abaixo <strong>não</strong> são violações declaradas. São
         situações em que a verificação automática identificou indício, mas o
         veredito depende de julgamento que nenhum algoritmo substitui — por
@@ -413,7 +437,7 @@ function CartaoDeAchado({ achado }: { achado: Achado }) {
           <>
             <h4>Evidência</h4>
             {achado.nodes.slice(0, 3).map((no, i) => (
-              <div key={`${no.selector}-${i}`}>
+              <div key={`${no.selector}-${i}`} className="evidencia">
                 <p>
                   <code>{no.selector}</code>
                 </p>
@@ -437,7 +461,7 @@ function CartaoDeAchado({ achado }: { achado: Achado }) {
         {achado.help_url ? (
           <p>
             <a href={achado.help_url} target="_blank" rel="noreferrer">
-              Documentação técnica do critério
+              Documentação técnica do critério <Icone.Externo />
               <span className="apenas-leitor-de-tela"> (abre em nova aba)</span>
             </a>
           </p>

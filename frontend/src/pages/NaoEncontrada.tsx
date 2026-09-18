@@ -12,7 +12,9 @@ import { TituloDePagina } from '../components/ui';
 export function NaoEncontrada() {
   return (
     <>
-      <TituloDePagina>Endereço não encontrado</TituloDePagina>
+      <div className="pagina-cabecalho">
+        <TituloDePagina>Endereço não encontrado</TituloDePagina>
+      </div>
       <div role="alert" className="aviso aviso--atencao">
         <p>
           O endereço solicitado não corresponde a nenhuma tela deste painel.

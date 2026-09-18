@@ -58,13 +58,16 @@ export function Referencia() {
 
   return (
     <>
-      <TituloDePagina>Matriz WCAG 2.1 e legislação brasileira</TituloDePagina>
-      <p>
-        Correspondência entre cada critério de sucesso da WCAG 2.1 (níveis A e
-        AA) e o ordenamento jurídico brasileiro — Lei 13.146/2015 (LBI),
-        Constituição Federal, Convenção da ONU sobre os Direitos das Pessoas com
-        Deficiência, Lei de Acesso à Informação, Decreto 5.296/2004 e eMAG 3.1.
-      </p>
+      <div className="pagina-cabecalho">
+        <span className="rotulo-alto">Referência normativa</span>
+        <TituloDePagina>Matriz WCAG 2.1 e legislação brasileira</TituloDePagina>
+        <p>
+          Correspondência entre cada critério de sucesso da WCAG 2.1 (níveis A e
+          AA) e o ordenamento jurídico brasileiro — Lei 13.146/2015 (LBI),
+          Constituição Federal, Convenção da ONU sobre os Direitos das Pessoas com
+          Deficiência, Lei de Acesso à Informação, Decreto 5.296/2004 e eMAG 3.1.
+        </p>
+      </div>
 
       {integridade.dados ? (
         <div
@@ -107,11 +110,9 @@ export function Referencia() {
       </div>
 
       {/* ------------------------------------------------------------ filtro */}
-      <fieldset style={{ border: 0, padding: 0, margin: '1.5rem 0' }}>
-        <legend style={{ fontWeight: 600, padding: 0 }}>
-          Filtrar por tipo de verificação
-        </legend>
-        <div className="linha" role="group">
+      <fieldset className="filtro">
+        <legend>Filtrar por tipo de verificação</legend>
+        <div className="filtro__opcoes">
           {(
             [
               ['todos', `Todos (${total})`],
@@ -119,7 +120,7 @@ export function Referencia() {
               ['manuais', `Exigem avaliação humana (${total - automatizaveis})`],
             ] as const
           ).map(([valor, rotulo]) => (
-            <label key={valor} className="linha" style={{ gap: '0.35rem' }}>
+            <label key={valor} className="filtro__opcao">
               <input
                 type="radio"
                 name="filtro-criterios"
@@ -151,7 +152,7 @@ export function Referencia() {
 
       {/* ------------------------------------------------------ dispositivos */}
       <h2 id="dispositivos">Dispositivos normativos registrados</h2>
-      <p>
+      <p className="secao-intro">
         Base legal invocada pelos achados, com a referência completa em formato
         ABNT para citação.
       </p>

@@ -4,15 +4,22 @@ Documento de apoio. **Não faz parte do manuscrito** e não deve ser anexado à 
 Manuscrito: [`manuscrito-reciis.md`](manuscrito-reciis.md).
 
 > **Duas versões.** O estudo existe em duas formas: a reduzida
-> ([`manuscrito-reciis.md`](manuscrito-reciis.md), corpo de 59,7 mil caracteres), preparada para
-> a Reciis, e a estendida ([`manuscrito-extenso.md`](manuscrito-extenso.md), 70,7 mil), para
-> periódico de limite maior. A diferença é só de extensão: a estendida tem onze tabelas em vez
-> de cinco, mantém a granularidade das subseções da série e traz os parágrafos da Discussão na
-> forma anterior ao corte.
+> ([`manuscrito-reciis.md`](manuscrito-reciis.md), 59.984 caracteres do início ao fim do
+> documento, referências incluídas), preparada para a Reciis, e a estendida
+> ([`manuscrito-extenso.md`](manuscrito-extenso.md), 81,2 mil), para periódico de limite maior.
+> A diferença é só de extensão: a estendida tem onze tabelas em vez de cinco, mantém a
+> granularidade das subseções da série e traz os parágrafos da Discussão na forma anterior ao
+> corte.
 >
 > **Toda correção de conteúdo entra nas duas.** `python scripts/conferir_manuscritos.py`
 > verifica que os números, as citações e os resumos coincidem, e que a reduzida continua no
-> limite. Rodar antes de qualquer submissão.
+> limite, contado do início ao fim do documento. Rodar antes de qualquer submissão.
+>
+> **Revisão de 09/09/2026.** Os pontos da [autoavaliação](autoavaliacao-reciis.md) foram
+> corrigidos nas duas versões: título, Tabela 3, hipóteses H2 e H4, comparação por portal,
+> saturação do IAN, Lei 14.129/2021, diálogo com o campo da informação e comunicação em saúde
+> (três referências novas), separação entre Resultados e Discussão, e extensão. As figuras foram
+> regeradas a partir dos JSON do ramo `serie-temporal`.
 
 ---
 
@@ -21,7 +28,7 @@ Manuscrito: [`manuscrito-reciis.md`](manuscrito-reciis.md).
 | Item | Decisão |
 |---|---|
 | Seção | **Artigos originais** (40–60 mil caracteres com espaços) |
-| Extensão atual | **63,5 mil** de texto corrido; **73,3 mil** com tabelas e referências — ver § 3.1 |
+| Extensão atual | **59.984** caracteres do início ao fim do documento, referências incluídas (corpo sem referências: 53,8 mil) — ver § 3.1 |
 | Idioma | Português, com título, resumo e palavras-chave em inglês e espanhol |
 | Avaliação | Duplo-cega — manuscrito sem identificação de autoria |
 | Comitê de ética | Não aplicável (sem seres humanos, sem dados pessoais); declarado na subseção 2.9 |
@@ -67,35 +74,41 @@ Não houve apresentação prévia.
 
 ## 3. Conformidade com as normas da revista
 
-### 3.1 Contagem de caracteres — resolvida
+### 3.1 Contagem de caracteres — resolvida pela letra da norma
 
-A norma diz "entre 40 e 60 mil caracteres com espaços" sem esclarecer o escopo, e as diretrizes
-publicadas não o esclarecem. A dúvida foi resolvida por medição de artigos originais já
-publicados na própria revista, com extração do texto dos PDF:
+A autoavaliação da submissão publicada pela revista (atualização de 10/08/2023) diz, para
+artigos originais: "entre 40 e 60 mil caracteres com espaços, **do início ao fim do
+documento**". A medição de artigos publicados sugere prática mais tolerante:
 
 | Artigo | Páginas | Corpo, com tabelas | Referências |
 |---|---|---|---|
 | v. 20, e3739 | 22 | 54.801 | 19.764 |
 | v. 20, outro original | 18 | 50.280 | 17.041 |
 
-Os dois excederiam 60 mil se as referências contassem. **A contagem incide sobre o corpo,
-incluindo tabelas, e exclui a lista de referências.** O manuscrito foi ajustado a esse critério:
+Os dois excederiam 60 mil com as referências. Optou-se por **cumprir a letra da norma**, o que
+elimina a dependência de consulta à secretaria. Contagem de 09/09/2026, pelo
+`scripts/conferir_manuscritos.py`, descontada a sintaxe Markdown:
 
 | Componente | Caracteres |
 |---|---|
-| Texto corrido | 57.551 |
-| Tabelas e legendas | 2.444 |
-| **Corpo (conta para o limite)** | **59.995** |
-| Referências (fora da conta) | 5.511 |
+| Corpo sem referências (título, resumos, texto, tabelas, legendas) | 53.800 |
+| Referências | 6.184 |
+| **Documento inteiro (conta para o limite)** | **59.984** |
 
-Chegou-se a esse número reduzindo o texto corrido de 91,2 mil, com troca do bloco transversal,
-supressão de material de aparelho para o suplementar, e consolidação de treze tabelas em cinco.
-Confirmar o critério com a secretaria continua sendo prudente, mas deixou de ser bloqueante.
+Chegou-se a esse número em duas rodadas: de 91,2 mil para 60 mil de corpo (troca do bloco
+transversal, material de aparelho para o suplementar, treze tabelas em cinco) e, em 09/09, mais
+cerca de 12 mil, cortados sobretudo na Discussão (4.2 a 4.7), nas frases interpretativas dos
+Resultados e nos parágrafos descritivos de 3.3, 3.4 e 3.12. Nenhum número, citação ou achado
+foi perdido; a versão estendida preserva o texto anterior ao corte. A conversão para `.docx`
+precisa refazer a contagem no editor, porque a sintaxe Markdown não existe lá e a margem é de
+16 caracteres.
 
 **Já atendido no manuscrito**
 
-- [x] Títulos em português, inglês e espanhol, sem caixa alta e sem abreviações
-- [x] Resumos nos três idiomas, com **145, 144 e 148 palavras** (limite: 150)
+- [x] Títulos em português, inglês e espanhol, sem caixa alta e sem abreviações, com termos de
+      recuperação consolidados ("acessibilidade digital", "auditoria automatizada") e a série
+      sinalizada por "contínua"
+- [x] Resumos nos três idiomas, com **150, 146 e 146 palavras** (limite: 150)
 - [x] Resumos sem abreviaturas e sem citações
 - [x] Cinco palavras-chave por idioma, separadas por ponto e vírgula
 - [x] Hierarquia de seções sinalizada numericamente
@@ -104,7 +117,10 @@ Confirmar o critério com a secretaria continua sendo prudente, mas deixou de se
 - [x] Tabelas com título **acima**, sem linhas internas, com indicação de fonte
 - [x] Figuras com título **abaixo**, com indicação de fonte
 - [x] Siglas descritas por extenso na primeira ocorrência
-- [x] Sem identificação de autoria no corpo do texto
+- [x] Sem identificação de autoria no corpo do texto, e sem o nome do instrumento
+- [x] Resultados sem interpretação: as frases de leitura foram movidas para 4.1 e 4.7
+- [x] Todas as hipóteses de 2.7 têm resultado (H1 e H3 em 3.7 e 3.8; H2 em 3.7; H4 em 3.9) e
+      são retomadas nas Considerações finais
 
 **A fazer na conversão para `.docx` / `.odt`**
 
@@ -118,13 +134,21 @@ Confirmar o critério com a secretaria continua sendo prudente, mas deixou de se
 - [ ] Remover a nota editorial em bloco de citação do início do manuscrito
 - [ ] Inserir as figuras no corpo do texto, no ponto em que são citadas, **e** anexá-las
       individualmente na submissão em formato editável — usar os arquivos `.svg` de
-      [`figuras/`](figuras/), não os `.png`
+      [`figuras/`](figuras/), não os `.png`. As figuras não são versionadas: se a pasta estiver
+      vazia, copiar os JSON de `scans-br/` do ramo `serie-temporal` para `data/scans/`, rodar
+      `acessisaude reindexar` e `python scripts/gerar_figuras.py` (feito em 09/09/2026)
+- [ ] Refazer a contagem de caracteres no editor depois da conversão (margem de 16 caracteres)
 
 **Anexos da submissão**
 
 - [ ] Folha de Rosto preenchida e salva em `.pdf`
 - [ ] Declaração de responsabilidade e cessão de direitos, assinada, em `.pdf`
 - [ ] Figuras 1 a 5 em arquivo editável (SVG em `docs/artigo/figuras/`, reconstruíveis por `python scripts/gerar_figuras.py`)
+- [ ] **Material suplementar**, que o manuscrito cita em 2.2 e 2.4 e precisa existir: (a) uma
+      linha por alvo com a justificativa de inclusão, extraída de
+      `backend/src/acessisaude_audit/catalog/targets.yaml` (campo `selection_rationale`);
+      (b) a matriz dos 50 critérios com os três vetores (essencialidade, rota alternativa,
+      reversibilidade) e a faixa de risco resultante, extraída de `docs/juridico/`
 - [ ] Metadados de autoria completos no sistema (nome, e-mail, ORCID, Lattes, afiliação por
       extenso na língua original com cidade, estado e país, país, biografia)
 
@@ -134,13 +158,14 @@ Confirmar o critério com a secretaria continua sendo prudente, mas deixou de se
 
 Em ordem de risco para o parecer.
 
-1. **Decidir onde fechar a série.** A janela está em dezessete dias (19/08 a 04/09/2026) e a
+1. **Decidir onde fechar a série.** A janela está em vinte e dois dias (19/08 a 09/09/2026) e a
    tarefa agendada continua rodando. O que já está garantido: episódio de barreira intermitente
-   **fechado** e mensurável, regressão do portal federal com piso de onze dias observados e
-   transição ancorada em cobertura integral dos dois lados, três portais com dezesseis dias de
-   variação nula. O que ainda falta e só o tempo dá: **um segundo episódio de intermitência**,
-   sem o qual não se pode dizer com que frequência barreiras mudam, e o fechamento da regressão
-   do gov.br, que converteria "≥ 11 dias" em uma duração. Reprocessar custa dois comandos:
+   **fechado** e mensurável, regressão do portal federal com piso de quinze dias observados e
+   transição ancorada em cobertura integral dos dois lados, três portais com vinte e um dias de
+   variação nula, e um dia em que uma única plataforma ficou sem veredito (06/09), que exercita
+   o requisito do § 4.7. O que ainda falta e só o tempo dá: **um segundo episódio de
+   intermitência**, sem o qual não se pode dizer com que frequência barreiras mudam, e o
+   fechamento da regressão do gov.br, que converteria "≥ 15 dias" em uma duração. Reprocessar custa dois comandos:
    `acessisaude reindexar` e `python scripts/gerar_figuras.py`. Fixar a data de corte no
    [registro da série](../metodologia/registro-da-serie-diaria.md) antes de submeter, e refazer
    a contagem de caracteres depois, porque a série cresce dentro do texto.
@@ -148,15 +173,24 @@ Em ordem de risco para o parecer.
 3. **Citação da Anatel pelo relatório primário**, e não por veículo especializado.
    Reconferir também os parâmetros de custo nos sítios das operadoras, com captura arquivada.
 
-4. **Anonimato do repositório.** A subseção 2.9 informa que o endereço será fornecido após a
-   avaliação. Como o nome do instrumento aparece no texto, o anonimato é imperfeito — decidir
-   entre (a) manter o nome e aceitar isso, prática comum em artigos metodológicos, ou (b)
-   substituí-lo por designação neutra na versão de avaliação.
+4. **Anonimato do repositório — resolvido.** O nome do instrumento não aparece em nenhuma das
+   duas versões; a subseção 2.9 informa que o endereço será fornecido após a avaliação.
 
-5. **Depósito do material suplementar com DOI** e comunicação prévia aos órgãos auditados,
-   com o relatório encaminhado.
+5. **Depósito dos dados primários e do material suplementar com DOI**, e comunicação prévia
+   aos órgãos auditados, com o relatório encaminhado. Atenção: `data/scans/` é ignorado pelo
+   git, e as 110 varreduras da série existem apenas no ramo remoto `serie-temporal`
+   (`scans-br/`). A afirmação de 2.9, de que código e dados estão "depositados em repositório
+   público", só é verdadeira depois do depósito. É a única pendência de conteúdo que não pode
+   ser resolvida dentro do repositório.
 
-**Resolvidos nesta revisão.** A revisão de literatura passou de 4 para 9 referências externas
+**Resolvidos em 09/09/2026** (detalhe na [autoavaliação](autoavaliacao-reciis.md)): extensão
+dentro do limite contado do início ao fim; Tabela 3; H2, H4 e comparação por portal; IAN
+saturado retirado do teste; Lei 14.129/2021 em 1.1; terceiro parágrafo de 1.2 reescrito na
+chave do direito à informação, com Torres, Mazzoni e Alves (2002) e Moraes e González de Gómez
+(2007); interpretação retirada dos Resultados; título novo; material suplementar citado em 2.2
+e 2.4; figuras regeradas.
+
+**Resolvidos na revisão anterior.** A revisão de literatura passou de 4 para 9 referências externas
 verificadas, com precedente brasileiro direto (Freire; Castro; Fortes, 2009), e a subseção 1.3
 deixou de argumentar a categoria de usuário periférico para quantificá-la, com o Censo 2022 e a
 TIC Domicílios 2024.
@@ -177,6 +211,12 @@ do critério 4.1.2, agora acompanhado do 1.1.1 —, e as 125 violações passara
 a troca, a inconsistência entre o ICA da secretaria estadual nos dois blocos e a limitação mais
 citada do estudo, a de duas observações no estrato estadual. Tabelas e figuras foram regeradas
 por `python scripts/gerar_figuras.py`, que fixa qual bloco alimenta cada uma.
+
+**Ampliação da janela para 22 dias.** Os cinco dias de 05 a 09/09 não inverteram nada e
+acrescentaram um evento novo: em 06/09 só o portal municipal de serviços não respondeu, e a
+varredura consta sem veredito para ele apenas, com as demais plataformas observadas. A regressão
+do gov.br segue aberta (piso de quinze dias) e nenhum segundo episódio de intermitência ocorreu.
+Registro na seção 7 do [registro da série](../metodologia/registro-da-serie-diaria.md).
 
 **Ampliação da janela para 17 dias.** Nenhuma conclusão foi invertida; o que mudou foi a força
 das afirmações. O episódio de intermitência fechou e passou a ter duração; a regressão do
@@ -201,7 +241,10 @@ fechar a NBR 6023/2025:
 | Freire; Castro; Fortes, 2009 | ✅ Conferido: autoria, RAP v. 43, n. 2, DOI · ⬜ confirmar paginação |
 | Silva; La Rue, 2015 | ✅ Conferido: RAP v. 49, n. 2, p. 315-339, DOI |
 | Simão; Rodrigues, 2005 | ✅ Conferido: Ci. Inf. v. 34, n. 2, p. 234-245, DOI |
-| Vieira; Caniato; Yonemotu, 2017 | ✅ Conferido: Reciis v. 11, n. 2, DOI |
+| Vieira; Caniato; Yonemotu, 2017 | ✅ Conferido: Reciis v. 11, n. 2, DOI · nome do periódico agora por extenso |
+| Torres; Mazzoni; Alves, 2002 | ✅ Conferido na SciELO: autoria, Ci. Inf. v. 31, n. 3, DOI · ⬜ confirmar paginação (p. 83-91) |
+| Moraes; González de Gómez, 2007 | ✅ Conferido: Ciênc. Saúde Coletiva v. 12, n. 3, p. 553-565, DOI |
+| Brasil, 2021 (Lei 14.129) | ✅ Conferido no portal da Câmara: art. 3º, XIX, DOU de 30 mar. 2021 |
 | Power *et al.*, 2012 | ⬜ DOI e paginação exata nos anais da CHI '12 |
 | Vigo; Brown; Conway, 2013 | ⬜ Paginação e local do evento (W4A '13) |
 | IBGE, 2025 | ⬜ Trocar pela referência do documento, não pela notícia de divulgação |
@@ -211,8 +254,10 @@ fechar a NBR 6023/2025:
 | Caplovitz, 1963 | ⬜ Conferir editora e paginação na 1ª edição (Free Press of Glencoe) |
 | Brasil, 2014b | ✅ Conferido: Lei 12.965/2014, art. 9º, DOU de 24 abr. 2014 |
 
-**Correspondência entre citações e lista** — verificada em 19/08/2026: **22 referências**, todas
-citadas no corpo, e nenhuma citação no corpo sem entrada na lista.
+**Correspondência entre citações e lista** — verificada em 09/09/2026: **25 referências**, todas
+citadas no corpo, e nenhuma citação no corpo sem entrada na lista. A Lei de Acesso à Informação
+(Brasil, 2011) constava da lista e não era citada com autor-data no corpo; a citação entrou no
+terceiro parágrafo de 1.2.
 
 Três correções desta rodada:
 
@@ -229,7 +274,20 @@ Três correções desta rodada:
 
 ## 6. Divergências numéricas corrigidas
 
-Todos os números do manuscrito foram **recalculados a partir dos JSON do conjunto primário**
+**Rodada de 09/09/2026**, recalculada a partir dos cinco JSON de 04/09 (`scans-br/`, ramo
+`serie-temporal`) com `analysis.dataset.build_pages_frame`:
+
+| Onde | Antes | Agora | Origem |
+|---|---|---|---|
+| Tabela 3, coluna de risco | 110 / 42 / 16 (soma 168) | **104 / 42 / 8** (soma 154) | A coluna incluía as 14 violações da sonda de custo (6 altas, 8 moderadas), que o título exclui. O "art. 74 invocado 110 vezes" de 3.11 está certo: a sonda de custo não invoca o art. 74 |
+| 3.1 | "18 dos 20 critérios plantados" e "três barreiras fora" | 20 barreiras cobrem **21 critérios**; 18 detectados, 3 fora | Manifesto `fixtures/manifest.yaml` |
+| 3.1 × 3.5 | 2.4.4 "fora do alcance" e "violado em 70%" | Cobertura é por modo de falha: as 14 violações de 2.4.4 vêm da regra `link-name` | Verificado nos JSON |
+| 3.7 (novo) | H2 sem resultado | Fluxo essencial (12) × informacional (8): ICA 61,0 × 81,2, p = 0,0003, δ = −0,98; IEJ 78,9 × 27,9, δ = 0,98; **confundido com H1** (6 das 8 informacionais são do gov.br) | IAN excluído do teste por incorporar o fluxo essencial (× 1,5) |
+| 3.9 (novo) | H4 cortada | ρ = −0,41, p = 0,07, n = 20; por plataforma ρ = −0,80, p = 0,10, n = 5 | O −0,200 anterior era do bloco de 16/08 |
+| 3.7 | IAN testado (ε² = 0,798) | **IAN não testado**: ≥ 99 em 13 de 20 auditorias | Saturação declarada em 3.7 e 4.8 |
+| 3.7 (novo) | Comparação por portal prometida em 2.7 | Medianas por portal reportadas: IEJ 19,8 / 58,7 / 66,3 / 81,2 / 87,6; ICA 82,2 / 72,6 / 73,3 / 61,0 / 58,2 | Descritivo, sem teste |
+
+**Rodada anterior.** Todos os números do manuscrito foram **recalculados a partir dos JSON do conjunto primário**
 (última varredura de cada alvo, posterior à correção do instrumento), usando o próprio módulo
 `analysis.dataset` do projeto. Quatro divergências apareceram, e o esqueleto já foi corrigido:
 

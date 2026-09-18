@@ -26,3 +26,6 @@ backend/vendor/axe.min.js -text
 docs/artigo/figuras/** linguist-generated=true
 frontend/package-lock.json linguist-generated=true
 backend/vendor/axe.min.js linguist-vendored=true
+
+# Scripts de lote do Windows: o cmd.exe é mais confiável com CRLF.
+*.bat text eol=crlf

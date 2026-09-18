@@ -58,6 +58,11 @@ interface IndicadorProps {
   rotulo: string;
   /** Escala e sentido de leitura. Obrigatório: número sem escala não informa. */
   nota: string;
+  /**
+   * Cor do filete superior. Reforço visual apenas: a leitura do valor está
+   * na `nota`, e o filete não carrega informação que não esteja no texto.
+   */
+  variante?: 'acento' | 'critico' | 'alto' | 'moderado' | 'ok' | 'neutro';
 }
 
 /**
@@ -66,10 +71,13 @@ interface IndicadorProps {
  * `nota` é obrigatória por decisão de projeto. Um "72" isolado não diz se é bom
  * ou ruim, nem em que escala — e um painel que exibe números assim transfere ao
  * leitor um trabalho de interpretação que ele não tem como fazer.
+ *
+ * A ordem no DOM é valor, rótulo, nota — a ordem em que o leitor de tela lê;
+ * o CSS reposiciona o rótulo acima do valor apenas visualmente.
  */
-export function Indicador({ valor, rotulo, nota }: IndicadorProps) {
+export function Indicador({ valor, rotulo, nota, variante = 'acento' }: IndicadorProps) {
   return (
-    <li className="cartao">
+    <li className={`cartao indicador indicador--${variante}`}>
       <span className="indicador__valor">{valor}</span>
       <span className="indicador__rotulo">{rotulo}</span>
       <span className="indicador__nota">{nota}</span>
@@ -86,7 +94,7 @@ export function Indicador({ valor, rotulo, nota }: IndicadorProps) {
  */
 export function Carregando({ children = 'Carregando…' }: { children?: ReactNode }) {
   return (
-    <p role="status" aria-live="polite" className="texto-suave">
+    <p role="status" aria-live="polite" className="carregando">
       {children}
     </p>
   );
@@ -217,27 +225,45 @@ export function AvisoDeCobertura({
 interface TabelaProps {
   /** Descrição do conteúdo. Obrigatória: tabela sem legenda desorienta (1.3.1). */
   legenda: string;
+  /** Explicação adicional exibida junto à legenda (escalas, sentido de leitura). */
+  explicacao?: string;
   cabecalhos: ReactNode;
   children: ReactNode;
+  /** Tabela com muitas colunas: fixa uma largura mínima e rola dentro do bloco. */
+  larga?: boolean;
 }
 
 /**
  * Tabela de dados com legenda e rolagem confinada.
  *
- * O contêiner recebe `tabindex={0}` e `role="region"` para que a rolagem
+ * A legenda visível fica **fora** da região rolável: dentro dela, em telas
+ * estreitas, seria cortada junto com as colunas — e uma legenda que o leitor
+ * não consegue ler não cumpre a função de legenda. A `<caption>` permanece no
+ * DOM, fora do fluxo visual, para a tecnologia assistiva.
+ *
+ * A região rolável recebe `tabindex={0}` e `role="region"` para que a rolagem
  * horizontal seja alcançável por teclado — sem isso, o conteúdo à direita da
  * borda ficaria inacessível a quem não usa mouse.
  */
-export function Tabela({ legenda, cabecalhos, children }: TabelaProps) {
+export function Tabela({ legenda, explicacao, cabecalhos, children, larga }: TabelaProps) {
   return (
-    <div className="tabela-rolavel" tabIndex={0} role="region" aria-label={legenda}>
-      <table>
-        <caption>{legenda}</caption>
-        <thead>
-          <tr>{cabecalhos}</tr>
-        </thead>
-        <tbody>{children}</tbody>
-      </table>
+    <div className={`tabela${larga ? ' tabela--larga' : ''}`}>
+      <p className="tabela__legenda" aria-hidden="true">
+        <strong>{legenda}</strong>
+        {explicacao ? <> · {explicacao}</> : null}
+      </p>
+      <div className="tabela-rolavel" tabIndex={0} role="region" aria-label={legenda}>
+        <table>
+          <caption>
+            {legenda}
+            {explicacao ? ` — ${explicacao}` : ''}
+          </caption>
+          <thead>
+            <tr>{cabecalhos}</tr>
+          </thead>
+          <tbody>{children}</tbody>
+        </table>
+      </div>
     </div>
   );
 }
@@ -287,25 +313,51 @@ export function TituloDePagina({ children }: { children: ReactNode }) {
 export function Barra({ fracao }: { fracao: number }) {
   const largura = Math.max(0, Math.min(1, fracao)) * 100;
   return (
-    <span
-      aria-hidden="true"
-      style={{
-        display: 'block',
-        height: '0.4rem',
-        background: 'var(--papel-alt)',
-        borderRadius: '999px',
-        overflow: 'hidden',
-        marginTop: '0.3rem',
-      }}
-    >
-      <span
-        style={{
-          display: 'block',
-          width: `${largura}%`,
-          height: '100%',
-          background: 'var(--acento)',
-        }}
-      />
+    <span aria-hidden="true" className="barra">
+      <span style={{ width: `${largura}%` }} />
     </span>
   );
 }
+
+/** Ícones decorativos, sempre `aria-hidden`: o texto adjacente carrega o sentido. */
+export const Icone = {
+  Calendario: () => (
+    <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <rect x="2" y="3" width="12" height="11" rx="1.5" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M2 6.5h12M5 1.5v3M11 1.5v3" stroke="currentColor" strokeWidth="1.5" />
+    </svg>
+  ),
+  Globo: () => (
+    <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <circle cx="8" cy="8" r="6.25" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M1.75 8h12.5M8 1.75c2 2 2 10.5 0 12.5M8 1.75c-2 2-2 10.5 0 12.5" stroke="currentColor" strokeWidth="1.5" />
+    </svg>
+  ),
+  Navegador: () => (
+    <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <rect x="1.75" y="2.75" width="12.5" height="10.5" rx="1.5" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M1.75 6h12.5" stroke="currentColor" strokeWidth="1.5" />
+    </svg>
+  ),
+  Paginas: () => (
+    <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path d="M4 1.75h5.5L13 5.25v9H4z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+      <path d="M9.5 1.75v3.5H13" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+    </svg>
+  ),
+  Externo: () => (
+    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none">
+      <path d="M6.5 3.5H3.5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V9.5M9.5 2.5h4v4M13.5 2.5 7.5 8.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+  Baixar: () => (
+    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none">
+      <path d="M8 2v8.5M4.5 7.5 8 11l3.5-3.5M2.5 13.5h11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+  Voltar: () => (
+    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none">
+      <path d="M13 8H3M7 3.5 2.5 8 7 12.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+};

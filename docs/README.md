@@ -44,6 +44,10 @@
 ### Quero escrever o artigo
 → [Esqueleto IMRaD](artigo/esqueleto.md)
 
+### Quero as entregas da disciplina (5-PJS 2026.2)
+→ [Índice das entregas](entregas/README.md) — grupo, revista, introdução e lista de artigos
+→ [Mapeamento do MVP](mvp/mapeamento-do-mvp.md) — escopo, arquitetura e plano de entregas, prazo 20/10/2026
+
 ---
 
 ## Decisões de arquitetura

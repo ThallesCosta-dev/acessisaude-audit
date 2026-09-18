@@ -58,3 +58,7 @@ docs/artigo/figuras/*.svg
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# PDF de artigos de terceiros, montado para a disciplina; nao versionar
+docs/entregas/*-artigos-compilados.pdf
+docs/entregas/*-artigos-compilados.zip

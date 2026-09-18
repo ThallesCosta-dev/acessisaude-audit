@@ -25,11 +25,14 @@ export function Alvos() {
 
   return (
     <>
-      <TituloDePagina>Plataformas do estudo</TituloDePagina>
-      <p>
-        Catálogo das plataformas digitais de saúde pública sob auditoria, com a
-        justificativa de inclusão de cada uma e as lacunas declaradas da amostra.
-      </p>
+      <div className="pagina-cabecalho">
+        <span className="rotulo-alto">Desenho amostral</span>
+        <TituloDePagina>Plataformas do estudo</TituloDePagina>
+        <p>
+          Catálogo das plataformas digitais de saúde pública sob auditoria, com a
+          justificativa de inclusão de cada uma e as lacunas declaradas da amostra.
+        </p>
+      </div>
 
       <div className="aviso aviso--info">
         <h2>Conduta de coleta</h2>
@@ -106,9 +109,9 @@ function CartaoDeAlvo({
   };
 }) {
   return (
-    <li className="cartao">
+    <li className="cartao cartao-alvo">
       <h3>{alvo.name}</h3>
-      <p className="texto-suave">
+      <p className="cartao-alvo__organizacao">
         {alvo.organization}
         {alvo.territory ? ` · ${alvo.territory}` : ''}
       </p>

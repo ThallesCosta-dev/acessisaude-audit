@@ -1,4 +1,4 @@
-# Registro da série diária — 19/08 a 04/09/2026
+# Registro da série diária — 19/08 a 09/09/2026
 
 > Diário do braço longitudinal da coleta. Complementa o
 > [registro de campo de 16/08](registro-de-coleta.md), que documenta o braço transversal.
@@ -9,13 +9,14 @@
 
 ## 0. Sumário
 
-Dezessete dias consecutivos, cinco plataformas, uma varredura por plataforma por dia, sempre
-com a mesma configuração e a mesma lista de páginas. **85 varreduras, 340 tentativas de
-auditoria de página, 297 bem-sucedidas.** Dezesseis dias observados (25/08 sem veredito).
+Vinte e dois dias consecutivos, cinco plataformas, uma varredura por plataforma por dia, sempre com
+a mesma configuração e a mesma lista de páginas. **110 varreduras, 440 tentativas de auditoria de
+página, 384 bem-sucedidas.** Vinte e um dias observados por plataforma (25/08 sem veredito para as
+cinco; 06/09 sem veredito só para o portal municipal de serviços, que fica com vinte).
 
 Quatro desfechos:
 
-1. **Três das cinco plataformas não variaram em nada** ao longo dos dezesseis dias observados —
+1. **Três das cinco plataformas não variaram em nada** ao longo dos vinte e um dias observados —
    índice idêntico e conjunto de critérios violados idêntico, elemento por elemento.
 2. **Duas plataformas mudaram**, em direções opostas: uma barreira crítica de teclado sumiu por
    cinco dias corridos e voltou (episódio fechado); uma violação de alternativa textual foi
@@ -26,23 +27,23 @@ Quatro desfechos:
 5. **A intermitência veio de componente de terceiro embarcado**, e não de intervenção do órgão
    — ver seção 5, que também descarta a camada de cookies como fonte de contaminação.
 
-> **Histórico da janela.** A análise foi fechada primeiro com 13 dias (19 a 31/08) e depois
-> estendida para 17 (até 04/09). O que os quatro dias extras mudaram está na seção 6.
+> **Histórico da janela.** A análise foi fechada primeiro com 13 dias (19 a 31/08), estendida para 17 (até 04/09) e depois para 22 (até 09/09). O que cada extensão mudou está nas seções 6 e 7.
 
 ---
 
 ## 1. Conduta e cadência
 
-A série foi disparada por tarefa agendada (commit `78be394`), diariamente entre **12h20 e
-12h25 UTC** (9h20–9h25 no horário de Brasília). **Exceção declarada:** em 01/09 a tarefa não
-disparou, e a coleta foi executada manualmente às **18h07 UTC**. O dia é mantido na série: os
-cinco índices são idênticos aos dos dias vizinhos, de modo que o desvio de horário não produziu
-efeito detectável, e descartar uma observação por ser inconveniente seria pior do que
-declará-la. Atenção à unidade ao cruzar artefatos: os
-carimbos das varreduras estão em UTC, e os nomes dos arquivos em `data/logs/` estão em hora
-local — `coleta-20260820-092001.log` corresponde à varredura de 12h20 UTC do dia 20. O horário fixo é decisão metodológica:
-variação de horário confundiria mudança do portal com variação de carga do servidor ao longo
-do dia.
+A série foi disparada por tarefa agendada (commit `78be394`), diariamente entre **12h20 e 12h25
+UTC** (9h20–9h25 no horário de Brasília). **Exceções declaradas:** em 01/09 e em 06/09 a tarefa não
+disparou, e a coleta foi executada manualmente, às **18h07 UTC** e às **16h09 UTC**. Os dois dias
+são mantidos na série: em 01/09 os cinco índices são idênticos aos dos dias vizinhos; em 06/09 os
+quatro índices observados também são, e o portal municipal de serviços consta sem veredito (seção
+3.6). O desvio de horário não produziu efeito detectável, e descartar uma observação por ser
+inconveniente seria pior do que declará-la. Atenção à unidade ao cruzar artefatos: os carimbos das
+varreduras estão em UTC, e os nomes dos arquivos em `data/logs/` estão em hora local —
+`coleta-20260820-092001.log` corresponde à varredura de 12h20 UTC do dia 20. O horário fixo é
+decisão metodológica: variação de horário confundiria mudança do portal com variação de carga do
+servidor ao longo do dia.
 
 A conduta é a mesma do braço transversal e não foi relaxada em nenhum dia: `robots.txt`
 respeitado, intervalo mínimo de 2.000 ms entre requisições, `User-Agent` identificando a
@@ -65,20 +66,26 @@ Excluído o dia 25/08 (falha do coletor, seção 4):
 
 | Plataforma | Páginas/dia | Auditadas | Tentativas | Perda |
 |---|---|---|---|---|
-| Secretaria municipal de saúde | 2 | 32 | 32 | 0,0% |
-| Secretaria estadual de saúde | 6 | 96 | 96 | 0,0% |
-| Meu SUS Digital | 2 | 32 | 32 | 0,0% |
-| Portal municipal de serviços | 4 | 62 | 64 | 3,1% |
-| Portal federal de saúde | 6 | 75 | 96 | 21,9% |
+| Secretaria municipal de saúde | 2 | 42 | 42 | 0,0% |
+| Secretaria estadual de saúde | 6 | 126 | 126 | 0,0% |
+| Meu SUS Digital | 2 | 42 | 42 | 0,0% |
+| Portal municipal de serviços | 4 | 78 | 84 | 7,1% |
+| Portal federal de saúde | 6 | 96 | 126 | 23,8% |
 
-A **SES-RJ estabilizou**. No braço transversal perdia de 50% a 67% das páginas; nos dezesseis
-dias da série, perda zero. A instabilidade documentada em 16/08 era episódica. Consequência direta:
-seu índice de conformidade passou de 54,1 (medido sobre o resíduo que sobrevivia às quedas)
-para **49,3 sob cobertura integral** — o mais baixo da amostra.
+Dias de cobertura integral (20 de 20): 20, 21 e 24/08; 03, 04, 07 e 08/09.
 
-O **gov.br concentra a perda** em dois caminhos específicos (`/saes` e `/saude-de-a-a-z`); a
-página inicial falhou uma única vez em dezesseis dias. A perda caiu ao longo da série: 26,4%
-no recorte de 13 dias, 21,9% no de 17, com cobertura integral em 03 e 04/09.
+A **SES-RJ estabilizou**. No braço transversal perdia de 50% a 67% das páginas; nos vinte e um dias
+da série, perda zero. A instabilidade documentada em 16/08 era episódica. Consequência direta: seu
+índice de conformidade passou de 54,1 (medido sobre o resíduo que sobrevivia às quedas) para **49,3
+sob cobertura integral** — o mais baixo da amostra.
+
+O **gov.br concentra a perda** em dois caminhos específicos (`/saes`, 13 falhas, e
+`/saude-de-a-a-z`, 14); a página inicial falhou em 3 de 42 tentativas (30/08, 01/09 e 09/09). A
+perda oscila com a janela, sem tendência: 26,4% no recorte de 13 dias, 21,9% no de 17, 23,8% no de
+22, com cobertura integral em 03, 04, 07 e 08/09 e o pior dia da série em 09/09 (2 de 6).
+
+O **portal municipal de serviços** perdeu 6 páginas em dois dias: 2 de 4 em 27/08 (tempo esgotado) e
+4 de 4 em 06/09 (seção 3.6).
 
 ---
 
@@ -88,7 +95,7 @@ no recorte de 13 dias, 21,9% no de 17, com cobertura integral em 03 e 04/09.
 
 Meu SUS Digital (5 critérios violados), SES-RJ (11) e SMS-Rio (8): **variação nula**. Mesmo
 índice, mesmo conjunto de critérios, todos os dias, nos dois perfis de dispositivo. Nenhuma
-barreira apareceu, sumiu ou trocou de página em dezesseis dias observados.
+barreira apareceu, sumiu ou trocou de página em vinte e um dias observados.
 
 ### 3.2 O critério 2.1.1 no portal municipal
 
@@ -97,8 +104,8 @@ atendimento em UPA 24 horas, **nos dois perfis simultaneamente**:
 
 ```
 ago                                          set
-19 20 21 22 23 24 25 26 27 28 29 30 31 | 01 02 03 04
- 1  1  1  1  1  .  X  .  .  .  1  1  1 |  1  1  1  1
+19 20 21 22 23 24 25 26 27 28 29 30 31 | 01 02 03 04 05 06 07 08 09
+ 1  1  1  1  1  .  X  .  .  .  1  1  1 |  1  1  1  1  1  X  1  1  1
 
 1 = violado   . = não violado   X = sem veredito
 ```
@@ -107,9 +114,10 @@ Ausente em 24, 26, 27 e 28. **Não é artefato de cobertura**: em 24, 26 e 28 as
 auditorias de página foram bem-sucedidas. A barreira foi procurada onde estava e não foi
 encontrada.
 
-**Episódio fechado.** A janela de ausência tem cinco dias corridos (24 a 28/08) e está
-delimitada por observações da barreira em 23 e em 29. Desde o retorno, presente em **sete dias
-consecutivos**, todos com cobertura 4/4.
+**Episódio fechado.** A janela de ausência tem cinco dias corridos (24 a 28/08) e está delimitada
+por observações da barreira em 23 e em 29. Desde o retorno, presente em **todos os onze dias
+observados** (29/08 a 09/09, exceto 06/09, sem veredito), todos com cobertura 4/4. Nenhum segundo
+episódio ocorreu.
 
 O ICA acompanha: 50,68 nos dias com a violação, 58,90 nos dias sem.
 
@@ -117,12 +125,12 @@ O ICA acompanha: 50,68 nos dias com a violação, 58,90 nos dias sem.
 
 ```
 ago                                          set
-19 20 21 22 23 24 25 26 27 28 29 30 31 | 01 02 03 04
- .  .  .  .  .  1  X  1  1  1  1  1  1 |  1  1  1  1
+19 20 21 22 23 24 25 26 27 28 29 30 31 | 01 02 03 04 05 06 07 08 09
+ .  .  .  .  .  1  X  1  1  1  1  1  1 |  1  1  1  1  1  1  1  1  1
 ```
 
-Introduzido entre 23 e 24/08 e **não corrigido** em nenhum dos onze dias observados seguintes.
-**Censurado à direita**: persistia no último dia da série, então 11 dias é piso, não duração.
+Introduzido entre 23 e 24/08 e **não corrigido** em nenhum dos quinze dias observados seguintes.
+**Censurado à direita**: persistia no último dia da série, então 15 dias é piso, não duração.
 
 A transição está ancorada em cobertura integral dos dois lados — é o que descarta "a barreira
 já existia e escapava à amostra":
@@ -135,16 +143,18 @@ já existia e escapava à amostra":
 | 27/08 | 6/6 | **6 de 6** |
 | 03/09 | 6/6 | **6 de 6** |
 | 04/09 | 6/6 | **6 de 6** |
+| 07/09 | 6/6 | **6 de 6** |
+| 08/09 | 6/6 | **6 de 6** |
 
 É alteração de escopo do portal, não propriedade de uma página.
 
 ### 3.4 Achados que NÃO se interpretam
 
-Os critérios 1.4.1 (29/08), 1.4.3 (30/08) e 2.4.7 (26 e 29/08), também no portal federal,
-apareceram em um único dia, numa única página e num único perfil, e **não reapareceram nos
-onze dias seguintes**. São compatíveis com conteúdo rotativo e ocorreram justamente no portal
-de disponibilidade mais instável. **Ficam registrados e não sustentam afirmação**: não há como
-separar mudança do portal de variação da amostra observada.
+Os critérios 1.4.1 (29/08), 1.4.3 (30/08) e 2.4.7 (26 e 29/08), também no portal federal, apareceram
+em um único dia, numa única página e num único perfil, e **não reapareceram até o fim da série, em
+09/09**. São compatíveis com conteúdo rotativo e ocorreram justamente no portal de disponibilidade
+mais instável. **Ficam registrados e não sustentam afirmação**: não há como separar mudança do
+portal de variação da amostra observada.
 
 ### 3.5 Hipótese testada e não sustentada
 
@@ -154,9 +164,23 @@ apareceu na **mesma segunda-feira**. A leitura sugerida era atraente: regressão
 acessibilidade atrelada a ciclo de implantação, com deploy de segunda e reversão de fim de
 semana.
 
-**Os quatro dias adicionais não sustentam essa leitura.** Na semana útil seguinte (segunda
-31/08 a sexta 04/09), a barreira 2.1.1 esteve **presente todos os dias**, com cobertura
-integral. Se houvesse ciclo semanal, o episódio teria se repetido, e não se repetiu.
+**Os dias adicionais não sustentam essa leitura.** Nas duas semanas úteis seguintes (31/08 a 04/09 e
+07 a 09/09), a barreira 2.1.1 esteve **presente todos os dias**, com cobertura integral. Se houvesse
+ciclo semanal, o episódio teria se repetido, e não se repetiu.
+
+### 3.6 06/09: o portal municipal de serviços sem veredito
+
+Em 06/09 (domingo), na execução manual das 16h09 UTC, as quatro tentativas no Carioca Digital
+falharam — uma por tempo esgotado e três por `net::ERR_CONNECTION_RESET` — enquanto as outras quatro
+plataformas responderam normalmente na mesma execução, com o gov.br em seu padrão habitual (4 de 6).
+A falha simultânea de cinco domínios distintos foi o diagnóstico de 25/08 (seção 4); a falha de um
+só domínio, com os demais respondendo, é o diagnóstico oposto: **o portal, não o coletor**.
+
+A varredura consta com os quatro índices nulos, e é a primeira vez na série em que o valor "sem
+veredito" descreve uma única plataforma num dia observado para as demais. Na Figura 5, é a segunda
+interrupção de linha, restrita ao Carioca Digital. Nenhuma inferência sobre o conteúdo do portal é
+feita a partir desse dia: no dia seguinte, com cobertura 4/4, o conjunto de critérios violados era
+idêntico ao de 05/09.
 
 Fica registrado como hipótese descartada, e não apagada: é a diferença entre um diário de campo
 e um relatório de resultados. Com um episódio só, qualquer regularidade de calendário é
@@ -178,10 +202,10 @@ O instrumento gravou, para as cinco plataformas:
 ICA 100,0   IAN 0,0   IEJ 0,0   barreira absoluta: não
 ```
 
-**Conformidade máxima no único dia, em dezessete, em que nada foi observado.** O ICA é a razão entre critérios
-não violados e critérios avaliados; sem página carregada não há achado, e o numerador fica
-cheio. Nenhuma exceção foi levantada — a taxa de perda de 100% ficou registrada num campo ao
-lado, que ninguém precisa ler para enxergar o número grande.
+**Conformidade máxima no único dia, em vinte e dois, em que nada foi observado.** O ICA é a razão
+entre critérios não violados e critérios avaliados; sem página carregada não há achado, e o
+numerador fica cheio. Nenhuma exceção foi levantada — a taxa de perda de 100% ficou registrada num
+campo ao lado, que ninguém precisa ler para enxergar o número grande.
 
 A correção está na [ADR 0010](../adr/0010-indices-nulos-sem-observacao.md): os quatro índices
 passaram a admitir nulo, e nulo significa **sem veredito**. O acumulador do domínio passou a
@@ -189,12 +213,12 @@ contar páginas observadas, e não tentativas — o que corrigiu junto a mesma f
 granularidade de página, que vinha contaminando `paginas.csv` com 59 linhas de ICA 100 sobre
 páginas que nunca carregaram.
 
-Como o documento JSON guarda páginas e achados, e não índices (ADR 0003), **nenhum portal
-precisou ser varrido de novo**: `acessisaude reindexar` reconstruiu as varreduras arquivadas
-(115 na primeira aplicação, 139 depois da extensão da janela), das quais 5 passaram a constar
-sem veredito. Após a reindexação, nenhuma varredura
-de portal real pontua ICA 100 — as únicas linhas que restam nesse valor são do conjunto de
-validação local, em que a página deliberadamente acessível *deve* pontuar 100.
+Como o documento JSON guarda páginas e achados, e não índices (ADR 0003), **nenhum portal precisou
+ser varrido de novo**: `acessisaude reindexar` reconstruiu as varreduras arquivadas (115 na primeira
+aplicação, 139 depois da extensão a 17 dias, 169 na de 22), das quais 6 passaram a constar sem
+veredito: as cinco de 25/08 e a do Carioca Digital em 06/09. Após a reindexação, nenhuma varredura
+de portal real pontua ICA 100 — as únicas linhas que restam nesse valor são do conjunto de validação
+local, em que a página deliberadamente acessível *deve* pontuar 100.
 
 ---
 
@@ -252,7 +276,7 @@ componente não se materializou no documento.
 |---|---|---|
 | 19 a 23/08 | sim | sim |
 | 24 a 28/08 | **sim** | **não** |
-| 29/08 a 04/09 | sim | sim |
+| 29/08 a 09/09 | sim | sim |
 
 Isso **descarta a leitura de correção e regressão pelo órgão municipal**. O que oscilou foi a
 renderização de um componente de terceiro.
@@ -302,7 +326,34 @@ agendada já rodava.
 
 ---
 
-## 7. Reprodução
+## 7. O que os cinco dias seguintes mudaram
+
+A janela foi reaberta de 17 para 22 dias (05 a 09/09):
+
+| | 17 dias (até 04/09) | 22 dias (até 09/09) |
+|---|---|---|
+| Estabilidade dos três portais | 16 dias observados | **21 dias observados** |
+| Episódio 2.1.1 | fechado, 5 dias corridos | fechado; barreira presente em **todos os 11 dias** desde o retorno |
+| Segundo episódio de intermitência | nenhum | **nenhum** |
+| Regressão 1.1.1 | ≥ 11 dias observados | **≥ 15 dias observados**, ainda censurada à direita |
+| Transição do 1.1.1 | 4 dias de cobertura 6/6 | **6 dias**, 2 antes e 4 depois |
+| Hipótese do ciclo semanal | não replicou (1 semana) | **não replicou (2 semanas)** |
+| Perda do gov.br | 21,9% | **23,8%** (pior dia da série em 09/09) |
+| Perda do Carioca Digital | 3,1% | **7,1%**, por um dia inteiro sem resposta |
+| Varreduras sem veredito | 5 (25/08) | **6** (+ Carioca Digital em 06/09) |
+| Desvios de cadência | 1 (01/09) | **2** (01/09 e 06/09) |
+| Dias de cobertura integral | 5 | **7** (03, 04, 07 e 08/09 em setembro) |
+
+De novo, nenhuma conclusão invertida. O que a extensão trouxe foi um evento de disponibilidade
+de tipo diferente dos anteriores — uma plataforma só, num dia observado para as demais —, que
+exercitou exatamente o requisito defendido em § 4.7 do manuscrito: "não sei" como valor
+representável, agora atribuído a um portal e não a um dia. O que a série ainda não ofereceu, e
+só o tempo dá, permanece o mesmo: um segundo episódio de intermitência e o fechamento da
+regressão federal.
+
+---
+
+## 8. Reprodução
 
 ```powershell
 # A tarefa agendada executa, uma vez por dia:

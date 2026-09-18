@@ -6,8 +6,10 @@ silencioso, porque o gráfico sai bonito e errado.
 
 * **Bloco transversal** — 04/09/2026, único dia de cobertura integral nas cinco
   plataformas: 20 tentativas de auditoria de página, 20 válidas. Sustenta as Tabelas 1 e 3 a 7 e as **Figuras 1 a 4**.
-* **Bloco longitudinal** — a série diária de 19 a 31/08/2026, definida pela
-  cadência agendada das 12h20 UTC. Sustenta a Tabela 8 e a **Figura 5**.
+* **Bloco longitudinal** — a série diária de 19/08 a 09/09/2026, definida pela
+  cadência agendada das 12h20 UTC (com as execuções manuais de 01/09 e 06/09,
+  que a satisfazem). Sustenta a tabela dos critérios que mudaram de estado e a
+  **Figura 5**.
 
 As figuras não são versionadas (ver ``.gitignore``); este script é a receita que
 as reconstrói. Os dados de origem estão em ``data/scans/`` e são versionados.

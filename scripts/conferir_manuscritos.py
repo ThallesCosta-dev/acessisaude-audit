@@ -35,10 +35,27 @@ RAIZ = Path(__file__).resolve().parents[1]
 REDUZIDA = RAIZ / "docs" / "artigo" / "manuscrito-reciis.md"
 EXTENSA = RAIZ / "docs" / "artigo" / "manuscrito-extenso.md"
 
-#: Limite da seção "Artigos originais" da Reciis, aferido contra artigos publicados
-#: (ver § 3.1 da folha de submissão): incide sobre o corpo, com tabelas, e exclui
-#: a lista de referências.
+#: Limite da seção "Artigos originais" da Reciis. A norma diz "entre 40 e 60 mil
+#: caracteres com espaços, do início ao fim do documento" (ver § 3.1 da folha de
+#: submissão): a contagem que vale é a do documento inteiro, referências incluídas.
+#: O corpo sem referências é reportado à parte, por ser o que a prática da revista
+#: parece tolerar, mas o limite incide sobre o total.
 LIMITE_REDUZIDA = 60_000
+
+
+def documento(texto: str) -> int:
+    """Caracteres do documento inteiro, do título ao fim das referências.
+
+    Descarta a sintaxe Markdown (cercas de tabela, separadores, ênfase) e a nota
+    editorial em bloco de citação, que sai na conversão para o arquivo submetido.
+    """
+    bloco = texto[texto.index("# ") :]
+    bloco = "\n".join(l for l in bloco.split("\n") if not l.strip().startswith(">"))
+    bloco = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", bloco)
+    bloco = re.sub(r"^\|[-| ]+\|$", "", bloco, flags=re.MULTILINE)
+    bloco = re.sub(r"^---$", "", bloco, flags=re.MULTILINE)
+    bloco = re.sub(r"[*_`|#>]", "", bloco)
+    return len(re.sub(r"\n{2,}", "\n", re.sub(r"[ \t]+", " ", bloco)).strip())
 
 
 def corpo(texto: str) -> tuple[str, str]:
@@ -49,7 +66,7 @@ def corpo(texto: str) -> tuple[str, str]:
     lista de conferência da folha de submissão.
     """
     bloco = texto[
-        texto.index("# Auditoria algorítmica") : texto.index("## Referências")
+        texto.index("# ") : texto.index("## Referências")
     ]
     tabelas, prosa = [], []
     for linha in bloco.split("\n"):
@@ -78,7 +95,7 @@ def numeros(texto: str) -> Counter[str]:
     a estendida tem onze tabelas e a reduzida, cinco.
     """
     bloco = texto[
-        texto.index("# Auditoria algorítmica") : texto.index("## Referências")
+        texto.index("# ") : texto.index("## Referências")
     ]
     bloco = re.sub(r"\*\*(Tabela|Figura) \d+\*\*", "", bloco)
     bloco = re.sub(r"\b(Tabela|Figura) \d+", "", bloco)
@@ -103,18 +120,23 @@ def main() -> int:
 
     # ---------------------------------------------------------------- extensão
     p, q = corpo(red)
-    tamanho = len(p) + len(q)
-    estado = "ok" if tamanho <= LIMITE_REDUZIDA else "ACIMA DO LIMITE"
+    total = documento(red)
+    estado = "ok" if total <= LIMITE_REDUZIDA else "ACIMA DO LIMITE"
+    print(f"reduzida   corpo sem referências {len(p) + len(q):>6} caracteres")
     print(
-        f"reduzida   corpo {tamanho:>6} caracteres (limite {LIMITE_REDUZIDA})  {estado}"
+        f"reduzida   documento inteiro     {total:>6} caracteres"
+        f" (limite {LIMITE_REDUZIDA})  {estado}"
     )
-    if tamanho > LIMITE_REDUZIDA:
+    if total > LIMITE_REDUZIDA:
         falhas.append(
-            f"a reduzida excede o limite em {tamanho - LIMITE_REDUZIDA} caracteres"
+            f"a reduzida excede o limite em {total - LIMITE_REDUZIDA} caracteres"
         )
 
     pe, qe = corpo(ext)
-    print(f"estendida  corpo {len(pe) + len(qe):>6} caracteres")
+    print(
+        f"estendida  corpo sem referências {len(pe) + len(qe):>6} caracteres;"
+        f" documento inteiro {documento(ext)}"
+    )
 
     # ------------------------------------------------------ conteúdo publicável
     # A reduzida precisa ser subconjunto da estendida: tudo que ela afirma, a
